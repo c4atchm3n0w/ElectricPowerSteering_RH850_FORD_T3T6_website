@@ -1,0 +1,535 @@
+---
+title: ImcSigArbn_MDD
+linkTitle: ImcSigArbn_MDD
+weight: 3
+---
+
+<p><strong>Module Design Document</strong></p>
+<p><strong>For</strong></p>
+<p><strong>ImcSigArbn</strong></p>
+<p><strong>May 11, 2017</strong></p>
+<p><strong>Prepared By:</strong></p>
+<p><strong>Krishna Anne,</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA<br />
+<u>Change History</u></strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 28%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Description</strong></td>
+<td><strong>Author</strong></td>
+<td><strong>Version</strong></td>
+<td><strong>Date</strong></td>
+</tr>
+<tr class="even">
+<td>Initial Version</td>
+<td>Shruthi Raghavan</td>
+<td>1.0</td>
+<td>02/02/2017</td>
+</tr>
+<tr class="odd">
+<td>Fix for Issues in using Return value of ImcData</td>
+<td>Krishna Anne</td>
+<td>2.0</td>
+<td>05/11/2017</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br />
+</strong></p>
+<p><u>Table of Contents</u>1 Introduction 4</p>
+<p>1.1 Purpose 4</p>
+<p>2 ImcSigArbn &amp; High-Level Description 5</p>
+<p>3 Design details of software module 6</p>
+<p>3.1 Graphical representation of ImcSigArbn 6</p>
+<p>3.2 Data Flow Diagram 6</p>
+<p>3.2.1 Component level DFD 6</p>
+<p>3.2.2 Function level DFD 6</p>
+<p>4 Constant Data Dictionary 7</p>
+<p>4.1 Program (fixed) Constants 7</p>
+<p>4.1.1 Embedded Constants 7</p>
+<p>5 Software Component Implementation 8</p>
+<p>5.1 Sub-Module Functions 8</p>
+<p>5.1.1 Init: ImcSigArbnInit1 8</p>
+<p>5.1.1.1 Design Rationale 8</p>
+<p>5.1.2 Per: ImcSigArbnPer1 8</p>
+<p>5.1.2.1 Design Rationale 8</p>
+<p>5.1.3 Per: ImcSigArbnPer2 8</p>
+<p>5.1.3.1 Design Rationale 8</p>
+<p>5.2 Server Runnables 8</p>
+<p>5.3 Interrupt Functions 8</p>
+<p>5.4 Module Internal (Local) Functions 8</p>
+<p>5.4.1 Local Function #1 8</p>
+<p>5.4.1.1 Design Rationale 9</p>
+<p>5.5 GLOBAL Function/Macro Definitions 9</p>
+<p>6 Known Limitations with Design 10</p>
+<p>7 UNIT TEST CONSIDERATION 11</p>
+<p>Appendix A Abbreviations and Acronyms 12</p>
+<p>Appendix B Glossary 13</p>
+<p>Appendix C References 14</p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="purpose">Purpose</h2>
+<blockquote>
+<p>Module design document for ImcSigArbn SF063A to refer for design rationale, unit test considerations and implementation details.</p>
+</blockquote>
+<h1 id="imcsigarbn-high-level-description">ImcSigArbn &amp; High-Level Description</h1>
+<blockquote>
+<p>This function shall define the requirements for sharing signals. It shall serve as a single function of contact to obtain information from the other controller in a dual ECU structure. It shall define requirements for arbitration of signals and integrator states to ensure performance.</p>
+</blockquote>
+<h1 id="design-details-of-software-module">Design details of software module</h1>
+<h2 id="graphical-representation-of-imcsigarbn">Graphical representation of ImcSigArbn</h2>
+<blockquote>
+<p><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/static/media/image1.png" style="width:4.03435in;height:6.72391in" /></p>
+</blockquote>
+<h2 id="data-flow-diagram">Data Flow Diagram</h2>
+<h3 id="component-level-dfd">Component level DFD</h3>
+<p>Refer FDD Simulink model.</p>
+<h3 id="function-level-dfd">Function level DFD</h3>
+<p>Refer FDD Simulink Model</p>
+<h1 id="constant-data-dictionary">Constant Data Dictionary</h1>
+<h2 id="program-fixed-constants">Program (fixed) Constants</h2>
+<h3 id="embedded-constants">Embedded Constants</h3>
+<h4 id="local-constants">Local Constants</h4>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant Name</th>
+<th>Resolution</th>
+<th>Units</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Refer to DataDict.m file</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="software-component-implementation">Software Component Implementation</h1>
+<h2 id="sub-module-functions">Sub-Module Functions</h2>
+<h2 id="init-imcsigarbninit1">Init: ImcSigArbnInit1</h2>
+<h2 id="design-rationale">Design Rationale</h2>
+<blockquote>
+<p>Refer FDD Simulink model</p>
+</blockquote>
+<h2 id="per-imcsigarbnper1">Per: ImcSigArbnPer1</h2>
+<h2 id="design-rationale-1">Design Rationale</h2>
+<blockquote>
+<p>Refer FDD Simulink model<br />
+The implementation of ElapsedTime block was optimized in the code to avoid a couple of Boolean operations and additional temporary variables. The functionality was verified in peer review with design owner as well.</p>
+</blockquote>
+<h2 id="per-imcsigarbnper2">Per: ImcSigArbnPer2</h2>
+<h2 id="design-rationale-2">Design Rationale</h2>
+<blockquote>
+<p>Refer FDD Simulink model<br />
+The implementation of ElapsedTime block was optimized in the code to avoid a couple of Boolean operations and additional temporary variables. The functionality was verified in peer review with design owner as well.</p>
+</blockquote>
+<h2 id="server-runnables">Server Runnables</h2>
+<p>None</p>
+<h2 id="interrupt-functions">Interrupt Functions</h2>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h2 id="module-internal-local-functions">Module Internal (Local) Functions</h2>
+<h2 id="local-function-1">Local Function #1</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 24%" />
+<col style="width: 11%" />
+<col style="width: 24%" />
+<col style="width: 23%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>CalcImcSigOffs</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>ImcSigArbnEna_Cnt_T_logl</td>
+<td>Boolean</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>InpSig_Uls_T_f32</td>
+<td>Float32</td>
+<td>-32767.5</td>
+<td>32767.5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>ImcSig_Uls_T_f32</td>
+<td>Float32</td>
+<td>-32767.5</td>
+<td>32767.5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*SigLpFil_Uls_T_str</td>
+<td>FilLpRec1</td>
+<td>[struct ('FilSt’, -32767.5,<br />
+'FilGain', 0. 062831853000000)]</td>
+<td>[struct('FilSt', 32767.5,<br />
+'FilGain', 0. 998132557254885)]</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*OutSigPrev_Uls_T_f32</td>
+<td>Float32</td>
+<td>-32767.5</td>
+<td>32767.5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>ImcSigArbnSigOffsLim_Uls_T_f32</td>
+<td>Float32</td>
+<td>0</td>
+<td>32767.5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Sts_Cnt_T_enum</td>
+<td>ImcArbnRxSts1</td>
+<td>IMCARBNRXSTS_NODATA</td>
+<td>IMCARBNRXSTS_INVLD</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Rtn_Cnt_T_enum</td>
+<td>Std_ReturnType</td>
+<td>E_NOT_OK</td>
+<td>E_OK</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>OutSigPrev_Uls_T_f32</td>
+<td>Float32</td>
+<td>-32767.5</td>
+<td>32767.5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-3">Design Rationale</h2>
+<p>All the ImcSigArbn_* functions in the Per2 inside ‘Calc Offs Corrn 10ms Periodic’ block of FDD do the same function with different cals, pims and input signals. So they were all clubbed into single function.</p>
+<h2 id="local-function-1-1">Local Function #1</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 24%" />
+<col style="width: 11%" />
+<col style="width: 24%" />
+<col style="width: 23%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>CalcImcSigOffs</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>SetArbnNtc</td>
+<td>float32</td>
+<td>0</td>
+<td>4294967296</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-4">Design Rationale</h2>
+<p>To handle cyclomatic complexity.</p>
+<h2 id="global-functionmacro-definitions">GLOBAL Function/Macro Definitions</h2>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h1 id="known-limitations-with-design">Known Limitations with Design</h1>
+<ol type="1">
+<li><p>Filter ranges given in design are full range of float for state variable and [0,max_float32] for gain – this has to be fixed in next version. For now, the ranges are given in the unit test considerations after calculating from the code. These values can be used instead.</p></li>
+<li><p>The value of calculated float32 offset signals are limited to [-cal, cal] and then later checked for absolute value being greater than or equal to the same cal. This was verified by component owner as not the design intent &amp; one of these places, the cal used has to change.</p></li>
+<li><p>The input signal PosnTrakgIntgtrSt1 has a range of [-2864,2864] according to the DataDict.m file. If its IMC counterpart ImcPosnTrakgIntgtrSt1 read in Per2 has the same range [-2864,2864], the algorithm inside the ImcSigArbn_PosnTrakgIntglSt1 will only give output PosnTrakgIntgtrSt1Offs values</p></li>
+</ol>
+<blockquote>
+<p><strong>[Refer: SF063A_ImcSigArbn/ImcSigArbn/ImcSigArbnPer2/Calculate Offs Corrn 10 ms Periodic /ImcSigArbn_PosnTrakgIntglSt1/Do arbitration]<br />
+</strong>in the range [-2864,2864]. However, the limit used on this value is a calibration ImcSigArbnPosnTrakg1ArbnOffsLim whose range is [0,32767.5], max is much larger than the actual maximum that can be taken by this variable. Also, the output limits on the PosnTrakgIntgtrSt1Offs output is [-32767.5,32767.5], which needs to change.</p>
+</blockquote>
+<ol start="4" type="1">
+<li><p>The units on the embedded constants INTGTROFFSSATNLOWLIM_ULS_F32 and INTGTROFFSSATNUPPRLIM_ULS_F32 need to change if a different set of constants are decided to be used for PosnTrakgIntgtrSt1Offs limits</p></li>
+</ol>
+<h1 id="unit-test-consideration">UNIT TEST CONSIDERATION</h1>
+<p>In case the m file gives float min/max values as the ranges for the following PIMs, use the values from this table instead as the range.</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 21%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2">PIM Variables</th>
+<th colspan="2">Ranges</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structure Name</td>
+<td>Structure Element</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>HwAgLpFil</strong></td>
+<td>FilSt</td>
+<td>-1440</td>
+<td>1440</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>HwAgTarLpFil</strong></td>
+<td>FilSt</td>
+<td>-1440</td>
+<td>1440</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>HwTqLpFil</strong></td>
+<td>FilSt</td>
+<td>-10</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>MotVelLpFil</strong></td>
+<td>FilSt</td>
+<td>-1350</td>
+<td>1350</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>PosnServoIntgtrLpFil</strong></td>
+<td>FilSt</td>
+<td>-32767.5</td>
+<td>32767.5</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>PullCmpLongTermCmpLpFil</strong></td>
+<td>FilSt</td>
+<td>-10</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>PullCmpShoTermCmpLpFil</strong></td>
+<td>FilSt</td>
+<td>-10</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>TrakgIntgtrSt1LpFil</strong></td>
+<td>FilSt</td>
+<td>-2864</td>
+<td>2864</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>TrakgIntgtrSt2LpFil</strong></td>
+<td>FilSt</td>
+<td>-20000</td>
+<td>20000</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+<tr class="even">
+<td rowspan="2"><strong>VehSpdLpFil</strong></td>
+<td>FilSt</td>
+<td>0</td>
+<td>511</td>
+</tr>
+<tr class="odd">
+<td>FilGain</td>
+<td>0. 062831853000000</td>
+<td>0. 998132557254885</td>
+</tr>
+</tbody>
+</table>
+<p>Tolerance of state variables can be assumed to be six significant digits and for the gains it is 1e-07.</p>
+<p class="heading" id="abbreviations-and-acronyms">Abbreviations and Acronyms</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Abbreviation or Acronym</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="glossary">Glossary</p>
+<p><strong>Note</strong>: Terms and definitions from the source “Nexteer Automotive” take precedence over all other definitions of the same term. Terms and definitions from the source “Nexteer Automotive” are formulated from multiple sources, including the following:</p>
+<ul>
+<li><p>ISO 9000</p></li>
+<li><p>ISO/IEC 12207</p></li>
+<li><p>ISO/IEC 15504</p></li>
+<li><p>Automotive SPICE® Process Reference Model (PRM)</p></li>
+<li><p>Automotive SPICE® Process Assessment Model (PAM)</p></li>
+<li><p>ISO/IEC 15288</p></li>
+<li><p>ISO 26262</p></li>
+<li><p>IEEE Standards</p></li>
+<li><p>SWEBOK</p></li>
+<li><p>PMBOK</p></li>
+<li><p>Existing Nexteer Automotive documentation</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 53%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Term</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Source</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MDD</td>
+<td>Module Design Document</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>DFD</td>
+<td>Data Flow Diagram</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="references">References</p>
+<table>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 46%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Ref. #</strong></th>
+<th><strong>Title</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>AUTOSAR Specification of Memory Mapping<br />
+(Link:<a href="http://www.autosar.org/download/R4.0/AUTOSAR_SWS_MemoryMapping.pdf">AUTOSAR_SWS_MemoryMapping.pdf</a>)</td>
+<td>v1.3.0 R4.0 Rev 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>MDD Guideline</td>
+<td>See Software Engineering Process 04.02.01</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="http://misagweb01.nexteer.com/eRoomReq/Files/erooms8/NextGeneration/0_fc55f/Software%20Naming%20Conventions%2003x(In%20Work).doc">Software Naming Conventions.doc</a></td>
+<td>See Software Engineering Process 04.02.01</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="http://eroom1.nexteer.com/eRoomReq/Files/erooms8/NextGeneration/0_1a67a9/Software%20Design%20and%20Coding%20Standards.doc">Software Design and Coding Standards.doc</a></td>
+<td>See Software Engineering Process 04.02.01</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>SF063A_ImcSigArbn_Design</td>
+<td>See Synergy Sub-Project Version</td>
+</tr>
+</tbody>
+</table>

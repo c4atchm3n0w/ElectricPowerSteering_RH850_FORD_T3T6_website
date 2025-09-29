@@ -1,0 +1,2234 @@
+---
+title: R20UT3660EJ0100-AUTOSARs
+linkTitle: R20UT3660EJ0100-AUTOSARs
+weight: 9
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Spi/doc/R20UT3660EJ0100-AUTOSAR-1_1.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Spi/doc/R20UT3660EJ0100-AUTOSAR-1_2.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Spi/doc/R20UT3660EJ0100-AUTOSAR-1_3.png"/><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>
+&#160; &#160;&#160;&#160;&#160;&#160;&#160;AUTOSAR&#160;MCAL&#160;R4.0.3&#160;<br/>
+User's Manual&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;SPI&#160;Driver&#160;Component&#160;Ver.1.0.2&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;&#160;Generation&#160;Tool&#160;User's&#160;Manual&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;Target&#160;&#160;Device:&#160;<br/>
+RH850/P1x-C&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+All&#160;&#160;information&#160;contained&#160;in&#160;&#160;these&#160;&#160;materials,&#160;including&#160;products&#160;and&#160;&#160;product&#160;specifications,&#160;<br/>represents&#160;information&#160;on&#160;the&#160;product&#160;at&#160;the&#160;time&#160;of&#160;publication&#160;and&#160;is&#160;subject&#160;to&#160;change&#160;by&#160;<br/>Renesas&#160;Electronics&#160;Corp.&#160;without&#160;notice.&#160;Please&#160;review&#160;the&#160;latest&#160;information&#160;published&#160;by&#160;<br/>Renesas&#160;Electronics&#160;Corp.&#160;through&#160;various&#160;means,&#160;including&#160;the&#160;Renesas&#160;Electronics&#160;Corp.&#160;<br/>website<a href="http://www.renesas.com/">&#160;(http://www.renesas.com).&#160;</a><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+<a href="http://www.renesas.com/">www.renesas.com&#160;</a><br/>
+<a href="http://www.renesas.com/">Rev</a>.1.00&#160;Jan&#160;2017&#160;<br/>
+<hr/>
+<a name=2></a>&#160;<br/>
+&#160;<br/>
+2&#160;<br/>
+<hr/>
+<a name=3></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+Notice&#160;<br/>
+1.&#160;<br/>
+Descriptions&#160;of&#160;circuits,&#160;software&#160;and&#160;other&#160;related&#160;information&#160;in&#160;this&#160;document&#160;are&#160;provided&#160;only&#160;to&#160;illustrate&#160;the&#160;operation&#160;of&#160;<br/>semiconductor&#160;products&#160;and&#160;application&#160;examples.&#160;You&#160;are&#160;fully&#160;responsible&#160;for&#160;the&#160;incorporation&#160;or&#160;any&#160;other&#160;use&#160;of&#160;the&#160;circuits,&#160;<br/>software,&#160;and&#160;information&#160;in&#160;the&#160;design&#160;of&#160;your&#160;product&#160;or&#160;system.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;losses&#160;and&#160;<br/>damages&#160;incurred&#160;by&#160;you&#160;or&#160;third&#160;parties&#160;arising&#160;from&#160;the&#160;use&#160;of&#160;these&#160;circuits,&#160;software,&#160;or&#160;information.&#160;<br/>
+2.&#160;<br/>
+Renesas&#160;Electronics&#160;hereby&#160;expressly&#160;disclaims&#160;any&#160;warranties&#160;against&#160;and&#160;liability&#160;for&#160;infringement&#160;or&#160;any&#160;other&#160;disputes involving&#160;patents,&#160;<br/>copyrights,&#160;or&#160;other&#160;intellectual&#160;property&#160;rights of&#160;third&#160;parties,&#160;by&#160;or&#160;arising&#160;from the&#160;use&#160;of&#160;Renesas&#160;Electronics&#160;products&#160;or&#160;technical&#160;information&#160;<br/>described&#160;in&#160;this&#160;document,&#160;including&#160;but&#160;not&#160;limited&#160;to,&#160;the&#160;product&#160;data,&#160;drawing,&#160;chart,&#160;program,&#160;algorithm,&#160;application&#160;examples.&#160;<br/>
+3.&#160;<br/>
+No&#160;license,&#160;express,&#160;implied&#160;or&#160;otherwise,&#160;is granted&#160;hereby&#160;under&#160;any&#160;patents,&#160;copyrights or&#160;other&#160;intellectual&#160;property&#160;rights of&#160;Renesas&#160;<br/>Electronics or&#160;others.&#160;<br/>
+4.&#160;<br/>
+You&#160;shall&#160;not&#160;alter,&#160;modify,&#160;copy,&#160;or&#160;otherwise&#160;misappropriate&#160;any&#160;Renesas&#160;Electronics&#160;product,&#160;whether&#160;in&#160;whole&#160;or&#160;in&#160;part.&#160;Renesas&#160;Electronics&#160;<br/>disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;losses or&#160;damages incurred&#160;by&#160;you&#160;or&#160;third&#160;parties&#160;arising&#160;from such&#160;alteration,&#160;modification,&#160;copy&#160;or&#160;<br/>otherwise&#160;misappropriation&#160;of&#160;Renesas Electronics&#160;products.&#160;<br/>
+5.&#160;<br/>
+Renesas&#160;Electronics&#160;products are&#160;classified&#160;according&#160;to&#160;the&#160;following&#160;two&#160;quality&#160;grades:&#160;&#34;Standard&#34;&#160;and&#160;&#34;High&#160;Quality&#34;.&#160;The&#160;intended&#160;<br/>applications for&#160;each&#160;Renesas&#160;Electronics&#160;product&#160;depends on&#160;the&#160;product’s&#160;quality&#160;grade,&#160;as indicated&#160;below.&#160;&#160;<br/>
+&#34;Standard&#34;:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Computers;&#160;&#160;office&#160;&#160;equipment;&#160;communications&#160;&#160;equipment;&#160;&#160;test&#160;&#160;and&#160;&#160;measurement&#160;&#160;equipment;&#160;audio&#160;and&#160;&#160;visual&#160;&#160;equipment;&#160;<br/>
+home&#160;electronic&#160;appliances;&#160;machine&#160;tools;&#160;personal&#160;electronic&#160;equipment;&#160;and&#160;industrial&#160;robots&#160;etc.&#160;<br/>
+&#34;High&#160;&#160;Quality&#34;:&#160;&#160;&#160;&#160;&#160;&#160;Transportation&#160;&#160;equipment&#160;&#160;(automobiles,&#160;&#160;trains,&#160;&#160;ships,&#160;&#160;etc.);&#160;&#160;traffic&#160;&#160;control&#160;&#160;(traffic&#160;&#160;lights);&#160;&#160;large-scale&#160;&#160;communication&#160;<br/>
+equipment;&#160;key&#160;financial&#160;terminal&#160;systems;&#160;safety&#160;control&#160;equipment;&#160;etc.&#160;<br/>
+Renesas&#160;&#160;Electronics&#160;&#160;products&#160;&#160;are&#160;&#160;neither&#160;&#160;intended&#160;&#160;nor&#160;&#160;authorized&#160;&#160;for&#160;&#160;use&#160;&#160;in&#160;&#160;products&#160;&#160;or&#160;&#160;systems&#160;&#160;that&#160;&#160;may&#160;&#160;pose&#160;&#160;a&#160;&#160;direct&#160;&#160;threat&#160;&#160;to&#160;&#160;human&#160;&#160;life&#160;&#160;or&#160;<br/>bodily&#160;injury&#160;(artificial&#160;life&#160;support&#160;devices&#160;or&#160;systems,&#160;surgical&#160;implantations&#160;etc.),&#160;or&#160;may&#160;cause&#160;serious&#160;property&#160;damages&#160;(space&#160;and&#160;undersea&#160;<br/>repeaters;&#160;nuclear&#160;power&#160;control&#160;systems;&#160;aircraft&#160;control&#160;systems;&#160;key&#160;plant&#160;systems;&#160;military&#160;equipment;&#160;etc.).&#160;Renesas&#160;Electronics disclaims any&#160;<br/>and&#160;all&#160;liability&#160;for&#160;any&#160;damages&#160;or&#160;losses&#160;incurred&#160;by&#160;you&#160;or&#160;third&#160;parties&#160;arising&#160;from&#160;the&#160;use&#160;of&#160;any&#160;Renesas&#160;Electronics&#160;product&#160;for&#160;which&#160;the&#160;<br/>product&#160;is&#160;not&#160;intended&#160;by&#160;Renesas&#160;Electronics.&#160;<br/>
+6.&#160;<br/>
+When&#160;using&#160;the&#160;Renesas&#160;Electronics&#160;products,&#160;refer&#160;to&#160;the&#160;latest&#160;product&#160;information&#160;(data&#160;sheets,&#160;user′s manuals,&#160;application&#160;notes,&#160;&#34;General&#160;Notes&#160;<br/>for&#160;Handling&#160;and&#160;Using&#160;Semiconductor&#160;Devices&#34;&#160;in&#160;the&#160;reliability&#160;handbook,&#160;etc.),&#160;and&#160;ensure&#160;that&#160;usage&#160;conditions are&#160;within&#160;the&#160;ranges specified&#160;<br/>by&#160;Renesas&#160;Electronics with&#160;respect&#160;to&#160;maximum&#160;ratings,&#160;operating&#160;power&#160;supply&#160;voltage&#160;range,&#160;heat&#160;radiation&#160;characteristics,&#160;installation,&#160;etc.&#160;<br/>Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;malfunctions&#160;or&#160;failure&#160;or&#160;accident&#160;arising&#160;out&#160;of&#160;the&#160;use&#160;of&#160;Renesas&#160;Electronics&#160;products&#160;<br/>beyond&#160;such&#160;specified&#160;ranges.&#160;<br/>
+7.&#160;<br/>
+Although&#160;Renesas&#160;Electronics&#160;endeavors to&#160;improve&#160;the&#160;quality&#160;and&#160;reliability&#160;of&#160;Renesas&#160;Electronics&#160;products,&#160;semiconductor&#160;products&#160;have&#160;<br/>specific&#160;characteristics such&#160;as the&#160;occurrence&#160;of&#160;failure&#160;at&#160;a&#160;certain&#160;rate&#160;and&#160;malfunctions&#160;under&#160;certain&#160;use&#160;conditions.&#160;Further,&#160;Renesas&#160;<br/>Electronics&#160;products&#160;are&#160;not&#160;subject&#160;to&#160;radiation&#160;resistance&#160;design.&#160;Please&#160;ensure&#160;to&#160;implement&#160;safety&#160;measures to&#160;guard&#160;them&#160;against&#160;the&#160;<br/>possibility&#160;of&#160;bodily&#160;injury,&#160;injury&#160;or&#160;damage&#160;caused&#160;by&#160;fire,&#160;and&#160;social&#160;damage&#160;in&#160;the&#160;event&#160;of&#160;failure&#160;or&#160;malfunction&#160;of&#160;Renesas&#160;Electronics&#160;<br/>products,&#160;such&#160;as safety&#160;design&#160;for&#160;hardware&#160;and&#160;software&#160;including&#160;but&#160;not&#160;limited&#160;to&#160;redundancy,&#160;fire&#160;control&#160;and&#160;malfunction&#160;prevention,&#160;<br/>appropriate&#160;treatment&#160;for&#160;aging&#160;degradation&#160;or&#160;any&#160;other&#160;appropriate&#160;measures by&#160;your&#160;own&#160;responsibility&#160;as warranty&#160;for&#160;your&#160;products/system.&#160;<br/>Because&#160;the&#160;evaluation&#160;of&#160;microcomputer&#160;software&#160;alone&#160;is very&#160;difficult&#160;and&#160;not&#160;practical,&#160;please&#160;evaluate&#160;the&#160;safety&#160;of&#160;the&#160;final&#160;products or&#160;<br/>systems manufactured&#160;by&#160;you.&#160;<br/>
+8.&#160;<br/>
+Please&#160;contact&#160;a&#160;Renesas&#160;Electronics sales office&#160;for&#160;details as&#160;to&#160;environmental&#160;matters such&#160;as&#160;the&#160;environmental&#160;compatibility&#160;of&#160;each&#160;Renesas&#160;<br/>Electronics&#160;product.&#160;Please&#160;investigate&#160;applicable&#160;laws and&#160;regulations&#160;that&#160;regulate&#160;the&#160;inclusion&#160;or&#160;use&#160;of&#160;controlled&#160;substances,&#160;including&#160;<br/>without&#160;limitation,&#160;the&#160;EU&#160;RoHS&#160;Directive&#160;carefully&#160;and&#160;sufficiently&#160;and&#160;use&#160;Renesas&#160;Electronics&#160;products&#160;in&#160;compliance&#160;with&#160;all&#160;these&#160;applicable&#160;<br/>laws and&#160;regulations.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;damages or&#160;losses occurring&#160;as&#160;a&#160;result&#160;of&#160;your&#160;noncompliance&#160;with&#160;<br/>applicable&#160;laws and&#160;regulations.&#160;<br/>
+9.&#160;<br/>
+Renesas&#160;Electronics&#160;products and&#160;technologies shall&#160;not&#160;be&#160;used&#160;for&#160;or&#160;incorporated&#160;into&#160;any&#160;products&#160;or&#160;systems whose&#160;manufacture,&#160;use,&#160;or&#160;sale&#160;<br/>is&#160;prohibited&#160;under&#160;any&#160;applicable&#160;domestic&#160;or&#160;foreign&#160;laws or&#160;regulations.&#160;You&#160;shall&#160;not&#160;use&#160;Renesas&#160;Electronics&#160;products or&#160;technologies for&#160;(1)&#160;<br/>any&#160;purpose&#160;relating&#160;to&#160;the&#160;development,&#160;design,&#160;manufacture,&#160;use,&#160;stockpiling,&#160;etc.,&#160;of&#160;weapons of&#160;mass&#160;destruction,&#160;such&#160;as&#160;nuclear&#160;weapons,&#160;<br/>chemical&#160;weapons,&#160;or&#160;biological&#160;weapons,&#160;or&#160;missiles (including&#160;unmanned&#160;aerial&#160;vehicles (UAVs))&#160;for&#160;delivering&#160;such&#160;weapons,&#160;(2)&#160;any&#160;purpose&#160;<br/>relating&#160;to&#160;the&#160;development,&#160;design,&#160;manufacture,&#160;or&#160;use&#160;of&#160;conventional&#160;weapons,&#160;or&#160;(3)&#160;any&#160;other&#160;purpose&#160;of&#160;disturbing&#160;international&#160;peace&#160;and&#160;<br/>security,&#160;and&#160;you&#160;shall&#160;not&#160;sell,&#160;export,&#160;lease,&#160;transfer,&#160;or&#160;release&#160;Renesas&#160;Electronics&#160;products or&#160;technologies to&#160;any&#160;third&#160;party&#160;whether&#160;directly&#160;<br/>or&#160;indirectly&#160;with&#160;knowledge&#160;or&#160;reason&#160;to&#160;know&#160;that&#160;the&#160;third&#160;party&#160;or&#160;any&#160;other&#160;party&#160;will&#160;engage&#160;in&#160;the&#160;activities&#160;described&#160;above.&#160;When&#160;<br/>exporting,&#160;selling,&#160;transferring,&#160;etc.,&#160;Renesas&#160;Electronics&#160;products or&#160;technologies,&#160;you&#160;shall&#160;comply&#160;with&#160;any&#160;applicable&#160;export&#160;control&#160;laws and&#160;<br/>regulations&#160;promulgated&#160;and&#160;administered&#160;by&#160;the&#160;governments of&#160;the&#160;countries asserting&#160;jurisdiction&#160;over&#160;the&#160;parties or&#160;transactions.&#160;<br/>
+10.&#160;&#160;Please&#160;acknowledge&#160;and&#160;agree&#160;that&#160;you&#160;shall&#160;bear&#160;all&#160;the&#160;losses and&#160;damages which&#160;are&#160;incurred&#160;from the&#160;misuse&#160;or&#160;violation&#160;of&#160;the&#160;terms and&#160;<br/>
+conditions&#160;described&#160;in&#160;this&#160;document,&#160;including&#160;this&#160;notice,&#160;and&#160;hold&#160;Renesas Electronics&#160;harmless,&#160;if&#160;such&#160;misuse&#160;or&#160;violation&#160;results from your&#160;<br/>resale&#160;or&#160;making&#160;Renesas&#160;Electronics&#160;products&#160;available&#160;any&#160;third&#160;party.&#160;<br/>
+11.&#160;&#160;This document&#160;shall&#160;not&#160;be&#160;reprinted,&#160;reproduced&#160;or&#160;duplicated&#160;in&#160;any&#160;form,&#160;in&#160;whole&#160;or&#160;in&#160;part,&#160;without&#160;prior&#160;written&#160;consent&#160;of&#160;Renesas&#160;<br/>
+Electronics.&#160;<br/>
+12.&#160;&#160;Please&#160;contact&#160;a&#160;Renesas&#160;Electronics sales office&#160;if&#160;you&#160;have&#160;any&#160;questions regarding&#160;the&#160;information&#160;contained&#160;in&#160;this&#160;document&#160;or&#160;Renesas&#160;<br/>
+Electronics&#160;products.&#160;<br/>
+&#160;<br/>
+(Note&#160;&#160;1)&#160;&#160;&#160;&#160;&#160;&#160;&#34;Renesas&#160;&#160;Electronics&#34;&#160;&#160;as&#160;&#160;used&#160;&#160;in&#160;&#160;this&#160;&#160;document&#160;&#160;means&#160;&#160;Renesas&#160;&#160;Electronics&#160;&#160;Corporation&#160;&#160;and&#160;&#160;also&#160;&#160;includes&#160;&#160;its&#160;&#160;majority-owned&#160;<br/>
+subsidiaries.&#160;<br/>
+(Note&#160;2)&#160;&#160;&#160;&#34;Renesas&#160;Electronics&#160;product(s)&#34;&#160;means&#160;any&#160;product&#160;developed&#160;or&#160;manufactured&#160;by&#160;or&#160;for&#160;Renesas&#160;Electronics.&#160;<br/>
+&#160;<br/>
+<b>3&#160;</b><br/>
+<hr/>
+<a name=4></a>&#160;<br/>
+&#160;<br/>
+4&#160;<br/>
+<hr/>
+<a name=5></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;Abbreviations&#160;and&#160;Acronyms&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>Abbreviation&#160;/&#160;Acronym</b>&#160;<br/>
+<b>Description</b>&#160;<br/>
+AUTOSAR&#160;<br/>
+AUTomotive&#160;Open&#160;System&#160;ARchitecture&#160;<br/>
+BSWMDT&#160;<br/>
+Basic&#160;Software&#160;Module&#160;Description&#160;Template&#160;<br/>
+CSIH&#160;<br/>
+Enhanced&#160;Queued&#160;Clocked&#160;Serial&#160;Interface.&#160;<br/>
+DEM&#160;<br/>
+Diagnostic&#160;Event&#160;Manager&#160;<br/>
+EB&#160;<br/>
+External&#160;Buffer&#160;<br/>
+ECU&#160;<br/>
+Electronic&#160;Control&#160;Unit&#160;<br/>
+e.g&#160;<br/>
+Example&#160;<br/>
+Hz&#160;<br/>
+Hertz&#160;<br/>
+HW&#160;<br/>
+Hardware&#160;<br/>
+IB&#160;<br/>
+Internal&#160;Buffer&#160;<br/>
+Id&#160;<br/>
+Identifier&#160;<br/>
+MCAL&#160;<br/>
+MicroController&#160;Abstraction&#160;Layer&#160;<br/>
+MCU&#160;<br/>
+Micro&#160;Controller Unit&#160;<br/>
+Rx&#160;<br/>
+Receive&#160;<br/>
+SPI&#160;<br/>
+Serial&#160;Peripheral&#160;Interface&#160;<br/>
+Tx&#160;<br/>
+Transmit&#160;<br/>
+XML&#160;<br/>
+eXtensible&#160;Mark-up&#160;Language&#160;<br/>
+ARXML&#160;<br/>
+AutosaR &#160;eXtensible&#160;Mark-up&#160;Language&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Definitions</b>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Terminology</b>&#160;<br/>
+<b>Description</b>&#160;<br/>
+BSWMDT&#160;File&#160;<br/>
+This&#160;file&#160;is&#160;the&#160;template&#160;for&#160;the&#160;Basic&#160;Software&#160;Module&#160;Description.&#160;<br/>
+Configuration&#160;XML&#160;File&#160;<br/>
+This&#160;file&#160;contains&#160;the&#160;setting&#160;of&#160;command&#160;line&#160;options.&#160;<br/>
+ECU&#160;Configuration&#160;Description&#160;<br/>
+Input&#160;&#160;file&#160;&#160;to&#160;&#160;MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool.&#160;&#160;It&#160;&#160;is&#160;&#160;generated&#160;&#160;by&#160;<br/>
+File&#160;<br/>
+ECU&#160;Configuration&#160;Editor.&#160;<br/>
+Sl.No&#160;<br/>
+Serial&#160;Number.&#160;<br/>
+<b>5&#160;</b><br/>
+<hr/>
+<a name=6></a>&#160;<br/>
+&#160;<br/>
+6&#160;<br/>
+<hr/>
+<a name=7></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Table&#160;of&#160;Contents&#160;</b><br/>
+<b>&#160;</b><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#9"><b>Chapter&#160;1</b>&#160;<b>Introduction&#160;......................................................................&#160;9</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#9"><b>1.1.</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#9"><b>Document&#160;Overview&#160;.............................................................................................................&#160;9</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#11"><b>Chapter&#160;2</b>&#160;<b>Reference........................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#11"><b>2.1.</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#11"><b>Reference&#160;Documents&#160;.......................................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#11"><b>2.2.</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#11"><b>Trademark&#160;Notice&#160;...............................................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#13"><b>Chapter 3</b>&#160;<b>Code&#160;Generation&#160;Overview&#160;...........................................&#160;13</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#17"><b>Chapter&#160;4</b>&#160;<b>Input&#160;Files&#160;.......................................................................&#160;17</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#19"><b>Chapter&#160;5</b>&#160;<b>Output&#160;Files&#160;....................................................................&#160;17</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#21"><b>Chapter&#160;6</b>&#160;<b>Precautions&#160;....................................................................&#160;19</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#23"><b>Chapter 7</b>&#160;<b>User&#160;Configuration&#160;Validation&#160;.......................................&#160;21</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#25"><b>Chapter&#160;8&#160;Configuration&#160;Overview&#160;................................................&#160;23</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#25"><b>8.1. Container&#160;Overview&#160;.................................................................................................................&#160;23</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#25">8.1.1&#160;Pre-Compile Configurable Parameters&#160;.......................................................................&#160;23&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#31">8.1.2&#160;Post&#160;Build Time Configurable&#160;Parameters&#160;..................................................................&#160;31&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#41"><b>Chapter&#160;9&#160;Messages&#160;.......................................................................&#160;41</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#41"><b>9.1</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#41"><b>Error&#160;Messages&#160;..................................................................................................................&#160;41</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#56"><b>9.2</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#56"><b>Warning&#160;Messages&#160;.............................................................................................................&#160;56</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#56"><b>9.3</b>&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#56"><b>Information&#160;Messages&#160;.......................................................................................................&#160;56</b>&#160;</a><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+7&#160;<br/>
+<b>&#160;</b><br/>
+<hr/>
+<a name=8></a>&#160;<br/>
+<b>List&#160;of&#160;Figures&#160;</b><br/>
+<b>&#160;</b><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#13">Figure&#160;3-1&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#13">Overview&#160;of&#160;Code&#160;Generation&#160;............................................................................................&#160;13&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#14">Figure&#160;3-2&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#14">Overview&#160;of&#160;Code&#160;Generation&#160;...........................................................................................&#160;14&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#25">Figure&#160;8-1&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#25">Configuration overview&#160;......................................................................................................&#160;23&#160;</a><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>List&#160;of&#160;Tables&#160;<br/>&#160;</b><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#9">Table 1-1&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#9">Document Overview&#160;................................................................................................................&#160;9&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#11">Table 2-1&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#11">Reference Documents&#160;...........................................................................................................&#160;11&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#19">Table 5-1&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#19">Output&#160;Files&#160;Description&#160;........................................................................................................&#160;17&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#25">Table 8-1&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#25">Pre-Compile Configurable&#160;Parameters&#160;..................................................................................&#160;23&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#31">Table 8-2&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#31">Post-Build-Time Configurable&#160;Parameters&#160;............................................................................&#160;31&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#41">Table 9-1&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#41">Mandatory&#160;Parameters&#160;..........................................................................................................&#160;41&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#45">Table 9-2&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#45">Naming&#160;Parameters&#160;...............................................................................................................&#160;45&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#57">Table 9-3&#160;</a><br/>
+<a href="R20UT3660EJ0100-AUTOSARs.html#57">Parameter&#160;values&#160;related&#160;to INF0_59_83_002......................................................................&#160;57&#160;</a><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+8&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=9></a><b>Introduction&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;&#160;Chapter&#160;1&#160;</b><br/>
+<b>&#160;<br/>Chapter&#160;1&#160;&#160;Introduction&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+The&#160;SPI Driver component&#160;provides&#160;the&#160;service for initializing&#160;the&#160;whole&#160;SPI&#160;<br/>structure of&#160;the microcontroller.&#160;<br/>
+&#160;<br/>&#160;<br/>
+The&#160;SPI&#160;Driver&#160;Component&#160;comprises&#160;of&#160;two&#160;sections&#160;as&#160;Embedded&#160;Software&#160;<br/>and the&#160;MCAL Code&#160;Generator&#160;Tool&#160;to achieve scalability&#160;and&#160;configurability.&#160;<br/>
+&#160;<br/>&#160;<br/>
+The&#160;&#160;document&#160;&#160;describes&#160;&#160;the&#160;&#160;SPI&#160;&#160;module&#160;&#160;specific&#160;&#160;inputs&#160;&#160;and&#160;&#160;outputs&#160;&#160;of&#160;&#160;the&#160;<br/>MCAL&#160;Code&#160;Generator&#160;Tool&#160;that&#160;is&#160;the&#160;common&#160;code&#160;generator&#160;engine&#160;used&#160;<br/>for&#160;&#160;the&#160;&#160;generation&#160;&#160;of&#160;&#160;the&#160;&#160;configuration&#160;&#160;code&#160;&#160;for&#160;&#160;all&#160;&#160;MCAL&#160;&#160;modules.&#160;&#160;MCAL&#160;<br/>Code&#160;&#160;Generator&#160;&#160;Tool&#160;&#160;is&#160;&#160;a&#160;&#160;command&#160;&#160;line&#160;&#160;tool&#160;&#160;that&#160;&#160;extracts&#160;&#160;information&#160;&#160;from&#160;<br/>ECU&#160;Configuration&#160;Description&#160;File&#160;and&#160;generates&#160;SPI&#160;Driver&#160;C&#160;Source&#160;and&#160;C&#160;<br/>Header files&#160;(Spi_Cfg.h, Spi_Cbk.h,&#160;Spi_PBcfg.c&#160;and&#160;Spi_Lcfg.c).&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>1.1.&#160;</b><br/>
+<b>Document&#160;Overview&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+This&#160;user&#160;manual&#160;is&#160;organized&#160;as&#160;given&#160;in&#160;the&#160;table&#160;below:&#160;<br/>
+&#160;<br/>
+<b>Table&#160;1-1&#160;&#160;Document&#160;Overview&#160;<br/>&#160;</b><br/>
+<b>Section</b>&#160;<br/>
+<b>Contents</b>&#160;<br/>
+Section&#160;1&#160;(Introduction)&#160;<br/>
+Provides&#160;an&#160;introduction&#160;to&#160;the&#160;document&#160;and&#160;explains&#160;how&#160;information&#160;<br/>is&#160;organized&#160;in&#160;this&#160;manual.&#160;<br/>
+Section&#160;2&#160;(Reference)&#160;<br/>
+Provides&#160;a&#160;list&#160;of&#160;documents&#160;referred&#160;while&#160;developing&#160;this&#160;document.&#160;<br/>
+Section&#160;3&#160;(Code&#160;Generation&#160;<br/>
+Provides&#160;the&#160;Code&#160;Generation&#160;Overview.&#160;<br/>
+Overview)&#160;<br/>
+Section&#160;4&#160;(Input&#160;Files)&#160;<br/>
+Provides&#160;information&#160;about&#160;ECU&#160;Configuration&#160;Description&#160;File.&#160;<br/>
+Section&#160;5&#160;(Output Files)&#160;<br/>
+Explains&#160;the&#160;output&#160;files&#160;that&#160;are&#160;generated&#160;by&#160;the&#160;MCAL&#160;Code&#160;<br/>Generator&#160;Tool.&#160;<br/>
+Section&#160;6&#160;(Precautions)&#160;<br/>
+Contains&#160;precautions&#160;to&#160;be&#160;taken&#160;during&#160;configuration&#160;of&#160;ECU&#160;<br/>Configuration&#160;Description&#160;File.&#160;<br/>
+Section&#160;7&#160;(User&#160;Configuration&#160;<br/>
+Describes&#160;about&#160;user&#160;configuration&#160;validation&#160;done&#160;by&#160;the&#160;MCAL&#160;Code&#160;<br/>
+Validation)&#160;<br/>
+Generator Tool.&#160;<br/>
+Section&#160;8&#160;(Configuration&#160;<br/>
+Provides&#160;Container Overview.&#160;<br/>
+Overview)&#160;<br/>Section&#160;9&#160;(Messages)&#160;<br/>
+Describes&#160;all&#160;the&#160;Error/Warning/Information&#160;messages&#160;of&#160;R4.0.3&#160;which&#160;&#160;<br/>
+&#160;<br/>
+helps&#160;the&#160;user to&#160;understand&#160;the&#160;probable&#160;reason&#160;for&#160;the&#160;same.&#160;<br/>
+<b>9&#160;</b><br/>
+<hr/>
+<a name=10></a><b>Chapter&#160;1&#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Introduction&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+10&#160;<br/>
+<hr/>
+<a name=11></a><b>Reference&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160;Chapter&#160;2&#160;</b><br/>
+<b>&#160;<br/></b>&#160;<br/>
+<b>Chapter&#160;2&#160;&#160;Reference&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2.1.&#160;</b><br/>
+<b>Reference&#160;Documents</b>&#160;<br/>
+&#160;<br/>&#160;<br/>
+The&#160;following&#160;table&#160;lists&#160;the&#160;documents&#160;referred&#160;to&#160;develop&#160;this&#160;document:&#160;<br/>&#160;<br/>
+<b>Table 2-1&#160;&#160;Reference&#160;Documents&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Sl.No.</b>&#160;&#160;<b>Title</b>&#160;<br/>
+<b>Version</b>&#160;<br/>
+1.&#160;<br/>
+AUTOSAR_SWS_SPIHandlerDriver.pdf&#160;<br/>
+3.2.0&#160;<br/>
+2.&#160;<br/>
+MCAL_CodeGenerator_Tool_UserManual.pdf&#160;<br/>
+1.7&#160;<br/>
+3.&#160;<br/>
+R20UT3828EJ0100-AUTOSAR.pdf&#160;<br/>
+1.0.2&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2.2.&#160;</b><br/>
+<b>Trademark&#160;Notice&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+Microsoft&#160;and&#160;Windows&#160;are&#160;trademarks/registered&#160;trademarks&#160;of&#160;Microsoft&#160;<br/>Corporation.&#160;<br/>
+<b>11&#160;</b><br/>
+<hr/>
+<a name=12></a><b>Chapter&#160;2&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160; &#160;Reference&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+12&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=13></a>&#160;<b>Code Generation&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;3&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;3&#160;&#160;Code Generation Overview&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+Code&#160;Generation&#160;overview&#160;is&#160;shown&#160;below.&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>
+&#160;<br/>
+<b>ECU&#160;&#160;Configuration&#160;</b><br/>
+&#160;<br/>
+<b>Description&#160;</b><br/>
+<b>File&#160;</b><br/>
+<b>Spi_Cfg.h,&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>and&#160;BSWMDT&#160;File&#160;</b><br/>
+&#160;<br/>
+<b>Spi_Cbk.h,&#160;</b><br/>
+&#160;<br/>
+<b>MCAL&#160;&#160; &#160;</b><br/>
+<b>Spi_Hardware.h,&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>Generator&#160;</b><br/>
+<b>Spi_PBcfg.c,&#160;</b><br/>
+<b>Velocity&#160;</b><br/>
+<b>template&#160;</b><br/>
+&#160;<br/>
+<b>Spi_Lcfg.c,&#160;</b><br/>
+&#160;<br/>
+<b>files&#160;for SPI&#160;</b><br/>
+&#160;<br/>
+<b>Spi_Hardware.c&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>Configuration&#160;XML&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>File&#160;</b><br/>
+<b>&#160;<br/>&#160;<br/>Figure&#160;3-1&#160;&#160;Overview&#160;of&#160;Code&#160;Generation&#160;</b><br/>
+&#160;<br/>
+&#160;&#160;ECU Configuration Description&#160;File (.arxml):&#160;<br/>
+This&#160;&#160;file&#160;&#160;will&#160;&#160;contain&#160;&#160;SPI&#160;&#160;Driver&#160;&#160;specific&#160;&#160;configuration&#160;&#160;information.&#160;<br/>This&#160;file&#160;should&#160;be&#160;generated&#160;by&#160;&#160;AUTOSAR&#160;specified&#160;Configuration&#160;<br/>Editor.&#160;<br/>&#160;<br/>
+&#160;&#160;BSWMDT&#160;File (.arxml):&#160;<br/>
+MCAL&#160;Code&#160;Generator&#160;Tool&#160;uses&#160;“Common&#160;Published&#160;Information”&#160;<br/>from&#160;&#160;SPI&#160;&#160;module&#160;&#160;specific&#160;&#160;BSWMDT&#160;&#160;File.&#160;&#160;SPI&#160;&#160;module&#160;&#160;specific&#160;<br/>BSWMDT&#160;&#160;File&#160;&#160;should&#160;&#160;not&#160;&#160;be&#160;&#160;updated&#160;&#160;manually&#160;&#160;since&#160;&#160;it&#160;&#160;is&#160;&#160;“Static&#160;<br/>Configuration” file.&#160;<br/>&#160;<br/>
+&#160;&#160;Velocity&#160;template files:&#160;<br/>
+Spi_Lcfg_c.vm, Spi_PBcfg_c.vm, Spi_Cfg_h_vm, Spi_Cbk_h_vm,&#160;<br/>Spi_Hardware_c.vm, Spi_Hardware_h_vm,&#160;Spi_Validate.vm&#160;and&#160;<br/>CommonHelper.vm&#160;<br/>They&#160;are&#160;interpreted&#160;by&#160;the&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;&#160;in&#160;order&#160;to&#160;<br/>provide&#160;&#160;user&#160;&#160;input&#160;&#160;validation&#160;&#160;and&#160;&#160;generate&#160;&#160;the&#160;&#160;final&#160;&#160;output&#160;&#160;file&#160;<br/>needed&#160;&#160;by&#160;&#160;the&#160;&#160;AUTOSAR&#160;&#160;configuration&#160;&#160;chain&#160;&#160;.They&#160;&#160;are&#160;&#160;the&#160;&#160;&#34;logic&#34;&#160;<br/>of&#160;the Code&#160;Generator.&#160;<br/>&#160;<br/>
+&#160;&#160;Configuration XML&#160;File (.xml):&#160;<br/>
+This&#160;file is&#160;used&#160;to&#160;specify&#160;which&#160;velocity&#160;template&#160;to use and&#160;their&#160;<br/>location&#160;and&#160;the&#160;name of&#160;the&#160;output file generated.&#160;<br/>
+&#160;<br/>
+For&#160;the&#160;error&#160;free&#160;input&#160;file,&#160;the&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;generates&#160;the&#160;<br/>following&#160;output files:&#160;&#160;<br/>Spi_Lcfg.c,&#160;&#160;Spi_PBcfg.c,&#160;&#160;Spi_Cfg.h,&#160;&#160;Spi_Cbk.h,&#160;&#160;Spi_Hardware.c,&#160;&#160;and&#160;<br/>Spi_Hardware.h.&#160;&#160;If&#160;&#160;there&#160;&#160;are&#160;&#160;incorrect&#160;&#160;values&#160;&#160;or&#160;&#160;incorrect&#160;&#160;dependencies,&#160;&#160;the&#160;<br/>MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool&#160;&#160;will&#160;&#160;display&#160;&#160;error,&#160;&#160;warning&#160;&#160;and&#160;&#160;information&#160;<br/>messages.&#160;&#160;In&#160;&#160;case&#160;&#160;of&#160;&#160;errors,&#160;&#160;the&#160;&#160;MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool&#160;&#160;will&#160;&#160;abort&#160;&#160;the&#160;<br/>execution.&#160;<br/>
+&#160;<br/>
+ECU&#160;Configuration&#160;Description&#160;File&#160;can&#160;be&#160;created&#160;or&#160;edited&#160;using&#160;ECU&#160;<br/>Configuration&#160;Editor.&#160;<br/>
+13&#160;<br/>
+<hr/>
+<a name=14></a><b>Chapter&#160;3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Code Generation&#160;Overview&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Concept&#160;&#160;of&#160;&#160;execution&#160;&#160;for&#160;&#160;MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool&#160;<br/>is&#160;as&#160;follows:&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+Generation&#160;start&#160;<br/>
+&#160;<br/>
+Common&#160;<br/>
+Validate.vm&#160;<br/>
+Helper.vm&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+config.xml&#160;<br/>
+&#160;<br/>&#160;<br/>
+ECU&#160;Configuration&#160;<br/>
+&#160;<br/>
+Description&#160;Files&#160;<br/>
+&#160;<br/>
+MCAL&#160;Code&#160;Generator&#160;<br/>
+Template&#160;files&#160;(.vm)&#160;<br/>
+And&#160;BSWMDT&#160;file&#160;<br/>
+Tool&#160;<br/>
+&#160;<br/>
+(.arxml)&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+No&#160;<br/>
+Yes&#160;<br/>
+Validation&#160;<br/>
+&#160;<br/>
+successful&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+Display&#160;Error&#160;<br/>
+Generate&#160;Output&#160;Files&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160; &#160;&#160;Generation&#160;stop&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Figure 3-2&#160;&#160;Flow-Diagram&#160;of&#160;Code Generation&#160;<br/>&#160;</b><br/>
+&#160;<br/>The&#160;&#160;module&#160;&#160;“Validate”&#160;&#160;will&#160;&#160;validate&#160;&#160;the&#160;&#160;configuration&#160;&#160;(contents&#160;&#160;of&#160;&#160;ECU&#160;<br/>Configuration&#160;&#160;Description&#160;&#160;File(s)&#160;&#160;as&#160;&#160;input).&#160;&#160;If&#160;&#160;there&#160;&#160;are&#160;&#160;incorrect&#160;&#160;values&#160;&#160;or&#160;<br/>incorrect&#160;dependencies,&#160;the&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;will&#160;display&#160;error,&#160;<br/>warning&#160;&#160;and&#160;&#160;information&#160;&#160;messages.&#160;&#160;In&#160;&#160;case&#160;&#160;of&#160;&#160;errors,&#160;&#160;the&#160;&#160;MCAL&#160;&#160;Code&#160;<br/>Generator Tool&#160;will&#160;abort the execution.&#160;&#160;<br/>&#160;<br/>Spi_Cbk_h_vm&#160;&#160;/&#160;&#160;Spi_Cfg_h.vm&#160;&#160;/&#160;&#160;Spi_PBcfg_c.vm&#160;&#160;/&#160;&#160;Spi_Lcfg_c.vm&#160;&#160;will&#160;<br/>generate&#160;&#160;compiler&#160;&#160;switch&#160;&#160;/&#160;&#160;structures&#160;&#160;necessary&#160;&#160;to&#160;&#160;the&#160;&#160;AUTOSAR&#160;<br/>Configuration chain&#160;and&#160;vendor specific&#160;parameters.&#160;<br/>&#160;<br/>
+14&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=15></a>&#160;<b>Code Generation&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;3&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Spi_Hardware_h.vm&#160;&#160;/&#160;&#160;Spi_Hardware_c.vm&#160;&#160;will&#160;&#160;generate&#160;&#160;hardware&#160;&#160;related&#160;<br/>info&#160;&#160;(defines&#160;&#160;number&#160;&#160;of&#160;&#160;actual&#160;&#160;instances&#160;&#160;/&#160;&#160;channels&#160;&#160;used&#160;&#160;/&#160;&#160;structure&#160;&#160;to&#160;<br/>access&#160;to&#160;the I/O&#160;mapped peripheral).&#160;<br/>&#160;<br/>
+<b>Remark&#160;</b><br/>
+Please&#160;consult the&#160;general&#160;MCAL Code&#160;Generator Tool&#160;User Manual&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;(MCAL_CodeGenerator_Tool_UserManual.pdf)&#160;and&#160;R20UT3828EJ0100-<br/>
+AUTOSAR.pdf&#160;for details&#160;about&#160;the&#160;MCAL Code Generator&#160;Tool&#160;command line&#160;<br/>options.&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+15&#160;<br/>
+<hr/>
+<a name=16></a><b>Chapter&#160;3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Code Generation&#160;Overview&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+16&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=17></a><b>Input&#160;Files&#160;</b><br/>
+<b>Chapter&#160;4&#160;</b><br/>
+&#160;<br/>
+<b>&#160;<br/>Chapter&#160;4&#160;&#160;Input Files&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+MCAL Code&#160;Generator Tool&#160;will&#160;accept the&#160;config.xml&#160;file&#160;which has&#160;paths&#160;<br/>to&#160;the&#160;Velocity&#160;template&#160;files&#160;for generating&#160;Spi&#160;Driver files.&#160;MCAL Code&#160;<br/>Generator Tool&#160;accepts&#160;ECU Configuration&#160;Description&#160;File(s)&#160;and&#160;<br/>BSWMDT&#160;File as&#160;input.&#160;MCAL Code Generator Tool&#160;needs&#160;information&#160;<br/>about SPI Driver module.&#160;Hence ECU Configuration Description File&#160;<br/>should contain&#160;configuration of&#160;SPI&#160;Driver module.&#160;MCAL Code Generator&#160;<br/>Tool&#160;ignores&#160;any&#160;other&#160;AUTOSAR component&#160;configured in the ECU&#160;<br/>Configuration Description File. ECU Configuration Description File can be&#160;<br/>generated&#160;using configuration&#160;editor.&#160;<br/>
+&#160;<br/>
+ECU Configuration Description&#160;File must comply&#160;with&#160;AUTOSAR standard&#160;<br/>ECU Configuration Description&#160;File format&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>Remark&#160;&#160;</b>The&#160;detailed explanation&#160;about&#160;the&#160;parameters&#160;and containers&#160;are found in&#160;<br/>
+Parameter&#160;Definition File.&#160;<br/>
+17&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=18></a><b>Chapter&#160;4&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160;&#160;Input&#160;Files&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+18&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=19></a><b>Output&#160;Files&#160;</b><br/>
+<b>&#160; &#160; &#160;&#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160; &#160;&#160;Chapter&#160;5&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;<br/>Chapter&#160;5&#160;&#160;Output Files&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+MCAL&#160;Code&#160;Generator&#160;Tool&#160;generates&#160;configuration&#160;details&#160;in&#160;C&#160;Header&#160;and&#160;C&#160;<br/>Source&#160;&#160;files&#160;&#160;(Spi_Lcfg.c,&#160;&#160;Spi_PBcfg.c,&#160;&#160;Spi_Cbk.h,&#160;&#160;Spi_Cfg.h&#160;&#160;Spi_Hardware.h&#160;<br/>and&#160;Spi_Hardware.c).&#160;<br/>
+&#160;<br/>
+The&#160;content&#160;of&#160;each&#160;output&#160;file&#160;is&#160;given&#160;in&#160;the&#160;table&#160;below:&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Table 5-1&#160;&#160;Output&#160;Files&#160;Description&#160;</b><br/>
+&#160;<br/>
+<b>Output&#160;File</b>&#160;<br/>
+<b>Details</b>&#160;<br/>
+Spi_Cfg.h&#160;<br/>
+This&#160;&#160;file&#160;&#160;contains&#160;&#160;pre-compile&#160;&#160;time&#160;&#160;parameters&#160;&#160;and&#160;&#160;handles.&#160;&#160;It&#160;&#160;contains&#160;&#160;the&#160;&#160;macro&#160;<br/>definitions&#160;&#160;for&#160;&#160;development&#160;&#160;error&#160;&#160;detects,&#160;&#160;version&#160;&#160;info&#160;&#160;API,&#160;&#160;Instance&#160;&#160;ID,&#160;&#160;Pre-compile&#160;<br/>option&#160;&#160;for&#160;&#160;enable&#160;&#160;or&#160;&#160;disable&#160;&#160;inter-module&#160;&#160;dependencies,&#160;&#160;Interruptible&#160;&#160;SpiSequence&#160;<br/>handling&#160;functionality,&#160;&#160;etc.&#160;This&#160;file&#160;also&#160;contains&#160;SPI&#160;interrupt&#160;switches&#160;for&#160;each&#160;job&#160;<br/>and&#160;DMA&#160;interrupt&#160;switches.&#160;&#160;<br/>
+Spi_Cbk.h&#160;<br/>
+This&#160;file&#160;contains&#160;callback&#160;function&#160;prototype&#160;declarations&#160;to&#160;be&#160;used&#160;by&#160;application.It&#160;<br/>contains&#160;&#160;macro&#160;&#160;definition&#160;&#160;for&#160;&#160;AUTOSAR&#160;&#160;specification&#160;&#160;version&#160;&#160;information&#160;&#160;and&#160;&#160;File&#160;<br/>version&#160;information.&#160;<br/>
+Spi_PBcfg.c&#160;<br/>
+This&#160;&#160;file&#160;contains&#160;post-build&#160;time&#160;parameters.&#160;It&#160;provides&#160;the&#160;information&#160;of&#160;structures&#160;<br/>Spi_GstChannelConfig0,&#160;<br/>
+Spi_GaaChannelList0,&#160;<br/>
+Spi_GstDmaUnitConfig0,&#160;<br/>
+Spi_GstConfiguration.It&#160;also&#160;contains&#160;the&#160;configuration&#160;details&#160;for&#160;all&#160;configured&#160;jobs.&#160;<br/>
+Spi_Lcfg.c&#160;<br/>
+This&#160;&#160;file&#160;&#160;contains&#160;&#160;structures&#160;&#160;of&#160;&#160;link&#160;&#160;time&#160;&#160;parameters.&#160;&#160;It&#160;&#160;provides&#160;&#160;information&#160;&#160;about&#160;<br/>hardware&#160;unit.&#160;<br/>
+Spi_Hardware.h&#160;<br/>
+This&#160;file&#160;contains&#160;the&#160;definitions&#160;for&#160;addresses&#160;of&#160;the&#160;hardware&#160;registers&#160;used&#160;in&#160;the&#160;<br/>Spi&#160;Driver&#160;Module.&#160;<br/>
+Spi_Hardware.c&#160;<br/>
+This&#160;file&#160;contains&#160;the&#160;declarations&#160;for&#160;addresses&#160;of&#160;the&#160;hardware&#160;registers&#160;used&#160;in&#160;the&#160;<br/>Spi&#160;Driver&#160;Module.&#160;<br/>
+&#160;<br/>
+<b>Remark&#160;&#160;</b>Output&#160;files&#160;generated&#160;by&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;should&#160;not&#160;be&#160;modified&#160;<br/>
+or&#160;edited&#160;manually.&#160;<br/>
+19&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=20></a><b>Chapter&#160;5&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Output&#160;Files</b>&#160;<br/>
+&#160;&#160;&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+20&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=21></a><b>Precautions&#160;</b><br/>
+<b>&#160; &#160; &#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160; &#160;Chapter&#160;6&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;<br/>Chapter&#160;6&#160;&#160;Precautions&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+•&#160;&#160;ECU&#160;&#160;Configuration&#160;&#160;Description&#160;&#160;File&#160;&#160;and&#160;&#160;BSWMDT&#160;&#160;File&#160;&#160;must&#160;&#160;comply&#160;&#160;with&#160;<br/>
+AUTOSAR&#160;&#160;standard&#160;&#160;for&#160;&#160;R4.0.3&#160;&#160;ECU&#160;&#160;Configuration&#160;&#160;Description&#160;&#160;File&#160;&#160;and&#160;<br/>BSWMDT&#160;File respectively.&#160;<br/>
+&#160;<br/>•&#160;&#160;The&#160;input&#160;file must contain&#160;SPI&#160;Driver module.&#160;<br/>
+&#160;<br/>
+•&#160;&#160;Configuration XML&#160;File should contain the&#160;file extension ‘.xml’.&#160;&#160;<br/>
+&#160;<br/>
+•&#160;&#160;Configuration&#160;XML&#160;File:&#160;config.xml&#160;file&#160;should&#160;convey<a href="R20UT3660EJ0100-AUTOSARs.html#13">&#160;velocity&#160;template&#160;file&#160;</a><br/>
+location&#160;and&#160;output file&#160;location.&#160;<br/>
+&#160;<br/>•&#160;&#160;All&#160;&#160;the&#160;&#160;function&#160;&#160;names&#160;&#160;and&#160;&#160;the&#160;&#160;string&#160;&#160;values&#160;&#160;configured&#160;&#160;should&#160;&#160;follow&#160;&#160;C&#160;<br/>
+syntax&#160;for&#160;variables.&#160;It&#160;can&#160;only&#160;contain&#160;alphanumeric&#160;characters&#160;and&#160;“_”.&#160;It&#160;<br/>should start&#160;with&#160;an&#160;alphabet.&#160;<br/>
+&#160;<br/>•&#160;&#160;If&#160;&#160;the&#160;&#160;output&#160;&#160;files&#160;&#160;generated&#160;&#160;by&#160;&#160;MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool&#160;&#160;are&#160;&#160;modified&#160;<br/>
+externally,&#160;then&#160;they&#160;may&#160;not&#160;produce&#160;the&#160;expected&#160;results&#160;or&#160;may&#160;lead&#160;to&#160;<br/>error/warning/Information&#160;messages.&#160;<br/>
+&#160;<br/>•&#160;&#160;Short&#160;Name for a container&#160;should&#160;be unique&#160;within&#160;a&#160;name space.&#160;<br/>&#160;<br/>•&#160;&#160;An&#160;&#160;error&#160;&#160;free&#160;&#160;ECU&#160;&#160;Configuration&#160;&#160;Description&#160;&#160;File&#160;&#160;generated&#160;&#160;from&#160;<br/>
+configuration&#160;&#160;editor&#160;&#160;has&#160;&#160;to&#160;&#160;be&#160;&#160;provided&#160;&#160;as&#160;&#160;input&#160;&#160;to&#160;&#160;the&#160;&#160;MCAL&#160;&#160;Code&#160;<br/>Generator&#160;&#160;Tool.&#160;&#160;Otherwise&#160;&#160;MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool&#160;&#160;may&#160;&#160;not&#160;&#160;produce&#160;<br/>the&#160;expected&#160;results&#160;or may&#160;lead&#160;to&#160;errors/warnings/information&#160;messages.&#160;<br/>&#160;<br/>
+•&#160;&#160;The&#160;description&#160;file&#160;should&#160;always&#160;be&#160;generated&#160;using&#160;AUTOSAR&#160;specified&#160;<br/>
+configuration&#160;editor and&#160;it should not&#160;be edited&#160;manually&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>Remark&#160;</b>&#160; &#160; &#160;&#160;&#160;Please&#160;refer&#160;the&#160;SPI&#160;Component&#160;User Manual&#160;(R20UT3659EJ0100-&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;<br/>
+<b>&#160; &#160; &#160; &#160;&#160;</b>AUTOSAR.pdf)&#160;for deviations&#160;from&#160;AUTOSAR.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;21&#160;<br/>
+<hr/>
+<a name=22></a><b>Chapter&#160;6&#160;&#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160;Precautions</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+22&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=23></a><b>User&#160;Configuration&#160;Validation&#160;</b><br/>
+<b>Chapter&#160;7</b>&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;7&#160;&#160;User Configuration&#160;Validation&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+This&#160;section&#160;provides&#160;help to analyze&#160;the error,&#160;warning and information&#160;<br/>messages&#160;displayed&#160;during&#160;the&#160;execution&#160;of&#160;MCAL&#160;Code&#160;Generator Tool.&#160;<br/>It ensures&#160;conformance of&#160;input&#160;file&#160;with&#160;syntax&#160;and&#160;semantics. It&#160;also&#160;<br/>performs&#160;validation&#160;on&#160;the&#160;input&#160;file for&#160;correctness&#160;of&#160;the data.&#160;<br/>
+&#160;<br/>&#160;<br/>
+For more details&#160;on&#160;list of&#160;Error/Warning/Information&#160;messages&#160;that are&#160;<br/>displayed&#160;as&#160;a&#160;result of&#160;input&#160;file(s)&#160;validation,&#160;refer Chapter&#160;9&#160;<br/>“<i>Messages</i>”.&#160;<br/>
+&#160;<br/>&#160;<br/>
+The&#160;MCAL&#160;Code Generator&#160;Tool&#160;displays&#160;error or&#160;warning&#160;or information&#160;<br/>when&#160;the&#160;user has&#160;configured&#160;incorrect inputs. The&#160;format&#160;of&#160;<br/>Error/Warning/Information&#160;message is&#160;as&#160;shown below.&#160;<br/>&lt;message_type&gt;_&lt;vendor_id&gt;_&lt;module_id&gt;_&lt;message_id&gt;:&lt;message_<br/>
+content&gt;.&#160;&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160;where,&#160;&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;message_type&gt;&#160;: ERR/WARNING/INFO&#160;&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;&#160;vendor_id&#160;&gt;&#160;:&#160;vendor Id =&#160;59&#160;&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;&#160;module_id&#160;&gt;:&#160;83&#160;-&#160;SPI&#160;Driver Module&#160;id (83)&#160;for user&#160;<br/>
+configuration&#160;checks.&#160;&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;&#160;Message_id.&gt;&#160;:&#160;001-999&#160;&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;message_content&gt;:&#160;Message content provides&#160;information&#160;<br/>
+about error or&#160;warning&#160;or&#160;information&#160;displayed&#160;when&#160;the&#160;user&#160;<br/>
+has&#160;configured incorrect inputs.&#160;&#160;<br/>
+&#160;<br/>File&#160;Name’&#160;and&#160;‘Path’&#160;need&#160;not&#160;be&#160;present&#160;for all&#160;<br/>Error/Warning/Information&#160;messages&#160;&#160;<br/>
+&#160;<br/>
+File&#160;Name:&#160;Name of&#160;the file&#160;in&#160;which&#160;the&#160;error&#160;has&#160;occurred&#160;&#160;<br/>
+&#160;<br/>
+Path: Absolute&#160;path&#160;of&#160;the&#160;container&#160;in&#160;which the&#160;parameter&#160;is&#160;<br/>
+present&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+23&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=24></a><b>Chapter&#160;7&#160;&#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160; &#160; &#160; &#160;User&#160;Configuration&#160;Validation</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+24&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=25></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;8&#160;Configuration Overview&#160;</b><br/>
+&#160;<br/>
+<b>8.1.</b>&#160;<b>Container&#160;Overview&#160;</b><br/>
+&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;The&#160;following&#160;figure&#160;represents&#160;container&#160;overview.&#160;<br/>
+&#160;<br/>
+Spi&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+SPI&#160;Published Information&#160;<br/>
+SPI General&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+SPI&#160;Csih0&#160;<br/>
+SPI&#160;Csih1&#160;<br/>
+SPI&#160;Csih2&#160;<br/>
+SPI&#160;Csih3&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+SPI&#160;Driver&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+SPI&#160;Sequence&#160;<br/>
+SPI&#160;Channel&#160;<br/>
+SPI&#160;Memory&#160;Mode&#160;<br/>
+SPI Job&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+SPI&#160;External&#160;Driver&#160;<br/>
+SpiDma&#160;<br/>
+SPI&#160;DemEvent Parameter&#160;Refs&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Figure 8-1&#160;&#160;Configuration&#160;overview&#160;</b><br/>
+<b>8.1.1</b>&#160;<b>Pre-Compile&#160;Configurable&#160;Parameters</b>&#160;<br/>
+<b>Table&#160;8-1&#160;&#160;Pre-Compile&#160;Configurable Parameters&#160;</b><br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+SpiGeneral&#160;<br/>
+SpiCancelApi&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Switches&#160;the&#160;<br/>
+Spi_Cancel&#160;<br/>function&#160;ON&#160;or&#160;<br/>OFF.&#160;<br/>
+SpiChannelBuffersAll<br/>
+Integer&#160;<br/>
+0/1/2&#160;<br/>
+Selects&#160;the&#160;SPI&#160;<br/>
+owed&#160;<br/>
+Handler/Driver&#160;<br/>Channel&#160;Buffers&#160;<br/>usage&#160;allowed&#160;<br/>and&#160;delivered.&#160;<br/>
+SpiDevErrorDetect&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Switches&#160;the&#160;<br/>
+Development&#160;<br/>Error Detection&#160;<br/>and Notification&#160;<br/>ON or OFF&#160;<br/>
+25&#160;<br/>
+<hr/>
+<a name=26></a>&#160;<br/>
+<b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;&#160;<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+SpiHwStatusApii&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Switches&#160;the&#160;<br/>
+Spi_GetHWUnitSt<br/>atus&#160;function ON&#160;<br/>or OFF.&#160;<br/>
+SpiInterruptibleSeqAll<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Switches&#160;the&#160;<br/>
+owed&#160;<br/>
+Interruptible&#160;<br/>Sequences&#160;<br/>handling&#160;<br/>functionality&#160;ON&#160;<br/>or OFF.&#160;<br/>
+SpiLevelDelivered&#160;<br/>
+Integer&#160;<br/>
+0/1/2&#160;<br/>
+Selects&#160;the&#160;SPI&#160;<br/>
+Handler/Driver&#160;<br/>level&#160;of&#160;scalable&#160;<br/>functionality&#160;that&#160;<br/>is&#160;available&#160;and&#160;<br/>delivered.&#160;<br/>
+SpiSupportConcurren<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Specifies&#160;whether&#160;<br/>
+tSyncTransmit&#160;<br/>
+concurrent&#160;<br/>Spi_SyncTransmi<br/>t()&#160;calls&#160;for&#160;<br/>different&#160;<br/>sequences&#160;shall&#160;<br/>be&#160;configurable.&#160;<br/>
+SpiVersionInfoApi&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Switches&#160;the&#160;<br/>
+Spi_GetVersionIn<br/>fo function&#160;ON or&#160;<br/>OFF.&#160;<br/>
+SpiDmaMode&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+switches&#160;the&#160;<br/>Spi_DmaMode&#160;<br/>ON or OFF.&#160;<br/>
+SpiDeviceName&#160;<br/>
+Enumeration&#160;<br/>
+R7F701370A&#160;<br/>
+This&#160;<br/>
+parameter&#160;<br/>
+R7F701371&#160;<br/>
+contains&#160;<br/>
+the&#160;<br/>
+supported&#160;&#160;device&#160;<br/>
+R7F701372&#160;<br/>
+name&#160;<br/>
+R7F701373&#160;<br/>
+R7F701374&#160;<br/>
+SpiDmaTypeUsed&#160;<br/>
+Enumeration&#160;<br/>
+SPI_DMA_TYP<br/>
+This&#160;parameter&#160;is&#160;<br/>
+E_TWO&#160;<br/>
+used&#160;to&#160;<br/>differentiate&#160;the&#160;<br/>DMA&#160;type used.&#160;<br/>
+SpiDataConsistencyC<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+heckEnable&#160;<br/>
+enables/disables&#160;<br/>Data&#160;Consistency&#160;<br/>check&#160;<br/>
+26&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=27></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiDataWidthSelectio<br/>
+Enumeration&#160;<br/>
+BITS_8/&#160;<br/>
+The&#160;value&#160;of&#160;the&#160;<br/>
+n&#160;<br/>
+BITS_16/&#160;<br/>
+parameter&#160;is&#160;the&#160;<br/>
+BITS_32&#160;<br/>
+maximum&#160;data&#160;<br/>width&#160;selected.&#160;<br/>
+SpiCriticalSectionProt<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+ection&#160;<br/>
+specifies&#160;if&#160;the&#160;<br/>SPI&#160;driver CPU&#160;<br/>load&#160;can&#160;be&#160;<br/>reduced&#160;by&#160;<br/>disabling&#160;the&#160;<br/>enter/exit critical&#160;<br/>section&#160;<br/>functionality&#160;by&#160;<br/>adding&#160;a&#160;<br/>precompiled&#160;<br/>configuration&#160;<br/>parameter&#160;to&#160;the&#160;<br/>SPI&#160;driver&#160;<br/>configuration.&#160;<br/>
+SpiVersionCheckExte<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Enable /&#160;disable&#160;<br/>
+rnalModules&#160;<br/>
+AUTOSAR&#160;<br/>Version check&#160;for&#160;<br/>inter-module&#160;<br/>dependencies&#160;<br/>
+SpiHighPriorityHwHa<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Enable /&#160;disable&#160;<br/>
+ndlingEnable&#160;<br/>
+the&#160;Spi&#160;H/W&#160;<br/>priority.&#160;<br/>
+SpiAlreadyInitDetChe<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+ck&#160;<br/>
+enables&#160;/&#160;disables&#160;<br/>the&#160;<br/>SPI_E_ALREAD<br/>Y_INITIALIZED&#160;<br/>Det check&#160;in&#160;<br/>Spi_Init&#160;API.&#160;<br/>
+SpiSeqStartNotificatio<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+nEnable&#160;<br/>
+enables&#160;/&#160;disables&#160;<br/>the&#160;<br/>SPI_E_ALREAD<br/>Y_INITIALIZED&#160;<br/>Det check&#160;in&#160;<br/>Spi_Init&#160;API.&#160;<br/>
+SpiSyncSeqEndNotifi<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+cationEnable&#160;<br/>
+enables&#160;/&#160;disables&#160;<br/>the&#160;check&#160;for the&#160;<br/>names&#160;configured&#160;<br/>for synchronous&#160;<br/>transmissions&#160;in&#160;<br/>SpiSeqEndNotific<br/>ation&#160;<br/>
+SpiPersistentHWConf<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+iguration&#160;<br/>
+enables&#160;/&#160;disables&#160;<br/>the&#160;check&#160;when&#160;<br/>HW&#160;configuration&#160;<br/>is&#160;static&#160;or&#160;<br/>dynamic&#160;HW.&#160;<br/>
+SpiMaxBaudrate&#160;<br/>
+Enumeration&#160;<br/>
+PCLK_DIV_BY_<br/>
+This&#160;parameter&#160;is&#160;<br/>
+8&#160;<br/>
+used&#160;to&#160;<br/>
+27&#160;<br/>
+<hr/>
+<a name=28></a>&#160;<br/>
+<b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;&#160;<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+differentiate&#160;the&#160;<br/>maximum&#160;baud&#160;<br/>rate&#160;between the&#160;<br/>variants&#160;<br/>
+SpiTimeOut&#160;<br/>
+Integer&#160;<br/>
+0-65535&#160;<br/>
+This&#160;parameter&#160;<br/>
+contains&#160;timeout&#160;<br/>value&#160;for updating&#160;<br/>the&#160;status&#160;<br/>registers&#160;of&#160;CSIH&#160;<br/>(CSIHnSTR0)&#160;<br/>during data&#160;<br/>transmission.&#160;<br/>
+SpiInternalErrorBuffer<br/>
+Integer&#160;<br/>
+0-100&#160;<br/>
+This&#160;parameter&#160;is&#160;<br/>
+Size&#160;<br/>
+the&#160;maximum&#160;<br/>array&#160;size&#160;of&#160;the&#160;<br/>Error Buffer used&#160;<br/>for the&#160;internal&#160;<br/>Diagnosis.&#160;<br/>
+SpiLoopBackSelfTest&#160;<br/>
+Enumeration&#160;<br/>
+LoopBack_None&#160;&#160;This&#160;parameter&#160;is&#160;<br/>
+used&#160;to&#160;select&#160;if&#160;<br/>
+LoopBack_Init&#160;<br/>
+the&#160;Loop&#160;back&#160;<br/>
+LoopBack_Init_<br/>
+self-test&#160;<br/>
+RunTime&#160;<br/>
+functionality&#160;to be&#160;<br/>done&#160;only&#160;during&#160;<br/>initialization or&#160;<br/>
+during init&#160;and&#160;<br/>
+Run&#160;time or&#160;not&#160;<br/>required to&#160;be&#160;<br/>performed&#160;<br/>
+SpiECCSelfTest&#160;<br/>
+Enumeration&#160;<br/>
+ECC_None&#160;<br/>
+This&#160;parameter&#160;is&#160;<br/>
+used&#160;to&#160;select&#160;if&#160;<br/>
+ECC_Init&#160;<br/>
+the&#160;ECC&#160;self-test&#160;<br/>
+ECC_Init_RunTi<br/>
+functionality&#160;to be&#160;<br/>
+me&#160;<br/>
+done&#160;only&#160;during&#160;<br/>initialization or&#160;<br/>
+during init&#160;and&#160;<br/>
+Run&#160;time or&#160;not&#160;<br/>required to&#160;be&#160;<br/>performed&#160;<br/>
+SpiInterruptConsisten<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+cyCheck&#160;<br/>
+shall&#160;<br/>enable/disable&#160;<br/>the&#160;<br/>
+Interrupt&#160;<br/>
+consistency&#160;<br/>check&#160;<br/>functionality&#160;<br/>
+SpiCSIHWriteVerify&#160;<br/>
+Enumeration&#160;<br/>
+WV_DISABLE&#160;<br/>
+This&#160;parameter&#160;<br/>
+shall&#160;<br/>
+WV_INIT_ONLY&#160;<br/>
+enable/disable&#160;<br/>
+WV_INIT_RUNT<br/>
+the&#160;write-verify&#160;<br/>
+IME&#160;<br/>
+check&#160;<br/>functionality.&#160;<br/>
+28&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=29></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiDMAWriteVerify&#160;<br/>
+Enumeration&#160;<br/>
+WV_DISABLE&#160;<br/>
+This&#160;parameter&#160;<br/>
+shall&#160;<br/>
+WV_INIT_ONLY&#160;<br/>
+enable/disable&#160;<br/>
+WV_INIT_RUNT<br/>
+the&#160;write-verify&#160;<br/>
+IME&#160;<br/>
+check&#160;<br/>functionality&#160;for&#160;<br/>DMA&#160;<br/>
+Spi_UseWriteVerifyEr<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;<br/>
+rorInterface&#160;<br/>
+shall&#160;<br/>enable/disable&#160;<br/>the&#160;error&#160;<br/>
+SpiWriteVerifyErrorInt<br/>
+Symbolic&#160;<br/>
+NA&#160;<br/>
+This&#160;parameter&#160;is&#160;<br/>
+notification&#160;<br/>
+erface&#160;<br/>
+Name&#160;<br/>
+used&#160;to&#160;configure&#160;<br/>
+interface instead&#160;<br/>
+the&#160;name&#160;of&#160;the&#160;<br/>
+of&#160;DEM error for&#160;<br/>
+error notification&#160;<br/>
+Write-Verify&#160;<br/>
+function&#160;which&#160;<br/>
+functionality&#160;<br/>
+shall&#160;be&#160;called&#160;<br/>with&#160;the&#160;ApiID&#160;<br/>and&#160;ErrorId&#160;when&#160;<br/>there&#160;is&#160;a&#160;Write&#160;<br/>Verify&#160;error when&#160;<br/>
+Spi_UseWriteVeri<br/>
+fyErrorInterface&#160;is&#160;<br/>configured&#160;as&#160;<br/>True.&#160;<br/>
+SpiChannel&#160;<br/>
+SpiChannelId&#160;<br/>
+Integer&#160;<br/>
+0-255&#160;<br/>
+This&#160;parameter&#160;<br/>
+contains&#160;Channel&#160;<br/>ID of&#160;the&#160;SPI&#160;<br/>channel. This&#160;<br/>value&#160;will&#160;be&#160;<br/>assigned to&#160;the&#160;<br/>symbolic&#160;name&#160;<br/>derived&#160;of&#160;the&#160;<br/>SpiChannel&#160;<br/>container&#160;short&#160;<br/>name.&#160;<br/>
+SpiChannelType&#160;<br/>
+Enumeration&#160;<br/>
+EB/IB&#160;<br/>
+This&#160;parameter&#160;<br/>
+contains&#160;the&#160;<br/>buffer usage&#160;with&#160;<br/>EB/IB&#160;channel.&#160;<br/>
+SpiEbMaxLength&#160;<br/>
+Integer&#160;<br/>
+0-65535&#160;<br/>
+This&#160;parameter&#160;<br/>
+contains&#160;the&#160;<br/>maximum&#160;size (in&#160;<br/>bytes)&#160;of&#160;data&#160;<br/>buffers&#160;in case of&#160;<br/>EB&#160;Channels.&#160;<br/>
+SpiIbNBuffers&#160;<br/>
+Integer&#160;<br/>
+0-65535&#160;<br/>
+This&#160;parameter&#160;<br/>
+contains&#160;the&#160;<br/>maximum&#160;number&#160;<br/>of&#160;data&#160;buffers&#160;in&#160;<br/>case of&#160;IB&#160;<br/>Channels.&#160;<br/>
+SpiDemEve<br/>
+SPI_E_HARDWARE_<br/>
+Symbolic&#160;<br/>
+NA&#160;<br/>
+Reference to the&#160;<br/>
+ntParamete<br/>
+ERROR&#160;<br/>
+Name&#160;<br/>
+DemEventParam<br/>
+rRefs&#160;<br/>
+eter&#160;which shall&#160;<br/>be&#160;issued&#160;when&#160;a&#160;<br/>
+&#160;<br/>
+hardware&#160;error&#160;<br/>was&#160;detected.&#160;If&#160;<br/>
+29&#160;<br/>
+<hr/>
+<a name=30></a>&#160;<br/>
+<b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;&#160;<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+the&#160;reference&#160;is&#160;<br/>not configured&#160;the&#160;<br/>error shall&#160;not be&#160;<br/>reported.&#160;<br/>
+SPI_E_DATA_TX_TI<br/>
+Symbolic&#160;<br/>
+NA&#160;<br/>
+Reference to the&#160;<br/>
+MEOUT_FAILURE&#160;<br/>
+Name&#160;<br/>
+DemEventParam<br/>eter&#160;which shall&#160;<br/>be&#160;issued&#160;when&#160;a&#160;<br/>hardware&#160;data&#160;<br/>transmit timeout&#160;<br/>error was&#160;<br/>detected.&#160;If&#160;the&#160;<br/>reference is&#160;not&#160;<br/>configured&#160;the&#160;<br/>error shall&#160;not be&#160;<br/>reported.&#160;<br/>
+SPI_E_LOOPBACK_<br/>
+Symbolic&#160;<br/>
+NA&#160;<br/>
+Reference to the&#160;<br/>
+SELFTEST_FAILUR<br/>
+Name&#160;<br/>
+DemEventParam<br/>
+E&#160;<br/>
+eter&#160;which shall&#160;<br/>be&#160;issued&#160;when&#160;<br/>loop back&#160;self-<br/>test&#160;error&#160;was&#160;<br/>detected.&#160;<br/>
+SPI_E_ECC_SELFT<br/>
+Symbolic&#160;<br/>
+NA&#160;<br/>
+Reference to the&#160;<br/>
+EST_FAILURE&#160;<br/>
+Name&#160;<br/>
+DemEventParam<br/>eter&#160;which shall&#160;<br/>be&#160;issued&#160;when&#160;<br/>Ecc&#160;selft test&#160;<br/>error was&#160;<br/>detected.&#160;<br/>
+SPI_E_INT_INCONSI<br/>
+Symbolic&#160;<br/>
+NA&#160;<br/>
+Reference to the&#160;<br/>
+STENT&#160;<br/>
+Name&#160;<br/>
+DemEventParam<br/>eter&#160;which shall&#160;<br/>be&#160;issued&#160;when&#160;<br/>Interrupt&#160;<br/>consistency&#160;error&#160;<br/>was&#160;detected.&#160;<br/>
+SPI_E_REG_WRITE<br/>
+Symbolic&#160;<br/>
+NA&#160;<br/>
+Reference to the&#160;<br/>
+_VERIFY&#160;<br/>
+Name&#160;<br/>
+DemEventParam<br/>eter&#160;which shall&#160;<br/>be&#160;issued&#160;when&#160;<br/>register&#160;write&#160;<br/>error was&#160;<br/>detected.&#160;<br/>
+SpiExternal<br/>
+SpiCsIdentifier&#160;<br/>
+string&#160;<br/>
+-&#160;<br/>
+This&#160;parameter&#160;is&#160;<br/>
+Device&#160;<br/>
+the&#160;symbolic&#160;<br/>name to identify&#160;<br/>the&#160;Chip&#160;Select&#160;<br/>(CS)&#160;allocated&#160;to&#160;<br/>this&#160;Job.&#160;This&#160;<br/>parameter&#160;is&#160;not&#160;<br/>used&#160;for&#160;<br/>implementation.&#160;<br/>
+30&#160;<br/>
+<hr/>
+<a name=31></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+SpiHwUnit&#160;<br/>
+Enumeration&#160;<br/>
+CSIH0/&#160;CSIH1/&#160;<br/>
+This&#160;parameter&#160;is&#160;<br/>
+CSIH2/&#160;CSIH3&#160;<br/>
+the&#160;symbolic&#160;<br/>name to identify&#160;<br/>the&#160;HW&#160;SPI&#160;<br/>Hardware&#160;<br/>microcontroller&#160;<br/>peripheral&#160;<br/>allocated to&#160;this&#160;<br/>Job.&#160;<br/>
+<b>8.1.2&#160;Post&#160;Build&#160;Time&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>Table&#160;8-2&#160;&#160;Post-Build-Time&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Type&#160;</b><br/>
+<b>Paramet</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>er&#160;Range&#160;</b><br/>
+<b>Description&#160;</b><br/>
+SpiChannel&#160;<br/>
+SpiDataWidth&#160;<br/>
+Integer&#160;<br/>
+2-32&#160;<br/>
+This&#160;parameter&#160;is&#160;the&#160;<br/>
+width of&#160;a&#160;transmitted&#160;<br/>data&#160;unit.&#160;<br/>
+If&#160;data&#160;width&#160;is&#160;greater&#160;<br/>
+than&#160;16bit,&#160;then&#160;<br/>CSIHnCTL1.CSIHnED<br/>LE&#160;bit&#160;is&#160;set&#160;to&#160;enable&#160;<br/>Extended&#160;Data&#160;<br/>Length.&#160;<br/>
+SpiDefaultDat<br/>
+Integer&#160;<br/>
+0-&#160;<br/>
+The&#160;default data&#160;to&#160;be&#160;<br/>
+a&#160;<br/>
+429496729<br/>
+transmitted&#160;when (for&#160;<br/>
+5&#160;<br/>
+internal&#160;buffer or&#160;<br/>external&#160;buffer)&#160;the&#160;<br/>pointer&#160;passed&#160;to&#160;<br/>Spi_WriteIB&#160;(for&#160;<br/>internal&#160;buffer)&#160;or to&#160;<br/>Spi_SetupEB&#160;(for&#160;<br/>external&#160;buffer)&#160;is&#160;<br/>NULL.&#160;<br/>
+SpiTransferSt<br/>
+Enumeration&#160;<br/>
+LSB/MSB&#160;<br/>
+This&#160;parameter&#160;<br/>
+art&#160;<br/>
+defines&#160;the first&#160;<br/>starting&#160;bit&#160;for&#160;<br/>transmission.&#160;<br/>
+SpiExternalD<br/>
+SpiBaudrate&#160;<br/>
+Float&#160;<br/>
+0&#160;<br/>
+This&#160;parameter&#160;is&#160;the&#160;<br/>
+evice&#160;<br/>
+communication&#160;baud&#160;<br/>rate. This&#160;parameter&#160;is&#160;<br/>not used for&#160;<br/>implementation, set&#160;<br/>SpiBaudrateConfigura<br/>tion&#160;instead.&#160;<br/>
+SpiBaudrateC<br/>
+Integer&#160;<br/>
+1-4095&#160;<br/>
+This&#160;parameter&#160;<br/>
+onfiguration&#160;<br/>
+contains&#160;Baud&#160;Rate&#160;<br/>Selection&#160;Bits.&#160;<br/>
+SpiCsPolarity&#160;<br/>
+Enumeration&#160;<br/>
+HIGH/LOW&#160;<br/>
+This&#160;parameter&#160;<br/>
+defines&#160;the active&#160;<br/>polarity&#160;of&#160;Chip&#160;Select.&#160;<br/>
+31&#160;<br/>
+<hr/>
+<a name=32></a>&#160;<br/>
+<b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;&#160;<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Type&#160;</b><br/>
+<b>Paramet</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>er&#160;Range&#160;</b><br/>
+<b>Description&#160;</b><br/>
+SpiCsSelectio<br/>
+Enumeration&#160;<br/>
+CS_VIA_P<br/>
+When&#160;the Chip select&#160;<br/>
+n&#160;<br/>
+ERIPHERA<br/>
+handling&#160;is&#160;enabled&#160;<br/>
+L_ENGINE<br/>
+(see&#160;SpiEnableCs),&#160;<br/>
+/&#160;<br/>
+then&#160;this&#160;parameter&#160;<br/>
+CS_VIA_G<br/>
+specifies&#160;if&#160;the chip&#160;<br/>
+PIO&#160;<br/>
+select is&#160;handled&#160;<br/>automatically&#160;by&#160;<br/>Peripheral&#160;HW&#160;engine&#160;<br/>or via general&#160;purpose&#160;<br/>IO&#160;by&#160;Spi&#160;driver.&#160;<br/>
+SpiDataShiftE<br/>
+Enumeration&#160;<br/>
+LEADING/&#160;<br/>
+This&#160;parameter&#160;<br/>
+dge&#160;<br/>
+TRAILING&#160;<br/>
+defines&#160;the SPI&#160;data&#160;<br/>shift edge.&#160;<br/>
+SpiEnableCs&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;<br/>
+This&#160;parameter&#160;<br/>
+FALSE&#160;<br/>
+enables&#160;or&#160;disables&#160;<br/>the&#160;Chip&#160;Select&#160;<br/>handling&#160;functions.&#160;<br/>
+SpiShiftClockI<br/>
+Enumeration&#160;<br/>
+HIGH/LOW&#160;<br/>
+This&#160;parameter&#160;<br/>
+dlelevel&#160;<br/>
+defines&#160;the SPI shift&#160;<br/>clock&#160;idle level.&#160;<br/>
+SpiTimeClk2C<br/>
+Float&#160;<br/>
+0&#160;<br/>
+Timing&#160;between&#160;clock&#160;<br/>
+s&#160;<br/>
+and chip select&#160;-&#160;This&#160;<br/>parameter&#160;allows&#160;to&#160;<br/>use a&#160;range&#160;of&#160;values&#160;<br/>from&#160;0&#160;up&#160;to&#160;100&#160;<br/>microseconds. This&#160;<br/>parameter&#160;is&#160;not&#160;used&#160;<br/>for implementation,&#160;<br/>set&#160;SpiClk2CsCount&#160;<br/>instead.&#160;<br/>
+SpiClk2CsCou<br/>
+Integer&#160;<br/>
+0-100&#160;<br/>
+Loop&#160;Count&#160;between&#160;<br/>
+nt&#160;<br/>
+clock&#160;and chip select&#160;-&#160;<br/>This&#160;parameter&#160;allows&#160;<br/>to&#160;use&#160;a range of&#160;<br/>values&#160;from&#160;0&#160;to&#160;100&#160;<br/>counts&#160;<br/>
+SpiCsInactive<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;<br/>
+This&#160;parameter&#160;<br/>
+AfterLastData&#160;<br/>
+FALSE&#160;<br/>
+enables&#160;or&#160;disables&#160;<br/>the&#160;Chip&#160;Select to&#160;<br/>Return to Inactive&#160;<br/>functions.&#160;<br/>
+32&#160;<br/>
+<hr/>
+<a name=33></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Type&#160;</b><br/>
+<b>Paramet</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>er&#160;Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiCsIdleEnfo<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;<br/>
+This&#160;parameter&#160;<br/>
+rcement&#160;&#160;<br/>
+FALSE&#160;<br/>
+enables&#160;or&#160;disables&#160;<br/>Chip&#160;Select Idle&#160;<br/>Enforcement&#160;<br/>configuration.&#160;<br/>
+SpiCsIdleTimi<br/>
+Enumeration&#160;<br/>
+IDLE_TIME<br/>
+This&#160;parameter&#160;<br/>
+ng&#160;<br/>
+_0_POINT<br/>
+specifies&#160;Idle Timing.&#160;<br/>
+_5/&#160;<br/>IDLE_TIME<br/>_1/&#160;<br/>IDLE_TIME<br/>_1_POINT<br/>_5/&#160;<br/>IDLE_TIME<br/>_2_POINT<br/>_5/&#160;<br/>IDLE_TIME<br/>_3_POINT<br/>_5/&#160;<br/>IDLE_TIME<br/>_4_POINT<br/>_5/&#160;<br/>IDLE_TIME<br/>_6_POINT<br/>_5/&#160;<br/>IDLE_TIME<br/>_8_POINT<br/>_5&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+33&#160;<br/>
+<hr/>
+<a name=34></a>&#160;<br/>
+<b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;&#160;<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Type&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiCsHoldTim<br/>
+Enumeration&#160;<br/>
+HOLD&#160;<br/>
+This&#160;parameter&#160;<br/>
+ing&#160;<br/>
+_TIME_0_POI<br/>
+specifies&#160;Hold&#160;<br/>
+&#160;<br/>
+NT_5/&#160;HOLD&#160;<br/>
+Timing.&#160;<br/>
+_TIME_1/&#160;<br/>HOLD&#160;<br/>_TIME_1_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_2_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_3_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_4_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_6_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_8_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_9_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_10_P<br/>OINT_5/&#160;<br/>HOLD_TIME_<br/>11_POINT_5/&#160;<br/>HOLD_TIME_<br/>12_POINT_5/&#160;<br/>HOLD_TIME_<br/>14_POINT_5/&#160;<br/>HOLD_TIME_<br/>16_POINT_5/&#160;<br/>HOLD_TIME_<br/>18_POINT_5/&#160;<br/>HOLD_TIME_<br/>20_POINT_5&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+34&#160;<br/>
+<hr/>
+<a name=35></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Type&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiCsHoldTim<br/>
+Enumeration&#160;<br/>
+HOLD&#160;<br/>
+This&#160;parameter&#160;<br/>
+ing&#160;<br/>
+_TIME_0_POI<br/>
+specifies&#160;Hold&#160;<br/>
+NT_5/&#160;HOLD&#160;<br/>
+Timing.&#160;<br/>
+_TIME_1/&#160;<br/>HOLD&#160;<br/>_TIME_1_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_2_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_3_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_4_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_6_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_8_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_9_POI<br/>NT_5/&#160;HOLD&#160;<br/>_TIME_10_P<br/>OINT_5/&#160;<br/>HOLD_TIME_<br/>11_POINT_5/&#160;<br/>HOLD_TIME_<br/>12_POINT_5/&#160;<br/>HOLD_TIME_<br/>14_POINT_5/&#160;<br/>HOLD_TIME_<br/>16_POINT_5/&#160;<br/>HOLD_TIME_<br/>18_POINT_5/&#160;<br/>HOLD_TIME_<br/>20_POINT_5&#160;<br/>
+35&#160;<br/>
+<hr/>
+<a name=36></a>&#160;<br/>
+<b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;&#160;<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiCsInterData<br/>
+Enumeration&#160;<br/>
+INTER_DATA_<br/>
+This&#160;parameter&#160;specifies&#160;<br/>
+Delay&#160;<br/>
+TIME_0/&#160;<br/>
+Inter-data Delay&#160;Timing.&#160;<br/>
+INTER_DATA_<br/>TIME_0_POIN<br/>T_5/&#160;<br/>INTER_DATA_<br/>TIME_1/&#160;<br/>INTER_DATA_<br/>TIME_2/&#160;<br/>INTER_DATA_<br/>TIME_3/&#160;<br/>INTER_DATA_<br/>TIME_4/&#160;<br/>INTER_DATA_<br/>TIME_6/&#160;<br/>INTER_DATA_<br/>TIME_8/&#160;<br/>INTER_DATA_<br/>TIME_9/&#160;<br/>INTER_DATA_<br/>TIME_10/&#160;<br/>INTER_DATA_<br/>TIME_11/&#160;<br/>INTER_DATA_<br/>TIME_12/&#160;<br/>INTER_DATA_<br/>TIME_14/&#160;<br/>INTER_DATA_<br/>TIME_16/&#160;<br/>INTER_DATA_<br/>TIME_18/&#160;<br/>INTER_DATA_<br/>TIME_20&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+36&#160;<br/>
+<hr/>
+<a name=37></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiCsSetupTim<br/>
+Enumeration&#160;<br/>
+SETUP_TIME_<br/>
+This&#160;parameter&#160;specifies&#160;<br/>
+e&#160;<br/>
+0_POINT_5/&#160;<br/>
+Setup Timing.&#160;<br/>
+SETUP_TIME_<br/>1/&#160;<br/>SETUP_TIME_<br/>1_POINT_5/&#160;<br/>SETUP_TIME_<br/>2_POINT_5/&#160;<br/>SETUP_TIME_<br/>3_POINT_5/&#160;<br/>SETUP_TIME_<br/>4_POINT_5/&#160;<br/>SETUP_TIME_<br/>6_POINT_5/&#160;<br/>SETUP_TIME_<br/>8_POINT_5/&#160;<br/>SETUP_TIME_<br/>9_POINT_5/&#160;<br/>SETUP_TIME_<br/>10_POINT_5/&#160;<br/>SETUP_TIME_<br/>11_POINT_5/&#160;<br/>SETUP_TIME_<br/>12_POINT_5/&#160;<br/>SETUP_TIME_<br/>14_POINT_5/&#160;<br/>SETUP_TIME_<br/>16_POINT_5/&#160;<br/>SETUP_TIME_<br/>18_POINT_5/&#160;<br/>SETUP_TIME_<br/>20_POINT_5&#160;<br/>
+&#160;<br/>
+SpiInputClockSe<br/>
+Enumeration&#160;<br/>
+PCLK/&#160;<br/>
+This&#160;parameter&#160;contains&#160;<br/>
+lect&#160;<br/>
+PCLK_DIVBY_<br/>
+the&#160;Prescaler&#160;Section&#160;<br/>
+2/&#160;<br/>
+Bits.&#160;<br/>
+PCLK_DIVBY_<br/>4/&#160;<br/>PCLK_DIVBY_<br/>8/&#160;<br/>PCLK_DIVBY_<br/>16/&#160;<br/>PCLK_DIVBY_<br/>32/&#160;<br/>PCLK_DIVBY_<br/>64&#160;<br/>
+&#160;<br/>
+37&#160;<br/>
+<hr/>
+<a name=38></a><b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+&#160;<br/>
+SpiBaudrateReg<br/>
+Enumeration&#160;<br/>
+CSIH_BAUDR<br/>
+This&#160;parameter&#160;contains&#160;<br/>
+isterSelect&#160;<br/>
+ATE_REGISTE<br/>
+the&#160;Prescaler&#160;Selection&#160;<br/>
+R_0/&#160;<br/>CSIH_BAUDR<br/>ATE_REGISTE<br/>R_1/&#160;<br/>CSIH_BAUDR<br/>ATE_REGISTE<br/>R_2/&#160;<br/>CSIH_BAUDR<br/>ATE_REGISTE<br/>R_3&#160;<br/>
+SpiInterruptDela<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;enables&#160;<br/>
+yMode&#160;<br/>
+delay&#160;for all&#160;interrupts.&#160;<br/>
+SpiParitySelecti<br/>
+Enumeration&#160;<br/>
+NO_PARITY/&#160;<br/>
+This&#160;parameter&#160;defines&#160;<br/>
+on&#160;<br/>
+PARITY_AT_Z<br/>
+the&#160;Parity&#160;selection.&#160;<br/>
+ERO/&#160;<br/>ODD_PARITY/&#160;<br/>EVEN_PARITY&#160;<br/>
+SpiBroadcasting<br/>
+Integer&#160;<br/>
+DOMINANT/&#160;<br/>
+This&#160;parameter&#160;gives&#160;the&#160;<br/>
+Priority&#160;<br/>
+RECESSIVE&#160;<br/>
+timeout&#160;setting&#160;selection&#160;<br/>in FIFO&#160;mode&#160;<br/>
+SpiClockFreque<br/>
+Reference&#160;<br/>
+-&#160;<br/>
+This&#160;parameter&#160;contains&#160;<br/>
+ncyRef&#160;<br/>
+Assignment of&#160;the&#160;MCU&#160;<br/>frequency&#160;for a job.&#160;<br/>
+SpiSequenc<br/>
+SpiInterruptibleS<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+This&#160;parameter&#160;allows&#160;or&#160;<br/>
+e&#160;<br/>
+equence&#160;<br/>
+denies&#160;this&#160;Sequence to&#160;<br/>be&#160;suspended by&#160;<br/>
+&#160;<br/>
+another&#160;one.&#160;<br/>
+SpiSeqStartNotif<br/>
+Function&#160;<br/>
+NA&#160;<br/>
+This&#160;parameter&#160;is&#160;a&#160;<br/>
+&#160;<br/>
+ication&#160;<br/>
+name&#160;<br/>
+reference to a&#160;start&#160;<br/>notification&#160;function.&#160;<br/>
+&#160;<br/>
+SpiHighPriorityH<br/>
+Boolean&#160;<br/>
+TRUE&#160;/ FALSE&#160;<br/>
+Enable/Disable the high&#160;<br/>
+&#160;<br/>
+wSequence&#160;<br/>
+priority&#160;H/W&#160;handling&#160;<br/>
+&#160;<br/>
+SpiSeqEndNotifi<br/>
+Function&#160;<br/>
+NA&#160;<br/>
+This&#160;parameter&#160;is&#160;a&#160;<br/>
+cation&#160;<br/>
+Name&#160;<br/>
+reference to a&#160;<br/>notification&#160;function.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+SpiSequenceId&#160;<br/>
+Integer&#160;<br/>
+0-255&#160;<br/>
+This&#160;parameter&#160;specifies&#160;<br/>
+sequence&#160;ID of&#160;the SPI&#160;<br/>
+&#160;<br/>
+sequence. This&#160;value&#160;<br/>will&#160;be assigned&#160;to&#160;the&#160;<br/>symbolic&#160;name derived&#160;<br/>
+&#160;<br/>
+of&#160;the SpiSequence&#160;<br/>container&#160;short&#160;name.&#160;<br/>
+&#160;<br/>
+SpiJobAssignme<br/>
+Reference&#160;<br/>
+NA&#160;<br/>
+A&#160;sequence references&#160;<br/>
+nt&#160;<br/>
+several&#160;jobs,&#160;which&#160;are&#160;<br/>
+&#160;<br/>
+executed&#160;during&#160;a&#160;<br/>communication&#160;<br/>sequence.&#160;<br/>
+SpiChannelInde<br/>
+Integer&#160;<br/>
+0-255&#160;<br/>
+This&#160;parameter&#160;specifies&#160;<br/>
+x&#160;<br/>
+the&#160;order of&#160;Channels&#160;<br/>within the&#160;Job.&#160;<br/>
+38&#160;<br/>
+<hr/>
+<a name=39></a><b>&#160;Configuration&#160;Overview&#160;</b><br/>
+<b>Chapter&#160;8</b>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+SpiChannel<br/>
+SpiChannelAssi<br/>
+Reference&#160;<br/>
+NA&#160;<br/>
+A&#160;job&#160;reference to a&#160;SPI&#160;<br/>
+List&#160;<br/>
+gnment&#160;<br/>
+channel.&#160;<br/>
+SpiHwUnitSelect<br/>
+Enumeration&#160;<br/>
+CSIH0/&#160;CSIH1/&#160;<br/>
+This&#160;parameter&#160;is&#160;used&#160;<br/>
+ion&#160;<br/>
+CSIH2/&#160;CSIH3&#160;<br/>
+to&#160;select CSIH HW&#160;unit&#160;<br/>
+SpiMemory<br/>
+SpiMemoryMod<br/>
+Enumeration&#160;<br/>
+TX_ONLY_MO<br/>
+This&#160;parameter&#160;defines&#160;<br/>
+Mode&#160;<br/>
+eSelection&#160;<br/>
+DE/&#160;<br/>
+the&#160;Memory&#160;Mode&#160;<br/>
+DIRECT_ACC<br/>
+Selection.&#160;<br/>
+ESS_MODE/&#160;<br/>DUAL_BUFFE<br/>R_MODE/&#160;<br/>FIFO_MODE&#160;<br/>
+SpiTxDmaChan<br/>
+Enumeration&#160;<br/>
+DMA0/&#160;DMA1/&#160;<br/>
+This&#160;parameter&#160;is&#160;the&#160;<br/>
+nel&#160;<br/>
+DMA2/&#160;DMA3/&#160;<br/>
+symbolic&#160;name to&#160;<br/>
+DMA4/&#160;DMA5/&#160;<br/>
+identify&#160;the&#160;Tx&#160;DMA&#160;<br/>
+DMA6/&#160;DMA7/&#160;<br/>
+allocated to Job.&#160;<br/>
+DMA8/&#160;DMA9/&#160;<br/>DMA10/&#160;<br/>DMA11/&#160;<br/>DMA12/&#160;<br/>DMA13/&#160;<br/>DMA14/&#160;<br/>DMA15&#160;<br/>
+SpiDma&#160;<br/>
+SpiRxDmaChan<br/>
+Enumeration&#160;<br/>
+DMA0/&#160;DMA1/&#160;<br/>
+This&#160;parameter&#160;is&#160;the&#160;<br/>
+nel&#160;<br/>
+DMA2/&#160;DMA3/&#160;<br/>
+symbolic&#160;name to&#160;<br/>
+DMA4/&#160;DMA5/&#160;<br/>
+identify&#160;the&#160;Rx&#160;DMA&#160;<br/>
+DMA6/&#160;DMA7/&#160;<br/>
+allocated to Job.&#160;<br/>
+DMA8/&#160;DMA9/&#160;<br/>DMA10/&#160;<br/>DMA11/&#160;<br/>DMA12/&#160;<br/>DMA13/&#160;<br/>DMA14/&#160;<br/>DMA15&#160;<br/>
+SpiDmaHwUnit&#160;<br/>
+Enumeration&#160;<br/>
+CSIH1_TXID_8<br/>
+This&#160;parameter&#160;is&#160;the&#160;<br/>
+2_RXID_81/&#160;<br/>
+symbolic&#160;name to&#160;<br/>
+CSIH0_TXID_7<br/>
+identify&#160;the&#160;hardware&#160;<br/>
+9_RXID_78/&#160;<br/>
+unit.&#160;<br/>
+CSIH2_TXID_8<br/>5_RXID_84/&#160;<br/>CSIH3_TXID_8<br/>8_RXID_87&#160;<br/>
+SpiMaxHwUnit&#160;<br/>
+Integer&#160;<br/>
+4&#160;<br/>
+Number&#160;of&#160;different SPI&#160;<br/>
+hardware&#160;<br/>microcontroller&#160;<br/>peripherals&#160;<br/>(units/busses)&#160;available&#160;<br/>and&#160;handled by&#160;this&#160;SPI&#160;<br/>Handler/Driver module.&#160;<br/>
+39&#160;<br/>
+<hr/>
+<a name=40></a><b>Chapter&#160;8&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+<b>Description&#160;&#160;</b><br/>
+SpiPublishe<br/>
+SpiMaxHwUnit&#160;<br/>
+integer&#160;<br/>
+4&#160;<br/>
+Number&#160;of&#160;different SPI&#160;<br/>
+dInformatio<br/>
+hardware&#160;microcontroller&#160;<br/>
+n&#160;<br/>
+peripherals&#160;<br/>(units/busses)&#160;available&#160;<br/>and&#160;handled by&#160;this&#160;SPI&#160;<br/>Handler/Driver module.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+40&#160;<br/>
+<hr/>
+<a name=41></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;9&#160;Messages&#160;</b><br/>
+&#160;<br/>
+The&#160;&#160;messages&#160;&#160;help&#160;&#160;to&#160;&#160;identify&#160;&#160;the&#160;&#160;syntax&#160;&#160;or&#160;&#160;semantic&#160;&#160;errors&#160;&#160;in&#160;&#160;the&#160;&#160;ECU&#160;<br/>Configuration&#160;&#160;Description&#160;&#160;File.&#160;&#160;Hence&#160;&#160;it&#160;&#160;ensures&#160;&#160;validity&#160;&#160;and&#160;&#160;correctness&#160;&#160;of&#160;&#160;the&#160;<br/>information&#160;available&#160;in&#160;the&#160;ECU Configuration&#160;Description&#160;File.&#160;<br/>&#160;<br/>The&#160;&#160;following&#160;&#160;section&#160;&#160;gives&#160;&#160;the&#160;&#160;list&#160;&#160;of&#160;&#160;error,&#160;&#160;warning&#160;&#160;and&#160;&#160;information&#160;&#160;messages&#160;<br/>displayed&#160;by&#160;the&#160;MCAL Code&#160;Generator Tool.&#160;<br/>&#160;<br/>
+<b>9.1&#160;&#160;Error&#160;Messages&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>ERR_59_83_001:&#160;Parsing&#160;of&#160;Spi module&#160;is incorrect.&#160;</b>This&#160;error occurs, if&#160;the&#160;<br/>
+parsing&#160;of&#160;configuration&#160;file&#160;is&#160;not&#160;done correctly.&#160;<br/>&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160; &#160; &#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;ERR_59_83_002: Field&#160;'Field&#160;Name' is empty&#160;in the entity&#160;'Structure&#160;&#160; &#160;&#160;Name'.&#160;</b><br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160;This&#160;error occurs, if&#160;the structure&#160;fields&#160;that&#160;are&#160;to&#160;be&#160;generated&#160;in the&#160;output&#160;&#160; &#160;&#160;&#160;file&#160;<br/>
+are empty.&#160;<br/>&#160;<br/>&#160;<br/>
+<b>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;ERR_59_83_004: The parameter&#160;'parameter&#160;name'&#160;in the container&#160;&#160; &#160;'container&#160;</b><br/>
+<b>name' should be&#160;configured.&#160;</b><br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;This&#160;error occurs, if&#160;any&#160;of&#160;the mandatory&#160;configuration&#160;parameter(s)&#160;&#160; &#160; &#160; &#160;<br/>
+mentioned&#160;below&#160;is&#160;(are)&#160;not&#160;configured&#160;in&#160;ECU Configuration&#160;Description&#160;File.&#160;<br/>
+&#160;<br/>
+<b>Table&#160;9-1&#160;&#160;Mandatory&#160;Parameters&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Container&#160;Name&#160;</b><br/>
+SpiCancelApi&#160;&#160;&#160;<br/>
+SpiChannelBuffersAllowed&#160;&#160;&#160;&#160;<br/>
+SpiDevErrorDetect &#160;&#160;&#160;<br/>
+SpiHwStatusApi&#160; &#160;&#160;<br/>
+SpiInterruptibleSeqAllowed&#160;&#160;&#160;&#160;<br/>
+SpiGeneral&#160;<br/>
+&#160;<br/>
+SpiLevelDelivered&#160; &#160;&#160;&#160;<br/>
+SpiSupportConcurrentSyncTransmit &#160;&#160;&#160;<br/>
+&#160;<br/>
+SpiVersionInfoApi&#160; &#160;&#160;&#160;<br/>
+&#160;<br/>
+SpiDmaMode &#160;&#160;&#160;<br/>
+&#160;<br/>
+SpiDataConsistencyCheckEnable &#160;&#160;<br/>
+&#160;<br/>
+&#160;SpiDataWidthSelection &#160;&#160;&#160;<br/>
+SpiMaxBaudrate &#160;&#160;<br/>
+&#160;<br/>
+SpiSyncSeqEndNotificationEnable&#160;<br/>
+&#160;<br/>
+SpiPersistentHWConfiguration&#160;<br/>
+SpiDmaTypeUsed&#160;&#160;&#160;<br/>
+SpiHighPriorityHwHandlingEnable&#160;<br/>
+SpiCriticalSectionProtection&#160;<br/>
+SpiDeviceName&#160;&#160;<br/>
+41&#160;<br/>
+<hr/>
+<a name=42></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Container&#160;Name&#160;</b><br/>
+SpiAlreadyInitDetCheck&#160;&#160;&#160;<br/>
+&#160;<br/>
+SpiVersionCheckExternalModules&#160;<br/>
+SpiSeqStartNotificationEnable&#160;&#160;&#160;<br/>
+SpiTimeOut&#160;&#160;&#160;<br/>
+SpiLoopBackSelfTest&#160;<br/>
+SpiECCSelfTest&#160;<br/>
+SpiInterruptConsistencyCheck&#160;<br/>
+SpiWriteVerify&#160;<br/>
+SpiDmaWriteVerify&#160;<br/>
+SpiMaxChannel&#160;<br/>
+SpiMaxJob&#160;<br/>
+SpiDriver&#160;<br/>
+SpiMaxSequence&#160;<br/>
+SpiChannelId&#160;<br/>
+SpiChannelType&#160;<br/>
+SpiDataWidth&#160;<br/>
+SpiChannel&#160;<br/>
+SpiEbMaxLength&#160;<br/>
+SpiIbNBuffers&#160;<br/>
+SpiTransferStart&#160;<br/>
+SpiBaudrate&#160;<br/>
+SpiCsPolarity&#160;&#160;&#160;<br/>
+SpiDataShiftEdge&#160;&#160;&#160;<br/>
+SpiShiftClockIdleLevel&#160;&#160;&#160;<br/>
+SpiCsIdentifier&#160;<br/>
+SpiEnableCs&#160;<br/>
+SpiHwUnit&#160;<br/>
+SpiTimeClk2Cs&#160;<br/>
+SpiExternalDevice&#160;<br/>
+SpiClk2CsCount&#160;&#160;&#160;&#160;<br/>
+SpiBaudrateConfiguration&#160;&#160;&#160;&#160;<br/>
+SpiInputClockSelect &#160;&#160;<br/>
+SpiInterruptDelayMode&#160; &#160;&#160;&#160;<br/>
+SpiParitySelection&#160; &#160;&#160;&#160;<br/>
+SpiBroadcastingPriority&#160; &#160;&#160;<br/>
+SpiClockFrequencyRef&#160;<br/>
+SpiJobId&#160;<br/>
+SpiJob&#160;<br/>
+SpiJobPriority&#160;&#160;<br/>
+42&#160;<br/>
+<hr/>
+<a name=43></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Container&#160;Name&#160;</b><br/>
+SpiSeqStartNotification&#160;<br/>
+SpiSequence&#160;<br/>
+SpiDeviceAssignment&#160;<br/>
+SpiInterruptibleSequence&#160;<br/>
+SpiSequenceId&#160;<br/>
+SpiHighPriorityHwSequence&#160;<br/>
+SpiJobAssignment&#160;<br/>
+SpiHwUnitSelection&#160;<br/>
+SpiMemoryMode&#160;<br/>
+SpiMemoryModeSelection&#160;<br/>
+SpiTxDmaChannel&#160;<br/>
+SpiRxDmaChannel&#160;<br/>
+SpiDma&#160;<br/>
+SpiDmaHwUnit&#160;<br/>
+SPI_E_HARDWARE_ERROR&#160;<br/>
+SpiDemEventParameterRefs&#160;<br/>
+SPI_E_DATA_TX_TIMEOUT_FAILURE&#160;<br/>
+SpiChannelIndex&#160;<br/>
+SpiChannelList&#160;<br/>
+SpiChannelAssignment&#160;<br/>
+SpiMaxHwUnit&#160;<br/>
+SpiPublishedInformation&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_006: The value of&#160;the parameter&#160;‘SpiChannelType’&#160;in the &#160;&#160;<br/>container&#160;‘SpiChannel’&#160;should be same for&#160;SPI&#160;Channels&#160;(having&#160;same&#160;<br/>channel&#160;Id)&#160;across multiple&#160;configuration&#160;sets.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;parameter&#160;SpiChannelType&#160;in the&#160;container&#160;<br/>SpiChannel&#160;is&#160;not same for SPI&#160;Channels&#160;(having&#160;same channel&#160;Id)&#160;across&#160;<br/>multiple configuration sets.&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_007:&#160;The number&#160;of&#160;SPI&#160;channels configured should be&#160;same&#160;<br/>across&#160;the multiple configurations set container&#160;‘SpiDriver’.&#160;<br/></b>This&#160;error occurs, if&#160;the number&#160;of&#160;SPI channels&#160;configured&#160;is&#160;not&#160;same across&#160;the&#160;<br/>multiple configurations&#160;set&#160;container&#160;SpiDriver.&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_008: The value of&#160;the parameters ‘SpiEbMaxLength’ and&#160;<br/>‘SpiIbNBuffers’&#160;in the&#160;container&#160;‘SpiChannel’&#160;should&#160;be same for&#160;SPI&#160;<br/>Channels&#160;(having&#160;same channel&#160;Id)&#160;across&#160;multiple configuration&#160;sets.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;for parameters&#160;SpiEbMaxLength and&#160;SpiIbNBuffers&#160;<br/>are not&#160;same for all&#160;SPI Channels&#160;(having&#160;same channel&#160;Id) across&#160;multiple&#160;<br/>configuration&#160;sets&#160;in&#160;ECU&#160;Configuration Description File.&#160;<br/>
+<b>&#160;</b><br/>
+<b>ERR_59_83_009: Minimum one_&#160;SpiDemEventParameterRefs instance&#160;is&#160;<br/>needed.&#160;<br/></b>This&#160;error will&#160;occur,&#160;if&#160;at&#160;least one&#160;DEM component&#160;is&#160;not&#160;present&#160;in the&#160;input&#160;<br/>ECU Configuration Description&#160;File(s).<b>&#160;&#160;<br/>ERR_59_83_010: Maximum allowed SpiDemEventParameterRefs instance&#160;is&#160;<br/>one.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;more&#160;than&#160;one DEM component&#160;is&#160;present&#160;in&#160;the&#160;input&#160;ECU&#160;<br/>Configuration Description File(s).&#160;<br/>
+<b>&#160;</b><br/>
+43&#160;<br/>
+<hr/>
+<a name=44></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>ERR_59_83_011:&#160;References&#160;SPI_E_DATA_TX_TIMEOUT_FAILURE&#160;is not&#160;<br/>configured in&#160;&lt;Spi/&#160;SpiDriver/SpiDemEventParameterRefs&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the parameter&#160;SPI_E_DATA_TX_TIMEOUT_FAILURE&#160;not&#160;<br/>configured.&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_012:&#160;References path&#160;of&#160;Parameter&#160;<br/>SPI_E_DATA_TX_TIMEOUT_FAILURE&#160;is&#160;not&#160;correct in&#160;&lt;Spi/&#160;<br/>SpiDriver/SpiDemEventParameterRefs&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;incorrect reference provided&#160;for the reference parameter&#160;<br/>(‘SPI_E_DATA_TX_TIMEOUT_FAILURE’).&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_013:&#160;References&#160;SPI_E_HARDWARE_ERROR is not&#160;configured&#160;<br/>in &lt;Spi/ SpiDriver/SpiDemEventParameterRefs&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the parameter&#160;SPI_E_HARDWARE_ERROR not&#160;configured<b>.&#160;</b><br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_014:&#160;Reference&#160;path&#160;of&#160;Parameter&#160;SPI_E_HARDWARE_ERROR&#160;<br/>is&#160;not&#160;correct&#160;in&#160;&lt;Spi/&#160;SpiDriver/SpiDemEventParameterRefs&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;incorrect reference provided&#160;for the reference parameter&#160;<br/>(‘SPI_E_HARDWARE_ERROR).&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_015:&#160;References&#160;SpiChannelAssignment&#160;is&#160;not&#160;configured in&#160;<br/>&lt;Spi/&#160;SpiDriver/SpiExternalDevice/SpiJob/&#160;SpiChannelList&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the parameter&#160;SpiChannelAssignment not&#160;configured.&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_016:&#160;References path&#160;of&#160;Parameter&#160;SpiChannelAssignment&#160;is&#160;<br/>not&#160;correct in&#160;&lt;Spi/&#160;SpiDriver/SpiExternalDevice/SpiJob/ SpiChannelList&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;incorrect reference provided&#160;for the reference parameter&#160;<br/>(‘SpiChannelAssignment).&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_017:&#160;References&#160;SpiDeviceAssignment&#160;is&#160;not&#160;configured in&#160;<br/>&lt;Spi/&#160;SpiDriver/SpiExternalDevice/SpiJob&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the parameter&#160;SpiDeviceAssignment not&#160;configured.&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_018:&#160;References path&#160;of&#160;Parameter&#160;SpiDeviceAssignment&#160;is not&#160;<br/>correct in&#160;&lt;Spi/&#160;SpiDriver/SpiExternalDevice/SpiJob&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;incorrect reference provided&#160;for the reference parameter&#160;<br/>(‘SpiDeviceAssignment).&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_019:&#160;Parameter&#160;&lt;Parameter&gt;&#160;is not&#160;configured in&#160;&lt;Spi/&#160;<br/>SpiDriver/SpiExternalDevice/SpiJob&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;any&#160;parameter&#160;in job&#160;container&#160;are&#160;not configured.&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_020:&#160;References&#160;SpiJobAssignment&#160;is&#160;not&#160;configured in&#160;&lt;Spi/&#160;<br/>SpiDriver/&#160;SpiSequence&#160;&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the parameter&#160;SpiJobAssignment&#160;not configured.&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_021: The value of&#160;the parameter&#160;‘SpiJobEndNotification’ present&#160;<br/>in the container&#160;‘SpiJob’&#160;should be same for&#160;SPI jobs (having&#160;same&#160;Job&#160;Id).&#160;<br/></b>This&#160;error occurs,&#160;if&#160;the parameter&#160;SpiJobEndNotification&#160;in the container&#160;SpiJob is&#160;<br/>not same for SPI jobs&#160;(having&#160;same Job&#160;Id)&#160;across&#160;multiple&#160;configuration sets&#160;in&#160;<br/>ECU Configuration Description&#160;File&#160;<br/>
+44&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=45></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_022: The value for&#160;the parameter&#160;‘SpiHwUnitSynchronous’&#160;in the&#160;<br/>container&#160;‘SpiJob'&#160;should be same for&#160;jobs&#160;that are&#160;associated&#160;with&#160;same&#160;<br/>sequence.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;for the&#160;parameter&#160;SpiHwUnitSynchronous&#160;in the&#160;<br/>container&#160;SpiJob is&#160;not same&#160;for jobs&#160;that&#160;are associated&#160;with same sequence.&#160;In&#160;<br/>general, the&#160;transfer&#160;mode&#160;of&#160;the jobs&#160;(that&#160;are&#160;associated&#160;with same sequence)&#160;<br/>should be&#160;same.&#160;&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_024: The value configured for&#160;the&#160;parameter&#160;'parameter&#160;name'&#160;<br/>should follow&#160;C Syntax&#160;&lt;&#160;[a-zA-Z]&#160;[a-zA-Z0-9_]&#160;&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;configuration&#160;parameters&#160;mentioned&#160;below&#160;does&#160;not&#160;<br/>adhere to C&#160;syntax&#160;i.e.,&#160;the&#160;value&#160;should not&#160;contain characters&#160;other&#160;than (a-z,&#160;A-Z,&#160;<br/>0-9 or&#160;“_”)&#160;and it&#160;also should start&#160;with&#160;an alphabet.&#160;<br/><b>&#160;</b><br/>
+<b>Table&#160;9-2&#160;&#160;Naming&#160;Parameters&#160;</b><br/>
+<b>Parameter&#160;Name</b>&#160;<br/>
+<b>Container&#160;Name</b>&#160;<br/>
+SpiJobEndNotification&#160;<br/>
+SpiJob&#160;<br/>
+SpiSeqEndNotification&#160;<br/>
+SpiSequence&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>ERR_59_83_026: The value of&#160;the parameter&#160;‘SpiMemoryModeSelection’ in the&#160;<br/>container&#160;‘SpiMemoryMode’&#160;should be&#160;same&#160;across the multiple&#160;<br/>configurations set container&#160;‘SpiDriver’.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiMemoryModeSelection&#160;&#160;<br/>in the&#160;container&#160;SpiMemoryMode&#160;is&#160;not&#160;same across&#160;the multiple configurations&#160;set&#160;<br/>container&#160;SpiDriver.&#160;<b>&#160;</b><br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>ERR_59_83_028: The short&#160;name of&#160;the&#160;container&#160;‘SpiJob’ should be same for&#160;<br/>job&#160;having&#160;same 'SpiJobId' &lt;value for&#160;SpiJobId&gt;&#160;across&#160;multiple&#160;<br/>configurations set container&#160;‘SpiDriver’.&#160;<br/></b>This&#160;error occurs, if&#160;the short name of&#160;the container&#160;SpiJob&#160;is&#160;not same for SPI jobs&#160;<br/>(having&#160;same job&#160;Id)&#160;across&#160;multiple configurations&#160;set container&#160;SpiDriver.&#160;<br/><b>ERR_59_83_030: Maximum allowed SpiCsih0 instance&#160;is&#160;one.&#160;<br/></b>This&#160;error occurs, if&#160;multiple&#160;instance of&#160;SpiCsih0&#160;is&#160;configured&#160;in&#160;<br/>SpiPublishedInformation<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_031:&#160;Parameter&#160;&lt;SpiChannelId&gt;&#160;is&#160;not&#160;configured in&#160;sequential&#160;in&#160;<br/>&lt;Spi/SpiDriver/&#160;SpiChannel&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;for parameter&#160;SpiChannelId&#160;present&#160;in the container&#160;<br/>SpiChannel&#160;is&#160;not starting&#160;with&#160;zero&#160;and also not&#160;sequential&#160;or&#160;with&#160;gaps&#160;for any&#160;given&#160;<br/>configuration&#160;set.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_032:&#160;SpiChannelBuffersAllowed in&#160;the container&#160;SpiGeneral&#160;is&#160;<br/>configured as&#160;1&#160;and&#160;the&#160;parameter&#160;SpiChannelType&#160;in any&#160;of&#160;the&#160;container&#160;<br/>SpiChannel&#160;is&#160;not&#160;configured as&#160;EB&#160;in SpiDriver.</b><br/>
+45&#160;<br/>
+<hr/>
+<a name=46></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/></b>This&#160;error occurs, if&#160;SpiChannelBuffersAllowed&#160;in&#160;the&#160;container&#160;SpiGeneral&#160;is&#160;<br/>configured&#160;as&#160;1&#160;and&#160;the&#160;parameter&#160;SpiChannelType in&#160;the&#160;container&#160;SpiChannel&#160;is&#160;not&#160;<br/>configured&#160;as&#160;EB.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_033:&#160;SpiChannelBuffersAllowed in&#160;the container&#160;SpiGeneral&#160;is&#160;<br/>configured as&#160;0&#160;and&#160;the&#160;parameter&#160;SpiChannelType in&#160;any&#160;of&#160;the&#160;container&#160;<br/>SpiChannel&#160;is&#160;not&#160;configured as&#160;IB in&#160;SpiDriver.&#160;<br/></b>This&#160;error occurs, if&#160;SpiChannelBuffersAllowed&#160;in&#160;the&#160;container&#160;SpiGeneral&#160;is&#160;<br/>configured&#160;as&#160;0&#160;and&#160;the&#160;parameter&#160;SpiChannelType in&#160;the&#160;container&#160;SpiChannel&#160;is&#160;not&#160;<br/>configured&#160;as&#160;IB.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_034: The SPI&#160;channels&#160;configured for&#160;a&#160;specific job&#160;should not&#160;be&#160;<br/>repeated&#160;when the parameter&#160;‘SpiMemoryModeSelection’ in the&#160;container&#160;<br/>‘SpiMemoryMode’&#160;is&#160;configured as &lt;DUAL_BUFFER_MODE/TX_ONLY_MODE&gt;.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value for channels&#160;configured for a specific&#160;job&#160;is&#160;repeated&#160;<br/>when&#160;the&#160;parameter&#160;SpiMemoryModeSelection in the&#160;container&#160;SpiMemoryMode&#160;is&#160;<br/>configured&#160;as&#160;DUAL_BUFFER_MODE&#160;or TX_ONLY_MODE<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_035: The SPI&#160;channels&#160;configured for&#160;a&#160;specific job&#160;should have&#160;<br/>same value&#160;for&#160;the parameter&#160;‘SpiDataWidth’ of&#160;container&#160;'SpiChannel’&#160;since the&#160;<br/>parameter&#160;‘SpiMemoryModeSelection’ in the&#160;container&#160;‘SpiMemoryMode’&#160;is&#160;<br/>configured as&#160;&lt;value&#160;of&#160;SpiMemoryModeSelection&gt;&#160;within a sequence.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value for channels&#160;configured for a specific&#160;job&#160;is&#160;not same&#160;<br/>for the&#160;parameter&#160;SpiDataWidth&#160;of&#160;container&#160;SpiChannel&#160;when the parameter&#160;<br/>SpiMemoryModeSelection in the&#160;container SpiMemoryMode&#160;is&#160;configured&#160;as&#160;<br/>DUAL_BUFFER_MODE&#160;or&#160;TX_ONLY_MODE&#160;or FIFO_MODE.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_036:&#160;SpiDataWidth&#160;configured for&#160;a&#160;SpiChannel&#160;is greater&#160;than&#160;8&#160;<br/>but&#160;SpiDataWidthSelection&#160;in SpiGeneral0 is&#160;BITS_8.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiDataWidth&#160;in the&#160;container&#160;<br/>SpiChannel&#160;is&#160;not&#160;in&#160;the&#160;range&#160;of&#160;7&#160;to&#160;8&#160;when the parameter&#160;SpiDataWidthSelection&#160;in&#160;<br/>the&#160;container&#160;SpiGeneral&#160;is&#160;configured&#160;as&#160;BITS_8.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_037:&#160;SpiDataWidth&#160;configured for&#160;a&#160;SpiChannel&#160;is greater&#160;than&#160;16&#160;<br/>but&#160;SpiDataWidthSelection&#160;in SpiGeneral0 is&#160;BITS_16.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiDataWidth&#160;in the&#160;container&#160;<br/>SpiChannel&#160;is&#160;not&#160;in&#160;the&#160;range&#160;of&#160;7&#160;to&#160;16&#160;when&#160;the&#160;parameter&#160;SpiDataWidthSelection&#160;<br/>in the&#160;container&#160;SpiGeneral&#160;is&#160;configured as&#160;BITS_16.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_038:&#160;Parameter&#160;SpiJobId in&#160;SpiJob&#160;container&#160;is not&#160;configured in&#160;<br/>sequential.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;for parameter&#160;SpiJobId&#160;present&#160;in the&#160;container&#160;SpiJob&#160;<br/>is&#160;not sequential&#160;or&#160;with&#160;gaps&#160;and&#160;also&#160;not starting&#160;with&#160;zero for any&#160;given&#160;<br/>configuration&#160;set in the ECU Configuration&#160;Description&#160;File.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_039: The value of&#160;the parameter&#160;‘SpiHwUnitSynchronous’&#160;in the&#160;<br/>container&#160;‘SpiJob’&#160;should&#160;be same for&#160;all jobs that&#160;are having&#160;same value&#160;for&#160;<br/>the parameter&#160;‘SpiHwUnit’ in the container&#160;‘SpiExternalDevice’&#160;within a &#160;<br/>configuration&#160;set.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;for the&#160;parameter&#160;SpiHwUnitSynchronous&#160;in the&#160;<br/>container&#160;SpiJob is&#160;not same&#160;for jobs&#160;that&#160;are associated&#160;with same sequence.&#160;In&#160;<br/>general, the&#160;transfer&#160;mode&#160;of&#160;the jobs&#160;(that&#160;are&#160;associated&#160;with same sequence)&#160;<br/>should be&#160;same.&#160;&#160;<br/><b>&#160;</b><br/>
+46&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=47></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/><b>&#160;</b><br/>
+<b>&#160;<br/>ERR_59_83_040:&#160;Parameter&#160;SpiHwUnitSelection&#160;in&#160;SpiMemoryMode and&#160;<br/>SpiMemoryMode$MemoryMode1&#160;are same.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiHwUnitSelection&#160;in the&#160;container&#160;<br/>SpiMemoryMode&#160;is&#160;not&#160;unique&#160;within configuration set&#160;container&#160;SpiDriver.<b>&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_041:&#160;Parameter&#160;SpiSequenceId&#160;in SpiSequence&#160;container&#160;is&#160;not&#160;<br/>configured in&#160;sequential.&#160;<br/></b>This&#160;error occurs, if&#160;the parameter&#160;SpiSequenceId&#160;is&#160;not&#160;sequential&#160;or&#160;with&#160;gaps&#160;and&#160;<br/>also not&#160;starting&#160;with&#160;zero&#160;within the&#160;container&#160;SpiSequence for any&#160;of&#160;the given&#160;<br/>configuration&#160;set.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_042: The value&#160;of&#160;the parameter&#160;SpiMaxChannel&#160;present&#160;in&#160;<br/>container&#160;SpiDriver&#160;is&#160;not&#160;equal&#160;to&#160;total&#160;number&#160;of&#160;channels&#160;configured.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiMaxChannel&#160;present&#160;in container&#160;<br/>SpiDriver is&#160;not&#160;equal&#160;to total&#160;number&#160;of&#160;channels&#160;configured&#160;within&#160;each&#160;SpiDriver&#160;<br/>container&#160;in&#160;ECU Configuration&#160;Description&#160;File<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_043: The value of&#160;the parameter&#160;SpiMaxJob&#160;present&#160;in&#160;container&#160;<br/>SpiDriver$DriverCount&#160;is&#160;not&#160;equal&#160;to&#160;total&#160;number&#160;of&#160;jobs configured.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiMaxJob&#160;in the&#160;container&#160;SpiDriver is&#160;<br/>not equal&#160;to the total&#160;number&#160;of&#160;jobs&#160;configured&#160;within&#160;each SpiDriver container in&#160;<br/>ECU Configuration Description&#160;File.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_044: The value of&#160;the parameter&#160;SpiMaxSequence&#160;present&#160;in&#160;<br/>container&#160;SpiDriver$DriverCount&#160;is&#160;not&#160;equal to&#160;total&#160;number&#160;of&#160;sequence&#160;<br/>configured.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiMaxSequence&#160;in the&#160;container&#160;<br/>SpiDriver is&#160;not&#160;equal&#160;to the total&#160;number&#160;of&#160;jobs&#160;configured&#160;within&#160;each&#160;SpiDriver&#160;<br/>container&#160;in&#160;ECU&#160;Configuration&#160;Description&#160;File.&#160;&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_045: The value configured for&#160;the&#160;parameter&#160;SpiLevelDelivered in&#160;<br/>the container&#160;SpiGeneral&#160;is&#160;0&#160;and&#160;the value of&#160;the parameter&#160;<br/>SpiMemoryModeSelection&#160;in the container&#160;SpiMemoryMode is not&#160;configured as&#160;<br/>DIRECT_ACCESS_MODE.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;configured for the&#160;parameter&#160;SpiLevelDelivered&#160;in&#160;the&#160;<br/>container&#160;SpiGeneral&#160;is&#160;0&#160;and&#160;the&#160;value&#160;of&#160;the parameter&#160;SpiMemoryModeSelection&#160;in&#160;<br/>the&#160;container&#160;SpiMemoryMode&#160;is&#160;not&#160;configured as&#160;DIRECT_ACCESS_MODE.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_046: The parameter&#160;SpiDmaMode present&#160;in the container&#160;<br/>SpiGeneral&#160;is configured&#160;as&#160;true&#160;and&#160;no&#160;instance&#160;of&#160;the container&#160;SpiDma is&#160;<br/>configured in&#160;SpiDriver.&#160;<br/></b>This&#160;error occurs, if&#160;the parameter&#160;SpiDmaMode&#160;present&#160;in the container SpiGeneral&#160;<br/>is&#160;configured as&#160;true&#160;and no instance of&#160;the container&#160;SpiDma is&#160;configured.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_047: The value configured for&#160;the&#160;parameters ‘SpiTxDmaChannel’&#160;<br/>and&#160;‘SpiRxDmaChannel’&#160;should be unique within a configuration&#160;set.&#160;<br/></b>This&#160;error occurs, if&#160;the same DMA&#160;channel&#160;is&#160;configured&#160;for SpiTxDmaChannel&#160;or&#160;<br/>SpiRxDmaChannel&#160;of&#160;SpiDma container&#160;for hardware&#160;units&#160;(SpiDmaHwUnit)&#160;within a&#160;<br/>configuration&#160;set. DMA&#160;channel&#160;(Tx&#160;or Rx)&#160;should be unique&#160;within&#160;a configuration&#160;set.&#160;<br/><b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;</b><br/>
+47&#160;<br/>
+<hr/>
+<a name=48></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_048:&#160;SpiHwUnitSynchronous&#160;is&#160;configured as&#160;SYNCHRONOUS&#160;in&#160;<br/>the container&#160;SpiJob&#160;and&#160;same HWunit&#160;is configured&#160;for&#160;DMA&#160;in&#160;SpiDma.&#160;<br/></b>This&#160;error occurs, if&#160;the SpiDmaMode parameter&#160;is&#160;configured&#160;as&#160;true&#160;and&#160;the&#160;same&#160;<br/>DMA&#160;HW&#160;unit is&#160;configured&#160;as&#160;SYNCHRONOUS&#160;in the&#160;parameter&#160;<br/>SpiHwUnitSynchronous&#160;of&#160;the container&#160;SpiJob.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_049:&#160;DMA&#160;HW&#160;unit&#160;configured for&#160;the&#160;parameter&#160;SpiDmaHwUnit&#160;in&#160;<br/>the container&#160;SpiDma is&#160;configured with&#160;the memory mode of&#160;TX_ONLY_MODE&#160;<br/>or&#160;DUAL_BUFFER_MODE&#160;in SpiMemoryMode$MemoryMode.&#160;<br/></b>This&#160;error occurs, if&#160;DMA&#160;HW&#160;unit configured for the&#160;parameter&#160;SpiDmaHwUnit in&#160;the&#160;<br/>container&#160;SpiDma is&#160;configured&#160;with&#160;the&#160;memory&#160;mode of&#160;TX_ONLY_MODE&#160;or&#160;<br/>DUAL_BUFFER_MODE.&#160;<br/>If&#160;SpiHighPriorityHwHandlingEnable&#160;is&#160;configured&#160;as&#160;true&#160;in&#160;SpiGeneral&#160;container&#160;then&#160;<br/>the&#160;DMA&#160;HW&#160;unit configured&#160;for the&#160;parameter&#160;SpiDmaHwUnit&#160;in the&#160;container&#160;<br/>SpiDma can&#160;be&#160;configured&#160;with&#160;the&#160;memory&#160;mode of&#160;TX_ONLY_MODE.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_050:&#160;SpiHwUnitSynchronous&#160;is&#160;configured as&#160;SYNCHRONOUS&#160;in&#160;<br/>the container&#160;SpiJob&#160;but&#160;memorymode is&#160;DIRECT_ACCESS_MODE&#160;in&#160;<br/>SpiMemoryMode.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiMemoryModeSelection in the&#160;<br/>container&#160;SpiMemoryMode&#160;is&#160;configured as&#160;DIRECT_ACCESS_MODE&#160;and the&#160;<br/>respective HW&#160;Unit is&#160;configured&#160;for SYNCHRONOUS&#160;in the&#160;parameter&#160;<br/>SpiHwUnitSynchronous&#160;of&#160;the container&#160;SpiJob&#160;with&#160;the value configured for the&#160;<br/>parameter&#160;SpiLevelDelivered&#160;in the container&#160;SpiGeneral&#160;is&#160;2.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_051:&#160;SpiCsSelection&#160;is configured&#160;as&#160;CS_VIA_GPIO&#160;in the&#160;container&#160;<br/>SpiExternalDevice&#160;but&#160;SpiPortPinSelect&#160;is via&#160;CSL&#160;in SpiJob.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiPortPinSelect&#160;in&#160;the&#160;container&#160;<br/>SpiJob is&#160;configured as&#160;CSLn&#160;and&#160;the&#160;parameter&#160;SpiCsSelection present in the&#160;<br/>container&#160;SpiExternalDevice is&#160;configured&#160;as&#160;CS_VIA_GPIO. Here&#160;n&#160;is&#160;the&#160;integer&#160;<br/>number&#160;e.g.&#160;0,&#160;1,&#160;etc.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_052:&#160;SpiCsSelection&#160;is configured&#160;as&#160;PERIPHERAL_ENGINE&#160;in&#160;the&#160;<br/>container&#160;SpiExternalDevice&#160;but&#160;SpiPortPinSelect&#160;is via&#160;GPIO&#160;in&#160;SpiJob.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiPortPinSelect&#160;in&#160;the&#160;container&#160;<br/>SpiJob is&#160;configured as&#160;Port group&#160;related&#160;pins&#160;and the&#160;parameter&#160;SpiCsSelection&#160;<br/>present&#160;in the&#160;container&#160;SpiExternalDevice&#160;is&#160;configured as&#160;<br/>CS_VIA_PERIPHERAL_ENGINE.&#160;&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_053:&#160;Parameter&#160;SpiMemoryModeSelection&#160;in container&#160;<br/>SpiMemoryMode is configured as&#160;DUAL_BUFFER_MODE&#160;or TX_ONLY_MODE&#160;<br/>but&#160;the channel&#160;for&#160;corresponding&#160;HWunit&#160;is&#160;configured&#160;as&#160;EB.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiMemoryModeSelection in the&#160;<br/>container&#160;SpiMemoryMode&#160;is&#160;configured as&#160;DUAL_BUFFER_MODE&#160;or&#160;<br/>TX_ONLY_MODE&#160;and&#160;the&#160;parameter&#160;SpiChannelType&#160;in the&#160;container&#160;SpiChannel&#160;is&#160;<br/>not configured&#160;as&#160;IB.<b>&#160;<br/></b>The&#160;value&#160;of&#160;the parameter&#160;SpiChannelType&#160;in&#160;the&#160;SpiChannel&#160;container can&#160;be&#160;<br/>configured&#160;as&#160;EB,&#160;if&#160;the parameter&#160;SpiHighPriorityHwHandlingEnable&#160;is&#160;configured as&#160;<br/>true&#160;in SpiGeneral&#160;container&#160;and&#160;if&#160;this&#160;channel&#160;is&#160;linked&#160;to&#160;a job&#160;which&#160;is&#160;linked&#160;to&#160;a&#160;<br/>high priority&#160;sequence.<br/>
+48&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=49></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_054:&#160;Parameter&#160;SpiMemoryModeSelection&#160;in container&#160;<br/>SpiMemoryMode is configured as&#160;DUAL_BUFFER_MODE&#160;or TX_ONLY_MODE&#160;<br/>but&#160;the value of&#160;the parameter&#160;SpiInterruptibleSequence in&#160;the&#160;container&#160;<br/>SpiSequence&#160;is&#160;configured&#160;as&#160;true.&#160;<br/></b>This&#160;error occurs, if&#160;the jobs&#160;connected&#160;to&#160;the&#160;sequence having&#160;the&#160;value&#160;of&#160;the&#160;<br/>parameter&#160;SpiMemoryModeSelection&#160;in&#160;the&#160;container&#160;SpiMemoryMode&#160;is&#160;configured&#160;<br/>as&#160;DUAL_BUFFER_MODE&#160;or TX_ONLY_MODE&#160;and the&#160;value&#160;of&#160;the parameter&#160;<br/>SpiInterruptibleSequence&#160;in the&#160;container SpiSequence is&#160;not&#160;configured false.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_055: The value of&#160;parameter&#160;'SpiHighPriorityHwSequence' present&#160;<br/>in the container&#160;'SpiSequence' should be&#160;configured as&#160;&lt;true&gt;&#160;for&#160;at least&#160;one&#160;<br/>of&#160;the sequences,&#160;since the parameter&#160;'SpiHighPriorityHwHandlingEnable'&#160;<br/>present&#160;in the&#160;container&#160;'SpiGeneral' is&#160;configured&#160;as&#160;&lt;true&gt;&#160;<br/></b>The&#160;error occurs, if&#160;the value of&#160;the&#160;parameter&#160;SpiHighPriorityHwSequence&#160;present&#160;in&#160;<br/>the&#160;container&#160;SpiSequence&#160;is&#160;not&#160;configured as&#160;true for none&#160;of&#160;the sequences&#160;and&#160;<br/>the&#160;value&#160;of&#160;parameter&#160;SpiHighPriorityHwHandlingEnable present&#160;in the container&#160;<br/>SpiGeneral&#160;is&#160;configured as&#160;true.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_056:&#160;SpiMemoryModeSelection&#160;for&#160;the&#160;Spi Hardware unit&#160;<br/>&lt;Hardware unit&gt;&#160;should be &lt;TX_ONLY_MODE&gt;, since&#160;the parameter&#160;<br/>'SpiHighPriorityHwSequence' in&#160;the&#160;SpiSequence&#160;container&#160;is configured as&#160;<br/>&lt;true&gt;&#160;for&#160;the&#160;sequence containing&#160;the Job&#160;which is&#160;assigned to&#160;this&#160;hardware&#160;<br/>unit.&#160;<br/></b>This&#160;error occurs, if&#160;the SpiMemoryModeSelection&#160;for&#160;Spi&#160;jobs&#160;value&#160;of&#160;the SpiJob&#160;<br/>short name of&#160;the value&#160;of&#160;the&#160;SpiSequence should&#160;be&#160;<br/>&lt;TX_ONLY_MODE&gt;, since&#160;the&#160;parameter&#160;SpiHighPriorityHwSequence in the&#160;<br/>SpiSequence container&#160;is&#160;configured as&#160;&lt;true&gt;&#160;for this&#160;sequence. Hence the&#160;MCAL&#160;<br/>Code&#160;Generator Tool&#160;ignores&#160;the&#160;value&#160;configured for the&#160;parameter&#160;<br/>SpiHighPriorityHwSequence for this&#160;sequence.&#160;<br/><b>&#160;<br/>&#160;<br/>&#160;ERR_59_83_057: The parameter&#160;'SpiHwUnitSynchronous' of&#160;Job2 should be&#160;<br/>'ASYNCHRONOUS', since&#160;the parameter&#160;'SpiHighPriorityHwSequence'&#160;in the&#160;<br/>SpiSequence&#160;container&#160;is&#160;configured as &lt;true&gt;&#160;for&#160;Sequence2&#160;which is&#160;<br/>assigned with&#160;Job2.&#160;<br/></b>This&#160;error will&#160;occur if&#160;value&#160;of&#160;the parameter&#160;SpiHwUnitSynchronous&#160;in the&#160;container&#160;<br/>‘SpiJob’&#160;is&#160;configured as&#160;‘Synchronous’&#160;where sequence is&#160;<br/>SpiHighPriorityHwSequence.&#160;<br/><b>&#160;<br/>&#160;<br/>&#160;ERR_59_83_058: Jobs&#160;Job0 and&#160;Job1 must refer&#160;to&#160;the same&#160;external&#160;device&#160;<br/>container,&#160;since they&#160;are&#160;referring&#160;to&#160;the same CS&#160;line and&#160;the sequences&#160;<br/>containing&#160;these jobs are&#160;configured with&#160;'SpiHighPriorityHwSequence'&#160;&lt;true&gt;&#160;<br/>For&#160;SpiDriver0.&#160;<br/></b>This&#160;error occurs, if&#160;the chip select for the job&#160;is&#160;configured as&#160;Chip select value and&#160;<br/>this&#160;chip selects&#160;is&#160;associated&#160;with&#160;sequence&#160;which&#160;is&#160;having&#160;<br/>SpiHighPriorityHwSequence parameter&#160;is&#160;configured&#160;as&#160;true.&#160;<br/>&#160;<br/><b>&#160;<br/>&#160;ERR_59_83_059: Parameter&#160;'SpiHighPriorityHwSequence' in the sequence&#160;<br/>container&#160;of&#160;sequence$SeqCount&#160;is&#160;configured&#160;as&#160;&lt;false&gt;&#160;and&#160;<br/>'SpiMemoryModeSelection' is configured&#160;as&#160;'TX_ONLY_MODE' but&#160;the channel&#160;<br/>configured in&#160;SpiJob$JobCount&#160;is&#160;EB.&#160;In 'Tx-only&#160;mode', only&#160;high-priority&#160;<br/>sequences can have external&#160;buffers.&#160;<br/></b>This&#160;error&#160;occurs, if&#160;the SpiMemoryModeSelection&#160;for&#160;Spi&#160;jobs&#160;value&#160;of&#160;the SpiJob&#160;<br/>short name of&#160;the value&#160;of&#160;the&#160;SpiSequence should&#160;be&#160;<br/>&lt;TX_ONLY_MODE&gt;, since&#160;the&#160;parameter&#160;SpiHighPriorityHwSequence in the&#160;<br/>SpiSequence container&#160;is&#160;configured as&#160;&lt;true&gt;&#160;for this&#160;sequence. Hence the&#160;MCAL&#160;<br/>
+49&#160;<br/>
+<hr/>
+<a name=50></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Code&#160;Generator Tool&#160;ignores&#160;the&#160;value&#160;configured for the&#160;parameter&#160;<br/>SpiHighPriorityHwSequence for this&#160;sequence.&#160;<br/>Note:&#160;ie,&#160;Normal&#160;sequences&#160;for&#160;Tx-only&#160;mode should&#160;always&#160;have internal&#160;buffers.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_060:&#160;SpiChannels&#160;'&lt;SpiChannelID&gt;' and&#160;'&lt;SpiChannelID&gt;' must&#160;<br/>have the same&#160;Data width&#160;and&#160;direction&#160;(LSB/MSB)&#160;, since&#160;they&#160;are having&#160;the&#160;<br/>same CS&#160;line and&#160;linked to&#160;&lt;sequence&gt;&#160;which is&#160;&#160;configured with&#160;<br/>'SpiHighPriorityHwSequence' &lt;true&gt;&#160;For&#160;&lt;SpiDriver&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the channels&#160;of&#160;the job&#160;is&#160;configured&#160;with sequence&#160;which is&#160;<br/>having SpiHighPriorityHwSequence parameter&#160;is&#160;configured&#160;as&#160;true should have&#160;<br/>same properties&#160;of&#160;SpiDataWidth&#160;and SpiTransferStart<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_061: The chip&#160;select $PortPinSelect&#160;in&#160;SpiJob$JobCount&#160;is&#160;not&#160;<br/>supported for&#160;the Device&#160;$DeviceVariant.&#160;<br/></b>This&#160;error occurs, if&#160;the&#160;value&#160;of&#160;the&#160;parameter&#160;SpiPortPinSelect&#160;in&#160;the&#160;container&#160;<br/>SpiJob is&#160;configured as&#160;Port group&#160;related&#160;pins&#160;and the&#160;parameter&#160;SpiCsSelection&#160;<br/>present&#160;in the&#160;container&#160;SpiExternalDevice&#160;is&#160;configured as&#160;<br/>CS_VIA_PERIPHERAL_ENGINE.&#160;&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_062: The DMA&#160;is&#160;configured as&#160;true&#160;and&#160;Data width&#160;is&#160;not&#160;<br/>configured as&#160;16bits.&#160;<br/></b>This&#160;error occurs, if&#160;the configured&#160;value&#160;of&#160;the parameter&#160;SpiDataWidthSelection in&#160;<br/>the&#160;container&#160;SpiGeneral&#160;is&#160;not&#160;equal&#160;to 16 and the&#160;SpiDmaMode parameter&#160;is&#160;<br/>configured&#160;as&#160;true.<b>&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_063: The SpiMemoryMode is not&#160;configured.&#160;<br/></b>This&#160;error occurs, if&#160;no&#160;memorymode is&#160;configured&#160;in&#160;configuration&#160;xml.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_064: The SPI&#160;channel&#160;configured across jobs should not&#160;be&#160;<br/>repeated&#160;when the parameter&#160;'&#160;SpiMemoryModeSelection' in&#160;the container&#160;'&#160;<br/>SpiMemoryMode' is&#160;configured as&#160;&lt;DUAL_BUFFER_MODE/ TX_ONLY_MODE&gt;.&#160;<br/></b>This&#160;error occurs, if&#160;the value&#160;of&#160;the&#160;parameter&#160;SpiMemoryModeSelection in the&#160;<br/>container&#160;SpiMemoryMode&#160;is&#160;configured as&#160;DUAL_BUFFER_MODE&#160;or&#160;<br/>TX_ONLY_MODE&#160;and&#160;the&#160;channels&#160;configured&#160;for respective jobs&#160;are repeated.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_065: The jobs configured for&#160;the&#160;parameter&#160;'SpiJobAssignment' in&#160;<br/>the container&#160;‘SpiSequence’ should not&#160;be&#160;repeated&#160;since&#160;the parameter&#160;<br/>‘SpiMemoryModeSelection’ in the container&#160;‘SpiMemoryMode’&#160;is&#160;configured&#160;as&#160;<br/>&lt;DUAL_BUFFER_MODE/TX_ONLY_MODE&gt;.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;parameter&#160;SpiMemoryModeSelection&#160;in the&#160;container&#160;<br/>SpiMemoryMode&#160;is&#160;configured&#160;as&#160;DUAL_BUFFER_MODE&#160;or TX_ONLY_MODE&#160;and&#160;<br/>the&#160;jobs&#160;configured for the&#160;parameter&#160;SpiJobAssignment&#160;in the&#160;container&#160;<br/>SpiSequence is&#160;repeated.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_066: The value of&#160;the parameter&#160;‘SpiHwUnit’ in the container&#160;<br/>‘SpiExternalDevice’ should&#160;be same when the parameter&#160;<br/>‘SpiMemoryModeSelection’ in the container&#160;‘SpiMemoryMode’&#160;is&#160;configured&#160;as&#160;<br/>&lt;value of&#160;the parameter&#160;SpiMemoryModeSelection&gt;&#160;within a sequence.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;the&#160;parameter&#160;SpiHwUnit&#160;in&#160;the&#160;container&#160;<br/>SpiExternalDevice&#160;is&#160;not same when the&#160;parameter&#160;SpiMemoryModeSelection in the&#160;<br/>container&#160;SpiMemoryMode&#160;is&#160;configured as&#160;DUAL_BUFFER_MODE&#160;and&#160;<br/>TX_ONLY_MODE&#160;within&#160;sequence.&#160;<br/>
+50&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=51></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_067: The total&#160;number&#160;of&#160;buffers&#160;configured for&#160;all jobs linked to&#160;<br/>one CSIH&#160;HW&#160;Unit&#160;should&#160;be less than or&#160;equal&#160;to&#160;&lt;64/128&gt;&#160;since the value&#160;of&#160;<br/>the parameter&#160;‘SpiMemoryModeSelection’ in the container&#160;‘SpiMemoryMode’&#160;is&#160;<br/>configured as&#160;&lt;TX_ONLY_MODE&gt;&#160;and&#160;the parameter&#160;‘SpiDataWidth’ in the&#160;<br/>container&#160;'SpiChannel’ is&#160;configured as&#160;less than or&#160;equal&#160;to&#160;&lt;16&gt;.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;total&#160;number&#160;of&#160;buffers&#160;configured&#160;for all&#160;jobs&#160;linked&#160;to&#160;one&#160;<br/>CSIH HW&#160;Unit is&#160;more than&#160;64/128&#160;when&#160;the&#160;value of&#160;the&#160;parameter&#160;<br/>SpiMemoryModeModeSelection&#160;in the&#160;container&#160;SpiMemoryModeMode&#160;is&#160;configured&#160;<br/>as&#160;TX_ONLY_MODE&#160;and the&#160;parameter&#160;SpiDataWidth in&#160;the&#160;container SpiChannel&#160;is&#160;<br/>configured&#160;as&#160;less&#160;than&#160;or equal&#160;to 16.&#160;<br/>&#160;<br/>&#160;<br/><b>ERR_59_83_068&#160;:&#160;The&#160;total&#160;number&#160;of&#160;buffers configured for&#160;all jobs&#160;linked to&#160;<br/>one CSIH&#160;HW&#160;Unit&#160;should&#160;be less than or&#160;equal&#160;to&#160;&lt;32/64&gt;&#160;since the value of&#160;the&#160;<br/>parameter&#160;‘SpiMemoryModeSelection’ in the&#160;container&#160;‘SpiMemoryMode’&#160;is&#160;<br/>configured as&#160;&lt;DUAL_BUFFER_MODE&gt;&#160;and&#160;the parameter&#160;‘SpiDataWidth’ in&#160;the&#160;<br/>container&#160;'SpiChannel’ is&#160;configured as&#160;greater&#160;than&#160;&lt;16&gt;.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;total&#160;number&#160;of&#160;buffers&#160;configured&#160;for all&#160;jobs&#160;linked&#160;to&#160;one&#160;<br/>CSIH HW&#160;Unit is&#160;more than&#160;32/64&#160;when&#160;the&#160;value&#160;of&#160;the parameter&#160;<br/>SpiMemoryModeModeSelection&#160;in the&#160;container&#160;SpiMemoryModeMode&#160;is&#160;configured&#160;<br/>as&#160;DUAL_BUFFER_MODE&#160;and&#160;the&#160;parameter&#160;SpiDataWidth&#160;in the&#160;container&#160;<br/>SpiChannel&#160;is&#160;configured as&#160;greater&#160;than&#160;16.&#160;<br/>&#160;<br/>&#160;<br/><b>ERR_59_83_069: The value of&#160;the parameter&#160;‘SpiDataWidth’ in the container&#160;<br/>‘SpiChannel’ is&#160;not&#160;in the&#160;range of&#160;&lt;2 to&#160;32&gt;&#160;since the value of&#160;the parameter&#160;<br/>‘SpiHwUnit’ in the container&#160;‘SpiExternalDevice’&#160;is&#160;configured as CSIHn.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;the&#160;parameter&#160;SpiDataWidth&#160;in the&#160;container&#160;<br/>SpiChannel&#160;is&#160;not&#160;in&#160;the&#160;range&#160;of&#160;2&#160;to&#160;32 and&#160;the&#160;value of&#160;the&#160;parameter&#160;SpiHwUnit&#160;in&#160;<br/>the&#160;container&#160;SpiExternalDevice is&#160;configured&#160;as&#160;CSIH&lt;n&gt;. Here&#160;&lt;n&gt;&#160;is&#160;integer&#160;<br/>numbers&#160;e.g.&#160;0,&#160;1, 2&#160;and&#160;3.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_070: The value configured for&#160;the&#160;parameter&#160;'SpiDmaHwUnit' in&#160;the&#160;<br/>container&#160;'SpiDma'&#160;should&#160;be configured in&#160;any&#160;of&#160;the hardware units selected&#160;<br/>for&#160;jobs.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value configured&#160;for the&#160;parameter&#160;SpiDmaHwUnit&#160;in the&#160;<br/>container&#160;SpiDma is&#160;not configured&#160;in&#160;any&#160;of&#160;the&#160;hardware units&#160;selected&#160;for jobs.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_071: The parameter&#160;‘SpiHwUnit’ present&#160;in the container&#160;<br/>‘SpiExternalDevice’ is&#160;configured as&#160;&lt;value of&#160;the&#160;parameter&#160;SpiHwUnit&gt;&#160;and&#160;all&#160;<br/>of&#160;the following&#160;parameters (SpiCsIdleEnforcement, SpiCsIdleTiming,&#160;<br/>SpiCsHoldTiming, SpiCsInterDataDelay and&#160;SpiCsSetupTime)&#160;should be&#160;<br/>configured.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;parameter&#160;SpiHwUnit present&#160;in the container&#160;<br/>SpiExternalDevice&#160;is&#160;configured as&#160;CSIH&lt;m&gt;&#160;and&#160;any&#160;of&#160;the parameters&#160;<br/>SpiCsIdleEnforcement, SpiCsIdleTiming, SpiCsHoldTiming, SpiCsInterDataDelay&#160;and&#160;<br/>SpiCsSetupTime is&#160;not configured. Here&#160;&lt;m&gt;&#160;is&#160;integer&#160;number&#160;e.g.&#160;0,&#160;1,&#160;2&#160;and 3.&#160;<br/>&#160;<br/><b>&#160;<br/>ERR_59_83_072: The number&#160;of&#160;SPI&#160;sequences&#160;configured should be same&#160;<br/>across multiple&#160;configurations set container&#160;‘SpiDriver’.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;numbers&#160;of&#160;SPI sequences&#160;configured are&#160;not same across&#160;<br/>the&#160;multiple configurations&#160;set&#160;container&#160;SpiDriver.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_073: The number&#160;of&#160;SPI&#160;Jobs configured should be&#160;same across&#160;<br/>the multiple configurations set container&#160;‘SpiDriver’.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;number&#160;of&#160;SPI jobs&#160;configured&#160;is&#160;not same across&#160;the&#160;<br/>multiple configurations&#160;set&#160;container&#160;SpiDriver.&#160;<br/>
+51&#160;<br/>
+<hr/>
+<a name=52></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_074: The number&#160;of&#160;'SpiExternalDevice' configured&#160;should be&#160;same&#160;<br/>across the multiple configurations set container&#160;‘SpiDriver’.&#160;<br/></b>This&#160;error will&#160;occur,&#160;if&#160;the&#160;number&#160;of&#160;SpiExternalDevice configured is&#160;not same across&#160;<br/>the&#160;multiple configurations&#160;set&#160;container&#160;SpiDriver.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_075: The same value should be&#160;configured for&#160;the parameter&#160;<br/>‘SpiHwUnit’ in the container&#160;'SpiExternalDevice' across&#160;the multiple&#160;<br/>configuration&#160;sets.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value configured&#160;for the&#160;parameter&#160;SpiHwUnit&#160;in&#160;the&#160;<br/>container&#160;SpiExternalDevice is&#160;not&#160;same across&#160;multiple configuration&#160;sets.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_076: The value configured for&#160;the&#160;parameter&#160;<br/>'SpiSeqStartNotification' should follow&#160;C Syntax&#160;&lt;&#160;[a-zA-Z]&#160;[a-zA-Z0-9_]&#160;&gt;.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;configuration parameters&#160;mentioned below does&#160;<br/>not adhere to&#160;C syntax&#160;i.e.,&#160;the&#160;value&#160;should not&#160;contain characters&#160;other&#160;than&#160;(a-z,&#160;A-<br/>Z, 0-9&#160;or “_”)&#160;and&#160;it also should start&#160;with&#160;an&#160;alphabet<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_077: The parameter&#160;'SpiSeqEndNotification' in&#160;the container&#160;<br/>'SpiSequence'&#160;should not&#160;be configured, when the&#160;parameter&#160;<br/>'SpiHwUnitSynchronous'&#160;in the container&#160;‘SpiJob’ is configured with&#160;value&#160;<br/>'SYNCHRONOUS'&#160;since&#160;the pre-compile parameter&#160;<br/>'SpiSyncSeqEndNotificationEnable' in&#160;the 'SpiGeneral' container&#160;is configured&#160;<br/>as&#160;false.&#160;<br/></b>The&#160;error will&#160;occur if&#160;value&#160;of&#160;the parameter&#160;SpiHwUnitSynchronous&#160;in the container&#160;<br/>‘SpiJob’&#160;is&#160;configured as&#160;‘Synchronous’&#160;,&#160;when&#160;the&#160;parameter&#160;<br/>‘SpiSyncSeqEndNotificationEnable’&#160;in&#160;SpiGeneral&#160;container is&#160;FALSE&#160;and&#160;the&#160;<br/>sequence&#160;to&#160;which&#160;the&#160;‘SpiJob’&#160;belongs&#160;has&#160;Sequence end notification&#160;configured.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_078: The value of&#160;the parameter&#160;‘SpiJobEndNotification’ configured&#160;<br/>in the container&#160;‘SpiJob’&#160;should be unique for&#160;jobs&#160;with&#160;hardware units of&#160;<br/>different&#160;memory modes.&#160;&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;parameter&#160;SpiJobEndNotification of&#160;the&#160;container SpiJob is&#160;<br/>not unique for jobs&#160;with&#160;hardware units&#160;of&#160;different memory&#160;modes<b>.&#160;&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_079: The value of&#160;parameter&#160;'SpiSeqEndNotification' present&#160;in the&#160;<br/>container&#160;'SpiSequence'&#160;should be unique for&#160;the&#160;sequences having&#160;jobs with&#160;<br/>hardware units of&#160;different&#160;memory&#160;modes.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;SpiSeqEndNotification&#160;present&#160;in the&#160;<br/>container&#160;SpiSequence is&#160;not&#160;unique&#160;for the&#160;sequences&#160;having&#160;jobs&#160;with hardware&#160;<br/>units&#160;of&#160;different memory&#160;modes.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_080: The parameter&#160;‘SpiSeqEndNotification’ in the container&#160;<br/>‘SpiSequence’&#160;should be&#160;same for&#160;sequences&#160;having&#160;same 'SpiSequenceId'&#160;<br/>&lt;value for&#160;SpiSequenceId&gt;&#160;across multiple&#160;configurations set container&#160;<br/>‘SpiDriver’.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;parameter&#160;SpiSeqEndNotification in the container&#160;<br/>SpiSequence is&#160;not same for SPI Sequences&#160;(having&#160;same Sequence&#160;ID)&#160;across&#160;<br/>multiple configurations&#160;set&#160;container&#160;SpiSequence.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_081:&#160;HW&#160;Unit&#160;$HwUnit&#160;is&#160;configured for&#160;multiple DMA&#160;container.&#160;<br/></b>This&#160;error will&#160;occure,&#160;if&#160;multiple DMA&#160;container&#160;configured&#160;same hardware unit.&#160;<br/>
+52&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=53></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_082: The number&#160;of&#160;'SpiDMA' configured&#160;should be&#160;same across&#160;<br/>the multiple configurations set container&#160;‘SpiDriver’.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;number&#160;of&#160;SpiDMA&#160;configured is&#160;not same across&#160;the&#160;<br/>multiple configurations&#160;set&#160;container&#160;SpiDriver.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_083: The value of&#160;parameter&#160;'SpiSeqStartNotification'present&#160;in&#160;the&#160;<br/>container&#160;'SpiSequence'&#160;should be unique for&#160;the&#160;sequences having&#160;jobs with&#160;<br/>hardware units of&#160;different&#160;memory&#160;modes.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;SpiSeqEndNotification&#160;present&#160;in the&#160;<br/>container&#160;SpiSequence is&#160;not&#160;unique&#160;for the&#160;sequences&#160;having&#160;jobs&#160;with hardware&#160;<br/>units&#160;of&#160;different memory&#160;modes.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_084: The parameter&#160;'SpiWriteVerifyErrorInterface' in the&#160;<br/>'SpiGeneral' container&#160;should be configured when any&#160;of&#160;the parameters&#160;<br/>'SpiCSIHWriteVerify'&#160;or 'SpiDMAWriteVerify' are configured as&#160;<br/>&lt;WV_INIT_ONLY&gt;&#160;or&#160;&lt;WV_INIT_RUNTIME&gt;.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'Spi_UseWriteVerifyErrorInterface'&#160;<br/>present&#160;in the&#160;general&#160;container is&#160;not&#160;configured&#160;when any&#160;one&#160;or both parameter&#160;<br/>'SpiCSIHWriteVerify' and&#160;'SpiDMAWriteVerify'&#160;are configured&#160;as&#160;&lt;WV_INIT_ONLY&gt;&#160;or&#160;<br/>&lt;WV_INIT_RUNTIME&gt;.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_085: The parameter&#160;'SpiWriteVerifyErrorInterface' in the&#160;<br/>'SpiGeneral' container&#160;should be configured when the parameters&#160;<br/>'Spi_UseWriteVerifyErrorInterface' is configured as&#160;'true'.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SpiWriteVerifyErrorInterface' present in&#160;<br/>the&#160;general&#160;container&#160;is&#160;not&#160;configured&#160;when parameter&#160;'' are configured as&#160;'true'.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_086:&#160;References 'SpiClockFrequencyRef'&#160;is&#160;not&#160;configured in&#160;<br/>&lt;SpiExternalDevice&gt;&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SpiClockFrequencyRef' present&#160;in&#160;the&#160;<br/>SpiExternalDevice container&#160;is&#160;not configured.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_087:&#160;References path&#160;of&#160;Parameter&#160;'SpiClockFrequencyRef'&#160;is&#160;not&#160;<br/>correct in&#160;&lt;SpiExternalDevice&gt;&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SpiClockFrequencyRef' present&#160;in&#160;the&#160;<br/>SpiExternalDevice container&#160;is&#160;not correct.&#160;<br/>&#160;<br/><b>&#160;<br/>ERR_59_83_088:&#160;References&#160;SPI_E_LOOPBACK_SELFTEST_FAILURE&#160;is&#160;not&#160;<br/>configured in&#160;&lt;PATH&gt;&#160;when the parameter&#160;'SpiLoopBackSelfTest' is configured&#160;<br/>as&#160;&lt;LoopBack_Init&gt;&#160;or&#160;&lt;LoopBack_Init_RunTime&gt;&#160;in&#160;'SpiGeneral' container.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;<br/>'SPI_E_LOOPBACK_SELFTEST_FAILURE'&#160;present&#160;in&#160;the&#160;<br/>SpiDemEventParameterRefs&#160;container&#160;is&#160;not&#160;configured&#160;when the parameter&#160;in&#160;<br/>general&#160;container&#160;'SpiLoopBackSelfTest' is&#160;configured&#160;as&#160;&lt;LoopBack_Init&gt;&#160;or&#160;<br/>&lt;LoopBack_Init_RunTime&gt;.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_089:&#160;References path&#160;of&#160;Parameter&#160;<br/>'SPI_E_LOOPBACK_SELFTEST_FAILURE' is not&#160;correct&#160;in&#160;<br/>&lt;SpiDemEventParameterRefs&gt;&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;<br/>'SPI_E_LOOPBACK_SELFTEST_FAILURE'&#160;present&#160;in&#160;the&#160;<br/>SpiDemEventParameterRefs&#160;container&#160;is&#160;not correct.&#160;<br/><b>&#160;<br/>&#160;</b><br/>
+53&#160;<br/>
+<hr/>
+<a name=54></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_090:&#160;References&#160;SPI_E_ECC_SELFTEST_FAILURE&#160;is not&#160;<br/>configured in&#160;&lt;PATH&gt;&#160;when the parameter&#160;'SpiECCSelfTest' is configured as&#160;<br/>&lt;ECC_Init&gt;&#160;or&#160;&lt;ECC_Init_RunTime&gt;&#160;in 'SpiGeneral'&#160;container.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SPI_E_ECC_SELFTEST_FAILURE'&#160;<br/>present&#160;in the&#160;SpiDemEventParameterRefs&#160;container is&#160;not configured&#160;when&#160;the&#160;<br/>parameter in general&#160;container&#160;'SpiECCSelfTest' is&#160;configured&#160;as&#160;&lt;ECC_Init&gt;&#160;or&#160;<br/>&lt;ECC_Init_RunTime&gt;.<b>&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_091:&#160;References path&#160;of&#160;Parameter&#160;<br/>'SPI_E_ECC_SELFTEST_FAILURE' is not&#160;correct&#160;in&#160;<br/>&lt;SpiDemEventParameterRefs&gt;&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SPI_E_ECC_SELFTEST_FAILURE'&#160;<br/>present&#160;in the&#160;SpiDemEventParameterRefs&#160;container is&#160;not correct<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_092:&#160;References&#160;SPI_E_INT_INCONSISTENT&#160;is&#160;not&#160;configured in&#160;<br/>&lt;PATH&gt;&#160;when the parameter&#160;'SpiInterruptConsistencyCheck' is&#160;configured&#160;as&#160;<br/>&lt;true&gt;&#160;in 'SpiGeneral' container.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SPI_E_INT_INCONSISTENT' present&#160;<br/>in the&#160;SpiDemEventParameterRefs&#160;container&#160;is&#160;not configured&#160;when the parameter in&#160;<br/>general&#160;container&#160;'SpiInterruptConsistencyCheck' is&#160;configured&#160;as&#160;&lt;true&gt;.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_093:&#160;References path&#160;of&#160;Parameter&#160;'SPI_E_INT_INCONSISTENT' is&#160;<br/>not&#160;correct in&#160;&lt;SpiDemEventParameterRefs&gt;&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SPI_E_INT_INCONSISTENT' present&#160;<br/>in the&#160;SpiDemEventParameterRefs&#160;container&#160;is&#160;not correct.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_094:&#160;References&#160;SPI_E_REG_WRITE_VERIFY&#160;is&#160;not&#160;configured&#160;in&#160;<br/>$Validate_Spi_SpiDemEventParameterRefsPath&#160;when any&#160;one of&#160;the parameter&#160;<br/>'SpiCSIHWriteVerify'&#160;or 'SpiDMAWriteVerify' is&#160;configured as&#160;&lt;WV_INIT_ONLY&gt;&#160;<br/>or&#160;&lt;WV_INIT_RUNTIME&gt;&#160;in 'SpiGeneral' container.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SPI_E_REG_WRITE_VERIFY' present&#160;<br/>in the&#160;SpiDemEventParameterRefs&#160;container&#160;is&#160;not configured&#160;when any&#160;one&#160;of&#160;the&#160;<br/>parameter&#160;in general&#160;container&#160;'SpiCSIHWriteVerify'&#160;or&#160;'SpiDMAWriteVerify'&#160;is&#160;<br/>configured&#160;as&#160;&lt;WV_INIT_ONLY&gt;&#160;or&#160;&lt;WV_INIT_RUNTIME&gt;.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_095:&#160;References path&#160;of&#160;Parameter&#160;'SPI_E_REG_WRITE_VERIFY' is&#160;<br/>not&#160;correct in&#160;&lt;SpiDemEventParameterRefs&gt;&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;value of&#160;parameter&#160;'SPI_E_REG_WRITE_VERIFY' present&#160;<br/>in the&#160;SpiDemEventParameterRefs&#160;container&#160;is&#160;not correct.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_096: The reference&#160;path&#160;configured for&#160;the parameters in&#160;the&#160;<br/>container&#160;'SpiDemEventParameterRefs'&#160;should be&#160;unique.&#160;<br/></b>This&#160;error will&#160;occur, if&#160;the&#160;parameter&#160;are configured&#160;with same dem&#160;path&#160;in container&#160;<br/>'SpiDemEventParameterRefs'<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_097: The value of&#160;the parameter&#160;'parameter&#160;name'&#160;across the&#160;<br/>containers&#160;'SpiExternalDevicex' and&#160;'SpiExternalDevicey' should be&#160;same as&#160;<br/>they&#160;are referring&#160;the same SpiHw&#160;'CSIHn'.&#160;<br/></b>The&#160;error will&#160;occur if&#160;the&#160;value of&#160;the&#160;parameters&#160;SpiCsInactiveAfterLastData,&#160;<br/>SpiShiftClockIdleLevel,&#160;SpiInputClockSelect,&#160;SpiInterruptDelayMode&#160;in the&#160;<br/>SpiExternalDevice container&#160;are not&#160;same across&#160;the External&#160;devices&#160;mapped to the&#160;<br/>same SpiHw&#160;Unit<b>.</b><br/>
+54&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=55></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_098: The SPI&#160;channels&#160;configured for&#160;a&#160;specific job&#160;should be&#160;<br/>consecutive in&#160;order&#160;when the parameter&#160;'SpiMemoryModeSelection' in&#160;the&#160;<br/>container&#160;'SpiMemoryMode' is&#160;configured as&#160;<br/>&lt;DUAL_BUFFER_MODE/TX_ONLY_MODE&gt;.&#160;<br/></b>This&#160;error will&#160;occur, The&#160;SPI channels&#160;configured for a specific&#160;job&#160;should be&#160;<br/>consecutive&#160;in&#160;order&#160;when&#160;the&#160;parameter&#160;'SpiMemoryModeSelection'&#160;in&#160;the&#160;container&#160;<br/>'SpiMemoryMode' is&#160;configured as&#160;&lt;DUAL_BUFFER_MODE/TX_ONLY_MODE&gt;.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_099: The parameter&#160;SpiCsSelection&#160;is&#160;not&#160;configured as&#160;<br/>'CS_VIA_PERIPHERAL_ENGINE' in&#160;the&#160;container&#160;SpiExternalDevice$Device&#160;<br/>since&#160;the&#160;CSIH hardware&#160;is&#160;used.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;parameter&#160;SpiCsSelection is&#160;not configured&#160;as&#160;<br/>'CS_VIA_PERIPHERAL_ENGINE'&#160;in the&#160;container&#160;SpiExternalDevice&#160;since the&#160;chip&#160;<br/>select for CSIH&#160;HW&#160;units&#160;are always&#160;configured as&#160;hardware chip select pin.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_100: The channel&#160;path&#160;configured for&#160;job&#160;'&lt;JobName&gt;' in&#160;driver&#160;set&#160;<br/>'&lt;SpiDriverName&gt;' is not&#160;correct.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the channel&#160;path configured for the&#160;job&#160;is&#160;wrong.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_101: The device&#160;path&#160;configured for&#160;job&#160;'&lt;JobName&gt;' in&#160;driver&#160;set&#160;<br/>'&lt;SpiDriverName&gt;' is not&#160;correct.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;device path&#160;configured for the job&#160;is&#160;wrong.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_102: The Hardware unit&#160;'&lt;HWUnit&gt;' configured for&#160;job&#160;'&lt;JobName&gt;'&#160;<br/>in driver&#160;set '&lt;SpiDriverName&gt;'&#160;is&#160;not&#160;mapped&#160;to&#160;any&#160;one of&#160;memory modes.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;hard&#160;ware&#160;unit configured for&#160;the job&#160;is&#160;not&#160;assigned&#160;to&#160;any&#160;<br/>memory&#160;modes.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_103: The job&#160;path&#160;configured for&#160;sequence '&lt;SeqName&gt;' in&#160;driver&#160;<br/>set&#160;'&lt;SpiDriverName&gt;' is&#160;not&#160;correct.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the job path configured for the&#160;sequence&#160;is&#160;not&#160;correct.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_104:&#160;Selected&#160;unsupported device&#160;variant&#160;in 'SpiDeviceName'.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;device name given in&#160;parameter&#160;'SpiDeviceName' of&#160;arxml&#160;<br/>is&#160;wrong&#160;or unsupported.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_105: The HW&#160;unit&#160;'&lt;HW&gt;' in&#160;SpiMemoryMode container&#160;<br/>'&lt;Spi_Mode_Name&gt;' is not&#160;assigned to&#160;any&#160;SpiExternalDevice container.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;HW&#160;unit in&#160;SpiMemoryMode&#160;container&#160;is&#160;not&#160;assigned&#160;to&#160;any&#160;<br/>SpiExternalDevice container.&#160;<br/>
+<b>&#160;</b><br/>
+<b>ERR_59_83_106: The value for&#160;'SpiDmaMode' in General container&#160;should be&#160;<br/>configured as&#160;&lt;false&gt;&#160;since the value of&#160;parameter&#160;'SpiLevelDelivered'&#160;is&#160;<br/>configured as&#160;&lt;0&gt;.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;general&#160;container&#160;parameters, SpiDmaMode configured&#160;as&#160;<br/>true&#160;and&#160;SpiLevelDelivered&#160;configured&#160;as&#160;zero. In synchronous&#160;data transfer DMA&#160;<br/>mode is&#160;not possible.&#160;<br/><b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;</b><br/>
+55&#160;<br/>
+<hr/>
+<a name=56></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>ERR_59_83_107: The value configured for&#160;'SpiBaudrateConfiguration' in&#160;<br/>&lt;SpiDevName&gt;&#160;container&#160;should be greater&#160;than Zero.&#160;<br/>&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;value configured&#160;for SpiBaudrateConfiguration in&#160;<br/>SpiExternalDevice container&#160;was&#160;not&#160;greater than&#160;zero.&#160;This&#160;parameter&#160;is&#160;used&#160;for&#160;<br/>baud&#160;rate&#160;calculation.&#160;<br/><b>&#160;<br/></b>&#160;<br/><b>ERR_59_83_108:&#160;The configured baud&#160;rate value of&#160;&lt;SpiJobName&gt;&#160;should be&#160;<br/>between&#160;&lt;CLKP_C / 524160&gt;&#160;and&#160;&lt;CLKP_C /&#160;4&gt;.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the calculated baud&#160;rate&#160;was&#160;not&#160;in the&#160;range&#160;of&#160;expected&#160;baud&#160;<br/>rate&#160;with&#160;respect to&#160;MCU clock.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_109:&#160;The parameters 'SpiInputClockSelect'&#160;and&#160;<br/>'SpiBaudrateConfiguration' should be configured in&#160;such a way&#160;that the&#160;<br/>calculated&#160;Baud&#160;rate&#160;should be less than&#160;&lt;CLKP_C / 4&gt;&#160;in&#160;&lt;SpiJobName&gt;.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;value configured&#160;for&#160;SpiInputClockSelect&#160;and&#160;<br/>SpiBaudrateConfiguration&#160;in container SpiExternalDevice&#160;was&#160;not&#160;correct to&#160;obtain&#160;<br/>minimum&#160;baud&#160;rate.&#160;<br/><b>&#160;<br/>&#160;<br/>ERR_59_83_110:&#160;The value of&#160;'SpiHwUnitSynchronous' in job&#160;container&#160;should&#160;<br/>not&#160;be configured as&#160;&lt;'SYNCHRONOUS'&#160;/&#160;'ASYNCHRONOUS'&gt;&#160;if&#160;the value&#160;<br/>configured for&#160;'SpiLevelDelivered'&#160;is&#160;&lt;'1'/&#160;'0'&gt;&#160;in General&#160;container.&#160;<br/></b>This&#160;error will&#160;occur if&#160;the&#160;values&#160;configured for SpiLevelDelivered&#160;and&#160;<br/>SpiHwUnitSynchronous&#160;were mismatching<b>.&#160;<br/>&#160;<br/>&#160;<br/>ERR_59_83_111:&#160;The different&#160;CS&#160;polarity&#160;configured for&#160;&lt;CSL&#160;pin&gt;&#160;of&#160;<br/>&lt;CSIHHW&gt;&#160;in&#160;&lt;SpiDrivName&gt;.&#160;<br/></b>This&#160;error will&#160;occur if&#160;CS&#160;polarity&#160;configured&#160;was&#160;not same&#160;for same CSL pin&#160;of&#160;CSIH&#160;<br/>device<b>.&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>9.2&#160;&#160;Warning&#160;Messages&#160;</b><br/>
+&#160;<br/>
+None.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>9.3&#160;&#160;Information&#160;Messages&#160;</b><br/>
+&#160;<br/>
+This&#160;section&#160;contains&#160;the&#160;list of&#160;information&#160;messages&#160;that&#160;will&#160;be generated&#160;by&#160;the&#160;<br/>MCAL Code&#160;Generator Tool.&#160;<br/>&#160;<br/><b>INFO_59_83_001:&#160;The&#160;parameter&#160;'SpiHighPriorityHwSequence' in the container&#160;<br/>'SpiSequence ' not&#160;to&#160;be&#160;configured as&#160;&lt;true&gt;. Since&#160;the pre-compile&#160;parameter&#160;<br/>'SpiHighPriorityHwHandlingEnable' in&#160;the 'SpiGeneral' container&#160;is configured&#160;<br/>as&#160;&lt;false&gt;.&#160;Hence the&#160;MCAL&#160;Code Generator&#160;Tool&#160;ignores&#160;the value&#160;configured&#160;<br/>for&#160;the parameter&#160;'SpiHighPriorityHwSequence'.&#160;</b><br/>
+This&#160;warning&#160;occurs,&#160;if&#160;the&#160;value&#160;of&#160;the parameter&#160;SpiHighPriorityHwSequence&#160;<br/>
+configured&#160;in&#160;the&#160;container&#160;SpiSequence is&#160;not to be configured as&#160;true. And&#160;the&#160;<br/>parameter&#160;SpiHighPriorityHwHandlingEnable&#160;in&#160;the container&#160;SpiGeneral&#160;should&#160;be&#160;<br/>false.&#160;On that&#160;moment&#160;MCAL Code Generator Tool&#160;ignores&#160;the&#160;value&#160;configured&#160;for&#160;<br/>the&#160;parameter&#160;SpiHighPriorityHwSequence.&#160;<br/><b>&#160;</b><br/>
+56&#160;<br/>
+<hr/>
+<a name=57></a><b>Messages&#160;</b><br/>
+<b>&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>INFO_59_83_002:&#160;Calculated SPI&#160;baudrate for&#160;job&#160;‘SpiJob’ in&#160;configuration&#160;set&#160;<br/>‘SpiDriver’ should be equal&#160;to&#160;&lt;Calculated&#160;Buadrate Hz&gt;.&#160;<br/></b>This&#160;information&#160;will&#160;occur to provide the calculated&#160;SPI baudrate for job&#160;(SpiJob) in&#160;<br/>configuration&#160;set SpiDriver.&#160;<br/>&#160;<br/>The&#160;calculation of&#160;baudrate&#160;is&#160;done&#160;as&#160;follows:&#160;<br/>Baudrate&#160;=&#160;(Referred&#160;peripheral&#160;clock&#160;form&#160;MCU)&#160;/ [(2m)&#160;*&#160;SpiBaudrateConfiguration&#160;<br/>*&#160;2]&#160;<br/>
+&#160;<br/>
+<b>Table&#160;9-3&#160;&#160;Parameter&#160;values&#160;related&#160;to&#160;INF0_59_83_002&#160;</b><br/>
+<b>SpiInputClockSelect&#160;</b><br/>
+<b>m&#160;</b><br/>
+PCLK&#160;<br/>
+0&#160;<br/>
+PCLK_DIVBY_2&#160;<br/>
+1&#160;<br/>
+PCLK_DIVBY_4&#160;<br/>
+2&#160;<br/>
+PCLK_DIVBY_8&#160;<br/>
+3&#160;<br/>
+PCLK_DIVBY_16&#160;<br/>
+4&#160;<br/>
+PCLK_DIVBY_32&#160;<br/>
+5&#160;<br/>
+PCLK_DIVBY_64&#160;<br/>
+6&#160;<br/>
+&#160;<br/>
+<b>INFO_59_83_003:&#160;&#160;The expected CS&#160;behavior may&#160;not&#160;be observed at&#160;high&#160;<br/>baud&#160;rates&#160;in case of&#160;Direct&#160;Access&#160;Mode due to&#160;general&#160;limitation&#160;of&#160;the&#160;<br/>serial&#160;controllers.&#160;A&#160;work&#160;around&#160;at high&#160;baud&#160;rates&#160;is&#160;to&#160;use FIFO&#160;mode.&#160;</b><br/>
+&#160;<br/>
+This&#160;information&#160;occurs&#160;whenever Direct Access&#160;Mode&#160;is&#160;configured to&#160;notify&#160;the&#160;<br/>user that,&#160;at&#160;chip select&#160;behavior may&#160;not&#160;be&#160;as&#160;expected&#160;at&#160;higher&#160;baud rate&#160;in&#160;<br/>Direct Access&#160;Mode.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+57&#160;<br/>
+<hr/>
+<a name=58></a><b>Chapter&#160;9&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+58&#160;<br/>
+<hr/>
+<a name=59></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Revision&#160;History</b>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Sl.No.</b>&#160;&#160;<b>Description</b>&#160;<br/>
+<b>Version</b>&#160;<br/>
+<b>Date</b>&#160;<br/>
+1.&#160;<br/>
+Initial&#160;Version&#160;<br/>
+1.0.0&#160;<br/>
+05-Aug-2015&#160;<br/>
+2.&#160;<br/>
+Following&#160;changes&#160;are&#160;made:&#160;<br/>
+1.0.1&#160;<br/>
+28-Mar-2016&#160;<br/>
+&#160;<br/>1.&#160;&#160;In&#160;section&#160;10.1.1,&#160;error message&#160;regarding&#160;16&#160;bit&#160;data&#160;width&#160;<br/>
+selection&#160;is&#160;added&#160;when&#160;DMA&#160;is&#160;configured.&#160;<br/>
+2.&#160;&#160;The&#160;section&#160;List&#160;of&#160;tables&#160;updated.&#160;<br/>3.&#160;&#160;In&#160;Section&#160;10,&#160;descriptions&#160;added&#160;for&#160;error,&#160;warning&#160;and&#160;<br/>
+information&#160;messages.&#160;&#160;<br/>
+3.&#160;<br/>
+Following&#160;changes&#160;are&#160;made:&#160;<br/>
+1.0.2&#160;<br/>
+27-Jan-2017&#160;<br/>
+&#160;<br/>1.&#160;&#160;Introduction&#160;updated&#160;in&#160;section&#160;1.&#160;<br/>2.&#160;&#160;Updated&#160;Chapters&#160;1,3,4,5,6,7&#160;by&#160;rephrasing&#160;Tool&#160;and&#160;SPI&#160;Driver&#160;<br/>
+Generation&#160;Tool&#160;with&#160;MCAL&#160;Code&#160;Generator Tool&#160;<br/>
+3.&#160;&#160;Precaution&#160;and&#160;remark&#160;updated&#160;in&#160;section&#160;6.&#160;<br/>4.&#160;&#160;User Configuration&#160;Validation&#160;information&#160;updated&#160;in&#160;section&#160;7.&#160;<br/>5.&#160;&#160;Notes&#160;updated&#160;in&#160;section&#160;11.&#160;<br/>6.&#160;&#160;Remarks&#160;added&#160;in&#160;section&#160;3.&#160;<br/>7.&#160;&#160;Table&#160;header name&#160;updated&#160;in&#160;Table&#160;8.1&#160;and&#160;Table&#160;8.2.&#160;<br/>8.&#160;&#160;Removed&#160;Section&#160;9.1&#160;Common&#160;Messages.&#160;<br/>9.&#160;&#160;Error&#160;messages&#160;and&#160;information&#160;messages&#160;updated&#160;in&#160;the&#160;section&#160;<br/>
+9.1&#160;and&#160;9.3.&#160;<br/>
+10.&#160;&#160;Removed&#160;Chapter 9&#160;SPI&#160;Driver Generation&#160;Tool&#160;Options,&#160;Chapter-<br/>
+11&#160;Notes.&#160;<br/>
+11.&#160;&#160;Chapter&#160;3,&#160;Added&#160;remark&#160;for&#160;common&#160;MCAL&#160;Code&#160;Generator&#160;<br/>
+Tool&#160;user&#160;manual.&#160;<br/>
+12.&#160;&#160;Chapter&#160;3,&#160;Updated&#160;Figure&#160;3-2&#160;Flowchart&#160;of&#160;MCAL&#160;Code&#160;<br/>
+Generator Tool.&#160;<br/>
+13.&#160;&#160;Chapter&#160;3,&#160;Renamed&#160;chapter&#160;name&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;<br/>
+Overview&#160;to&#160;Code&#160;Generation&#160;Overview.&#160;<br/>
+14.&#160;&#160;Removed&#160;parameters&#160;from&#160;Figure&#160;8-1,&#160;Configuration&#160;Overview.&#160;<br/>
+59&#160;<br/>
+<hr/>
+<a name=60></a>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>AUTOSAR&#160;MCAL&#160;R4.0.3&#160;User's&#160;Manual</b>&#160;<br/><b>Spi&#160;Driver Component Ver.1.0.2</b>&#160;<br/><b>Generation Tool&#160;User's&#160;Manual</b>&#160;<br/>
+&#160;<br/>
+Publication&#160;Date:&#160;Rev.1.00,&#160;January&#160;27,&#160;2017&#160;<br/>
+&#160;<br/>&#160;<br/>
+Published&#160;by:&#160;Renesas&#160;Electronics&#160;Corporation&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=61></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Spi/doc/R20UT3660EJ0100-AUTOSAR-61_1.png"/><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>SALES&#160;&#160;OFFICES</b>&#160;<br/>
+&#160;<br/>
+<a href="http://www.renesas.com/">http://www.renesas.com&#160;</a><br/>
+Refer&#160;&#160;<a href="http://www.renesas.com/">to&#160;&#34;http://www.renesas.com/&#34;&#160;f</a>or&#160;the&#160;latest&#160;&#160;and&#160;&#160;de&#160;&#160;tailed&#160;&#160;information.&#160;<br/>
+<b>Renesas&#160;Electronics&#160;America&#160;Inc.&#160;<br/></b>2801&#160;Scott&#160;Boulevard&#160;Santa&#160;Clara,&#160;CA&#160;95050-2549,&#160;U.S.A.&#160;<br/>Tel:&#160;+1-408-588-6000,&#160;Fax:&#160;+1-408-588-6130&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Canada&#160;Limited&#160;<br/></b>9251&#160;Yonge&#160;Street,&#160;Suite&#160;8309&#160;Richmond&#160;Hill,&#160;Ontario&#160;Canada&#160;L4C&#160;9T3&#160;<br/>Tel:&#160;+1-905-237-2004&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Europe&#160;Limited&#160;<br/></b>Dukes&#160;Meadow,&#160;Millboard&#160;Road,&#160;Bourne&#160;End,&#160;Buckinghamshire,&#160;SL8&#160;5FH,&#160;U.K&#160;<br/>Tel:&#160;+44-1628-585-100,&#160;Fax:&#160;+44-1628-585-900&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Europe&#160;GmbH&#160;<br/></b>Arcadiastrasse&#160;10,&#160;40472&#160;Düsseldorf,&#160;Germany&#160;<br/>Tel:&#160;+49-211-6503-0,&#160;Fax:&#160;+49-211-6503-1327&#160;<br/>
+<b>Renesas&#160;Electronics&#160;(China)&#160;Co.,&#160;Ltd.&#160;<br/></b>Room&#160;1709,&#160;Quantum&#160;Plaza,&#160;No.27&#160;ZhiChunLu&#160;Haidian&#160;District,&#160;Beijing&#160;100191,&#160;P.R.China&#160;<br/>Tel:&#160;+86-10-8235-1155,&#160;Fax:&#160;+86-10-8235-7679&#160;<br/>
+<b>Renesas&#160;Electronics&#160;(Shanghai)&#160;Co.,&#160;Ltd.&#160;<br/></b>Unit&#160;301,&#160;Tower&#160;A,&#160;Central&#160;Towers,&#160;555&#160;Langao&#160;Road,&#160;Putuo&#160;District,&#160;Shanghai,&#160;P.&#160;R.&#160;China&#160;200333&#160;<br/>Tel:&#160;+86-21-2226-0888,&#160;Fax:&#160;+86-21-2226-0999&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Hong&#160;Kong&#160;Limited&#160;<br/></b>Unit&#160;1601-1611,&#160;16/F.,&#160;Tower&#160;2,&#160;Grand&#160;Century&#160;Place,&#160;193&#160;Prince&#160;Edward&#160;Road&#160;West,&#160;Mongkok,&#160;Kowloon,&#160;Hong&#160;Kong&#160;<br/>Tel:&#160;+852-2265-6688,&#160;Fax:&#160;+852&#160;2886-9022&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Taiwan&#160;Co.,&#160;Ltd.&#160;<br/></b>13F,&#160;No.&#160;363,&#160;Fu&#160;Shing&#160;North&#160;Road,&#160;Taipei&#160;10543,&#160;Taiwan&#160;<br/>Tel:&#160;+886-2-8175-9600,&#160;Fax:&#160;+886&#160;2-8175-9670&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Singapore&#160;Pte.&#160;Ltd.&#160;<br/></b>80&#160;Bendemeer&#160;Road,&#160;Unit&#160;#06-02&#160;Hyflux&#160;Innovation&#160;Centre,&#160;Singapore&#160;339949&#160;<br/>Tel:&#160;+65-6213-0200,&#160;Fax:&#160;+65-6213-0300&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Malaysia&#160;Sdn.Bhd.&#160;<br/></b>Unit&#160;1207,&#160;Block&#160;B,&#160;Menara&#160;Amcorp,&#160;Amcorp&#160;Trade&#160;Centre,&#160;No.&#160;18,&#160;Jln&#160;Persiaran&#160;Barat,&#160;46050&#160;Petaling&#160;Jaya,&#160;Selangor&#160;Darul&#160;Ehsan,&#160;Malaysia&#160;<br/>Tel:&#160;+60-3-7955-9390,&#160;Fax:&#160;+60-3-7955-9510&#160;<br/>
+<b>Renesas&#160;Electronics&#160;India&#160;Pvt.&#160;Ltd.&#160;<br/></b>No.777C,&#160;100&#160;Feet&#160;Road,&#160;HAL&#160;II&#160;Stage,&#160;Indiranagar,&#160;Bangalore,&#160;India&#160;<br/>Tel:&#160;+91-80-67208700,&#160;Fax:&#160;+91-80-67208777&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Korea&#160;Co.,&#160;Ltd.&#160;<br/></b>12F.,&#160;234&#160;Teheran-ro,&#160;Gangnam-Gu,&#160;Seoul,&#160;135-080,&#160;Korea&#160;<br/>Tel:&#160;+82-2-558-3737,&#160;Fax:&#160;+82-2-558-5141&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+©&#160;2006-2017&#160;Renesas&#160;&#160;Electronics&#160;&#160;Corporation.&#160;&#160;All&#160;rights&#160;reserved.&#160;<br/>
+Colophon&#160;&#160;4.1&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=62></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Spi/doc/R20UT3660EJ0100-AUTOSAR-62_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Spi/doc/R20UT3660EJ0100-AUTOSAR-62_2.jpg"/><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+AUTOSAR MCAL&#160;R4.0.3&#160;<br/>
+&#160;<br/>
+User's Manual&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>
+&#160;<br/>
+R20UT3660EJ0100&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#9">Chapter 1 Introduction</a>
+<ul>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#9">1.1. Document Overview</a></li>
+</ul>
+</li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#11">Chapter 2 Reference</a>
+<ul>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#11">2.1. Reference Documents</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#11">2.2. Trademark Notice</a></li>
+</ul>
+</li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#13">Chapter 3 Code Generation Overview</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#17">Chapter 4 Input Files</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#19">Chapter 5 Output Files</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#21">Chapter 6 Precautions</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#23">Chapter 7 User Configuration Validation</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#25">Chapter 8 Configuration Overview</a>
+<ul>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#25">8.1. Container Overview</a>
+<ul>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#25">8.1.1 Pre-Compile Configurable Parameters</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#31">8.1.2 Post Build Time Configurable Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#41">Chapter 9 Messages</a>
+<ul>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#41">9.1 Error Messages</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#56">9.2 Warning Messages</a></li>
+<li><a href="R20UT3660EJ0100-AUTOSARs.html#56">9.3 Information Messages</a></li>
+</ul>
+</li>
+</ul>
+<hr/>
+</body>
+</html>

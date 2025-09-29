@@ -1,0 +1,902 @@
+---
+title: starts
+linkTitle: starts
+weight: 41
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><b>MULTI:&#160;Getting&#160;Started</b><br/>
+<b>Green Hills Software</b><br/>
+<b>30&#160;West Sola Street</b><br/>
+<b>Santa Barbara,&#160;California 93101</b><br/>
+<b>USA</b><br/>
+<b>Tel:&#160;805-965-6044</b><br/>
+<b>Fax:&#160;805-965-6343</b><br/>
+<b>www.ghs.com</b><br/>
+<hr/>
+<a name=2></a><b>DISCLAIMER</b><br/>
+GREEN&#160;HILLS&#160;SOFTWARE&#160;MAKES&#160;NO&#160;REPRESENTATIONS&#160;OR&#160;WARRANTIES&#160;WITH&#160;RESPECT&#160;TO&#160;THE<br/>CONTENTS&#160;HEREOF&#160;AND&#160;SPECIFICALLY&#160;DISCLAIMS&#160;ANY&#160;IMPLIED&#160;WARRANTIES&#160;OF&#160;MERCHANTABILITY<br/>OR&#160;FITNESS&#160;FOR&#160;ANY&#160;PARTICULAR&#160;PURPOSE.&#160;Further,&#160;Green&#160;Hills&#160;Software&#160;reserves&#160;the&#160;right&#160;to&#160;revise&#160;this<br/>publication&#160;and&#160;to&#160;make&#160;changes&#160;from&#160;time&#160;to&#160;time&#160;in&#160;the&#160;content&#160;hereof&#160;without&#160;obligation&#160;of&#160;Green&#160;Hills&#160;Software&#160;to<br/>notify&#160;any&#160;person&#160;of&#160;such&#160;revision&#160;or&#160;changes.<br/>
+Copyright&#160;©&#160;1983-2014&#160;by&#160;Green&#160;Hills&#160;Software.&#160;All&#160;rights&#160;reserved.&#160;No&#160;part&#160;of&#160;this&#160;publication&#160;may&#160;be&#160;reproduced,&#160;stored<br/>in&#160;a&#160;retrieval&#160;system,&#160;or&#160;transmitted,&#160;in&#160;any&#160;form&#160;or&#160;by&#160;any&#160;means,&#160;electronic,&#160;mechanical,&#160;photocopying,&#160;recording,&#160;or<br/>otherwise,&#160;without&#160;prior&#160;written&#160;permission&#160;from&#160;Green&#160;Hills&#160;Software.<br/>
+Green&#160;Hills,&#160;the&#160;Green&#160;Hills&#160;logo,&#160;CodeBalance,&#160;GMART,&#160;GSTART,&#160;INTEGRITY,&#160;MULTI,&#160;and&#160;Slingshot&#160;are&#160;registered<br/>trademarks&#160;of&#160;Green&#160;Hills&#160;Software.&#160;AdaMULTI,&#160;Built&#160;with&#160;INTEGRITY,&#160;EventAnalyzer,&#160;G-Cover,&#160;GHnet,&#160;GHnetLite,<br/>Green&#160;Hills&#160;Probe,&#160;Integrate,&#160;ISIM,&#160;u-velOSity,&#160;PathAnalyzer,&#160;Quick&#160;Start,&#160;ResourceAnalyzer,&#160;Safety&#160;Critical&#160;Products,<br/>SuperTrace&#160;Probe,&#160;TimeMachine,&#160;TotalDeveloper,&#160;DoubleCheck,&#160;and&#160;velOSity&#160;are&#160;trademarks&#160;of&#160;Green&#160;Hills&#160;Software.<br/>
+All&#160;other&#160;company,&#160;product,&#160;or&#160;service&#160;names&#160;mentioned&#160;in&#160;this&#160;book&#160;may&#160;be&#160;trademarks&#160;or&#160;service&#160;marks&#160;of&#160;their&#160;respective<br/>owners.<br/>
+PubID:&#160;start-506382<br/>Branch:&#160;http://toolsvc/branches/release-branch-60<br/>Date:&#160;April&#160;24,&#160;2014<br/>
+<hr/>
+<a name=3></a><b>Contents</b><br/>
+<a href="starts.html#5"><b>Preface</b></a><br/>
+<a href="starts.html#5"><b>v</b></a><br/>
+<a href="starts.html#6">About&#160;This&#160;Book&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#6">vi</a><br/>
+<a href="starts.html#7">The&#160;MULTI&#160;6&#160;Document&#160;Set&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#7">vii</a><br/>
+<a href="starts.html#8">Conventions&#160;Used&#160;in&#160;the&#160;MULTI&#160;Document&#160;Set&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#8">viii</a><br/>
+<a href="starts.html#11"><b>1.&#160;Introduction</b></a><br/>
+<a href="starts.html#11"><b>1</b></a><br/>
+<a href="starts.html#12">The&#160;MULTI&#160;Integrated&#160;Development&#160;Environment&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#12">2</a><br/>
+<a href="starts.html#12">MULTI&#160;Launcher&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#12">2<br/>Editing&#160;Tools&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#12">2<br/>Building&#160;Tools&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#12">2<br/></a><a href="starts.html#13">Debugging&#160;Tools&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#13">3<br/>Administrative&#160;Tools&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#13">3</a><br/>
+<a href="starts.html#14">The&#160;MULTI&#160;Launcher&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#14">4</a><br/>
+<a href="starts.html#15">MULTI&#160;Workspaces&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#15">5</a><br/>
+<a href="starts.html#16">Accessing&#160;Online&#160;Help&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#16">6</a><br/>
+<a href="starts.html#16">Full&#160;Online&#160;Manuals&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#16">6<br/>Context-Sensitive&#160;Help&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#16">6<br/></a><a href="starts.html#17">Command,&#160;Configuration&#160;Option,&#160;and&#160;Keyword&#160;Help&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#17">7<br/>The&#160;Help&#160;Viewer&#160;Window&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#17">7<br/></a><a href="starts.html#18">Navigating&#160;Help&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#18">8<br/></a><a href="starts.html#22">Searching&#160;Manuals&#160;in&#160;the&#160;Help&#160;Viewer&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#22">12</a><br/>
+<a href="starts.html#25"><b>2.&#160;MULTI&#160;Tutorial</b></a><br/>
+<a href="starts.html#25"><b>15</b></a><br/>
+<a href="starts.html#26">Creating&#160;Your&#160;First&#160;Project&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#26">16</a><br/>
+<a href="starts.html#29">Building&#160;Your&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#29">19</a><br/>
+<a href="starts.html#30">Starting&#160;the&#160;Debugger&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#30">20</a><br/>
+<a href="starts.html#30">Connecting&#160;to&#160;a&#160;Simulator&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#30">20</a><br/>
+<a href="starts.html#31">Debugging&#160;Your&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#31">21</a><br/>
+<a href="starts.html#32">Connecting&#160;to&#160;Your&#160;Target&#160;Hardware&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#32">22</a><br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>iii</i><br/>
+<hr/>
+<a name=4></a><i>Contents</i><br/>
+<a href="starts.html#33">Preparing&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#33">23</a><br/>
+<a href="starts.html#34">Setting&#160;Up&#160;a&#160;Workspace&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#34">24</a><br/>
+<a href="starts.html#34">Adding&#160;Actions&#160;to&#160;Your&#160;Workspace&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#34">24</a><br/>
+<a href="starts.html#35">Additional&#160;Examples&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#35">25</a><br/>
+<a href="starts.html#36">Configuring&#160;MULTI&#160;for&#160;Use&#160;with&#160;INTEGRITY&#160;or&#160;u-velOSity&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#36">26</a><br/>
+<a href="starts.html#37"><b>Index</b></a><br/>
+<a href="starts.html#37"><b>27</b></a><br/>
+<i>iv</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=5></a><b>Preface</b><br/>
+<b>Contents</b><br/>
+<a href="starts.html#6">About&#160;This&#160;Book&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#6">vi</a><br/>
+<a href="starts.html#7">The&#160;MULTI&#160;6&#160;Document&#160;Set&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#7">vii</a><br/>
+<a href="starts.html#8">Conventions&#160;Used&#160;in&#160;the&#160;MULTI&#160;Document&#160;Set&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#8">viii</a><br/>
+<hr/>
+<a name=6></a><i>Preface</i><br/>
+This&#160;preface&#160;discusses&#160;the&#160;purpose&#160;of&#160;the&#160;manual,&#160;the&#160;MULTI&#160;documentation&#160;set,<br/>and&#160;typographical&#160;conventions&#160;used.<br/>
+<b>About&#160;This&#160;Book</b><br/>
+The&#160;<i>MULTI:&#160;Getting&#160;Started&#160;</i>book&#160;provides&#160;an&#160;introduction&#160;to&#160;the&#160;MULTI&#160;Integrated<br/>Development&#160;Environment.&#160;For&#160;installation&#160;instructions,&#160;see&#160;the&#160;installation<br/>document&#160;located&#160;in&#160;the&#160;root&#160;directory&#160;of&#160;the&#160;installation&#160;CD.<br/>
+This&#160;book&#160;is&#160;divided&#160;into&#160;the&#160;following&#160;chapters:<br/>
+•&#160;<i>Chapter&#160;1:&#160;Introduction&#160;</i>provides&#160;an&#160;overview&#160;of&#160;the&#160;MULTI&#160;Integrated<br/>
+Development&#160;Environment,&#160;the&#160;MULTI&#160;Launcher,&#160;and&#160;online&#160;help.&#160;See<br/><a href="starts.html#11">Chapter&#160;1,&#160;“Introduction”&#160;on&#160;page&#160;1.</a><br/>
+•&#160;<i>Chapter&#160;2:&#160;MULTI&#160;Tutorial&#160;</i>introduces&#160;you&#160;to&#160;the&#160;basic&#160;components&#160;of&#160;the<br/>
+MULTI&#160;IDE&#160;and&#160;leads&#160;you&#160;through&#160;creating,&#160;building,&#160;running,&#160;and&#160;debugging<br/>a&#160;simple&#160;“Hello&#160;World”&#160;program.&#160;See&#160;<a href="starts.html#25">Chapter&#160;2,&#160;“MULTI&#160;Tutorial”&#160;on&#160;page&#160;15</a>.<br/>
+<b>Note<br/></b>New&#160;or&#160;updated&#160;information&#160;may&#160;have&#160;become&#160;available&#160;while&#160;this&#160;book<br/>was&#160;in&#160;production.&#160;For&#160;additional&#160;material&#160;that&#160;was&#160;not&#160;available&#160;at&#160;press<br/>time,&#160;or&#160;for&#160;revisions&#160;that&#160;may&#160;have&#160;become&#160;necessary&#160;since&#160;this&#160;book<br/>was&#160;printed,&#160;please&#160;check&#160;your&#160;installation&#160;directory&#160;for&#160;release&#160;notes,<br/><b>README&#160;</b>files,&#160;and&#160;other&#160;supplementary&#160;documentation.<br/>
+<i>vi</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=7></a><i>The&#160;MULTI&#160;6&#160;Document&#160;Set</i><br/>
+<b>The&#160;MULTI&#160;6&#160;Document&#160;Set</b><br/>
+The&#160;primary&#160;documentation&#160;for&#160;using&#160;MULTI&#160;is&#160;provided&#160;in&#160;the&#160;following&#160;books:<br/>
+•&#160;<i>MULTI:&#160;Getting&#160;Started&#160;</i>—&#160;Provides&#160;an&#160;introduction&#160;to&#160;the&#160;MULTI&#160;Integrated<br/>
+Development&#160;Environment&#160;and&#160;leads&#160;you&#160;through&#160;a&#160;simple&#160;tutorial.<br/>
+•&#160;<i>MULTI:&#160;Licensing&#160;</i>—&#160;Describes&#160;how&#160;to&#160;obtain,&#160;install,&#160;and&#160;administer&#160;MULTI<br/>
+licenses.<br/>
+•&#160;<i>MULTI:&#160;Managing&#160;Projects&#160;and&#160;Configuring&#160;the&#160;IDE&#160;</i>—&#160;Describes&#160;how&#160;to<br/>
+create&#160;and&#160;manage&#160;projects&#160;and&#160;how&#160;to&#160;configure&#160;the&#160;MULTI&#160;IDE.<br/>
+•&#160;<i>MULTI:&#160;Building&#160;Applications&#160;</i>—&#160;Describes&#160;how&#160;to&#160;use&#160;the&#160;compiler&#160;driver<br/>
+and&#160;the&#160;tools&#160;that&#160;compile,&#160;assemble,&#160;and&#160;link&#160;your&#160;code.&#160;Also&#160;describes&#160;the<br/>Green&#160;Hills&#160;implementation&#160;of&#160;supported&#160;high-level&#160;languages.<br/>
+•&#160;<i>MULTI:&#160;Configuring&#160;Connections&#160;</i>—&#160;Describes&#160;how&#160;to&#160;configure&#160;connections<br/>
+to&#160;your&#160;target.<br/>
+•&#160;<i>MULTI:&#160;Debugging&#160;</i>—&#160;Describes&#160;how&#160;to&#160;set&#160;up&#160;your&#160;target&#160;debugging&#160;interface<br/>
+for&#160;use&#160;with&#160;MULTI&#160;and&#160;how&#160;to&#160;use&#160;the&#160;MULTI&#160;Debugger&#160;and&#160;associated&#160;tools.<br/>
+•&#160;<i>MULTI:&#160;Debugging&#160;Command&#160;Reference&#160;</i>—&#160;Explains&#160;how&#160;to&#160;use&#160;Debugger<br/>
+commands&#160;and&#160;provides&#160;a&#160;comprehensive&#160;reference&#160;of&#160;Debugger&#160;commands.<br/>
+•&#160;<i>MULTI:&#160;Scripting&#160;</i>—&#160;Describes&#160;how&#160;to&#160;create&#160;MULTI&#160;scripts.&#160;Also&#160;contains<br/>
+information&#160;about&#160;the&#160;MULTI-Python&#160;integration.<br/>
+For&#160;a&#160;comprehensive&#160;list&#160;of&#160;the&#160;books&#160;provided&#160;with&#160;your&#160;MULTI&#160;installation,&#160;see<br/>the&#160;<b>Help&#160;</b>→&#160;<b>Manuals&#160;</b>menu&#160;accessible&#160;from&#160;most&#160;MULTI&#160;windows.<br/>
+Most&#160;books&#160;are&#160;available&#160;in&#160;the&#160;following&#160;formats:<br/>
+•&#160;A&#160;printed&#160;book&#160;(select&#160;books&#160;are&#160;not&#160;available&#160;in&#160;print).<br/>
+•&#160;Online&#160;help,&#160;accessible&#160;from&#160;most&#160;MULTI&#160;windows&#160;via&#160;the&#160;<b>Help&#160;</b>→&#160;<b>Manuals</b><br/>
+menu.<br/>
+•&#160;An&#160;electronic&#160;PDF,&#160;available&#160;in&#160;the&#160;<b>manuals&#160;</b>subdirectory&#160;of&#160;your&#160;IDE&#160;or<br/>
+Compiler&#160;installation.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>vii</i><br/>
+<hr/>
+<a name=8></a><i>Preface</i><br/>
+<b>Conventions&#160;Used&#160;in&#160;the&#160;MULTI&#160;Document&#160;Set</b><br/>
+All&#160;Green&#160;Hills&#160;documentation&#160;assumes&#160;that&#160;you&#160;have&#160;a&#160;working&#160;knowledge&#160;of&#160;your<br/>host&#160;operating&#160;system&#160;and&#160;its&#160;conventions,&#160;including&#160;its&#160;command&#160;line&#160;and&#160;graphical<br/>user&#160;interface&#160;(GUI)&#160;modes.<br/>
+Green&#160;Hills&#160;documentation&#160;uses&#160;a&#160;variety&#160;of&#160;notational&#160;conventions&#160;to&#160;present<br/>information&#160;and&#160;describe&#160;procedures.&#160;These&#160;conventions&#160;are&#160;described&#160;below.<br/>
+<b>Convention</b><br/>
+<b>Indication</b><br/>
+<b>Example</b><br/>
+<b>bold&#160;</b>type<br/>
+Filename&#160;or&#160;pathname<br/>
+<b>C:\MyProjects</b><br/>
+Command<br/>
+<b>setup&#160;</b>command<br/>
+Option<br/>
+<b>-G&#160;</b>option<br/>
+Window&#160;title<br/>
+The&#160;<b>Breakpoints&#160;</b>window<br/>
+Menu&#160;name&#160;or&#160;menu&#160;choice<br/>
+The&#160;<b>File&#160;</b>menu<br/>
+Field&#160;name<br/>
+<b>Working&#160;Directory:</b><br/>
+Button&#160;name<br/>
+The&#160;<b>Browse&#160;</b>button<br/>
+<i>italic&#160;</i>type<br/>
+Replaceable&#160;text<br/>
+<b>-o&#160;<i>filename</i></b><br/>
+A&#160;new&#160;term<br/>
+A&#160;task&#160;may&#160;be&#160;called&#160;a&#160;<i>process<br/></i>or&#160;a&#160;<i>thread</i><br/>
+A&#160;book&#160;title<br/>
+<i>MULTI:&#160;Debugging</i><br/>
+monospace&#160;type<br/>
+Text&#160;you&#160;should&#160;enter&#160;as&#160;presented<br/>
+Type&#160;help&#160;<i>command_name</i><br/>
+A&#160;word&#160;or&#160;words&#160;used&#160;in&#160;a<br/>
+The&#160;<b>wait&#160;</b>[-global]&#160;command<br/>
+command&#160;or&#160;example<br/>
+blocks&#160;command&#160;processing,<br/>where&#160;-global&#160;blocks<br/>command&#160;processing&#160;for&#160;all<br/>MULTI&#160;processes.<br/>
+Source&#160;code<br/>
+int&#160;a&#160;=&#160;3;<br/>
+Input/output<br/>
+&gt;&#160;print&#160;Test<br/>
+Test<br/>
+A&#160;function<br/>
+GHS_System()<br/>
+ellipsis&#160;(...)<br/>
+The&#160;preceding&#160;argument&#160;or&#160;option<br/>
+<b>debugbutton&#160;</b>[<i>name</i>]...<br/>
+can&#160;be&#160;repeated&#160;zero&#160;or&#160;more&#160;times.<br/>
+(in&#160;command&#160;line<br/>instructions)<br/>
+<i>viii</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=9></a><i>Conventions&#160;Used&#160;in&#160;the&#160;MULTI&#160;Document&#160;Set</i><br/>
+<b>Convention</b><br/>
+<b>Indication</b><br/>
+<b>Example</b><br/>
+greater&#160;than&#160;sign&#160;(&#160;&gt;&#160;)<br/>
+Represents&#160;a&#160;prompt.&#160;Your&#160;actual<br/>
+&gt;&#160;print&#160;Test<br/>
+prompt&#160;may&#160;be&#160;a&#160;different&#160;symbol<br/>
+Test<br/>
+or&#160;string.&#160;The&#160;&gt;&#160;prompt&#160;helps&#160;to<br/>distinguish&#160;input&#160;from&#160;output&#160;in<br/>examples&#160;of&#160;screen&#160;displays.<br/>
+pipe&#160;(&#160;|&#160;)<br/>
+One&#160;(and&#160;only&#160;one)&#160;of&#160;the<br/>
+<b>call&#160;</b><i>proc&#160;</i>|&#160;<i>expr</i><br/>
+parameters&#160;or&#160;options&#160;separated&#160;by<br/>
+(in&#160;command&#160;line<br/>
+the&#160;pipe&#160;or&#160;pipes&#160;should&#160;be<br/>
+instructions)<br/>
+specified.<br/>
+square&#160;brackets&#160;(&#160;[&#160;]&#160;)<br/>
+Optional&#160;argument,&#160;command,<br/>
+.macro&#160;<i>name&#160;</i>[<i>list</i>]<br/>
+option,&#160;and&#160;so&#160;on.&#160;You&#160;can&#160;either<br/>
+(in&#160;command&#160;line<br/>
+include&#160;or&#160;omit&#160;the&#160;enclosed<br/>
+instructions)<br/>
+elements.&#160;The&#160;square&#160;brackets<br/>should&#160;not&#160;appear&#160;in&#160;your&#160;actual<br/>command.<br/>
+The&#160;following&#160;command&#160;description&#160;demonstrates&#160;the&#160;use&#160;of&#160;some&#160;of&#160;these<br/>typographical&#160;conventions.<br/>
+<b>gxyz&#160;</b>[<i>-option</i>]...&#160;<i>filename</i><br/>
+The&#160;formatting&#160;of&#160;this&#160;command&#160;indicates&#160;that:<br/>
+•&#160;The&#160;command&#160;<b>gxyz&#160;</b>should&#160;be&#160;entered&#160;as&#160;shown.<br/>
+•&#160;The&#160;option&#160;<i>-option&#160;</i>should&#160;either&#160;be&#160;replaced&#160;with&#160;one&#160;or&#160;more&#160;appropriate<br/>
+options&#160;or&#160;be&#160;omitted.<br/>
+•&#160;The&#160;word&#160;<i>filename&#160;</i>should&#160;be&#160;replaced&#160;with&#160;the&#160;actual&#160;filename&#160;of&#160;an<br/>
+appropriate&#160;file.<br/>
+The&#160;square&#160;brackets&#160;and&#160;the&#160;ellipsis&#160;should&#160;not&#160;appear&#160;in&#160;the&#160;actual&#160;command&#160;you<br/>enter.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>ix</i><br/>
+<hr/>
+<a name=10></a><hr/>
+<a name=11></a><b>Chapter&#160;1</b><br/>
+<b>Introduction</b><br/>
+<b>Contents</b><br/>
+<a href="starts.html#12">The&#160;MULTI&#160;Integrated&#160;Development&#160;Environment&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#12">2</a><br/>
+<a href="starts.html#14">The&#160;MULTI&#160;Launcher&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#14">4</a><br/>
+<a href="starts.html#16">Accessing&#160;Online&#160;Help&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#16">6</a><br/>
+<hr/>
+<a name=12></a><i>Chapter&#160;1.&#160;Introduction</i><br/>
+<b>The&#160;MULTI&#160;Integrated&#160;Development&#160;Environment</b><br/>
+The&#160;MULTI&#160;Integrated&#160;Development&#160;Environment&#160;(IDE)&#160;is&#160;designed&#160;especially&#160;for<br/>embedded&#160;systems&#160;engineers&#160;to&#160;assist&#160;them&#160;in&#160;building,&#160;debugging,&#160;and&#160;editing<br/>embedded&#160;applications.<br/>
+The&#160;MULTI&#160;IDE&#160;includes&#160;the&#160;following&#160;tools,&#160;most&#160;of&#160;which&#160;can&#160;be&#160;launched&#160;from<br/>within&#160;the&#160;IDE&#160;or&#160;as&#160;a&#160;separate&#160;stand-alone&#160;program.&#160;Parenthetical&#160;text&#160;indicates<br/>corresponding&#160;executable&#160;files,&#160;which&#160;are&#160;located&#160;in&#160;your&#160;MULTI&#160;IDE&#160;installation.<br/>
+<b>MULTI&#160;Launcher</b><br/>
+•&#160;<b>MULTI&#160;Launcher&#160;</b>(<b>mstart</b>)&#160;—&#160;The&#160;gateway&#160;to&#160;the&#160;MULTI&#160;IDE,&#160;which&#160;allows<br/>
+you&#160;to&#160;quickly&#160;launch&#160;any&#160;of&#160;the&#160;primary&#160;MULTI&#160;tools,&#160;access&#160;open&#160;windows,<br/>and&#160;manage&#160;MULTI&#160;workspaces.&#160;For&#160;more&#160;information,&#160;see&#160;<a href="starts.html#14">“The&#160;MULTI<br/>Launcher”&#160;on&#160;page&#160;4.</a><br/>
+<b>Editing&#160;Tools</b><br/>
+•&#160;<b>MULTI&#160;Editor&#160;</b>(<b>me</b>)&#160;—&#160;A&#160;graphical&#160;editor&#160;for&#160;modifying&#160;text&#160;files.<br/>
+•&#160;<b>Checkout&#160;Browser&#160;</b>(<b>mcobrowse</b>)&#160;—&#160;A&#160;graphical&#160;viewer&#160;for&#160;files&#160;managed<br/>
+under&#160;a&#160;version&#160;control&#160;system.<br/>
+•&#160;<b>Diff&#160;Viewer&#160;</b>(<b>diffview</b>)&#160;—&#160;A&#160;graphical&#160;viewer&#160;that&#160;displays&#160;differences&#160;between<br/>
+two&#160;text&#160;files.<br/>
+<b>Building&#160;Tools</b><br/>
+•&#160;<b>MULTI&#160;Project&#160;Manager&#160;</b>(<b>mprojmgr</b>)&#160;—&#160;A&#160;graphical&#160;interface&#160;for&#160;managing<br/>
+and&#160;building&#160;projects.<br/>
+•&#160;<b>Integrate&#160;</b>(<b>integrate</b>)&#160;—&#160;A&#160;graphical&#160;utility&#160;for&#160;configuring&#160;tasks,&#160;connections,<br/>
+and&#160;kernel&#160;objects&#160;across&#160;multiple&#160;AddressSpaces&#160;when&#160;using&#160;the&#160;INTEGRITY<br/>RTOS.<br/>
+<i>2</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=13></a><i>Debugging&#160;Tools</i><br/>
+<b>Debugging&#160;Tools</b><br/>
+•&#160;<b>MULTI&#160;Debugger&#160;</b>(<b>multi</b>)&#160;—&#160;A&#160;graphical&#160;source-level&#160;debugger.<br/>
+•&#160;<b>EventAnalyzer&#160;</b>(<b>mevgui</b>)&#160;—&#160;A&#160;graphical&#160;viewer&#160;for&#160;monitoring&#160;the&#160;complex<br/>
+real-time&#160;interactions&#160;of&#160;an&#160;embedded&#160;RTOS&#160;such&#160;as&#160;INTEGRITY&#160;or<br/>u-velOSity.<br/>
+•&#160;<b>ResourceAnalyzer&#160;</b>(<b>wperf</b>)&#160;—&#160;A&#160;graphical&#160;viewer&#160;for&#160;monitoring&#160;the&#160;CPU<br/>
+and&#160;memory&#160;usage&#160;of&#160;an&#160;embedded&#160;system&#160;running&#160;the&#160;INTEGRITY&#160;RTOS.<br/>
+•&#160;<b>Serial&#160;Terminal&#160;</b>(<b>mterminal</b>)&#160;—&#160;A&#160;serial&#160;terminal&#160;emulator&#160;for&#160;connecting&#160;to<br/>
+serial&#160;ports&#160;on&#160;embedded&#160;devices.<br/>
+•&#160;<b>MULTI&#160;TimeMachine&#160;Tool&#160;Suite&#160;</b>—&#160;A&#160;wide&#160;variety&#160;of&#160;trace&#160;analysis&#160;tools<br/>
+that&#160;dramatically&#160;extend&#160;MULTI's&#160;trace&#160;and&#160;debugging&#160;capabilities.<br/>
+<b>Administrative&#160;Tools</b><br/>
+•&#160;<b>Bug&#160;Report&#160;</b>(<b>gbugrpt</b>)&#160;—&#160;A&#160;utility&#160;for&#160;providing&#160;system&#160;configuration&#160;and<br/>
+tool&#160;version&#160;information&#160;to&#160;the&#160;Green&#160;Hills&#160;support&#160;staff.<br/>
+•&#160;<b>Graphical&#160;Utilities&#160;</b>(<b>wgutils</b>)&#160;—&#160;A&#160;collection&#160;of&#160;utilities&#160;for&#160;analyzing&#160;and<br/>
+performing&#160;various&#160;operations&#160;on&#160;object&#160;files,&#160;libraries,&#160;and&#160;executables<br/>produced&#160;with&#160;the&#160;Green&#160;Hills&#160;toolchain.<br/>
+•&#160;<b>MULTI&#160;License&#160;Administrator&#160;</b>(<b>mlmadmin</b>)&#160;—&#160;A&#160;graphical&#160;utility&#160;for<br/>
+managing&#160;Green&#160;Hills&#160;tools&#160;licenses.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>3</i><br/>
+<hr/>
+<a name=14></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_5.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_6.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_7.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_8.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_9.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_10.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_11.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-14_12.png"/><br/>
+<i>Chapter&#160;1.&#160;Introduction</i><br/>
+<b>The&#160;MULTI&#160;Launcher</b><br/>
+The&#160;MULTI&#160;Launcher&#160;provides&#160;a&#160;convenient&#160;way&#160;to&#160;launch&#160;frequently&#160;used&#160;tools,<br/>to&#160;create&#160;or&#160;access&#160;files&#160;and&#160;projects,&#160;and&#160;to&#160;manage&#160;MULTI&#160;workspaces.&#160;To&#160;open<br/>the&#160;MULTI&#160;Launcher:<br/>
+•&#160;Windows&#160;—&#160;From&#160;the&#160;Windows&#160;<b>Start&#160;</b>menu,&#160;select&#160;the&#160;MULTI&#160;menu&#160;item.<br/>
+Alternatively,&#160;use&#160;Windows&#160;Explorer&#160;to&#160;navigate&#160;to&#160;the&#160;directory&#160;where&#160;you<br/>installed&#160;the&#160;MULTI&#160;IDE,&#160;and&#160;double-click&#160;<b>multi.exe</b>.<br/>
+•&#160;Linux/Solaris&#160;—&#160;Run&#160;the&#160;<b>multi&#160;</b>executable&#160;from&#160;your&#160;MULTI&#160;IDE&#160;installation<br/>
+directory.<br/>
+<b>Tip<br/></b>If&#160;you&#160;cannot&#160;obtain&#160;a&#160;license&#160;to&#160;use&#160;MULTI,&#160;see&#160;Chapter&#160;1,&#160;“Licensing<br/>for&#160;End&#160;Users”&#160;in&#160;the&#160;<i>MULTI:&#160;Licensing&#160;</i>book.<br/>
+All&#160;of&#160;the&#160;main&#160;MULTI&#160;components&#160;can&#160;be&#160;accessed&#160;from&#160;the&#160;Launcher&#160;toolbar:<br/>
+•<br/>
+—&#160;Runs&#160;a&#160;shortcut&#160;or&#160;an&#160;action&#160;sequence&#160;in&#160;the&#160;current&#160;workspace.&#160;Also<br/>
+allows&#160;you&#160;to&#160;create&#160;a&#160;new&#160;workspace&#160;or&#160;create&#160;or&#160;edit&#160;a&#160;shortcut.<br/>
+•<br/>
+—&#160;Opens&#160;the&#160;Project&#160;Manager&#160;on&#160;a&#160;recent&#160;or&#160;new&#160;project.<br/>
+•<br/>
+—&#160;Opens&#160;the&#160;Debugger&#160;on&#160;a&#160;recent&#160;or&#160;new&#160;executable.<br/>
+•<br/>
+—&#160;Opens&#160;the&#160;Editor&#160;on&#160;a&#160;recent&#160;or&#160;new&#160;file.<br/>
+•<br/>
+—&#160;Opens&#160;the&#160;Checkout&#160;Browser&#160;on&#160;a&#160;recent&#160;or&#160;new&#160;checkout.<br/>
+•<br/>
+—&#160;Establishes&#160;a&#160;target&#160;connection&#160;or&#160;opens&#160;the&#160;Connection&#160;Chooser&#160;or<br/>
+Connection&#160;Organizer.<br/>
+•<br/>
+—&#160;Opens&#160;a&#160;Serial&#160;Terminal&#160;using&#160;a&#160;recent&#160;or&#160;new&#160;connection.<br/>
+•<br/>
+—&#160;Opens&#160;the&#160;EventAnalyzer&#160;(licensed&#160;separately).<br/>
+•<br/>
+—&#160;Opens&#160;the&#160;ResourceAnalyzer&#160;(licensed&#160;separately).<br/>
+•<br/>
+—&#160;Shows/hides&#160;the&#160;detail&#160;pane&#160;of&#160;the&#160;Launcher.<br/>
+<i>4</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=15></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-15_1.png"/><br/>
+<i>MULTI&#160;Workspaces</i><br/>
+You&#160;can&#160;also&#160;launch&#160;the&#160;Green&#160;Hills&#160;License&#160;Administrator&#160;and,&#160;if&#160;installed,&#160;the<br/>Green&#160;Hills&#160;Probe&#160;Administrator&#160;from&#160;the&#160;<b>Utilities&#160;</b>menu.<br/>
+During&#160;development,&#160;you&#160;can&#160;use&#160;the&#160;MULTI&#160;Launcher&#160;as&#160;a&#160;convenient,&#160;centralized<br/>window&#160;manager.&#160;You&#160;can&#160;access&#160;any&#160;of&#160;your&#160;open&#160;MULTI&#160;windows&#160;from&#160;the<br/><b>Windows&#160;</b>menu&#160;of&#160;the&#160;Launcher.<br/>
+<b>MULTI&#160;Workspaces</b><br/>
+The&#160;MULTI&#160;Launcher&#160;allows&#160;you&#160;to&#160;create&#160;and&#160;use&#160;<i>workspaces</i>.&#160;A&#160;MULTI<br/>workspace&#160;is&#160;a&#160;virtual&#160;area&#160;where&#160;the&#160;tools,&#160;files,&#160;and&#160;actions&#160;required&#160;for&#160;a&#160;particular<br/>project&#160;can&#160;be&#160;organized,&#160;accessed,&#160;and&#160;executed.<br/>
+A&#160;workspace&#160;is&#160;typically&#160;created&#160;for&#160;each&#160;Top&#160;Project,&#160;and&#160;includes&#160;a&#160;working<br/>directory&#160;and&#160;a&#160;group&#160;of&#160;related&#160;<i>actions</i>—for&#160;example,&#160;opening&#160;a&#160;project&#160;in&#160;the<br/>MULTI&#160;Project&#160;Manager,&#160;connecting&#160;to&#160;a&#160;target,&#160;or&#160;performing&#160;a&#160;shell&#160;command.<br/>Actions&#160;are&#160;grouped&#160;into&#160;action&#160;sequences,&#160;so&#160;that&#160;a&#160;single&#160;mouse&#160;click&#160;can&#160;perform<br/>all&#160;the&#160;actions&#160;in&#160;the&#160;specified&#160;action&#160;sequence.<br/>
+For&#160;more&#160;information,&#160;see&#160;Chapter&#160;3,&#160;“Managing&#160;Workspaces&#160;and&#160;Shortcuts&#160;with<br/>the&#160;Launcher”&#160;in&#160;the&#160;<i>MULTI:&#160;Managing&#160;Projects&#160;and&#160;Configuring&#160;the&#160;IDE&#160;</i>book.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>5</i><br/>
+<hr/>
+<a name=16></a><i>Chapter&#160;1.&#160;Introduction</i><br/>
+<b>Accessing&#160;Online&#160;Help</b><br/>
+Online&#160;help&#160;provides&#160;useful&#160;information&#160;about&#160;MULTI&#160;and&#160;can&#160;be&#160;accessed&#160;in<br/>several&#160;different&#160;ways.&#160;The&#160;following&#160;sections&#160;describe&#160;how&#160;to&#160;access&#160;online&#160;help<br/>and&#160;how&#160;to&#160;use&#160;the&#160;Help&#160;Viewer.<br/>
+<b>Full&#160;Online&#160;Manuals</b><br/>
+You&#160;can&#160;open&#160;the&#160;MULTI&#160;Help&#160;Viewer&#160;on&#160;an&#160;indexed,&#160;hypertext&#160;version&#160;of&#160;any<br/>manual&#160;by&#160;selecting&#160;it&#160;from&#160;the&#160;list&#160;of&#160;installed&#160;manuals&#160;that&#160;appears&#160;in&#160;the&#160;<b>Help<br/></b>→&#160;<b>Manuals&#160;</b>menu.&#160;The&#160;list&#160;is&#160;populated&#160;with&#160;manuals&#160;from&#160;your&#160;IDE&#160;installation,<br/>linked&#160;Compiler&#160;installation,&#160;and&#160;configured&#160;OS&#160;installation&#160;(see&#160;<a href="starts.html#36">“Configuring<br/>MULTI&#160;for&#160;Use&#160;with&#160;INTEGRITY&#160;or&#160;u-velOSity”&#160;on&#160;page&#160;26).&#160;</a>Note&#160;that&#160;the<br/>configured&#160;OS&#160;installation&#160;is&#160;overwritten&#160;in&#160;the&#160;current&#160;MULTI&#160;session&#160;if&#160;you&#160;open<br/>the&#160;Project&#160;Manager&#160;on&#160;an&#160;INTEGRITY&#160;or&#160;u-velOSity&#160;project&#160;that&#160;specifies&#160;a<br/>different&#160;OS&#160;installation.<br/>
+You&#160;can&#160;also&#160;access&#160;manuals&#160;from&#160;the&#160;command&#160;line.&#160;Ensure&#160;that&#160;the&#160;IDE&#160;installation<br/>directory&#160;is&#160;in&#160;your&#160;path,&#160;and&#160;enter&#160;the&#160;following&#160;command:<br/>
+<b>helpview&#160;</b><i>pathname&#160;</i>|&#160;-m&#160;<i>manual_name</i><br/>
+where:<br/>
+•&#160;<i>pathname&#160;</i>opens&#160;the&#160;<b>.chm&#160;</b>file&#160;specified&#160;in&#160;<i>pathname</i>.&#160;You&#160;must&#160;provide&#160;a<br/>
+full&#160;path.<br/>
+•&#160;-m&#160;<i>manual_name&#160;</i>opens&#160;the&#160;manual&#160;<i>manual_name</i>.&#160;An&#160;example&#160;manual&#160;name<br/>
+is&#160;&#34;MULTI:&#160;Debugging&#34;.&#160;If&#160;the&#160;manual&#160;name&#160;contains&#160;a&#160;space&#160;as&#160;in&#160;the<br/>preceding&#160;example,&#160;you&#160;must&#160;enclose&#160;it&#160;in&#160;quotation&#160;marks.<br/>
+<b>Context-Sensitive&#160;Help</b><br/>
+Many&#160;MULTI&#160;windows&#160;and&#160;dialog&#160;boxes&#160;are&#160;linked&#160;to&#160;specific&#160;topics&#160;in&#160;the&#160;online<br/>manuals.&#160;To&#160;view&#160;the&#160;topic&#160;for&#160;an&#160;active&#160;window&#160;or&#160;dialog&#160;box,&#160;press&#160;<b>F1</b>.<br/>
+If&#160;you&#160;are&#160;using&#160;the&#160;MULTI&#160;Editor,&#160;you&#160;can&#160;also&#160;open&#160;context-sensitive&#160;help&#160;about<br/>a&#160;button&#160;or&#160;a&#160;menu&#160;item&#160;by&#160;selecting&#160;<b>Help&#160;</b>→&#160;<b>Identify&#160;</b>and&#160;then&#160;clicking&#160;the&#160;button<br/>or&#160;selecting&#160;the&#160;menu&#160;item.<br/>
+<i>6</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=17></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-17_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-17_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-17_3.png"/><br/>
+<i>Command,&#160;Configuration&#160;Option,&#160;and&#160;Keyword&#160;Help</i><br/>
+<b>Command,&#160;Configuration&#160;Option,&#160;and&#160;Keyword&#160;Help</b><br/>
+You&#160;can&#160;obtain&#160;help&#160;information&#160;about&#160;a&#160;MULTI&#160;Debugger&#160;command,&#160;a&#160;MULTI<br/>configuration&#160;option,&#160;or&#160;a&#160;keyword&#160;by&#160;typing&#160;help&#160;<i>command_name</i>,&#160;help<br/><i>configuration_option</i>,&#160;or&#160;help&#160;<i>keyword&#160;</i>in&#160;the&#160;Debugger&#160;command&#160;pane.&#160;If<br/>you&#160;specify&#160;the&#160;name&#160;of&#160;a&#160;command&#160;or&#160;configuration&#160;option,&#160;the&#160;Help&#160;Viewer&#160;opens<br/>on&#160;documentation&#160;for&#160;the&#160;command&#160;or&#160;option.&#160;If&#160;you&#160;specify&#160;a&#160;keyword&#160;(a&#160;word<br/>that&#160;is&#160;not&#160;a&#160;command&#160;or&#160;configuration&#160;option),&#160;the&#160;Help&#160;Viewer&#160;searches&#160;all&#160;manuals<br/>for&#160;<i>keyword</i>.<br/>
+To&#160;print&#160;the&#160;basic&#160;syntax&#160;of&#160;a&#160;MULTI&#160;Debugger&#160;command&#160;to&#160;the&#160;command&#160;pane,<br/>type&#160;usage&#160;<i>command_name</i>.<br/>
+<b>The&#160;Help&#160;Viewer&#160;Window</b><br/>
+The&#160;following&#160;graphic&#160;displays&#160;the&#160;Help&#160;Viewer&#160;window.<br/>
+The&#160;Help&#160;Viewer&#160;toolbar&#160;contains&#160;the&#160;following&#160;buttons,&#160;from&#160;left&#160;to&#160;right:<br/>
+•&#160;<b>Back&#160;</b>(<br/>
+)&#160;and&#160;<b>Forward&#160;</b>(<br/>
+)&#160;—&#160;Returns&#160;to&#160;pages&#160;you&#160;have&#160;visited&#160;during&#160;the<br/>
+current&#160;help&#160;session.&#160;Click&#160;the&#160;button&#160;once&#160;for&#160;each&#160;page&#160;you&#160;want&#160;to&#160;revisit.<br/>Click&#160;and&#160;hold&#160;the&#160;button&#160;to&#160;select&#160;from&#160;a&#160;list&#160;of&#160;pages&#160;you&#160;have&#160;visited.&#160;These<br/>buttons&#160;function&#160;across&#160;books.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>7</i><br/>
+<hr/>
+<a name=18></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-18_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-18_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-18_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-18_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-18_5.png"/><br/>
+<i>Chapter&#160;1.&#160;Introduction</i><br/>
+•&#160;<b>View&#160;All&#160;Subtrees&#160;</b>(<br/>
+)&#160;—&#160;Toggles&#160;the&#160;display&#160;of&#160;the&#160;current&#160;selection's<br/>
+sub-topics&#160;(if&#160;any)&#160;in&#160;the&#160;view&#160;pane.&#160;When&#160;you&#160;open&#160;the&#160;Help&#160;Viewer,&#160;this<br/>button&#160;defaults&#160;to&#160;its&#160;last&#160;value.<br/>
+•&#160;<b>Contract&#160;All&#160;Unselected&#160;</b>(<br/>
+)&#160;—&#160;Collapses&#160;expanded&#160;topics&#160;in&#160;the&#160;<b>Contents</b><br/>
+tab&#160;if&#160;the&#160;topics&#160;do&#160;not&#160;contain&#160;any&#160;selections.<br/>
+•&#160;<b>Print&#160;</b>(<br/>
+)&#160;—&#160;Prints&#160;the&#160;help&#160;page&#160;displayed&#160;in&#160;the&#160;view&#160;pane.&#160;To&#160;create&#160;a&#160;help<br/>
+page&#160;consisting&#160;of&#160;mixed&#160;topics,&#160;hold&#160;down&#160;the&#160;<b>Ctrl&#160;</b>key&#160;while&#160;clicking&#160;separate<br/>topics.&#160;MULTI&#160;combines&#160;the&#160;separate&#160;topics&#160;and&#160;orders&#160;them&#160;by&#160;their&#160;location<br/>in&#160;the&#160;<b>Contents&#160;</b>tab.<br/>
+•&#160;<b>Previous&#160;Page&#160;</b>(<br/>
+)&#160;and&#160;<b>Next&#160;Page&#160;</b>(<br/>
+)&#160;(located&#160;at&#160;far&#160;right)&#160;—&#160;Displays&#160;the<br/>
+previous&#160;or&#160;following&#160;topic&#160;as&#160;ordered&#160;in&#160;the&#160;<b>Contents&#160;</b>tab.&#160;If&#160;the&#160;previous&#160;or<br/>next&#160;topic&#160;includes&#160;sub-topics&#160;and&#160;the&#160;<b>View&#160;All&#160;Subtrees&#160;</b>button&#160;is&#160;enabled,<br/>the&#160;Help&#160;Viewer&#160;displays&#160;the&#160;sub-topics&#160;along&#160;with&#160;the&#160;section.<br/>
+The&#160;MULTI&#160;Help&#160;Viewer&#160;contains&#160;two&#160;panes.&#160;The&#160;right-hand&#160;pane,&#160;or&#160;the&#160;<i>view<br/>pane</i>,&#160;displays&#160;the&#160;help&#160;page&#160;for&#160;your&#160;selection.&#160;The&#160;left-hand&#160;pane&#160;contains&#160;the<br/>following&#160;three&#160;tabs:<br/>
+•&#160;<b>Contents&#160;</b>—&#160;Displays&#160;topics&#160;in&#160;the&#160;manual&#160;you&#160;are&#160;viewing.&#160;Click&#160;a&#160;plus&#160;or<br/>
+minus&#160;icon&#160;to&#160;show&#160;or&#160;hide&#160;nested&#160;topics.&#160;Click&#160;a&#160;topic&#160;to&#160;display&#160;it&#160;in&#160;the&#160;view<br/>pane.<br/>
+•&#160;<b>Index&#160;</b>—&#160;Displays&#160;index&#160;entries&#160;for&#160;the&#160;manual.&#160;To&#160;search&#160;the&#160;index&#160;entries,<br/>
+enter&#160;a&#160;word&#160;or&#160;words&#160;in&#160;the&#160;text&#160;box&#160;located&#160;at&#160;the&#160;top&#160;of&#160;the&#160;pane.&#160;MULTI<br/>returns&#160;results&#160;that&#160;contain&#160;the&#160;word(s)&#160;you&#160;typed.&#160;Click&#160;an&#160;index&#160;entry&#160;to<br/>display&#160;the&#160;associated&#160;topic&#160;in&#160;the&#160;view&#160;pane.<br/>
+•&#160;<b>Search&#160;</b>—&#160;Allows&#160;you&#160;to&#160;search&#160;for&#160;specific&#160;words&#160;in&#160;the&#160;current&#160;manual&#160;or&#160;in<br/>
+all&#160;manuals.&#160;For&#160;information&#160;about&#160;searching&#160;from&#160;this&#160;tab,&#160;see&#160;<a href="starts.html#22">“Searching<br/>Manuals&#160;in&#160;the&#160;Help&#160;Viewer”&#160;on&#160;page&#160;12</a>.<br/>
+<b>Navigating&#160;Help</b><br/>
+Navigating&#160;manuals&#160;in&#160;the&#160;MULTI&#160;Help&#160;Viewer&#160;is&#160;easy.&#160;This&#160;section&#160;describes<br/>different&#160;ways&#160;to&#160;find&#160;information.<br/>
+<i>8</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=19></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-19_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-19_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-19_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-19_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-19_5.png"/><br/>
+<i>Navigating&#160;Help</i><br/>
+<b>Viewing&#160;Previous&#160;and&#160;Next&#160;Topics</b><br/>
+To&#160;display&#160;the&#160;previous&#160;or&#160;following&#160;topic&#160;as&#160;ordered&#160;in&#160;the&#160;<b>Contents&#160;</b>tab,&#160;do&#160;one<br/>of&#160;the&#160;following:<br/>
+•&#160;Click&#160;the<br/>
+or<br/>
+button&#160;located&#160;in&#160;the&#160;upper-right&#160;corner&#160;of&#160;the&#160;Help&#160;Viewer<br/>
+window.<br/>
+•&#160;Select&#160;<b>View&#160;</b>→&#160;<b>Previous&#160;Contents&#160;Entry&#160;</b>or&#160;<b>View&#160;</b>→&#160;<b>Next&#160;Contents&#160;Entry</b>.<br/>
+If&#160;the&#160;previous&#160;or&#160;next&#160;topic&#160;includes&#160;sub-topics&#160;and&#160;the&#160;<b>View&#160;All&#160;Subtrees&#160;</b>button<br/>(<br/>
+)&#160;is&#160;enabled,&#160;the&#160;Help&#160;Viewer&#160;displays&#160;the&#160;sub-topics&#160;along&#160;with&#160;the&#160;topic.<br/>
+<b>Returning&#160;to&#160;Previously&#160;Viewed&#160;Help&#160;Pages</b><br/>
+To&#160;return&#160;to&#160;pages&#160;you&#160;have&#160;visited&#160;during&#160;the&#160;current&#160;help&#160;session,&#160;do&#160;one&#160;of&#160;the<br/>following:<br/>
+•&#160;Click&#160;the<br/>
+or<br/>
+button&#160;located&#160;in&#160;the&#160;left&#160;corner&#160;of&#160;the&#160;toolbar.&#160;Click&#160;the<br/>
+button&#160;once&#160;for&#160;each&#160;page&#160;you&#160;want&#160;to&#160;revisit.&#160;Click&#160;and&#160;hold&#160;the&#160;button&#160;to<br/>select&#160;from&#160;a&#160;complete&#160;list&#160;of&#160;pages&#160;you&#160;have&#160;visited&#160;during&#160;the&#160;current&#160;help<br/>session.&#160;These&#160;buttons&#160;function&#160;across&#160;books.<br/>
+•&#160;Select&#160;<b>View&#160;</b>→&#160;<b>Back&#160;</b>or&#160;<b>View&#160;</b>→&#160;<b>Forward&#160;</b>from&#160;the&#160;menu&#160;bar.&#160;This&#160;feature<br/>
+functions&#160;across&#160;books.<br/>
+<b>Linking&#160;to&#160;Related&#160;Topics</b><br/>
+The&#160;underlined&#160;links&#160;available&#160;in&#160;the&#160;view&#160;pane&#160;allow&#160;you&#160;to&#160;jump&#160;to&#160;related&#160;topics.<br/>
+If,&#160;when&#160;you&#160;click&#160;a&#160;link,&#160;a&#160;dialog&#160;box&#160;appears&#160;with&#160;the&#160;message:<br/>
+You&#160;have&#160;requested&#160;information&#160;that&#160;the&#160;Help&#160;Viewer&#160;is&#160;unable<br/>
+to&#160;retrieve.<br/>
+one&#160;of&#160;the&#160;following&#160;factors&#160;may&#160;be&#160;the&#160;cause:<br/>
+•&#160;The&#160;manual&#160;that&#160;the&#160;link&#160;points&#160;to&#160;may&#160;not&#160;be&#160;included&#160;with&#160;your&#160;distribution.<br/>
+•&#160;If&#160;the&#160;link&#160;points&#160;to&#160;an&#160;INTEGRITY&#160;or&#160;u-velOSity&#160;manual,&#160;you&#160;may&#160;need&#160;to<br/>
+set&#160;the&#160;location&#160;of&#160;the&#160;installed&#160;OS&#160;distribution&#160;so&#160;that&#160;the&#160;Help&#160;Viewer&#160;can<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>9</i><br/>
+<hr/>
+<a name=20></a><i>Chapter&#160;1.&#160;Introduction</i><br/>
+locate&#160;the&#160;relevant&#160;help&#160;files.&#160;For&#160;information&#160;about&#160;how&#160;to&#160;do&#160;this,&#160;see<br/><a href="starts.html#36">“Configuring&#160;MULTI&#160;for&#160;Use&#160;with&#160;INTEGRITY&#160;or&#160;u-velOSity”&#160;on&#160;page&#160;26.</a><br/>
+•&#160;If&#160;the&#160;link&#160;points&#160;to&#160;an&#160;INTEGRITY&#160;or&#160;u-velOSity&#160;manual,&#160;you&#160;may&#160;be&#160;using<br/>
+a&#160;version&#160;of&#160;the&#160;operating&#160;system&#160;that&#160;does&#160;not&#160;support&#160;links&#160;from&#160;MULTI&#160;help.<br/>
+<b>Note<br/></b>If&#160;you&#160;are&#160;using&#160;MULTI&#160;with&#160;multiple&#160;target&#160;architectures&#160;(such&#160;as&#160;ARM<br/>and&#160;Power&#160;Architecture),&#160;you&#160;may&#160;install&#160;tools&#160;of&#160;the&#160;same&#160;version&#160;number<br/>into&#160;a&#160;single&#160;directory.&#160;If&#160;you&#160;click&#160;a&#160;link&#160;to&#160;a&#160;target-specific&#160;book&#160;in&#160;this<br/>case,&#160;MULTI&#160;chooses&#160;which&#160;version&#160;of&#160;the&#160;book&#160;to&#160;link&#160;to&#160;(ARM&#160;or<br/>Power&#160;Architecture&#160;in&#160;this&#160;example).<br/>
+<b>Bookmarking&#160;Help&#160;Pages</b><br/>
+You&#160;can&#160;use&#160;bookmarks&#160;to&#160;return&#160;to&#160;pages&#160;you&#160;have&#160;visited&#160;across&#160;MULTI&#160;sessions.<br/>To&#160;bookmark&#160;a&#160;page,&#160;select&#160;<b>Bookmarks&#160;</b>→&#160;<b>Bookmark&#160;This&#160;Page</b>.<br/>
+You&#160;can&#160;bookmark&#160;a&#160;help&#160;page&#160;consisting&#160;of&#160;mixed&#160;topics&#160;by&#160;holding&#160;down&#160;the<br/><b>Ctrl&#160;</b>key&#160;while&#160;clicking&#160;separate&#160;topics.&#160;MULTI&#160;combines&#160;the&#160;separate&#160;topics&#160;in<br/>the&#160;view&#160;pane&#160;and&#160;orders&#160;them&#160;by&#160;their&#160;location&#160;in&#160;the&#160;<b>Contents&#160;</b>tab.&#160;Bookmark&#160;the<br/>page&#160;as&#160;usual.<br/>
+The&#160;<b>Bookmarks&#160;</b>menu&#160;lists&#160;all&#160;your&#160;bookmarks&#160;from&#160;across&#160;MULTI&#160;manuals&#160;and<br/>sessions.&#160;To&#160;return&#160;to&#160;a&#160;bookmarked&#160;page,&#160;do&#160;one&#160;of&#160;the&#160;following:<br/>
+•&#160;Select&#160;<b>Bookmarks</b>,&#160;and&#160;choose&#160;a&#160;bookmark.<br/>
+•&#160;Select&#160;<b>Bookmarks&#160;</b>→&#160;<b>Manage&#160;Bookmarks</b>,&#160;and&#160;double-click&#160;a&#160;bookmark.<br/>
+•&#160;From&#160;any&#160;MULTI&#160;tool,&#160;select&#160;<b>Help&#160;</b>→&#160;<b>Bookmarks</b>,&#160;and&#160;choose&#160;a&#160;bookmark.<br/>
+To&#160;rename,&#160;delete,&#160;or&#160;reorder&#160;existing&#160;bookmarks,&#160;launch&#160;the&#160;<b>Bookmark&#160;Manager<br/></b>as&#160;described&#160;in&#160;the&#160;next&#160;section,&#160;<a href="starts.html#20">“Managing&#160;Bookmarks”&#160;on&#160;page&#160;10</a>.<br/>
+<b>Managing&#160;Bookmarks</b><br/>
+You&#160;can&#160;use&#160;the&#160;<b>Bookmark&#160;Manager&#160;</b>to&#160;rename&#160;or&#160;delete&#160;bookmarks,&#160;navigate&#160;to<br/>bookmarks,&#160;or&#160;modify&#160;the&#160;ordering&#160;of&#160;bookmarks&#160;in&#160;the&#160;<b>Bookmarks&#160;</b>menu.<br/>
+<i>10</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=21></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_5.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_6.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_7.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-21_8.png"/><br/>
+<i>Navigating&#160;Help</i><br/>
+To&#160;open&#160;the&#160;<b>Bookmark&#160;Manager</b>,&#160;do&#160;one&#160;of&#160;the&#160;following:<br/>
+•&#160;In&#160;the&#160;Help&#160;Viewer,&#160;select&#160;<b>Bookmarks&#160;</b>→&#160;<b>Manage&#160;Bookmarks</b>.<br/>
+•&#160;From&#160;any&#160;MULTI&#160;tool,&#160;select&#160;<b>Help&#160;</b>→&#160;<b>Bookmarks&#160;</b>→&#160;<b>Manage&#160;Bookmarks</b>.<br/>
+The&#160;list&#160;on&#160;the&#160;left&#160;side&#160;of&#160;the&#160;<b>Bookmark&#160;Manager&#160;</b>displays&#160;the&#160;names&#160;of&#160;all&#160;the<br/>bookmarks&#160;you&#160;have&#160;created.&#160;When&#160;a&#160;bookmark&#160;is&#160;selected,&#160;the&#160;topic(s)&#160;and&#160;the<br/>manual&#160;marked&#160;by&#160;that&#160;bookmark&#160;are&#160;displayed&#160;in&#160;the&#160;right&#160;side&#160;of&#160;the&#160;window.<br/>The&#160;bookmark&#160;may&#160;reference&#160;multiple&#160;topics&#160;if,&#160;for&#160;example,&#160;you&#160;created&#160;the<br/>bookmark&#160;with&#160;multiple&#160;entries&#160;selected&#160;in&#160;the&#160;<b>Contents&#160;</b>tab&#160;or&#160;if&#160;you&#160;selected&#160;an<br/>index&#160;entry&#160;associated&#160;with&#160;multiple&#160;topics.&#160;Double-clicking&#160;a&#160;bookmark&#160;or&#160;a&#160;topic<br/>displays&#160;that&#160;bookmark&#160;or&#160;topic&#160;in&#160;the&#160;Help&#160;Viewer.<br/>
+The&#160;toolbar&#160;buttons&#160;in&#160;the&#160;<b>Bookmark&#160;Manager&#160;</b>allow&#160;you&#160;to&#160;perform&#160;the&#160;following<br/>operations&#160;on&#160;bookmarks:<br/>
+•<br/>
+—&#160;Display&#160;the&#160;selected&#160;bookmark(s)&#160;in&#160;the&#160;Help&#160;Viewer.<br/>
+•<br/>
+—&#160;Rename&#160;the&#160;selected&#160;bookmark.<br/>
+•<br/>
+—&#160;Delete&#160;the&#160;selected&#160;bookmark(s).<br/>
+•<br/>
+and<br/>
+—&#160;Move&#160;the&#160;selected&#160;bookmark&#160;up&#160;or&#160;down&#160;in&#160;the&#160;list.&#160;The&#160;order<br/>
+of&#160;the&#160;bookmarks&#160;in&#160;the&#160;<b>Bookmarks&#160;</b>menu&#160;mirrors&#160;the&#160;order&#160;of&#160;the&#160;bookmarks<br/>in&#160;the&#160;<b>Bookmark&#160;Manager</b>.<br/>
+<b>Note<br/></b>The<br/>
+and<br/>
+buttons&#160;are&#160;available&#160;for&#160;use&#160;on&#160;multiple&#160;bookmarks.&#160;You<br/>
+can&#160;select&#160;multiple&#160;bookmarks&#160;from&#160;the&#160;left&#160;side&#160;of&#160;the&#160;window&#160;by<br/>dragging&#160;to&#160;select&#160;rows&#160;or&#160;by&#160;using&#160;<b>Shift&#160;</b>or&#160;<b>Ctrl&#160;</b>to&#160;select&#160;items.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>11</i><br/>
+<hr/>
+<a name=22></a><i>Chapter&#160;1.&#160;Introduction</i><br/>
+<b>Opening&#160;Additional&#160;Manuals&#160;from&#160;the&#160;Help&#160;Viewer</b><br/>
+To&#160;open&#160;a&#160;new&#160;manual&#160;in&#160;the&#160;current&#160;window,&#160;do&#160;one&#160;of&#160;the&#160;following:<br/>
+•&#160;Select&#160;<b>File&#160;</b>→&#160;<b>Open&#160;Manual&#160;</b>and&#160;choose&#160;from&#160;the&#160;list&#160;of&#160;installed&#160;manuals.<br/>
+For&#160;information&#160;about&#160;how&#160;the&#160;list&#160;is&#160;populated,&#160;see&#160;<a href="starts.html#16">“Full&#160;Online&#160;Manuals”<br/>on&#160;page&#160;6</a>.<br/>
+•&#160;Select&#160;<b>File&#160;</b>→&#160;<b>Open&#160;Manual&#160;File&#160;</b>and&#160;navigate&#160;to&#160;a&#160;particular&#160;file&#160;in&#160;the&#160;file<br/>
+chooser&#160;that&#160;appears.<br/>
+To&#160;open&#160;a&#160;new&#160;manual&#160;in&#160;a&#160;new&#160;window,&#160;select&#160;<b>View&#160;</b>→&#160;<b>Open&#160;Other&#160;Manuals&#160;in<br/>New&#160;Window&#160;</b>and&#160;then&#160;open&#160;the&#160;manual&#160;as&#160;usual.&#160;When&#160;you&#160;open&#160;the&#160;Help&#160;Viewer,<br/>the&#160;<b>Open&#160;Other&#160;Manuals&#160;in&#160;New&#160;Window&#160;</b>toggle&#160;option&#160;defaults&#160;to&#160;its&#160;last&#160;value.<br/>
+<b>Searching&#160;Manuals&#160;in&#160;the&#160;Help&#160;Viewer</b><br/>
+With&#160;the&#160;Help&#160;Viewer's&#160;<b>Search&#160;</b>feature,&#160;you&#160;can&#160;search&#160;the&#160;current&#160;manual&#160;or&#160;all<br/>manuals&#160;simultaneously.&#160;Follow&#160;these&#160;steps&#160;to&#160;perform&#160;a&#160;search:<br/>
+1.&#160;Type&#160;a&#160;word&#160;or&#160;words&#160;in&#160;the&#160;<b>Search&#160;</b>tab's&#160;text&#160;box.<br/>
+To&#160;search&#160;for&#160;a&#160;phrase,&#160;put&#160;quotation&#160;marks&#160;around&#160;the&#160;phrase.&#160;To&#160;exclude&#160;a<br/>word&#160;from&#160;the&#160;search,&#160;prefix&#160;it&#160;with&#160;an&#160;exclamation&#160;point&#160;(!).&#160;For&#160;example,<br/>typing&#160;help&#160;!MULTI&#160;displays&#160;all&#160;the&#160;search&#160;results&#160;for&#160;help&#160;that&#160;do&#160;not&#160;contain<br/>the&#160;word&#160;MULTI&#160;in&#160;their&#160;content.&#160;To&#160;search&#160;for&#160;an&#160;exclamation&#160;point&#160;at&#160;the<br/>beginning&#160;of&#160;a&#160;word,&#160;you&#160;must&#160;enter&#160;a&#160;plus&#160;sign&#160;followed&#160;by&#160;an&#160;exclamation<br/>point&#160;(+!).&#160;Full&#160;regular&#160;expressions&#160;are&#160;not&#160;supported.<br/>
+2.&#160;To&#160;search&#160;for&#160;<i>all&#160;</i>keywords&#160;—&#160;Select&#160;<b>all&#160;</b>from&#160;the&#160;<b>Find&#160;pages&#160;matching</b><br/>
+drop-down&#160;list.&#160;The&#160;search&#160;function&#160;returns&#160;results&#160;that&#160;contain&#160;all&#160;the&#160;search<br/>words;&#160;however,&#160;they&#160;may&#160;not&#160;occur&#160;as&#160;a&#160;phrase&#160;unless&#160;you&#160;enclosed&#160;them&#160;in<br/>quotation&#160;marks.<br/>
+To&#160;search&#160;for&#160;<i>any&#160;</i>keywords&#160;—&#160;Select&#160;<b>any&#160;</b>from&#160;the&#160;<b>Find&#160;pages&#160;matching<br/></b>drop-down&#160;list.&#160;The&#160;search&#160;function&#160;returns&#160;results&#160;that&#160;contain&#160;one&#160;of&#160;the<br/>words,&#160;a&#160;combination&#160;of&#160;the&#160;words,&#160;or&#160;all&#160;of&#160;the&#160;words.<br/>
+3.&#160;Select&#160;the&#160;<b>Match&#160;whole&#160;word&#160;only&#160;</b>check&#160;box&#160;if&#160;you&#160;want&#160;the&#160;search&#160;results<br/>
+to&#160;contain&#160;the&#160;keyword&#160;as&#160;you&#160;typed&#160;it.&#160;For&#160;example,&#160;if&#160;you&#160;select&#160;this&#160;option,<br/>search&#160;results&#160;for&#160;a&#160;singular&#160;word&#160;do&#160;not&#160;contain&#160;the&#160;plural&#160;form&#160;of&#160;the&#160;word.<br/>
+<i>12</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=23></a><i>Searching&#160;Manuals&#160;in&#160;the&#160;Help&#160;Viewer</i><br/>
+4.&#160;To&#160;search&#160;all&#160;installed&#160;manuals,&#160;select&#160;the&#160;<b>Search&#160;all&#160;manuals&#160;</b>check&#160;box.&#160;For<br/>
+information&#160;about&#160;what&#160;installations&#160;the&#160;manuals&#160;are&#160;pulled&#160;from,&#160;see&#160;<a href="starts.html#16">“Full<br/>Online&#160;Manuals”&#160;on&#160;page&#160;6.&#160;</a>To&#160;search&#160;only&#160;the&#160;current&#160;manual,&#160;clear&#160;this<br/>check&#160;box.<br/>
+5.&#160;Press&#160;<b>Enter&#160;</b>to&#160;display&#160;a&#160;list&#160;of&#160;search&#160;results.&#160;Click&#160;any&#160;entry&#160;in&#160;the&#160;list&#160;to<br/>
+display&#160;the&#160;entry's&#160;help&#160;page&#160;in&#160;the&#160;view&#160;pane.&#160;If&#160;no&#160;results&#160;appear,&#160;no&#160;matches<br/>were&#160;found.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>13</i><br/>
+<hr/>
+<a name=24></a><hr/>
+<a name=25></a><b>Chapter&#160;2</b><br/>
+<b>MULTI&#160;Tutorial</b><br/>
+<b>Contents</b><br/>
+<a href="starts.html#26">Creating&#160;Your&#160;First&#160;Project&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#26">16</a><br/>
+<a href="starts.html#29">Building&#160;Your&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#29">19</a><br/>
+<a href="starts.html#30">Starting&#160;the&#160;Debugger&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#30">20</a><br/>
+<a href="starts.html#30">Connecting&#160;to&#160;a&#160;Simulator&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#30">20</a><br/>
+<a href="starts.html#31">Debugging&#160;Your&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#31">21</a><br/>
+<a href="starts.html#32">Connecting&#160;to&#160;Your&#160;Target&#160;Hardware&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#32">22</a><br/>
+<a href="starts.html#33">Preparing&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#33">23</a><br/>
+<a href="starts.html#34">Setting&#160;Up&#160;a&#160;Workspace&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#34">24</a><br/>
+<a href="starts.html#35">Additional&#160;Examples&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#35">25</a><br/>
+<a href="starts.html#36">Configuring&#160;MULTI&#160;for&#160;Use&#160;with&#160;INTEGRITY&#160;or&#160;u-velOSity&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="starts.html#36">26</a><br/>
+<hr/>
+<a name=26></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-26_1.png"/><br/>
+<i>Chapter&#160;2.&#160;MULTI&#160;Tutorial</i><br/>
+This&#160;chapter&#160;introduces&#160;you&#160;to&#160;the&#160;basic&#160;components&#160;of&#160;the&#160;MULTI&#160;IDE,&#160;and&#160;leads<br/>you&#160;through&#160;creating&#160;and&#160;building&#160;a&#160;simple&#160;<b>Hello&#160;World&#160;</b>program.&#160;You&#160;will&#160;then<br/>run&#160;and&#160;debug&#160;this&#160;program&#160;on&#160;both&#160;a&#160;simulator&#160;and&#160;your&#160;target&#160;hardware.<br/>
+<b>Creating&#160;Your&#160;First&#160;Project</b><br/>
+A&#160;project&#160;is&#160;a&#160;collection&#160;of&#160;source&#160;code&#160;and&#160;resource&#160;files&#160;that&#160;is&#160;used&#160;to&#160;build&#160;one<br/>or&#160;more&#160;programs&#160;or&#160;libraries.&#160;Follow&#160;the&#160;steps&#160;below&#160;to&#160;create&#160;the&#160;<b>Hello&#160;World<br/></b>project&#160;that&#160;is&#160;used&#160;for&#160;the&#160;remainder&#160;of&#160;this&#160;tutorial.<br/>
+1.&#160;Start&#160;the&#160;Launcher&#160;as&#160;described&#160;in&#160;<a href="starts.html#14">“The&#160;MULTI&#160;Launcher”&#160;on&#160;page&#160;4</a>.<br/>
+<i>16</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=27></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-27_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-27_2.png"/><br/>
+<i>Creating&#160;Your&#160;First&#160;Project</i><br/>
+2.&#160;Select&#160;<b>File&#160;</b>→&#160;<b>Create&#160;Workspace&#160;</b>to&#160;open&#160;the&#160;<b>Select&#160;Workspace&#160;Type&#160;</b>dialog.<br/>
+3.&#160;Enter&#160;Hello&#160;World&#160;in&#160;the&#160;<b>Name&#160;</b>field.&#160;Click&#160;<b>OK&#160;</b>to&#160;create&#160;a&#160;workspace&#160;and<br/>
+launch&#160;the&#160;<b>Project&#160;Wizard</b>.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>17</i><br/>
+<hr/>
+<a name=28></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-28_1.png"/><br/>
+<i>Chapter&#160;2.&#160;MULTI&#160;Tutorial</i><br/>
+4.&#160;Click&#160;<b>Next&#160;</b>to&#160;accept&#160;the&#160;default&#160;settings&#160;for&#160;the&#160;project&#160;name&#160;and&#160;directory.<br/>
+5.&#160;Select&#160;the&#160;<b>Stand-alone&#160;</b>operating&#160;system.&#160;Click&#160;<b>Next</b>.<br/>
+6.&#160;If&#160;only&#160;one&#160;processor&#160;family&#160;is&#160;available,&#160;the&#160;<b>Project&#160;Wizard&#160;</b>automatically<br/>
+selects&#160;it&#160;and&#160;continues&#160;to&#160;the&#160;next&#160;screen.&#160;Otherwise,&#160;select&#160;your&#160;processor<br/>family&#160;and&#160;click&#160;<b>Next</b>.<br/>
+7.&#160;Select&#160;your&#160;target&#160;board.&#160;If&#160;it&#160;is&#160;not&#160;listed&#160;or&#160;if&#160;you&#160;have&#160;not&#160;yet&#160;decided&#160;on<br/>
+one,&#160;expand&#160;the&#160;<b>Generic&#160;</b>list&#160;and&#160;select&#160;the&#160;processor&#160;you&#160;intend&#160;to&#160;target.<br/>Click&#160;<b>Finish</b>.<br/>
+8.&#160;In&#160;the&#160;<b>Top&#160;Project&#160;Created&#160;</b>dialog&#160;box&#160;that&#160;appears&#160;next,&#160;click&#160;<b>OK</b>.<br/>
+9.&#160;The&#160;<b>Project&#160;Manager:&#160;Select&#160;Item&#160;to&#160;Add&#160;</b>screen&#160;appears&#160;next.&#160;This&#160;screen<br/>
+allows&#160;you&#160;to&#160;add&#160;an&#160;example&#160;or&#160;executable&#160;to&#160;the&#160;framework&#160;just&#160;created&#160;by<br/>the&#160;<b>Project&#160;Wizard</b>.<br/>
+For&#160;this&#160;tutorial,&#160;select&#160;<b>Hello&#160;World&#160;(C)&#160;</b>and&#160;click&#160;<b>Finish&#160;</b>to&#160;accept&#160;the&#160;defaults<br/>for&#160;the&#160;remaining&#160;settings.&#160;The&#160;Project&#160;Manager&#160;will&#160;open&#160;on&#160;your&#160;new&#160;project.<br/>
+For&#160;information&#160;about&#160;creating&#160;an&#160;INTEGRITY&#160;project,&#160;see&#160;“Building&#160;INTEGRITY<br/>Applications”&#160;in&#160;the&#160;<i>INTEGRITY&#160;Development&#160;Guide</i>.<br/>
+For&#160;comprehensive&#160;information&#160;about&#160;the&#160;<b>Project&#160;Wizard</b>,&#160;see&#160;“Creating&#160;a&#160;Project”<br/>in&#160;Chapter&#160;1,&#160;“Creating&#160;a&#160;Project”&#160;in&#160;the&#160;<i>MULTI:&#160;Managing&#160;Projects&#160;and<br/>Configuring&#160;the&#160;IDE&#160;</i>book.<br/>
+<i>18</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=29></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-29_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-29_2.png"/><br/>
+<i>Building&#160;Your&#160;Program</i><br/>
+<b>Building&#160;Your&#160;Program</b><br/>
+In&#160;the&#160;previous&#160;section,&#160;you&#160;created&#160;a&#160;project&#160;and&#160;added&#160;all&#160;the&#160;files&#160;necessary&#160;to<br/>build&#160;your&#160;<b>Hello&#160;World&#160;</b>executable.<br/>
+The&#160;project&#160;is&#160;ready&#160;to&#160;build&#160;at&#160;this&#160;point.&#160;Click<br/>
+(<b>Build</b>)&#160;to&#160;build&#160;the&#160;executable<br/>
+program,&#160;<b>hello</b>.&#160;You&#160;can&#160;follow&#160;the&#160;progress&#160;of&#160;the&#160;build&#160;in&#160;the&#160;<b>Status&#160;</b>pane&#160;at&#160;the<br/>bottom&#160;of&#160;the&#160;Project&#160;Manager&#160;window.<br/>
+For&#160;more&#160;information&#160;about&#160;the&#160;MULTI&#160;Project&#160;Manager,&#160;see&#160;Chapter&#160;2,&#160;“Managing<br/>and&#160;Building&#160;Projects&#160;with&#160;the&#160;Project&#160;Manager”&#160;in&#160;the&#160;<i>MULTI:&#160;Managing&#160;Projects<br/>and&#160;Configuring&#160;the&#160;IDE&#160;</i>book.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>19</i><br/>
+<hr/>
+<a name=30></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-30_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-30_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-30_3.png"/><br/>
+<i>Chapter&#160;2.&#160;MULTI&#160;Tutorial</i><br/>
+<b>Starting&#160;the&#160;Debugger</b><br/>
+Now&#160;that&#160;your&#160;project&#160;is&#160;built,&#160;click<br/>
+(<b>Debug</b>)&#160;to&#160;open&#160;the&#160;MULTI&#160;Debugger&#160;on<br/>
+the&#160;<b>hello&#160;</b>executable.<br/>
+For&#160;information&#160;about&#160;the&#160;MULTI&#160;Debugger,&#160;see&#160;Chapter&#160;2,&#160;“The&#160;Main&#160;Debugger<br/>Window”&#160;in&#160;the&#160;<i>MULTI:&#160;Debugging&#160;</i>book.<br/>
+<b>Connecting&#160;to&#160;a&#160;Simulator</b><br/>
+Before&#160;debugging&#160;the&#160;program&#160;in&#160;the&#160;MULTI&#160;Debugger,&#160;you&#160;must&#160;connect&#160;to&#160;a<br/>hardware&#160;target&#160;or&#160;simulator&#160;that&#160;will&#160;run&#160;the&#160;program.&#160;The&#160;simulators&#160;provide&#160;an<br/>easy-to-use&#160;platform&#160;to&#160;develop&#160;and&#160;debug&#160;your&#160;application&#160;before&#160;you&#160;begin<br/>working&#160;with&#160;actual&#160;hardware.&#160;Perform&#160;the&#160;following&#160;steps&#160;to&#160;connect&#160;to&#160;a&#160;Green<br/>Hills&#160;simulator:<br/>
+1.&#160;Click<br/>
+(<b>Connect</b>)&#160;on&#160;the&#160;MULTI&#160;Debugger&#160;toolbar&#160;to&#160;open&#160;the&#160;<b>Connection</b><br/>
+<b>Chooser</b>.<br/>
+<i>20</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=31></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-31_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-31_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-31_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-31_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-31_5.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-31_6.png"/><br/>
+<i>Debugging&#160;Your&#160;Program</i><br/>
+2.&#160;MULTI&#160;creates&#160;several&#160;<i>Connection&#160;Methods&#160;</i>for&#160;your&#160;target&#160;board&#160;as&#160;part&#160;of<br/>
+your&#160;project.&#160;Select&#160;the&#160;simulator&#160;connection&#160;from&#160;the&#160;drop-down&#160;list&#160;and&#160;click<br/><b>Connect</b>.<br/>
+For&#160;more&#160;information&#160;about&#160;connecting&#160;to&#160;a&#160;target,&#160;see&#160;Chapter&#160;3,&#160;“Connecting&#160;to<br/>Your&#160;Target”&#160;in&#160;the&#160;<i>MULTI:&#160;Debugging&#160;</i>book.<br/>
+<b>Debugging&#160;Your&#160;Program</b><br/>
+Now&#160;that&#160;you&#160;are&#160;connected&#160;to&#160;the&#160;simulator,&#160;you&#160;can&#160;step&#160;through&#160;your&#160;code,&#160;use<br/>breakpoints,&#160;view&#160;registers&#160;and&#160;memory,&#160;and&#160;perform&#160;many&#160;other&#160;debug&#160;tasks&#160;with<br/>the&#160;MULTI&#160;Debugger.<br/>
+Try&#160;the&#160;following&#160;basic&#160;debugging&#160;techniques:<br/>
+•&#160;To&#160;step&#160;into&#160;the&#160;program,&#160;click<br/>
+(<b>Step&#160;(into&#160;Functions)&#160;on&#160;Selected&#160;Items</b>)<br/>
+on&#160;the&#160;Debugger&#160;toolbar.<br/>
+<b>Note<br/></b>MULTI&#160;will&#160;automatically&#160;download&#160;your&#160;program&#160;to&#160;the&#160;simulator<br/>when&#160;you&#160;first&#160;begin&#160;executing&#160;the&#160;code.<br/>
+•&#160;To&#160;set&#160;a&#160;breakpoint&#160;(<br/>
+),&#160;click&#160;any&#160;of&#160;the&#160;green&#160;breakdots&#160;(&#160;).<br/>
+•&#160;To&#160;step&#160;to&#160;the&#160;next&#160;line,&#160;click<br/>
+(<b>Next&#160;(over&#160;Functions)&#160;on&#160;Selected&#160;Items</b>)<br/>
+on&#160;the&#160;Debugger&#160;toolbar.<br/>
+•&#160;To&#160;view&#160;register&#160;values,&#160;click<br/>
+(<b>Registers</b>)&#160;on&#160;the&#160;Debugger&#160;toolbar.<br/>
+•&#160;To&#160;view&#160;interlaced&#160;command&#160;and&#160;target&#160;output,&#160;see&#160;the&#160;Debugger&#160;<b>Cmd</b><br/>
+(command)&#160;pane&#160;at&#160;the&#160;bottom&#160;of&#160;the&#160;window.&#160;To&#160;view&#160;just&#160;the&#160;target&#160;output,<br/>select&#160;the&#160;<b>I/O&#160;</b>tab.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>21</i><br/>
+<hr/>
+<a name=32></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-32_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-32_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-32_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-32_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-32_5.png"/><br/>
+<i>Chapter&#160;2.&#160;MULTI&#160;Tutorial</i><br/>
+•&#160;To&#160;view&#160;interlaced&#160;assembly&#160;and&#160;source&#160;code,&#160;click<br/>
+(<b>Assembly</b>)&#160;on&#160;the<br/>
+Debugger&#160;toolbar.<br/>
+For&#160;more&#160;information&#160;about&#160;debugging&#160;your&#160;program,&#160;see&#160;the&#160;<i>MULTI:&#160;Debugging<br/></i>book.<br/>
+For&#160;a&#160;quick&#160;reference&#160;to&#160;the&#160;commands&#160;available&#160;in&#160;the&#160;MULTI&#160;Debugger,&#160;see&#160;the<br/><i>Quick&#160;Reference&#160;Card&#160;</i>(only&#160;available&#160;in&#160;print).<br/>
+<b>Connecting&#160;to&#160;Your&#160;Target&#160;Hardware</b><br/>
+Earlier,&#160;you&#160;connected&#160;to&#160;a&#160;simulator&#160;to&#160;debug&#160;your&#160;program.&#160;Now,&#160;use&#160;the&#160;following<br/>steps&#160;to&#160;connect&#160;to&#160;your&#160;target&#160;board:<br/>
+1.&#160;If&#160;you&#160;are&#160;still&#160;connected&#160;to&#160;the&#160;simulator,&#160;disconnect&#160;from&#160;it&#160;by&#160;clicking<br/>
+(<b>Disconnect</b>)&#160;on&#160;the&#160;MULTI&#160;Debugger&#160;toolbar.<br/>
+2.&#160;Connect&#160;your&#160;target&#160;board&#160;to&#160;the&#160;host&#160;computer&#160;via&#160;a&#160;debug&#160;device&#160;or&#160;serial<br/>
+cable,&#160;depending&#160;on&#160;which&#160;protocol&#160;you&#160;will&#160;be&#160;using&#160;to&#160;debug&#160;your&#160;board.<br/>
+3.&#160;Click<br/>
+(<b>Connect</b>)&#160;to&#160;open&#160;the&#160;<b>Connection&#160;Chooser</b>.<br/>
+4.&#160;Select&#160;the&#160;Connection&#160;Method&#160;corresponding&#160;to&#160;your&#160;debug&#160;device&#160;from&#160;the<br/>
+drop-down&#160;list.<br/>
+If&#160;your&#160;debug&#160;device&#160;is&#160;not&#160;listed,&#160;click<br/>
+(<b>Create&#160;a&#160;new&#160;Connection&#160;Method</b>)<br/>
+and&#160;enter&#160;a&#160;name&#160;and&#160;type&#160;for&#160;your&#160;connection.<br/>
+Click&#160;<b>Create&#160;</b>and&#160;review&#160;the&#160;information&#160;to&#160;verify&#160;that&#160;this&#160;Connection&#160;Method<br/>is&#160;configured&#160;correctly&#160;for&#160;your&#160;board&#160;setup.&#160;Double-check&#160;the&#160;connection<br/>type&#160;and&#160;name&#160;(or&#160;address),&#160;and&#160;any&#160;other&#160;relevant&#160;settings.&#160;Click&#160;<b>OK&#160;</b>when<br/>all&#160;of&#160;the&#160;settings&#160;are&#160;correct.<br/>
+<i>22</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=33></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-33_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-33_2.png"/><br/>
+<i>Preparing&#160;Your&#160;Target</i><br/>
+5.&#160;Click&#160;<b>Connect&#160;</b>to&#160;connect&#160;to&#160;your&#160;target&#160;hardware.<br/>
+6.&#160;If&#160;more&#160;than&#160;one&#160;CPU&#160;is&#160;present&#160;on&#160;your&#160;target,&#160;the&#160;<b>Bind&#160;to&#160;which</b><br/>
+<b>Remote/CPU&#160;</b>dialog&#160;box&#160;appears.&#160;Select&#160;a&#160;CPU&#160;and&#160;click&#160;<b>OK</b>.<br/>
+For&#160;more&#160;information&#160;about&#160;connecting&#160;to&#160;a&#160;target,&#160;see&#160;Chapter&#160;3,&#160;“Connecting&#160;to<br/>Your&#160;Target”&#160;in&#160;the&#160;<i>MULTI:&#160;Debugging&#160;</i>book.<br/>
+<b>Preparing&#160;Your&#160;Target</b><br/>
+Before&#160;you&#160;can&#160;run&#160;or&#160;debug&#160;an&#160;executable&#160;on&#160;your&#160;target,&#160;you&#160;must&#160;download&#160;or<br/>flash&#160;the&#160;executable&#160;to&#160;your&#160;target's&#160;memory,&#160;or&#160;verify&#160;that&#160;the&#160;executable&#160;is&#160;already<br/>present&#160;on&#160;the&#160;target.&#160;To&#160;accomplish&#160;this,&#160;perform&#160;the&#160;following&#160;steps:<br/>
+1.&#160;Select&#160;the&#160;<b>hello&#160;</b>executable&#160;in&#160;the&#160;target&#160;list&#160;(located&#160;at&#160;the&#160;top&#160;of&#160;the&#160;Debugger<br/>
+window).<br/>
+2.&#160;Click<br/>
+(<b>Prepare&#160;Target</b>)&#160;on&#160;the&#160;Debugger&#160;toolbar&#160;to&#160;open&#160;the&#160;<b>Prepare</b><br/>
+<b>Target&#160;</b>dialog&#160;box.<br/>
+3.&#160;MULTI&#160;recommends&#160;settings&#160;for&#160;preparing&#160;your&#160;target&#160;based&#160;on&#160;the&#160;executable<br/>
+you&#160;are&#160;debugging.&#160;Click&#160;<b>OK&#160;</b>to&#160;accept&#160;the&#160;recommended&#160;settings&#160;and<br/>download&#160;the&#160;<b>hello&#160;</b>executable&#160;to&#160;your&#160;target.<br/>
+<b>Note<br/></b>Some&#160;target&#160;boards&#160;may&#160;require&#160;modifications&#160;to&#160;the&#160;setup&#160;script&#160;provided<br/>by&#160;Green&#160;Hills.&#160;For&#160;more&#160;information,&#160;see&#160;“Configuring&#160;Your&#160;Target<br/>Hardware&#160;for&#160;Debugging”&#160;in&#160;Chapter&#160;6,&#160;“Configuring&#160;Your&#160;Target<br/>Hardware”&#160;in&#160;the&#160;<i>MULTI:&#160;Debugging&#160;</i>book.<br/>
+You&#160;are&#160;now&#160;ready&#160;to&#160;debug&#160;your&#160;program&#160;on&#160;your&#160;target&#160;board.<br/>
+Once&#160;you&#160;are&#160;finished&#160;debugging,&#160;click<br/>
+(<b>Disconnect</b>)&#160;to&#160;disconnect&#160;from&#160;your<br/>
+target&#160;hardware.&#160;Then&#160;close&#160;the&#160;MULTI&#160;Debugger&#160;and&#160;the&#160;MULTI&#160;Project&#160;Manager.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>23</i><br/>
+<hr/>
+<a name=34></a><i>Chapter&#160;2.&#160;MULTI&#160;Tutorial</i><br/>
+<b>Setting&#160;Up&#160;a&#160;Workspace</b><br/>
+MULTI&#160;workspaces&#160;allow&#160;you&#160;to&#160;easily&#160;associate&#160;actions&#160;with&#160;a&#160;project&#160;and&#160;perform<br/>those&#160;actions&#160;from&#160;within&#160;the&#160;Launcher.&#160;You&#160;will&#160;now&#160;add&#160;actions&#160;to&#160;the&#160;workspace<br/>created&#160;at&#160;the&#160;beginning&#160;of&#160;this&#160;tutorial.<br/>
+<b>Adding&#160;Actions&#160;to&#160;Your&#160;Workspace</b><br/>
+Workspace&#160;actions&#160;are&#160;grouped&#160;into&#160;action&#160;sequences.&#160;Your&#160;new&#160;workspace&#160;contains<br/>the&#160;automatically&#160;created&#160;<b>Startup&#160;</b>action&#160;sequence.&#160;The&#160;<b>Startup&#160;</b>action&#160;sequence<br/>contains&#160;an&#160;action&#160;that&#160;launches&#160;the&#160;MULTI&#160;Project&#160;Manager&#160;on&#160;your&#160;project.<br/>
+Follow&#160;the&#160;steps&#160;below&#160;to&#160;add&#160;additional&#160;actions&#160;that&#160;connect&#160;to&#160;your&#160;target&#160;and<br/>open&#160;your&#160;program&#160;in&#160;the&#160;MULTI&#160;Debugger:<br/>
+1.&#160;Switch&#160;to&#160;or&#160;start&#160;the&#160;Launcher,&#160;and&#160;select&#160;the&#160;<b>Hello&#160;World&#160;</b>workspace&#160;from<br/>
+the&#160;drop-down&#160;list.<br/>
+2.&#160;Right-click&#160;the&#160;<b>Startup&#160;</b>action&#160;sequence&#160;and&#160;select&#160;<b>Add&#160;Action&#160;</b>from&#160;the<br/>
+shortcut&#160;menu.<br/>
+3.&#160;Select&#160;<b>Connection&#160;</b>in&#160;the&#160;<b>Action&#160;</b>drop-down&#160;list.<br/>
+4.&#160;Select&#160;your&#160;hardware&#160;target&#160;Connection&#160;Method&#160;in&#160;the&#160;<b>Target&#160;</b>drop-down&#160;list<br/>
+and&#160;click&#160;<b>OK</b>.<br/>
+5.&#160;Right-click&#160;the&#160;<b>Startup&#160;</b>action&#160;sequence&#160;and&#160;select&#160;<b>Add&#160;Action&#160;</b>from&#160;the<br/>
+shortcut&#160;menu.<br/>
+6.&#160;Select&#160;<b>Debug&#160;Program&#160;</b>in&#160;the&#160;<b>Action&#160;</b>drop-down&#160;list.<br/>
+7.&#160;Select&#160;your&#160;<b>hello&#160;</b>executable&#160;in&#160;the&#160;<b>Prog&#160;</b>drop-down&#160;list&#160;and&#160;click&#160;<b>OK</b>.<br/>
+<i>24</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=35></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-35_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-35_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-35_3.png"/><br/>
+<i>Additional&#160;Examples</i><br/>
+The&#160;<b>Startup&#160;</b>action&#160;sequence&#160;in&#160;your&#160;workspace&#160;now&#160;contains&#160;two&#160;additional&#160;actions,<br/>one&#160;each&#160;of&#160;type&#160;<b>Connection&#160;</b>and&#160;<b>Debug&#160;Program</b>.&#160;Now,&#160;whenever&#160;you&#160;run&#160;the<br/><b>Startup&#160;</b>action&#160;sequence,&#160;MULTI&#160;will&#160;open&#160;your&#160;project&#160;in&#160;the&#160;MULTI&#160;Project<br/>Manager,&#160;connect&#160;to&#160;your&#160;target,&#160;and&#160;open&#160;your&#160;program&#160;in&#160;the&#160;MULTI&#160;Debugger.<br/>
+Run&#160;the&#160;<b>Startup&#160;</b>action&#160;sequence&#160;by&#160;clicking&#160;the<br/>
+(<b>Run&#160;Action&#160;Sequences&#160;or</b><br/>
+<b>Shortcuts</b>)&#160;button&#160;and&#160;selecting&#160;<b>Hello&#160;World:&#160;Startup</b>.<br/>
+For&#160;more&#160;information&#160;about&#160;workspaces,&#160;see&#160;Chapter&#160;3,&#160;“Managing&#160;Workspaces<br/>and&#160;Shortcuts&#160;with&#160;the&#160;Launcher”&#160;in&#160;the&#160;<i>MULTI:&#160;Managing&#160;Projects&#160;and&#160;Configuring<br/>the&#160;IDE&#160;</i>book.<br/>
+<b>Additional&#160;Examples</b><br/>
+There&#160;are&#160;a&#160;number&#160;of&#160;example&#160;projects&#160;that&#160;highlight&#160;particular&#160;features&#160;of&#160;the<br/>MULTI&#160;Debugger.&#160;To&#160;access&#160;these&#160;examples,&#160;perform&#160;the&#160;following&#160;steps:<br/>
+1.&#160;Switch&#160;to&#160;or&#160;start&#160;the&#160;Launcher,&#160;and&#160;select&#160;the&#160;<b>Hello&#160;World&#160;</b>workspace&#160;from<br/>
+the&#160;drop-down&#160;list.<br/>
+2.&#160;Double-click&#160;the&#160;<b>Project&#160;Manager&#160;</b>action.<br/>
+3.&#160;In&#160;the&#160;Project&#160;Manager,&#160;select&#160;the&#160;<b>default.gpj&#160;</b>file&#160;for&#160;the&#160;<b>Hello&#160;World&#160;</b>project<br/>
+you&#160;created&#160;earlier,&#160;and&#160;click<br/>
+(<b>Add&#160;Item&#160;into&#160;default.gpj</b>).<br/>
+4.&#160;Select&#160;one&#160;of&#160;the&#160;demo&#160;projects&#160;in&#160;the&#160;<b>Project&#160;Manager:&#160;Select&#160;Item&#160;to&#160;Add</b><br/>
+dialog&#160;box.&#160;The&#160;<b>Basic&#160;Debugging&#160;</b>project&#160;is&#160;a&#160;good&#160;one&#160;to&#160;start&#160;with.&#160;Click<br/><b>Finish</b>.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>25</i><br/>
+<hr/>
+<a name=36></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-36_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL121A_Ide/tools/manuals/start-36_2.png"/><br/>
+<i>Chapter&#160;2.&#160;MULTI&#160;Tutorial</i><br/>
+5.&#160;Select&#160;the&#160;demo&#160;project&#160;you&#160;just&#160;added,&#160;and&#160;click<br/>
+(<b>Build</b>).<br/>
+6.&#160;Click<br/>
+(<b>Debug</b>),&#160;and&#160;follow&#160;the&#160;<b>Cmd&#160;</b>pane&#160;directions,&#160;which&#160;lead&#160;you&#160;through<br/>
+the&#160;example.<br/>
+<b>Configuring&#160;MULTI&#160;for&#160;Use&#160;with&#160;INTEGRITY&#160;or&#160;u-velOSity</b><br/>
+In&#160;the&#160;preceding&#160;tutorial,&#160;you&#160;created&#160;a&#160;stand-alone&#160;project.&#160;If&#160;you&#160;plan&#160;to&#160;use<br/>INTEGRITY&#160;or&#160;u-velOSity&#160;for&#160;future&#160;projects,&#160;you&#160;should&#160;provide&#160;MULTI&#160;with<br/>the&#160;location&#160;of&#160;the&#160;installed&#160;OS&#160;distribution.&#160;This&#160;information&#160;is&#160;used&#160;to:<br/>
+•&#160;Determine&#160;the&#160;default&#160;OS&#160;distribution&#160;directory&#160;used&#160;by&#160;the&#160;<b>Project&#160;Wizard</b><br/>
+•&#160;Add&#160;relevant&#160;documentation&#160;to&#160;MULTI's&#160;<b>Help&#160;</b>menu&#160;(see&#160;<a href="starts.html#16">“Full&#160;Online&#160;Manuals”</a><br/>
+<a href="starts.html#16">on&#160;page&#160;6</a>)<br/>
+•&#160;Enable&#160;cross-book&#160;links&#160;between&#160;MULTI&#160;and&#160;INTEGRITY&#160;books&#160;or&#160;between<br/>
+MULTI&#160;and&#160;u-velOSity&#160;books&#160;if&#160;the&#160;version&#160;of&#160;the&#160;operating&#160;system&#160;you&#160;are<br/>using&#160;supports&#160;this<br/>
+•&#160;Determine&#160;the&#160;location&#160;of&#160;the&#160;Event&#160;Analyzer&#160;configuration&#160;file&#160;(see&#160;the<br/>
+<i>EventAnalyzer&#160;User's&#160;Guide</i>)<br/>
+To&#160;define&#160;the&#160;location&#160;of&#160;the&#160;installed&#160;OS&#160;distribution:<br/>
+1.&#160;Select&#160;<b>Set&#160;INTEGRITY&#160;Distribution&#160;</b>or&#160;<b>Set&#160;u-velOSity&#160;Distribution&#160;</b>from<br/>
+one&#160;of&#160;the&#160;following&#160;locations:<br/>
+•&#160;The&#160;<b>Config&#160;</b>menu&#160;located&#160;in&#160;the&#160;MULTI&#160;Launcher,&#160;Debugger,&#160;or&#160;Help<br/>
+Viewer<br/>
+•&#160;The&#160;<b>Tools&#160;</b>→&#160;<b>Configuration&#160;</b>submenu&#160;located&#160;in&#160;the&#160;MULTI&#160;Project<br/>
+Manager<br/>
+The&#160;dialog&#160;box&#160;that&#160;appears&#160;is&#160;an&#160;interface&#160;to&#160;the&#160;per-user&#160;file&#160;<b>integrity.dist<br/></b>or&#160;<b>uvelosity.dist</b>.<br/>
+2.&#160;Type&#160;the&#160;path&#160;to&#160;your&#160;INTEGRITY&#160;or&#160;u-velOSity&#160;installation&#160;directory,&#160;or&#160;use<br/>
+the&#160;browse&#160;button&#160;to&#160;navigate&#160;to&#160;the&#160;directory.<br/>
+3.&#160;Click&#160;<b>Save</b>.<br/>
+<i>26</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name=37></a><b>Index</b><br/>
+<b>H<br/></b>hardware<br/>
+connecting&#160;to,&#160;<a href="starts.html#32">22</a><br/>
+help&#160;(see&#160;online&#160;help)<br/>Help&#160;menu<br/>
+online&#160;help,&#160;obtaining,&#160;<a href="starts.html#16">6</a><br/>
+Help&#160;Viewer<br/>
+navigating,&#160;<a href="starts.html#18">8,&#160;</a><a href="starts.html#19">9,&#160;</a><a href="starts.html#20">10<br/></a>opening&#160;additional&#160;manuals&#160;in,&#160;<a href="starts.html#22">12<br/></a>searching,&#160;<a href="starts.html#22">12</a><br/>
+<b>A</b><br/>
+window,&#160;<a href="starts.html#17">7</a><br/>
+helpview&#160;command,&#160;<a href="starts.html#16">6</a><br/>
+adding&#160;actions&#160;to&#160;workspaces,&#160;<a href="starts.html#34">24</a><br/>
+<b>I</b><br/>
+<b>B</b><br/>
+Integrated&#160;Development&#160;Environment&#160;(IDE)&#160;(see&#160;MULTI<br/>
+breakpoints<br/>
+Integrated&#160;Development&#160;Environment&#160;(IDE))<br/>
+setting,&#160;<a href="starts.html#31">21</a><br/>
+INTEGRITY<br/>
+building&#160;projects,&#160;<a href="starts.html#29">19</a><br/>
+using&#160;with&#160;MULTI&#160;IDE,&#160;<a href="starts.html#36">26</a><br/>
+interlaced&#160;assembly<br/>
+<b>C</b><br/>
+viewing,&#160;<a href="starts.html#32">22</a><br/>
+command&#160;help,&#160;<a href="starts.html#17">7<br/></a>commands<br/>
+<b>K</b><br/>
+help&#160;regarding,&#160;<a href="starts.html#17">7</a><br/>
+keyword&#160;help,&#160;<a href="starts.html#17">7</a><br/>
+helpview,&#160;<a href="starts.html#16">6</a><br/>
+configuration&#160;options<br/>
+<b>L</b><br/>
+help&#160;regarding,&#160;<a href="starts.html#17">7</a><br/>
+connecting<br/>
+Launcher&#160;(see&#160;MULTI&#160;Launcher)<br/>
+to&#160;hardware,&#160;<a href="starts.html#32">22<br/></a>to&#160;simulator,&#160;<a href="starts.html#30">20</a><br/>
+<b>M</b><br/>
+context-sensitive&#160;help,&#160;<a href="starts.html#16">6</a><br/>
+MULTI&#160;Integrated&#160;Development&#160;Environment&#160;(IDE)<br/>
+conventions<br/>
+document&#160;set,&#160;<a href="starts.html#7">vii</a><br/>
+typographical,&#160;<a href="starts.html#8">viii</a><br/>
+online&#160;help,&#160;<a href="starts.html#16">6</a><br/>
+creating<br/>
+overview,&#160;<a href="starts.html#12">2</a><br/>
+projects,&#160;<a href="starts.html#26">16</a><br/>
+using&#160;with&#160;INTEGRITY&#160;or&#160;u-velOSity,&#160;<a href="starts.html#36">26</a><br/>
+workspaces,&#160;<a href="starts.html#27">17</a><br/>
+MULTI&#160;Launcher<br/>
+overview,&#160;<a href="starts.html#14">4</a><br/>
+<b>D<br/></b>Debugger<br/>
+<b>O</b><br/>
+starting,&#160;<a href="starts.html#30">20</a><br/>
+online&#160;help,&#160;<a href="starts.html#16">6</a><br/>
+using,&#160;<a href="starts.html#31">21</a><br/>
+(see&#160;also&#160;Help&#160;Viewer)<br/>
+document&#160;set,&#160;<a href="starts.html#6">vi,&#160;</a><a href="starts.html#7">vii</a><br/>
+for&#160;commands,&#160;<a href="starts.html#17">7<br/></a>for&#160;configuration&#160;options,&#160;<a href="starts.html#17">7</a><br/>
+<b>E</b><br/>
+context-sensitive,&#160;<a href="starts.html#16">6</a><br/>
+example&#160;projects,&#160;<a href="starts.html#35">25</a><br/>
+for&#160;keywords,&#160;<a href="starts.html#17">7<br/></a>limitations,&#160;<a href="starts.html#20">10</a><br/>
+<b>F</b><br/>
+online&#160;manuals,&#160;<a href="starts.html#16">6<br/></a>overview,&#160;<a href="starts.html#16">6</a><br/>
+F1&#160;key,&#160;for&#160;help,&#160;<a href="starts.html#16">6</a><br/>
+<hr/>
+<a name=38></a><i>preparing&#160;your&#160;target</i><br/>
+<b>P<br/></b>preparing&#160;your&#160;target,&#160;<a href="starts.html#33">23<br/></a>programs<br/>
+stepping&#160;into,&#160;<a href="starts.html#31">21</a><br/>
+Project&#160;Wizard,&#160;<a href="starts.html#27">17<br/></a>projects<br/>
+building,&#160;<a href="starts.html#29">19<br/></a>creating,&#160;<a href="starts.html#26">16<br/></a>examples,&#160;<a href="starts.html#35">25</a><br/>
+<b>R<br/></b>registers<br/>
+viewing,&#160;<a href="starts.html#31">21</a><br/>
+<b>S<br/></b>setting&#160;breakpoints,&#160;<a href="starts.html#31">21<br/></a>simulator<br/>
+connecting&#160;to,&#160;<a href="starts.html#30">20</a><br/>
+starting<br/>
+Debugger,&#160;<a href="starts.html#30">20</a><br/>
+stepping&#160;into&#160;programs,&#160;<a href="starts.html#31">21</a><br/>
+<b>T<br/></b>target<br/>
+preparing,&#160;<a href="starts.html#33">23</a><br/>
+typographical&#160;conventions,&#160;<a href="starts.html#8">viii</a><br/>
+<b>U<br/></b>u-velOSity<br/>
+using&#160;with&#160;MULTI&#160;IDE,&#160;<a href="starts.html#36">26</a><br/>
+<b>V<br/></b>viewing<br/>
+interlaced&#160;assembly,&#160;<a href="starts.html#32">22<br/></a>registers,&#160;<a href="starts.html#31">21</a><br/>
+<b>W<br/></b>workspaces<br/>
+adding&#160;actions&#160;to,&#160;<a href="starts.html#34">24<br/></a>creating,&#160;<a href="starts.html#27">17<br/></a>overview,&#160;<a href="starts.html#15">5</a><br/>
+<i>28</i><br/>
+<i>MULTI:&#160;Getting&#160;Started</i><br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="starts.html#1">MULTI: Getting Started</a></li>
+<li><a href="starts.html#3">Contents</a></li>
+<li><a href="starts.html#5">Preface</a>
+<ul>
+<li><a href="starts.html#6">About This Book</a></li>
+<li><a href="starts.html#7">The MULTI 6 Document Set</a></li>
+<li><a href="starts.html#8">Conventions Used in the MULTI Document Set</a></li>
+</ul>
+</li>
+<li><a href="starts.html#11">Chapter 1. Introduction</a>
+<ul>
+<li><a href="starts.html#12">The MULTI Integrated Development Environment</a>
+<ul>
+<li><a href="starts.html#12">MULTI Launcher</a></li>
+<li><a href="starts.html#12">Editing Tools</a></li>
+<li><a href="starts.html#12">Building Tools</a></li>
+<li><a href="starts.html#13">Debugging Tools</a></li>
+<li><a href="starts.html#13">Administrative Tools</a></li>
+</ul>
+</li>
+<li><a href="starts.html#14">The MULTI Launcher</a>
+<ul>
+<li><a href="starts.html#15">MULTI Workspaces</a></li>
+</ul>
+</li>
+<li><a href="starts.html#16">Accessing Online Help</a>
+<ul>
+<li><a href="starts.html#16">Full Online Manuals</a></li>
+<li><a href="starts.html#16">Context-Sensitive Help</a></li>
+<li><a href="starts.html#17">Command, Configuration Option, and Keyword Help</a></li>
+<li><a href="starts.html#17">The Help Viewer Window</a></li>
+<li><a href="starts.html#18">Navigating Help</a>
+<ul>
+<li><a href="starts.html#19">Viewing Previous and Next Topics</a></li>
+<li><a href="starts.html#19">Returning to Previously Viewed Help Pages</a></li>
+<li><a href="starts.html#19">Linking to Related Topics</a></li>
+<li><a href="starts.html#20">Bookmarking Help Pages</a></li>
+<li><a href="starts.html#20">Managing Bookmarks</a></li>
+<li><a href="starts.html#22">Opening Additional Manuals from the Help Viewer</a></li>
+</ul>
+</li>
+<li><a href="starts.html#22">Searching Manuals in the Help Viewer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="starts.html#25">Chapter 2. MULTI Tutorial</a>
+<ul>
+<li><a href="starts.html#26">Creating Your First Project</a></li>
+<li><a href="starts.html#29">Building Your Program</a></li>
+<li><a href="starts.html#30">Starting the Debugger</a></li>
+<li><a href="starts.html#30">Connecting to a Simulator</a></li>
+<li><a href="starts.html#31">Debugging Your Program</a></li>
+<li><a href="starts.html#32">Connecting to Your Target Hardware</a></li>
+<li><a href="starts.html#33">Preparing Your Target</a></li>
+<li><a href="starts.html#34">Setting Up a Workspace</a>
+<ul>
+<li><a href="starts.html#34">Adding Actions to Your Workspace</a></li>
+</ul>
+</li>
+<li><a href="starts.html#35">Additional Examples</a></li>
+<li><a href="starts.html#36">Configuring MULTI for Use with INTEGRITY or u-velOSity</a></li>
+</ul>
+</li>
+<li><a href="starts.html#37">Index</a></li>
+</ul>
+<hr/>
+</body>
+</html>

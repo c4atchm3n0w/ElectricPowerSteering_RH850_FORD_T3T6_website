@@ -1,0 +1,913 @@
+---
+title: TechnicalReference_IdentityManagers
+linkTitle: TechnicalReference_IdentityManagers
+weight: 140
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>MICROSAR Identity&#160;Manager&#160;<br/></b>Technical Reference&#160;<br/>&#160;<br/>Post-Build Selectable&#160;<br/>Version&#160;1.1.1&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+Authors&#160;<br/>
+Hannes&#160;Haas&#160;<br/>
+Status&#160;<br/>
+Released&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=2></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-2_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>Document&#160;Information&#160;</b><br/>
+<b>History&#160;</b><br/>
+<b>Author&#160;</b><br/>
+<b>Date&#160;</b><br/>
+<b>Version&#160;</b><br/>
+<b>Remarks&#160;</b><br/>
+Hannes&#160;Haas&#160;<br/>
+2014-10-29&#160;<br/>
+1.0.0&#160;<br/>
+Creation&#160;<br/>
+Hannes&#160;Haas&#160;<br/>
+2015-01-26&#160;<br/>
+1.1.0&#160;<br/>
+ESCAN00080589:&#160;global&#160;root&#160;structure&#160;is&#160;<br/>now&#160;a structure&#160;with one&#160;element&#160;for&#160;each&#160;<br/>variant.&#160;<br/>Global&#160;Root&#160;Structure&#160;Customization now&#160;<br/>possible by&#160;configuring&#160;the&#160;ECUC&#160;module.&#160;<br/>
+Hannes&#160;Haas&#160;<br/>
+2015-03-03&#160;<br/>
+1.1.1&#160;<br/>
+Adapted&#160;file names&#160;of&#160;referred&#160;<br/>documentations.&#160;<br/>
+<b>Reference&#160;Documents&#160;</b><br/>
+<b>No.&#160;</b><br/>
+<b>Source&#160;</b><br/>
+<b>Title&#160;</b><br/>
+<b>Version&#160;</b><br/>
+[1]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_PostBuildLoadable.pdf&#160;<br/>
+as delivered&#160;<br/>
+[2]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_EcuM.pdf&#160;<br/>
+as&#160;delivered&#160;<br/>
+[3]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_BswM.pdf&#160;<br/>
+as delivered&#160;<br/>
+<b>Scope&#160;of&#160;the&#160;Document&#160;</b><br/>
+This&#160;&#160;technical&#160;&#160;reference&#160;&#160;describes&#160;&#160;the&#160;&#160;general&#160;&#160;aspects&#160;&#160;of&#160;&#160;the&#160;&#160;MICROSAR&#160;&#160;Identity&#160;<br/>Manager.&#160;&#160;The&#160;&#160;document&#160;&#160;does&#160;&#160;not&#160;&#160;describe&#160;&#160;BSW&#160;&#160;module&#160;&#160;specific&#160;&#160;functionality&#160;&#160;or&#160;<br/>limitations&#160;&#160;unless&#160;&#160;this&#160;&#160;is&#160;&#160;essential&#160;&#160;to&#160;&#160;understand&#160;&#160;the&#160;&#160;overall&#160;&#160;concept.&#160;&#160;Module-specific&#160;<br/>details can&#160;be&#160;found&#160;in&#160;the&#160;documentation&#160;of&#160;each&#160;BSW&#160;module.&#160;<br/>This&#160;document&#160;focuses&#160;on&#160;BSW&#160;functionality.&#160;&#160;Configuration&#160;aspects&#160;&#160;are&#160;described&#160;in&#160;the&#160;<br/>help&#160;system&#160;of&#160;DaVinci&#160;Configurator&#160;Pro.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Caution&#160;<br/></b>We&#160;have configured&#160;the&#160;programs&#160;in&#160;accordance&#160;with your&#160;specifications&#160;in the&#160;<br/>
+<b>&#160;&#160;</b>questionnaire.&#160;Whereas&#160;the&#160;programs&#160;do&#160;support&#160;other&#160;configurations&#160;than&#160;the&#160;one&#160;<br/>
+specified&#160;in your&#160;questionnaire,&#160;Vector´s&#160;release&#160;of&#160;the&#160;programs&#160;delivered to&#160;your&#160;<br/>company&#160;is&#160;expressly&#160;restricted&#160;to&#160;the&#160;configuration&#160;you&#160;have specified&#160;in&#160;the&#160;<br/>questionnaire.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+2&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=3></a>Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>Contents&#160;</b><br/>
+<a href="TechnicalReference_IdentityManagers.html#5"><b>1</b>&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#5"><b>Introduction...................................................................................................................&#160;5</b>&#160;<br/></a><a href="TechnicalReference_IdentityManagers.html#6">1.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#6">Comparison&#160;to Post-Build Loadable&#160;...................................................................&#160;6&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#7"><b>2</b>&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#7"><b>Functional&#160;Description&#160;.................................................................................................&#160;7</b>&#160;<br/>2.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#7">Technical&#160;Background&#160;........................................................................................&#160;7&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#8">2.2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#8">Features&#160;............................................................................................................&#160;8&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#8">2.3&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#8">Deviations&#160;..........................................................................................................&#160;8&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#9"><b>3</b>&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#9"><b>Workflow&#160;Overview&#160;.......................................................................................................&#160;9</b>&#160;<br/>3.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#9">Setting&#160;Up a&#160;Variant&#160;Project&#160;...............................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#11">3.2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#11">BSW&#160;Configuration&#160;..........................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#11">3.3&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#11">Variance&#160;in&#160;Application Code&#160;............................................................................&#160;11&#160;<br/></a><a href="TechnicalReference_IdentityManagers.html#12">3.3.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#12">Variance&#160;of&#160;COM&#160;Signals&#160;.................................................................&#160;12&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#12">3.3.2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#12">Variance&#160;in SWC&#160;and&#160;BSW&#160;APIs&#160;......................................................&#160;12&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#13">3.4&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#13">Validation&#160;and Code&#160;Generation&#160;......................................................................&#160;13&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#13">3.5&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#13">BSW&#160;Initialization&#160;.............................................................................................&#160;13&#160;<br/></a><a href="TechnicalReference_IdentityManagers.html#14">3.5.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#14">Manual&#160;BSW&#160;Initialization.................................................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#15"><b>4</b>&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#15"><b>Configuration&#160;..............................................................................................................&#160;15</b>&#160;<br/>4.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#15">Activating&#160;Variance&#160;for&#160;BSW&#160;Modules&#160;..............................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#16">4.2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#16">Semantics&#160;of&#160;ECU&#160;Configuration Variance&#160;.......................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#18"><b>5</b>&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#18"><b>Integration&#160;...................................................................................................................&#160;18</b>&#160;<br/>5.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#18">BSW&#160;Module Initialization&#160;................................................................................&#160;18&#160;<br/></a><a href="TechnicalReference_IdentityManagers.html#19">5.1.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#19">Implementation&#160;of&#160;EcuM_DeterminePbConfiguration()&#160;.....................&#160;19&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#19">5.1.2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#19">BSWM&#160;Module Initialization&#160;Auto&#160;Configuration&#160;................................&#160;19&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#20">5.1.3&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#20">Global&#160;Root&#160;Structure&#160;Customization&#160;...............................................&#160;20&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#20">5.2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#20">Critical&#160;Sections&#160;...............................................................................................&#160;20&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#20">5.3&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#20">Main Function Scheduling&#160;................................................................................&#160;20&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21"><b>6</b>&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21"><b>Glossary&#160;and&#160;Abbreviations&#160;......................................................................................&#160;21</b>&#160;<br/>6.1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21">Glossary&#160;..........................................................................................................&#160;21&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21">6.2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21">Abbreviations&#160;...................................................................................................&#160;21&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#22"><b>7</b>&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#22"><b>Contact&#160;........................................................................................................................&#160;22</b>&#160;</a><br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+3&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=4></a>Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>Illustrations&#160;</b><br/>
+<a href="TechnicalReference_IdentityManagers.html#5">Figure&#160;1-1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#5">Identity&#160;Manager&#160;use-case exampels&#160;.........................................................&#160;5&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#7">Figure&#160;2-1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#7"><b>Variants</b>&#160;configurator&#160;editor&#160;in DaVinci&#160;Configurator&#160;Pro&#160;............................&#160;7&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#9">Figure&#160;3-1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#9">Workflow&#160;overview&#160;......................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#10">Figure&#160;3-2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#10">Major&#160;steps&#160;to&#160;setup&#160;a&#160;variant&#160;project&#160;with DaVinci&#160;Configurator&#160;Pro&#160;........&#160;10&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#10">Figure&#160;3-3&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#10">DaVinci&#160;Configurator&#160;Pro:&#160;Variant&#160;specific&#160;definition of&#160;input&#160;files&#160;..............&#160;10&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#11">Figure&#160;3-4&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#11">Illustration&#160;of&#160;Variant&#160;Parameters&#160;in&#160;DaVinci&#160;Configurator&#160;Pro&#160;..................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#15">Figure&#160;4-1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#15">Enabling&#160;Variance&#160;for&#160;BSW&#160;Modules&#160;........................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#16">Figure&#160;4-2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#16">Location of&#160;variation&#160;points&#160;has&#160;no&#160;semantic&#160;meaning&#160;to&#160;the&#160;<br/>configuration&#160;.............................................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#18">Figure&#160;5-1&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#18">Hierarchy&#160;of&#160;BSW&#160;configuration structures&#160;for&#160;variant&#160;specific&#160;<br/>initialization&#160;...............................................................................................&#160;18&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#19">Figure&#160;5-2&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#19">Module Initialization&#160;Auto&#160;Configuration&#160;Assistant&#160;of&#160;the&#160;DaVinci&#160;<br/>Configurator&#160;Pro&#160;BSWM&#160;configuration&#160;......................................................&#160;19&#160;</a><br/>
+<b>&#160;</b><br/>
+<b>Tables&#160;<br/></b><a href="TechnicalReference_IdentityManagers.html#8">Table&#160;2-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#8">Supported&#160;features&#160;.....................................................................................&#160;8&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#8">Table&#160;2-2&#160;&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#8">Not&#160;supported&#160;features&#160;...............................................................................&#160;8&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#14">Table&#160;3-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#14">Manual&#160;BSW&#160;initialization using&#160;the&#160;configuration&#160;structure address&#160;<br/>provided by&#160;ECUM....................................................................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21">Table&#160;6-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21">Glossary&#160;...................................................................................................&#160;21&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21">Table&#160;6-2&#160;&#160;</a><br/>
+<a href="TechnicalReference_IdentityManagers.html#21">Abbreviations&#160;............................................................................................&#160;21&#160;</a><br/>
+&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+4&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=5></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-5_1.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-5_2.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-5_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-5_4.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>1&#160;&#160;Introduction&#160;</b><br/>
+The&#160;&#160;MICROSAR&#160;&#160;Identity&#160;&#160;Manager&#160;&#160;is&#160;&#160;an&#160;&#160;implementation&#160;&#160;of&#160;&#160;the&#160;&#160;AUTOSAR&#160;&#160;4&#160;&#160;post-build&#160;<br/>selectable&#160;concept.&#160;It&#160;allows&#160;the&#160;ECU&#160;manufacturer&#160;to&#160;include&#160;several&#160;BSW&#160;configurations&#160;<br/>within&#160;&#160;one&#160;&#160;ECU.&#160;&#160;At&#160;&#160;start-up&#160;&#160;the&#160;&#160;application&#160;&#160;determines&#160;&#160;the&#160;&#160;BSW&#160;&#160;variant&#160;&#160;to&#160;&#160;be&#160;&#160;activated&#160;<br/>and&#160;initializes the&#160;BSW&#160;accordingly.&#160;&#160;<br/>The&#160;&#160;ultimate&#160;&#160;goal&#160;&#160;of&#160;&#160;the&#160;&#160;Identity&#160;&#160;Manager&#160;&#160;is&#160;&#160;to&#160;&#160;reduce&#160;&#160;the&#160;&#160;number&#160;&#160;of&#160;&#160;ECU&#160;&#160;variants&#160;&#160;that&#160;<br/>have&#160;&#160;to&#160;&#160;be&#160;&#160;built,&#160;&#160;stored&#160;&#160;and&#160;&#160;distributed.&#160;&#160;The&#160;&#160;Identity&#160;&#160;Manager&#160;&#160;thereby&#160;&#160;focuses&#160;&#160;on&#160;<br/>communication&#160;&#160;and&#160;&#160;diagnostic&#160;&#160;stack&#160;&#160;variance.&#160;&#160;Variance&#160;&#160;of&#160;&#160;the&#160;&#160;application&#160;&#160;(that&#160;&#160;may&#160;&#160;or&#160;<br/>may&#160;not&#160;be&#160;required) has to&#160;be&#160;realized&#160;within&#160;the&#160;application&#160;internally.&#160;<br/>
+<b>Carline&#160;</b><br/>
+Revision&#160;2<br/>
+Communication&#160;<br/>
+<b>Identity&#160;Manager&#160;</b><br/>
+<b>Door&#160;Right</b><br/>
+ECUX<br/>
+<b>Right&#160;Door</b><br/>
+<b>Door&#160;Left</b><br/>
+<b>Left Door</b><br/>
+ECUX<br/>
+&#160;1 in&#160;2&#160;(or&#160;n)&#160;<br/>&#160;One&#160;active<br/>
+<b>2016</b><br/>
+Communication&#160;<br/>
+<b>Carline</b><br/>
+<b>Identity&#160;Manager&#160;</b><br/>
+Revision&#160;1<br/>
+ECUX<br/>
+<b>Carline&#160;</b>Rev.&#160;1<br/><b>Carline&#160;</b>Rev.&#160;2&#160;ECUX<br/>
+<b>2012</b><br/>
+&#160;2 (or&#160;n)&#160;in&#160;1<br/>&#160;One&#160;active<br/>
+&#160;<br/>
+Figure&#160;1-1&#160;&#160;Identity&#160;Manager&#160;use-case&#160;exampels&#160;<br/>
+Typical use-cases&#160;for the&#160;Identity&#160;Manager:&#160;<br/>
+<b>&gt;&#160;&#160;</b>Usage&#160;of&#160;one&#160;ECU&#160;multiple&#160;times&#160;within&#160;one&#160;vehicle.&#160;Typically&#160;the&#160;variants&#160;have&#160;a&#160;very&#160;<br/>
+similar behavior and&#160;communication&#160;description.&#160;An&#160;example&#160;may&#160;be&#160;the&#160;usage&#160;of&#160;an&#160;<br/>ECU&#160;that&#160;is&#160;used&#160;as&#160;both,&#160;driver&#160;and&#160;passenger door&#160;module.&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+5&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=6></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-6_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>&gt;&#160;&#160;</b>Usage&#160;of&#160;an&#160;ECU&#160;in&#160;multiple&#160;vehicle&#160;architectures&#160;that&#160;have&#160;each&#160;distinct&#160;requirements&#160;<br/>
+to&#160;the&#160;communication&#160;and&#160;diagnostic&#160;description&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>FAQ&#160;<br/></b>One&#160;variant&#160;represents&#160;one&#160;complete set&#160;of&#160;functionality&#160;as required&#160;e.g.&#160;for&#160;the&#160;driver’s&#160;<br/>
+&#160;&#160;door&#160;module.&#160;A&#160;variant&#160;is&#160;thereby&#160;an&#160;ECU&#160;global&#160;variant&#160;definition&#160;that&#160;can&#160;affect&#160;all&#160;<br/>
+BSW&#160;modules&#160;and potentially&#160;the&#160;application.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>1.1&#160;</b><br/>
+<b>Comparison to&#160;Post-Build Loadable&#160;</b><br/>
+Post-Build&#160;Loadable&#160;allows&#160;downloading&#160;configuration&#160;sets&#160;to&#160;the&#160;ECU&#160;at&#160;a&#160;time&#160;after&#160;the&#160;<br/>ECU&#160;has&#160;been&#160;build&#160;(e.g.&#160;end&#160;of&#160;line&#160;or&#160;in&#160;a&#160;workshop).&#160;This&#160;chapter&#160;points&#160;out&#160;in&#160;short&#160;the&#160;<br/>major&#160;&#160;differences&#160;&#160;between&#160;&#160;post-build&#160;&#160;loadable&#160;&#160;and&#160;&#160;post-build&#160;&#160;selectable&#160;&#160;(Identity&#160;<br/>Manager).&#160;Post-build&#160;loadable&#160;is&#160;a&#160;MICROSAR option&#160;that&#160;is&#160;available&#160;upon&#160;request.&#160;<br/>Using&#160;the&#160;Identity&#160;Manager&#160;(an&#160;implementation&#160;of&#160;post-build&#160;selectable)&#160;all&#160;ECU&#160;variants&#160;<br/>are&#160;&#160;downloaded&#160;&#160;to&#160;&#160;the&#160;&#160;ECUs&#160;&#160;non-volatile&#160;&#160;memory&#160;&#160;(e.g.&#160;&#160;flash)&#160;&#160;at&#160;&#160;ECU&#160;&#160;build&#160;&#160;time.&#160;&#160;The&#160;<br/>Identity&#160;&#160;Manager&#160;&#160;does&#160;&#160;not&#160;&#160;allow&#160;&#160;modification&#160;&#160;of&#160;&#160;BSW&#160;&#160;aspects&#160;&#160;after&#160;&#160;ECU&#160;&#160;build&#160;&#160;time.&#160;&#160;If&#160;<br/>changes are&#160;required&#160;a&#160;new&#160;ECU&#160;build&#160;has&#160;to&#160;be&#160;created.&#160;<br/>Post-build&#160;&#160;loadable&#160;&#160;in&#160;&#160;contrast&#160;&#160;allows&#160;&#160;the&#160;modification&#160;&#160;of&#160;&#160;selected&#160;&#160;ECU&#160;&#160;parameters&#160;&#160;after&#160;<br/>the&#160;ECU&#160;build&#160;time:&#160;at&#160;post-build&#160;time.&#160;The&#160;goal&#160;is&#160;to&#160;enable&#160;OEMs&#160;to&#160;update&#160;parts&#160;of&#160;the&#160;<br/>ECU&#160;BSW&#160;behavior independently&#160;of&#160;the&#160;Tier1,&#160;who&#160;controls&#160;the&#160;ECU build&#160;environment.&#160;<br/>On&#160;&#160;request&#160;&#160;Vector&#160;&#160;can&#160;&#160;provide&#160;&#160;BSW&#160;&#160;packages&#160;&#160;that&#160;&#160;support&#160;&#160;both,&#160;&#160;the&#160;&#160;Identity&#160;&#160;Manager&#160;<br/>(post-build&#160;&#160;selectable)&#160;&#160;and&#160;&#160;post-build&#160;&#160;loadable.&#160;&#160;This&#160;&#160;will&#160;&#160;allow&#160;&#160;a&#160;&#160;post-build&#160;&#160;time&#160;<br/>modification&#160;of&#160;variant&#160;ECU&#160;projects.&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+6&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=7></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-7_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-7_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-7_3.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>2&#160;&#160;Functional&#160;Description&#160;</b><br/>
+<b>2.1&#160;</b><br/>
+<b>Technical&#160;Background&#160;</b><br/>
+MICROSAR&#160;&#160;Identity&#160;&#160;Manager&#160;&#160;is&#160;&#160;based&#160;&#160;on&#160;&#160;the&#160;&#160;post-build&#160;&#160;selectable&#160;&#160;variant&#160;&#160;handling&#160;<br/>defined&#160;&#160;by&#160;AUTOSAR&#160;&#160;4.&#160;&#160;It&#160;&#160;uses&#160;&#160;variation&#160;&#160;points&#160;&#160;of&#160;&#160;binding&#160;&#160;time&#160;&#160;<b>PostBuild</b>&#160;&#160;in&#160;&#160;the&#160;&#160;arxml&#160;<br/>description&#160;files to&#160;define&#160;variance.&#160;<br/>Variants&#160;–&#160;or&#160;according&#160;to&#160;AUTOSAR&#160;<i>Predefined&#160;Variants</i>&#160;–&#160;are&#160;defined&#160;based&#160;on&#160;a&#160;set&#160;of&#160;<br/>criteria&#160;&#160;settings&#160;&#160;within&#160;&#160;the&#160;&#160;DaVinci&#160;&#160;Configurator&#160;&#160;Pro&#160;&#160;Variants&#160;&#160;Editor.&#160;&#160;One&#160;&#160;criterion&#160;&#160;is&#160;&#160;an&#160;<br/>enumeration&#160;&#160;that&#160;&#160;allows&#160;&#160;formal&#160;&#160;definition&#160;&#160;of&#160;&#160;differences&#160;&#160;in&#160;&#160;the&#160;&#160;ECU&#160;&#160;configuration.&#160;&#160;At&#160;<br/>present&#160;&#160;DaVinci&#160;&#160;Configurator&#160;&#160;Pro&#160;&#160;supports&#160;&#160;a&#160;&#160;single&#160;&#160;criterion&#160;&#160;only.&#160;&#160;The&#160;&#160;default&#160;&#160;name&#160;&#160;is&#160;<br/>Communication.&#160;&#160;In&#160;&#160;a&#160;&#160;use-case&#160;&#160;with&#160;&#160;several&#160;&#160;input&#160;&#160;files,&#160;&#160;one&#160;&#160;Criteria&#160;&#160;Value&#160;&#160;is&#160;&#160;created&#160;&#160;for&#160;<br/>each&#160;(non-variant)&#160;input&#160;file.&#160;Using&#160;the&#160;Variant&#160;Editor&#160;it&#160;is&#160;possible&#160;to&#160;combine&#160;the&#160;criteria&#160;<br/>values to&#160;ECU&#160;Variants that&#160;are&#160;also&#160;visible&#160;as BSW&#160;configuration&#160;structures.&#160;<br/>
+&#160;<br/>
+Figure&#160;2-1&#160;&#160;<b>Variants</b>&#160;configurator&#160;editor&#160;in&#160;DaVinci&#160;Configurator&#160;Pro&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Note&#160;<br/></b>Criteria&#160;are a&#160;modelling&#160;aid of&#160;the&#160;AUTOSAR&#160;schema&#160;and&#160;do&#160;not&#160;reflect&#160;directly&#160;on&#160;the&#160;<br/>
+&#160;&#160;generated&#160;BSW&#160;code and the&#160;BSW&#160;configuration&#160;structures&#160;used&#160;for&#160;BSW&#160;initialization.&#160;<br/>
+The&#160;generated&#160;configuration&#160;structures&#160;instead&#160;reflect&#160;the&#160;ECU&#160;variants&#160;that&#160;are based&#160;<br/>on&#160;the&#160;selected&#160;criteria&#160;values.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Workaround&#160;<br/></b>DaVinci&#160;Configurator&#160;Pro&#160;is&#160;currently&#160;limited&#160;to&#160;a single criterion.&#160;The&#160;default&#160;name&#160;is&#160;<br/>
+&#160;&#160;<b>Communication</b>.&#160;Despite the&#160;name&#160;(that&#160;may&#160;be&#160;changed&#160;by&#160;the&#160;user),&#160;this&#160;criterion&#160;<br/>
+can&#160;be&#160;used&#160;for&#160;both&#160;diagnostic&#160;and&#160;communication&#160;variance.&#160;<br/>It&#160;is&#160;still&#160;possible to define multiple ECU&#160;variants&#160;by&#160;defining&#160;one&#160;criterion&#160;value&#160;for&#160;<br/>each variant.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+7&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=8></a>Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>2.2&#160;</b><br/>
+<b>Features&#160;</b><br/>
+The&#160;following&#160;high-level&#160;features&#160;are&#160;supported:&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/><b>Supported&#160;Features&#160;</b><br/>
+&#160;<br/>
+Selection of&#160;the ECU variant&#160;at&#160;startup&#160;time of&#160;the ECU.&#160;Thereby&#160;one&#160;out&#160;of&#160;N available&#160;<br/>configuration&#160;variants&#160;can&#160;be selected&#160;by&#160;the&#160;application.&#160;Implementing&#160;the&#160;logic&#160;that&#160;<br/>
+&#160;<br/>
+determines&#160;the&#160;variant to&#160;be chosen&#160;is&#160;an&#160;application&#160;responsibility.&#160;<br/>
+The&#160;Identity&#160;Manager is&#160;supported by&#160;MICROSAR&#160;BSW&#160;modules&#160;that&#160;support the&#160;Feature&#160;<br/><b>MICROSAR&#160;Identity&#160;Manager&#160;using&#160;Post-Build Selectable</b>&#160;(as&#160;it is&#160;listed in the technical&#160;<br/>
+&#160;<br/>
+reference of&#160;the&#160;BSW&#160;module:&#160;Chapter&#160;<b>Functional&#160;Description&#160;</b><b>&#160;Features</b>).&#160;<br/>
+Variance of&#160;communication&#160;aspects&#160;such as&#160;signals,&#160;PDUs&#160;and&#160;their&#160;properties.&#160;<br/>
+&#160;<br/>
+Variance of&#160;communication&#160;channels&#160;such as&#160;the&#160;properties&#160;and the number&#160;of&#160;channels.&#160;<br/>
+&#160;<br/>
+Variance of&#160;the&#160;RTE&#160;data&#160;mapping&#160;that&#160;links&#160;the communication stack&#160;with the application&#160;<br/>
+&#160;<br/>
+(SWCs).&#160;&#160;<br/>
+Variance of&#160;diagnostic&#160;aspects&#160;such as&#160;DTCs&#160;and DIDs&#160;as&#160;well&#160;as&#160;some of&#160;their&#160;properties.&#160;<br/>
+&#160;<br/>
+Data&#160;deduplication&#160;that reduces&#160;RAM&#160;and ROM footage by&#160;eliminating&#160;redundant&#160;data&#160;from&#160;the&#160;<br/>
+&#160;<br/>
+generated&#160;BSW&#160;configuration&#160;files.&#160;<br/>
+Combination&#160;with&#160;MICROSAR&#160;Post-Build Loadabl<a href="TechnicalReference_IdentityManagers.html#2">e&#160;[1]. P</a>ost-build&#160;loadable requires&#160;dedicated&#160;<br/>
+&#160;<br/>
+licensing.&#160;<br/>
+The&#160;recommended maximum&#160;number&#160;of&#160;variants&#160;is&#160;16.&#160;The&#160;maximum&#160;number&#160;of&#160;supported&#160;<br/>
+&#160;<br/>
+variants&#160;is&#160;32. On&#160;request higher numbers&#160;of&#160;variants&#160;may&#160;be&#160;supported.&#160;<br/>
+Table&#160;2-1&#160;&#160;&#160;Supported&#160;features&#160;<br/>
+<b>2.3&#160;</b><br/>
+<b>Deviations&#160;</b><br/>
+The&#160;following&#160;features&#160;specified&#160;by&#160;AUTOSAR&#160;are&#160;currently&#160;not&#160;supported:&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/><b>Not&#160;Supported&#160;Features&#160;</b><br/>
+&#160;<br/>
+Variance of&#160;SWC and service-SWCs&#160;is&#160;currently&#160;not&#160;supported.&#160;<br/>As&#160;a&#160;consequence&#160;variant&#160;SWC&#160;must provide a&#160;superset&#160;API&#160;and manage the&#160;variance&#160;<br/>
+-&#160;<br/>
+internally.&#160;The&#160;application&#160;must not&#160;invoke service-SWC&#160;and BSW&#160;APIs&#160;that&#160;are&#160;not&#160;defined in&#160;<br/>the&#160;currently&#160;active&#160;variant.&#160;<br/>
+DaVinci&#160;Configurator Pro supports&#160;a&#160;single&#160;criterion&#160;only.&#160;As&#160;this&#160;criterion can&#160;have multiple&#160;<br/>
+-&#160;<br/>
+values&#160;all&#160;use-cases&#160;can&#160;be&#160;covered.&#160;<br/>
+Table&#160;2-2&#160;&#160;&#160;Not&#160;supported&#160;features&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+8&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=9></a>Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>3&#160;&#160;Workflow&#160;Overview&#160;</b><br/>
+This&#160;&#160;chapter&#160;&#160;highlights&#160;&#160;the&#160;&#160;most&#160;&#160;important&#160;&#160;aspects&#160;&#160;of&#160;&#160;the&#160;&#160;workflow&#160;&#160;that&#160;&#160;is&#160;&#160;required&#160;&#160;to&#160;<br/>realize&#160;&#160;a&#160;&#160;variant&#160;&#160;ECU.&#160;&#160;The&#160;&#160;chapter&#160;&#160;shall&#160;&#160;be&#160;&#160;seen&#160;&#160;as&#160;&#160;an&#160;&#160;overview&#160;&#160;but&#160;&#160;already&#160;&#160;provides&#160;<br/>important&#160;information&#160;on&#160;the&#160;usage&#160;of&#160;this&#160;functionality.&#160;<br/>More&#160;&#160;details&#160;&#160;can&#160;&#160;be&#160;&#160;found&#160;&#160;in&#160;&#160;the&#160;&#160;following&#160;&#160;chapters&#160;&#160;and&#160;&#160;the&#160;&#160;online&#160;&#160;help&#160;&#160;of&#160;&#160;DaVinci&#160;<br/>Configurator&#160;Pro.&#160;<br/>
+&#160;<br/>
+ODX<br/>
+ODX<br/>
+SYSEX<br/>
+SYSEX<br/>
+SYSEX<br/>
+diag1<br/>
+diag2<br/>
+com1<br/>
+com2<br/>
+com3<br/>
+Variance&#160;configuration<br/>
+<b>Variants</b><br/>
+Eco<br/>
+Easy<br/>
+Star<br/>
+Variant<br/>
+<b>Criterias</b><br/>
+<b>DaVinci&#160;Configurator Pro</b><br/>
+project<br/>
+Comm.<br/>
+com1<br/>
+com2<br/>
+com3<br/>
+.dpa<br/>
+arxml<br/>
+Diagn.<br/>
+diag1<br/>
+diag1<br/>
+diag2<br/>
+Code&#160;generation&#160;+<br/>
+resource&#160;optimization<br/>
+Application&#160;implements&#160;<br/>
+MICROSAR&#160;SIP:<br/>
+variant&#160;selection&#160;at&#160;<br/>
+startup:<br/>
+Variant&#160;module&#160;configuration:<br/>
+-&#160;Msn_Config_Eco<br/>
+Static&#160;files:<br/>
+if(rule&#160;== a)<br/>
+-&#160;Msn_Config_Easy<br/>
+Msn.c<br/>
+use&#160;Msn_Config_Eco<br/>
+-&#160;Msn_Config_Star<br/>
+if(rule&#160;==&#160;b)<br/>
+use&#160;Msn_Config_Easy<br/>
+if(rule&#160;==&#160;c)<br/>
+use&#160;Msn_Config_Star<br/>
+Build&#160;Environment<br/>
+Runtime<br/>
+Production&#160;(OEM,&#160;Tier1)<br/>
+Variant&#160;ECU&#160;build:<br/>
+Variant&#160;definition<br/>
+One&#160;activated&#160;<br/>
+Eco, Easy,&#160;Star<br/>
+variant&#160;(e.g.&#160;Eco)<br/>
+&#160;<br/>
+Figure&#160;3-1&#160;&#160;Workflow&#160;overview&#160;<br/>
+<b>3.1&#160;</b><br/>
+<b>Setting&#160;Up a&#160;Variant&#160;Project&#160;</b><br/>
+Setting&#160;up&#160;a&#160;project&#160;with&#160;variance&#160;requires&#160;several&#160;steps&#160;which&#160;are&#160;summarized&#160;<a href="TechnicalReference_IdentityManagers.html#10">in&#160;&#160;Figure&#160;<br/>3-2.&#160;</a>The&#160;major&#160;difference&#160;between&#160;a&#160;workflow&#160;without&#160;variants&#160;is&#160;that&#160;variants&#160;need&#160;to&#160;be&#160;<br/>defined&#160;&#160;before&#160;&#160;databases&#160;&#160;are&#160;&#160;added&#160;&#160;to&#160;&#160;the&#160;&#160;configuration.&#160;&#160;For&#160;&#160;this&#160;&#160;purpose&#160;&#160;DaVinci&#160;<br/>Configurator Pro&#160;provides the&#160;<b>Variants</b>&#160;editor&#160;(see&#160;screenshot&#160;<a href="TechnicalReference_IdentityManagers.html#7">in&#160;Figure&#160;2-1).</a>&#160;<br/>Adding&#160;additional variants&#160;at&#160;a&#160;later point&#160;remains&#160;possible,&#160;however.&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+9&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=10></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-10_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+Create&#160;new&#160;project<br/>
+Create&#160;criterion<br/>
+Create&#160;one&#160;criterion&#160;value&#160;<br/>
+Configure&#160;variants<br/>
+for each&#160;variant<br/>
+Create variants&#160;and&#160;map&#160;<br/>
+Tool&#160;enters<br/>
+criterion&#160;value&#160;to&#160;Variant<br/>
+„Update&#160;Pending“<br/>
+project&#160;state<br/>
+Add&#160;input&#160;file(s)&#160;for&#160;each&#160;<br/>
+Add&#160;input&#160;files&#160;and&#160;<br/>
+criterion&#160;value<br/>
+perform&#160;a&#160;database&#160;<br/>
+update<br/>
+Trigger database&#160;update<br/>
+Enable&#160;variance&#160;for&#160;<br/>
+BSW&#160;modules.&#160;Activate&#160;<br/>
+additional&#160;modules.&#160;<br/>
+(project&#160;settings)<br/>
+Configure&#160;and&#160;<br/>
+generate&#160;BSW modules<br/>
+&#160;<br/>
+Figure&#160;3-2&#160;&#160;Major&#160;steps&#160;to&#160;setup&#160;a&#160;variant&#160;project&#160;with&#160;DaVinci&#160;Configurator&#160;Pro&#160;<br/>
+In&#160;a&#160;next&#160;step&#160;input&#160;files&#160;are&#160;assigned&#160;to&#160;each&#160;variant.&#160;Therefore&#160;a&#160;file&#160;set&#160;of&#160;input&#160;files&#160;is&#160;<br/>created&#160;&#160;for&#160;&#160;each&#160;&#160;criteria&#160;&#160;value&#160;&#160;(e.g.&#160;&#160;Communication&#160;&#160;=&#160;&#160;Left).&#160;&#160;A&#160;&#160;file&#160;&#160;set&#160;&#160;consists&#160;&#160;of&#160;&#160;e.g.&#160;<br/>multiple&#160;&#160;legacy&#160;&#160;files&#160;&#160;(one&#160;&#160;for&#160;&#160;each&#160;&#160;channel)&#160;&#160;that&#160;&#160;is&#160;&#160;relevant&#160;&#160;for&#160;&#160;one&#160;&#160;variant&#160;&#160;or&#160;&#160;a&#160;&#160;single&#160;<br/>system&#160;extract&#160;that&#160;describes all&#160;channels&#160;of&#160;one&#160;variant.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Figure&#160;3-3&#160;&#160;DaVinci&#160;Configurator&#160;Pro:&#160;Variant&#160;specific&#160;definition&#160;of&#160;input&#160;files&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+10&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=11></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-11_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-11_2.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>3.2&#160;</b><br/>
+<b>BSW&#160;Configuration&#160;</b><br/>
+DaVinci Configurator&#160;Pro&#160;highlights&#160;variant&#160;parameter and&#160;container&#160;using&#160;a&#160;brown&#160;<i>[V]</i>.&#160;<br/>When&#160;changing&#160;the&#160;configuration&#160;it&#160;has&#160;to&#160;be&#160;considered&#160;whether&#160;the&#160;change&#160;shall&#160;be&#160;<br/>applied&#160;to&#160;all&#160;variants&#160;<i>[V]</i>&#160;or if&#160;the&#160;change&#160;shall be&#160;done&#160;only&#160;for one&#160;variant.&#160;<br/>&#160;<br/>
+&#160;<br/>
+Figure&#160;3-4&#160;&#160;Illustration&#160;of&#160;Variant&#160;Parameters&#160;in&#160;DaVinci&#160;Configurator&#160;Pro&#160;<br/>
+If&#160;&#160;required,&#160;&#160;variation&#160;&#160;points&#160;&#160;can&#160;&#160;be&#160;&#160;added&#160;&#160;to&#160;&#160;the&#160;&#160;configuration&#160;&#160;and&#160;&#160;linked&#160;&#160;with&#160;&#160;a&#160;&#160;set&#160;&#160;of&#160;<br/>criteria&#160;&#160;values&#160;&#160;that&#160;&#160;must&#160;&#160;apply&#160;&#160;to&#160;&#160;include&#160;&#160;that&#160;&#160;configuration&#160;&#160;element&#160;&#160;into&#160;&#160;one&#160;&#160;variant.&#160;&#160;If&#160;<br/>required&#160;also&#160;custom&#160;criteria&#160;and&#160;criteria&#160;values&#160;can&#160;be&#160;defined.&#160;The&#160;criteria&#160;configuration&#160;<br/>of&#160;a&#160;variation&#160;point&#160;will&#160;implicitly&#160;link&#160;the&#160;setting&#160;with&#160;one&#160;or&#160;several&#160;variants&#160;depending&#160;on&#160;<br/>the&#160;variance&#160;configuration&#160;table.&#160;<br/>
+<b>3.3&#160;</b><br/>
+<b>Variance&#160;in&#160;Application Code&#160;</b><br/>
+The&#160;application&#160;code&#160;may&#160;or&#160;may&#160;not&#160;be&#160;affected&#160;by&#160;the&#160;variance&#160;in&#160;the&#160;BSW.&#160;&#160;If&#160;only&#160;the&#160;<br/>CAN&#160;&#160;IDs&#160;&#160;or&#160;&#160;Tx&#160;&#160;modes&#160;&#160;of&#160;&#160;messages&#160;&#160;are&#160;&#160;different&#160;&#160;in&#160;&#160;each&#160;&#160;variant&#160;&#160;this&#160;&#160;is&#160;&#160;handled&#160;&#160;in&#160;&#160;a&#160;<br/>transparent&#160;way&#160;for the&#160;application&#160;within&#160;the&#160;BSW.&#160;<br/>Typically&#160;&#160;ECU&#160;&#160;variance&#160;&#160;is&#160;&#160;more&#160;&#160;complex&#160;&#160;and&#160;&#160;also&#160;&#160;involves&#160;&#160;application&#160;&#160;interfaces.&#160;&#160;For&#160;<br/>example&#160;&#160;the&#160;&#160;application&#160;&#160;may&#160;&#160;transmit&#160;&#160;or&#160;&#160;receive&#160;&#160;more&#160;&#160;signals&#160;&#160;in&#160;&#160;one&#160;&#160;variant&#160;&#160;than&#160;&#160;in&#160;&#160;the&#160;<br/>other.&#160;Equally&#160;there&#160;may&#160;be&#160;different&#160;requirements&#160;to&#160;the&#160;diagnostic&#160;handling&#160;such&#160;as&#160;one&#160;<br/>variant&#160;may&#160;have&#160;more&#160;features&#160;and&#160;thus&#160;may&#160;have&#160;more&#160;fault&#160;memory&#160;entries&#160;(DTCs)&#160;to&#160;<br/>be&#160;managed.&#160;<br/>As&#160;soon&#160;as&#160;the&#160;interface&#160;of&#160;the&#160;BSW&#160;provides&#160;variant-dependent&#160;functionality&#160;(e.g.&#160;a&#160;signal&#160;<br/>or&#160;a&#160;DTC&#160;that&#160;exists&#160;in&#160;some&#160;of&#160;the&#160;variants&#160;only)&#160;the&#160;application&#160;will&#160;have&#160;to&#160;consider&#160;the&#160;<br/>BSW&#160;variance&#160;when&#160;dealing&#160;with&#160;BSW&#160;APIs.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Caution&#160;<br/></b>The&#160;application must&#160;not&#160;invoke any&#160;APIs&#160;that&#160;are&#160;not&#160;available in&#160;the&#160;variant&#160;that&#160;is&#160;<br/>
+<b>&#160;&#160;</b>currently&#160;realized&#160;by&#160;the&#160;BSW.&#160;Even&#160;with enabled&#160;development&#160;error&#160;detection,&#160;the&#160;<br/>
+BSW&#160;will&#160;not&#160;be&#160;able to&#160;detect&#160;all&#160;kinds&#160;of&#160;invalid&#160;API&#160;usage!&#160;<br/>Undefined&#160;ECU&#160;behavior&#160;can&#160;be&#160;the&#160;result&#160;of&#160;calling&#160;APIs&#160;that&#160;are not&#160;available in&#160;the&#160;<br/>active variant.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+If&#160;&#160;development&#160;&#160;error&#160;&#160;detection&#160;&#160;(DET)&#160;&#160;is&#160;&#160;enabled,&#160;&#160;the&#160;&#160;MICROSAR&#160;&#160;BSW&#160;&#160;will&#160;&#160;be&#160;&#160;able&#160;&#160;to&#160;<br/>detect&#160;&#160;some&#160;faults&#160;related&#160;to&#160;accessing&#160;functionality&#160;that&#160;&#160;is&#160;not&#160;available&#160;&#160;in&#160;&#160;the&#160;activated&#160;<br/>variants.&#160;&#160;Due&#160;&#160;to&#160;&#160;technical&#160;&#160;reasons,&#160;&#160;not&#160;&#160;all&#160;&#160;faults&#160;&#160;can&#160;&#160;be&#160;&#160;detected&#160;&#160;and&#160;&#160;be&#160;&#160;handled&#160;<br/>gracefully.&#160;&#160;<br/>When&#160;accessing&#160;BSW&#160;functionality&#160;that&#160;is&#160;not&#160;available&#160;in&#160;one&#160;variant&#160;(but&#160;in&#160;another)&#160;the&#160;<br/>following&#160;faults&#160;may&#160;happen:&#160;<br/>
+<b>&gt;&#160;&#160;</b>Reporting&#160;of&#160;a&#160;development&#160;error if&#160;DET&#160;is&#160;enabled.&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+11&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=12></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-12_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>&gt;&#160;&#160;</b>Activation&#160;of&#160;a&#160;BSW&#160;functionality&#160;that&#160;is not&#160;related&#160;to&#160;the&#160;API&#160;call&#160;(e.g.&#160;a&#160;different&#160;<br/>
+message&#160;is&#160;transmitted&#160;as requested&#160;by&#160;the&#160;API&#160;call).&#160;<br/>
+<b>&gt;&#160;&#160;</b>BSW&#160;API&#160;returns&#160;an&#160;error such&#160;as&#160;E_INVALID_REQUEST&#160;or E_UNINIT&#160;<br/>
+<b>&gt;&#160;&#160;</b>Undefined&#160;ECU&#160;behavior&#160;(with&#160;and&#160;without&#160;usage&#160;of&#160;development&#160;error detection)&#160;<br/>
+The&#160;following&#160;sections&#160;give&#160;some&#160;advice,&#160;how the&#160;application&#160;can&#160;deal with&#160;variance&#160;in&#160;the&#160;<br/>BSW.&#160;<br/>
+<b>3.3.1&#160;</b><br/>
+<b>Variance&#160;of&#160;COM&#160;Signals&#160;</b><br/>
+The&#160;&#160;MICROSAR&#160;&#160;RTE&#160;&#160;supports&#160;&#160;variant&#160;&#160;data&#160;&#160;mapping.&#160;&#160;This&#160;&#160;allows&#160;&#160;e.g.&#160;&#160;to&#160;&#160;map&#160;&#160;one&#160;<br/>application&#160;&#160;SWC&#160;&#160;S/R&#160;&#160;port&#160;&#160;to&#160;&#160;different&#160;&#160;signals&#160;&#160;depending&#160;&#160;on&#160;&#160;the&#160;&#160;activated&#160;&#160;variant.&#160;&#160;If&#160;<br/>required&#160;an&#160;S/R&#160;port can&#160;remain&#160;unconnected&#160;in&#160;one&#160;variant&#160;while&#160;in&#160;another variant&#160;a&#160;data&#160;<br/>mapping&#160;is configured.&#160;<br/>When&#160;accessing&#160;COM&#160;signals&#160;directly&#160;from&#160;a&#160;complex&#160;driver,&#160;only&#160;these&#160;signals&#160;must&#160;be&#160;<br/>accessed&#160;at&#160;runtime&#160;that&#160;are configured&#160;for the&#160;activated&#160;variant.&#160;<br/>
+<b>3.3.2&#160;</b><br/>
+<b>Variance&#160;in&#160;SWC&#160;and&#160;BSW&#160;APIs&#160;</b><br/>
+MICROSAR&#160;BSW&#160;modules&#160;of&#160;the&#160;service&#160;&#160;layer&#160;&#160;generate&#160;a&#160;service&#160;&#160;SWC&#160;description&#160;that&#160;<br/>describes&#160;the&#160;API&#160;in&#160;a&#160;formal&#160;way.&#160;MICROSAR&#160;service-SWCs&#160;define&#160;the&#160;BSW&#160;variance&#160;in&#160;<br/>a&#160;non-formal&#160;way&#160;by&#160;providing&#160;the&#160;API&#160;superset&#160;of&#160;all&#160;BSW&#160;variants.&#160;As&#160;a&#160;consequence&#160;the&#160;<br/>accessing&#160;&#160;application&#160;&#160;SWC&#160;&#160;must&#160;&#160;only&#160;&#160;invoke&#160;APIs&#160;&#160;that&#160;&#160;are&#160;&#160;enabled&#160;&#160;in&#160;&#160;the&#160;&#160;current&#160;&#160;BSW&#160;<br/>variant.&#160;The&#160;same&#160;applies&#160;for complex&#160;drivers that&#160;access&#160;BSW&#160;functionality&#160;directly.&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;<br/>Example&#160;<br/></b>Both&#160;&#160;examples&#160;&#160;realize&#160;&#160;the&#160;&#160;same&#160;&#160;ECU&#160;&#160;behavior&#160;&#160;and&#160;&#160;point&#160;&#160;out&#160;&#160;how&#160;&#160;BSW&#160;<br/>
+&#160;&#160;variance&#160;may&#160;be&#160;considered&#160;during&#160;application&#160;development.&#160;<br/>
+This&#160;is&#160;an&#160;incomplete&#160;example only.&#160;Of&#160;course&#160;there&#160;are&#160;many&#160;other&#160;ways&#160;of&#160;taking&#160;<br/>care&#160;that&#160;the&#160;application invokes only&#160;these&#160;BSW&#160;APIs&#160;that&#160;are&#160;valid in&#160;the&#160;variant&#160;that&#160;<br/>is&#160;currently&#160;enabled.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/><b>&gt;&#160;&#160;</b>Example&#160;1&#160;(SWC&#160;implementation):&#160;<br/>
+if(Rte_IrvRead_Swc_Runnable_EcuVariant&#160;== V_ECO)&#160;<br/>{&#160;<br/>&#160;<br/>
+/* Service mapping to DEM ErrorX&#160;configured&#160;*/&#160;<br/>
+&#160;<br/>
+Rte_Call_DiagnosticMonitor_Port_SetEventStatus(DEM_EVENT_STATUS_PASSED);&#160;<br/>
+}&#160;<br/>else if(Rte_IrvRead_Swc_Runnable_EcuVariant&#160;== V_STAR)&#160;<br/>{&#160;<br/>&#160;<br/>
+/*&#160;DEM&#160;ErrorX is not defined in this variant and must not be reported */&#160;<br/>
+}&#160;<br/>/* Variant Data Mapping to SigA for ECO and SigB for START managed by RTE */&#160;<br/>Rte_Write_Swc_Port(data);&#160;<br/>&#160;<br/>
+<b>&gt;&#160;&#160;</b>Example&#160;2&#160;(CDD&#160;implementation):&#160;<br/>
+if(gVariant == V_ECO)&#160;<br/>{&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+12&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=13></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-13_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+&#160;<br/>
+/* Report DEM ErrorX&#160;on V_ECO only */&#160;<br/>
+&#160;<br/>
+Dem_SetEventStatus(ErrorX, DEM_EVENT_STATUS_PASSED);&#160;<br/>
+&#160;<br/>
+Com_SendSignal(SigA, &amp;data);&#160;/* SigA is defined&#160;in this variant&#160;only&#160;*/&#160;<br/>
+}&#160;<br/>else if(gVariant == V_STAR)&#160;<br/>{&#160;<br/>&#160;<br/>
+/* DEM ErrorX is&#160;not defined in this variant&#160;and must not be reported&#160;*/&#160;<br/>
+&#160;<br/>
+Com_SendSignal(SigB, &amp;data);&#160;/* SigB is defined&#160;in this&#160;variant only&#160;*/&#160;<br/>
+}&#160;<br/>&#160;<br/>
+<b>3.4&#160;</b><br/>
+<b>Validation&#160;and&#160;Code&#160;Generation&#160;</b><br/>
+The&#160;ECU&#160;configuration&#160;is&#160;validated&#160;and&#160;generated&#160;for&#160;all&#160;configured&#160;variants&#160;at&#160;the&#160;same&#160;<br/>time.&#160;&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Practical&#160;Procedure&#160;<br/></b>To&#160;reduce&#160;overall&#160;complexity&#160;when&#160;setting&#160;up&#160;a&#160;new&#160;project&#160;it&#160;may&#160;be&#160;helpful&#160;to&#160;realize&#160;<br/>
+&#160;&#160;a single&#160;ECU&#160;variant&#160;first.&#160;After&#160;having&#160;the&#160;first&#160;variant&#160;tested,&#160;additional&#160;variants&#160;may&#160;<br/>
+be&#160;added and&#160;linked&#160;with the&#160;appropriate&#160;input&#160;files&#160;that&#160;are now&#160;imported&#160;for&#160;the&#160;first&#160;<br/>time&#160;to&#160;this&#160;project.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+The&#160;&#160;BSW&#160;&#160;module&#160;&#160;configuration&#160;&#160;must&#160;&#160;be&#160;&#160;valid&#160;&#160;according&#160;&#160;to&#160;&#160;the&#160;&#160;BSWMD&#160;&#160;file&#160;&#160;for&#160;&#160;each&#160;<br/>variant&#160;&#160;(e.g.&#160;&#160;variant&#160;&#160;parameters&#160;with&#160;a&#160;multiplicity&#160;of&#160;1:1&#160;must&#160;&#160;be&#160;available&#160;&#160;in&#160;&#160;all&#160;variants&#160;<br/>but&#160;possibly&#160;with&#160;different&#160;values).&#160;<br/>When&#160;&#160;generating&#160;&#160;code,&#160;&#160;all&#160;&#160;BSW&#160;&#160;modules&#160;&#160;that&#160;&#160;are&#160;&#160;enabled&#160;&#160;for&#160;&#160;variance&#160;&#160;(DaVinci&#160;<br/>Configurator&#160;&#160;Pro&#160;&#160;<b>Project</b>&#160;&#160;<b>Settings</b>&#160;&#160;editor)&#160;&#160;will&#160;&#160;produce&#160;&#160;one&#160;&#160;configuration&#160;&#160;set&#160;&#160;for&#160;&#160;each&#160;<br/>configured&#160;&#160;ECU&#160;&#160;variant.&#160;&#160;Variance&#160;&#160;may&#160;&#160;be&#160;&#160;implemented&#160;&#160;by&#160;&#160;the&#160;&#160;BSW&#160;&#160;modules&#160;&#160;as&#160;&#160;part&#160;&#160;of&#160;<br/>post-build&#160;tables&#160;(linked&#160;by&#160;the&#160;related&#160;configuration&#160;structures)&#160;or&#160;within&#160;generated&#160;source&#160;<br/>code.&#160;<br/>Validation&#160;rules&#160;at&#160;configuration&#160;and&#160;generation&#160;time&#160;ensure&#160;that&#160;MICROSAR&#160;modules&#160;that&#160;<br/>do&#160;&#160;not&#160;&#160;support&#160;&#160;variance&#160;&#160;do&#160;&#160;not&#160;&#160;access&#160;&#160;variant&#160;&#160;data.&#160;&#160;In&#160;&#160;this&#160;&#160;case&#160;&#160;an&#160;&#160;error&#160;&#160;is&#160;&#160;thrown.&#160;&#160;To&#160;<br/>solve&#160;&#160;this&#160;&#160;issue,&#160;&#160;variance&#160;&#160;may&#160;&#160;have&#160;&#160;to&#160;&#160;be&#160;&#160;enabled&#160;&#160;for&#160;&#160;the&#160;&#160;affected&#160;&#160;BSW&#160;&#160;module&#160;&#160;(see&#160;<br/>chapte<a href="TechnicalReference_IdentityManagers.html#15">r&#160;4.1) or t</a>he&#160;variance&#160;has&#160;to&#160;be&#160;removed&#160;from&#160;the&#160;configuration.&#160;<br/>
+<b>3.5&#160;</b><br/>
+<b>BSW&#160;Initialization&#160;</b><br/>
+At&#160;ECU&#160;start-up,&#160;the&#160;application&#160;has&#160;to&#160;determine&#160;the&#160;expected&#160;ECU&#160;behavior&#160;and&#160;choose&#160;<br/>the&#160;appropriate&#160;BSW&#160;configuration&#160;structures&#160;to&#160;initialize&#160;the&#160;BSW.&#160;&#160;<br/>Determining&#160;the&#160;required&#160;variant&#160;can&#160;be&#160;done&#160;in&#160;multiple&#160;ways&#160;and&#160;is&#160;typically&#160;defined&#160;by&#160;<br/>the&#160;vehicle&#160;manufacturer.&#160;Examples&#160;are:&#160;<br/>
+<b>&gt;&#160;&#160;</b>External pin&#160;coding&#160;of&#160;the&#160;ECU&#160;e.g.&#160;by&#160;using&#160;specific connectors that&#160;allow&#160;the&#160;ECU&#160;to&#160;<br/>
+detect&#160;its variant&#160;<br/>
+<b>&gt;&#160;&#160;</b>Definition&#160;of&#160;a&#160;non-volatile&#160;memory&#160;pattern&#160;that&#160;may&#160;be&#160;set&#160;end&#160;of&#160;line&#160;or during&#160;the&#160;<br/>
+first&#160;start-up&#160;of&#160;the&#160;ECU&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+13&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=14></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-14_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Caution&#160;<br/></b>If&#160;the&#160;variant&#160;of&#160;the&#160;ECU&#160;shall&#160;be&#160;changed,&#160;it&#160;may&#160;be&#160;required&#160;that&#160;some&#160;hardware&#160;<br/>
+<b>&#160;&#160;</b>devices are disabled&#160;as&#160;these are&#160;no&#160;longer&#160;used&#160;in the&#160;variant&#160;to&#160;be&#160;enabled.&#160;The&#160;<br/>
+BSW&#160;does not&#160;provide&#160;any&#160;functionality&#160;to disable hardware&#160;functionality&#160;that&#160;had&#160;been&#160;<br/>enabled&#160;by&#160;a previous&#160;variant.&#160;Therefore it&#160;is&#160;recommended&#160;to&#160;completely&#160;restart&#160;the&#160;<br/>ECU&#160;before&#160;activating a&#160;new&#160;BSW&#160;variant.&#160;Alternatively&#160;the&#160;application&#160;may&#160;also&#160;<br/>disable hardware&#160;functionality&#160;required&#160;by&#160;the&#160;BSW&#160;prior&#160;of&#160;starting&#160;the&#160;BSW&#160;<br/>initialization.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>3.5.1&#160;</b><br/>
+<b>Manual&#160;BSW Initialization&#160;</b><br/>
+If&#160;&#160;for&#160;&#160;some&#160;&#160;reason&#160;&#160;the&#160;&#160;initialization&#160;&#160;through&#160;&#160;the&#160;&#160;BSWM&#160;&#160;“Module&#160;&#160;Initialization”&#160;&#160;Auto&#160;<br/>Configuration&#160;&#160;assistant&#160;&#160;is&#160;&#160;not&#160;&#160;possible&#160;&#160;the&#160;&#160;BSW&#160;&#160;initialization&#160;&#160;can&#160;&#160;also&#160;&#160;be&#160;&#160;implemented&#160;<br/>manually.&#160;&#160;<br/>
+For&#160;&#160;post-build&#160;&#160;loadable&#160;&#160;modules&#160;&#160;the&#160;&#160;header&#160;&#160;EcuM_Init_PBcfg.h&#160;&#160;is&#160;&#160;used&#160;&#160;to&#160;&#160;publish&#160;<br/>initialization&#160;relevant&#160;data&#160;types.&#160;To&#160;access&#160;the&#160;module&#160;configuration&#160;pointers&#160;always&#160;use&#160;<br/>EcuM_GlobalPBConfig_Ptr.&#160;&#160;<br/>
+For&#160;variant&#160;modules&#160;that&#160;do&#160;not&#160;support&#160;post-build&#160;loadable&#160;the&#160;header&#160;EcuM_Init_Cfg.h&#160;is&#160;<br/>used&#160;&#160;to&#160;&#160;publish&#160;&#160;initialization&#160;&#160;relevant&#160;&#160;data&#160;&#160;types.&#160;&#160;To&#160;&#160;access&#160;&#160;the&#160;&#160;module&#160;&#160;configuration&#160;<br/>pointers always use&#160;EcuM_GlobalPCConfig_Ptr.&#160;&#160;<br/>
+&#160;<br/>
+#include “EcuM_Init_Cfg.h”&#160;<br/>
+…&#160;<br/>
+void&#160;MyInitFunction()&#160;<br/>{&#160;<br/>…&#160;<br/>&#160;&#160;Com_Init(EcuM_GlobalPCConfig_Ptr-&gt;CfgPtr_Com_Init);&#160;<br/>&#160;&#160;ComM_Init(EcuM_GlobalPCConfig_Ptr-&gt;CfgPtr_ComM_Init);&#160;<br/>…&#160;<br/>}&#160;<br/>
+Table&#160;3-1&#160;&#160;&#160;Manual&#160;BSW&#160;initialization&#160;using&#160;the&#160;configuration&#160;structure&#160;address&#160;provided&#160;by&#160;ECUM&#160;<br/>
+The&#160;EcuM_GlobalPBConfig_Ptr&#160;&#160;and&#160;EcuM_GlobalPCConfig_Ptr&#160;are&#160;initialized&#160;by&#160;the&#160;ECUM&#160;<br/>during&#160;&#160;EcuM_Init()&#160;&#160;with&#160;&#160;the&#160;&#160;global&#160;&#160;root&#160;&#160;structure&#160;&#160;address&#160;&#160;returned&#160;&#160;by&#160;&#160;the&#160;&#160;callout&#160;<br/>EcuM_DeterminePbConfiguration().&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+14&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=15></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-15_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-15_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-15_3.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>4&#160;&#160;Configuration&#160;</b><br/>
+The&#160;DaVinci&#160;Configurator&#160;Pro&#160;help&#160;system&#160;(press&#160;F1&#160;within&#160;the&#160;tool)&#160;will&#160;provide&#160;you&#160;with&#160;<br/>information&#160;how&#160;to&#160;set&#160;up&#160;a&#160;configuration&#160;that&#160;includes variants.&#160;<br/>This chapter highlights&#160;the&#160;most&#160;important&#160;aspects&#160;only.&#160;<br/>
+<b>4.1&#160;</b><br/>
+<b>Activating&#160;Variance&#160;for&#160;BSW&#160;Modules&#160;</b><br/>
+In&#160;the&#160;project&#160;settings editor of&#160;DaVinci&#160;Configurator&#160;Pro&#160;you&#160;can&#160;define&#160;each&#160;BSW&#160;module&#160;<br/>whether&#160;&#160;it&#160;&#160;shall&#160;&#160;support&#160;&#160;variance&#160;&#160;or&#160;&#160;not.&#160;&#160;It&#160;&#160;is&#160;&#160;recommended&#160;&#160;to&#160;&#160;enable&#160;&#160;variance&#160;&#160;for&#160;&#160;a&#160;<br/>complete&#160;cluster (e.g.&#160;communication&#160;stack&#160;or diagnostic stack)&#160;at&#160;once.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Basic Knowledge&#160;<br/></b>As&#160;the&#160;BSW&#160;initialization sequence&#160;will&#160;handle the&#160;BSW&#160;modules&#160;variance,&#160;modules&#160;in&#160;<br/>
+&#160;&#160;charge&#160;for&#160;BSW&#160;initialization&#160;(BSWM&#160;and ECUM)&#160;have&#160;to&#160;support&#160;variance&#160;in any&#160;case.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+To&#160;enable&#160;variance&#160;for&#160;a&#160;BSW&#160;module&#160;choose&#160;either&#160;<br/>
+<b>&gt;&#160;&#160;</b>VARIANT-POST-BUILD-SELECTABLE:&#160;Variants&#160;are supported.&#160;No&#160;post-build&#160;<br/>
+loadable&#160;update&#160;of&#160;the&#160;configuration&#160;at&#160;post-build&#160;time.&#160;All&#160;variants&#160;are configured&#160;at&#160;<br/>pre-compile&#160;time.&#160;<br/>
+<b>&gt;&#160;&#160;</b>VARIANT-POST-BUILD&#160;(LOADABLE and&#160;SELECTABLE):&#160;Variants&#160;are supported&#160;<br/>
+and&#160;a&#160;post-build&#160;loadable&#160;update&#160;of&#160;the&#160;configuration&#160;data&#160;is supported&#160;using&#160;<br/>MICROSAR Post-Build&#160;Loadable.&#160;This&#160;feature&#160;required&#160;dedicated&#160;licensing.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Figure&#160;4-1&#160;&#160;Enabling&#160;Variance&#160;for&#160;BSW&#160;Modules&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Hint&#160;<br/></b>You&#160;can&#160;use&#160;multi&#160;select&#160;in DaVinci&#160;Configurator&#160;Pro to&#160;enabled&#160;variance&#160;for&#160;several&#160;<br/>
+&#160;&#160;BSW&#160;modules&#160;at&#160;the&#160;same&#160;time.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+15&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=16></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-16_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-16_2.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+&#160;<br/>
+<b>4.2&#160;</b><br/>
+<b>Semantics&#160;of&#160;ECU&#160;Configuration Variance&#160;</b><br/>
+The&#160;location&#160;of&#160;the&#160;variation&#160;point&#160;&#160;does&#160;not&#160;&#160;imply&#160;any&#160;semantic&#160;&#160;and&#160;has&#160;no&#160;effect&#160;&#160;to&#160;the&#160;<br/>generated&#160;&#160;code.&#160;&#160;<a href="TechnicalReference_IdentityManagers.html#16">Figure&#160;&#160;4-2&#160;&#160;</a>illustrates&#160;&#160;two&#160;&#160;ECU&#160;&#160;configuration&#160;&#160;hierarchies&#160;&#160;which&#160;&#160;would&#160;<br/>produce&#160;the&#160;same&#160;generated&#160;code&#160;as&#160;the&#160;content&#160;of&#160;configuration&#160;is&#160;equal&#160;when&#160;looking&#160;at&#160;<br/>one&#160;&#160;variant&#160;&#160;at&#160;&#160;a&#160;&#160;time.&#160;&#160;The&#160;&#160;right&#160;&#160;version&#160;&#160;however&#160;&#160;contains&#160;&#160;more&#160;&#160;redundant&#160;&#160;data&#160;&#160;as&#160;&#160;the&#160;<br/>variation&#160;point&#160;is located&#160;at&#160;a&#160;higher level.&#160;&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Example&#160;<br/></b>When editing&#160;B1&#160;in&#160;the&#160;left&#160;example the&#160;change would apply&#160;for&#160;all&#160;variants&#160;as long&#160;as&#160;<br/>
+&#160;&#160;no&#160;additional&#160;variation&#160;point&#160;is&#160;introduced&#160;first.&#160;When&#160;editing&#160;B1&#160;in&#160;the&#160;right&#160;example,&#160;<br/>
+the&#160;change&#160;is&#160;applied&#160;only&#160;to the&#160;variant&#160;where&#160;the change is&#160;made.&#160;The&#160;other&#160;instance&#160;<br/>of&#160;B1&#160;remains as&#160;it&#160;is.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+M:Module<br/>
+M:Module<br/>
+C:C1<br/>
+[Eco]<br/>
+C:C1<br/>
+[Easy]<br/>
+C:C1<br/>
+A:A1<br/>
+B:B1<br/>
+A:A1<br/>
+B:B1<br/>
+A:A1<br/>
+B:B1<br/>
+P=1<br/>
+P=2<br/>
+P=1<br/>
+P=2<br/>
+[Eco]<br/>
+[Easy]<br/>
+&#160;<br/>
+Figure&#160;4-2&#160;&#160;Location&#160;of&#160;variation&#160;points&#160;has&#160;no&#160;semantic&#160;meaning&#160;to&#160;the&#160;configuration&#160;<br/>
+As&#160;&#160;the&#160;&#160;example&#160;&#160;shows,&#160;&#160;the&#160;&#160;location&#160;&#160;of&#160;&#160;the&#160;&#160;variation&#160;&#160;point&#160;&#160;mainly&#160;&#160;depends&#160;&#160;on&#160;&#160;the&#160;<br/>expectations&#160;what&#160;shall&#160;or&#160;shall&#160;not&#160;be&#160;equal&#160;for&#160;an&#160;object&#160;within&#160;the&#160;different&#160;variants.&#160;A&#160;<br/>general statement&#160;is therefore&#160;not&#160;possible.&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Practical&#160;Procedure&#160;<br/></b>If&#160;it&#160;is&#160;not&#160;clear&#160;where to&#160;create&#160;a variation&#160;point&#160;(e.g.&#160;as&#160;the&#160;requirements&#160;or&#160;the&#160;impact&#160;<br/>
+&#160;&#160;are&#160;not&#160;yet&#160;fully&#160;understood)&#160;it&#160;is&#160;recommended&#160;to&#160;create&#160;the&#160;variation&#160;points&#160;as&#160;low&#160;as&#160;<br/>
+possible in&#160;order&#160;to&#160;handle with as&#160;few&#160;redundant&#160;data as&#160;possible.&#160;<br/>At&#160;a later&#160;point&#160;when it&#160;turns out&#160;that&#160;an&#160;object&#160;is&#160;assumed&#160;to&#160;be&#160;completely&#160;different&#160;in&#160;<br/>all&#160;variants&#160;a new&#160;variation&#160;point&#160;can&#160;be&#160;added at&#160;a higher&#160;level.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+16&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=17></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-17_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>Note&#160;<br/></b>The&#160;Base&#160;ECUC&#160;creation process&#160;of&#160;DaVinci&#160;Configurator&#160;Pro&#160;for&#160;example locates&#160;<br/>
+&#160;&#160;variation&#160;points&#160;as&#160;low&#160;as possible in&#160;the&#160;hierarchy&#160;in order&#160;to&#160;reduce&#160;the&#160;amount&#160;of&#160;<br/>
+redundant&#160;data&#160;within the&#160;project&#160;(left&#160;example in<a href="TechnicalReference_IdentityManagers.html#16">&#160;Figure&#160;4-2)</a>.&#160;Having&#160;to&#160;deal&#160;with less&#160;<br/>redundant&#160;data&#160;can&#160;simplify&#160;the&#160;BSW&#160;configuration&#160;when dealing&#160;with variants&#160;that&#160;<br/>have also common&#160;settings.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+17&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=18></a>Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>5&#160;&#160;Integration&#160;</b><br/>
+<b>5.1&#160;</b><br/>
+<b>BSW&#160;Module&#160;Initialization&#160;</b><br/>
+During&#160;&#160;BSW&#160;&#160;initialization&#160;&#160;the&#160;&#160;application&#160;&#160;is&#160;&#160;required&#160;&#160;to&#160;&#160;provide&#160;&#160;information&#160;&#160;which&#160;&#160;variant&#160;<br/>the&#160;BSW&#160;shall&#160;implement.&#160;After&#160;ECUM&#160;initialization&#160;(that&#160;is&#160;variant&#160;independent)&#160;the&#160;ECUM&#160;<br/>will&#160;&#160;query&#160;&#160;the&#160;&#160;variant&#160;&#160;to&#160;&#160;be&#160;&#160;used&#160;&#160;from&#160;&#160;the&#160;&#160;application&#160;&#160;by&#160;&#160;using&#160;&#160;the&#160;&#160;callout&#160;<br/>EcuM_DeterminePbConfiguration()&#160;&#160;(chapter&#160;&#160;<a href="TechnicalReference_IdentityManagers.html#19">5.1.1).&#160;&#160;</a>Within&#160;&#160;this&#160;&#160;callout&#160;&#160;the&#160;<br/>application&#160;shall&#160;return&#160;the&#160;global&#160;root&#160;configuration&#160;structure&#160;(chapter<a href="TechnicalReference_IdentityManagers.html#19">&#160;5.1.1)&#160;</a>of&#160;the&#160;variant&#160;<br/>to&#160;be&#160;used.&#160;<br/>The&#160;&#160;variant-specific&#160;&#160;global&#160;&#160;root&#160;&#160;structure&#160;&#160;references&#160;&#160;the&#160;&#160;configuration&#160;&#160;structures&#160;&#160;of&#160;&#160;each&#160;<br/>BSW&#160;module&#160;relevant&#160;of&#160;that&#160;variant.&#160;<br/>
+&#160;<br/>
+ECUM&#160;global<br/>
+BSW&#160;configuration<br/>
+root&#160;structures<br/>
+structures<br/>
+Variant&#160;Eco<br/>
+BSW&#160;A<br/>Variant&#160;Eco<br/>
+Variant&#160;Easy<br/>
+BSW&#160;A<br/>Variant&#160;Easy<br/>
+BSW&#160;B<br/>Variant&#160;Eco<br/>
+Pointer&#160;returned&#160;by&#160;the&#160;<br/>
+BSW&#160;B<br/>
+application&#160;from&#160;callout&#160;<br/>
+EcuM_DeterminePbConfiguration<br/>
+Variant&#160;Easy<br/>
+&#160;<br/>
+Figure&#160;5-1&#160;&#160;Hierarchy&#160;of&#160;BSW&#160;configuration&#160;structures&#160;for&#160;variant&#160;specific&#160;initialization&#160;<br/>
+In&#160;&#160;typical&#160;&#160;BSW&#160;&#160;environments&#160;&#160;using&#160;&#160;the&#160;&#160;MICROSAR&#160;&#160;stack,&#160;&#160;no&#160;&#160;further&#160;&#160;actions&#160;&#160;or&#160;<br/>adaptations are&#160;required&#160;to&#160;the&#160;templates&#160;provided.&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+18&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=19></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-19_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-19_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-19_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-19_4.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Reference</b>&#160;<br/>Please read&#160;the&#160;Technical&#160;References&#160;of&#160;ECUM&#160;<a href="TechnicalReference_IdentityManagers.html#2">([2])</a>&#160;and&#160;BSWM&#160;<a href="TechnicalReference_IdentityManagers.html#2">([3])</a>&#160;carefully&#160;to&#160;find&#160;<br/>
+&#160;&#160;out&#160;how&#160;the&#160;BSW&#160;initialization needs&#160;to&#160;be&#160;implemented&#160;in&#160;general&#160;terms.&#160;<br/>
+If&#160;you&#160;also realize a&#160;post-build time update of&#160;your&#160;configuration&#160;data using MICROSAR&#160;<br/>Post-Build Loadable,&#160;please also&#160;follow<a href="TechnicalReference_IdentityManagers.html#2">&#160;[1].</a>&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>5.1.1&#160;</b><br/>
+<b>Implementation of&#160;EcuM_DeterminePbConfiguration()&#160;</b><br/>
+During&#160;<br/>
+initialization&#160;<br/>
+the&#160;<br/>
+ECUM&#160;<br/>
+invokes&#160;<br/>
+the&#160;<br/>
+callout&#160;<br/>
+EcuM_DeterminePbConfiguration()&#160;&#160;to&#160;&#160;determine&#160;&#160;the&#160;&#160;variant&#160;&#160;that&#160;&#160;shall&#160;&#160;be&#160;&#160;used&#160;&#160;for&#160;<br/>BSW&#160;&#160;initialization.&#160;&#160;This&#160;&#160;callout&#160;&#160;shall&#160;&#160;return&#160;&#160;the&#160;&#160;address&#160;&#160;of&#160;&#160;global&#160;&#160;root&#160;&#160;structure&#160;&#160;of&#160;&#160;the&#160;<br/>variant&#160;to&#160;be&#160;used.&#160;<br/>To&#160;<br/>
+determine&#160;<br/>
+the&#160;<br/>
+address&#160;<br/>
+use&#160;<br/>
+e.g.&#160;<br/>
+the&#160;<br/>
+following&#160;<br/>
+code:&#160;<br/>
+&amp;EcuM_GlobalConfigRoot.&lt;Variant&gt;.&#160;The&#160;symbol is&#160;published&#160;by&#160;EcuM_Init_PBcfg.h.&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>FAQ&#160;<br/></b>EcuM_DeterminePbConfiguration()&#160;is&#160;expected&#160;to&#160;return&#160;the&#160;pointer&#160;to&#160;the&#160;<br/>
+&#160;&#160;global&#160;root&#160;structure&#160;(&amp;EcuM_GlobalConfigRoot.&lt;Variant&gt;&#160;)&#160;published by&#160;<br/>
+EcuM_Init_PBcfg.h&#160;even&#160;in projects&#160;where post-build loadable is not&#160;supported.&#160;&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Edit&#160;<br/></b>A&#160;sample implementation of&#160;this&#160;function&#160;is&#160;provided by&#160;EcuM_Callout_Stubs.c&#160;as&#160;<br/>
+&#160;&#160;a template.&#160;Extend&#160;this&#160;implementation with the&#160;application specific&#160;rules to determine&#160;<br/>
+the&#160;root&#160;structure&#160;required&#160;for&#160;the&#160;variant&#160;that&#160;shall&#160;be&#160;used.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>5.1.2&#160;</b><br/>
+<b>BSWM&#160;Module&#160;Initialization&#160;Auto Configuration&#160;</b><br/>
+BSW&#160;&#160;modules&#160;&#160;with&#160;&#160;variance&#160;&#160;are&#160;&#160;initialized&#160;&#160;by&#160;&#160;the&#160;&#160;BSWM.&#160;&#160;To&#160;&#160;realize&#160;&#160;the&#160;&#160;BSW&#160;&#160;module&#160;<br/>initialization&#160;&#160;use&#160;&#160;the&#160;&#160;<b>Module&#160;&#160;Initialization</b>&#160;&#160;Auto&#160;&#160;Configuration&#160;&#160;assistant&#160;&#160;provided&#160;&#160;by&#160;&#160;the&#160;<br/><b>BSW&#160;Management</b>&#160;editor&#160;of&#160;DaVinci&#160;Configurator&#160;Pro.&#160;This&#160;assistant&#160;will&#160;realize&#160;the&#160;BSW&#160;<br/>initialization&#160;as&#160;required&#160;by&#160;the&#160;Identity&#160;Manager&#160;using&#160;the&#160;global&#160;root&#160;structure&#160;as&#160;source&#160;<br/>for the&#160;BSW&#160;initialization&#160;pointers.&#160;Find&#160;more&#160;details in&#160;the&#160;BSWM&#160;technical reference<a href="TechnicalReference_IdentityManagers.html#2">&#160;[3].</a>&#160;<br/>
+&#160;<br/>
+Figure&#160;5-2&#160;&#160;Module&#160;Initialization&#160;Auto&#160;Configuration&#160;Assistant&#160;of&#160;the&#160;DaVinci&#160;Configurator&#160;Pro&#160;BSWM&#160;configuration&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+19&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=20></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_IdentityManager-20_1.png"/><br/>
+Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>5.1.3&#160;</b><br/>
+<b>Global&#160;Root&#160;Structure&#160;Customization&#160;</b><br/>
+If&#160;&#160;an&#160;&#160;additional&#160;&#160;configuration&#160;&#160;pointer&#160;&#160;shall&#160;&#160;be&#160;&#160;added&#160;&#160;to&#160;&#160;the&#160;&#160;global&#160;&#160;root&#160;&#160;structure&#160;&#160;you&#160;&#160;can&#160;<br/>add&#160;the&#160;initialization&#160;details&#160;in&#160;the&#160;ECUC&#160;module&#160;configuration&#160;using&#160;DaVinci&#160;Configurator:&#160;<br/>/MICROSAR/EcuC/EcucGeneral/BswInitialization/InitFunction.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Caution&#160;<br/></b>Within DaVinci&#160;Configurator&#160;only&#160;BSW&#160;modules&#160;that&#160;support&#160;the&#160;MICROSAR&#160;post-build&#160;<br/>
+<b>&#160;&#160;</b>loadable process&#160;must&#160;be configured&#160;as&#160;Implementation&#160;Variant&#160;VARIANT-POST-<br/>
+BUILD-LOADABLE&#160;or&#160;VARIANT-POST-BUILD.&#160;As&#160;a consequence&#160;these&#160;modules&#160;are&#160;<br/>added to&#160;the&#160;post-build loadable global&#160;root&#160;structure&#160;EcuM_Global<b>PB</b>ConfigRoot.&#160;<br/>Variant&#160;modules that&#160;do&#160;not&#160;support&#160;post-build loadable will&#160;be&#160;added to&#160;<br/>EcuM_Global<b>PC</b>ConfigRoot&#160;instead.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>5.2&#160;</b><br/>
+<b>Critical&#160;Sections&#160;</b><br/>
+Critical&#160;&#160;sections&#160;&#160;are&#160;&#160;not&#160;&#160;variant-specific.&#160;&#160;As&#160;&#160;a&#160;&#160;consequence&#160;&#160;each&#160;&#160;critical&#160;&#160;section&#160;&#160;has&#160;<br/>exactly&#160;&#160;one&#160;&#160;implementation.&#160;&#160;One&#160;&#160;critical&#160;&#160;section&#160;&#160;can&#160;&#160;be&#160;&#160;used&#160;&#160;in&#160;&#160;just&#160;&#160;one&#160;&#160;variant&#160;&#160;but&#160;&#160;can&#160;<br/>also&#160;&#160;be&#160;&#160;used&#160;&#160;in&#160;&#160;several&#160;&#160;or&#160;&#160;even&#160;&#160;all&#160;&#160;ECU&#160;&#160;variants.&#160;&#160;The&#160;&#160;technical&#160;&#160;reference&#160;&#160;of&#160;&#160;the&#160;&#160;BSW&#160;<br/>modules&#160;will define&#160;what&#160;to&#160;consider&#160;when&#160;implementing&#160;the&#160;critical&#160;section&#160;handling.&#160;<br/>
+<b>5.3&#160;</b><br/>
+<b>Main Function&#160;Scheduling&#160;</b><br/>
+The&#160;RTE&#160;Schedule&#160;Manager&#160;is&#160;not&#160;variant&#160;aware.&#160;Consequently&#160;the&#160;main&#160;function&#160;cycles&#160;<br/>are configured&#160;globally&#160;and&#160;are valid&#160;for&#160;all&#160;variants&#160;of&#160;the&#160;ECU.&#160;&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+20&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=21></a>Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>6&#160;&#160;Glossary&#160;and&#160;Abbreviations&#160;</b><br/>
+<b>6.1&#160;</b><br/>
+<b>Glossary&#160;</b><br/>
+<b>Term&#160;</b><br/>
+<b>Description&#160;</b><br/>
+MICROSAR&#160;Identity&#160;<br/>
+Implementation&#160;of&#160;the&#160;AUTOSAR&#160;4&#160;variance&#160;concept&#160;using post-build&#160;<br/>
+Manager&#160;<br/>
+selectable and variation&#160;points&#160;in&#160;the&#160;configuration&#160;data.&#160;<br/>
+DaVinci&#160;Configurator&#160;&#160;Vector´s&#160;configuration&#160;and&#160;generation&#160;tool&#160;for&#160;MICROSAR&#160;BSW&#160;and&#160;RTE&#160;<br/>Pro&#160;<br/>DaVinci&#160;Developer&#160;<br/>
+Vector´s&#160;AUTOSAR&#160;SWC&#160;design&#160;editor&#160;<br/>
+Table&#160;6-1&#160;&#160;&#160;Glossary&#160;<br/>
+<b>6.2&#160;</b><br/>
+<b>Abbreviations&#160;</b><br/>
+<b>Abbreviation&#160;</b><br/>
+<b>Description&#160;</b><br/>
+API&#160;<br/>
+Application Programming Interface&#160;&#160;&#160;<br/>
+AUTOSAR&#160;<br/>
+Automotive Open System&#160;Architecture&#160;<br/>
+BSW&#160;<br/>
+Basis&#160;Software&#160;<br/>
+CDD&#160;<br/>
+Complex&#160;Drivers&#160;<br/>
+DEM&#160;<br/>
+Diagnostic&#160;Event&#160;Manager&#160;<br/>
+DET&#160;<br/>
+Development&#160;Error&#160;Tracer&#160;<br/>
+IDM&#160;<br/>
+MICROSAR&#160;Identity&#160;Manager&#160;<br/>
+ECU&#160;<br/>
+Electronic&#160;Control&#160;Unit&#160;<br/>
+MICROSAR&#160;<br/>
+Microcontroller&#160;Open&#160;System&#160;Architecture&#160;(the&#160;Vector&#160;AUTOSAR&#160;<br/>solution)&#160;<br/>
+RTE&#160;<br/>
+Runtime Environment&#160;<br/>
+SRS&#160;<br/>
+Software&#160;Requirement&#160;Specification&#160;<br/>
+SWC&#160;<br/>
+Software&#160;Component&#160;<br/>
+SWS&#160;<br/>
+Software&#160;Specification&#160;<br/>
+Table&#160;6-2&#160;&#160;&#160;Abbreviations&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+21&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=22></a>Technical Reference&#160;MICROSAR Identity&#160;Manager&#160;<br/>
+<b>7&#160;&#160;Contact&#160;</b><br/>
+Visit&#160;our website&#160;for&#160;more information&#160;on&#160;<br/>&#160;<br/><b>&gt;&#160;&#160;</b>News&#160;<br/>
+<b>&gt;&#160;&#160;</b>Products&#160;<br/>
+<b>&gt;&#160;&#160;</b>Demo&#160;software&#160;<br/>
+<b>&gt;&#160;&#160;</b>Support&#160;<br/>
+<b>&gt;&#160;&#160;</b>Training&#160;data&#160;<br/>
+<b>&gt;&#160;&#160;</b>Addresses&#160;<br/>
+&#160;<br/>www.vector.com&#160;<br/>
+&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.1.1&#160;<br/>
+22&#160;/&#160;22&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#5">1 Introduction</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#6">1.1 Comparison to Post-Build Loadable</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#7">2 Functional Description</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#7">2.1 Technical Background</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#8">2.2 Features</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#8">2.3 Deviations</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#9">3 Workflow Overview</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#9">3.1 Setting Up a Variant Project</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#11">3.2 BSW Configuration</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#11">3.3 Variance in Application Code</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#12">3.3.1 Variance of COM Signals</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#12">3.3.2 Variance in SWC and BSW APIs</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#13">3.4 Validation and Code Generation</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#13">3.5 BSW Initialization</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#14">3.5.1 Manual BSW Initialization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#15">4 Configuration</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#15">4.1 Activating Variance for BSW Modules</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#16">4.2 Semantics of ECU Configuration Variance</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#18">5 Integration</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#18">5.1 BSW Module Initialization</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#19">5.1.1 Implementation of EcuM_DeterminePbConfiguration()</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#19">5.1.2 BSWM Module Initialization Auto Configuration</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#20">5.1.3 Global Root Structure Customization</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#20">5.2 Critical Sections</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#20">5.3 Main Function Scheduling</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#21">6 Glossary and Abbreviations</a>
+<ul>
+<li><a href="TechnicalReference_IdentityManagers.html#21">6.1 Glossary</a></li>
+<li><a href="TechnicalReference_IdentityManagers.html#21">6.2 Abbreviations</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_IdentityManagers.html#22">7 Contact</a></li>
+</ul>
+<hr/>
+</body>
+</html>

@@ -1,0 +1,477 @@
+---
+title: HwAg1Meas_MDD
+linkTitle: HwAg1Meas_MDD
+weight: 3
+---
+
+<p><strong>Module Design Document</strong></p>
+<p><strong>For</strong></p>
+<p><strong>HwAg1Meas</strong></p>
+<p><strong>14-Aug-2017</strong></p>
+<p><strong>Prepared For:</strong></p>
+<p><strong>Software Engineering</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA</strong></p>
+<p><strong>Prepared By:</strong></p>
+<p><strong>Software Engineering,</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA</strong></p>
+<p><strong><br />
+<u>Change History</u></strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 28%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Description</strong></td>
+<td><strong>Author</strong></td>
+<td><strong>Version</strong></td>
+<td><strong>Date</strong></td>
+</tr>
+<tr class="even">
+<td>Initial Version</td>
+<td>Selva Sengottaiyan</td>
+<td>1.0</td>
+<td>21-July-2015</td>
+</tr>
+<tr class="odd">
+<td>Updated to v1.2.0 of the FDD</td>
+<td>Selva Sengottaiyan</td>
+<td>2.0</td>
+<td>11-Sep-2015</td>
+</tr>
+<tr class="even">
+<td>Updated to v1.4.0 of the FDD</td>
+<td>Selva Sengottaiyan</td>
+<td>3.0</td>
+<td>23-Dec-2015</td>
+</tr>
+<tr class="odd">
+<td>Updated to v1.11.0 of the FDD</td>
+<td>Ramachandran</td>
+<td>4.0</td>
+<td>21-Jun-2016</td>
+</tr>
+<tr class="even">
+<td>Updated for v2.1.0</td>
+<td>KK</td>
+<td>5.0</td>
+<td>11-Apr-2017</td>
+</tr>
+<tr class="odd">
+<td>Updated server runnable names to match DataDict.m and updated graphic</td>
+<td>Brionna Spencer</td>
+<td>6.0</td>
+<td>14-Aug-2017</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br />
+</strong></p>
+<p><u>Table of Contents</u></p>
+<p>1 Introduction 5</p>
+<p>1.1 Purpose 5</p>
+<p>1.2 Scope 5</p>
+<p>2 HwAg1Meas High-Level Description 6</p>
+<p>3 Design details of software module 7</p>
+<p>3.1 Graphical representation of HwAg1Meas 7</p>
+<p>3.2 Data Flow Diagram 7</p>
+<p>3.2.1 Component level DFD 7</p>
+<p>3.2.2 Function level DFD 7</p>
+<p>4 Constant Data Dictionary 8</p>
+<p>4.1 Program (fixed) Constants 8</p>
+<p>4.1.1 Embedded Constants 8</p>
+<p>5 Software Component Implementation 9</p>
+<p>5.1 Sub-Module Functions 9</p>
+<p>5.1.1 Init: HwAg1MeasInit1 9</p>
+<p>5.1.1.1 Design Rationale 9</p>
+<p>5.1.2 Per: HwAg1MeasPer1 9</p>
+<p>5.1.2.1 Design Rationale 9</p>
+<p>5.1.3 Per: HwAg1MeasPer2 9</p>
+<p>5.1.3.1 Design Rationale 9</p>
+<p>5.1.4 Per: HwAg1MeasPer3 9</p>
+<p>5.1.4.1 Design Rationale 9</p>
+<p>5.1.5 Per: HwAg1MeasPer4 9</p>
+<p>5.1.5.1 Design Rationale 9</p>
+<p>5.1.6 Per: HwAg1MeasPer5 9</p>
+<p>5.1.6.1 Design Rationale 9</p>
+<p>5.2 Server Runnables 10</p>
+<p>5.2.1 HwAg1AutTrim 10</p>
+<p>5.2.1.1 Design Rationale 10</p>
+<p>5.2.2 HwAg1ClrLtch 10</p>
+<p>5.2.2.1 Design Rationale 10</p>
+<p>5.2.3 HwAg1ClrTrim 10</p>
+<p>5.2.3.1 Design Rationale 10</p>
+<p>5.2.4 HwAg1ReadTrim 10</p>
+<p>5.2.4.1 Design Rationale 10</p>
+<p>5.2.5 HwAg1TrimPrfmdSts 10</p>
+<p>5.2.5.1 Design Rationale 10</p>
+<p>5.2.6 HwAg1WrTrim 10</p>
+<p>5.2.6.1 Design Rationale 10</p>
+<p>5.3 Interrupt Functions 10</p>
+<p>5.4 Module Internal (Local) Functions 11</p>
+<p>5.4.1 Local Function #1 11</p>
+<p>5.4.1.1 Design Rationale 11</p>
+<p>5.4.2 Local Function #2 11</p>
+<p>5.4.2.1 Design Rationale 11</p>
+<p>5.4.3 Local Function #3 11</p>
+<p>5.4.3.1 Design Rationale 11</p>
+<p>6 Known Limitations with Design 12</p>
+<p>7 UNIT TEST CONSIDERATION 13</p>
+<p>Appendix A Abbreviations and Acronyms 14</p>
+<p>Appendix B Glossary 15</p>
+<p>Appendix C References 16</p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Refer to FDD.</p>
+<h2 id="scope">Scope</h2>
+<h1 id="hwag1meas-high-level-description">HwAg1Meas High-Level Description</h1>
+<p>Refer to FDD</p>
+<h1 id="design-details-of-software-module">Design details of software module</h1>
+<h2 id="graphical-representation-of-hwag1meas">Graphical representation of HwAg1Meas</h2>
+<p><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/static/media/image1.png" style="width:3.80333in;height:4.55in" /></p>
+<h2 id="data-flow-diagram">Data Flow Diagram</h2>
+<h3 id="component-level-dfd">Component level DFD</h3>
+<p>Refer to FDD</p>
+<h3 id="function-level-dfd">Function level DFD</h3>
+<p>Refer to FDD</p>
+<h1 id="constant-data-dictionary">Constant Data Dictionary</h1>
+<h2 id="program-fixed-constants">Program (fixed) Constants</h2>
+<h3 id="embedded-constants">Embedded Constants</h3>
+<h4 id="local-constants">Local Constants</h4>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant Name</th>
+<th>Resolution</th>
+<th>Units</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MAXWAITININ_MICROSEC_U32</td>
+<td>1</td>
+<td>MicroSec</td>
+<td>2U</td>
+</tr>
+<tr class="even">
+<td>DATAAVLMAXWAIT_MICROSEC_U32</td>
+<td>1</td>
+<td>MicroSec</td>
+<td>300U</td>
+</tr>
+<tr class="odd">
+<td>COMSTSMAXWAIT_MICROSEC_U32</td>
+<td>1</td>
+<td>MicroSec</td>
+<td>5U</td>
+</tr>
+<tr class="even">
+<td>PRTCLFLTMASK_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0xFEU</td>
+</tr>
+<tr class="odd">
+<td>SNSRIDMASK_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0x00FU</td>
+</tr>
+<tr class="even">
+<td>MSGSTSMASK_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0x01U</td>
+</tr>
+<tr class="odd">
+<td>COMSTSMASK_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0x30000000UL</td>
+</tr>
+<tr class="even">
+<td>DATAMASK_CNT_U16</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0xFFF0U</td>
+</tr>
+</tbody>
+</table>
+<p><em>* Refer to FDD for other constant definitions</em></p>
+<h1 id="software-component-implementation">Software Component Implementation</h1>
+<h2 id="sub-module-functions">Sub-Module Functions</h2>
+<h2 id="init-hwag1measinit1">Init: HwAg1MeasInit1</h2>
+<h2 id="design-rationale">Design Rationale</h2>
+<p>None</p>
+<h2 id="per-hwag1measper1">Per: HwAg1MeasPer1</h2>
+<h2 id="design-rationale-1">Design Rationale</h2>
+<p>None</p>
+<h2 id="per-hwag1measper2">Per: HwAg1MeasPer2</h2>
+<h2 id="design-rationale-2">Design Rationale</h2>
+<p>None</p>
+<h2 id="per-hwag1measper3">Per: HwAg1MeasPer3</h2>
+<h2 id="design-rationale-3">Design Rationale</h2>
+<p>None</p>
+<h2 id="per-hwag1measper4">Per: HwAg1MeasPer4</h2>
+<h2 id="design-rationale-4">Design Rationale</h2>
+<p>None</p>
+<h2 id="per-hwag1measper5">Per: HwAg1MeasPer5</h2>
+<h2 id="design-rationale-5">Design Rationale</h2>
+<p>The implementation brings in the block “HwAg1Final” inside the True Condition of the “finalAbsAg” as the other error condition will just retain the previous value and rolling counter will not change. It saves extra instructions in the implementation to the match the FDD. Final Functionality is still the same.</p>
+<h2 id="server-runnables">Server Runnables </h2>
+<h2 id="hwag1auttrim">HwAg1AutTrim</h2>
+<h2 id="design-rationale-6">Design Rationale</h2>
+<p>None</p>
+<h2 id="hwag1clrltch">HwAg1ClrLtch</h2>
+<h2 id="design-rationale-7">Design Rationale</h2>
+<p>None</p>
+<h2 id="hwag1clrtrim">HwAg1ClrTrim</h2>
+<h2 id="design-rationale-8">Design Rationale</h2>
+<p>None</p>
+<h2 id="hwag1readtrim">HwAg1ReadTrim</h2>
+<h2 id="design-rationale-9">Design Rationale</h2>
+<p>None</p>
+<h2 id="hwag1trimprfmdsts">HwAg1TrimPrfmdSts</h2>
+<h2 id="design-rationale-10">Design Rationale</h2>
+<p>None</p>
+<h2 id="hwag1wrtrim">HwAg1WrTrim</h2>
+<h2 id="design-rationale-11">Design Rationale</h2>
+<p>None</p>
+<h2 id="interrupt-functions">Interrupt Functions</h2>
+<p>None</p>
+<h2 id="module-internal-local-functions">Module Internal (Local) Functions</h2>
+<h3 id="local-function-1">Local Function #1</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 35%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>CalcHwAgIdx</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>HwAgStep_HwDeg_T_f32</td>
+<td>float32</td>
+<td>-900</td>
+<td>900</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>Index_Cnt_T_u08</td>
+<td>uint16</td>
+<td>0</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-12">Design Rationale</h2>
+<p>The implementation deviates from the FDD block “Intpn” block. The implementation finds the minimum of absolute values of the difference between HwAg1Step with all the values from the Calibration table and find the index associated with minimum value of the difference in the calibration table.</p>
+<h2 id="local-function-2">Local Function #2</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 35%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>ReadRegister</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>RegisterDummyRead_Cnt_T_u32</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>RegisterDummyRead_Cnt_T_u32</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-13">Design Rationale</h2>
+<p>This function can be used both for read-and-use and for read-and-discard.</p>
+<h2 id="local-function-3">Local Function #3</h2>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 35%" />
+<col style="width: 13%" />
+<col style="width: 17%" />
+<col style="width: 15%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>UpdtLthOnValChng</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>SigQlfrIfNtc_T_enum</td>
+<td>SigQlfr1</td>
+<td>SIGQLFR_NORES</td>
+<td>SIGQLFR_FAILD</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-14">Design Rationale</h2>
+<p>This function is split from Per4 to reduce path count and cyclomatic complexity.</p>
+<p>Path in Model: CM670A_HwAg1Meas/HwAg1Meas/HwAg1MeasPer4/HwAgRead/Update Latch on value change</p>
+<h1 id="known-limitations-with-design">Known Limitations with Design</h1>
+<p>None</p>
+<h1 id="unit-test-consideration">UNIT TEST CONSIDERATION</h1>
+<ul>
+<li><p>Roll Over is intentional for</p>
+<ul>
+<li><p>*Rte_Pim_HwAg1Snsr0ComStsErrCntr()</p></li>
+<li><p>*Rte_Pim_HwAg1Snsr0IdErrCntr()</p></li>
+<li><p>*Rte_Pim_HwAg1Snsr0IntSnsrErrCntr()</p></li>
+<li><p>*Rte_Pim_HwAg1Snsr0NoMsgErrCntr()</p></li>
+<li><p>*Rte_Pim_HwAg1Snsr1ComStsErrCntr()</p></li>
+<li><p>*Rte_Pim_HwAg1Snsr1IdErrCntr()</p></li>
+<li><p>*Rte_Pim_HwAg1Snsr1IntSnsrErrCntr()</p></li>
+<li><p>*Rte_Pim_HwAg1Snsr1NoMsgErrCntr()</p></li>
+<li><p>(*Rte_Pim_HwAg1PrevRollCnt).</p></li>
+</ul></li>
+<li><p>Thus, counter acts in circular</p></li>
+</ul>
+<p class="heading" id="abbreviations-and-acronyms">Abbreviations and Acronyms</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Abbreviation or Acronym</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MDD</td>
+<td>Module Design Document</td>
+</tr>
+<tr class="even">
+<td>DFD</td>
+<td>Data Flow Diagram</td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="glossary">Glossary</p>
+<p><strong>Note</strong>: Terms and definitions from the source “Nexteer Automotive” take precedence over all other definitions of the same term. Terms and definitions from the source “Nexteer Automotive” are formulated from multiple sources, including the following:</p>
+<ul>
+<li><p>ISO 9000</p></li>
+<li><p>ISO/IEC 12207</p></li>
+<li><p>ISO/IEC 15504</p></li>
+<li><p>Automotive SPICE® Process Reference Model (PRM)</p></li>
+<li><p>Automotive SPICE® Process Assessment Model (PAM)</p></li>
+<li><p>ISO/IEC 15288</p></li>
+<li><p>ISO 26262</p></li>
+<li><p>IEEE Standards</p></li>
+<li><p>SWEBOK</p></li>
+<li><p>PMBOK</p></li>
+<li><p>Existing Nexteer Automotive documentation</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 53%" />
+<col style="width: 21%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="references">References</p>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 69%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Ref. #</strong></th>
+<th><strong>Title</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>AUTOSAR Specification of Memory Mapping</td>
+<td>v1.3.0 R4.0 Rev 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>MDD Guideline</td>
+<td>EA4 01.00.01</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>EA4 Software Naming Conventions</td>
+<td>01.01.00</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Software Design and Coding Standards</td>
+<td>2.1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>FDD - CM670A_HwAg1Meas_Design</td>
+<td>See Synergy sub project version</td>
+</tr>
+</tbody>
+</table>

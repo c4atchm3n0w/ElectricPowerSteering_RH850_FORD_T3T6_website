@@ -1,0 +1,51 @@
+---
+title: dutree
+linkTitle: dutree
+weight: 17
+---
+
+<p>Path: cwi.nl!sun4nl!mcsun!uunet!cs.utexas.edu!convex!usenet</p>
+<p>From: tchrist@convex.COM (Tom Christiansen)</p>
+<p>Newsgroups: comp.lang.perl</p>
+<p>Subject: Re: The problems of Perl (Re: Question (silly?))</p>
+<p>Message-ID: &lt;1992Jan17.053115.4220@convex.com&gt;</p>
+<p>Date: 17 Jan 92 05:31:15 GMT</p>
+<p>References: &lt;17458@ector.cs.purdue.edu&gt; &lt;1992Jan16.165347.25583@cherokee.uswest.com&gt; &lt;=#Hues+4@cs.psu.edu&gt;</p>
+<p>Sender: usenet@convex.com (news access account)</p>
+<p>Reply-To: tchrist@convex.COM (Tom Christiansen)</p>
+<p>Organization: CONVEX Realtime Development, Colorado Springs, CO</p>
+<p>Lines: 83</p>
+<p>Nntp-Posting-Host: pixel.convex.com</p>
+<p>From the keyboard of flee@cs.psu.edu (Felix Lee):</p>
+<p>:And Perl is definitely awkward with data types. I haven't yet found a</p>
+<p>:pleasant way of shoving non-trivial data types into Perl's grammar.</p>
+<p>Yes, it's pretty aweful at that, alright. Sometimes I write perl programs</p>
+<p>that need them, and sometimes it just takes a little creativity. But</p>
+<p>sometimes it's not worth it. I actually wrote a C program the other day</p>
+<p>(gasp) because I didn't want to deal with a game matrix with six links per node.</p>
+<p>:Here's a very simple problem that's tricky to express in Perl: process</p>
+<p>:the output of "du" to produce output that's indented to reflect the</p>
+<p>:tree structure, and with each subtree sorted by size. Something like:</p>
+<p>: 434 /etc</p>
+<p>: | 344 .</p>
+<p>: | 50 install</p>
+<p>: | 35 uucp</p>
+<p>: | 3 nserve</p>
+<p>: | | 2 .</p>
+<p>: | | 1 auth.info</p>
+<p>: | 1 sm</p>
+<p>: | 1 sm.bak</p>
+<p>At first I thought I could just keep one local list around</p>
+<p>at once, but this seems inherently recursive. Which means</p>
+<p>I need an real recursive data structure. Maybe you could</p>
+<p>do it with one of the %assoc arrays Larry uses in the begat</p>
+<p>programs, but I broke down and got dirty. I think the hardest</p>
+<p>part was matching Felix's desired output exactly. It's not</p>
+<p>blazingly fast: I should probably inline the &amp;childof routine,</p>
+<p>but it *was* faster to write than I could have written the</p>
+<p>equivalent C program.</p>
+<p>--tom</p>
+<p>--</p>
+<p>"GUIs normally make it simple to accomplish simple actions and impossible</p>
+<p>to accomplish complex actions." --Doug Gwyn (22/Jun/91 in comp.unix.wizards)</p>
+<p>Tom Christiansen tchrist@convex.com convex!tchrist</p>

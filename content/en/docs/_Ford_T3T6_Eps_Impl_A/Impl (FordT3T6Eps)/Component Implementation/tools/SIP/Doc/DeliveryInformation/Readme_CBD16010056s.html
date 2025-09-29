@@ -1,0 +1,63 @@
+---
+title: Readme_CBD16010056s
+linkTitle: Readme_CBD16010056s
+weight: 82
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/Readme_CBD16010056-1_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/Readme_CBD16010056-1_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/Readme_CBD16010056-1_3.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/Readme_CBD16010056-1_4.jpg"/><br/>
+&#160;<br/>
+<b>Readme&#160;CBD1601056&#160;</b><br/>
+&#160;<b>Note&#160;/&#160;Integration hints&#160;</b><br/>
+<b>&#160;<br/></b>Value&#160;of&#160;PLL_CLOCK0&#160;is&#160;directly&#160;getting&#160;assigned to&#160;CPU&#160;frequency&#160;in code.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;<br/></b>The&#160;value&#160;of&#160;“FLS_CPU_FREQUENCY_MHZ”&#160;in&#160;<b>Fls_Cfg.h</b>&#160;should be&#160;corrected&#160;<br/>manually&#160;by&#160;the&#160;correct&#160;value&#160;of&#160;CPU&#160;frequency.&#160;<br/>Current&#160;SIP&#160;is&#160;tested&#160;with&#160;“FLS_CPU_FREQUENCY_MHZ”&#160;240U.&#160;Every&#160;time you&#160;<br/>generate&#160;the&#160;project&#160;need to&#160;replace&#160;the&#160;value&#160;of&#160;“FLS_CPU_FREQUENCY_MHZ”&#160;in&#160;<br/>code&#160;‘Fls_Cfg.h’.&#160;This&#160;is&#160;the&#160;known issue;&#160;developers&#160;are currently&#160;working&#160;on&#160;it.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=2></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/Readme_CBD16010056-2_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/Readme_CBD16010056-2_2.png"/><br/>
+&#160;<br/>
+&#160;<b>Limitation&#160;/ Restriction&#160;</b><br/>
+<b>&#160;<br/></b>1)&#160;This&#160;SIP&#160;currently&#160;supports&#160;only&#160;scalability&#160;class&#160;SC3&#160;OS.&#160;In&#160;the&#160;next&#160;delivery&#160;we&#160;<br/>will&#160;provide&#160;scalability&#160;class&#160;SC4&#160;OS.&#160;This&#160;limitation is because&#160;of&#160;the&#160;availability&#160;of&#160;<br/>system&#160;timer&#160;channels&#160;in OS&#160;for&#160;use.&#160;SC4&#160;requires&#160;at&#160;least&#160;2.&#160;<br/>
+&#160;<br/>2)&#160;Following&#160;compiler&#160;options&#160;are&#160;not&#160;getting&#160;identified:&#160;<br/>
+&#160;<br/>
+ccrh850:&#160;Warning: file&#160;'?shorten_loads' ignored with&#160;these options&#160;<br/>ccrh850:&#160;Warning: file&#160;'?shorten_moves' ignored with&#160;these options&#160;<br/>ccrh850:&#160;Warning: file&#160;'?delete' ignored&#160;with these&#160;options&#160;<br/>ccrh850:&#160;Warning: file&#160;'?nofloatio'&#160;ignored&#160;with these options&#160;<br/>ccrh850:&#160;Warning: file&#160;'?reserve_r2' ignored&#160;with these options&#160;<br/>
+&#160;<br/>
+<hr/>
+</body>
+</html>

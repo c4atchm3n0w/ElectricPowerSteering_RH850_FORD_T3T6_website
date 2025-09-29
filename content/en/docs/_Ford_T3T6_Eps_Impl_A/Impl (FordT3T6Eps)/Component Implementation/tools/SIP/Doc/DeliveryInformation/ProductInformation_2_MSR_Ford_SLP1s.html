@@ -1,0 +1,265 @@
+---
+title: ProductInformation_2_MSR_Ford_SLP1s
+linkTitle: ProductInformation_2_MSR_Ford_SLP1s
+weight: 78
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-1_1.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+<b>1&#160;&#160;Product&#160;Overview&#160;</b><br/>
+All&#160;program&#160;specific details are described&#160;in&#160;this data&#160;sheet&#160;as an&#160;extension&#160;to&#160;the&#160;general&#160;<br/>Product&#160;Information&#160;MICROSAR 4.&#160;This&#160;data&#160;sheet&#160;covers the&#160;following&#160;aspects:&#160;&#160;<br/>
+<b>&gt;&#160;&#160;</b>Software&#160;architecture&#160;and&#160;supported&#160;specifications&#160;<br/>
+<b>&gt;&#160;&#160;</b>Tool&#160;support&#160;and&#160;workflow&#160;<br/>
+<b>&gt;&#160;&#160;</b>Bootloader&#160;<br/>
+<b>1.1&#160;</b><br/>
+<b>Supported&#160;Specifications&#160;</b><br/>
+The&#160;offered&#160;software&#160;modules&#160;are&#160;based&#160;on&#160;AUTOSAR&#160;4.x&#160;specifications&#160;(we&#160;agreed&#160;with&#160;<br/>Ford&#160;to&#160;use&#160;the&#160;newest&#160;available&#160;versions).&#160;<br/>They&#160;&#160;cover&#160;&#160;the&#160;&#160;communication&#160;&#160;requirements&#160;&#160;based&#160;&#160;on&#160;&#160;the&#160;&#160;Ford&#160;&#160;specification&#160;&#160;“High&#160;&#160;&amp;&#160;<br/>Medium&#160;&#160;Speed&#160;&#160;CAN&#160;&#160;CGEA&#160;&#160;ECU&#160;&#160;Level&#160;&#160;Functional&#160;&#160;Requirements&#160;&#160;Specification”,&#160;&#160;version&#160;<br/>2009.&#160;<br/>The&#160;DCM/DEM&#160;is&#160;extended&#160;&#160;to&#160;support&#160;the&#160;Ford&#160;specification&#160;“Generic&#160;Global&#160;Diagnostic&#160;<br/>Specification&#160;&#160;(GGDS)”,&#160;&#160;issue&#160;&#160;index&#160;&#160;004,&#160;&#160;volume&#160;&#160;1,&#160;&#160;document&#160;&#160;no.&#160;&#160;00.06.15.001&#160;&#160;dated&#160;<br/>2013-05-02.&#160;<br/>The&#160;Ford&#160;security&#160;algorithm&#160;is&#160;based&#160;on&#160;“EESE&#160;Diagnostic&#160;Application&#160;Security&#160;Algorithm”&#160;<br/>document&#160;no.&#160;00.06.15.150,&#160;Rev.&#160;001.&#160;<br/>The&#160;offered&#160;Ethernet&#160;/&#160;IP&#160;modules are&#160;based&#160;on&#160;AUTOSAR 4.2.1&#160;specifications.&#160;&#160;&#160;&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+1&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name=2></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-2_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-2_2.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+<b>1.2&#160;</b><br/>
+<b>Software&#160;Architecture&#160;</b><br/>
+&#160;<br/>
+Figure&#160;1-1&#160;&#160;Software&#160;Architecture&#160;<br/>
+All&#160;&#160;modules&#160;&#160;for&#160;&#160;Ford&#160;AUTOSAR&#160;&#160;are&#160;&#160;colored&#160;&#160;green&#160;&#160;(FNOS&#160;&#160;Modules).&#160;&#160;&#160;&#160;Only&#160;&#160;the&#160;&#160;protocol&#160;<br/>components&#160;needed&#160;for&#160;a&#160;specific&#160;ECU&#160;will&#160;be&#160;included&#160;in&#160;the&#160;requested&#160;package&#160;i.e.&#160;CAN&#160;<br/>and/or&#160;LIN&#160;per&#160;the&#160;customer&#160;request&#160;based&#160;on&#160;Ford&#160;requirements.&#160;&#160;Additional&#160;AUTOSAR&#160;<br/>components&#160;can&#160;be&#160;requested&#160;but&#160;are&#160;optional&#160;for a&#160;Ford ECU.&#160;<br/>
+<b>1.3&#160;</b><br/>
+<b>MICROSAR&#160;Ford&#160;SLP1&#160;specific&#160;modules&#160;</b><br/>
+<b>1.3.1&#160;</b><br/>
+<b>Lib delivery&#160;of security&#160;algorithm&#160;</b><br/>
+The&#160;&#160;Ford-specific&#160;&#160;security&#160;&#160;algorithm&#160;&#160;is&#160;&#160;delivered&#160;&#160;as&#160;&#160;a&#160;&#160;lib&#160;&#160;file,&#160;&#160;please&#160;&#160;note&#160;&#160;that&#160;&#160;this&#160;&#160;file&#160;<br/>depends&#160;on&#160;the&#160;compiler options used&#160;for the&#160;delivery.&#160;&#160;<br/>A&#160;&#160;change&#160;&#160;of&#160;&#160;the&#160;&#160;compiler&#160;&#160;or&#160;&#160;compiler&#160;&#160;options&#160;&#160;later&#160;&#160;in&#160;&#160;the&#160;&#160;project&#160;&#160;might&#160;&#160;result&#160;&#160;in&#160;<br/>incompatibilities.&#160;<br/>The&#160;&#160;security&#160;&#160;algorithm&#160;&#160;is&#160;&#160;implemented&#160;&#160;as&#160;&#160;a&#160;&#160;SWC,&#160;&#160;which&#160;&#160;uses&#160;&#160;the&#160;&#160;BSW&#160;&#160;module&#160;&#160;CSM&#160;<br/>(CRY)&#160;and&#160;an&#160;additional module&#160;&#34;CRY&#160;(SW-based) Ford&#34;&#160;with&#160;specific content&#160;from&#160;Ford.&#160;<br/>
+<b>1.3.2&#160;</b><br/>
+<b>E2E&#160;algorithm&#160;</b><br/>
+There is&#160;no&#160;common&#160;agreement&#160;within&#160;Ford&#160;which&#160;algorithm&#160;(profile) is used&#160;for end&#160;to&#160;end&#160;<br/>protection&#160;&#160;(calculation&#160;&#160;of&#160;&#160;CRC&#160;&#160;and&#160;&#160;message&#160;&#160;counter).&#160;&#160;It&#160;&#160;is&#160;&#160;defined&#160;&#160;within&#160;&#160;a&#160;&#160;project&#160;&#160;and&#160;<br/>might&#160;even&#160;be&#160;different&#160;within&#160;one&#160;project&#160;from&#160;one&#160;PDU&#160;to&#160;the&#160;next&#160;PDU&#160;as&#160;it&#160;depends&#160;on&#160;<br/>the&#160;agreement&#160;involving&#160;all&#160;ECUs sending/receiving&#160;the&#160;specific PDU.&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+2&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name=3></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-3_1.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+Vector&#160;can&#160;only&#160;offer&#160;the&#160;AUTOSAR&#160;conform&#160;profiles,&#160;they&#160;can&#160;be&#160;mixed&#160;within&#160;one&#160;ECU,&#160;<br/>please&#160;let&#160;us&#160;know&#160;which&#160;profile&#160;you&#160;need.&#160;Profile&#160;1&#160;and&#160;2&#160;is&#160;suitable&#160;for&#160;ECUs&#160;connected&#160;<br/>to&#160;CAN&#160;(CRC&#160;is 8&#160;bit)&#160;and&#160;will be&#160;supported&#160;by&#160;the&#160;protection&#160;wrapper as&#160;well.&#160;&#160;<br/>If&#160;&#160;the&#160;&#160;algorithm&#160;&#160;doesn’t&#160;&#160;match&#160;&#160;to&#160;&#160;the&#160;&#160;AUTOSAR&#160;&#160;profiles&#160;&#160;the&#160;&#160;application&#160;&#160;has&#160;&#160;to&#160;&#160;do&#160;&#160;the&#160;<br/>implementation.&#160;<br/>
+<b>1.3.3&#160;</b><br/>
+<b>VSG&#160;for diagnostics&#160;</b><br/>
+For&#160;&#160;details&#160;&#160;about&#160;&#160;VSG&#160;&#160;support&#160;&#160;(vehicle&#160;&#160;system&#160;&#160;group,&#160;&#160;Ford&#160;&#160;internally&#160;&#160;called&#160;<br/>Dependencies)&#160;<br/>
+we&#160;<br/>
+provide&#160;<br/>
+an&#160;<br/>
+Application&#160;<br/>
+Note&#160;<br/>
+AN-ISC-8-<br/>
+1189_Vehicle_System_Group_Support.&#160;&#160;This&#160;&#160;feature&#160;&#160;can&#160;&#160;be&#160;&#160;used&#160;&#160;to&#160;&#160;support&#160;&#160;different&#160;<br/>diagnostic requirements in&#160;one&#160;Ecu&#160;software.&#160;<br/>
+<b>1.3.4&#160;</b><br/>
+<b>Ford transparent&#160;gateway&#160;</b><br/>
+For&#160;ECUs&#160;that&#160;need&#160;to&#160;support&#160;the&#160;transparent&#160;gateway&#160;according&#160;to&#160;GGDS004&#160;Annex&#160;F&#160;a&#160;<br/>complex&#160;device&#160;driver is available.&#160;<br/>
+<b>1.3.5&#160;</b><br/>
+<b>Limitation DEM&#160;</b><br/>
+<b>&gt;&#160;&#160;</b>No&#160;integrated&#160;support&#160;of&#160;ISO&#160;15031-5&#160;/&#160;SAE&#160;J1979&#160;(OBD services)&#160;<br/>
+<b>&gt;&#160;&#160;</b>No&#160;support&#160;for separate&#160;aging&#160;counter&#160;for testFailedSinceLastClear&#160;Bit versus&#160;<br/>
+confirmed&#160;DTC bit (typically&#160;only&#160;needed&#160;for ECM/TCM)&#160;<br/>
+<b>&gt;&#160;&#160;</b>All&#160;supported&#160;snapshot&#160;records&#160;must&#160;contain&#160;the&#160;same&#160;list of&#160;DIDs&#160;for a&#160;given&#160;DTC&#160;<br/>
+<b>&gt;&#160;&#160;</b>No&#160;integrated&#160;support&#160;for ISO&#160;14229-1&#160;service&#160;function&#160;$19&#160;sub&#160;–function&#160;$17,&#160;$18&#160;<br/>
+and&#160;$19&#160;<br/>
+<b>&gt;&#160;&#160;</b>There&#160;are&#160;some&#160;additional requirements&#160;by&#160;Ford to&#160;implement&#160;OnDemand&#160;DTCs.&#160;This&#160;<br/>
+is not&#160;in&#160;the&#160;scope&#160;of&#160;the&#160;DEM.&#160;There is&#160;no&#160;support in&#160;the&#160;Ford SLP1&#160;for this so&#160;the&#160;<br/>application&#160;has to&#160;implement&#160;it.&#160;<br/>
+<b>1.3.6&#160;</b><br/>
+<b>Limitation DCM&#160;</b><br/>
+Support&#160;for the&#160;following&#160;features&#160;is&#160;planned&#160;&#160;<br/>
+<b>&gt;&#160;&#160;</b>SID 0x2F with&#160;CEMR and&#160;bitmapped&#160;signals&#160;&#160;R18&#160;(April 2017)&#160;<br/>
+<b>&gt;&#160;&#160;</b>SID 0x31&#160;&#34;RoutineInfo&#34;&#160;and&#160;OBD2&#160;routines&#160;&#160;R17&#160;(December 2016)&#160;<br/>
+<b>1.3.7&#160;</b><br/>
+<b>Integration Review&#160;</b><br/>
+For Ford projects&#160;an&#160;integration&#160;review&#160;is required&#160;it&#160;will be&#160;offered&#160;with&#160;the&#160;FNOS&#160;stack.&#160;<br/>
+<b>1.3.8&#160;</b><br/>
+<b>Priority&#160;inversion&#160;avoidance&#160;(PIA)&#160;</b><br/>
+If&#160;PIA&#160;is&#160;required&#160;in&#160;your&#160;project&#160;please&#160;note&#160;the&#160;following&#160;(typically&#160;external&#160;PIA&#160;is&#160;not&#160;of&#160;<br/>interest&#160;to&#160;Ford).&#160;<br/>Autosar defines Can&#160;driver features&#160;for implementing&#160;PIA:&#160;<br/>
+<b>&gt;&#160;&#160;</b>Multiplexed&#160;Tx&#160;for&#160;external PIA&#160;(multiple&#160;Tx&#160;mailboxes&#160;are used&#160;for&#160;BasicCAN&#160;<br/>
+transmission).&#160;<br/>
+<b>&gt;&#160;&#160;</b>Hardware (Transmit)&#160;Cancellation&#160;for internal&#160;PIA&#160;<br/>
+But&#160;not&#160;all&#160;hardware&#160;platforms&#160;support&#160;this,&#160;due&#160;to&#160;hardware&#160;limitations.&#160;So&#160;if&#160;this&#160;topic&#160;is&#160;<br/>important&#160;&#160;for&#160;&#160;your&#160;&#160;Ford&#160;&#160;project,&#160;&#160;please&#160;&#160;select&#160;&#160;a&#160;&#160;hardware&#160;&#160;platform&#160;&#160;without&#160;&#160;limitations&#160;&#160;in&#160;<br/>regard&#160;to&#160;PIA.&#160;Internal&#160;PIA&#160;can&#160;be&#160;fulfilled&#160;as&#160;well&#160;by&#160;putting&#160;all&#160;send&#160;PDUs&#160;into&#160;a&#160;FullCAN&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+3&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name=4></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-4_1.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+buffer,&#160;&#160;but&#160;&#160;this&#160;&#160;solution&#160;&#160;depends&#160;&#160;on&#160;&#160;the&#160;&#160;available&#160;&#160;mailboxes&#160;&#160;and&#160;&#160;on&#160;&#160;the&#160;&#160;communication&#160;<br/>description&#160;distributed&#160;by&#160;Ford.&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+4&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name=5></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-5_1.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+<b>2&#160;&#160;Tool&#160;Chain&#160;</b><br/>
+This&#160;&#160;chapter&#160;&#160;gives&#160;&#160;an&#160;&#160;overview&#160;&#160;over&#160;&#160;the&#160;&#160;available&#160;&#160;tool&#160;&#160;chain,&#160;&#160;which&#160;&#160;supports&#160;&#160;the&#160;<br/>configuration&#160;&#160;of&#160;&#160;the&#160;&#160;Basic&#160;&#160;Software&#160;&#160;(BSW),&#160;&#160;the&#160;&#160;Runtime&#160;&#160;Environment&#160;&#160;(RTE),&#160;&#160;Software&#160;<br/>Components&#160;(SWC)&#160;and,&#160;if&#160;available,&#160;of&#160;the&#160;boot&#160;loader.&#160;<br/>Please&#160;&#160;refer&#160;&#160;to&#160;&#160;the&#160;&#160;Vector&#160;&#160;Knowledge&#160;&#160;Base&#160;&#160;for&#160;&#160;a&#160;&#160;list&#160;&#160;of&#160;&#160;supported&#160;&#160;operating&#160;&#160;systems&#160;&#160;of&#160;<br/>each&#160;tool.&#160;<br/>
+<b>2.1&#160;</b><br/>
+<b>Configuration Tools&#160;</b><br/>
+The&#160;basic delivery&#160;set&#160;includes&#160;the&#160;following&#160;tools:&#160;<br/>&#160;(mandated&#160;by&#160;Ford)&#160;<br/>
+<b>&gt;&#160;&#160;DaVinci&#160;Configurator&#160;Pro&#160;Version 5</b>:&#160;&#160;<br/>
+<b>&gt;&#160;&#160;</b>Recommended&#160;editor&#160;for MICROSAR BSW,&#160;MICROSAR OS&#160;<br/>
+<b>&gt;&#160;&#160;</b>Recommended&#160;configurator&#160;for MICROSAR&#160;RTE&#160;<br/>
+<b>&gt;&#160;&#160;</b>Generic Configuration&#160;editor&#160;(GCE)&#160;which&#160;allows&#160;the&#160;configuration&#160;of&#160;any&#160;software&#160;<br/>
+module&#160;which&#160;provides&#160;an&#160;AUTOSAR&#160;Basic Software Module&#160;Description&#160;(BSWMD).&#160;<br/>
+<b>&gt;&#160;&#160;</b>Use&#160;Case&#160;editors&#160;and&#160;validators&#160;<br/>
+<b>2.2&#160;</b><br/>
+<b>Additional&#160;Tools&#160;</b><br/>
+<b>&gt;&#160;&#160;DaVinci</b>&#160;<b>Developer</b>:&#160;&#160;SWC&#160;editor.&#160;Basic&#160;features&#160;are&#160;&#160;<br/>
+<b>&gt;&#160;&#160;</b>Creation&#160;and&#160;configuration&#160;of&#160;atomic&#160;SWC&#160;and&#160;SWC&#160;compositions&#160;<br/>
+<b>&gt;&#160;&#160;</b>Support of&#160;several&#160;AUTOSAR versions when&#160;importing&#160;SWC&#160;descriptions&#160;that&#160;have&#160;<br/>
+been&#160;created&#160;by&#160;AUTOSAR-compliant&#160;tools&#160;<br/>
+<b>&gt;&#160;&#160;CANdela&#160;Studio</b>:&#160;This&#160;tool&#160;provides easy&#160;editing&#160;and&#160;creation&#160;of&#160;diagnostic&#160;<br/>
+configuration&#160;files&#160;(CDD)&#160;as used&#160;by&#160;the&#160;MICROSAR DCM&#160;and&#160;DEM.&#160;<br/>
+<b>2.3&#160;</b><br/>
+<b>Supported&#160;Interchange&#160;Formats&#160;</b><br/>
+<b>&gt;&#160;&#160;CAN&#160;&#160;</b><br/>
+DBC, (AUTOSAR System&#160;Description&#160;4.2.1&#160;planned&#160;for&#160;future)&#160;<br/>
+<b>&gt;&#160;&#160;LIN&#160;</b>&#160;<br/>
+LDF 2.1&#160;, (AUTOSAR&#160;System&#160;Description&#160;4.2.1&#160;planned&#160;for&#160;future)&#160;<br/>
+<b>&gt;&#160;&#160;CDD</b>&#160;<br/>
+CDD manufacturer type&#160;“Ford” required.&#160;<br/>&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+5&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name=6></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-6_1.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+<b>3&#160;&#160;Workflow&#160;</b><br/>
+Input&#160;files&#160;provided&#160;by&#160;<br/>
+<b>DBC</b><br/>
+<b>.xml</b><br/>
+Ford<br/>
+<b>DaVinci&#160;Developer</b><br/>
+<b>LDF</b><br/>
+Contains&#160;communication<br/>
+Software&#160;Component&#160;<br/>
+information,&#160;needed<br/>
+Description&#160;files<br/>
+for&#160;the&#160;ECU<br/>
+<b>Embedded&#160;Coder</b><br/>
+<b>TargetLink</b><br/>
+<b>DaVinci&#160;Configurator&#160;Pro</b><br/>
+<b>Configuration&#160;of&#160;RTE&#160;+ BSW</b><br/>
+SystemDesc&#160;<br/>
+OEM&#160;Preconfig.<br/>
+Conversion<br/>
+BSW&#160;module&#160;<br/>
+<b>.c</b><br/>
+<b>.h</b><br/>
+configuration&#160;header&#160;<br/>
+<b>.xml</b><br/>
+Editing&#160;and<br/>
+and&#160;code&#160;files<br/>
+ECU&#160;Extract&#160;of&#160;<br/>
+Generation<br/>
+RTE&#160;header&#160;and&#160;code&#160;<br/>
+System&#160;Description<br/>
+files<br/>
+SWC&#160;header&#160;files<br/>
+Base&#160;ECUC&#160;<br/>
+<b>.cdd</b><br/>
+Generation<br/>
+CANdela&#160;<br/>
+Diagnostic&#160;Data<br/>
+<b>.xml</b><br/>
+<b>Other&#160;AUTOSAR&#160;tools</b><br/>
+ECU&#160;Configuration<br/>
+Description<br/>
+&#160;<br/>
+Figure&#160;3-1&#160;&#160;Workflow,&#160;of&#160;BSW&#160;configuration&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+6&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name=7></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-7_1.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+<b>4&#160;&#160;Additional&#160;Information&#160;</b><br/>
+<b>&gt;&#160;&#160;Legislative&#160;On&#160;Board&#160;Diagnostic&#160;(OBD)&#160;</b><br/>
+Legislative&#160;OBD2&#160;support can&#160;be&#160;ordered&#160;as&#160;an&#160;optional extension&#160;to&#160;the&#160;MICROSAR&#160;<br/>DCM&#160;module.&#160;This add-on&#160;supports&#160;the&#160;OBD&#160;diagnostic services&#160;$01&#160;to&#160;$0A&#160;according&#160;<br/>to&#160;AUTOSAR and&#160;SAE&#160;J1979&#160;/&#160;ISO&#160;15031.&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+7&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name=8></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/DeliveryInformation/ProductInformation_2_MSR_Ford_SLP1-8_1.png"/><br/>
+Product&#160;Information&#160;MICROSAR Ford SLP1&#160;<br/>
+<b>5&#160;&#160;Bootloader&#160;</b><br/>
+For&#160;&#160;Ford&#160;&#160;projects&#160;&#160;an&#160;&#160;additional&#160;&#160;FBL&#160;&#160;package&#160;&#160;is&#160;&#160;required.&#160;&#160;A&#160;&#160;FNOS&#160;&#160;FBL&#160;&#160;according&#160;&#160;to&#160;<br/>“Software&#160;Download&#160;Specification”&#160;Document&#160;No.&#160;00.06.15.002,&#160;Rev.&#160;006&#160;dated:&#160;2013-05-<br/>02&#160;will be&#160;offered.&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;2.03.01&#160;<br/>
+8&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;4.7.2&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#1">1 Product Overview</a>
+<ul>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#1">1.1 Supported Specifications</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#2">1.2 Software Architecture</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#2">1.3 MICROSAR Ford SLP1 specific modules</a>
+<ul>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#2">1.3.1 Lib delivery of security algorithm</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#2">1.3.2 E2E algorithm</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#3">1.3.3 VSG for diagnostics</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#3">1.3.4 Ford transparent gateway</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#3">1.3.5 Limitation DEM</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#3">1.3.6 Limitation DCM</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#3">1.3.7 Integration Review</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#3">1.3.8 Priority inversion avoidance (PIA)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#5">2 Tool Chain</a>
+<ul>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#5">2.1 Configuration Tools</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#5">2.2 Additional Tools</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#5">2.3 Supported Interchange Formats</a></li>
+</ul>
+</li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#6">3 Workflow</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#7">4 Additional Information</a></li>
+<li><a href="ProductInformation_2_MSR_Ford_SLP1s.html#8">5 Bootloader</a></li>
+</ul>
+<hr/>
+</body>
+</html>

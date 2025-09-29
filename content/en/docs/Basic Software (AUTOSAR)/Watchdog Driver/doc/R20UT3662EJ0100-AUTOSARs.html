@@ -1,0 +1,1111 @@
+---
+title: R20UT3662EJ0100-AUTOSARs
+linkTitle: R20UT3662EJ0100-AUTOSARs
+weight: 9
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Wdg/doc/R20UT3662EJ0100-AUTOSAR-1_1.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Wdg/doc/R20UT3662EJ0100-AUTOSAR-1_2.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Wdg/doc/R20UT3662EJ0100-AUTOSAR-1_3.png"/><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160; &#160;&#160;&#160;&#160;&#160;&#160;AUTOSAR&#160;MCAL&#160;R4.0.3&#160;<br/>
+User’s Manual&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+WDG&#160;Driver&#160;Component&#160;Ver.1.0.2&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Generation&#160;Tool&#160;User’s&#160;Manual&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;Target&#160;Device:&#160;<br/>
+&#160;<br/>
+RH850/P1x-C&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+All&#160;information&#160;contained&#160;in&#160;these&#160;materials,&#160;including&#160;products&#160;and&#160;product&#160;specifications,&#160;<br/>represents&#160;information&#160;on&#160;the&#160;product&#160;at&#160;the&#160;time&#160;of&#160;publication&#160;and&#160;is&#160;subject&#160;to&#160;change&#160;by&#160;<br/>Renesas&#160;Electronics&#160;Corp.&#160;without&#160;notice.&#160;Please&#160;review&#160;the&#160;latest&#160;information&#160;published&#160;by&#160;<br/>Renesas&#160;Electronics&#160;Corp.&#160;through&#160;various&#160;means,&#160;including&#160;the&#160;Renesas&#160;Electronics&#160;Corp.&#160;<br/>website<a href="http://www.renesas.com/">&#160;(http://www.renesas.com).&#160;</a><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+<a href="http://www.renesas.com/">www.renesas.com&#160;</a><br/>
+<a href="http://www.renesas.com/">Rev</a>1.00&#160;Feb&#160;2017&#160;<br/>
+<hr/>
+<a name=2></a>&#160;<br/>
+&#160;<br/>
+2&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=3></a>&#160;<br/>
+Notice&#160;<br/>
+1.&#160;<br/>
+Descriptions&#160;of&#160;circuits,&#160;software&#160;and&#160;other&#160;related&#160;information&#160;in&#160;this&#160;document&#160;are&#160;provided&#160;only&#160;to&#160;illustrate&#160;the&#160;operation&#160;of&#160;<br/>semiconductor&#160;products&#160;and&#160;application&#160;examples.&#160;You&#160;are&#160;fully&#160;responsible&#160;for&#160;the&#160;incorporation&#160;or&#160;any&#160;other&#160;use&#160;of&#160;the&#160;circuits,&#160;<br/>software,&#160;and&#160;information&#160;in&#160;the&#160;design&#160;of&#160;your&#160;product&#160;or&#160;system.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;losses&#160;and&#160;<br/>damages&#160;incurred&#160;by&#160;you&#160;or&#160;third&#160;parties&#160;arising&#160;from&#160;the&#160;use&#160;of&#160;these&#160;circuits,&#160;software,&#160;or&#160;information.&#160;<br/>
+2.&#160;<br/>
+Renesas&#160;Electronics&#160;hereby&#160;expressly&#160;disclaims&#160;any&#160;warranties&#160;against&#160;and&#160;liability&#160;for&#160;infringement&#160;or&#160;any&#160;other&#160;disputes involving&#160;patents,&#160;<br/>copyrights,&#160;or&#160;other&#160;intellectual&#160;property&#160;rights of&#160;third&#160;parties,&#160;by&#160;or&#160;arising&#160;from the&#160;use&#160;of&#160;Renesas&#160;Electronics&#160;products&#160;or&#160;technical&#160;<br/>information&#160;described&#160;in&#160;this&#160;document,&#160;including&#160;but&#160;not&#160;limited&#160;to,&#160;the&#160;product&#160;data,&#160;drawing,&#160;chart,&#160;program,&#160;algorithm,&#160;application&#160;<br/>examples.&#160;<br/>
+3.&#160;<br/>
+No&#160;license,&#160;express,&#160;implied&#160;or&#160;otherwise,&#160;is granted&#160;hereby&#160;under&#160;any&#160;patents,&#160;copyrights or&#160;other&#160;intellectual&#160;property&#160;rights&#160;of&#160;Renesas&#160;<br/>Electronics or&#160;others.&#160;<br/>
+4.&#160;<br/>
+You&#160;shall&#160;not&#160;alter,&#160;modify,&#160;copy,&#160;or&#160;otherwise&#160;misappropriate&#160;any&#160;Renesas&#160;Electronics&#160;product,&#160;whether&#160;in&#160;whole&#160;or&#160;in&#160;part.&#160;Renesas&#160;<br/>Electronics&#160;disclaims any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;losses or&#160;damages incurred&#160;by&#160;you&#160;or&#160;third&#160;parties arising&#160;from such&#160;alteration,&#160;modification,&#160;<br/>copy&#160;or&#160;otherwise&#160;misappropriation&#160;of&#160;Renesas&#160;Electronics&#160;products.&#160;<br/>
+5.&#160;<br/>
+Renesas&#160;Electronics&#160;products are&#160;classified&#160;according&#160;to&#160;the&#160;following&#160;two&#160;quality&#160;grades:&#160;&#34;Standard&#34;&#160;and&#160;&#34;High&#160;Quality&#34;.&#160;The&#160;intended&#160;<br/>applications for&#160;each&#160;Renesas&#160;Electronics&#160;product&#160;depends on&#160;the&#160;product’s&#160;quality&#160;grade,&#160;as indicated&#160;below.&#160;&#160;<br/>
+&#34;Standard&#34;:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Computers;&#160;office&#160;equipment;&#160;communications&#160;equipment;&#160;test&#160;and&#160;measurement&#160;equipment;&#160;audio&#160;and&#160;visual&#160;equipment;&#160;<br/>
+home&#160;electronic&#160;appliances;&#160;machine&#160;tools;&#160;personal&#160;electronic&#160;equipment;&#160;and&#160;industrial&#160;robots&#160;etc.&#160;<br/>
+&#34;High&#160;Quality&#34;:&#160;&#160;&#160;Transportation&#160;equipment&#160;(automobiles,&#160;trains,&#160;ships,&#160;etc.);&#160;traffic&#160;control&#160;(traffic&#160;lights);&#160;large-scale&#160;communication&#160;<br/>
+equipment;&#160;key&#160;financial&#160;terminal&#160;systems;&#160;safety&#160;control&#160;equipment;&#160;etc.&#160;<br/>
+Renesas&#160;Electronics&#160;products are&#160;neither&#160;intended&#160;nor&#160;authorized&#160;for&#160;use&#160;in&#160;products&#160;or&#160;systems that&#160;may&#160;pose&#160;a&#160;direct&#160;threat&#160;to&#160;human&#160;life&#160;or&#160;<br/>bodily&#160;injury&#160;(artificial&#160;life&#160;support&#160;devices or&#160;systems,&#160;surgical&#160;implantations etc.),&#160;or&#160;may&#160;cause&#160;serious&#160;property&#160;damages (space&#160;and&#160;undersea&#160;<br/>repeaters;&#160;nuclear&#160;power&#160;control&#160;systems;&#160;aircraft&#160;control&#160;systems;&#160;key&#160;plant&#160;systems;&#160;military&#160;equipment;&#160;etc.).&#160;Renesas&#160;Electronics&#160;disclaims&#160;<br/>any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;damages or&#160;losses incurred&#160;by&#160;you&#160;or&#160;third&#160;parties arising&#160;from the&#160;use&#160;of&#160;any&#160;Renesas Electronics&#160;product&#160;for&#160;which&#160;<br/>the&#160;product&#160;is&#160;not&#160;intended&#160;by&#160;Renesas&#160;Electronics.&#160;<br/>
+6.&#160;<br/>
+When&#160;using&#160;the&#160;Renesas&#160;Electronics&#160;products,&#160;refer&#160;to&#160;the&#160;latest&#160;product&#160;information&#160;(data&#160;sheets,&#160;user’s manuals,&#160;application&#160;notes,&#160;&#34;General&#160;<br/>Notes for&#160;Handling&#160;and&#160;Using&#160;Semiconductor&#160;Devices&#34;&#160;in&#160;the&#160;reliability&#160;handbook,&#160;etc.),&#160;and&#160;ensure&#160;that&#160;usage&#160;conditions&#160;are&#160;within&#160;the&#160;ranges&#160;<br/>specified&#160;by&#160;Renesas&#160;Electronics&#160;with&#160;respect&#160;to&#160;maximum ratings,&#160;operating&#160;power&#160;supply&#160;voltage&#160;range,&#160;heat&#160;radiation&#160;characteristics,&#160;<br/>installation,&#160;etc.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;malfunctions or&#160;failure&#160;or&#160;accident&#160;arising&#160;out&#160;of&#160;the&#160;use&#160;of&#160;Renesas&#160;<br/>Electronics&#160;products&#160;beyond&#160;such&#160;specified&#160;ranges.&#160;<br/>
+7.&#160;<br/>
+Although&#160;Renesas&#160;Electronics&#160;endeavors to&#160;improve&#160;the&#160;quality&#160;and&#160;reliability&#160;of&#160;Renesas&#160;Electronics&#160;products,&#160;semiconductor&#160;products&#160;have&#160;<br/>specific&#160;characteristics such&#160;as the&#160;occurrence&#160;of&#160;failure&#160;at&#160;a&#160;certain&#160;rate&#160;and&#160;malfunctions&#160;under&#160;certain&#160;use&#160;conditions.&#160;Further,&#160;Renesas&#160;<br/>Electronics&#160;products&#160;are&#160;not&#160;subject&#160;to&#160;radiation&#160;resistance&#160;design.&#160;Please&#160;ensure&#160;to&#160;implement&#160;safety&#160;measures to&#160;guard&#160;them against&#160;the&#160;<br/>possibility&#160;of&#160;bodily&#160;injury,&#160;injury&#160;or&#160;damage&#160;caused&#160;by&#160;fire,&#160;and&#160;social&#160;damage&#160;in&#160;the&#160;event&#160;of&#160;failure&#160;or&#160;malfunction&#160;of&#160;Renesas&#160;Electronics&#160;<br/>products,&#160;such&#160;as safety&#160;design&#160;for&#160;hardware&#160;and&#160;software&#160;including&#160;but&#160;not&#160;limited&#160;to&#160;redundancy,&#160;fire&#160;control&#160;and&#160;malfunction&#160;prevention,&#160;<br/>appropriate&#160;treatment&#160;for&#160;aging&#160;degradation&#160;or&#160;any&#160;other&#160;appropriate&#160;measures by&#160;your&#160;own&#160;responsibility&#160;as warranty&#160;for&#160;your&#160;products/system.&#160;<br/>Because&#160;the&#160;evaluation&#160;of&#160;microcomputer&#160;software&#160;alone&#160;is very&#160;difficult&#160;and&#160;not&#160;practical,&#160;please&#160;evaluate&#160;the&#160;safety&#160;of&#160;the&#160;final&#160;products&#160;or&#160;<br/>systems manufactured&#160;by&#160;you.&#160;<br/>
+8.&#160;<br/>
+Please&#160;contact&#160;a&#160;Renesas&#160;Electronics sales office&#160;for&#160;details as&#160;to&#160;environmental&#160;matters such&#160;as&#160;the&#160;environmental&#160;compatibility&#160;of&#160;each&#160;<br/>Renesas&#160;Electronics&#160;product.&#160;Please&#160;investigate&#160;applicable&#160;laws and&#160;regulations&#160;that&#160;regulate&#160;the&#160;inclusion&#160;or&#160;use&#160;of&#160;controlled&#160;substances,&#160;<br/>including&#160;without&#160;limitation,&#160;the&#160;EU&#160;RoHS&#160;Directive&#160;carefully&#160;and&#160;sufficiently&#160;and&#160;use&#160;Renesas&#160;Electronics&#160;products in&#160;compliance&#160;with&#160;all&#160;<br/>these&#160;applicable&#160;laws and&#160;regulations.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;damages or&#160;losses occurring&#160;as&#160;a&#160;result&#160;of&#160;your&#160;<br/>noncompliance&#160;with&#160;applicable&#160;laws and&#160;regulations.&#160;<br/>
+9.&#160;<br/>
+Renesas&#160;Electronics&#160;products and&#160;technologies shall&#160;not&#160;be&#160;used&#160;for&#160;or&#160;incorporated&#160;into&#160;any&#160;products&#160;or&#160;systems whose&#160;manufacture,&#160;use,&#160;or&#160;<br/>sale&#160;is prohibited&#160;under&#160;any&#160;applicable&#160;domestic&#160;or&#160;foreign&#160;laws or&#160;regulations.&#160;You&#160;shall&#160;not&#160;use&#160;Renesas&#160;Electronics&#160;products or&#160;technologies&#160;<br/>for&#160;(1)&#160;any&#160;purpose&#160;relating&#160;to&#160;the&#160;development,&#160;design,&#160;manufacture,&#160;use,&#160;stockpiling,&#160;etc.,&#160;of&#160;weapons of&#160;mass&#160;destruction,&#160;such&#160;as&#160;nuclear&#160;<br/>weapons,&#160;chemical&#160;weapons,&#160;or&#160;biological&#160;weapons,&#160;or&#160;missiles (including&#160;unmanned&#160;aerial&#160;vehicles (UAVs))&#160;for&#160;delivering&#160;such&#160;weapons,&#160;(2)&#160;<br/>any&#160;purpose&#160;relating&#160;to&#160;the&#160;development,&#160;design,&#160;manufacture,&#160;or&#160;use&#160;of&#160;conventional&#160;weapons,&#160;or&#160;(3)&#160;any&#160;other&#160;purpose&#160;of&#160;disturbing&#160;<br/>international&#160;peace&#160;and&#160;security,&#160;and&#160;you&#160;shall&#160;not&#160;sell,&#160;export,&#160;lease,&#160;transfer,&#160;or&#160;release&#160;Renesas&#160;Electronics&#160;products&#160;or&#160;technologies to&#160;any&#160;<br/>third&#160;party&#160;whether&#160;directly&#160;or&#160;indirectly&#160;with&#160;knowledge&#160;or&#160;reason&#160;to&#160;know&#160;that&#160;the&#160;third&#160;party&#160;or&#160;any&#160;other&#160;party&#160;will&#160;engage&#160;in&#160;the&#160;activities&#160;<br/>described&#160;above.&#160;When&#160;exporting,&#160;selling,&#160;transferring,&#160;etc.,&#160;Renesas&#160;Electronics&#160;products&#160;or&#160;technologies,&#160;you&#160;shall&#160;comply&#160;with&#160;any&#160;applicable&#160;<br/>export&#160;control&#160;laws and&#160;regulations&#160;promulgated&#160;and&#160;administered&#160;by&#160;the&#160;governments of&#160;the&#160;countries&#160;asserting&#160;jurisdiction&#160;over&#160;the&#160;parties or&#160;<br/>transactions.&#160;<br/>
+10.&#160;&#160;Please&#160;acknowledge&#160;and&#160;agree&#160;that&#160;you&#160;shall&#160;bear&#160;all&#160;the&#160;losses and&#160;damages which&#160;are&#160;incurred&#160;from the&#160;misuse&#160;or&#160;violation&#160;of&#160;the&#160;terms and&#160;<br/>
+conditions&#160;described&#160;in&#160;this&#160;document,&#160;including&#160;this&#160;notice,&#160;and&#160;hold&#160;Renesas Electronics&#160;harmless,&#160;if&#160;such&#160;misuse&#160;or&#160;violation&#160;results from&#160;<br/>your&#160;resale&#160;or&#160;making&#160;Renesas&#160;Electronics&#160;products&#160;available&#160;any&#160;third&#160;party.&#160;<br/>
+11.&#160;&#160;This document&#160;shall&#160;not&#160;be&#160;reprinted,&#160;reproduced&#160;or&#160;duplicated&#160;in&#160;any&#160;form,&#160;in&#160;whole&#160;or&#160;in&#160;part,&#160;without&#160;prior&#160;written&#160;consent&#160;of&#160;Renesas&#160;<br/>
+Electronics.&#160;<br/>
+12.&#160;&#160;Please&#160;contact&#160;a&#160;Renesas&#160;Electronics sales office&#160;if&#160;you&#160;have&#160;any&#160;questions regarding&#160;the&#160;information&#160;contained&#160;in&#160;this&#160;document&#160;or&#160;Renesas&#160;<br/>
+Electronics&#160;products.&#160;<br/>
+&#160;<br/>
+(Note&#160;1)&#160;&#160;&#160;&#34;Renesas&#160;Electronics&#34;&#160;as&#160;used&#160;in&#160;this&#160;document&#160;means&#160;Renesas&#160;Electronics&#160;Corporation&#160;and&#160;also&#160;includes its majority-owned&#160;<br/>
+subsidiaries.&#160;<br/>
+(Note&#160;2)&#160;&#160;&#160;&#34;Renesas&#160;Electronics&#160;product(s)&#34;&#160;means&#160;any&#160;product&#160;developed&#160;or&#160;manufactured&#160;by&#160;or&#160;for&#160;Renesas&#160;Electronics.&#160;<br/>
+&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;3&#160;<br/>
+<hr/>
+<a name=4></a>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+4&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=5></a>&#160;<br/>
+<b>Abbreviations&#160;and&#160;Acronyms&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Abbreviation&#160;/&#160;Acronym</b>&#160;<br/>
+<b>Description</b>&#160;<br/>
+API&#160;<br/>
+Application&#160;Programming&#160;Interface&#160;<br/>
+AUTOSAR&#160;<br/>
+AUTomotive&#160;Open&#160;System&#160;ARchitecture&#160;<br/>
+BSWMDT&#160;<br/>
+Basic&#160;Software&#160;Module&#160;Description&#160;Template&#160;<br/>
+DEM&#160;<br/>
+Diagnostic&#160;Event&#160;Manager&#160;<br/>
+ECU&#160;<br/>
+Electronic&#160;Control&#160;Unit&#160;<br/>
+ID/Id&#160;<br/>
+Identifier&#160;<br/>
+MCAL&#160;<br/>
+MicroController&#160;Abstraction&#160;Layer&#160;<br/>
+MCU&#160;<br/>
+MicroController&#160;Unit&#160;<br/>
+WDG/Wdg&#160;<br/>
+Watchdog&#160;Driver&#160;<br/>
+WDTA&#160;<br/>
+Window&#160;Watchdog&#160;Timer A&#160;<br/>
+XML&#160;<br/>
+eXtensible&#160;Mark-up&#160;Language&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>&#160;</b><br/>
+<b>Definitions&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Terminology</b>&#160;<br/>
+<b>Description</b>&#160;<br/>
+BSWMDT&#160;File&#160;<br/>
+This&#160;file&#160;is&#160;the&#160;template&#160;for&#160;the&#160;Basic&#160;Software&#160;Module&#160;Description.&#160;<br/>
+Configuration&#160;XML&#160;File&#160;<br/>
+This&#160;file&#160;contains&#160;the&#160;setting&#160;of&#160;command&#160;line&#160;options.&#160;<br/>
+ECU&#160;Configuration&#160;Description&#160;<br/>
+Input&#160;file&#160;to&#160;WDG&#160;Driver&#160;MCAL&#160;Code&#160;Generator Tool.&#160;It&#160;is&#160;<br/>
+File&#160;<br/>
+generated&#160;by&#160;ECU&#160;Configuration&#160;Editor.&#160;<br/>
+Sl.No&#160;<br/>
+Serial&#160;Number.&#160;<br/>
+5&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=6></a>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+6&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=7></a>&#160;<br/>
+<b>Table of&#160;Contents&#160;</b><br/>
+&#160;<br/>&#160;<br/><a href="R20UT3662EJ0100-AUTOSARs.html#9"><b>Chapter 1&#160;Introduction&#160;..........................................................................................&#160;9</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#9"><b>1.1.</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#9"><b>Document&#160;Overview&#160;..........................................................................................................&#160;9</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#11"><b>Chapter 2&#160;Reference&#160;...........................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#11"><b>2.1.</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#11"><b>Reference&#160;Documents&#160;....................................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#11"><b>2.2.</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#11"><b>Trademark&#160;Notice&#160;............................................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#13"><b>Chapter 3&#160;Code&#160;Generation Overview&#160;...............................................................&#160;13</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#15"><b>Chapter 4&#160;Input&#160;Files&#160;...........................................................................................&#160;15</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#17"><b>Chapter 5&#160;Output&#160;Files&#160;........................................................................................&#160;17</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#19"><b>Chapter 6&#160;Precautions&#160;........................................................................................&#160;19</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#21"><b>Chapter 7&#160;User Configuration&#160;Validation&#160;...........................................................&#160;21</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#23"><b>Chapter 8&#160;Configuration Overview&#160;....................................................................&#160;23</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#23"><b>8.1.</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#23"><b>Container&#160;Overview&#160;.........................................................................................................&#160;23</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#23">8.1.1.&#160;&#160;Pre-Compile Configurable&#160;Parameters&#160;................................................................&#160;23&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#25">8.1.2.&#160;&#160;Post&#160;Build Time Configurable&#160;Parameters&#160;...........................................................&#160;25&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#27"><b>Chapter 9&#160;Messages&#160;............................................................................................&#160;27</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#27"><b>9.1</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#27"><b>Error&#160;Messages&#160;................................................................................................................&#160;27</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#30"><b>9.2</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#30"><b>Warning&#160;Messages&#160;..........................................................................................................&#160;30</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#30"><b>9.3</b>&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#30"><b>Information&#160;Messages&#160;....................................................................................................&#160;30</b>&#160;</a><br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+7&#160;<br/>
+<hr/>
+<a name=8></a>&#160;<br/>
+<b>&#160;</b><br/>
+<b>List&#160;of&#160;Figures&#160;</b><br/>
+<b>&#160;</b><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#13">Figure&#160;3-1&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#13">Overview&#160;of&#160;Code&#160;Generation&#160;..............................................................................................&#160;13&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#14">Figure&#160;3-2 &#160;&#160;&#160;&#160;Flow-Diagram&#160;of&#160;Code Generation&#160;......................................................................................&#160;14&#160;<br/></a><a href="R20UT3662EJ0100-AUTOSARs.html#23">Figure&#160;8-1&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#23">Configuration overview&#160;........................................................................................................&#160;23&#160;</a><br/>
+&#160;<br/>
+&#160;<br/>
+<b>List&#160;of&#160;Tables&#160;</b><br/>
+<b>&#160;</b><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#17">Table&#160;5-1&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#17">Output&#160;Files&#160;Description&#160;.........................................................................................................&#160;17&#160;</a><br/>
+<a href="R20UT3662EJ0100-AUTOSARs.html#23">Table&#160;&#160;8-1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Pre-Compile&#160;Configurable&#160;Parameters&#160;...........................................................................................&#160;23&#160;<br/></a><a href="R20UT3662EJ0100-AUTOSARs.html#25">Table&#160;&#160;8-2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Post&#160;Build&#160;Time&#160;Configurable&#160;Parameters&#160;......................................................................................&#160;25&#160;</a><br/>
+<b>&#160;<br/>&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+8&#160;<br/>
+<hr/>
+<a name=9></a><b>Introduction&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter1</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;1&#160;Introduction&#160;<br/></b>&#160;<br/>&#160;<br/>
+The&#160;Watchdog&#160;Driver provides&#160;services&#160;for initialization,&#160;changing&#160;<br/>the&#160;operation mode and&#160;triggering the&#160;Watchdog.&#160;<br/>
+&#160;<br/>
+The&#160;WDG&#160;Driver module comprises&#160;of&#160;two sections&#160;as&#160;Embedded&#160;<br/>Software and&#160;the&#160;MCAL Code&#160;Generator Tool&#160;to&#160;achieve scalability&#160;and&#160;<br/>configurability.&#160;<br/>&#160;<br/>The&#160;document describes&#160;the&#160;WDG&#160;module specific&#160;inputs&#160;and&#160;outputs&#160;of&#160;<br/>the&#160;MCAL&#160;Code&#160;Generator Tool&#160;that&#160;is&#160;the common&#160;code generator engine&#160;<br/>used&#160;for the&#160;generation&#160;of&#160;the configuration&#160;code&#160;for all&#160;MCAL modules.&#160;&#160;<br/>MCAL Code&#160;Generator Tool&#160;is&#160;a&#160;command line&#160;tool&#160;that extracts&#160;<br/>information&#160;from&#160;ECU Configuration&#160;Description&#160;File and BSWMDT&#160;File and&#160;<br/>generates&#160;WDG&#160;Driver C&#160;Source and C Header files&#160;such as&#160;<br/>Wdg_59_Driver&lt;A/B&gt;_PBcfg.c,&#160;Wdg_Hardware.c,&#160;<br/>Wdg_59_Driver&lt;A/B&gt;_Cfg.h,&#160;Wdg_59_Driver&lt;A/B&gt;_Cbk&#160;.h&#160;and&#160;<br/>Wdg_Hardware.h.&#160;<br/>&#160;<br/>
+&#160;<br/>
+<b>Remark:&#160;&#160;</b>Based&#160;&#160;on&#160;&#160;the&#160;&#160;value&#160;&#160;for&#160;&#160;the&#160;&#160;parameter&#160;&#160;‘VendorApiInfix’,&#160;&#160;MCAL&#160;&#160;Code&#160;<br/>Generator&#160;&#160;Tool&#160;&#160;generates&#160;&#160;either&#160;&#160;Wdg_59_DriverA_Cfg.h,&#160;&#160;Wdg_59_DriverA_PBcfg.c&#160;<br/>files&#160;and&#160;Wdg_59_DriverA_Cbk&#160;or&#160;Wdg_59_DriverB_Cfg.h,&#160;Wdg_59_DriverB_PBcfg.c&#160;<br/>and&#160;<br/>
+Wdg_59_DriverB_Cbk&#160;<br/>
+files.&#160;<br/>
+Hence&#160;<br/>
+in&#160;<br/>
+this&#160;<br/>
+document&#160;<br/>
+‘Wdg_59_Driver&lt;A/B&gt;_Cfg.h,&#160;<br/>
+Wdg_59&#160;<br/>
+_Driver&lt;A/B&gt;_PBcfg.c&#160;<br/>
+and&#160;<br/>
+Wdg_59_Driver&lt;A/B&gt;_Cbk.h’&#160;term&#160;is&#160;used.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>1.1.&#160;</b><br/>
+<b>Document&#160;Overview&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+This&#160;user&#160;manual&#160;is&#160;organized&#160;as&#160;given&#160;in&#160;the&#160;table&#160;below:&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>Section</b>&#160;<br/>
+<b>Contents</b>&#160;<br/>
+Section&#160;1&#160;(Introduction)&#160;<br/>
+Provides&#160;an&#160;introduction&#160;to&#160;the&#160;document&#160;and&#160;explains&#160;how&#160;information&#160;<br/>is&#160;organized&#160;in&#160;this&#160;manual.&#160;<br/>
+Section&#160;2&#160;(Reference)&#160;<br/>
+Provides&#160;a&#160;list&#160;of documents&#160;referred&#160;while&#160;developing&#160;this&#160;document.&#160;<br/>
+Section&#160;3&#160;(Code&#160;Generation&#160;<br/>
+Provides&#160;MCAL&#160;Code&#160;Generator Tool&#160;Overview.&#160;<br/>
+Overview)&#160;<br/>
+Section&#160;4&#160;(Input&#160;Files)&#160;<br/>
+Provides&#160;information&#160;about&#160;ECU Configuration&#160;Description&#160;File.&#160;<br/>
+Section&#160;5&#160;(Output&#160;Files)&#160;<br/>
+Explains&#160;the&#160;output&#160;files&#160;that&#160;are&#160;generated&#160;by&#160;the&#160;MCAL&#160;Code&#160;<br/>Generator Tool.&#160;<br/>
+Section&#160;6&#160;(Precautions)&#160;<br/>
+Contains&#160;precautions&#160;to&#160;be&#160;taken&#160;during&#160;configuration&#160;of&#160;ECU&#160;<br/>Configuration&#160;Description&#160;File.&#160;<br/>
+Section&#160;7&#160;(User&#160;Configuration&#160;<br/>
+Describes&#160;about&#160;user&#160;configuration&#160;validation&#160;done&#160;by&#160;the&#160;MCAL&#160;Code&#160;<br/>
+Validation)&#160;<br/>
+Generator Tool.&#160;<br/>
+Section&#160;8&#160;(Configuration&#160;<br/>
+&#160;<br/>
+Overview)&#160;<br/>
+Provides&#160;Container Overview.&#160;<br/>
+&#160;<br/>
+Describes&#160;all&#160;the&#160;Error/Warning/Information&#160;messages&#160;of&#160;R4.0.3&#160;which&#160;<br/>
+Section&#160;9&#160;(Messages)&#160;<br/>
+helps&#160;the&#160;user to&#160;understand&#160;the&#160;probable&#160;reason&#160;for&#160;the&#160;same.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+9&#160;<br/>
+<hr/>
+<a name=10></a><b>Chapter1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Introduction</b>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+10&#160;<br/>
+<hr/>
+<a name=11></a><b>&#160;Reference&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;2&#160;</b>&#160;<br/>
+&#160;<br/>&#160;<br/><b>Chapter&#160;2&#160;Reference&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2.1.&#160;</b><br/>
+<b>Reference&#160;Documents&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+The&#160;following&#160;table&#160;lists&#160;the&#160;documents&#160;referred&#160;to&#160;develop&#160;this&#160;document:&#160;<br/>
+&#160;<br/>
+<b>Sl.&#160;No</b>&#160;&#160;<b>Title</b>&#160;<br/>
+<b>Version</b>&#160;<br/>
+1.&#160;<br/>
+AUTOSAR_SWS_WDGDriver&#160;<br/>
+2.5.0&#160;<br/>
+2.&#160;<br/>
+MCAL_CodeGenerator_Tool_UserManual.pdf&#160;<br/>
+1.0.7&#160;<br/>
+3.&#160;<br/>
+R20UT3828EJ0100-AUTOSAR.pdf&#160;<br/>
+1.0.2&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2.2.&#160;&#160;Trademark&#160;Notice&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+Microsoft and&#160;Windows&#160;are&#160;trademarks/registered trademarks&#160;of&#160;Microsoft&#160;<br/>Corporation.&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+11&#160;<br/>
+<hr/>
+<a name=12></a><b>Chapter2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Reference</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+12&#160;<br/>
+<hr/>
+<a name=13></a><b>&#160;Code&#160;Generation&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;3&#160;</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>Chapter&#160;3&#160;Code Generation Overview&#160;<br/></b>&#160;<br/>
+MCAL&#160;Code&#160;Generator&#160;Tool&#160;overview&#160;is&#160;shown&#160;below.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>
+&#160;<br/>
+<b>ECU&#160;Configuration&#160;</b><br/>
+<b>Wdg_59_Driver&lt;A/B&gt;_C</b><br/>
+&#160;<br/>
+<b>Description&#160;File&#160;</b><br/>
+&#160;<br/>
+<b>fg.h,&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>and&#160;BSWMDT&#160;File&#160;</b><br/>
+<b>Wdg_59_Driver&lt;A/B&gt;_C</b><br/>
+&#160;<br/>
+<b>MCAL&#160;&#160; &#160;</b><br/>
+&#160;<br/>
+<b>bk.h,&#160;</b><br/>
+&#160;<br/>
+<b>Generator&#160;</b><br/>
+<b>Velocity&#160;template&#160;</b><br/>
+<b>Wdg_59_Hardware.h,&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>files&#160;for&#160;WDG&#160;</b><br/>
+<b>Wdg_59_Driver&lt;A/B&gt;_P</b><br/>
+&#160;<br/>
+<b>Bcfg.c,&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>Wdg_59_Hardware.c&#160;</b><br/>
+&#160;<br/>
+<b>Configuration&#160;XML&#160;</b><br/>
+&#160;<br/>
+<b>File&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>Figure 3-1&#160;&#160;Overview&#160;of&#160;Code&#160;Generation&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;&#160;ECU Configuration&#160;Description&#160;File (.arxml):&#160;<br/>
+This&#160;file will&#160;contain&#160;WDG&#160;Driver specific&#160;configuration information.&#160;<br/>This&#160;file should be generated&#160;by&#160;AUTOSAR specified&#160;Configuration&#160;<br/>Editor.&#160;<br/>&#160;<br/>
+&#160;&#160;BSWMDT&#160;File&#160;(.arxml):&#160;<br/>
+MCAL&#160;Code&#160;Generator&#160;Tool&#160;uses&#160;“Common&#160;Published&#160;Information”&#160;<br/>from&#160;WDG&#160;module specific&#160;BSWMDT&#160;File.&#160;WDG&#160;module specific&#160;<br/>BSWMDT&#160;File should not be updated manually&#160;since&#160;it&#160;is&#160;“Static&#160;<br/>Configuration” file.&#160;<br/>&#160;<br/>
+&#160;&#160;Velocity&#160;template files:&#160;<br/>
+Wdg_PBcfg_c.vm,&#160;Wdg_Cfg_h.vm,&#160;Wdg_Cbk_h.vm,&#160;<br/>Wdg_Hardware_h.vm,&#160;Wdg_Hardware_c.vm,&#160;Wdg_Validate.vm,&#160;<br/>commonhelper.vm.&#160;They&#160;are interpreted&#160;by&#160;the&#160;MCAL&#160;Generator&#160;<br/>MCAL&#160;Code&#160;Generator&#160;Tool&#160;in order to&#160;provide&#160;user&#160;input&#160;validation&#160;<br/>and&#160;generate&#160;the&#160;final&#160;output&#160;file&#160;needed&#160;by&#160;the AUTOSAR&#160;<br/>configuration&#160;chain .They&#160;are the&#160;&#34;logic&#34;&#160;of&#160;the Code&#160;Generator.&#160;<br/>&#160;<br/>
+&#160;&#160;Configuration XML&#160;File (.xml):&#160;<br/>
+This&#160;file&#160;is&#160;used&#160;to&#160;specify&#160;which&#160;velocity&#160;template&#160;to use and&#160;their&#160;<br/>location&#160;and&#160;the&#160;name of&#160;the output file generated.&#160;<br/>
+&#160;<br/>
+For the&#160;error free&#160;input&#160;file,&#160;the&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;generates&#160;the&#160;<br/>following&#160;output files:&#160;Wdg_59_Driver&lt;A/B&gt;_Cfg.h,&#160;<br/>Wdg_59_Driver&lt;A/B&gt;_Cbk.h,&#160;Wdg_59_Driver&lt;A/B&gt;_PBcfg.c,&#160;<br/>Wdg_Hardware.h&#160;and&#160;Wdg_Hardware.c&#160;and displays&#160;appropriate context&#160;<br/>sensitive&#160;error messages&#160;for&#160;wrong&#160;input&#160;and&#160;exits.&#160;<br/>
+&#160;<br/>
+ECU&#160;&#160;Configuration&#160;&#160;Description&#160;&#160;File&#160;&#160;can&#160;&#160;be&#160;&#160;created&#160;&#160;or&#160;&#160;edited&#160;&#160;using&#160;&#160;ECU&#160;<br/>Configuration Editor.&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+13&#160;<br/>
+<hr/>
+<a name=14></a><b>Chapter3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Code&#160;Generation&#160;Overview</b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160;Concept&#160;of&#160;execution&#160;for&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;is&#160;as&#160;follows:&#160;&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160;<br/>&#160;<br/>
+&#160;<br/>
+Generation&#160;start&#160;<br/>
+&#160;<br/>
+Common&#160;<br/>
+Validate.vm&#160;<br/>
+&#160;<br/>
+Helper.vm&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+config.xml&#160;<br/>
+&#160;<br/>&#160;&#160;ECU&#160;Configuration&#160;<br/>
+&#160;<br/>
+Description&#160;Files&#160;<br/>
+MCAL Code&#160;Generator&#160;<br/>
+Template&#160;files&#160;(.vm)&#160;<br/>
+&#160;&#160;And&#160;BSWMDT&#160;file&#160;<br/>
+Tool&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+(.arxml)&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+No&#160;<br/>
+Yes&#160;<br/>
+&#160;<br/>
+Validation&#160;<br/>
+&#160;<br/>
+successful&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+Display&#160;Error&#160;<br/>
+Generate&#160;Output&#160;Files&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160; &#160;&#160;Generation&#160;stop&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Figure 3-2&#160;&#160; &#160;&#160;Flow-Diagram&#160;of&#160;Code Generation&#160;</b><br/>
+&#160;<br/>
+The&#160;module “Validate”&#160;will&#160;validate&#160;the&#160;configuration (contents&#160;of&#160;ECU Configuration&#160;<br/>Description&#160;File(s)&#160;as&#160;input). If&#160;there are&#160;incorrect&#160;values&#160;or incorrect dependencies, the&#160;<br/>MCAL Code&#160;Generator Tool&#160;will&#160;display&#160;error,&#160;warning&#160;and&#160;information&#160;messages.&#160;In&#160;<br/>case of&#160;errors, the&#160;MCAL&#160;Code Generator Tool&#160;will&#160;abort the&#160;execution.&#160;&#160;<br/>&#160;<br/>Wdg_Cfg_h.vm&#160;/&#160;Wdg_PBcfg_c.vm&#160;will&#160;generate compiler switch /&#160;structures&#160;necessary&#160;<br/>to&#160;the AUTOSAR Configuration&#160;chain and&#160;vendor&#160;specific&#160;parameters.&#160;<br/>&#160;<br/>Wdg_Hardware_h.vm&#160;/&#160;Wdg_Hardware_c.vm&#160;will&#160;generate hardware related info&#160;<br/>(defines&#160;number&#160;of&#160;actual&#160;instances&#160;/ channels&#160;used /&#160;structure to&#160;access&#160;to&#160;the&#160;I/O&#160;<br/>mapped peripheral).&#160;<br/>&#160;<br/>&#160;<br/>
+<b>&#160; &#160; &#160; &#160; &#160;&#160;&#160;Remark&#160;&#160;&#160;</b>Please consult the&#160;general&#160;MCAL Code&#160;Generator Tool&#160;User&#160;Manual&#160; &#160;&#160;&#160;<br/>
+<b>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;</b>(MCAL_CodeGenerator_Tool_UserManual.pdf)&#160;and &#160;&#160;&#160;<br/><b>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;</b>GettingStarted_MCAL_Drivers_X1x&#160;(R20UT3828EJ0100-AUTOSAR.pdf)&#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;for details&#160;about the tool&#160;command line options.&#160;<br/>
+14&#160;<br/>
+<hr/>
+<a name=15></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;Input&#160;Files&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;4&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b>&#160;<br/>
+<b>&#160;<br/>Chapter&#160;4&#160;Input Files&#160;<br/></b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+MCAL&#160;Code&#160;Generator&#160;Tool&#160;&#160;will&#160;&#160;accept&#160;the&#160;config.xml&#160;file&#160;&#160;which&#160;has&#160;paths&#160;to&#160;the&#160;<br/>code&#160;&#160;generator&#160;&#160;template&#160;&#160;files&#160;&#160;for&#160;&#160;generating&#160;&#160;WDG&#160;&#160;Driver&#160;&#160;files.&#160;&#160;MCAL&#160;&#160;Code&#160;<br/>Generator&#160;&#160;Tool&#160;&#160;needs&#160;&#160;ECU&#160;&#160;Configuration&#160;&#160;Description&#160;&#160;File(s),&#160;&#160;BSWMDT&#160;&#160;File&#160;&#160;and&#160;<br/>WDG&#160;&#160;configuration&#160;&#160;XML&#160;&#160;File&#160;&#160;as&#160;&#160;input&#160;&#160;to&#160;&#160;generate&#160;&#160;WDG&#160;&#160;Driver&#160;&#160;specific&#160;&#160;source&#160;<br/>files.&#160;&#160;MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool&#160;&#160;needs&#160;&#160;information&#160;&#160;about&#160;&#160;WDG&#160;&#160;Driver&#160;&#160;module.&#160;<br/>Hence&#160;&#160;WDG&#160;&#160;Configuration&#160;&#160;Description&#160;&#160;File&#160;&#160;should&#160;&#160;contain&#160;&#160;configuration&#160;&#160;of&#160;&#160;WDG&#160;<br/>Driver&#160;&#160;module.&#160;&#160;MCAL&#160;&#160;Code&#160;&#160;Generator&#160;&#160;Tool&#160;&#160;ignores&#160;&#160;any&#160;&#160;other&#160;&#160;AUTOSAR&#160;<br/>component&#160;&#160;configured&#160;&#160;in&#160;&#160;the&#160;&#160;ECU&#160;&#160;Configuration&#160;&#160;Description&#160;&#160;File.&#160;&#160;ECU&#160;<br/>Configuration Description File&#160;can&#160;be generated&#160;using&#160;configuration&#160;editor.&#160;<br/>
+&#160;<br/>&#160;<br/>
+ECU Configuration Description&#160;File must comply&#160;with&#160;AUTOSAR standard&#160;<br/>ECU Configuration Description&#160;File&#160;format.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Remark&#160;&#160;</b>The&#160;detailed explanation&#160;about&#160;the&#160;parameters&#160;and containers&#160;are found in&#160;<br/>
+Parameter&#160;Definition File.&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+15&#160;<br/>
+<hr/>
+<a name=16></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;&#160;Chapter&#160;4&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Input&#160;Files</b>&#160;<br/>
+<b>&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+16&#160;<br/>
+<hr/>
+<a name=17></a><b>&#160;&#160;&#160;&#160;&#160;Output&#160;Files&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;5&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b>&#160;<br/>
+&#160;<br/>&#160;<br/><b>Chapter&#160;5&#160;Output Files&#160;<br/></b>&#160;<br/>&#160;<br/>
+MCAL Code&#160;Generator Tool&#160;generates&#160;configuration&#160;details&#160;in&#160;C&#160;Header&#160;and&#160;<br/>C&#160;<br/>
+Source&#160;<br/>
+files&#160;&#160;Wdg_59_Driver&lt;A/B&gt;_Cfg.h,&#160;<br/>
+Wdg_59_Driver&lt;A/B&gt;_Cbk.h,&#160;&#160;<br/>
+Wdg_59_Driver&lt;A/B&gt;_PBcfg.c&#160;Wdg_59_Hardware.c&#160;and&#160;Wdg_59_Hardware.h.&#160;<br/>
+&#160;<br/>&#160;<br/>
+The&#160;content&#160;of&#160;each&#160;output&#160;file&#160;is&#160;given&#160;in&#160;the&#160;table&#160;below:&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>Table&#160;5-1&#160;&#160;Output&#160;Files&#160;Description&#160;</b><br/>
+&#160;<br/>
+<b>Output&#160;File</b>&#160;<br/>
+<b>Details</b>&#160;<br/>
+Wdg_59_Driver&lt;A/B&gt;_Cfg.h&#160;<br/>
+This&#160;file&#160;contains&#160;pre-compile&#160;time&#160;parameters.&#160;<br/>
+Wdg_59_Driver&lt;A/B&gt;_Cbk.h&#160;<br/>
+This&#160;file&#160;contains&#160;function&#160;prototype&#160;of&#160;call&#160;back&#160;functions&#160;<br/>
+Wdg_59_Driver&lt;A/B&gt;_PBcfg.c&#160;&#160;This&#160;file&#160;contains&#160;post-build&#160;configuration&#160;data.&#160;<br/>
+Wdg_59_Hardware.c&#160;<br/>
+This&#160;file&#160;contains&#160;hardware&#160;information.&#160;<br/>
+Wdg_59_Hardware.h&#160;<br/>
+This&#160;file&#160;contains&#160;hardware&#160;information.&#160;<br/>
+&#160;<br/>
+<b>Remark&#160;&#160;</b>Output&#160;files&#160;generated&#160;by&#160;MCAL Code&#160;Generator Tool&#160;should&#160;not&#160;be&#160;modified&#160;or&#160;<br/>
+edited&#160;manually.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+17&#160;<br/>
+<hr/>
+<a name=18></a><b>&#160;&#160;&#160;&#160;Chapter&#160;5&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Output&#160;Files</b>&#160;<br/>
+18&#160;<br/>
+<hr/>
+<a name=19></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;Precautions&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;6&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b>&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;6&#160;Precautions&#160;<br/></b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+•&#160;&#160;ECU Configuration Description&#160;File and&#160;BSWMDT&#160;File must comply&#160;with&#160;<br/>
+AUTOSAR standard for&#160;R4.0.3&#160;ECU Configuration&#160;Description&#160;File and&#160;<br/>BSWMDT&#160;File&#160;respectively.&#160;<br/>&#160;<br/>
+•&#160;&#160;ECU Configuration Description&#160;File&#160;must contain&#160;WDG,&#160;MCU&#160;and&#160;DEM&#160;module&#160;<br/>
+description&#160;files.&#160;<br/>
+&#160;<br/>•&#160;&#160;The&#160;input&#160;file must contain&#160;WDG&#160;Driver module.&#160;<br/>
+&#160;<br/>
+•&#160;&#160;All&#160;the function names&#160;and the&#160;string&#160;values&#160;configured&#160;should follow&#160;C syntax&#160;<br/>
+for variables. It can&#160;only&#160;contain alphanumeric&#160;characters&#160;and “_”. It should start&#160;<br/>with&#160;an&#160;alphabet.&#160;<br/>&#160;<br/>
+•&#160;&#160;config.xml&#160;file should convey&#160;the<a href="R20UT3662EJ0100-AUTOSARs.html#13">&#160;velocity&#160;template&#160;</a>file&#160;location and&#160;output&#160;file&#160;<br/>
+location.&#160;&#160;<br/>&#160;<br/>
+•&#160;&#160;Configuration XML&#160;File should&#160;contain the&#160;file extension ‘.xml’.&#160;<br/>
+&#160;<br/>
+•&#160;&#160;If&#160;the output files&#160;generated&#160;by&#160;MCAL Code Generator&#160;Tool&#160;are modified&#160;<br/>
+externally, then&#160;they&#160;may&#160;not&#160;produce the expected&#160;results&#160;or may&#160;lead&#160;to&#160;<br/>error/warning/Information&#160;messages.&#160;<br/>&#160;<br/>
+•&#160;&#160;Short&#160;Name for a container&#160;should be unique&#160;within&#160;a&#160;name space.&#160;<br/>
+&#160;<br/>
+•&#160;&#160;An error free&#160;ECU Configuration Description File&#160;generated&#160;from&#160;configuration&#160;<br/>
+editor has&#160;to be provided&#160;as&#160;input to&#160;the&#160;MCAL Code&#160;Generator Tool. Otherwise&#160;<br/>MCAL Code&#160;Generator Tool&#160;may&#160;not&#160;produce&#160;the&#160;expected&#160;results&#160;or may&#160;lead&#160;<br/>to&#160;errors/warnings/information&#160;messages.&#160;<br/>&#160;<br/>
+•&#160;&#160;The&#160;description file&#160;should&#160;always&#160;be generated&#160;using&#160;AUTOSAR specified&#160;<br/>
+configuration&#160;editor and&#160;it should not&#160;be edited&#160;manually.&#160;<br/>&#160;<br/>
+<b>Remark&#160;</b>&#160; &#160; &#160;&#160;&#160;Please&#160;refer&#160;the&#160;WDG&#160;Component&#160;User&#160;Manual&#160;(R20UT3661EJ0100-<br/>
+AUTOSAR.pdf)&#160;for deviations&#160;from&#160;AUTOSAR.&#160;<br/>&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+19&#160;<br/>
+<hr/>
+<a name=20></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;&#160;&#160;Chapter&#160;6&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Precautions</b>&#160;<br/>
+<b>&#160;<br/></b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+20&#160;<br/>
+<hr/>
+<a name=21></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;User&#160;Configuration&#160;Validation&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;7&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b>&#160;<br/>
+&#160;<br/><b>Chapter&#160;7&#160;User Configuration&#160;Validation&#160;<br/></b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+This&#160;section&#160;provides&#160;help to analyze&#160;the error,&#160;warning and information&#160;<br/>messages&#160;displayed&#160;during&#160;the&#160;execution&#160;of&#160;Driver&#160;MCAL Code Generator&#160;Tool.&#160;&#160;<br/>It ensures&#160;conformance of&#160;input&#160;file&#160;with&#160;syntax&#160;and&#160;semantics. It&#160;also performs&#160;<br/>validation&#160;on&#160;the&#160;input&#160;file for correctness&#160;of&#160;the data.&#160;<br/>
+&#160;<br/>&#160;<br/>
+For more details&#160;on&#160;list of&#160;Error/Warning/Information&#160;messages&#160;that are&#160;<br/>displayed&#160;as&#160;a&#160;result of&#160;input&#160;file(s)&#160;validation,&#160;refer Chapter&#160;9&#160;“<i>Messages</i>”.&#160;<br/>
+&#160;<br/>&#160;<br/>
+The&#160;MCAL&#160;Code Generator&#160;Tool&#160;displays&#160;error or&#160;warning&#160;or information&#160;when&#160;<br/>the&#160;user&#160;has&#160;configured&#160;incorrect inputs. The&#160;format&#160;of&#160;<br/>Error/Warning/Information&#160;message is&#160;as&#160;shown below.&#160;<br/>
+&#160;<br/>&#160;<br/>
+&lt;message_type&gt;_&lt;vendor_id&gt;_&lt;module_id&gt;_&lt;message_id&gt;:&lt;message_content&gt;.&#160;&#160;<br/>
+where,&#160;<br/>
+&#160;&#160;&lt;message_type&gt;&#160; &#160; &#160;:&#160;ERR/WARNING/INFO&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;&#160;vendor_id&#160;&gt;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;: vendor Id&#160;=&#160;59&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;&#160;module_id&#160;&gt;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;: 102&#160;-&#160;WDG&#160;Driver Module id (102)&#160;for user&#160;&#160;&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;configuration&#160;checks.&#160;<br/>&#160; &#160;&#160;<br/>
+&#160;&#160;&lt;&#160;Message_id.&gt;&#160; &#160;&#160; &#160;&#160;:&#160;&#160;001-999&#160;&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;message_content&gt;:&#160; &#160;Message&#160;content&#160;provides&#160;information&#160;&#160;&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;about error or&#160;warning or&#160;information displayed&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;when the&#160;user has&#160;configured incorrect inputs.&#160;<br/>&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;File Name’&#160;and&#160;‘Path’&#160;need not&#160;be&#160;present for all&#160;&#160; &#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;&#160;Error/Warning/Information&#160;messages&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;&#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;File&#160;Name:&#160;Name of&#160;the&#160;file in&#160;which the&#160;error has&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;occurred&#160;<br/>
+&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;Path: Absolute path&#160;of&#160;the container&#160;in&#160;which&#160;the&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160;&#160; &#160;&#160;parameter&#160;is&#160;present&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+21&#160;<br/>
+<hr/>
+<a name=22></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;&#160;Chapter&#160;7&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;User&#160;Configuration&#160;Validatio&#160;n</b>&#160;<br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+22&#160;<br/>
+<hr/>
+<a name=23></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b>&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;8&#160;Configuration&#160;Overview&#160;<br/></b>&#160;<br/>
+<b>8.1.&#160;&#160;&#160;Container&#160;Overview&#160;</b><br/>
+The&#160;following&#160;figure&#160;represents&#160;container overview.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b>Wdg&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>WdgDemEventParameterRefs&#160;</b><br/>
+<b>WdgSettingsConfig</b>&#160;<br/>
+<b>WdgPublishedInformation&#160;</b><br/>
+<b>WdgGeneral&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>Wd&#160;&#160;</b><br/>
+<b>gExternalConf</b><br/>
+<b>WdgSettingsFast&#160;</b><br/>
+<b>WdgSettingsSlow&#160;</b><br/>
+<b>WdgSettingsOff&#160;</b><br/>
+<b>igur&#160;ation&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Figure&#160;8-1&#160;&#160;Configuration&#160;overview&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>8.1.1.&#160;&#160;Pre-Compile&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>Table&#160;&#160;8-1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Pre-Compile&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Range&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+WdgGeneral&#160;<br/>
+WdgDevErrorDetect&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;FALSE&#160;<br/>
+This&#160;parameter&#160;compile&#160;switch&#160;to&#160;<br/>
+enable&#160;/&#160;disable&#160;development&#160;error&#160;<br/>
+&#160;<br/>
+detection&#160;for&#160;this&#160;module.&#160;<br/>
+WdgDisableAllowed&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;FALSE&#160;<br/>
+This&#160;parameter&#160;compile&#160;switch&#160;to&#160;<br/>
+allow&#160;/&#160;forbid&#160;disabling&#160;the&#160;<br/>watchdog&#160;driver&#160;during&#160;runtime.&#160;<br/>
+WdgIndex&#160;<br/>
+Integer&#160;<br/>
+0&#160;<br/>
+Represents&#160;the&#160;watchdog&#160;driver's&#160;ID&#160;<br/>
+so&#160;that&#160;it&#160;can&#160;be&#160;referenced&#160;by&#160;the&#160;<br/>watchdog&#160;interface.&#160;<br/>
+WdgInitialTimeout&#160;<br/>
+Integer&#160;<br/>
+0&#160;–&#160;65.535&#160;<br/>
+The&#160;initial&#160;timeout&#160;(sec)&#160;for&#160;the&#160;<br/>
+trigger&#160;condition&#160;to&#160;be&#160;initialized&#160;<br/>during&#160;Init&#160;function.&#160;It&#160;shall&#160;be&#160;not&#160;<br/>larger&#160;than&#160;WdgMaxTimeout.&#160;<br/>
+WdgMaxTimeout&#160;<br/>
+Integer&#160;<br/>
+0&#160;–&#160;65.535&#160;<br/>
+The&#160;maximum&#160;timeout&#160;(sec)&#160;to&#160;<br/>
+which&#160;the&#160;watchdog&#160;trigger&#160;<br/>condition&#160;can&#160;be&#160;initialized.&#160;<br/>
+23&#160;<br/>
+<hr/>
+<a name=24></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;&#160;&#160;Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Ove&#160;rview</b>&#160;<br/>
+<b>&#160;<br/></b>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Range&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+WdgGeneral&#160;<br/>
+WdgRunArea&#160;<br/>
+Enumeration&#160;<br/>
+RAM&#160;or&#160;ROM&#160;<br/>
+This&#160;parameter&#160;Represents&#160;the&#160;<br/>watchdog&#160;driver&#160;execution&#160;area&#160;is&#160;<br/>
+&#160;<br/>
+either&#160;from&#160;ROM&#160;(Flash)&#160;or&#160;RAM&#160;as&#160;<br/>required&#160;with&#160;the&#160;particular&#160;<br/>microcontroller.&#160;<br/>
+WdgTriggerLocation&#160;<br/>
+Function&#160;<br/>
+NULL&#160;<br/>
+Location&#160;(memory&#160;address)&#160;of&#160;the&#160;<br/>
+watchdog&#160;trigger&#160;routine.&#160;This&#160;<br/>parameter&#160;is&#160;not&#160;used&#160;for&#160;<br/>implementation.&#160;<br/>
+WdgVersionInfoApi&#160;<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;FALSE&#160;<br/>
+This&#160;parameter&#160;Compile&#160;switch&#160;to&#160;<br/>
+enable&#160;/&#160;disable&#160;the&#160;version&#160;<br/>information&#160;API.&#160;<br/>
+WdgCriticalSectionP<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;FALSE&#160;<br/>
+This&#160;parameter&#160;specifies&#160;if&#160;the&#160;WDG&#160;<br/>
+rotection&#160;<br/>
+driver&#160;&#160;CPU&#160;&#160;load&#160;&#160;can&#160;&#160;be&#160;&#160;reduced&#160;&#160;by&#160;<br/>disabling&#160;<br/>
+the&#160;<br/>
+enter/exit&#160;<br/>
+critical&#160;<br/>
+section&#160;&#160;functionality&#160;&#160;by&#160;&#160;adding&#160;&#160;a&#160;<br/>precompiled&#160;<br/>
+configuration&#160;<br/>
+parameter&#160;&#160;to&#160;&#160;the&#160;&#160;ADC&#160;&#160;driver&#160;<br/>configuration.&#160;<br/>
+WdgVaryingActivatio<br/>
+Boolean&#160;<br/>
+ENABLE&#160;/&#160;DISABLE&#160;<br/>
+This&#160;parameter&#160;enables&#160;/&#160;disables&#160;<br/>
+nCodeMode&#160;<br/>
+Varying&#160;Activation&#160;Code&#160;Mode.&#160;<br/>
+WdgVersionCheckE<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;FALSE&#160;<br/>
+This&#160;parameter&#160;Enable&#160;/&#160;disable&#160;<br/>
+xternalModules&#160;<br/>
+AUTOSAR&#160;Version&#160;check&#160;for&#160;inter-<br/>module&#160;dependencies.&#160;<br/>
+WdgDeviceName&#160;<br/>
+Enumeration&#160;<br/>
+R7F701370A,&#160;R7F701371,&#160;<br/>
+This&#160;parameter&#160;contains&#160;the&#160;<br/>
+R7F701372,&#160;R7F701373,&#160;&#160;<br/>
+supported&#160;device&#160;name&#160;to&#160;identify&#160;<br/>
+R7F701374&#160;<br/>
+the&#160;device&#160;specific&#160;C&#160;header&#160;file&#160;<br/>through&#160;Translation&#160;XML&#160;File.&#160;<br/>
+WdgWriteVerify&#160;<br/>
+Enumeration&#160;<br/>
+WV_DISABLE,&#160;<br/>
+This&#160;parameter&#160;contains&#160;the&#160;<br/>
+WV_INIT_ONLY,&#160;<br/>
+supported&#160;Register&#160;read&#160;back&#160;<br/>
+&#160;<br/>
+WV_INIT_RUNTIME&#160;<br/>
+functionality&#160;to&#160;verify&#160;the&#160;registers&#160;<br/>throughout&#160;the&#160;embedded&#160;code.&#160;<br/>
+WdgInterruptConsist<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;FALSE&#160;<br/>
+This&#160;parameter&#160;enables&#160;/&#160;disables&#160;<br/>
+encyCheck<b>&#160;</b><br/>
+Interrupt&#160;consistency&#160;check.&#160;<br/>
+WdgUseWriteVerify<br/>
+Boolean&#160;<br/>
+TRUE&#160;/&#160;FALSE&#160;<br/>
+This&#160;parameter&#160;enables&#160;/&#160;disables&#160;<br/>
+ErrorInterface&#160;<br/>
+Error&#160;interface.&#160;<br/>
+WdgWriteVerifyError<br/>
+Function&#160;<br/>
+NULL&#160;<br/>
+Function&#160;for&#160;write&#160;verify&#160;error&#160;<br/>
+Interface&#160;<br/>
+interface&#160;<br/>
+WdgClockRef&#160;<br/>
+&#160;Reference&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;--&#160;<br/>
+This&#160;parameter&#160;specifies&#160;<br/>
+assignment&#160;of&#160;WDTATCKI&#160;clock&#160;for&#160;<br/>a&#160;WDTA&#160;instance&#160;0.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+24&#160;<br/>
+<hr/>
+<a name=25></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b>&#160;<br/>
+&#160;<br/>
+<b>8.1.2.&#160;&#160;Post Build&#160;Time&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>Table&#160;&#160;8-2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Post&#160;Build&#160;Time&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;Range&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+WdgSettingsCo<br/>
+WdgDefaultMode&#160;<br/>
+Enumeration&#160;<br/>
+WDGIF_FAST_MODE:&#160;Default&#160;<br/>
+Default&#160;mode&#160;for&#160;watchdog&#160;driver&#160;<br/>
+nfig&#160;<br/>
+watchdog&#160;mode&#160;is&#160;&#34;fast&#34;.&#160;<br/>
+initialization.&#160;<br/>
+WDGIF_OFF_MODE:&#160;&#160;Default&#160;<br/>watchdog&#160;mode&#160;is&#160;&#34;off&#34;.&#160;<br/>
+WDGIF_SLOW_MODE:&#160;<br/>Default&#160;watchdog&#160;mode&#160;is&#160;<br/>&#34;slow&#34;.&#160;<br/>
+WdgClkSettingsFast&#160;<br/>
+Enumeration&#160;<br/>
+TWO_POWOF_9_&#160;DIVBY_&#160;<br/>
+These&#160;parameters&#160;contain&#160;hardware&#160;<br/>
+WDGCLK&#160;to&#160;<br/>
+dependent&#160;clock&#160;settings&#160;for&#160;the&#160;<br/>
+TWO_POWOF_16_&#160;DIVBY_&#160;<br/>
+watchdog&#160;driver's&#160;&#34;fast&#34;&#160;mode.&#160;<br/>
+WDGCLK&#160;<br/>
+WdgSettingsSlow&#160;<br/>
+Enumeration&#160;<br/>
+TWO_POWOF_9_&#160;DIVBY_&#160;<br/>
+These&#160;parameters&#160;contain&#160;hardware&#160;<br/>
+WDGCLK&#160;to&#160;<br/>
+dependent&#160;clock&#160;settings&#160;for&#160;the&#160;<br/>
+TWO_POWOF_16_&#160;DIVBY_&#160;<br/>
+watchdog&#160;driver's&#160;&#34;slow&#34;&#160;mode.&#160;<br/>
+WDGCLK&#160;<br/>
+WdgDemEvent<br/>
+WDG_E_DISABLE_R<br/>
+Symbolic&#160;Name&#160;<br/>
+NA&#160;<br/>
+This&#160;parameter&#160;specifies&#160;the&#160;<br/>
+ParameterRefs&#160;<br/>
+EJECTED&#160;<br/>
+reference&#160;to&#160;the&#160;DemEventParameter&#160;<br/>which&#160;shall&#160;be&#160;issued&#160;when&#160;the&#160;error&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#34;Initialization&#160;or&#160;mode&#160;switch&#160;failed&#160;<br/>because&#160;it&#160;would&#160;disable&#160;the&#160;<br/>watchdog&#34;&#160;has&#160;occurred.&#160;<br/>
+WDG_E_MODE_FAIL<br/>
+Symbolic&#160;Name&#160;<br/>
+NA&#160;<br/>
+This&#160;parameter&#160;specifies&#160;the&#160;<br/>
+ED&#160;<br/>
+reference&#160;to&#160;the&#160;DemEventParameter&#160;<br/>which&#160;shall&#160;be&#160;issued&#160;when&#160;the&#160;error&#160;<br/>&#34;Setting&#160;a&#160;watchdog&#160;mode&#160;failed&#160;<br/>(during&#160;initialization&#160;or&#160;mode&#160;switch)&#34;&#160;<br/>has&#160;occurred.&#160;<br/>
+WDG_E_INT_INCON<br/>
+Symbolic&#160;Name&#160;<br/>
+NA&#160;<br/>
+Reference&#160;to&#160;the&#160;<br/>
+SISTENT&#160;<br/>
+DemEventParameter&#160;which&#160;shall&#160;be&#160;<br/>issued&#160;when&#160;Interrupt&#160;consistency&#160;<br/>error&#160;was&#160;detected.&#160;<br/>
+WDG_E_REG_WRIT<br/>
+Symbolic&#160;Name&#160;<br/>
+NA&#160;<br/>
+Reference&#160;to&#160;the&#160;<br/>
+E_VERIFY&#160;<br/>
+DemEventParameter&#160;which&#160;shall&#160;be&#160;<br/>issued&#160;when&#160;a&#160;register&#160;write-verify&#160;<br/>failure&#160;was&#160;detected.&#160;If&#160;the&#160;reference&#160;<br/>is&#160;not&#160;configured&#160;the&#160;error&#160;shall&#160;not&#160;<br/>be&#160;reported.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+25&#160;<br/>
+<hr/>
+<a name=26></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;&#160;&#160;Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Ove&#160;rview</b>&#160;<br/>
+<b>&#160;<br/></b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+26&#160;<br/>
+<hr/>
+<a name=27></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;Messages&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;9&#160;Messages&#160;<br/></b>&#160;<br/>
+The&#160;messages&#160;help&#160;to&#160;identify&#160;the syntax&#160;or semantic&#160;errors&#160;in the ECU&#160;<br/>Configuration Description File. Hence it&#160;ensures&#160;validity&#160;and&#160;correctness&#160;of&#160;the&#160;<br/>information&#160;available&#160;in&#160;the&#160;ECU Configuration Description&#160;File.&#160;<br/>
+&#160;<br/>
+The&#160;following&#160;section&#160;gives&#160;the&#160;list of&#160;error,&#160;warning and information&#160;messages&#160;<br/>displayed&#160;by&#160;the&#160;MCAL Code&#160;Generator&#160;Tool.&#160;<br/>&#160;<br/>
+<b>9.1&#160;&#160;Error&#160;Messages&#160;</b><br/>
+<b>ERR_59_102_001:&#160;parsing&#160;of&#160;&lt;Module&#160;Name&gt;&#160;module&#160;is&#160;incorrect.&#160;<br/></b>&#160;<br/>This&#160;error occurs, if&#160;the&#160;parameters&#160;are not&#160;parsed&#160;for&#160;the&#160;corresponding&#160;modules&#160;<br/><b>&#160;</b><br/>
+<b>ERR_59_102_004:&#160;References path&#160;of&#160;Parameter&#160;<br/>WDG_E_DISABLE_REJECTED is&#160;not&#160;correct&#160;in&#160;<br/>&lt;Wdg/WdgDemEventParameterRefs/WDG_E_DISABLE_REJECTED&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;the&#160;path&#160;configured for&#160;WDG_E_DISABLE_REJECTED is&#160;<br/>incorrect.&#160;<br/>
+<b>ERR_59_102_005:&#160;References path&#160;of&#160;Parameter&#160;WDG_E_MODE_FAILED&#160;is&#160;<br/>not&#160;correct&#160;in &lt;Wdg/WdgDemEventParameterRefs/WDG_E_MODE_FAILED&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;the&#160;path&#160;configured for&#160;WDG_E_MODE_FAILED&#160;is&#160;incorrect.&#160;<br/>
+<b>ERR_59_102_006:&#160;Minimum instances of&#160;LowerMultiplicity&#160;for&#160;container&#160;<br/>should be configured&#160;&lt;Wdg/WdgGeneral&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;minimum&#160;instances&#160;of&#160;container&#160;WdgGeneral&#160;are not&#160;<br/>configured.&#160;<br/>
+<b>ERR_59_102_008:&#160;References WdgClockRef is&#160;not&#160;configured in&#160;<br/>&lt;Wdg/WdgGeneral/WdgClockRef&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;WdgClockRef&#160;path&#160;is&#160;not&#160;configured.&#160;<br/>
+<b>ERR_59_102_009:</b>&#160;<b>References path&#160;of&#160;Parameter&#160;WdgClockRef&#160;is&#160;not&#160;correct&#160;<br/>in &lt;Wdg/WdgGeneral/WdgClockRef&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;WdgClockRef&#160;path&#160;configured&#160;is&#160;not correct.&#160;<br/>
+<b>ERR_59_102_013:&#160;Parameter&#160;WDG_E_INT_INCONSISTENT&#160;is&#160;not&#160;configured&#160;<br/>in &lt;WdgDemEventParameterRefs&gt;.&#160;</b><br/>
+This&#160;error will&#160;occur, if&#160;the&#160;parameter&#160;'WDG_E_INT_INCONSISTENT' is&#160;not&#160;<br/>configured&#160;in&#160;WdgDemEventParameterRefs&#160;and&#160;WdgInterruptConsistencyCheck'&#160;in&#160;<br/>container&#160;'WdgGeneral' is&#160;configured as&#160;true.&#160;<br/>
+<b>ERR_59_102_014:&#160;References path&#160;of&#160;Parameter&#160;WDG_E_INT_INCONSISTENT&#160;<br/>is&#160;not&#160;correct&#160;in&#160;&lt;WdgDemEventParameterRefs&gt;.&#160;</b><br/>
+This&#160;error will&#160;occur, if&#160;References&#160;path&#160;of&#160;Parameter&#160;<br/>'WDG_E_INT_INCONSISTENT'&#160;in container&#160;'WdgDemEventParameterRefs'is&#160;not&#160;<br/>correct.&#160;<br/>
+27&#160;<br/>
+<hr/>
+<a name=28></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;&#160;&#160;Chapter&#160;9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+<b>ERR_59_102_015:&#160;WdgWriteVerifyErrorInterface should configured with&#160;other&#160;<br/>than NULL&#160;because&#160;WdgUseWriteVerifyErrorInterface is configured as&#160;true.&#160;</b><br/>
+This&#160;error will&#160;occur, if&#160;Parameter&#160;‘WdgWriteVerifyErrorInterface’&#160;is&#160;configured&#160;as&#160;<br/>NULL&#160;while&#160;parameter&#160;‘WdgUseWriteVerifyErrorInterface’&#160;is&#160;configured&#160;as&#160;true.&#160;<br/>
+<b>ERR_59_102_016:&#160;Parameter&#160;WDG_E_REG_WRITE_VERIFY&#160;is&#160;not&#160;configured&#160;<br/>in&#160;&lt;WdgDemEventParameterRefs&gt;.</b>&#160;<br/>
+This&#160;error will&#160;occur, if&#160;the&#160;parameter&#160;‘WDG_E_REG_WRITE_VERIFY’<b>&#160;</b>is&#160;not&#160;<br/>configured&#160;in container&#160;‘WdgDemEventParameterRefs’&#160;and&#160;WdgWriteVerify&#160;is&#160;not&#160;<br/>WV_DISABLE.&#160;<br/>
+<b>ERR_59_102_018:&#160;References path&#160;of&#160;Parameter&#160;WDG_E_REG_WRITE&#160;<br/>_VERIFY&#160;is&#160;not&#160;correct in&#160;&lt;WdgDemEventParameterRefs&gt;.&#160;</b><br/>
+This&#160;error will&#160;occur, if&#160;References&#160;path&#160;of&#160;Parameter&#160;'WDG_E_REG_WRITE&#160;<br/>_VERIFY&#160;' is&#160;not&#160;correct&#160;in&#160;container&#160;'&#160;WdgDemEventParameterRefs’.&#160;<br/>
+<b>ERR_59_102_019:&#160;The value of&#160;the parameter&#160;WdgDisableAllowed should not&#160;<br/>be &lt;false&gt;&#160;since&#160;the value of&#160;the parameter&#160;WdgDefaultMode is configured as&#160;<br/>&lt;WDGIF_OFF_MODE&gt;.&#160;</b><br/>
+This&#160;error occurs&#160;when the&#160;parameter&#160;WdgDisableAllowed&#160;is&#160;false and&#160;<br/>WdgDefaultMode&#160;is&#160;configured&#160;as&#160;WDGIF_OFF_MODE.&#160;<br/>
+<b>ERR_59_102_020:&#160;Minimum instances of&#160;LowerMultiplicity&#160;for&#160;sub&#160;container&#160;<br/>should be configured&#160;&lt;Wdg/WdgSettingsConfig/WdgSettingsFast&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;minimum&#160;instances&#160;of&#160;sub&#160;container&#160;WdgSettingsFast&#160;are&#160;not&#160;<br/>configured.&#160;<br/>
+<b>ERR_59_102_021:&#160;Maximum possible&#160;instances&#160;of&#160;UpperMultiplicity&#160;exceeds&#160;<br/>sub&#160;container&#160;&lt;Wdg/WdgSettingsConfig/WdgSettingsFast&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;number&#160;of&#160;instances&#160;exceeds&#160;the maximum&#160;possible&#160;<br/>instances&#160;of&#160;WdgSettingsFast&#160;sub&#160;container.&#160;<br/>
+<b>ERR_59_102_022:&#160;The value configured for&#160;the parameter&#160;<br/>WdgClkSettingsSlow&#160;in the container&#160;&lt;WdgSettingsSlow&gt;&#160;is&#160;faster&#160;than the&#160;<br/>value of&#160;the parameter&#160;WdgClkSettingsFast&#160;in the&#160;container&#160;<br/>&lt;WdgSettingsFast&gt;&#160;</b><br/>
+This&#160;error occur when&#160;the&#160;value of&#160;the&#160;parameter&#160;WdgClkSettingsSlow&#160;in the&#160;<br/>container&#160;‘WdgSettingsSlow’&#160;faster&#160;than the value&#160;of&#160;parameter&#160;<br/>WdgClkSettingsFast&#160;in the&#160;container&#160;‘WdgSettingsFast’&#160;<br/>
+<b>ERR_59_102_023:&#160;Minimum instances of&#160;LowerMultiplicity&#160;for&#160;sub&#160;container&#160;<br/>should be configured&#160;&lt;Wdg/WdgSettingsConfig/WdgSettingsOff&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;minimum&#160;instances&#160;of&#160;sub&#160;container&#160;WdgSettingsOff&#160;are not&#160;<br/>configured.&#160;<br/>
+<b>ERR_59_102_024:&#160;Maximum possible&#160;instances&#160;of&#160;UpperMultiplicity&#160;exceeds&#160;<br/>sub&#160;container&#160;&lt;Wdg/WdgSettingsConfig/WdgSettingsOff&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;number&#160;of&#160;instances&#160;exceeds&#160;the maximum&#160;possible&#160;<br/>instances&#160;of&#160;WdgSettingsOff&#160;sub&#160;container.&#160;<br/>
+<b>ERR_59_102_025:&#160;Minimum instances of&#160;LowerMultiplicity&#160;for&#160;sub&#160;container&#160;<br/>should&#160;be configured&#160;&lt;Wdg/WdgSettingsConfig/WdgSettingsSlow&gt;.&#160;</b><br/>
+28&#160;<br/>
+<hr/>
+<a name=29></a><b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;Messages&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Chapter&#160;9</b>&#160;<br/>
+&#160;<br/>
+This&#160;error occur when&#160;minimum&#160;instances&#160;of&#160;sub&#160;container&#160;WdgSettingsSlow&#160;are&#160;<br/>not configured.&#160;<br/>
+<b>ERR_59_102_026: &#160;Maximum possible&#160;instances&#160;of&#160;UpperMultiplicity&#160;exceeds&#160;<br/>sub&#160;container&#160;&lt;Wdg/WdgSettingsConfig/WdgSettingsSlow&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;number&#160;of&#160;instances&#160;exceeds&#160;the maximum&#160;possible&#160;<br/>instances&#160;of&#160;WdgSettingsSlow&#160;sub&#160;container.&#160;<br/>
+<b>ERR_59_102_033:&#160;Minimum 1 WdgPublishedInformation&#160;instance&#160;is&#160;needed.&#160;</b><br/>
+This&#160;error occur when&#160;minimum&#160;instances&#160;of&#160;container&#160;WdgPublishedInformation&#160;<br/>are not&#160;configured.&#160;<br/>
+<b>ERR_59_102_037:&#160;Minimum instances of&#160;LowerMultiplicity&#160;for&#160;container&#160;<br/>should be configured&#160;&lt;Wdg/WdgSettingsConfig&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;minimum&#160;instances&#160;of&#160;container&#160;WdgSettingsConfig&#160;are&#160;not&#160;<br/>configured.&#160;<br/>
+<b>ERR_59_102_038:&#160;Maximum possible&#160;instances&#160;of&#160;UpperMultiplicity&#160;exceeds&#160;<br/>container&#160;&lt;Wdg/WdgSettingsConfig&gt;.&#160;</b><br/>
+This&#160;error occur when&#160;number&#160;of&#160;instances&#160;exceeds&#160;the maximum&#160;possible&#160;<br/>instances&#160;of&#160;WdgSettingsConfig&#160;container.&#160;<br/>
+<b>ERR_59_102_039:&#160;The variant&#160;&lt;WdgDeviceVariant&gt;&#160;is&#160;not&#160;supported currently&#160;</b><br/>
+This&#160;error will&#160;occur, if&#160;device variant&#160;other than&#160;P1X-C variants&#160;are configured.&#160;<br/>
+<b>ERR_59_102_040:&#160;The container&#160;WdgDemEventParameterRefs should be&#160;<br/>configured, since&#160;the value of&#160;parameter&#160;'WdgInterruptConsistencyCheck' is&#160;<br/>configured as&#160;true.&#160;</b><br/>
+This&#160;error will&#160;occur,&#160;if&#160;WdgDemEventParameterRefs&#160;is&#160;not configured&#160;and&#160;<br/>'WdgInterruptConsistencyCheck' is&#160;configured&#160;as&#160;true.&#160;<br/>
+<b>ERR_59_102_041:&#160;The container&#160;WdgDemEventParameterRefs should be&#160;<br/>configured, since&#160;the value of&#160;parameter&#160;'WdgWriteVerify'&#160;is&#160;<br/>&lt;WV_INIT_RUNTIME&gt;./&#160;&lt;WV_INIT_ONLY&gt;.&#160;&#160;</b><br/>
+This&#160;error will&#160;occur,&#160;if&#160;WdgDemEventParameterRefs&#160;is&#160;not configured&#160;and&#160;if&#160;<br/>'WdgWriteVerify'<b>&#160;</b>is&#160;configured&#160;as&#160;either&#160;&lt;WV_INIT_RUNTIME&gt;&#160;or&#160;<br/>&lt;WV_INIT_ONLY&gt;.&#160;<br/>
+<b>ERR_59_102_042:&#160;The error&#160;notification&#160;configured&#160;for&#160;the parameter&#160;<br/>'WdgWriteVerifyErrorInterface'&#160;should follow&#160;C syntax&#160;&lt;&#160;[a-z&#160;A-Z][a-z&#160;A-Z&#160;0-<br/>9_]&gt;&#160;</b><br/>
+This&#160;error&#160;will&#160;occur if&#160;the&#160;parameter&#160;WdgWriteVerifyErrorInterface in container&#160;<br/>WdgGeneral0&#160;does&#160;not follow&#160;C syntax&#160;&lt;[a-zA-Z][a-zA-Z0-9_]&gt;.&#160;&#160;<br/>
+<b>ERR_59_102_053:&#160;The value of&#160;the parameter&#160;WdgInitialTimeout&#160;is&#160;greater&#160;<br/>than the value of&#160;the parameter&#160;WdgMaxTimeout.&#160;&#160;</b><br/>
+This&#160;error occurs&#160;when the&#160;initial&#160;WdgInitialTimeout&#160;value&#160;exceeds&#160;WdgMaxTimeout&#160;<br/>value.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+29&#160;<br/>
+<hr/>
+<a name=30></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;&#160;&#160;Chapter&#160;9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+<b>9.2&#160;&#160;Warning&#160;Messages&#160;</b><br/>
+&#160;<br/>
+<b>WARNING_59_102_001: &#160;The value of&#160;the parameter&#160;'WdgInitialTimeout' is&#160;<br/>configured&#160;as&#160;&lt;0&gt;&#160;and&#160;WdgDefaultMode is not&#160;configured as&#160;<br/>&lt;WDGIF_OFF_MODE&gt;.Hence, Watchdog&#160;hardware&#160;will&#160;be enabled directly&#160;<br/>after&#160;Wdg&#160;Module&#160;initialization&#160;and&#160;WDG&#160;counter&#160;will&#160;expire&#160;after&#160;<br/>&lt;calculated_value in msec&gt;&#160;<br/>&#160;<br/></b>This&#160;warning&#160;occurs&#160;when&#160;parameter&#160;WdgInitialTimeout&#160;is&#160;configured&#160;as&#160;0&#160;and&#160;<br/>WdgDefaultMode&#160;is&#160;configured&#160;as&#160;either&#160;WDGIF_FAST_MODE&#160;or&#160;<br/>WDGIF_SLOW_MODE&#160;<br/>
+&#160;<br/>
+<b>9.3&#160;&#160;Information&#160;Messages&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>INFO_59_102_001/2:&#160;The&#160;duration&#160;of&#160;75%&#160;of&#160;one&#160;WDG&#160;trigger&#160;cycle for&#160;<br/>slow/fast&#160;mode is&#160;&lt;&#160;calculated_value in msec&#160;&gt;&#160;msec&#160;<br/>&#160;<br/></b>This&#160;message provides&#160;information&#160;about the&#160;75%&#160;time&#160;duration&#160;of&#160;one&#160;WDG&#160;trigger&#160;<br/>cycle&#160;&#160;<br/>
+<b>INFO_59_102_103:&#160;WdgUseWriteVerifyErrorInterface&#160;functionality&#160;has&#160;no&#160;<br/>effect&#160;when&#160;WdgWriteVerify&#160;parameter&#160;is&#160;DISABLED.&#160;</b><br/>
+&#160;<br/>
+This&#160;information&#160;occurs&#160;if&#160;WdgWriteVerify&#160;parameter&#160;is&#160;DISABLED&#160;and&#160;&#160;<br/>WdgUseWriteVerifyErrorInterface is&#160;configured&#160;TRUE.&#160;<br/>&#160;<br/><b>INFO_59_102_104:&#160;Parameter&#160;WDG_E_MODE_FAILED/&#160;<br/>WDG_E_DISABLE_REJECTED&#160;is&#160;not&#160;configured in&#160;<br/>&lt;WdgDemEventParameterRefs&gt;.&#160;<br/></b>This&#160;message provides&#160;information&#160;when&#160;WDG_E_MODE_FAILED&#160;/&#160;<br/>WDG_E_DISABLE_REJECTED&#160;is&#160;not configured in the&#160;container&#160;<br/>‘WdgDemEventParameterRefs’&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160; &#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;<br/>
+30&#160;<br/>
+<hr/>
+<a name=31></a>&#160;<br/>
+<b>Revision&#160;History&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>Sl.No.</b>&#160;&#160;<b>Description</b>&#160;<br/>
+<b>Version</b>&#160;<br/>
+<b>Date</b>&#160;<br/>
+1.&#160;<br/>
+Initial&#160;Version&#160;<br/>
+1.0.0&#160;<br/>
+&#160;&#160;&#160;10-Aug-2015&#160;<br/>
+2.&#160;<br/>
+The&#160;following&#160;changes&#160;are&#160;made:&#160;<br/>
+1.0.1&#160;<br/>
+16-Feb-2016&#160;<br/>
+1.&#160;Added&#160;R-number&#160;for the&#160;document.&#160;<br/>2.&#160;Added&#160;parameter&#160;WdgRegReadBackEnable&#160;in&#160;Figure&#160;8-1&#160;&#160;<br/>Configuration&#160;overview.<b>&#160;<br/></b>3.&#160;Added&#160;parameter&#160;WdgRegReadBackEnable&#160;in&#160;8.1.1&#160;Pre-Compile&#160;<br/>Configurable&#160;Parameters.&#160;<br/>4.&#160;Note&#160;added&#160;for&#160;error/warning/info&#160;messages&#160;in&#160;&#160;Chapter&#160;10&#160;<br/>
+3.&#160;<br/>
+The&#160;following&#160;changes&#160;are&#160;made:&#160;<br/>
+1.0.2&#160;<br/>
+22-Feb-2017&#160;<br/>
+1.&#160;&#160;In&#160;section&#160;8.1.2,&#160;replaced&#160;the&#160;old&#160;naming&#160;convention&#160;with&#160;<br/>
+TWO_POWOF_9_&#160;DIVBY_&#160;WDGCLK&#160;and&#160;TWO_POWOF_9_&#160;<br/>DIVBY_&#160;WDGCLK.&#160;<br/>
+2.&#160;&#160;R-number updated&#160;for&#160;the&#160;document.&#160;<br/>3.&#160;&#160;In&#160;section&#160;9.1,&#160;ERR_59_102_003,&#160;ERR_59_102_007,&#160;<br/>
+ERR_59_102_034,&#160;ERR_59_102_041,&#160;ERR_59_102_042,&#160;<br/>ERR_59_102_045,&#160;ERR_59_102_046,&#160;ERR_59_102_047,&#160;<br/>ERR_59_102_048,&#160;ERR_59_102_052&#160;&amp;&#160;ERR_59_102_054&#160;are&#160;<br/>removed.&#160;<br/>
+4.&#160;&#160;In&#160;section&#160;9.1,&#160;ERR_59_102_013,&#160;ERR_59_102_014,&#160;<br/>
+ERR_59_102_015,&#160;ERR_59_102_016,&#160;ERR_59_102_018,&#160;<br/>ERR_59_102_019,&#160;ERR_59_102_020,&#160;ERR_59_102_021,&#160;<br/>ERR_59_102_022,&#160;ERR_59_102_023,&#160;ERR_59_102_024,&#160;<br/>ERR_59_102_025,&#160;ERR_59_102_026&#160;&amp;&#160;ERR_59_102_039&#160;are&#160;<br/>added.&#160;<br/>
+5.&#160;&#160;In&#160;section&#160;9.3, INFO_59_102_103&#160;&amp;&#160;INFO_59_102_104&#160;are&#160;added.&#160;<br/>6.&#160;&#160;Removed&#160;chapters&#160;Section&#160;9&#160;Generation&#160;Tool&#160;Options,&#160;Section11&#160;<br/>
+Notes&#160;and&#160;replaced&#160;the&#160;phrases&#160;Tool,&#160;Generator Tool,&#160;WDG&#160;Driver&#160;<br/>Generator&#160;tool&#160;with&#160;MCAL&#160;Code&#160;Generator Tool&#160;in&#160;this&#160;document.&#160;<br/>
+7.&#160;&#160;Updated&#160;Reference&#160;Document&#160;details&#160;in&#160;Chapter&#160;2.&#160;<br/>8.&#160;&#160;Figure&#160;3-2&#160;of&#160;Chapter&#160;3&#160;is&#160;updated&#160;and&#160;added&#160;Remark&#160;in&#160;the&#160;same&#160;<br/>
+chapter.&#160;<br/>
+9.&#160;&#160;Updated&#160;chapter&#160;6&#160;by&#160;adding&#160;two&#160;more&#160;points.&#160;<br/>10.&#160;&#160;Updated&#160;Figure&#160;8-1,&#160;Table&#160;8-1&#160;and&#160;Table&#160;8-2&#160;in&#160;chapter&#160;8.&#160;<br/>11.&#160;&#160;Figure&#160;3-2&#160;is&#160;renamed&#160;from&#160;Flow-Diagram&#160;of&#160;MCAL&#160;Code&#160;Generator&#160;<br/>
+Tool&#160;to&#160;Flow-Diagram&#160;of&#160;Code&#160;Generation&#160;<br/>
+12.&#160;&#160;Updated&#160;section&#160;9.1&#160;Error Messages&#160;with&#160;new&#160;errors&#160;<br/>
+ERR_59_102_040,&#160;ERR_59_102_041,&#160;ERR_59_102_042,&#160;<br/>ERR_59_102_043.&#160;<br/>
+13.&#160;&#160;Table&#160;8-2&#160;updated&#160;with&#160;WdgDemEventParameterRefs.&#160;<br/>
+&#160;<br/>
+<b>31</b>&#160;<br/>
+<hr/>
+<a name=32></a>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>&#160;<br/>AUTOSAR&#160;MCAL&#160;R4.0.3&#160;User's&#160;Manual&#160;<br/>WDG&#160;Driver Component&#160;Ver.1.0.2&#160;<br/>Generation Tool&#160;User's&#160;Manual&#160;</b><br/>
+&#160;<br/>
+Publication Date:&#160;Rev.1.00,&#160;February&#160;22, 2017&#160;<br/>&#160;<br/>&#160;<br/>Published&#160;by:&#160;Renesas&#160;Electronics&#160;Corporation&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=33></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Wdg/doc/R20UT3662EJ0100-AUTOSAR-33_1.png"/><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>SALES&#160;&#160;OFFICES</b>&#160;<br/>
+&#160;<br/>
+<a href="http://www.renesas.com/">http://www.renesas.com&#160;</a><br/>
+Refer&#160;&#160;<a href="http://www.renesas.com/">to&#160;&#34;http://www.renesas.com/&#34;&#160;f</a>or&#160;the&#160;latest&#160;&#160;and&#160;&#160;de&#160;&#160;tailed&#160;&#160;information.&#160;<br/>
+<b>Renesas&#160;Electronics&#160;America&#160;Inc.&#160;<br/></b>2801&#160;Scott&#160;Boulevard&#160;Santa&#160;Clara,&#160;CA&#160;95050-2549,&#160;U.S.A.&#160;<br/>Tel:&#160;+1-408-588-6000,&#160;Fax:&#160;+1-408-588-6130&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Canada&#160;Limited&#160;<br/></b>9251&#160;Yonge&#160;Street,&#160;Suite&#160;8309&#160;Richmond&#160;Hill,&#160;Ontario&#160;Canada&#160;L4C&#160;9T3&#160;<br/>Tel:&#160;+1-905-237-2004&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Europe&#160;Limited&#160;<br/></b>Dukes&#160;Meadow,&#160;Millboard&#160;Road,&#160;Bourne&#160;End,&#160;Buckinghamshire,&#160;SL8&#160;5FH,&#160;U.K&#160;<br/>Tel:&#160;+44-1628-585-100,&#160;Fax:&#160;+44-1628-585-900&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Europe&#160;GmbH&#160;<br/></b>Arcadiastrasse&#160;10,&#160;40472&#160;Düsseldorf,&#160;Germany&#160;<br/>Tel:&#160;+49-211-6503-0,&#160;Fax:&#160;+49-211-6503-1327&#160;<br/>
+<b>Renesas&#160;Electronics&#160;(China)&#160;Co.,&#160;Ltd.&#160;<br/></b>Room&#160;1709,&#160;Quantum&#160;Plaza,&#160;No.27&#160;ZhiChunLu&#160;Haidian&#160;District,&#160;Beijing&#160;100191,&#160;P.R.China&#160;<br/>Tel:&#160;+86-10-8235-1155,&#160;Fax:&#160;+86-10-8235-7679&#160;<br/>
+<b>Renesas&#160;Electronics&#160;(Shanghai)&#160;Co.,&#160;Ltd.&#160;<br/></b>Unit&#160;301,&#160;Tower&#160;A,&#160;Central&#160;Towers,&#160;555&#160;Langao&#160;Road,&#160;Putuo&#160;District,&#160;Shanghai,&#160;P.&#160;R.&#160;China&#160;200333&#160;<br/>Tel:&#160;+86-21-2226-0888,&#160;Fax:&#160;+86-21-2226-0999&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Hong&#160;Kong&#160;Limited&#160;<br/></b>Unit&#160;1601-1611,&#160;16/F.,&#160;Tower&#160;2,&#160;Grand&#160;Century&#160;Place,&#160;193&#160;Prince&#160;Edward&#160;Road&#160;West,&#160;Mongkok,&#160;Kowloon,&#160;Hong&#160;Kong&#160;<br/>Tel:&#160;+852-2265-6688,&#160;Fax:&#160;+852&#160;2886-9022&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Taiwan&#160;Co.,&#160;Ltd.&#160;<br/></b>13F,&#160;No.&#160;363,&#160;Fu&#160;Shing&#160;North&#160;Road,&#160;Taipei&#160;10543,&#160;Taiwan&#160;<br/>Tel:&#160;+886-2-8175-9600,&#160;Fax:&#160;+886&#160;2-8175-9670&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Singapore&#160;Pte.&#160;Ltd.&#160;<br/></b>80&#160;Bendemeer&#160;Road,&#160;Unit&#160;#06-02&#160;Hyflux&#160;Innovation&#160;Centre,&#160;Singapore&#160;339949&#160;<br/>Tel:&#160;+65-6213-0200,&#160;Fax:&#160;+65-6213-0300&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Malaysia&#160;Sdn.Bhd.&#160;<br/></b>Unit&#160;1207,&#160;Block&#160;B,&#160;Menara&#160;Amcorp,&#160;Amcorp&#160;Trade&#160;Centre,&#160;No.&#160;18,&#160;Jln&#160;Persiaran&#160;Barat,&#160;46050&#160;Petaling&#160;Jaya,&#160;Selangor&#160;Darul&#160;Ehsan,&#160;Malaysia&#160;<br/>Tel:&#160;+60-3-7955-9390,&#160;Fax:&#160;+60-3-7955-9510&#160;<br/>
+<b>Renesas&#160;Electronics&#160;India&#160;Pvt.&#160;Ltd.&#160;<br/></b>No.777C,&#160;100&#160;Feet&#160;Road,&#160;HAL&#160;II&#160;Stage,&#160;Indiranagar,&#160;Bangalore,&#160;India&#160;<br/>Tel:&#160;+91-80-67208700,&#160;Fax:&#160;+91-80-67208777&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Korea&#160;Co.,&#160;Ltd.&#160;<br/></b>12F.,&#160;234&#160;Teheran-ro,&#160;Gangnam-Gu,&#160;Seoul,&#160;135-080,&#160;Korea&#160;<br/>Tel:&#160;+82-2-558-3737,&#160;Fax:&#160;+82-2-558-5141&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+©&#160;2006-2017&#160;Renesas&#160;&#160;Electronics&#160;&#160;Corporation.&#160;&#160;All&#160;rights&#160;reserved.&#160;<br/>
+Colophon&#160;&#160;4.1&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=34></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Wdg/doc/R20UT3662EJ0100-AUTOSAR-34_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Wdg/doc/R20UT3662EJ0100-AUTOSAR-34_2.jpg"/><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+AUTOSAR MCAL&#160;R4.0.3&#160;<br/>
+&#160;<br/>
+User’s Manual&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+R20UT3662EJ0100&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#9">Chapter 1 Introduction</a>
+<ul>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#9">1.1. Document Overview</a></li>
+</ul>
+</li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#11">Chapter 2 Reference</a>
+<ul>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#11">2.1. Reference Documents</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#11">2.2. Trademark Notice</a></li>
+</ul>
+</li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#13">Chapter 3 Code Generation Overview</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#15">Chapter 4 Input Files</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#17">Chapter 5 Output Files</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#19">Chapter 6 Precautions</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#21">Chapter 7 User Configuration Validation</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#23">Chapter 8 Configuration Overview</a>
+<ul>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#23">8.1. &#160;Container Overview</a>
+<ul>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#23">8.1.1. Pre-Compile Configurable Parameters</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#25">8.1.2. Post Build Time Configurable Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#27">Chapter 9 Messages</a>
+<ul>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#27">9.1 Error Messages</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#30">9.2 Warning Messages</a></li>
+<li><a href="R20UT3662EJ0100-AUTOSARs.html#30">9.3 Information Messages</a></li>
+</ul>
+</li>
+</ul>
+<hr/>
+</body>
+</html>

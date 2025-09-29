@@ -1,0 +1,2012 @@
+---
+title: sv-rte-us-72s
+linkTitle: sv-rte-us-72s
+weight: 276
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-1_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-1_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-1_3.png"/><br/>
+<b>RTE Server&#160;</b><br/>
+<b>Reference Manual</b><br/>
+Document #10951&#160;Rev.7.2<br/>
+Copyright © 2005&#160;by<br/>
+All rights reserved.<br/>
+<hr/>
+<a name=2></a>Copyright © 1983-2005 by Green Hills Software, Inc.&#160;All&#160;rights reserved. No&#160;part of this&#160;publication may be reproduced,&#160;stored<br/>in a retrieval system,&#160;or&#160;transmitted,&#160;in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise,<br/>without prior&#160;written permission&#160;from Green Hills Software, Inc.<br/>
+DISCLAIMER<br/>
+GREEN HILLS&#160;SOFTWARE, INC. MAKES&#160;NO REPRESENTATIONS&#160;OR WARRANTIES WITH RESPECT&#160;TO THE<br/>CONTENTS&#160;HEREOF AND&#160;SPECIFICALLY DISCLAIMS ANY IMPLIED&#160;WARRANTIES OF&#160;MERCHANTABILITY OR<br/>FITNESS FOR ANY PARTICULAR PURPOSE.&#160;Further,&#160;Green Hills&#160;Software,&#160;Inc. reserves the&#160;right&#160;to revise this publication<br/>and to make&#160;changes from time to time in&#160;the content hereof without obligation of Green Hills Software,&#160;Inc. to notify&#160;any person<br/>of&#160;such&#160;revision&#160;or&#160;changes.<br/>
+Green Hills Software and the&#160;Green Hills logo&#160;are&#160;trademarks, MULTI and AdaMULTI&#160;are&#160;registered trademarks, of Green Hills<br/>Software,&#160;Inc.<br/>
+System V&#160;is a&#160;trademark of&#160;AT&amp;T.<br/>
+Java&#160;is a registered trademark, and Sun&#160;is&#160;a trademark of&#160;Sun Microsystems,&#160;Inc.<br/>
+UNIX&#160;and&#160;Open&#160;Look are registered trademarks&#160;of&#160;UNIX System&#160;Laboratories.<br/>
+4.2BSD&#160;is a trademark of the&#160;Board&#160;of&#160;Regents&#160;of the University of&#160;California at&#160;Berkeley.<br/>
+X and X Window&#160;System&#160;are&#160;trademarks of the Massachusetts&#160;Institute&#160;of&#160;Technology.<br/>
+Intel, i960,&#160;and&#160;Pentium are registered trademarks, and i386 and i486&#160;are trademarks&#160;of Intel Corporation.<br/>
+Motif&#160;is&#160;a trademark of&#160;Open Software&#160;Foundation, Inc.<br/>
+Microsoft&#160;is a&#160;registered trademark,&#160;and&#160;Windows, Windows&#160;95,&#160;Windows 98,&#160;Windows&#160;Me,&#160;Windows NT,&#160;Windows 2000,&#160;and<br/>Windows&#160;XP are trademarks&#160;of&#160;Microsoft Corporation.<br/>
+VxWorks is a&#160;registered&#160;trademark of Wind River.<br/>
+INTEGRITY is&#160;a&#160;trademark of&#160;Green Hills&#160;Software, Inc.<br/>
+OSE&#160;is a registered trademark&#160;of&#160;Enea&#160;OSE&#160;Systems AB.<br/>
+ThreadX is&#160;a&#160;registered&#160;trademark&#160;of&#160;Express Logic,&#160;Inc.<br/>
+All other trademarks and&#160;registered trademarks&#160;are&#160;property&#160;of&#160;their respective&#160;companies.<br/>
+<hr/>
+<a name=3></a><b>C&#160;O&#160;N&#160;T&#160;E&#160;N&#160;T&#160;S</b><br/>
+<a href="sv-rte-us-72s.html#7">Preface .................</a>.............................................................................1<br/>
+<a href="sv-rte-us-72s.html#8">About&#160;this Manual&#160;</a>....................................................................................2<br/>
+<a href="sv-rte-us-72s.html#8">Notation Conventions&#160;&#160;</a>..............................................................................2<br/>
+<a href="sv-rte-us-72s.html#9">Chapter 1&#160;</a>Installation&#160;&#160;...........................................................................3<br/>
+<a href="sv-rte-us-72s.html#10">The RTEserv Software&#160;Package&#160;&#160;</a>.............................................................4<br/>
+<a href="sv-rte-us-72s.html#10">Installing the&#160;RTE Server&#160;</a>.........................................................................4<br/>
+<a href="sv-rte-us-72s.html#10">Setting The&#160;RTE&#160;&#160;</a>......................................................................................4<br/>
+<a href="sv-rte-us-72s.html#10">Checking the&#160;Connection&#160;&#160;</a>........................................................................4<br/>
+<a href="sv-rte-us-72s.html#13">Chapter 2&#160;Editing a MULTI Resource File&#160;</a>............................................7<br/>
+<a href="sv-rte-us-72s.html#14">Resource Files&#160;</a>.........................................................................................8<br/>
+<a href="sv-rte-us-72s.html#14">RTE.RC ...</a>....................................................................................................&#160;8<br/>
+<a href="sv-rte-us-72s.html#15">_INIT_SP ..</a>...............................................................................................9<br/>
+<a href="sv-rte-us-72s.html#15">Starting RTEserv&#160;&#160;</a>.....................................................................................9<br/>
+<a href="sv-rte-us-72s.html#15">Target&#160;Commands&#160;</a>...................................................................................9<br/>
+<a href="sv-rte-us-72s.html#17">Chapter 3&#160;Creating an Executable File&#160;&#160;</a>..............................................11<br/>
+<a href="sv-rte-us-72s.html#18">RTE-xxxx-PC ...</a>......................................................................................12<br/>
+<a href="sv-rte-us-72s.html#18">RTE-xxxx-IE, RTE-xxxx-TP&#160;&#160;</a>...................................................................12<br/>
+<a href="sv-rte-us-72s.html#19">Chapter 4&#160;Activating MULTI with RTEserv&#160;</a>.........................................13<br/>
+<a href="sv-rte-us-72s.html#20">Starting RTE&#160;&#160;</a>..........................................................................................14<br/>
+<a href="sv-rte-us-72s.html#20">Address Specification&#160;&#160;</a>............................................................................14<br/>
+<a href="sv-rte-us-72s.html#20">Setting _INIT_SP&#160;</a>...................................................................................14<br/>
+<a href="sv-rte-us-72s.html#21">Chapter 5&#160;Target Window&#160;&#160;</a>..................................................................15<br/>
+<a href="sv-rte-us-72s.html#22">Target&#160;Window&#160;&#160;</a>......................................................................................16<br/>
+<a href="sv-rte-us-72s.html#23">Chapter 6&#160;Target Commands&#160;</a>.............................................................17<br/>
+<a href="sv-rte-us-72s.html#24">Server Troubleshooting Command&#160;</a>........................................................18<br/>
+<a href="sv-rte-us-72s.html#24">debug&#160;[on|off]&#160;&#160;</a>............................................................................................&#160;18<br/>
+<a href="sv-rte-us-72s.html#24">Download Suppress&#160;Command&#160;</a>.............................................................18<br/>
+<i><b>C-1</b></i><br/>
+<hr/>
+<a name=4></a><b>C&#160;O&#160;N&#160;T&#160;E&#160;N&#160;T&#160;S</b><br/>
+<a href="sv-rte-us-72s.html#24">noload ..</a>.....................................................................................................&#160;18<br/>
+<a href="sv-rte-us-72s.html#24">Target&#160;Commands&#160;&#160;</a>.................................................................................18<br/>
+<a href="sv-rte-us-72s.html#25">Chapter 7&#160;Trace Data Display Function&#160;&#160;</a>............................................&#160;19<br/>
+<a href="sv-rte-us-72s.html#27">Menus and Buttons&#160;in&#160;the Trace&#160;Window&#160;&#160;</a>..............................................21<br/>
+<a href="sv-rte-us-72s.html#29">How to get trace&#160;data&#160;&#160;</a>............................................................................23<br/>
+<a href="sv-rte-us-72s.html#29">Setting trace triggers&#160;</a>.................................................................................&#160;23<br/>
+<a href="sv-rte-us-72s.html#29">Setting Trace Display&#160;Mode&#160;</a>......................................................................&#160;23<br/>
+<a href="sv-rte-us-72s.html#31">Execution&#160;of&#160;the Program and&#160;Break&#160;</a>........................................................&#160;25<br/>
+<a href="sv-rte-us-72s.html#31">Trace Data Display</a>&#160;&#160;...................................................................................&#160;25<br/>
+<a href="sv-rte-us-72s.html#33">Saving Trace Data&#160;to&#160;a&#160;File ..</a>.................................................................27<br/>
+<a href="sv-rte-us-72s.html#34">Trigger Setting (when&#160;using KIT-VR5432-TP, KIT-VR5464-TP)&#160;&#160;</a>...........28<br/>
+<a href="sv-rte-us-72s.html#34">eve Setup... Menu&#160;</a>.....................................................................................&#160;28<br/>
+<a href="sv-rte-us-72s.html#35">eva Setup... Menu&#160;</a>.....................................................................................&#160;29<br/>
+<a href="sv-rte-us-72s.html#36">Trace Setup...&#160;Menu&#160;&#160;</a>.................................................................................&#160;30<br/>
+<a href="sv-rte-us-72s.html#38">Trace Data Display&#160;(when&#160;using KIT-VR5432-TP, KIT-VR5464-TP)&#160;&#160;</a>....32<br/>
+<a href="sv-rte-us-72s.html#38">Assembler Display&#160;Mode&#160;&#160;</a>..........................................................................&#160;32<br/>
+<a href="sv-rte-us-72s.html#40">C&#160;Source/Assembler Mixed Display&#160;Mode&#160;&#160;</a>...............................................&#160;34<br/>
+<a href="sv-rte-us-72s.html#41">Trigger Setting (when&#160;using KIT-NB85E-TP)&#160;&#160;</a>........................................35<br/>
+<a href="sv-rte-us-72s.html#41">tp Setup...&#160;Menu&#160;&#160;</a>.......................................................................................&#160;35<br/>
+<a href="sv-rte-us-72s.html#42">td Setup...&#160;Menu&#160;&#160;</a>.......................................................................................&#160;36<br/>
+<a href="sv-rte-us-72s.html#43">tsp Setup...&#160;Menu&#160;</a>......................................................................................&#160;37<br/>
+<a href="sv-rte-us-72s.html#44">Trace Setup...&#160;Menu&#160;&#160;</a>.................................................................................&#160;38<br/>
+<a href="sv-rte-us-72s.html#47">Trace Data Display&#160;(when&#160;using KIT-NB85E-TP) ....</a>.............................41<br/>
+<a href="sv-rte-us-72s.html#47">Assembler Display&#160;Mode&#160;&#160;</a>..........................................................................&#160;41<br/>
+<a href="sv-rte-us-72s.html#49">C&#160;Source/Assembler Mixed Display&#160;Mode&#160;&#160;</a>...............................................&#160;43<br/>
+<a href="sv-rte-us-72s.html#50">Trigger Setting (when&#160;using RTE-V850E/GP1-IE) ...</a>.............................44<br/>
+<a href="sv-rte-us-72s.html#50">tp Setup...&#160;Menu&#160;&#160;</a>.......................................................................................&#160;44<br/>
+<a href="sv-rte-us-72s.html#51">td Setup...&#160;Menu&#160;&#160;</a>.......................................................................................&#160;45<br/>
+<a href="sv-rte-us-72s.html#52">tsp Setup...&#160;Menu&#160;</a>......................................................................................&#160;46<br/>
+<a href="sv-rte-us-72s.html#53">Trace Setup...&#160;Menu&#160;&#160;</a>.................................................................................&#160;47<br/>
+<a href="sv-rte-us-72s.html#55">SubSwitch Setup...Menu&#160;&#160;</a>..........................................................................&#160;49<br/>
+<a href="sv-rte-us-72s.html#61">eva Setup... Menu&#160;</a>.....................................................................................&#160;55<br/>
+<a href="sv-rte-us-72s.html#63">Trace Data Display&#160;(when&#160;using RTE-V850E/GP1-IE) ..</a>.......................57<br/>
+<a href="sv-rte-us-72s.html#63">Assembler Display&#160;Mode&#160;&#160;</a>..........................................................................&#160;57<br/>
+<a href="sv-rte-us-72s.html#66">C&#160;Source/Assembler Mixed Display&#160;Mode&#160;&#160;</a>...............................................&#160;60<br/>
+<a href="sv-rte-us-72s.html#67">Trigger Setting (when&#160;using KIT-V850E/MA3-IE) .</a>.................................61<br/>
+<a href="sv-rte-us-72s.html#67">tp Setup...&#160;Menu&#160;&#160;</a>.......................................................................................&#160;61<br/>
+<a href="sv-rte-us-72s.html#68">td Setup...&#160;Menu&#160;&#160;</a>.......................................................................................&#160;62<br/>
+<i><b>C-2</b></i><br/>
+<hr/>
+<a name=5></a><b>C&#160;O&#160;N&#160;T&#160;E&#160;N&#160;T&#160;S</b><br/>
+<a href="sv-rte-us-72s.html#69">tsp Setup... Menu&#160;&#160;</a>......................................................................................&#160;63<br/>
+<a href="sv-rte-us-72s.html#70">Trace Setup... Menu .........</a>.........................................................................&#160;64<br/>
+<a href="sv-rte-us-72s.html#72">SubSwitchOn&#160;Setup...Menu&#160;&#160;</a>......................................................................&#160;66<br/>
+<a href="sv-rte-us-72s.html#76">SubSwitchOff Setup...Menu&#160;&#160;</a>......................................................................&#160;70<br/>
+<a href="sv-rte-us-72s.html#80">eva Setup... Menu&#160;&#160;</a>.....................................................................................&#160;74<br/>
+<a href="sv-rte-us-72s.html#82">eve Setup... Menu&#160;&#160;</a>.....................................................................................&#160;76<br/>
+<a href="sv-rte-us-72s.html#83">Trace Data&#160;Display&#160;(when using KIT-V850E/MA3-IE)&#160;</a>...........................77<br/>
+<a href="sv-rte-us-72s.html#83">Assembler Display&#160;Mode&#160;&#160;</a>..........................................................................&#160;77<br/>
+<a href="sv-rte-us-72s.html#86">C Source/Assembler&#160;Mixed Display&#160;Mode&#160;</a>................................................&#160;80<br/>
+<a href="sv-rte-us-72s.html#87">Trace Data&#160;Display&#160;(when using KIT-NA85E2-TP, KIT-V850E2/ME3-TP)</a>&#160;...&#160;81<br/>
+<a href="sv-rte-us-72s.html#89">Trace Data&#160;Display&#160;(when using KT-OMAP_ARM-TP)&#160;&#160;</a>.........................83<br/>
+<i><b>C-3</b></i><br/>
+<hr/>
+<a name=6></a><b>C&#160;O&#160;N&#160;T&#160;E&#160;N&#160;T&#160;S</b><br/>
+<i><b>C-4</b></i><br/>
+<hr/>
+<a name=7></a>Preface<br/>
+<b>Preface</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#8">About this&#160;Manual</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#8">Notation Conventions</a><br/>
+<i><b>1</b></i><br/>
+<hr/>
+<a name=8></a>Preface<br/>
+<b>About this Manual</b><br/>
+This&#160;manual describes the combined&#160;use&#160;of MULTI and an RTE&#160;server,<b>&#160;rteserv</b>,&#160;including&#160;the files&#160;con-<br/>stituting the package and how to customize&#160;them.&#160;The Midas Lab RTE&#160;set&#160;up is&#160;covered briefly.&#160;For<br/>details, as well as an explanation For&#160;details on using MULTI, refer to the &#34;MULTI 2000&#160;User's<br/>Guide&#34;.<br/>
+The following Midas Lab&#160;emulators and boards&#160;are supported.<br/>
+Emulator<br/>
+Board<br/>
+RTE-XXXX-IE<br/>
+RTE-XXXX-PC<br/>
+RTE-XXXX-TP<br/>
+RTE-XXXX-IE, RTE-XXXX-TP&#160;indicate the&#160;names&#160;of&#160;emulators&#160;and&#160;RTE-XXXX-PC indicates the<br/>name of&#160;boards manufactured by&#160;Midas&#160;Lab.&#160;The &#34;XXXX&#34;&#160;mostly&#160;varies&#160;with&#160;the target MPU.<br/>
+<b>Notation Conventions</b><br/>
+This manual&#160;uses the&#160;following typographical conventions:.<br/>
+Convention<br/>
+Example<br/>
+Description<br/>
+<b>bold</b>&#160;text<br/>
+<b>-noansi</b><br/>
+name of&#160;program,&#160;command, directory,&#160;or file<br/>
+<b>bold</b>&#160;characters in quotes<br/>
+&#34;<b>A</b>&#34;<br/>
+name to enter as shown, without&#160;quotes<br/>
+courier font<br/>
+<b>setenv TMPDIR</b><br/>
+samples of&#160;code, or&#160;instructions to enter<br/>
+<i>italic</i>&#160;text in a command line<br/>
+<b>-o</b>&#160;<i>filename</i><br/>
+place-holder&#160;for&#160;user-supplied information<br/>
+square brackets, []<br/>
+<b>.macro</b>&#160;<i>name</i>&#160;[<i>list</i>]<br/>
+encloses optional&#160;commands or&#160;terms<br/>
+<i><b>2</b></i><br/>
+<hr/>
+<a name=9></a>1.&#160;Installation<br/>
+<b>Chapter 1<br/>Installation</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#10">The RTEserv Software Package</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#10">Installing the RTE Server</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#10">Setting&#160;The RTE</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#10">Checking the Connection</a><br/>
+<i><b>3</b></i><br/>
+<hr/>
+<a name=10></a>1.&#160;Installation<br/>
+<b>The RTEserv Software Package</b><br/>
+The&#160;Midas Lab&#160;RTE server package includes&#160;the following file:<br/>
+File<br/>
+Description<br/>
+rteserv<br/>
+RTE&#160;server<br/>
+The package also includes files that&#160;are&#160;implicitly used&#160;for starting MULTI, as well as those&#160;required for<br/>installation. When using the RTE server with other&#160;target&#160;MPUs, change the&#160;target command or the ini-<br/>tial&#160;value&#160;of&#160;the&#160;stack pointer as required.<br/>
+<b>Installing the RTE Server</b><br/>
+Insert the supplied disk&#160;into the appropriate drive of&#160;the&#160;PC then, from the Windows Program Manager,<br/>execute&#160;<b>setup.exe</b>&#160;on&#160;the&#160;diskette.&#160;This completes&#160;basic&#160;installation of the&#160;server.<br/>
+<b>Setting The RTE</b><br/>
+Next, set&#160;up&#160;the RTE as&#160;necessary and&#160;connect it&#160;to&#160;the&#160;PC's&#160;serial port, a bus&#160;or&#160;LAN, as described&#160;in<br/>the installation&#160;section of the manual provided with the RTE.&#160;Then&#160;install the&#160;software&#160;supplied&#160;by<br/>Midas Lab.<br/>
+<b>Checking the Connection</b><br/>
+Check the connection between the&#160;RTE and PC, and the RTE operation&#160;from the PC. After the supplied<br/>Midas Lab software has&#160;been installed,&#160;the&#160;<b>RTE for Windows</b>&#160;group is created in the Windows&#160;Pro-<br/>gram Manager window.&#160;To&#160;check the connection,&#160;start&#160;<b>Check&#160;RTE2</b>&#160;from within Windows. Using<br/><b>Check RTE2</b>,&#160;allows you to:<br/>
+o<br/>
+Set the&#160;operating&#160;environment (ports to be&#160;used, communication&#160;speed,&#160;I/O address,&#160;etc.)<br/>
+o<br/>
+Check&#160;the connection between&#160;the RTE&#160;and PC<br/>
+o<br/>
+Test the&#160;RTE functions<br/>
+When&#160;starting&#160;<b>Check RTE2</b>,&#160;a&#160;dialog box&#160;appears allowing you to select the&#160;type&#160;of emulator or&#160;board.<br/>Select the RTE to be used. For bus&#160;connections, select&#160;the port address. For serial connections, select the<br/>port&#160;connected&#160;to the&#160;RTE,&#160;then&#160;select the communication speed. For LAN connection, Select&#160;IP&#160;address<br/>of RTE. Finally,&#160;click the&#160;confirmation button.&#160;This&#160;starts both the&#160;connection check and function&#160;test.<br/>
+If&#160;&#160;<b>Check RTE2</b>&#160;does not terminate normally&#160;in a serial&#160;connection case,&#160;check the RS-232C cable<br/>between the RTE&#160;and PC, and the RTE&#160;settings, such as&#160;the communication speed and port setting. For<br/>bus connections,&#160;check&#160;the I/O address setting (the&#160;address must not&#160;conflict with that being used&#160;by<br/>
+<i><b>4</b></i><br/>
+<hr/>
+<a name=11></a>1.&#160;Installation<br/>
+another board)&#160;and the&#160;board connection.&#160;Also check&#160;the RTE dip&#160;switch settings&#160;(communication<br/>speed, I/O address,&#160;etc.).&#160;For details,&#160;refer&#160;to&#160;the&#160;manual&#160;provided&#160;with&#160;the&#160;RTE.<br/>
+<i><b>5</b></i><br/>
+<hr/>
+<a name=12></a>1.&#160;Installation<br/>
+<i><b>6</b></i><br/>
+<hr/>
+<a name=13></a>2.&#160;Editing a MULTI Resource File<br/>
+<b>Chapter 2<br/>Editing a MULTI Resource</b><br/>
+<b>File</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#14">Resource Files</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#15">_INIT_SP</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#15">Starting RTEserv</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#15">Target Commands</a><br/>
+<i><b>7</b></i><br/>
+<hr/>
+<a name=14></a>2.&#160;Editing&#160;a&#160;MULTI Resource&#160;File<br/>
+<b>Resource Files</b><br/>
+Resource files&#160;set server-specific&#160;commands, rather than commands&#160;for the MULTI&#160;debugger.&#160;In&#160;Win-<br/>dows,&#160;a resource file is stored&#160;in the&#160;same directory where MULTI is&#160;installed.&#160;Suppose MULTI is<br/>started as follows:<br/>
+<b>multi</b><br/>
+The resource&#160;file&#160;in the directory&#160;in which&#160;MULTI&#160;has been&#160;installed is&#160;read. In the&#160;resource file,&#160;you<br/>can specify fonts&#160;and&#160;configure commands such&#160;as&#160;<b>button</b>&#160;and&#160;<b>mouse</b>.&#160;A simple&#160;resource&#160;file&#160;exam-<br/>ple is&#160;shown below:<br/>
+<b>/* sample initial configuration commands */</b><br/>
+<b>button&#160;toggle&#160;$_DISPMODE := !$_DISPMODE</b><br/>
+<b>mouse mouse3=disconnect</b><br/>
+<b>configure tabsize=8</b><br/>
+<b>Note:</b><br/>
+Never add RTE target&#160;commands&#160;in the&#160;<b>multi.rc</b>&#160;resource file. Specifying RTE target commands&#160;in<br/>the&#160;&#160;<b>multi.rc</b>&#160;resource file may cause unexpected behavior in MULTI's Builder.&#160;RTE target&#160;com-<br/>mands&#160;are used only with&#160;the MULTI&#160;debugger.<br/>
+<b>RTE.RC</b><br/>
+MULTI provides a function that automatically reads a&#160;resource file associated&#160;with a debug target file.<br/>For&#160;example, suppose that the&#160;debugger is started by specifying&#160;a&#160;debug target file named&#160;<b>test.out</b>,<br/>either&#160;from the&#160;command&#160;line or with the&#160;builder,&#160;as&#160;follows:<br/>
+<b>multi test.out</b><br/>
+If a file named&#160;<b>multi.rc</b>&#160;exists,&#160;the&#160;<b>multi.rc</b>&#160;resource file&#160;is read. In&#160;addition, if a resource file<br/>named&#160;<b>test.out.rc</b>&#160;exists in&#160;the&#160;current&#160;directory,&#160;the&#160;<b>test.out.rc</b>&#160;resource&#160;file&#160;is&#160;also&#160;automat-<br/>ically read and executed.&#160;The&#160;loaded&#160;resource&#160;file&#160;has the&#160;same&#160;filename&#160;as the&#160;target program&#160;being<br/>debugged. The package includes&#160;<b>rteie.rc</b>&#160;(for the RTE-xxxx-IE)&#160;or&#160;<b>rtepc.rc</b>&#160;(for the RTE-xxxx-<br/>PC), an example resource&#160;file.<br/>
+This method allows you to&#160;use&#160;a resource file for&#160;each&#160;debug target&#160;object file.&#160;In this case,&#160;a&#160;resource<br/>file&#160;is read only when debugging of&#160;the corresponding&#160;object file is&#160;started. Accordingly,&#160;you&#160;can code<br/>target&#160;commands in such&#160;a&#160;resource file and&#160;perform&#160;pre-debugging&#160;initialization for the&#160;RTE. When the<br/><b>remote rteserv</b>&#160;command is&#160;in&#160;the&#160;<b>rte.rc</b>&#160;resource&#160;file, it must&#160;appear prior&#160;to&#160;all&#160;<b>target</b>&#160;com-<br/>mands, because&#160;<b>target</b>&#160;commands&#160;can be executed only after&#160;<b>rteserv</b>&#160;has been started by executing<br/>the&#160;<b>remote rteserv</b>&#160;command.<br/>
+The resource&#160;filename&#160;can be&#160;unrelated to the object&#160;file. In this case, such&#160;a&#160;file can be used as a&#160;play-<br/>back file after MULTI has been&#160;started in debug mode,&#160;or specified with an&#160;option flag&#160;(<b>-p</b>&#160;option)&#160;when<br/>starting MULTI.<br/>
+<i><b>8</b></i><br/>
+<hr/>
+<a name=15></a>2.&#160;Editing a MULTI Resource File<br/>
+For example,&#160;after&#160;MULTI has been&#160;started&#160;in&#160;debug mode, the resource file can &#160;be played back&#160;as&#160;a<br/>MULTI command,&#160;as follows:<br/>
+<b>&lt; rte.rc</b><br/>
+When starting MULTI,&#160;the&#160;<b>-p</b>&#160;option can be specified as&#160;follows:<br/>
+<b>multi -p&#160;rte.rc&#160;a.out</b><br/>
+<b>_INIT_SP</b><br/>
+<b>_INIT_SP</b>&#160;is&#160;an&#160;internal MULTI symbol&#160;that indicates the&#160;initial&#160;stack&#160;pointer value. Suppose the&#160;fol-<br/>lowing&#160;command is entered:<br/>
+<b>_INIT_SP=0x11f000</b><br/>
+MULTI sets&#160;<b>0x11f000</b>&#160;as&#160;the&#160;initial&#160;value&#160;in&#160;the&#160;stack pointer.&#160;This&#160;command can&#160;also&#160;be coded&#160;in&#160;a<br/>resource&#160;file&#160;as&#160;shown&#160;above.&#160;In such&#160;a&#160;case&#160;when&#160;MULTI&#160;is&#160;started,&#160;the stack&#160;pointer&#160;is&#160;initialized to<br/><b>0x11f000</b>. This command is not required if you create your&#160;own startup&#160;routine in&#160;which initialization<br/>of the&#160;stack pointer is explicitly&#160;specified.<br/>
+Regardless of&#160;whether&#160;<b>_INIT_SP</b>&#160;is used, the stack pointer&#160;must point&#160;to an address within&#160;the usable<br/>RAM&#160;area&#160;on&#160;the RTE.&#160;That&#160;RAM&#160;area&#160;must&#160;not overlap the user program&#160;area&#160;(see<a href="sv-rte-us-72s.html#17">&#160;&#34;Chapter 3&#160;Creat-<br/>ing an Executable&#160;File&#34;&#160;on page 11</a>).<br/>
+<b>Starting RTEserv</b><br/>
+To&#160;start&#160;<b>rteserv</b>, enter:<br/>
+<b>remote rteserv</b><br/>
+<b>Target Commands</b><br/>
+The&#160;<b>target</b>&#160;command and commands&#160;entered&#160;using the&#160;<b>TARGET</b>&#160;window are sent&#160;directly&#160;to the RTE<br/>and&#160;then executed, with&#160;few exceptions.&#160;The&#160;output is&#160;also displaye<a href="sv-rte-us-72s.html#23">d. For details see &#34;Chapter 6 Target<br/>Commands&#34; on&#160;page 17.</a><br/>
+<i><b>9</b></i><br/>
+<hr/>
+<a name=16></a>2.&#160;Editing&#160;a&#160;MULTI Resource&#160;File<br/>
+<i><b>10</b></i><br/>
+<hr/>
+<a name=17></a>3.&#160;Creating&#160;an Executable File<br/>
+<b>Chapter 3<br/>Creating an Executable File</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#18">RTE-xxxx-PC</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#18">RTE-xxxx-IE, RTE-xxxx-TP</a><br/>
+<i><b>11</b></i><br/>
+<hr/>
+<a name=18></a>3.&#160;Creating&#160;an&#160;Executable&#160;File<br/>
+When creating an&#160;executable&#160;file&#160;that can be&#160;debugged by MULTI for the&#160;Midas&#160;Lab RTE, carefully<br/>determine&#160;the address when&#160;linking&#160;the program.&#160;The location&#160;address must&#160;be&#160;determined so that&#160;the<br/>file can be loaded into&#160;the memory&#160;of the&#160;actual&#160;device or into&#160;the&#160;mapped emulation&#160;memory.<br/>
+<b>RTE-xxxx-PC</b><br/>
+For the RTE-xxxx-PC, profiling and coverage using&#160;the&#160;RTE&#160;are&#160;supported. System calls which can be<br/>used&#160;for the simulator are also supported. Finally, an I/O window exists for RTE-xxxx-PC allowing<br/>input/output processing.<br/>
+<b>RTE-xxxx-IE, RTE-xxxx-TP</b><br/>
+For the RTE-xxxx-IE and RTE-xxxx-TP, profiling and coverage using&#160;the&#160;RTE are&#160;not supported. Thus,<br/>the profile option cannot be specified for compilation. System&#160;calls and&#160;I/O&#160;window which can be used<br/>for&#160;the simulator&#160;are&#160;supported.<br/>
+<i><b>12</b></i><br/>
+<hr/>
+<a name=19></a>4. Activating MULTI with&#160;RTEserv<br/>
+<b>Chapter 4<br/>Activating MULTI with</b><br/>
+<b>RTEserv</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#20">Starting RTE</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#20">Address Specification</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#20">Setting&#160;_INIT_SP</a><br/>
+<i><b>13</b></i><br/>
+<hr/>
+<a name=20></a>4.&#160;Activating&#160;MULTI with&#160;RTEserv<br/>
+<b>Starting RTE</b><br/>
+In the case&#160;of serial&#160;connection, once connection&#160;is&#160;established&#160;normally, the&#160;MULTI&#160;command&#160;window<br/>displays the&#160;following:<br/>
+<b>Connected to debug server 'rteserv'.</b><br/>
+<b>Remote&#160;cpu: xxxx</b><br/>
+where xxxx denotes the&#160;CPU&#160;you&#160;have connected&#160;to.<br/>
+The following message&#160;may appear&#160;in&#160;the MULTI command&#160;window:<br/>
+<b>Couldn't start&#160;'rteserv' as a&#160;remote debug server.</b><br/>
+<b>remote: no remote connection established</b><br/>
+In&#160;such&#160;a case, check whether&#160;<b>rteserv</b>&#160;is&#160;included correctly in&#160;the&#160;execution path. If&#160;not, you must<br/>specify&#160;the PATH environment variable.&#160;It is also possible, however,&#160;to attempt reconnection&#160;by using a<br/>command&#160;that&#160;fully specifies&#160;the&#160;path,&#160;as&#160;indicated&#160;below.<br/>
+<b>remote&#160;/usr/green/rteserv</b><br/>
+If an error&#160;message other&#160;than&#160;the above&#160;is output, execute&#160;<b>Check RTE2</b>,&#160;supplied by&#160;Midas Lab, and<br/>note whether it terminates normally.<br/>
+<b>Address Specification</b><br/>
+Once&#160;MULTI is&#160;connected&#160;to&#160;the RTE,&#160;clicking the&#160;<b>go</b>&#160;or&#160;<b>step</b>&#160;button causes the program to be&#160;down-<br/>loaded&#160;then executed.&#160;At this time,&#160;the following&#160;message may&#160;appear in the MULTI command&#160;window:<br/>
+<b>Download&#160;failed, access error during block write 0xnnnnnnnn -</b><br/>
+<b>0xmmmmmmmm</b><br/>
+<b>Couldn't run program.</b><br/>
+This&#160;message indicates that the specified&#160;address cannot&#160;be used on the&#160;RTE. In such a case,&#160;check the<br/>address specified for&#160;linking.<br/>
+<b>Setting _INIT_SP</b><br/>
+The following message&#160;may&#160;appear when downloading&#160;is&#160;complete:<br/>
+<b>Download complete.</b><br/>
+<b>Couldn't run program.</b><br/>
+This message&#160;indicates that&#160;<b>_INIT_SP</b>&#160;has not been set, or that the set&#160;value is&#160;invalid. In&#160;such&#160;a&#160;case,<br/>set a valid&#160;value&#160;for&#160;<b>_INIT_SP</b>&#160;then click&#160;the&#160;<b>Go</b>,&#160;&#160;<b>Next</b>,&#160;&#160;<b>Restart</b>, or&#160;<b>Step</b>&#160;button again (see<br/><a href="sv-rte-us-72s.html#15">&#34;_INIT_SP&#34;&#160;on&#160;page&#160;9) to do</a>wnload&#160;and re-run&#160;the program.<br/>
+<i><b>14</b></i><br/>
+<hr/>
+<a name=21></a>5.&#160;Target&#160;Window<br/>
+<b>Chapter 5<br/>Target Window</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#22">Target Window</a><br/>
+<i><b>15</b></i><br/>
+<hr/>
+<a name=22></a>5.&#160;Target&#160;Window<br/>
+<b>Target Window</b><br/>
+The Target window lets&#160;you issue commands for&#160;communicating&#160;with&#160;the RTE directly. Commands<br/>include those for initialization (i.e.&#160;<b>map</b>&#160;for the&#160;V851), as&#160;well as&#160;those for checking&#160;the connection&#160;with<br/>the monitor (i.e.&#160;<b>ver</b>&#160;command). When used from&#160;the MULTI Debugger,&#160;these&#160;commands can&#160;be&#160;used,<br/>provided&#160;they&#160;are&#160;prefixed&#160;with&#160;<b>target</b>.&#160;For example,&#160;for the&#160;V851&#160;MPU,&#160;the following command&#160;can<br/>be entered&#160;from the&#160;<b>Target</b>&#160;window:<br/>
+<b>map 100000 128</b><br/>
+When used from&#160;the MULTI Debugger,&#160;the&#160;above&#160;command can&#160;be executed as:<br/>
+<b>target&#160;map 100000 128</b><br/>
+<i><b>16</b></i><br/>
+<hr/>
+<a name=23></a>6.&#160;Target&#160;Commands<br/>
+<b>Chapter 6<br/>Target Commands</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#24">Server Troubleshooting Command</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#24">Download Suppress&#160;Command</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#24">Target Commands</a><br/>
+<i><b>17</b></i><br/>
+<hr/>
+<a name=24></a>6.&#160;Target&#160;Commands<br/>
+This&#160;chapter lists&#160;information and limitations&#160;on&#160;the&#160;target&#160;commands&#160;that&#160;are&#160;executed&#160;from&#160;the Target<br/>window.&#160;It&#160;also describes those target&#160;commands not supported by&#160;the RTE.<br/>
+Basically, all the&#160;commands supported by&#160;the&#160;RTE are&#160;executed&#160;from&#160;the Target&#160;window.&#160;In&#160;addition,<br/>the following three target&#160;commands can&#160;also be used.<br/>
+<b>Server Troubleshooting Command</b><br/>
+<b>debug [on|off]</b><br/>
+This command is used for troubleshooting when using&#160;<b>rteserv</b>. Specifying&#160;<b>debug on</b>&#160;causes subse-<br/>quent communication&#160;between&#160;the RTE and&#160;<b>rteserv</b>&#160;to be saved.&#160;The log&#160;is output to the window<br/>from&#160;which MULTI was started.<br/>
+<b>Creating a&#160;log file</b><br/>
+Once MULTI has been started, open&#160;the Target window (connect to the board&#160;using the RTE server),<br/>and enter the&#160;following:<br/>
+<b>debug on</b><br/>
+To&#160;enable entry from the MULTI command window, enter&#160;<b>target debug&#160;on</b>, instead of the&#160;above.<br/>Once&#160;this&#160;command&#160;is&#160;executed, all subsequent&#160;communication between&#160;the&#160;RTE&#160;and&#160;<b>rteserv</b>&#160;is<br/>logged. To&#160;terminate&#160;logging, enter the&#160;following:<br/>
+<b>debug off</b><br/>
+<b>Note:</b><br/>
+Logging too&#160;much data on the PC&#160;may cause MULTI to hang.<br/>
+<b>Download Suppress Command</b><br/>
+<b>noload</b><br/>
+This&#160;command controls downloading to&#160;<b>rteserv</b>. By&#160;default, downloading&#160;begins&#160;upon the&#160;execution<br/>of an object to be&#160;debugged (when the&#160;<b>Go</b>,&#160;<b>Step</b>,&#160;<b>Next</b>, or&#160;<b>Restart</b>&#160;button is clicked). When this<br/>command is entered,&#160;however,&#160;execution&#160;of&#160;the object to be debugged is started&#160;without downloading.<br/>This command is used&#160;to avoid&#160;duplicate&#160;downloading&#160;if, for&#160;example,&#160;an&#160;object already exists in mem-<br/>ory.&#160;To&#160;re-enable downloading,&#160;enter&#160;this command&#160;once&#160;again.<br/>
+<b>Target Commands</b><br/>
+The following tables list the&#160;commands&#160;that&#160;can&#160;be&#160;used&#160;with&#160;the&#160;<b>target</b>&#160;command from the&#160;Target<br/>window or MULTI&#160;command window,&#160;for each target&#160;MPU.&#160;For&#160;details of each command,&#160;refer to the<br/>manual provided with the&#160;RTE.<br/>
+<i><b>18</b></i><br/>
+<hr/>
+<a name=25></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Chapter 7<br/>Trace Data&#160;Display Function</b><br/>
+This chapter&#160;describes the following items.<br/>
+o<br/>
+<a href="sv-rte-us-72s.html#27">Menus and Buttons in the Trace Window</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#29">How to get trace data</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#33">Saving Trace Data&#160;to a File</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#34">Trigger Setting (when using KIT-VR5432-TP, KIT-VR5464-TP)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#38">Trace&#160;Data&#160;Display (when using KIT-VR5432-TP, KIT-VR5464-TP)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#41">Trigger Setting (when using KIT-NB85E-TP)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#47">Trace&#160;Data&#160;Display (when using KIT-NB85E-TP)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#50">Trigger Setting (when using RTE-V850E/GP1-IE)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#63">Trace&#160;Data&#160;Display (when using RTE-V850E/GP1-IE)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#67">Trigger Setting (when using KIT-V850E/MA3-IE)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#83">Trace&#160;Data&#160;Display (when using KIT-V850E/MA3-IE)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#87">Trace&#160;Data&#160;Display (when using KIT-NA85E2-TP, KIT-V850E2/ME3-TP)</a><br/>
+o<br/>
+<a href="sv-rte-us-72s.html#89">Trace&#160;Data&#160;Display (when using KT-OMAP_ARM-TP)</a><br/>
+<i><b>19</b></i><br/>
+<hr/>
+<a name=26></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-26_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+The window for the trace utility is available when&#160;you use the&#160;following&#160;products:<br/>
+<b>[Product Names]</b><br/>
+KIT-VR5400-TP<br/>KIT-NB85E-TP<br/>RTE-V850E/GP1-IE<br/>KIT-V850E/MA3-IE<br/>
+After starting&#160;<b>rteserv</b>, enter&#160;<b>TRACEWIN</b>&#160;in the&#160;MULTI command pane to open the window for&#160;the<br/>trace utility.<br/>
+As&#160;for the&#160;following products, only trace&#160;display is&#160;available.&#160;You cannot specify trigger conditions of<br/>the trace&#160;function&#160;from this window. Specify trace&#160;trigger conditions using&#160;the target&#160;instruction.<br/>
+<b>[Product Names]</b><br/>
+KIT-NA85E2-TP<br/>KIT-OMAP_ARM-TP<br/>KIT-V850E2/ME3<br/>
+<i><b>20</b></i><br/>
+<hr/>
+<a name=27></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Menus and Buttons in the Trace Window</b><br/>
+The&#160;trace window has two menus.<br/>
+<b>Display menu</b><br/>
+<b>Mode...</b><br/>
+Opens a&#160;window from&#160;which you&#160;can&#160;specify&#160;the display&#160;range&#160;and type&#160;of<br/>trace data.<br/>
+<b>Save To File...</b><br/>
+Saves&#160;the&#160;trace data&#160;to a file.<br/>
+<b>Close...</b><br/>
+Closes the&#160;trace window.<br/>
+<b>Trigger menu</b><br/>
+[When using&#160;KIT-VR5432-TP, KIT-VR5464-TP]<br/>
+<b>eve&#160;Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify execution address events.<br/>
+<b>eva&#160;Setup...</b><br/>
+Opens&#160;a&#160;window&#160;from which&#160;you can specify access cycle events.<br/>
+<b>Trace Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify various&#160;trace settings.<br/>
+[When using&#160;KIT-NB85E-TP]<br/>
+<b>tp Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify&#160;trace triggers.<br/>
+<b>td Setup...</b><br/>
+Opens a window from which you can specify conditions&#160;for access cycles<br/>to take&#160;data&#160;into&#160;trace.<br/>
+<b>tsp&#160;Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify&#160;trace switch&#160;points.<br/>
+<b>Trace Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify various&#160;trace settings.<br/>
+[When using&#160;RTE-V850E/GP1-IE]<br/>
+<b>tp Setup...</b><br/>
+Opens a window from which&#160;you&#160;can specify trace&#160;triggers.<br/>
+<b>td Setup...</b><br/>
+Opens a&#160;window from which you can specify conditions for&#160;access<br/>cycles to take&#160;data&#160;into trace.<br/>
+<i><b>21</b></i><br/>
+<hr/>
+<a name=28></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>tsp Setup...</b><br/>
+Opens a window&#160;from&#160;which&#160;you can&#160;specify trace&#160;section points<br/>(addresses).<br/>
+<b>Trace Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify various&#160;trace settings.<br/>
+<b>SubSwitch&#160;Setup...</b><br/>
+Opens a window from which&#160;you can&#160;specify conditions for&#160;sub<br/>switches.<br/>
+<b>eva Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify&#160;events related to access.<br/>
+[When using&#160;KIT-V850E/MA3-IE]<br/>
+<b>tp&#160;Setup...</b><br/>
+Opens a window from&#160;which you&#160;can&#160;specify&#160;trace triggers.<br/>
+<b>td&#160;Setup...</b><br/>
+Opens a window from which you&#160;can specify conditions&#160;for access<br/>cycles&#160;to take data&#160;into&#160;trace.<br/>
+<b>tsp Setup...</b><br/>
+Opens a window from which you can specify&#160;trace section&#160;points<br/>(addresses).<br/>
+<b>Trace Setup...</b><br/>
+Opens a window from&#160;which you can&#160;specify various trace settings.<br/>
+<b>SubSwitchOn Setup...</b><br/>
+Opens a window from&#160;which you can specify conditions&#160;for&#160;sub-<br/>switch on.<br/>
+<b>SubSwitchOff Setup...</b><br/>
+Opens a window from&#160;which you can specify conditions&#160;for&#160;sub-<br/>switch off.<br/>
+<b>eva Setup...</b><br/>
+Opens a window from&#160;which you can specify events related to<br/>access.<br/>
+<b>eve Setup...</b><br/>
+Open a&#160;window from which you can specify&#160;events related to exe-<br/>cution.<br/>
+There are&#160;three buttons in the&#160;bottom&#160;of&#160;the trace&#160;window:<br/>
+<b>Start</b><br/>
+Starts&#160;tracing.<br/>
+<b>Stop</b><br/>
+Stops tracing.<br/>
+<b>Next Page</b><br/>
+When&#160;there&#160;is&#160;more&#160;trace&#160;data, you can&#160;display the&#160;data&#160;in&#160;the next page by<br/>pushing this.<br/>
+<i><b>22</b></i><br/>
+<hr/>
+<a name=29></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-29_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>How to get trace data</b><br/>
+To&#160;get trace&#160;data, follow&#160;the procedure below:<br/>
+<b>Setting&#160;trace triggers</b><br/>
+Specify conditions&#160;to get tracing.&#160;From&#160;the Trigger menu in the&#160;trace window,&#160;specify&#160;an event and<br/>specify trace&#160;trigger conditions.&#160;Trace trigger&#160;conditions&#160;depend on the&#160;MPU you&#160;are using. For more<br/>information,&#160;se<a href="sv-rte-us-72s.html#34">e &#34;Trigger Setting (when&#160;using KIT-VR5432-TP,&#160;KIT-VR5464-TP)&#34;&#160;on page 28,<br/></a><a href="sv-rte-us-72s.html#41">&#34;Trigger Setting&#160;(when using&#160;KIT-NB85E-TP)&#34; on page&#160;35, &#160;</a><a href="sv-rte-us-72s.html#50">&#34;Trigger Setting&#160;(when&#160;using&#160;RTE-<br/>V850E/GP1-IE)&#34; on&#160;page 44</a><a href="sv-rte-us-72s.html#67">, and &#34;Trigger Setting&#160;(when using&#160;KIT-V850E/MA3-IE)&#34; on page 61<br/></a>respectively.<br/>
+Upon setting trigger&#160;conditions, push&#160;the&#160;<b>Start</b>&#160;button&#160;at&#160;the&#160;bottom of the&#160;trace window&#160;and specify to<br/>get tracing.&#160;Once you set trigger conditions, they&#160;are enabled&#160;until you change them, so you&#160;can just<br/>push the&#160;<b>Start</b>&#160;button&#160;to&#160;set&#160;tracing on&#160;when you do&#160;not&#160;have to change&#160;trace trigger conditions.<br/>
+<b>Setting&#160;Trace Display Mode</b><br/>
+From&#160;<b>Mode...</b>&#160;under Display&#160;menu, specify&#160;the trace display&#160;conditions.&#160;When you select&#160;<b>Mode...</b>,<br/>a window like the&#160;one&#160;below&#160;will be displayed:<br/>
+<i><b>23</b></i><br/>
+<hr/>
+<a name=30></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>&lt;Cycle&gt;</b><br/>
+Specify&#160;how much&#160;data from what&#160;position&#160;in&#160;the&#160;trace buffer you want to display at&#160;one&#160;time.<br/>
+<b>Start:</b><br/>
+Specify&#160;the&#160;Cycle&#160;number&#160;to&#160;start&#160;display.&#160;Enter&#160;the&#160;position to&#160;start<br/>trace display&#160;assuming&#160;somewhere&#160;around&#160;the trigger&#160;cycle or the end<br/>cycle&#160;as 0. When&#160;you&#160;are using KIT-VR5432-TP,&#160;KIT-VR5464-TP,<br/>KIT-NB85E-TP,&#160;RTE-V850E/GP1-IE,&#160;or KIT-V850E/MA3-IE, you<br/>can enter&#160;a value&#160;between&#160;<b>-0x1ffff</b>&#160;and&#160;<b>0x1ffff</b>. The default<br/>value is&#160;<b>-0x1ffff</b>&#160;(The oldest Cycle number).&#160;When you are&#160;using<br/>other MPUs, you&#160;can enter a&#160;value between&#160;<b>-0x3ffff</b>&#160;and<br/><b>0x3ffff</b>.&#160;The&#160;default value in this&#160;case is&#160;<b>-0x3ffff</b>.<br/>
+<b>Length:</b><br/>
+Specify&#160;the number&#160;of&#160;cycles to&#160;display at&#160;one&#160;time&#160;from&#160;the&#160;Cycle<br/>number that is&#160;specified by&#160;<b>Start:</b>. You&#160;can enter a&#160;value&#160;between<br/><b>0x1</b>&#160;and&#160;<b>0x4000</b>&#160;and the&#160;default value is&#160;<b>0x32</b>.<br/>
+<b>&lt;Mode&gt;</b><br/>
+Specify the&#160;display&#160;mode of the&#160;traced instruction.<br/>
+<b>Instruction</b><br/>
+Disassemble the&#160;traced instruction.<br/>
+<b>Source Mixed</b><br/>
+If there is C&#160;source code&#160;that corresponds to the traced instruction,&#160;the<br/>source line&#160;and the&#160;disassembled instruction are&#160;displayed together.<br/>
+Set each item&#160;and&#160;push&#160;<b>OK</b>&#160;button to set the&#160;trace display mode.<br/>
+<i><b>24</b></i><br/>
+<hr/>
+<a name=31></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-31_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-31_2.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Execution of the&#160;Program and Break</b><br/>
+Execute&#160;the&#160;program and get tracing. You cannot display trace data while the program is running. If you<br/>want&#160;to&#160;display trace&#160;data, display it&#160;after&#160;a break point&#160;is hit or&#160;after&#160;pushing&#160;the&#160;<b>Halt</b>&#160;button&#160;to forc-<br/>ibly breaking&#160;execution.<br/>
+<b>Trace&#160;Data&#160;Display</b><br/>
+Run the&#160;user program while the&#160;trace window is open.&#160;When&#160;the user program breaks,&#160;trace data is auto-<br/>matically read&#160;according to the current&#160;trace mode&#160;and displayed&#160;in&#160;the trace&#160;window.<br/>
+Similarly,&#160;the current trace&#160;data&#160;is&#160;read and&#160;displayed when you push&#160;the&#160;<b>OK</b>&#160;button in&#160;the&#160;trace&#160;mode<br/>window.&#160;If the&#160;trace window is&#160;not open,&#160;you&#160;can&#160;display&#160;trace data using&#160;this method.<br/>
+When there is no&#160;trace data, nothing will be&#160;displayed in&#160;the&#160;trace&#160;window.&#160;In this case,&#160;a&#160;message&#160;as<br/>below&#160;will be output in the&#160;command pane&#160;of&#160;MULTI.<br/>
+<b>(0x5f) No&#160;Trace&#160;Data</b><br/>
+If you left-click a disassembled&#160;line, the&#160;debugger window display&#160;is&#160;switched to show&#160;around the&#160;corre-<br/>sponding&#160;source program. While&#160;C&#160;source code is displayed&#160;in&#160;the trace display,&#160;display in the debugger<br/>will&#160;change&#160;at&#160;the&#160;same&#160;time&#160;as&#160;you&#160;click the&#160;disassembled&#160;line.<br/>
+When you push&#160;the&#160;<b>Next Page</b>&#160;button at the bottom of the trace&#160;window, the next page will&#160;be dis-<br/>played&#160;if&#160;there is&#160;trace data in that page.<br/>
+Precautions about&#160;tracing:<br/>
+o<br/>
+When you run the user program&#160;after specifying trace settings, tracing will&#160;be&#160;set to OFF forcibly<br/>when the&#160;program breaks. If you want to trace again,&#160;push the&#160;<b>Start</b>&#160;button to set tracing ON<br/>before&#160;running&#160;the user program.<br/>
+<i><b>25</b></i><br/>
+<hr/>
+<a name=32></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+o<br/>
+When you get&#160;trace data,&#160;the data you&#160;have gotten previously&#160;will be cleared.<br/>
+o<br/>
+If the&#160;trace buffer becomes&#160;full,&#160;the oldest&#160;trace data&#160;will be overwritten.<br/>
+o<br/>
+If you want to display C source code in C source mixed mode,&#160;specify the&#160;debug option when&#160;you<br/>compile the program.&#160;<b>rteserv</b>&#160;refers to the debug information file and displays C source&#160;code in<br/>the&#160;trace window.&#160;Do not specify the&#160;optimization option.<br/>
+o<br/>
+You can enter symbols to some items of the trigger input window, but they become available after<br/>you download&#160;the user program.<br/>
+Displayed items&#160;depend on&#160;MPUs. For&#160;more information, see description on trace data display&#160;for each<br/>MPU.<br/>
+<i><b>26</b></i><br/>
+<hr/>
+<a name=33></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-33_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Saving Trace Data&#160;to a File</b><br/>
+You can save&#160;trace data that is&#160;displayed&#160;in the trace window to a&#160;file.&#160;Select&#160;the&#160;<b>Save to&#160;File...<br/></b>item under&#160;Display&#160;menu&#160;to&#160;open&#160;the dialog as&#160;below:<br/>
+Enter&#160;the file name and push&#160;the Save&#160;button to save the&#160;trace data&#160;to the&#160;specified file.&#160;If you do&#160;not<br/>specify the extension of the&#160;file&#160;name,&#160;<b>.trc</b>&#160;will be automatically added&#160;when a&#160;file&#160;is created.&#160;Note<br/>that&#160;if the&#160;specified file already exists,&#160;it&#160;will&#160;be&#160;overwritten.<br/>
+<i><b>27</b></i><br/>
+<hr/>
+<a name=34></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-34_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trigger Setting (when using KIT-VR5432-TP, KIT-<br/>VR5464-TP)</b><br/>
+You can specify trace&#160;triggers from&#160;Trigger menu. To&#160;specify a trace trigger,&#160;set an&#160;event first and&#160;then<br/>specify the&#160;event as&#160;the trigger&#160;of tracing.<br/>
+<b>eve Setup...&#160;Menu</b><br/>
+Specify an&#160;event&#160;of an execution&#160;address. This&#160;window corresponds to the&#160;<b>eve</b>&#160;command and you can<br/>specify conditions&#160;that&#160;can be specified using the&#160;<b>eve</b>&#160;command.<br/>
+<b>NOT:</b><br/>
+Checking&#160;this check&#160;box means that you&#160;have&#160;specified&#160;<b>NOT</b>&#160;of&#160;the<br/>address&#160;you entered in the&#160;<b>Address:</b>&#160;field.<br/>
+<b>Address:</b><br/>
+Enter an address.&#160;You can&#160;specify&#160;a&#160;number&#160;or&#160;a symbol. As for&#160;symbols,<br/>global variables and functions names are&#160;available.<br/>
+<b>Mask:</b><br/>
+Specify the&#160;mask value to the&#160;<b>address</b>.&#160;The&#160;'1' bits&#160;are&#160;masked.<br/>
+<b>ASID:</b><br/>
+If you&#160;check this check box,&#160;<b>ASID</b>&#160;will&#160;be&#160;compared.<br/>
+<b>ASID value:</b><br/>
+Specify the&#160;<b>ASID</b>&#160;value.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>28</b></i><br/>
+<hr/>
+<a name=35></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-35_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>eva&#160;Setup... Menu</b><br/>
+Specify an event for the access cycle. This window corresponds&#160;to&#160;the&#160;<b>eva</b>&#160;command&#160;and you&#160;can spec-<br/>ify conditions&#160;that&#160;can be specified using the&#160;<b>eva</b>&#160;command.<br/>
+<b>Address condition section</b><br/>
+<b>EQUAL</b>&#160;button:<br/>
+The address&#160;and&#160;mask&#160;conditions&#160;you have&#160;specified&#160;will be set.<br/>
+<b>NOT</b>&#160;button:<br/>
+<b>NOT</b>&#160;of the&#160;address and mask&#160;conditions you have&#160;specified&#160;will be set.<br/>
+<b>NONE</b>&#160;button:<br/>
+Address is&#160;not&#160;included in the&#160;condition.<br/>
+<b>Address:</b><br/>
+Enter an address. You can&#160;specify&#160;a&#160;number or&#160;a&#160;symbol. As for&#160;symbols,<br/>global variables&#160;and functions&#160;names&#160;are&#160;available.<br/>
+<b>Mask:</b><br/>
+Specify&#160;the&#160;mask value&#160;to&#160;the&#160;<b>address</b>. The '1'&#160;bits&#160;are masked.<br/>
+<b>Data&#160;condition&#160;section</b><br/>
+<b>EQUAL</b>&#160;button:<br/>
+The address&#160;and&#160;mask&#160;conditions&#160;you have&#160;specified&#160;will be set.<br/>
+<b>NOT</b>&#160;button:<br/>
+<b>NOT</b>&#160;of the&#160;address and mask&#160;conditions you have&#160;specified&#160;will be set.<br/>
+<i><b>29</b></i><br/>
+<hr/>
+<a name=36></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-36_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>NONE</b>&#160;button:<br/>
+Address is not included&#160;in&#160;the condition.<br/>
+<b>ASID:</b><br/>
+If you&#160;check this check box,&#160;<b>ASID</b>&#160;will&#160;be&#160;compared.<br/>
+<b>ASID value:</b><br/>
+Specify the&#160;<b>ASID</b>&#160;value.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<b>Trace Setup...&#160;Menu</b><br/>
+Specify various trace&#160;settings.&#160;This window corresponds to the&#160;<b>tron</b>&#160;command and&#160;you&#160;can specify<br/>conditions that can&#160;be specified&#160;using&#160;the&#160;<b>tron</b>&#160;command.<br/>
+<b>&lt;Trigger&gt;</b><br/>
+<b>&lt;eve&gt;</b><br/>
+Select whether you&#160;want&#160;to&#160;specify an&#160;event&#160;<b>eve</b>&#160;(execution event) as&#160;a trace<br/>trigger (ON/OFF).<br/>
+<b>&lt;eva&gt;</b><br/>
+Select whether you want to specify&#160;an&#160;event&#160;<b>eva</b>&#160;(access&#160;cycle&#160;event)&#160;as&#160;a<br/>trace trigger (ON/OFF).<br/>
+<i><b>30</b></i><br/>
+<hr/>
+<a name=37></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>&lt;EXT&gt;</b><br/>
+Specify&#160;the external input&#160;terminal (EXIO) as&#160;a&#160;trigger.<br/>
+<b>Noext</b><br/>
+EXIO&#160;is not specified as a trigger.<br/>
+<b>Posi</b><br/>
+The rising edge of&#160;EXIO&#160;is&#160;specified as&#160;a&#160;trigger.<br/>
+<b>Nega</b><br/>
+The falling edge of&#160;EXIO&#160;is&#160;specified as&#160;a trigger.<br/>
+<b>Delay</b><br/>
+Specify forced delay mode.&#160;If&#160;you&#160;specify&#160;the forced delay&#160;mode,&#160;tracing&#160;will<br/>be&#160;started after you&#160;finish&#160;setting in this window and tracing will&#160;be forcibly<br/>finished after getting trace&#160;data for the number&#160;of times specified&#160;in&#160;the&#160;delay<br/>counter.<br/>
+<b>Delay Count:</b><br/>
+Specify the delay counter value. You can input a value<br/>between&#160;<b>0x2</b>&#160;and&#160;<b>0x1fffd</b>.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be canceled.<br/>
+<i><b>31</b></i><br/>
+<hr/>
+<a name=38></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-38_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Data&#160;Display (when using KIT-VR5432-TP, KIT-<br/>VR5464-TP)</b><br/>
+There are two trace display modes:&#160;assembler display&#160;mode and&#160;C&#160;source/assembler mixed&#160;display<br/>mode.<br/>
+<b>Assembler Display&#160;Mode</b><br/>
+<b>Cycle</b><br/>
+The&#160;relative position in the trace buffer is displayed in&#160;hexadecimal. It<br/>will&#160;be displayed as&#160;a&#160;relative&#160;value&#160;with&#160;+/- assuming somewhere<br/>around the&#160;trigger&#160;cycle or&#160;the&#160;end&#160;cycle as 0.&#160;<br/>
+<b>Sub</b><br/>
+The sub cycle number that is generated based on the information on<br/>branches and number of execution&#160;instructions.&#160;Sometimes,&#160;more&#160;than<br/>one disassembled&#160;line must&#160;be&#160;displayed&#160;as the result of&#160;trace&#160;analysis<br/>of one&#160;cycle.&#160;In&#160;such cases,&#160;sub cycle&#160;numbers&#160;are&#160;assigned to the&#160;mul-<br/>tiple&#160;lines.<br/>
+<b>Ext</b><br/>
+The status&#160;of the external&#160;input&#160;terminal (EXI3..0) is displayed as a bit<br/>sequence.<br/>
+<i><b>32</b></i><br/>
+<hr/>
+<a name=39></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Stat</b><br/>
+The&#160;type of the trace packet on which displayed information is based<br/>is displayed.<br/>
+<b>TPC</b><br/>
+A branch from the instruction that cannot be traced has<br/>occurred.<br/>
+<b>EXP</b><br/>
+An exception&#160;has occurred.<br/>
+<b>LSEQ</b><br/>
+An instruction is executed&#160;for more then 255 times in<br/>succession.<br/>
+<b>NSEQ</b><br/>
+A branch has occurred.<br/>
+<b>Addr/LineNo</b><br/>
+The&#160;execution&#160;address&#160;or&#160;the&#160;bus&#160;cycle address is displayed.<br/>
+<b>Opecode/FileName</b><br/>
+Operation code&#160;or&#160;the bus&#160;cycle data is&#160;displayed.<br/>
+<b>Inst/Source</b><br/>
+instruction&#160;mnemonic or&#160;the bus&#160;type&#160;is displayed.<br/>
+<i><b>33</b></i><br/>
+<hr/>
+<a name=40></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-40_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>C Source/Assembler&#160;Mixed&#160;Display Mode</b><br/>
+When there is a C source file that corresponds to&#160;the traced address, the corresponding source line and<br/>the assemble result are&#160;displayed together.&#160;The&#160;corresponding&#160;address&#160;is searched&#160;based&#160;on&#160;the line<br/>information in the debug information file. If the corresponding&#160;C source line is in the debug information<br/>file,&#160;only assemble&#160;result is&#160;displayed.<br/>
+Displayed items of&#160;the&#160;disassembled&#160;line are&#160;the same&#160;as&#160;those&#160;of&#160;<a href="sv-rte-us-72s.html#38">&#34;Assembler Display&#160;Mode&#34; on&#160;page<br/>32.&#160;</a>The following items are displayed in C source&#160;lines.<br/>
+<b>Addr/LineNo</b><br/>
+The line&#160;number&#160;that corresponds to&#160;the address is displayed in a 6-<br/>digit decimal&#160;number.<br/>
+<b>Opecode/FileName</b><br/>
+The source file name that corresponds&#160;to the address is displayed. Up<br/>to 20&#160;characters&#160;are&#160;displayed right-aligned.<br/>
+<b>Inst/Source</b><br/>
+The corresponding source line&#160;is displayed&#160;from the top to the end.<br/>However,&#160;the bytes after 80&#160;are not displayed. A&#160;TAB is&#160;displayed&#160;as a<br/>4-column tab.<br/>
+<i><b>34</b></i><br/>
+<hr/>
+<a name=41></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-41_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trigger Setting (when using KIT-NB85E-TP)</b><br/>
+You can specify trace triggers from&#160;Trigger menu. To&#160;specify a trace trigger,&#160;set an event first and then<br/>specify the&#160;event&#160;as&#160;the trigger of tracing.<br/>
+<b>tp Setup... Menu</b><br/>
+Specify the trigger point of&#160;tracing. This window corresponds to&#160;the&#160;<b>tp</b>&#160;command&#160;and you can specify<br/>conditions that can&#160;be&#160;specified using the&#160;<b>tp</b>&#160;command.<br/>
+<b>DEL:</b><br/>
+If you check this&#160;check&#160;box, the&#160;specified event&#160;will be&#160;deleted.<br/>
+<b>Address:</b><br/>
+Enter an address. You can&#160;specify&#160;a&#160;number or&#160;a&#160;symbol. As for&#160;symbols,<br/>global variables&#160;and functions&#160;names&#160;are&#160;available.<br/>
+<b>ASID:</b><br/>
+If you check this&#160;check&#160;box,&#160;<b>ASID</b>&#160;will&#160;be compared.<br/>
+<b>ASID value:</b><br/>
+Specify the&#160;<b>ASID</b>&#160;value.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be&#160;canceled.&#160;If delay mode&#160;is set in&#160;the Trace Setup window, trigger point&#160;setting will be<br/>ignored. In&#160;this case,&#160;cancel&#160;the delay&#160;mode.<br/>
+<i><b>35</b></i><br/>
+<hr/>
+<a name=42></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-42_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-42_2.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>td&#160;Setup... Menu</b><br/>
+Specify&#160;the conditions of&#160;data&#160;access cycle to take into&#160;tracing.&#160;You&#160;can specify&#160;<b>td1</b>&#160;and&#160;<b>td2</b>. This&#160;win-<br/>dow corresponds&#160;to the&#160;<b>td</b>&#160;(1|2) commands&#160;and you&#160;can specify&#160;conditions&#160;that can be&#160;specified using<br/>the&#160;<b>td</b>&#160;(1|2) commands.<br/>
+<b>DEL:</b><br/>
+If you&#160;check this check box,&#160;the specified event will be deleted.<br/>
+<b>Address:</b><br/>
+Enter an address.&#160;You can&#160;specify&#160;a&#160;number&#160;or&#160;a symbol. As for&#160;symbols,<br/>global variables and functions names are&#160;available.<br/>
+<b>Mask:</b><br/>
+Specify the&#160;mask value to the&#160;<b>address</b>.&#160;The&#160;'1' bits&#160;are&#160;masked.<br/>
+<b>ASID:</b><br/>
+If you&#160;check this check box,&#160;<b>ASID</b>&#160;will&#160;be&#160;compared.<br/>
+<b>ASID value:</b><br/>
+Specify the&#160;<b>ASID</b>&#160;value.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<b>ASID</b>&#160;is provided for&#160;future extension.&#160;Do&#160;not usually use it.<br/>
+<i><b>36</b></i><br/>
+<hr/>
+<a name=43></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-43_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-43_2.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>tsp&#160;Setup... Menu</b><br/>
+Specify 2 trace&#160;switch points (addresses). You can change conditions&#160;to get&#160;trace information by&#160;the<br/>specified switch&#160;points. For&#160;how to specify conditions to get&#160;trace data,&#160;see the&#160;TraceSetup&#160;window.<br/>
+<b>DEL:</b><br/>
+If you check this&#160;check&#160;box, the&#160;specified event&#160;will be&#160;deleted.<br/>
+<b>Address:</b><br/>
+Enter an address. You can&#160;specify&#160;a&#160;number or&#160;a&#160;symbol. As for&#160;symbols,<br/>global variables&#160;and functions&#160;names&#160;are&#160;available.<br/>
+<b>Mask:</b><br/>
+Specify&#160;the&#160;mask value&#160;to&#160;the&#160;<b>address</b>. The '1'&#160;bits&#160;are masked.<br/>
+<b>ASID:</b><br/>
+If you check this&#160;check&#160;box,&#160;<b>ASID</b>&#160;will&#160;be compared.<br/>
+<b>ASID value:</b><br/>
+Specify the&#160;<b>ASID</b>&#160;value.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be canceled.<br/>
+<b>ASID</b>&#160;is provided for&#160;future extension.&#160;Do&#160;not&#160;usually&#160;use&#160;it.<br/>
+<i><b>37</b></i><br/>
+<hr/>
+<a name=44></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-44_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Setup...&#160;Menu</b><br/>
+Specify various trace&#160;settings.&#160;This window corresponds to the&#160;<b>tron</b>&#160;command and&#160;you&#160;can specify<br/>conditions that can&#160;be specified&#160;using&#160;the&#160;<b>tron</b>&#160;command.<br/>
+<b>Real</b><br/>
+Specify the execution mode while&#160;tracing.&#160;If&#160;you check this check<br/>box, the program will be run in&#160;real&#160;time execution mode. In&#160;real time<br/>execution mode, trace&#160;information&#160;could&#160;overflow.&#160;If you deselect this<br/>check&#160;box,&#160;the program will be run&#160;in&#160;non-real time execution mode.<br/>Overflow&#160;will not occur in this mode, but execution&#160;rate&#160;is slower.<br/>
+<b>Force</b><br/>
+Specify forced&#160;start of tracing. If you do not check this&#160;check box,<br/>tracing&#160;will be started according to the&#160;<b>tsp1</b>&#160;conditions.<br/>
+<b>Clock2</b><br/>
+Specify the trace sampling clock.&#160;Checking this&#160;check&#160;box means&#160;you<br/>have specified 1/2&#160;of the&#160;<b>VBCLK</b>. If you deselect this check&#160;box, that<br/>means you have&#160;specified&#160;1/1. Normally,&#160;deselect&#160;the check box (1/1).<br/>
+<b>Stop</b><br/>
+Specify trace output&#160;in the mode.&#160;If you check this check box, tracing<br/>will be stopped in the&#160;<b>STOP</b>&#160;mode. If you&#160;deselect the check box, trac-<br/>ing&#160;will not stop.<br/>
+<i><b>38</b></i><br/>
+<hr/>
+<a name=45></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Condition1</b><br/>
+Specify trace information to get after&#160;<b>tsp1</b>&#160;switch point. Trace data<br/>will be gotten when&#160;the following factors occur.<br/>
+<b>Interrupt</b><br/>
+interrupt<br/>
+<b>Exception</b><br/>
+exception<br/>
+<b>RETI</b><br/>
+<b>RETI</b>&#160;instruction<br/>
+<b>JMP</b><br/>
+<b>JMP</b>&#160;instruction<br/>
+<b>JR</b><br/>
+<b>JR</b>&#160;instruction<br/>
+<b>JARL</b><br/>
+<b>JARL</b>&#160;instruction<br/>
+<b>Cond Br(FALSE)</b><br/>
+conditional branch (false)<br/>
+<b>Cond Br(TRUE)</b><br/>
+conditional branch (true)<br/>
+<b>CALLT</b><br/>
+<b>CALLT</b>&#160;instruction<br/>
+<b>SWITCH</b><br/>
+<b>SWITCH</b>&#160;instruction<br/>
+<b>DISPOSE</b><br/>
+<b>DISPOSE</b>&#160;instruction<br/>
+<b>CTRET</b><br/>
+<b>CTRET</b>&#160;instruction<br/>
+<b>TR1 read cyc</b><br/>
+at&#160;read&#160;cycle&#160;of&#160;<b>td1</b><br/>
+<b>TD1 write&#160;cyc</b><br/>
+at&#160;write&#160;cycle&#160;of&#160;<b>td1</b><br/>
+<b>TD2 read cyc</b><br/>
+at&#160;read&#160;cycle&#160;of&#160;<b>td2</b><br/>
+<b>TD2 write&#160;cyc</b><br/>
+at&#160;write&#160;cycle&#160;of&#160;<b>td2</b><br/>
+<b>TP</b><br/>
+when&#160;<b>tp</b>&#160;is&#160;true<br/>
+<b>Trace Condition2</b><br/>
+Specify trace&#160;information to&#160;get after&#160;<b>tsp2</b>&#160;switch point. Items you<br/>can specify are the&#160;same&#160;as&#160;those of&#160;<b>Trace Condition1</b>.<br/>
+<i><b>39</b></i><br/>
+<hr/>
+<a name=46></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>&lt;EXT&gt;</b><br/>
+Specify the external&#160;input terminal (EXIO) as a trigger.<br/>
+<b>Noext</b><br/>
+EXIO&#160;is not&#160;specified as&#160;a&#160;trigger.<br/>
+<b>Posi</b><br/>
+The&#160;rising&#160;edge of&#160;EXIO&#160;is specified as&#160;a<br/>trigger.<br/>
+<b>Nega</b><br/>
+The falling&#160;edge&#160;of EXIO&#160;is specified as a<br/>trigger.<br/>
+<b>Delay</b><br/>
+Specify forced delay mode. If you&#160;specify the&#160;forced&#160;delay mode, trac-<br/>ing&#160;will be started after&#160;you&#160;finish&#160;setting in&#160;this&#160;window and tracing<br/>will&#160;be&#160;forcibly&#160;finished&#160;after&#160;getting trace data&#160;for&#160;the&#160;number&#160;of<br/>times specified&#160;in&#160;the delay counter.<br/>
+<b>Delay Count:</b><br/>
+Specify the delay counter value.&#160;You can input&#160;a value between&#160;<b>0x2<br/></b>and&#160;<b>0x1fffd</b>.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>40</b></i><br/>
+<hr/>
+<a name=47></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-47_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Data&#160;Display (when using KIT-NB85E-TP)</b><br/>
+There are two&#160;trace display modes:&#160;assembler&#160;display&#160;mode and C&#160;source/assembler&#160;mixed display<br/>mode.<br/>
+<b>Assembler Display&#160;Mode</b><br/>
+<b>*</b>&#160;mark<br/>
+Indicates&#160;the trigger cycle.<br/>
+<b>Cycle</b><br/>
+The relative position in the trace buffer is displayed in&#160;hexadecimal. It<br/>will be displayed as a relative&#160;value&#160;with +/- assuming somewhere<br/>around the&#160;trigger cycle&#160;or&#160;the&#160;end cycle&#160;as 0.&#160;<br/>
+<b>Sub</b><br/>
+The&#160;sub cycle&#160;number that&#160;is&#160;generated based on the information on<br/>branches and number&#160;of execution instructions. Sometimes, more&#160;than<br/>one disassembled line must be displayed as the result of&#160;trace analysis<br/>of&#160;one cycle.&#160;In such&#160;cases,&#160;sub cycle numbers are assigned to the mul-<br/>tiple lines.<br/>
+<b>Ext</b><br/>
+The status of the external input terminal (EXI3..0) is displayed&#160;as a bit<br/>sequence.<br/>
+<i><b>41</b></i><br/>
+<hr/>
+<a name=48></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Stat</b><br/>
+The type of the trace packet on&#160;which&#160;displayed information is based<br/>is displayed.<br/>
+<b>NOP</b><br/>
+<b>NOP</b><br/>
+<b>TRGSTART</b><br/>
+Trace start<br/>
+<b>MATCH</b><br/>
+Trigger address<br/>
+<b>OVF</b><br/>
+Overflow<br/>
+<b>JMPD</b><br/>
+Branch: Branch destination<br/>
+<b>JMPDS</b><br/>
+Continuous branch: branch source/destination<br/>
+<b>JMPS</b><br/>
+Branch: Branch source<br/>
+<b>DATAW1</b><br/>
+Write access of data trace&#160;1 (<b>td1</b>)<br/>
+<b>DATAR1</b><br/>
+Read access of&#160;data&#160;trace 1&#160;(<b>td1</b>)<br/>
+<b>DATAW2</b><br/>
+Write access of data trace&#160;2 (<b>td2</b>)<br/>
+<b>DATAR2</b><br/>
+Read access of&#160;data&#160;trace 2&#160;(<b>td2</b>)<br/>
+<b>Addr/LineNo</b><br/>
+The execution address&#160;or the&#160;bus&#160;cycle&#160;address is&#160;displayed.<br/>
+<b>Opecode/FileName</b><br/>
+Operation&#160;code or the&#160;bus&#160;cycle&#160;data&#160;is&#160;displayed.<br/>
+<b>Inst/Source</b><br/>
+instruction mnemonic or&#160;the bus&#160;type is&#160;displayed.<br/>
+<i><b>42</b></i><br/>
+<hr/>
+<a name=49></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-49_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>C Source/Assembler Mixed Display Mode</b><br/>
+When there is a C source file that corresponds to&#160;the traced address, the corresponding&#160;source line and<br/>the assemble&#160;result are displayed&#160;together. The&#160;corresponding address&#160;is searched&#160;based on the&#160;line<br/>information&#160;in the debug information file. If the corresponding C&#160;source line is in the debug information<br/>file,&#160;only assemble result is&#160;displayed.<br/>
+Displayed items&#160;of the disassembled&#160;line&#160;are&#160;the same&#160;as&#160;thos<a href="sv-rte-us-72s.html#47">e of &#34;Assembler Display&#160;Mode&#34; on&#160;page<br/>41.&#160;</a>The following items are&#160;displayed in C&#160;source lines.<br/>
+<b>Addr/LineNo</b><br/>
+The line number&#160;that&#160;corresponds to&#160;the&#160;address&#160;is displayed&#160;in a 6-<br/>digit decimal number.<br/>
+<b>Opcode/FileName</b><br/>
+The source file name that&#160;corresponds&#160;to the address is displayed. Up<br/>to 20 characters&#160;are&#160;displayed right-aligned.<br/>
+<b>Inst/Source</b><br/>
+The&#160;corresponding&#160;source line is&#160;displayed from the top to the end.<br/>However,&#160;the&#160;bytes after&#160;80&#160;are not displayed. A TAB is&#160;displayed&#160;as&#160;a<br/>4-column tab.<br/>
+<i><b>43</b></i><br/>
+<hr/>
+<a name=50></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-50_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trigger Setting (when using RTE-V850E/GP1-IE)</b><br/>
+You can&#160;specify various conditions related to tracing&#160;such as&#160;trace trigger&#160;conditions, conditions to&#160;get<br/>trace&#160;data, and on/off&#160;of sub&#160;switch from&#160;Trigger&#160;menu.&#160;<br/>
+<b>tp Setup...&#160;Menu</b><br/>
+Specify&#160;the trigger point of tracing. This&#160;window corresponds to the&#160;<b>tp</b>&#160;command and&#160;you can specify<br/>conditions that can&#160;be specified&#160;using&#160;the&#160;<b>tp</b>&#160;command.<br/>
+<b>DEL:</b><br/>
+If you&#160;check this check box,&#160;the specified event will be deleted.<br/>
+<b>Address:</b><br/>
+Enter an address.&#160;You can&#160;specify&#160;a&#160;number&#160;or&#160;a symbol. As for&#160;symbols,<br/>global variables and functions names are&#160;available.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.&#160;<br/>
+<i><b>44</b></i><br/>
+<hr/>
+<a name=51></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-51_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>td&#160;Setup... Menu</b><br/>
+Specify the conditions of&#160;data access cycle to take into tracing.&#160;This window corresponds to the&#160;<b>td1</b>,<br/><b>td2</b>,&#160;<b>td3</b>, and&#160;<b>td4</b>&#160;commands and you can specify conditions&#160;that&#160;can be&#160;specified using these com-<br/>mands.<br/>
+<b>DEL:</b><br/>
+If you check this&#160;check&#160;box, the&#160;specified event&#160;will be&#160;deleted.<br/>
+<b>Address:</b><br/>
+Enter an address. You can&#160;specify&#160;a&#160;number or&#160;a&#160;symbol. As for&#160;symbols,<br/>global variables&#160;and functions&#160;names&#160;are&#160;available.<br/>
+<b>Mask:</b><br/>
+Specify the&#160;mask value&#160;to the&#160;<b>address</b>. The '1'&#160;bits&#160;are excluded from<br/>comparison. Only&#160;<b>bit9</b>&#160;-&#160;<b>bit2</b>&#160;are enabled.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be canceled.<br/>
+<i><b>45</b></i><br/>
+<hr/>
+<a name=52></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-52_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>tsp Setup...&#160;Menu</b><br/>
+Specify 2 trace switch&#160;points (addresses).&#160;You can&#160;change&#160;conditions to get&#160;trace&#160;information by the<br/>specified&#160;switch points. Specify&#160;conditions to get&#160;trace data from&#160;the&#160;SubSwitch Setup... menu.<br/>
+<b>DEL:</b><br/>
+If you&#160;check this check box,&#160;the specified event will be deleted.<br/>
+<b>Address:</b><br/>
+Enter an address.&#160;You can&#160;specify&#160;a&#160;number&#160;or&#160;a symbol. As for&#160;symbols,<br/>global variables and functions names are&#160;available.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>46</b></i><br/>
+<hr/>
+<a name=53></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-53_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace&#160;Setup... Menu</b><br/>
+Specify trace&#160;environment settings and&#160;other conditions.&#160;This window corresponds to the&#160;<b>tenv</b>&#160;and<br/><b>tron</b>&#160;commands and&#160;you can&#160;specify&#160;conditions that&#160;can be specified using these&#160;commands.<br/>
+<b>&lt;TENV&gt;</b><br/>
+<b>subor:</b><br/>
+<b>OR</b>&#160;of Section&#160;condition and qualify&#160;condition&#160;is specified as&#160;the sub&#160;switch.<br/>
+<b>suband:</b><br/>
+<b>AND</b>&#160;of Section condition&#160;and qualify condition&#160;is specified as the sub switch.<br/>
+<b>dmatrc:</b><br/>
+DMA&#160;cycles&#160;are&#160;traces.<br/>
+<b>tendbrk:</b><br/>
+The program breaks at the&#160;end of&#160;tracing.<br/>
+<b>stop:</b><br/>
+Tracing is&#160;paused in the&#160;stop&#160;mode.<br/>
+<b>phold:</b><br/>
+When&#160;execution&#160;of&#160;the&#160;user program&#160;is&#160;stopped&#160;during trace in complete mode<br/>(non-real&#160;time mode), the packet&#160;that notifies the&#160;status is taken into trace data.<br/>
+<b>once:</b><br/>
+Trigger&#160;output is output&#160;only once&#160;when the&#160;trigger&#160;conditions are met.<br/>
+<i><b>47</b></i><br/>
+<hr/>
+<a name=54></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>&lt;TRON&gt;</b><br/>
+<b>Real:</b><br/>
+Specify the execution&#160;mode while&#160;tracing. If&#160;you check this check box, the<br/>program will be run in&#160;real&#160;time&#160;execution mode.&#160;In real time execution mode,<br/>trace information could overflow. If you&#160;deselect this check box, the program<br/>will be run in non-real time execution mode. Overflow&#160;will&#160;not&#160;occur&#160;in this<br/>mode, but execution&#160;rate&#160;is slower.<br/>
+<b>Force:</b><br/>
+Specify forced start of tracing. If you&#160;do not check this check box, tracing will<br/>be&#160;started according to&#160;the&#160;<b>tsp1</b>&#160;conditions. If tracing is started forcibly,<br/><b>tsp1</b>&#160;and&#160;<b>tsp2</b>&#160;are&#160;valid.<br/>
+<b>Delay:</b><br/>
+Specify forced delay&#160;mode. If you specify the forced&#160;delay&#160;mode, tracing&#160;will<br/>be started&#160;after you finish setting&#160;in&#160;this window&#160;and tracing&#160;will be&#160;forcibly<br/>finished after getting trace&#160;data for&#160;the&#160;number&#160;of times&#160;specified&#160;in the delay<br/>counter.&#160;While this mode&#160;is specified, trigger&#160;events are&#160;ignored.<br/>
+<b>Delay Count:</b><br/>
+Specifies the&#160;number&#160;of frames in&#160;memory&#160;that&#160;are to&#160;be&#160;loaded in response to<br/>a&#160;trigger.&#160;You can&#160;input a value from&#160;<b>0x0</b>&#160;to&#160;<b>0x1ffff</b>.<br/>
+<b>&lt;EXT&gt;:</b><br/>
+Specify the&#160;external input&#160;terminal (EXIO) as a trigger.<br/>
+<b>Noext</b><br/>
+EXIO&#160;is not specified as&#160;a&#160;trigger.<br/>
+<b>Posi</b><br/>
+The rising&#160;edge of EXIO&#160;is specified as a trigger.<br/>
+<b>Nega</b><br/>
+The falling&#160;edge of EXIO&#160;is&#160;specified as&#160;a trigger.<br/>
+<b>TD1 - TD4:</b><br/>
+Specify&#160;trace data conditions&#160;(TD1&#160;- TD4) as&#160;trigger conditions.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>48</b></i><br/>
+<hr/>
+<a name=55></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-55_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>SubSwitch Setup...Menu</b><br/>
+Specify cycles to take into&#160;tracing&#160;when&#160;sub&#160;switch&#160;is&#160;on/off. This&#160;window&#160;corresponds to the&#160;<b>sswon<br/></b>and&#160;<b>sswoff</b>&#160;commands and&#160;you can specify conditions that can&#160;be specified&#160;using these&#160;commands.<br/>
+<b>&lt;SubSwitch&#160;On&gt;</b><br/>
+Specify the&#160;cycle to take into&#160;tracing when sub&#160;switch is&#160;ON.<br/>
+Specify the&#160;cycles to take&#160;into execution&#160;tracing.&#160;The checked factors are&#160;taken&#160;into tracing.<br/>
+<b>Interrupt</b><br/>
+interrupt<br/>
+<b>Exception</b><br/>
+exception<br/>
+<b>RETI</b><br/>
+RETI&#160;instruction<br/>
+<b>JMP</b><br/>
+JMP instruction<br/>
+<b>JR</b><br/>
+JR instruction<br/>
+<i><b>49</b></i><br/>
+<hr/>
+<a name=56></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-56_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>JARL</b><br/>
+JARL&#160;instruction<br/>
+<b>Cond JMP(FALSE)</b><br/>
+conditional branch&#160;(false)<br/>
+<b>Cond JMP(TRUE)</b><br/>
+conditional branch&#160;(true)<br/>
+<b>CALLT</b><br/>
+CALLT&#160;instruction<br/>
+<b>SWITCH</b><br/>
+SWITCH&#160;instruction<br/>
+<b>DISPOSE</b><br/>
+DISPOSE instruction<br/>
+<b>CTRET</b><br/>
+CTRET instruction<br/>
+<b>tp</b><br/>
+when tp is&#160;true<br/>
+<b>evt_match</b><br/>
+trigger points&#160;from&#160;the event unit<br/>
+<b>OPCODE</b><br/>
+OPCODE<br/>
+Normally, check all cycles. If&#160;you restrict cycles,&#160;trace&#160;disassemble&#160;may&#160;not properly<br/>displayed.<br/>
+<b>All Cycle:</b><br/>
+Specify types&#160;of cycles&#160;to&#160;take into&#160;unconditionally.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+<i><b>50</b></i><br/>
+<hr/>
+<a name=57></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>TD1&#160;- TD4:</b><br/>
+Specify cycles to take into for the conditions specified by&#160;<b>td&#160;Setup...<br/></b>or the&#160;<b>td</b>&#160;command.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<b>EVAP1 - EVAP6:</b><br/>
+Specify cycles to take into for the&#160;event conditions&#160;specified by&#160;<b>eva<br/>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<i><b>51</b></i><br/>
+<hr/>
+<a name=58></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>EVAR1, EVAR3,&#160;</b><br/>
+Specify cycles to take&#160;into for&#160;the range&#160;conditions&#160;specified&#160;by&#160;<b>eva</b><br/>
+<b>EVAR5:</b><br/>
+<b>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+<b>&lt;SubSwitch&#160;Off&gt;</b><br/>
+Specify the&#160;cycle to take into&#160;tracing when&#160;sub switch is OFF.<br/>
+Specify the&#160;cycles to take into&#160;execution&#160;tracing. The checked&#160;factors&#160;are taken&#160;into&#160;tracing.<br/>
+<b>Interrupt</b><br/>
+interrupt<br/>
+<b>Exception</b><br/>
+exception<br/>
+<b>RETI</b><br/>
+RETI&#160;instruction<br/>
+<b>JMP</b><br/>
+JMP instruction<br/>
+<b>JR</b><br/>
+JR instruction<br/>
+<b>JARL</b><br/>
+JARL&#160;instruction<br/>
+<b>Cond JMP(FALSE)</b><br/>
+conditional branch&#160;(false)<br/>
+<b>Cond JMP(TRUE)</b><br/>
+conditional branch&#160;(true)<br/>
+<b>CALLT</b><br/>
+CALLT&#160;instruction<br/>
+<b>SWITCH</b><br/>
+SWITCH&#160;instruction<br/>
+<b>DISPOSE</b><br/>
+DISPOSE instruction<br/>
+<i><b>52</b></i><br/>
+<hr/>
+<a name=59></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-59_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>CTRET</b><br/>
+CTRET&#160;instruction<br/>
+<b>tp</b><br/>
+when tp is true<br/>
+<b>evt_match</b><br/>
+trigger points from&#160;the event unit<br/>
+<b>OPCODE</b><br/>
+OPCODE<br/>
+Normally,&#160;check all cycles.&#160;If&#160;you restrict cycles, trace&#160;disassemble may&#160;not properly<br/>displayed.<br/>
+<b>All&#160;Cycle:</b><br/>
+Specify types of cycles to take into&#160;unconditionally.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<b>TD1&#160;- TD4:</b><br/>
+Specify cycles to take into for the conditions specified by&#160;<b>td&#160;Setup...<br/></b>or the&#160;<b>td</b>&#160;command.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<i><b>53</b></i><br/>
+<hr/>
+<a name=60></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>EVAP1 - EVAP6:</b><br/>
+Specify&#160;cycles to take into&#160;for the event conditions&#160;specified by&#160;<b>eva<br/>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+<b>EVAR1, EVAR3,&#160;</b><br/>
+Specify cycles to take&#160;into for&#160;the range&#160;conditions&#160;specified&#160;by&#160;<b>eva</b><br/>
+<b>EVAR5:</b><br/>
+<b>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>54</b></i><br/>
+<hr/>
+<a name=61></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-61_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>eva&#160;Setup... Menu</b><br/>
+Specify events related to access. You&#160;can specify the&#160;events&#160;that&#160;you set as trace&#160;conditions&#160;by&#160;<br/><b>SubSwitch Setup...</b>&#160;or&#160;the&#160;<b>sswon</b>/<b>sswoff</b>&#160;commands.<br/>
+<b>No.:</b><br/>
+Specify the&#160;channel&#160;of&#160;the access&#160;event. If an&#160;event is already set,&#160;its setting<br/>values are&#160;displayed.<br/>
+<b>DEL:</b><br/>
+If you&#160;check this check box,&#160;the specified event will be deleted.<br/>
+<b>Address:</b><br/>
+Enter an&#160;address.&#160;You can specify a number or a&#160;symbol.&#160;As for symbols,&#160;glo-<br/>bal variables and functions&#160;names are&#160;available.&#160;On the right of the&#160;address<br/>input field,&#160;specify the condition for the address value specified in&#160;<b>Address:</b><br/>
+<b>EQ</b><br/>
+True when address = event address<br/>
+<b>LT</b><br/>
+True when address &gt; event address<br/>
+<b>GT</b><br/>
+True when address &lt; event address<br/>
+<b>IGN</b><br/>
+Address is&#160;not used&#160;for&#160;comparison<br/>
+<b>NEQ</b><br/>
+True&#160;when&#160;address != event address<br/>
+<b>GTE</b><br/>
+True when address&#160;=&lt;&#160;event address<br/>
+<b>LTE</b><br/>
+True when address&#160;=&gt;&#160;event address<br/>
+<i><b>55</b></i><br/>
+<hr/>
+<a name=62></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Data:</b><br/>
+Specify data.<br/>
+<b>DataMask:</b><br/>
+Specify data&#160;mask. The&#160;bits&#160;where '1'&#160;is&#160;specified are not&#160;used for comparison.<br/>
+<b>Data Cmp:</b><br/>
+Specify data comparison condition.<br/>
+<b>eq</b><br/>
+Data&#160;is&#160;compared using equal.<br/>
+<b>neq</b><br/>
+Data&#160;is compared using&#160;not equal.<br/>
+<b>Access:</b><br/>
+Specify the&#160;cycle condition.<br/>
+<b>read</b><br/>
+Read cycles&#160;are&#160;specified.<br/>
+<b>write</b><br/>
+Write&#160;cycles&#160;are&#160;specified.<br/>
+<b>accs</b><br/>
+Read&#160;or write cycles&#160;are&#160;specified.<br/>
+<b>Size:</b><br/>
+Specify&#160;the access size.<br/>
+<b>byte</b><br/>
+Byte&#160;access (8&#160;bits) is&#160;specified.<br/>
+<b>hword</b><br/>
+Half&#160;word access&#160;(16 bits) is&#160;specified.<br/>
+<b>word</b><br/>
+Word access (32 bits) is&#160;specified.<br/>
+<b>nosize</b><br/>
+Invalid&#160;condition&#160;is specified.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>56</b></i><br/>
+<hr/>
+<a name=63></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-63_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Data&#160;Display (when using RTE-V850E/GP1-IE)</b><br/>
+There are two&#160;trace display modes:&#160;assembler&#160;display&#160;mode and C&#160;source/assembler&#160;mixed display<br/>mode.<br/>
+<b>Assembler Display&#160;Mode</b><br/>
+<b>*</b>&#160;mark<br/>
+Indicates&#160;the trigger cycle.<br/>
+<b>Cycle</b><br/>
+The relative position in the trace buffer is displayed in&#160;hexadecimal. It<br/>will be displayed as a relative&#160;value&#160;with +/- assuming somewhere<br/>around the&#160;trigger cycle&#160;or the&#160;end cycle&#160;as&#160;<b>0x0</b>.<br/>
+<b>Sub</b><br/>
+The&#160;sub cycle&#160;number that&#160;is&#160;generated based on the information on<br/>branches and number of&#160;execution instructions.<br/>
+<b>Ext</b><br/>
+The status of the external input terminal (EXI3..0) is displayed&#160;as a bit<br/>sequence.<br/>
+<b>TimeTag</b><br/>
+Time&#160;tab&#160;value&#160;is&#160;displayed in the&#160;absolute&#160;time.<br/>
+<b>Addr/LineNo</b><br/>
+The&#160;execution&#160;address&#160;or&#160;the&#160;bus&#160;cycle address is displayed.<br/>
+<b>Opcode/FileName</b><br/>
+Operation code&#160;or&#160;the bus&#160;cycle data is&#160;displayed.<br/>
+<b>Inst/Source</b><br/>
+instruction&#160;mnemonic or&#160;the bus&#160;type&#160;is displayed.<br/>
+<i><b>57</b></i><br/>
+<hr/>
+<a name=64></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Stat</b><br/>
+The type of the trace packet on&#160;which&#160;displayed information is based<br/>is displayed.<br/>
+<b>TRGSTARTON</b><br/>
+START packet&#160;occurs and&#160;sub&#160;switch is turned<br/>ON.<br/>
+<b>TRGSTARTOFF</b><br/>
+START packet&#160;occurs and&#160;sub&#160;switch is turned<br/>OFF.<br/>
+<b>MATCH</b><br/>
+MATCH packet&#160;occurs.<br/>
+<b>OVF</b><br/>
+Overflow occurs.<br/>
+<b>TRCEND</b><br/>
+TRCEND packet&#160;occurs.<br/>
+<b>JMPD &lt;&gt;</b><br/>
+JMPD packet&#160;occurs.<br/>
+<b>JMPDS &lt;&gt;</b><br/>
+JMPDS packet&#160;occurs.<br/>
+<b>JMPS &lt;&gt;</b><br/>
+JMPS packet&#160;occurs.<br/>
+<b>OPCODE</b><br/>
+Operation code&#160;access&#160;(execution) occurs.<br/>
+<b>DATAW</b><br/>
+Memory write occurs&#160;(trace packet)<br/>
+<b>DATAR</b><br/>
+Memory read occurs&#160;(trace packet)<br/>
+<b>SFRW</b><br/>
+SFR&#160;write occurs&#160;(trace&#160;packet)<br/>
+<b>SFRR</b><br/>
+SFR&#160;read occurs (trace&#160;packet)<br/>
+<b>DMAW</b><br/>
+iRAM&#160;write by&#160;DMA&#160;occurs&#160;(bus trace)<br/>
+<b>DMAR</b><br/>
+iRAM&#160;read by&#160;DMA&#160;occurs&#160;(bus trace)<br/>
+<b>SUB</b><br/>
+sub cycle<br/>
+In the&#160;&#34;<b>&lt;&gt;</b>&#34;,&#160;the following strings are placed. These are&#160;instructions&#160;or&#160;events that caused&#160;a branch.<br/>
+<b>NMI/INT</b><br/>
+Caused&#160;by&#160;interruption.<br/>
+<b>EXP/TRAP</b><br/>
+Caused&#160;by&#160;exception.<br/>
+<b>RETI</b><br/>
+Caused&#160;by&#160;the instruction.<br/>
+<i><b>58</b></i><br/>
+<hr/>
+<a name=65></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>JMP</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>JR</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>JARL</b><br/>
+Caused by the&#160;instruction.&#160;<br/>
+<b>BcondNT</b><br/>
+Caused by the&#160;instruction.&#160;<br/>
+<b>Bcond</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>CALLT</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>SWITCH</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>DISPOSE</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>CTRET</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>STORE</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>LOAD</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>FSTART</b><br/>
+Caused by the&#160;instruction.<br/>
+<i><b>59</b></i><br/>
+<hr/>
+<a name=66></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-66_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>C Source/Assembler&#160;Mixed&#160;Display Mode</b><br/>
+When there is a C source file that corresponds to&#160;the traced address, the corresponding source line and<br/>the assemble result are&#160;displayed together.&#160;The&#160;corresponding&#160;address&#160;is searched&#160;based&#160;on&#160;the line<br/>information in the debug information file. If the corresponding&#160;C source line is in the debug information<br/>file,&#160;only assemble&#160;result is&#160;displayed.<br/>
+Displayed items of&#160;the&#160;disassembled&#160;line are&#160;the same&#160;as&#160;those&#160;of&#160;<a href="sv-rte-us-72s.html#63">&#34;Assembler Display&#160;Mode&#34; on&#160;page<br/>57. I</a>tems displayed in C&#160;source&#160;lines&#160;are the&#160;same&#160;as&#160;those&#160;displayed for other&#160;MPUs.<br/>
+<i><b>60</b></i><br/>
+<hr/>
+<a name=67></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-67_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trigger Setting (when using KIT-V850E/MA3-IE)</b><br/>
+<b>tp Setup... Menu</b><br/>
+Specify the trigger point of&#160;tracing. This window corresponds to&#160;the&#160;<b>tp</b>&#160;command&#160;and you can specify<br/>conditions that can&#160;be&#160;specified using the&#160;<b>tp</b>&#160;command.<br/>
+<b>DEL:</b><br/>
+If you check this&#160;check&#160;box, the&#160;specified event&#160;will be&#160;deleted.<br/>
+<b>Address:</b><br/>
+Enter an address. You can&#160;specify&#160;a&#160;number or&#160;a&#160;symbol. As for&#160;symbols,<br/>global variables&#160;and functions&#160;names&#160;are&#160;available.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be canceled.&#160;<br/>
+<i><b>61</b></i><br/>
+<hr/>
+<a name=68></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-68_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>td&#160;Setup... Menu</b><br/>
+Specify the conditions&#160;of data access&#160;cycle to take into&#160;tracing.&#160;This window corresponds to the&#160;<b>td1</b>&#160;-<br/><b>td8</b>&#160;commands and you can&#160;specify&#160;conditions that&#160;can be&#160;specified using these commands.<br/>
+<b>DEL:</b><br/>
+If you&#160;check this check box,&#160;the specified event will be deleted.<br/>
+<b>Address:</b><br/>
+Enter an address.&#160;You can&#160;specify&#160;a&#160;number&#160;or&#160;a symbol. As for&#160;symbols,<br/>global variables and functions names are&#160;available.<br/>
+<b>Mask:</b><br/>
+Specify&#160;the mask value to&#160;the&#160;<b>address</b>.&#160;The '1' bits&#160;are&#160;excluded&#160;from<br/>comparison. Only&#160;<b>bit9</b>&#160;-&#160;<b>bit2</b>&#160;are&#160;enabled.<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>62</b></i><br/>
+<hr/>
+<a name=69></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-69_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>tsp&#160;Setup... Menu</b><br/>
+Specify 2 trace&#160;switch points (addresses). You can change conditions&#160;to get&#160;trace information by&#160;the<br/>specified switch&#160;points.&#160;Specify conditions to&#160;get&#160;trace data&#160;from the&#160;<b>SubSwitchOn Setup...</b>&#160;or<br/><b>SubSwitchOff Setup...</b>&#160;menu.<br/>
+<b>DEL:</b><br/>
+If you check this&#160;check&#160;box, the&#160;specified event&#160;will be&#160;deleted.<br/>
+<b>Address:</b><br/>
+Enter an address. You can&#160;specify&#160;a&#160;number or&#160;a&#160;symbol. As for&#160;symbols,<br/>global variables&#160;and functions&#160;names&#160;are&#160;available.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be canceled.<br/>
+<i><b>63</b></i><br/>
+<hr/>
+<a name=70></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-70_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Setup...&#160;Menu</b><br/>
+Specify&#160;trace environment settings and other conditions. This&#160;window&#160;corresponds to&#160;the&#160;<b>tenv</b>&#160;and<br/><b>tron</b>&#160;commands and you can&#160;specify&#160;conditions that&#160;can&#160;be specified&#160;using&#160;these&#160;commands.<br/>
+<b>&lt;TENV&gt;</b><br/>
+<b>subor:</b><br/>
+<b>OR</b>&#160;of Section condition&#160;and qualify condition is specified&#160;as&#160;the sub&#160;switch.<br/>
+<b>suband:</b><br/>
+<b>AND</b>&#160;of Section condition and qualify condition is&#160;specified as the&#160;sub switch.<br/>
+<b>phold:</b><br/>
+When execution of the&#160;user program is&#160;stopped during&#160;trace in&#160;complete mode<br/>(non-real time mode), the packet that notifies the status is taken&#160;into trace data.<br/>
+<b>once:</b><br/>
+Trigger output&#160;is output only once when&#160;the trigger conditions&#160;are met.<br/>
+<b>sss_st_off:</b><br/>
+If you check this&#160;check&#160;box, Starts the section sub-switch&#160;in&#160;the off state. If<br/>you do not check this&#160;check&#160;box, it starts the&#160;sub-switch in the&#160;on&#160;state.<br/>
+<b>qss_st_off:</b><br/>
+If you check this&#160;check&#160;box, Starts the qualify sub-switch&#160;in&#160;the off state. If<br/>you do not check this&#160;check&#160;box, it starts the&#160;sub-switch in the&#160;on&#160;state.<br/>
+<b>sss_on_dly1:</b><br/>
+If you check this&#160;check&#160;box, Delays&#160;setting the section&#160;sub-switch to on one<br/>instruction after&#160;the condition is satisfied. If&#160;you do&#160;not&#160;check&#160;this check box,<br/>it&#160;set the&#160;sub-switch to&#160;on&#160;immediately.<br/>
+<b>sss_off_dly1:</b><br/>
+If&#160;you check this check box, Delays setting the section sub-switch&#160;to off&#160;one<br/>instruction after&#160;the condition is satisfied. If&#160;you do&#160;not&#160;check&#160;this check box,<br/>it&#160;set the&#160;sub-switch to&#160;off&#160;immediately.<br/>
+<i><b>64</b></i><br/>
+<hr/>
+<a name=71></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>&lt;TRON&gt;</b><br/>
+<b>Real:</b><br/>
+Specify the execution mode while&#160;tracing.&#160;If&#160;you check this check box, the<br/>program will&#160;be&#160;run in real time execution mode. In&#160;real&#160;time execution mode,<br/>trace information&#160;could overflow.&#160;If you&#160;deselect&#160;this&#160;check box, the program<br/>will be run in non-real time execution&#160;mode. Overflow will&#160;not occur in this<br/>mode, but execution&#160;rate is&#160;slower.<br/>
+<b>Force:</b><br/>
+Specify forced start of tracing. If you do&#160;not check this check box, tracing will<br/>be started according to the&#160;<b>tsp1</b>&#160;conditions. If tracing is started forcibly,<br/><b>tsp1</b>&#160;and&#160;<b>tsp2</b>&#160;are&#160;valid.<br/>
+<b>Delay:</b><br/>
+Specify forced delay mode.&#160;If&#160;you&#160;specify&#160;the forced delay&#160;mode,&#160;tracing&#160;will<br/>be&#160;started after you&#160;finish&#160;setting in this window and tracing will&#160;be forcibly<br/>finished after getting trace&#160;data for the number&#160;of times specified&#160;in&#160;the&#160;delay<br/>counter.&#160;While this mode is&#160;specified, trigger events are&#160;ignored.<br/>
+<b>Delay Count:</b><br/>
+Specifies the&#160;number of&#160;frames&#160;in&#160;memory&#160;that&#160;are to be loaded in response&#160;to<br/>a trigger.&#160;You&#160;can&#160;input a value from&#160;<b>0x0</b>&#160;to&#160;<b>0x3fffd</b>.<br/>
+<b>&lt;EXT&gt;:</b><br/>
+Specify&#160;the external input&#160;terminal (EXIO) as&#160;a&#160;trigger.<br/>
+<b>Noext</b><br/>
+EXIO&#160;is not specified as&#160;a&#160;trigger.<br/>
+<b>Posi</b><br/>
+The rising edge&#160;of&#160;EXIO&#160;is specified as&#160;a&#160;trigger.<br/>
+<b>Nega</b><br/>
+The falling edge of&#160;EXIO&#160;is specified as&#160;a trigger.<br/>
+<b>TD1&#160;- TD8:</b><br/>
+Specify&#160;trace data conditions&#160;(TD1&#160;- TD8) as trigger conditions.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be canceled.<br/>
+<i><b>65</b></i><br/>
+<hr/>
+<a name=72></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-72_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>SubSwitchOn Setup...Menu</b><br/>
+Specify&#160;cycles to take into&#160;tracing when sub&#160;switch&#160;is on/off.&#160;This window corresponds to the&#160;<b>sswon<br/></b>command and&#160;you can specify conditions&#160;that&#160;can be&#160;specified using this command.<br/>
+<b>&lt;SubSwitch&#160;On&gt;</b><br/>
+Specify the&#160;cycle to take into&#160;tracing when&#160;sub switch is ON.<br/>
+Specify the&#160;cycles to take into&#160;execution&#160;tracing. The checked&#160;factors&#160;are taken&#160;into&#160;tracing.<br/>
+<b>Interrupt</b><br/>
+interrupt<br/>
+<b>Exception</b><br/>
+exception<br/>
+<b>RETI</b><br/>
+RETI&#160;instruction<br/>
+<b>JMP</b><br/>
+JMP instruction<br/>
+<b>JR</b><br/>
+JR instruction<br/>
+<b>JARL</b><br/>
+JARL&#160;instruction<br/>
+<b>Cond JMP(FALSE)</b><br/>
+conditional branch&#160;(false)<br/>
+<b>Cond JMP(TRUE)</b><br/>
+conditional branch&#160;(true)<br/>
+<b>CALLT</b><br/>
+CALLT&#160;instruction<br/>
+<i><b>66</b></i><br/>
+<hr/>
+<a name=73></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-73_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>SWITCH</b><br/>
+SWITCH instruction<br/>
+<b>DISPOSE</b><br/>
+DISPOSE&#160;instruction<br/>
+<b>CTRET</b><br/>
+CTRET&#160;instruction<br/>
+<b>tp</b><br/>
+when tp is true<br/>
+<b>evt_match</b><br/>
+trigger points from&#160;the event unit<br/>
+<b>OPCODE</b><br/>
+OPCODE<br/>
+Normally,&#160;check all cycles.&#160;If&#160;you restrict cycles, trace&#160;disassemble may&#160;not properly<br/>displayed.<br/>
+<b>All&#160;Cycle:</b><br/>
+Specify types of cycles to take into&#160;unconditionally.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<i><b>67</b></i><br/>
+<hr/>
+<a name=74></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>TD1 - TD8:</b><br/>
+Specify cycles to take into&#160;for the conditions specified&#160;by&#160;<b>td Setup...<br/></b>or the&#160;<b>td</b>&#160;command.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+<b>EVAP1 - EVAP6:</b><br/>
+Specify&#160;cycles to take into&#160;for the event conditions&#160;specified by&#160;<b>eva<br/>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+<i><b>68</b></i><br/>
+<hr/>
+<a name=75></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>EVAR1, EVAR3,&#160;</b><br/>
+Specify cycles to take into for the&#160;range conditions specified by&#160;<b>eva</b><br/>
+<b>EVAR5:</b><br/>
+<b>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<b>EVEP1 - EVEP8:</b><br/>
+Specifies&#160;whether to&#160;load&#160;data for&#160;each point condition&#160;specified&#160;by the<br/><b>eve Setup...</b>menu or the&#160;<b>eve</b>&#160;command. When you click&#160;on&#160;check<br/>box, data is loaded.<br/>
+<b>EVER1,EVER3,</b><br/>
+Specifies whether to load data&#160;for&#160;each&#160;range condition specified by the<br/>
+<b>EVER5,EVER7:</b><br/>
+<b>eve Setup...</b>menu or&#160;the&#160;<b>eve</b>&#160;command. When you&#160;click&#160;on the<br/>check&#160;box, data is&#160;loaded.<br/>
+<i><b>69</b></i><br/>
+<hr/>
+<a name=76></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-76_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>SubSwitchOff Setup...Menu</b><br/>
+Specify&#160;cycles to take into tracing when&#160;sub switch is on/off. This window corresponds to the&#160;<b>sswoff<br/></b>command and&#160;you can specify conditions&#160;that&#160;can be&#160;specified using this command.<br/>
+<b>&lt;SubSwitch&#160;Off&gt;</b><br/>
+Specify the&#160;cycle to take into&#160;tracing when&#160;sub switch is OFF.<br/>
+Specify the&#160;cycles to take into&#160;execution&#160;tracing. The checked&#160;factors&#160;are taken&#160;into&#160;tracing.<br/>
+<b>Interrupt</b><br/>
+interrupt<br/>
+<b>Exception</b><br/>
+exception<br/>
+<b>RETI</b><br/>
+RETI&#160;instruction<br/>
+<b>JMP</b><br/>
+JMP instruction<br/>
+<b>JR</b><br/>
+JR instruction<br/>
+<b>JARL</b><br/>
+JARL&#160;instruction<br/>
+<b>Cond JMP(FALSE)</b><br/>
+conditional branch&#160;(false)<br/>
+<b>Cond JMP(TRUE)</b><br/>
+conditional branch&#160;(true)<br/>
+<b>CALLT</b><br/>
+CALLT&#160;instruction<br/>
+<i><b>70</b></i><br/>
+<hr/>
+<a name=77></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-77_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>SWITCH</b><br/>
+SWITCH instruction<br/>
+<b>DISPOSE</b><br/>
+DISPOSE&#160;instruction<br/>
+<b>CTRET</b><br/>
+CTRET&#160;instruction<br/>
+<b>tp</b><br/>
+when tp is true<br/>
+<b>evt_match</b><br/>
+trigger points from&#160;the event unit<br/>
+<b>OPCODE</b><br/>
+OPCODE<br/>
+Normally,&#160;check all cycles.&#160;If&#160;you restrict cycles, trace&#160;disassemble may&#160;not properly<br/>displayed.<br/>
+<b>All&#160;Cycle:</b><br/>
+Specify types of cycles to take into&#160;unconditionally.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<i><b>71</b></i><br/>
+<hr/>
+<a name=78></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>TD1 - TD8:</b><br/>
+Specify cycles to take into&#160;for the conditions specified&#160;by&#160;<b>td Setup...<br/></b>or the&#160;<b>td</b>&#160;command.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+<b>EVAP1 - EVAP6:</b><br/>
+Specify&#160;cycles to take into&#160;for the event conditions&#160;specified by&#160;<b>eva<br/>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read&#160;cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write&#160;cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles&#160;and their execution cycles&#160;are&#160;taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their&#160;execution cycles&#160;are<br/>taken.<br/>
+<i><b>72</b></i><br/>
+<hr/>
+<a name=79></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>EVAR1, EVAR3,&#160;</b><br/>
+Specify cycles to take into for the&#160;range conditions specified by&#160;<b>eva</b><br/>
+<b>EVAR5:</b><br/>
+<b>Setup...</b>&#160;or&#160;the&#160;<b>eva</b>&#160;command.<br/>
+<b>none</b><br/>
+No&#160;cycle&#160;is&#160;taken.<br/>
+<b>read</b><br/>
+Only read cycles&#160;are&#160;taken.<br/>
+<b>write</b><br/>
+Only write cycles&#160;are&#160;taken.<br/>
+<b>accs</b><br/>
+Both&#160;read&#160;and write&#160;cycles&#160;are&#160;taken.<br/>
+<b>readp</b><br/>
+Read&#160;cycles&#160;and their execution cycles&#160;are taken.<br/>
+<b>writep</b><br/>
+Write&#160;cycles and their execution cycles&#160;are taken.<br/>
+<b>accsp</b><br/>
+Read, write cycles&#160;and their execution cycles&#160;are<br/>taken.<br/>
+<b>EVEP1 - EVEP8:</b><br/>
+Specifies&#160;whether to&#160;load&#160;data for&#160;each point condition&#160;specified&#160;by the<br/><b>eve Setup...</b>menu or the&#160;<b>eve</b>&#160;command. When you click&#160;on&#160;check<br/>box, data is loaded.<br/>
+<b>EVER1,EVER3,</b><br/>
+Specifies whether to load data&#160;for&#160;each&#160;range condition specified by the<br/>
+<b>EVER5,EVER7:</b><br/>
+<b>eve Setup...</b>menu or&#160;the&#160;<b>eve</b>&#160;command. When you&#160;click&#160;on the<br/>check&#160;box, data is&#160;loaded.<br/>
+<i><b>73</b></i><br/>
+<hr/>
+<a name=80></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-80_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>eva Setup...&#160;Menu</b><br/>
+Specify events related to access.&#160;You can specify&#160;the events that you set as&#160;trace conditions&#160;by&#160;<br/><b>SubSwitchOn Setup...</b>,&#160;<b>SubSwitchOff Setup...</b>&#160;or the&#160;<b>sswon</b>/<b>sswoff</b>&#160;commands.<br/>
+<b>No.:</b><br/>
+Specify the channel of the&#160;access event.&#160;If&#160;an&#160;event is already set,&#160;its setting<br/>values are displayed.<br/>
+<b>DEL:</b><br/>
+If you check this check&#160;box, the&#160;specified event will&#160;be&#160;deleted.<br/>
+<b>Address:</b><br/>
+Enter&#160;an address. You&#160;can specify a&#160;number&#160;or&#160;a&#160;symbol. As for symbols, glo-<br/>bal variables and&#160;functions names are available. On the right of the address<br/>input field, specify the condition&#160;for&#160;the address value specified in&#160;<b>Address:</b><br/>
+<b>EQ</b><br/>
+True&#160;when&#160;address = event address<br/>
+<b>LT</b><br/>
+True&#160;when&#160;address &gt; event address<br/>
+<b>GT</b><br/>
+True&#160;when&#160;address &lt; event address<br/>
+<b>IGN</b><br/>
+Address&#160;is not used for comparison<br/>
+<b>NEQ</b><br/>
+True when address&#160;!=&#160;event address<br/>
+<b>GTE</b><br/>
+True when address&#160;=&lt;&#160;event address<br/>
+<b>LTE</b><br/>
+True when address&#160;=&gt;&#160;event address<br/>
+<i><b>74</b></i><br/>
+<hr/>
+<a name=81></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Data:</b><br/>
+Specify data.<br/>
+<b>DataMask:</b><br/>
+Specify data&#160;mask. The bits where&#160;'1' is&#160;specified are not used for comparison.<br/>
+<b>Data Cmp:</b><br/>
+Specify data comparison&#160;condition.<br/>
+<b>eq</b><br/>
+Data&#160;is&#160;compared using equal.<br/>
+<b>neq</b><br/>
+Data&#160;is compared using not equal.<br/>
+<b>Access:</b><br/>
+Specify the&#160;cycle condition.<br/>
+<b>read</b><br/>
+Read cycles&#160;are specified.<br/>
+<b>write</b><br/>
+Write&#160;cycles&#160;are&#160;specified.<br/>
+<b>accs</b><br/>
+Read or write&#160;cycles are&#160;specified.<br/>
+<b>Size:</b><br/>
+Specify&#160;the access size.<br/>
+<b>byte</b><br/>
+Byte&#160;access (8&#160;bits) is&#160;specified.<br/>
+<b>hword</b><br/>
+Half word access (16 bits) is&#160;specified.<br/>
+<b>word</b><br/>
+Word&#160;access (32&#160;bits) is&#160;specified.<br/>
+<b>nosize</b><br/>
+Invalid&#160;condition is specified.<br/>
+If you push&#160;the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set.&#160;If you push the&#160;<b>Cancel</b>&#160;button, your<br/>input will&#160;be canceled.<br/>
+<i><b>75</b></i><br/>
+<hr/>
+<a name=82></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-82_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>eve Setup...&#160;Menu</b><br/>
+Specify events related to execution. You&#160;can specify the&#160;events that you set as trace&#160;conditions&#160;by&#160;<br/><b>SubSwitchOn Setup...</b>,&#160;<b>SubSwitchOff Setup...</b>&#160;or the&#160;<b>sswon</b>/<b>sswoff</b>&#160;commands.<br/>
+<b>No.:</b><br/>
+Specify the channel of the&#160;access event.&#160;If&#160;an&#160;event is already set,&#160;its setting<br/>values are displayed.<br/>
+<b>DEL:</b><br/>
+If you check this check&#160;box, the&#160;specified event will&#160;be&#160;deleted.<br/>
+<b>Address:</b><br/>
+Enter&#160;an address. You&#160;can specify a&#160;number&#160;or&#160;a&#160;symbol. As for symbols, glo-<br/>bal variables and&#160;functions names are available. On the right of the address<br/>input field, specify the condition&#160;for&#160;the address value specified in&#160;<b>Address:</b><br/>
+<b>EQ</b><br/>
+True&#160;when&#160;address = event address<br/>
+<b>LT</b><br/>
+True&#160;when&#160;address &gt; event address<br/>
+<b>GT</b><br/>
+True&#160;when&#160;address &lt; event address<br/>
+<b>IGN</b><br/>
+Address&#160;is not used for comparison<br/>
+<b>NEQ</b><br/>
+True when address&#160;!=&#160;event address<br/>
+<b>GTE</b><br/>
+True when address&#160;=&lt;&#160;event address<br/>
+<b>LTE</b><br/>
+True when address&#160;=&gt;&#160;event address<br/>
+If you push the&#160;<b>OK</b>&#160;button after entering items,&#160;an&#160;event will&#160;be&#160;set. If&#160;you push&#160;the&#160;<b>Cancel</b>&#160;button,&#160;your<br/>input&#160;will be canceled.<br/>
+<i><b>76</b></i><br/>
+<hr/>
+<a name=83></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-83_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Data&#160;Display (when using KIT-V850E/MA3-IE)</b><br/>
+There are two&#160;trace display modes:&#160;assembler&#160;display&#160;mode and C&#160;source/assembler&#160;mixed display<br/>mode.<br/>
+<b>Assembler Display&#160;Mode</b><br/>
+<b>*</b>&#160;mark<br/>
+Indicates&#160;the trigger cycle.<br/>
+<b>Cycle</b><br/>
+The relative position in the trace buffer is displayed in&#160;hexadecimal. It<br/>will be displayed as a relative&#160;value&#160;with +/- assuming somewhere<br/>around the&#160;trigger cycle&#160;or the&#160;end cycle&#160;as&#160;<b>0x0</b>.<br/>
+<b>Sub</b><br/>
+The&#160;sub cycle&#160;number that&#160;is&#160;generated based on the information on<br/>branches and number of&#160;execution instructions.<br/>
+<b>Ext</b><br/>
+The status of the external input terminal (EXI3..0) is displayed&#160;as a bit<br/>sequence.<br/>
+<b>TimeTag</b><br/>
+Time&#160;tab&#160;value&#160;is&#160;displayed in the&#160;absolute&#160;time.<br/>
+<b>Addr/LineNo</b><br/>
+The&#160;execution&#160;address&#160;or&#160;the&#160;bus&#160;cycle address is displayed.<br/>
+<b>Opcode/FileName</b><br/>
+Operation code&#160;or&#160;the bus&#160;cycle data is&#160;displayed.<br/>
+<b>Inst/Source</b><br/>
+instruction&#160;mnemonic or&#160;the bus&#160;type&#160;is displayed.<br/>
+<i><b>77</b></i><br/>
+<hr/>
+<a name=84></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Stat</b><br/>
+The type of the trace packet on&#160;which&#160;displayed information is based<br/>is displayed.<br/>
+<b>TRGSTARTON</b><br/>
+START packet&#160;occurs and&#160;sub&#160;switch is turned<br/>ON.<br/>
+<b>TRGSTARTOFF</b><br/>
+START packet&#160;occurs and&#160;sub&#160;switch is turned<br/>OFF.<br/>
+<b>MATCH</b><br/>
+MATCH packet&#160;occurs.<br/>
+<b>OVF</b><br/>
+Overflow occurs.<br/>
+<b>TRCEND</b><br/>
+TRCEND packet&#160;occurs.<br/>
+<b>JMPD &lt;&gt;</b><br/>
+JMPD packet&#160;occurs.<br/>
+<b>JMPDS &lt;&gt;</b><br/>
+JMPDS packet&#160;occurs.<br/>
+<b>JMPS &lt;&gt;</b><br/>
+JMPS packet&#160;occurs.<br/>
+<b>OPCODE</b><br/>
+Operation code&#160;access&#160;(execution) occurs.<br/>
+<b>DATAW</b><br/>
+Memory write occurs&#160;(trace packet)<br/>
+<b>DATAR</b><br/>
+Memory read occurs&#160;(trace packet)<br/>
+<b>SFRW</b><br/>
+SFR&#160;write occurs&#160;(trace&#160;packet)<br/>
+<b>SFRR</b><br/>
+SFR&#160;read occurs (trace&#160;packet)<br/>
+<b>DMAW</b><br/>
+iRAM&#160;write by&#160;DMA&#160;occurs&#160;(bus trace)<br/>
+<b>DMAR</b><br/>
+iRAM&#160;read by&#160;DMA&#160;occurs&#160;(bus trace)<br/>
+<b>SUB</b><br/>
+sub cycle<br/>
+In the&#160;&#34;<b>&lt;&gt;</b>&#34;,&#160;the following strings are placed. These are&#160;instructions&#160;or&#160;events that caused&#160;a branch.<br/>
+<b>NMI/INT</b><br/>
+Caused&#160;by&#160;interruption.<br/>
+<b>EXP/TRAP</b><br/>
+Caused&#160;by&#160;exception.<br/>
+<b>RETI</b><br/>
+Caused&#160;by&#160;the instruction.<br/>
+<i><b>78</b></i><br/>
+<hr/>
+<a name=85></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>JMP</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>JR</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>JARL</b><br/>
+Caused by the&#160;instruction.&#160;<br/>
+<b>BcondNT</b><br/>
+Caused by the&#160;instruction.&#160;<br/>
+<b>Bcond</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>CALLT</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>SWITCH</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>DISPOSE</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>CTRET</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>STORE</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>LOAD</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>FSTART</b><br/>
+Caused by the&#160;instruction.<br/>
+<i><b>79</b></i><br/>
+<hr/>
+<a name=86></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/sv-rte-us-72-86_1.png"/><br/>
+7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>C Source/Assembler&#160;Mixed&#160;Display Mode</b><br/>
+When there is a C source file that corresponds to&#160;the traced address, the corresponding source line and<br/>the assemble result are&#160;displayed together.&#160;The&#160;corresponding&#160;address&#160;is searched&#160;based&#160;on&#160;the line<br/>information in the debug information file. If the corresponding&#160;C source line is in the debug information<br/>file,&#160;only assemble&#160;result is&#160;displayed.<br/>
+Displayed items of&#160;the&#160;disassembled&#160;line are&#160;the same&#160;as&#160;those&#160;of&#160;<a href="sv-rte-us-72s.html#83">&#34;Assembler Display&#160;Mode&#34; on&#160;page<br/>77. I</a>tems displayed in C&#160;source&#160;lines&#160;are the&#160;same&#160;as&#160;those&#160;displayed for other&#160;MPUs.<br/>
+<i><b>80</b></i><br/>
+<hr/>
+<a name=87></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Data&#160;Display (when using KIT-NA85E2-TP, KIT-<br/>V850E2/ME3-TP)</b><br/>
+For&#160;the&#160;result&#160;of&#160;tracing, see<a href="sv-rte-us-72s.html#47">&#160;&#34;Trace&#160;Data&#160;Display (when using KIT-NB85E-TP)&#34; on page&#160;41</a>&#160;of<br/>&#34;RTE Server Reference Manual.&#34; Additional information as below is displayed when you are using<br/>NA85E2 or V850E2/ME3.<br/>
+o<br/>
+<b>'M'</b>,&#160;<b>'H'</b>, or&#160;<b>' '</b>&#160;is&#160;displayed&#160;at&#160;the&#160;left&#160;edge.&#160;They&#160;indicate&#160;cache&#160;miss,&#160;cache&#160;hit,&#160;no&#160;information<br/>on cache&#160;hit respectively.<br/>
+o<br/>
+Status that&#160;is&#160;displayed in the&#160;<b>Stat</b>&#160;section is&#160;as&#160;follows:<br/>
+<b>TRGSTARTON</b><br/>
+START packet&#160;occurs and&#160;sub&#160;switch&#160;is turned&#160;ON.<br/>
+<b>TRGSTARTOFF</b><br/>
+START packet&#160;occurs and&#160;sub&#160;switch&#160;is turned&#160;OFF.<br/>
+<b>MATCH</b><br/>
+MATCH packet&#160;occurs.<br/>
+<b>OVF</b><br/>
+Overflow occurs.<br/>
+<b>TRCEND</b><br/>
+TRCEND packet&#160;occurs.<br/>
+<b>JMPD {cond}</b><br/>
+JMPD packet&#160;occurs.<br/>
+<b>JMPDS&#160;{cond}</b><br/>
+JMPDS packet&#160;occurs.<br/>
+<b>JMPS {cond}</b><br/>
+JMPS packet&#160;occurs.<br/>
+<b>JMPSS&#160;{cond}</b><br/>
+JMPSS&#160;packet&#160;occurs.<br/>
+<b>OPCODE</b><br/>
+Operation code&#160;access&#160;(execution) occurs.<br/>
+<b>DATAW</b><br/>
+Memory write occurs&#160;(trace&#160;packet)<br/>
+<b>DATAR</b><br/>
+Memory read occurs&#160;(trace&#160;packet)<br/>
+<b>SFRW</b><br/>
+SFR&#160;write&#160;occurs&#160;(trace&#160;packet)<br/>
+<b>SFRR</b><br/>
+SFR&#160;read occurs (trace&#160;packet)<br/>
+<b>SUB</b><br/>
+sub cycle<br/>
+In&#160;<b>{cond}</b>,&#160;the following strings are&#160;placed.&#160;These&#160;are instructions&#160;or&#160;events&#160;that caused a branch.<br/>
+<i><b>81</b></i><br/>
+<hr/>
+<a name=88></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>NMI/INT</b><br/>
+Caused by interruption.<br/>
+<b>EXP/TRAP</b><br/>
+Caused by exception.<br/>
+<b>RETI</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>JMP</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>JR</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>JARL</b><br/>
+Caused by the&#160;instruction.&#160;<br/>
+<b>BcondNT</b><br/>
+Caused by the&#160;instruction.&#160;<br/>
+<b>Bcond</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>CALLT</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>SWITCH</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>DISPOSE</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>CTRET</b><br/>
+Caused by the&#160;instruction.<br/>
+<b>STORE</b><br/>
+When&#160;WithPC&#160;is&#160;specified in&#160;data&#160;tracing.<br/>
+<b>LOAD</b><br/>
+When&#160;WithPC&#160;is&#160;specified in&#160;data&#160;tracing.<br/>
+<b>FSTART</b><br/>
+Forcible&#160;start&#160;of tracing.<br/>
+<i><b>82</b></i><br/>
+<hr/>
+<a name=89></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<b>Trace Data&#160;Display (when using KT-OMAP_ARM-TP)</b><br/>
+Assembler mode&#160;and C&#160;source/assembler mixed display&#160;mode&#160;are available like&#160;other&#160;MPUs. Status that<br/>is displayed in the&#160;<b>Stat</b>&#160;section&#160;is as&#160;follows:<br/>
+<b>IE:</b><br/>
+Execution instruction<br/>
+<b>ID:</b><br/>
+Execution (data&#160;access)<br/>
+<b>IN:</b><br/>
+Instruction is&#160;not executed<br/>
+<b>BE:</b><br/>
+Branch<br/>
+<b>BD:</b><br/>
+Branch (data access)<br/>
+<i><b>83</b></i><br/>
+<hr/>
+<a name=90></a>7.&#160;Trace Data&#160;Display&#160;Function<br/>
+<i><b>84</b></i><br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="sv-rte-us-72s.html#1">RTE Server Reference Manual</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#3">CONTENTS</a></li>
+<li><a href="sv-rte-us-72s.html#7">Preface</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#8">About this Manual</a></li>
+<li><a href="sv-rte-us-72s.html#8">Notation Conventions</a></li>
+</ul>
+</li>
+<li><a href="sv-rte-us-72s.html#9">Chapter1 Installation</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#10">The RTEserv Software Package</a></li>
+<li><a href="sv-rte-us-72s.html#10">Installing the RTE Server</a></li>
+<li><a href="sv-rte-us-72s.html#10">Setting The RTE</a></li>
+<li><a href="sv-rte-us-72s.html#10">Checking the Connection</a></li>
+</ul>
+</li>
+<li><a href="sv-rte-us-72s.html#13">Chapter2 Editing a MULTI Resource File</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#14">Resource Files</a></li>
+<li><a href="sv-rte-us-72s.html#15">_INIT_SP</a></li>
+<li><a href="sv-rte-us-72s.html#15">Starting RTEserv</a></li>
+<li><a href="sv-rte-us-72s.html#15">Target Commands</a></li>
+</ul>
+</li>
+<li><a href="sv-rte-us-72s.html#17">Chapter3 Creating an Executable File</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#18">RTE-xxxx-PC</a></li>
+<li><a href="sv-rte-us-72s.html#18">RTE-xxxx-IE, RTE-xxxx-TP</a></li>
+</ul>
+</li>
+<li><a href="sv-rte-us-72s.html#19">Chapter4 Activating MULTI with RTEserv</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#20">Starting RTE</a></li>
+<li><a href="sv-rte-us-72s.html#20">Address Specification</a></li>
+<li><a href="sv-rte-us-72s.html#20">Setting _INIT_SP</a></li>
+</ul>
+</li>
+<li><a href="sv-rte-us-72s.html#21">Chapter5 Target Window</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#22">Target Window</a></li>
+</ul>
+</li>
+<li><a href="sv-rte-us-72s.html#23">Chapter6 Target Commands</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#24">Server Troubleshooting Command</a></li>
+<li><a href="sv-rte-us-72s.html#24">Download Suppress Command</a></li>
+<li><a href="sv-rte-us-72s.html#24">Target Commands</a></li>
+</ul>
+</li>
+<li><a href="sv-rte-us-72s.html#25">Chapter7 Trace Data Display Function</a>
+<ul>
+<li><a href="sv-rte-us-72s.html#27">Menus and Buttons in the Trace Window</a></li>
+<li><a href="sv-rte-us-72s.html#29">How to get trace data</a></li>
+<li><a href="sv-rte-us-72s.html#33">Saving Trace Data to a File</a></li>
+<li><a href="sv-rte-us-72s.html#34">Trigger Setting (when using KIT-VR5432-TP, KIT-VR5464-TP)</a></li>
+<li><a href="sv-rte-us-72s.html#38">Trace Data Display (when using KIT-VR5432-TP, KIT-VR5464-TP)</a></li>
+<li><a href="sv-rte-us-72s.html#41">Trigger Setting (when using KIT-NB85E-TP)</a></li>
+<li><a href="sv-rte-us-72s.html#47">Trace Data Display (when using KIT-NB85E-TP)</a></li>
+<li><a href="sv-rte-us-72s.html#50">Trigger Setting (when using RTE-V850E/GP1-IE)</a></li>
+<li><a href="sv-rte-us-72s.html#63">Trace Data Display (when using RTE-V850E/GP1-IE)</a></li>
+<li><a href="sv-rte-us-72s.html#67">Trigger Setting (when using KIT-V850E/MA3-IE)</a></li>
+<li><a href="sv-rte-us-72s.html#83">Trace Data Display (when using KIT-V850E/MA3-IE)</a></li>
+<li><a href="sv-rte-us-72s.html#87">Trace Data Display (when using KIT-NA85E2-TP, KIT-V850E2/ME3-TP)</a></li>
+<li><a href="sv-rte-us-72s.html#89">Trace Data Display (when using KT-OMAP_ARM-TP)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+</body>
+</html>

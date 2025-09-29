@@ -1,0 +1,288 @@
+---
+title: AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs
+linkTitle: AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs
+weight: 5
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img class="yflip" src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Os/doc/AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT-1_1.png"/><br/>
+<b>&#160;</b><br/>
+<b>Avoid&#160;ErrorHook&#160;E_OS_DISABLED_INT&#160;</b><br/>
+<b>Version&#160;1.0&#160;</b><br/>
+<b>2015-03-13&#160;</b><br/>
+<b>Application&#160;Note&#160;&#160;AN-ISC-8-1149&#160;</b><br/>
+&#160;<br/>&#160;<br/><i>&#160;</i><br/>
+Author(s)&#160;<br/>
+Birke,&#160;Holger&#160;<br/>
+Restrictions&#160;<br/>
+Customer confidential&#160;-&#160;MSR4 only&#160;<br/>
+Abstract&#160;<br/>
+This&#160;application&#160;note&#160;describes&#160;how to&#160;avoid&#160;ErrorHook&#160;E_OS_DISABLED_INT&#160;<br/>
+<i><b>&#160;<br/>Table of&#160;Contents&#160;<br/>&#160;</b></i><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">1.0&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">Overview&#160;..........................................................................................................................................................&#160;1&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">1.1&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">Problem&#160;Description&#160;......................................................................................................................................&#160;1&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">2.0&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">Solution&#160;............................................................................................................................................................&#160;1&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">2.1&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#1">Do Not&#160;Use OS Timer&#160;...................................................................................................................................&#160;1&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#3">2.2&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#3">Do Not&#160;Lock&#160;Global&#160;Interrupts&#160;.......................................................................................................................&#160;3&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#4">3.0&#160;</a><br/>
+<a href="AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INTs.html#4">Contacts&#160;...........................................................................................................................................................&#160;4&#160;</a><br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+<b>1.0&#160;&#160;Overview&#160;</b><br/>
+This&#160;note&#160;describes&#160;how to&#160;avoid&#160;the&#160;issue&#160;E_OS_DISABLEDINT&#160;notified&#160;by&#160;the&#160;OS&#160;ErrorHook()&#160;callout.&#160;<br/>
+&#160;<br/>
+<b>1.1&#160;&#160;Problem&#160;Description&#160;</b><br/>
+The&#160;CAN&#160;Driver&#160;uses&#160;the&#160;OS&#160;APIs&#160;GetCounterValue()&#160;and&#160;GetElapsedValue()&#160;to&#160;handle&#160;asynchronous&#160;<br/>state transitions. These&#160;calls&#160;will&#160;be&#160;done&#160;out&#160;of&#160;the context of&#160;Can_SetControllerMode()&#160;within some&#160;<br/>EXCLUSIVE_AREA&#160;from:&#160;<br/>
+&#160;&#160;CAN&#160;Driver&#160;<br/>
+(CAN_EXCLUSIVE_AREA_6)&#160;<br/>
+&#160;&#160;CAN Interface&#160;&#160;(CANIF_EXCLUSIVE_AREA_0)&#160;<br/>&#160;&#160;CANSM&#160;<br/>
+(CANSM_&#160;EXCLUSIVE_AREA_1,&#160;CANSM_ EXCLUSIVE_AREA_4)&#160;<br/>
+&#160;&#160;COMM&#160;&#160;&#160;<br/>
+(COMM_&#160;EXCLUSIVE_AREA_1)&#160;<br/>
+&#160;<br/>
+If&#160;the integrator choose&#160;Global&#160;Interrupt&#160;Lock&#160;for these&#160;EXCLUSIVE_AREAs&#160;the OS&#160;will&#160;issue&#160;<br/>E_OS_DISABLEDINT&#160;by&#160;the&#160;ErrorHook()&#160;callout.&#160;<br/>
+Note:&#160;<br/>
+The issue&#160;only&#160;appears&#160;when&#160;you&#160;use&#160;<b>Global&#160;Interrupt&#160;Lock</b>&#160;for particular&#160;EXCLUSIVE_AREA.&#160;<br/>
+&#160;<br/>
+<b>2.0&#160;&#160;Solution&#160;</b><br/>
+There are different solutions&#160;for this&#160;problem.&#160;The&#160;integrator has&#160;to&#160;decide&#160;which&#160;one fits&#160;best to&#160;the&#160;project-specific&#160;<br/>needs.&#160;The&#160;descriptions&#160;of&#160;the&#160;EXCLUSIVE&#160;AREA&#160;have to&#160;be&#160;checked&#160;for limitations.&#160;&#160;<br/>
+<b>2.1&#160;&#160;Do Not&#160;Use&#160;OS&#160;Timer&#160;</b><br/>
+When&#160;the above described&#160;AREAs&#160;have&#160;to&#160;use&#160;Global&#160;Interrupt&#160;Lock, no OS&#160;timer can&#160;be&#160;used.&#160;Use the&#160;<br/>CAN Driver feature&#160;instead.&#160;<br/>
+<b>&#160;1&#160;&#160;</b><br/>
+<i>Copyright&#160;©&#160;2015&#160;-&#160;Vector Informatik&#160;GmbH&#160;<br/></i><b>Contact Information:&#160;&#160;&#160;www.vector.com&#160;&#160;&#160;or&#160;+49-711-80&#160;670-0&#160;</b><br/>
+<hr/>
+<a name=2></a><img class="yflip" src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Os/doc/AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT-2_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Os/doc/AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT-2_2.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Os/doc/AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT-2_3.jpg"/><br/>
+&#160;<br/>
+&#160;<br/>
+Avoid&#160;ErrorHook&#160;E_OS_DISABLED_INT&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Figure&#160;1&#160;–&#160;GENy:&#160;Hardware&#160;Loop&#160;Check&#160;by&#160;Application&#160;<br/>&#160;<br/>
+&#160;<br/>
+Figure&#160;2&#160;–DaVinci&#160;Configurator:&#160;Hardware&#160;Cancel&#160;By&#160;Appl.&#160;<br/>&#160;<br/>
+This&#160;feature provides&#160;an&#160;additional&#160;API called&#160;instead&#160;of&#160;the OS timer and&#160;has&#160;to&#160;be&#160;implemented&#160;by&#160;the&#160;integrator.&#160;<br/>Refer to&#160;the&#160;CAN&#160;Driver Technical&#160;Reference for detailed&#160;description&#160;of&#160;the API.&#160;<br/>
+This&#160;API can&#160;either&#160;<br/>
+&#160;<br/>
+Use free&#160;running&#160;timer&#160;or&#160;<br/>
+&#160;&#160;Use counter loop&#160;(wait&#160;dedicated amount&#160;of&#160;loop&#160;calls&#160;to secure timing)&#160;<br/>
+&#160;<br/>
+Attention:&#160;<br/>
+This&#160;additional&#160;API&#160;is&#160;called&#160;for every&#160;<b>Hardware Loop</b>,&#160;not only&#160;for state transitions. So&#160;the&#160;worst&#160;<br/>case&#160;scenario&#160;has&#160;to&#160;be&#160;taken&#160;into&#160;account&#160;for timeout&#160;(see&#160;CAN&#160;Driver Technical&#160;Reference)&#160;<br/>
+&#160;<br/>
+<i><b>&#160;</b></i><br/>
+<b>2<i>&#160;</i></b><br/>
+<i>Application&#160;Note&#160;&#160;AN-ISC-8-1149<b>&#160;<br/></b></i>&#160;<br/>
+<hr/>
+<a name=3></a><img class="yflip" src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Os/doc/AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT-3_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Os/doc/AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT-3_2.jpg"/><br/>
+&#160;<br/>
+&#160;<br/>
+Avoid&#160;ErrorHook&#160;E_OS_DISABLED_INT&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>2.2&#160;&#160;Do&#160;Not&#160;Lock&#160;Global&#160;Interrupts&#160;</b><br/>
+It is&#160;possible to&#160;use&#160;a&#160;user&#160;defined&#160;callback&#160;function&#160;to&#160;handle&#160;the&#160;EXCLUSIVE AREAs.&#160;&#160;<br/>
+&#160;<br/>
+Figure&#160;3&#160;–&#160;DaVinci&#160;Configurator Exclusive&#160;Areas&#160;<br/>
+&#160;<br/>
+Dependent&#160;on the conditions&#160;described&#160;in&#160;the&#160;technical&#160;references&#160;for&#160;these&#160;AREAs,&#160;it is&#160;possible to use:&#160;<br/>
+&#160;&#160;No interrupt&#160;locks&#160;when&#160;the&#160;CAN&#160;Driver is&#160;used in polling&#160;mode,&#160;and all&#160;<b>MainFunctions</b>&#160;are called&#160;in same&#160;<br/>
+context.&#160;&#160;<br/>
+&#160;&#160;CAN&#160;interrupt&#160;locks&#160;(from&#160;CAN&#160;Driver&#160;BSWM:&#160;Can_DisableControllerInterrupts(),&#160;<br/>
+Can_EnableControllerInterrupts()), and&#160;all&#160;<b>MainFunctions</b>&#160;are called&#160;in&#160;same context.&#160;&#160;<br/>
+&#160;&#160;OS&#160;resources&#160;to&#160;lock&#160;<b>MainFunctions</b>&#160;and&#160;use additional&#160;CAN&#160;interrupt&#160;locks&#160;or CAN polling&#160;configuration.&#160;<br/>
+&#160;<br/>
+Attention:&#160;<br/>
+Make sure that&#160;all&#160;conditions&#160;described&#160;in&#160;the&#160;technical&#160;references&#160;for the&#160;upper&#160;described&#160;AREAs&#160;<br/>are fulfilled.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<i><b>&#160;</b></i><br/>
+<b>3<i>&#160;</i></b><br/>
+<i>Application&#160;Note&#160;&#160;AN-ISC-8-1149<b>&#160;<br/></b></i>&#160;<br/>
+<hr/>
+<a name=4></a><img class="yflip" src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Os/doc/AN-ISC-8-1149_ErrorHook_E_OS_DISABLED_INT-4_1.png"/><br/>
+&#160;<br/>
+&#160;<br/>
+Avoid&#160;ErrorHook&#160;E_OS_DISABLED_INT&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>3.0&#160;&#160;Contacts&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Germany&#160;&#160;</b><br/>
+<b>France,&#160;Belgium,&#160;Luxemburg:&#160;</b><br/>
+<b>Sweden,&#160;Denmark,&#160;Norway,&#160;&#160;</b><br/>
+<b>and&#160;all&#160;countries&#160;not&#160;named&#160;below:&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Finland,&#160;Iceland:&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Vector&#160;Informatik&#160;GmbH&#160;</b><br/>
+<b>Vector&#160;France&#160;S.A.S.&#160;</b><br/>
+<b>VecScan&#160;AB&#160;</b><br/>
+Ingersheimer&#160;Str.&#160;24&#160;<br/>
+168,&#160;Boulevard&#160;Camélinat&#160;<br/>
+Theres&#160;Svenssons&#160;Gata&#160;9&#160;<br/>
+70499&#160;Stuttgart&#160;<br/>
+92240&#160;Malakoff&#160;&#160;<br/>
+41755&#160;Göteborg&#160;&#160;<br/>
+GERMANY&#160;<br/>
+FRANCE&#160;<br/>
+SWEDEN&#160;<br/>
+Phone:&#160;&#160;+49&#160;711-80670-0&#160;<br/>
+Phone:&#160;&#160;+33&#160;1&#160;42&#160;31&#160;40&#160;00&#160;<br/>
+Phone:&#160;&#160;+46&#160;31&#160;764&#160;76&#160;00&#160;<br/>
+Fax:&#160;<br/>
++49&#160;711-80670-111&#160;<br/>
+Fax:&#160;<br/>
++33&#160;1&#160;42&#160;31&#160;40&#160;09&#160;<br/>
+Fax:&#160;<br/>
++46&#160;31&#160;764&#160;76&#160;19&#160;&#160;<br/>
+E-mail:&#160;&#160;info@de.vector.com&#160;<br/>
+E-mail:&#160;&#160;information@fr.vector.com&#160;<br/>
+E-mail:&#160;&#160;info@se.vector.com&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;<br/>
+<b>&#160;</b><br/>
+<b>United&#160;Kingdom,&#160;Ireland:&#160;</b><br/>
+<b>China:&#160;</b><br/>
+<b>India:&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Vector</b>&#160;<b>GB&#160;Ltd.&#160;</b><br/>
+<b>Vector&#160;Automotive&#160;Technology&#160;</b><br/>
+<b>Vector&#160;Informatik&#160;India&#160;Pvt.&#160;Ltd.&#160;</b><br/>
+Rhodium,&#160;Central&#160;Boulevard&#160;<br/>
+<b>(Shanghai)&#160;Co.,&#160;Ltd.</b>&#160;&#160;<br/>
+4/1/1/1,&#160;Sutar&#160;Icon,&#160;Sus&#160;Road,&#160;<br/>
+Blythe&#160;Valley&#160;Park&#160;<br/>
+Sunyoung&#160;Center&#160;<br/>
+Pashan,&#160;Pune&#160;-&#160;411&#160;021&#160;<br/>
+Solihull,&#160;Birmingham&#160;<br/>
+Room&#160;1701,&#160;No.398&#160;Jiangsu&#160;Road&#160;<br/>
+INDIA&#160;<br/>
+West&#160;Midlands&#160;B90&#160;8AS&#160;<br/>
+Changning&#160;District&#160;<br/>
+&#160;<br/>
+UNITED&#160;KINGDOM&#160;<br/>
+Shanghai&#160;200050&#160;<br/>
+&#160;<br/>
+Phone:&#160;&#160;+44&#160;121&#160;50681-50&#160;<br/>
+P.R.&#160;CHINA&#160;<br/>
+Phone:&#160;+91&#160;20&#160;2587&#160;2023&#160;<br/>
+Fax:&#160;<br/>
++44&#160;121&#160;50681-69&#160;<br/>
+Phone:&#160;+86&#160;21&#160;6432&#160;53530&#160;<br/>
+Fax:<b>&#160;&#160;&#160;</b>+91&#160;20&#160;2587&#160;2025&#160;<br/>
+&#160;<br/>
+Fax:&#160;&#160;&#160;+86&#160;21&#160;6432&#160;5308&#160;<br/>
+&#160;<br/>
+E-mail:&#160;&#160;info@uk.vector.com&#160;<br/>
+E-mail:&#160;info@cn.vector.com&#160;<br/>
+E-mail:&#160;info@in.vector.com&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>USA,&#160;Canada,&#160;Mexico:&#160;</b><br/>
+<b>Japan:&#160;</b><br/>
+<b>Korea:&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Vector&#160;CANtech,&#160;Inc.&#160;</b><br/>
+<b>Vector&#160;Japan&#160;Co.&#160;Ltd.&#160;</b><br/>
+<b>Vector&#160;Korea&#160;IT&#160;Inc.&#160;</b><br/>
+39500&#160;Orchard&#160;Hill&#160;Place,&#160;Suite&#160;550&#160;<br/>
+Tennozu&#160;Yusen&#160;Bldg.&#160;16F&#160;<br/>
+5F,&#160;Gomoas&#160;bldg.&#160;<br/>
+Novi,&#160;MI&#160;&#160;48375&#160;<br/>
+2-2-20&#160;Higashi-shinagawa,&#160;<br/>
+12&#160;Hannam-daero&#160;11-gil,&#160;Yongsan-gu&#160;<br/>
+USA&#160;<br/>
+Shinagawa-ku,&#160;<br/>
+Seoul,&#160;140-889&#160;<br/>
+&#160;<br/>
+Tokyo&#160;140-0002&#160;<br/>
+REPUBLIC&#160;OF&#160;KOREA&#160;<br/>
+&#160;<br/>
+JAPAN&#160;<br/>
+&#160;<br/>
+Phone:&#160;&#160;+1&#160;248&#160;449&#160;9290&#160;<br/>
+Phone:&#160;&#160;+81&#160;3&#160;5769&#160;7800&#160;<br/>
+Phone:&#160;&#160;+82&#160;2&#160;807&#160;0600&#160;<br/>
+Fax:&#160;<br/>
++1&#160;248&#160;449&#160;9704&#160;<br/>
+Fax:&#160;<br/>
++81&#160;3&#160;5769&#160;6975&#160;<br/>
+Fax:&#160;<br/>
++82&#160;2&#160;807&#160;0601&#160;<br/>
+E-mail:&#160;&#160;info@us.vector.com&#160;<br/>
+E-mail:&#160;&#160;info@jp.vector.com&#160;<br/>
+E-mail:&#160;&#160;info@kr.vector.com&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<i><b>&#160;</b></i><br/>
+<b>4<i>&#160;</i></b><br/>
+<i>Application&#160;Note&#160;&#160;AN-ISC-8-1149<b>&#160;<br/></b></i>&#160;<br/>
+<hr/>
+</body>
+</html>

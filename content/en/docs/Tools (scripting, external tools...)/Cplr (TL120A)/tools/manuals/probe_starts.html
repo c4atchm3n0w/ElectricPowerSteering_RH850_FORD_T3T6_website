@@ -1,0 +1,1287 @@
+---
+title: probe_starts
+linkTitle: probe_starts
+weight: 218
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><b>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills</b><br/>
+<b>Probe</b><br/>
+<b>Green Hills Software</b><br/>
+<b>30&#160;West Sola Street</b><br/>
+<b>Santa Barbara,&#160;California 93101</b><br/>
+<b>USA</b><br/>
+<b>Tel:&#160;805-965-6044</b><br/>
+<b>Fax:&#160;805-965-6343</b><br/>
+<b>www.ghs.com</b><br/>
+<hr/>
+<a name=2></a><b>DISCLAIMER</b><br/>
+GREEN&#160;HILLS&#160;SOFTWARE&#160;MAKES&#160;NO&#160;REPRESENTATIONS&#160;OR&#160;WARRANTIES&#160;WITH&#160;RESPECT&#160;TO&#160;THE<br/>CONTENTS&#160;HEREOF&#160;AND&#160;SPECIFICALLY&#160;DISCLAIMS&#160;ANY&#160;IMPLIED&#160;WARRANTIES&#160;OF&#160;MERCHANTABILITY<br/>OR&#160;FITNESS&#160;FOR&#160;ANY&#160;PARTICULAR&#160;PURPOSE.&#160;Further,&#160;Green&#160;Hills&#160;Software&#160;reserves&#160;the&#160;right&#160;to&#160;revise&#160;this<br/>publication&#160;and&#160;to&#160;make&#160;changes&#160;from&#160;time&#160;to&#160;time&#160;in&#160;the&#160;content&#160;hereof&#160;without&#160;obligation&#160;of&#160;Green&#160;Hills&#160;Software&#160;to<br/>notify&#160;any&#160;person&#160;of&#160;such&#160;revision&#160;or&#160;changes.<br/>
+Copyright&#160;©&#160;1983-2014&#160;by&#160;Green&#160;Hills&#160;Software.&#160;All&#160;rights&#160;reserved.&#160;No&#160;part&#160;of&#160;this&#160;publication&#160;may&#160;be&#160;reproduced,&#160;stored<br/>in&#160;a&#160;retrieval&#160;system,&#160;or&#160;transmitted,&#160;in&#160;any&#160;form&#160;or&#160;by&#160;any&#160;means,&#160;electronic,&#160;mechanical,&#160;photocopying,&#160;recording,&#160;or<br/>otherwise,&#160;without&#160;prior&#160;written&#160;permission&#160;from&#160;Green&#160;Hills&#160;Software.<br/>
+Green&#160;Hills,&#160;the&#160;Green&#160;Hills&#160;logo,&#160;CodeBalance,&#160;GMART,&#160;GSTART,&#160;INTEGRITY,&#160;MULTI,&#160;and&#160;Slingshot&#160;are&#160;registered<br/>trademarks&#160;of&#160;Green&#160;Hills&#160;Software.&#160;AdaMULTI,&#160;Built&#160;with&#160;INTEGRITY,&#160;EventAnalyzer,&#160;G-Cover,&#160;GHnet,&#160;GHnetLite,<br/>Green&#160;Hills&#160;Probe,&#160;Integrate,&#160;ISIM,&#160;u-velOSity,&#160;PathAnalyzer,&#160;Quick&#160;Start,&#160;ResourceAnalyzer,&#160;Safety&#160;Critical&#160;Products,<br/>SuperTrace&#160;Probe,&#160;TimeMachine,&#160;TotalDeveloper,&#160;DoubleCheck,&#160;and&#160;velOSity&#160;are&#160;trademarks&#160;of&#160;Green&#160;Hills&#160;Software.<br/>
+All&#160;other&#160;company,&#160;product,&#160;or&#160;service&#160;names&#160;mentioned&#160;in&#160;this&#160;book&#160;may&#160;be&#160;trademarks&#160;or&#160;service&#160;marks&#160;of&#160;their&#160;respective<br/>owners.<br/>
+For&#160;a&#160;partial&#160;listing&#160;of&#160;Green&#160;Hills&#160;Software&#160;and&#160;periodically&#160;updated&#160;patent&#160;marking&#160;information,&#160;please&#160;visit<br/><a href="http://www.ghs.com/copyright_patent.html">http://www.ghs.com/copyright_patent.html</a>.<br/>
+PubID:&#160;probe_start-525955<br/>Branch:&#160;http://toolsvc/branches/probe-branch-5.2<br/>Date:&#160;February&#160;19,&#160;2015<br/>
+<hr/>
+<a name=3></a><b>Contents</b><br/>
+<a href="probe_starts.html#5"><b>1.&#160;Installing&#160;Your&#160;Probe</b></a><br/>
+<a href="probe_starts.html#5"><b>1</b></a><br/>
+<a href="probe_starts.html#6">About&#160;This&#160;Book&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#6">2</a><br/>
+<a href="probe_starts.html#6">Requirements&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#6">2</a><br/>
+<a href="probe_starts.html#6">Terms&#160;You&#160;Should&#160;Know&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#6">2</a><br/>
+<a href="probe_starts.html#7">When&#160;You&#160;Encounter&#160;Problems&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#7">3</a><br/>
+<a href="probe_starts.html#8">Verifying&#160;Components&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#8">4</a><br/>
+<a href="probe_starts.html#9">Installing&#160;Green&#160;Hills&#160;Probe&#160;Software&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#9">5</a><br/>
+<a href="probe_starts.html#11">Connecting&#160;Your&#160;Probe&#160;to&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#11">7</a><br/>
+<a href="probe_starts.html#12">Determining&#160;Your&#160;Cabling&#160;System&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#12">8<br/></a><a href="probe_starts.html#13">Connecting&#160;with&#160;TraceEverywhere&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#13">9<br/></a><a href="probe_starts.html#14">Connecting&#160;with&#160;Legacy&#160;Cables&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#14">10</a><br/>
+<a href="probe_starts.html#18">Connecting&#160;Your&#160;Host&#160;to&#160;Your&#160;Probe&#160;Over&#160;the&#160;Serial&#160;Port&#160;</a>.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#18">14</a><br/>
+<a href="probe_starts.html#21"><b>2.&#160;Configuring&#160;Your&#160;Probe</b></a><br/>
+<a href="probe_starts.html#21"><b>17</b></a><br/>
+<a href="probe_starts.html#22">Connecting&#160;to&#160;Your&#160;Probe&#160;Over&#160;Ethernet&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#22">18</a><br/>
+<a href="probe_starts.html#23">Configuring&#160;a&#160;Dynamic&#160;IP&#160;Address&#160;with&#160;DHCP&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#23">19<br/></a><a href="probe_starts.html#24">Configuring&#160;a&#160;Static&#160;IP&#160;Address&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#24">20<br/></a><a href="probe_starts.html#26">Testing&#160;Your&#160;Probe's&#160;Ethernet&#160;Connection&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#26">22</a><br/>
+<a href="probe_starts.html#28">Connecting&#160;to&#160;Your&#160;Probe&#160;Over&#160;USB&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#28">24</a><br/>
+<a href="probe_starts.html#29">Connecting&#160;the&#160;Probe&#160;Administrator&#160;to&#160;Your&#160;Probe&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#29">25</a><br/>
+<a href="probe_starts.html#30">Detecting&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#30">26</a><br/>
+<a href="probe_starts.html#31">Configuring&#160;Probe&#160;Options&#160;with&#160;a&#160;Configuration&#160;File&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#31">27</a><br/>
+<a href="probe_starts.html#32">Running&#160;Diagnostics&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#32">28</a><br/>
+<a href="probe_starts.html#33"><b>3.&#160;Creating&#160;and&#160;Debugging&#160;a&#160;Program</b></a><br/>
+<a href="probe_starts.html#33"><b>29</b></a><br/>
+<a href="probe_starts.html#34">Creating&#160;a&#160;Top&#160;Project&#160;for&#160;Your&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#34">30</a><br/>
+<a href="probe_starts.html#37">Top&#160;Project&#160;Structure&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#37">33</a><br/>
+<a href="probe_starts.html#38">Building&#160;a&#160;Program&#160;from&#160;the&#160;Top&#160;Project&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#38">34</a><br/>
+<a href="probe_starts.html#39">Connecting&#160;MULTI&#160;to&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#39">35</a><br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>iii</i><br/>
+<hr/>
+<a name=4></a><i>Contents</i><br/>
+<a href="probe_starts.html#41">Downloading&#160;and&#160;Debugging&#160;a&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#41">37</a><br/>
+<a href="probe_starts.html#43"><b>A.&#160;Troubleshooting</b></a><br/>
+<a href="probe_starts.html#43"><b>39</b></a><br/>
+<a href="probe_starts.html#44">Setting&#160;Up&#160;Your&#160;Hardware&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#44">40</a><br/>
+<a href="probe_starts.html#45">The&#160;Supplied&#160;Ribbon&#160;Cable&#160;or&#160;Pod&#160;Does&#160;Not&#160;Fit&#160;in&#160;the<br/>Target's&#160;JTAG&#160;Header&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#45">41<br/>TraceEverywhere&#160;Target&#160;Adapter&#160;Status&#160;Light&#160;Is&#160;Red&#160;or<br/>Off&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#45">41<br/>The&#160;Probe&#160;Banner&#160;in&#160;the&#160;Serial&#160;Terminal&#160;Does&#160;Not&#160;Appear<br/>or&#160;Is&#160;Incomplete&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#45">41<br/></a><a href="probe_starts.html#47">Corrupted&#160;Data&#160;is&#160;Printed&#160;to&#160;the&#160;Serial&#160;Terminal&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#47">43<br/>Cannot&#160;Type&#160;Commands&#160;Into&#160;the&#160;Serial&#160;Terminal&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#47">43</a><br/>
+<a href="probe_starts.html#48">Configuring&#160;Your&#160;Probe&#160;to&#160;Connect&#160;to&#160;MULTI&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#48">44</a><br/>
+<a href="probe_starts.html#48">Cannot&#160;Find&#160;Telnet&#160;On&#160;Windows&#160;Vista&#160;and&#160;Later&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#48">44<br/>Cannot&#160;Connect&#160;to&#160;Probe&#160;Over&#160;Telnet&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#48">44<br/></a><a href="probe_starts.html#50">Cannot&#160;Connect&#160;to&#160;Probe&#160;Over&#160;USB&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#50">46<br/></a><a href="probe_starts.html#51">Windows&#160;is&#160;Unable&#160;to&#160;Start&#160;Probe&#160;as&#160;a&#160;USB&#160;Device&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#51">47</a><br/>
+<a href="probe_starts.html#52">Configuring&#160;Your&#160;Probe&#160;for&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#52">48</a><br/>
+<a href="probe_starts.html#52">detect&#160;Issues&#160;Error&#160;60&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#52">48<br/></a><a href="probe_starts.html#53">detect&#160;Does&#160;Not&#160;Display&#160;a&#160;Processor&#160;Table&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#53">49<br/>detect&#160;Issues&#160;Error&#160;71&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#53">49<br/>detect&#160;Sets&#160;the&#160;Target&#160;Processors&#160;and&#160;then&#160;Issues&#160;an<br/>Error&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#53">49<br/></a><a href="probe_starts.html#54">detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;to&#160;other&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#54">50<br/>detect&#160;Lists&#160;Devices&#160;Connected&#160;to&#160;the&#160;Probe,&#160;but&#160;Sets&#160;the<br/>Target&#160;Type&#160;to&#160;other&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#54">50<br/></a><a href="probe_starts.html#55">detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;Incorrectly&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#55">51<br/>detect&#160;Passes&#160;but&#160;vb&#160;Fails&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#55">51<br/></a><a href="probe_starts.html#56">tr&#160;Does&#160;Not&#160;Reset&#160;the&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#56">52<br/>vr&#160;Fails&#160;or&#160;Issues&#160;Error&#160;18&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#56">52</a><br/>
+<a href="probe_starts.html#58">General&#160;Configuration&#160;Instructions&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#58">54</a><br/>
+<a href="probe_starts.html#58">Diagnosing&#160;Low-Level&#160;JTAG&#160;Connection&#160;Problems&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#58">54<br/></a><a href="probe_starts.html#60">Configuring&#160;the&#160;Probe's&#160;Logic&#160;High&#160;Level&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#60">56<br/></a><a href="probe_starts.html#61">Recovering&#160;a&#160;Probe&#160;That&#160;Does&#160;Not&#160;Boot&#160;Properly&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#61">57</a><br/>
+<a href="probe_starts.html#61">Uninstalling&#160;Probe&#160;Software&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#61">57</a><br/>
+<a href="probe_starts.html#63"><b>Index</b></a><br/>
+<a href="probe_starts.html#63"><b>59</b></a><br/>
+<i>iv</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=5></a><b>Chapter&#160;1</b><br/>
+<b>Installing&#160;Your&#160;Probe</b><br/>
+<b>Contents</b><br/>
+<a href="probe_starts.html#6">About&#160;This&#160;Book&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#6">2</a><br/>
+<a href="probe_starts.html#6">Requirements&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#6">2</a><br/>
+<a href="probe_starts.html#6">Terms&#160;You&#160;Should&#160;Know&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#6">2</a><br/>
+<a href="probe_starts.html#7">When&#160;You&#160;Encounter&#160;Problems&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#7">3</a><br/>
+<a href="probe_starts.html#8">Verifying&#160;Components&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#8">4</a><br/>
+<a href="probe_starts.html#9">Installing&#160;Green&#160;Hills&#160;Probe&#160;Software&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#9">5</a><br/>
+<a href="probe_starts.html#11">Connecting&#160;Your&#160;Probe&#160;to&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#11">7</a><br/>
+<a href="probe_starts.html#18">Connecting&#160;Your&#160;Host&#160;to&#160;Your&#160;Probe&#160;Over&#160;the&#160;Serial&#160;Port&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#18">14</a><br/>
+<hr/>
+<a name=6></a><i>Chapter&#160;1.&#160;Installing&#160;Your&#160;Probe</i><br/>
+<b>About&#160;This&#160;Book</b><br/>
+This&#160;book&#160;explains&#160;how&#160;to&#160;install&#160;and&#160;configure&#160;your&#160;probe.&#160;You&#160;will<br/>learn&#160;how&#160;to:<br/>
+•&#160;Connect&#160;your&#160;probe&#160;to&#160;your&#160;hardware&#160;and&#160;host&#160;machine<br/>
+•&#160;Configure&#160;your&#160;probe&#160;for&#160;use&#160;with&#160;your&#160;hardware&#160;and&#160;MULTI<br/>
+•&#160;Create&#160;and&#160;build&#160;a&#160;project&#160;for&#160;an&#160;example&#160;program<br/>
+•&#160;Download&#160;the&#160;program&#160;to&#160;your&#160;hardware&#160;and&#160;debug&#160;it<br/>
+For&#160;reference&#160;information,&#160;detailed&#160;information&#160;about&#160;commands&#160;and<br/>options,&#160;and&#160;advanced&#160;topics,&#160;see&#160;the&#160;<i>Green&#160;Hills&#160;Debug&#160;Probes&#160;User's<br/>Guide</i>.<br/>
+<b>Requirements</b><br/>
+Before&#160;installing&#160;and&#160;configuring&#160;your&#160;Green&#160;Hills&#160;Probe,&#160;you&#160;must<br/>install&#160;MULTI&#160;and&#160;the&#160;Green&#160;Hills&#160;Compiler&#160;for&#160;each&#160;architecture&#160;that<br/>you&#160;plan&#160;to&#160;use.&#160;If&#160;you&#160;have&#160;not&#160;installed&#160;MULTI&#160;yet,&#160;do&#160;so&#160;now.&#160;For<br/>information&#160;about&#160;installing&#160;MULTI,&#160;see&#160;the&#160;installation&#160;document<br/>located&#160;in&#160;the&#160;root&#160;directory&#160;of&#160;the&#160;installation&#160;CD.&#160;The&#160;instructions&#160;in<br/>this&#160;guide&#160;cover&#160;installation&#160;with&#160;MULTI&#160;6.&#160;If&#160;you&#160;are&#160;using&#160;another<br/>version,&#160;some&#160;instructions&#160;may&#160;differ.<br/>
+<b>Terms&#160;You&#160;Should&#160;Know</b><br/>
+•&#160;<b>Host&#160;</b>—&#160;The&#160;computer&#160;on&#160;which&#160;you&#160;are&#160;running&#160;MULTI.<br/>
+•&#160;<b>Target&#160;</b>—&#160;The&#160;hardware&#160;for&#160;which&#160;you&#160;are&#160;developing&#160;programs.<br/>
+•&#160;<b>Target&#160;Adapter&#160;</b>—&#160;An&#160;adapter&#160;that&#160;connects&#160;your&#160;probe&#160;to&#160;your<br/>
+target.&#160;Target&#160;adapters&#160;can&#160;connect&#160;both&#160;debug&#160;and&#160;trace&#160;signals&#160;to<br/>a&#160;debug&#160;probe,&#160;and&#160;are&#160;used&#160;by&#160;both&#160;Green&#160;Hills&#160;Probe&#160;and<br/>SuperTrace&#160;Probe.<br/>
+•&#160;<b>Target&#160;Transition&#160;Module&#160;(TTM)&#160;</b>—&#160;A&#160;simple&#160;target&#160;adapter&#160;that<br/>
+connects&#160;to&#160;the&#160;probe's&#160;<b>Target&#160;Interface&#160;</b>port,&#160;for&#160;use&#160;with&#160;a&#160;ribbon<br/>cable.<br/>
+<i>2</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=7></a><i>When&#160;You&#160;Encounter&#160;Problems</i><br/>
+•&#160;<b>Active&#160;Pod&#160;</b>—&#160;A&#160;powered&#160;target&#160;adapter&#160;and&#160;cable&#160;that&#160;connects&#160;the<br/>
+probe's&#160;<b>Target&#160;Interface&#160;</b>port&#160;to&#160;the&#160;debug&#160;port&#160;on&#160;your&#160;target.&#160;The<br/>active&#160;pod&#160;has&#160;both&#160;a&#160;plug&#160;and&#160;socket,&#160;either&#160;of&#160;which&#160;can&#160;be&#160;used<br/>to&#160;connect&#160;to&#160;your&#160;target's&#160;debug&#160;port.&#160;The&#160;socket&#160;will&#160;require&#160;an<br/>extension&#160;cable,&#160;and&#160;can&#160;be&#160;useful&#160;when&#160;the&#160;plug&#160;does&#160;not&#160;fit&#160;due&#160;to<br/>board&#160;clearance.&#160;The&#160;active&#160;pod&#160;always&#160;connects&#160;to&#160;the&#160;probe&#160;via&#160;a<br/>TTM&#160;that&#160;is&#160;marked&#160;DB-EXTEND.<br/>
+•&#160;<b>TraceEverywhere&#160;(TE)&#160;</b>—&#160;The&#160;Green&#160;Hills&#160;interface&#160;for&#160;trace&#160;port<br/>
+adapters&#160;that&#160;carry&#160;trace&#160;and&#160;debugging&#160;signals.&#160;TE&#160;trace&#160;adapters<br/>adapt&#160;a&#160;specific&#160;target&#160;trace&#160;port&#160;to&#160;TE&#160;so&#160;that&#160;the&#160;SuperTrace&#160;Probe<br/>can&#160;trace&#160;different&#160;targets&#160;by&#160;just&#160;changing&#160;the&#160;TE&#160;trace&#160;adapter.&#160;The<br/>Green&#160;Hills&#160;Probe&#160;also&#160;uses&#160;TE&#160;trace&#160;adapters&#160;to&#160;connect&#160;to&#160;various<br/>debugging&#160;ports,&#160;such&#160;as&#160;Nexus,&#160;ARM&#160;CoreSight,&#160;and&#160;other<br/>JTAG-based&#160;ports.<br/>
+<b>When&#160;You&#160;Encounter&#160;Problems</b><br/>
+If&#160;at&#160;any&#160;time&#160;you&#160;receive&#160;an&#160;error&#160;or&#160;are&#160;unable&#160;to&#160;continue,&#160;see<br/><a href="probe_starts.html#43">Appendix&#160;A,&#160;“Troubleshooting”&#160;on&#160;page&#160;39</a>.&#160;For&#160;more&#160;information&#160;about<br/>any&#160;of&#160;the&#160;options&#160;or&#160;procedures&#160;described&#160;in&#160;this&#160;book,&#160;see&#160;the&#160;<i>Green<br/>Hills&#160;Debug&#160;Probes&#160;User's&#160;Guide</i>.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>3</i><br/>
+<hr/>
+<a name=8></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_5.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_6.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_7.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_8.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_9.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_10.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_11.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_12.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-8_13.png"/><br/>
+<i>Chapter&#160;1.&#160;Installing&#160;Your&#160;Probe</i><br/>
+<b>Verifying&#160;Components</b><br/>
+The&#160;box&#160;for&#160;your&#160;Green&#160;Hills&#160;Probe&#160;should&#160;contain&#160;the&#160;following&#160;items:<br/>
+Screwdriver<br/>
+Green&#160;Hills&#160;Probe&#160;CD<br/>
+Green&#160;Hills&#160;Probe<br/>
+Power&#160;supply<br/>
+Serial&#160;cable<br/>
+TTM*<br/>
+Ethernet&#160;cable<br/>
+USB&#160;cable<br/>
+TE&#160;target&#160;adapter&#160;‡<br/>
+Ribbon&#160;cable&#160;‡<br/>
+Shielded&#160;COP&#160;cable<br/>
+Active&#160;pod&#160;(JTAG<br/>
+TE&#160;cable&#160;‡<br/>
+(JTAG&#160;COP&#160;targets)&#160;‡<br/>
+COP&#160;and&#160;ColdFire<br/>
+targets)&#160;‡<br/>
+*&#160;Your&#160;box&#160;might&#160;contain&#160;multiple&#160;TTMs.&#160;If&#160;it&#160;contains&#160;a&#160;single&#160;TTM,&#160;the&#160;TTM&#160;and&#160;ribbon&#160;cable<br/>
+may&#160;already&#160;be&#160;attached&#160;to&#160;the&#160;probe.<br/>
+‡&#160;Your&#160;box&#160;either&#160;contains&#160;legacy&#160;cabling&#160;(ribbon&#160;cables&#160;and&#160;active&#160;pods)&#160;or&#160;TE&#160;cabling.&#160;TE&#160;target<br/>
+adapters&#160;vary&#160;by&#160;target.<br/>
+<i>4</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=9></a><i>Installing&#160;Green&#160;Hills&#160;Probe&#160;Software</i><br/>
+<b>Installing&#160;Green&#160;Hills&#160;Probe&#160;Software</b><br/>
+Before&#160;using&#160;your&#160;Green&#160;Hills&#160;Probe&#160;with&#160;MULTI,&#160;you&#160;must&#160;install&#160;the<br/>software&#160;on&#160;the&#160;Green&#160;Hills&#160;Probe&#160;CD.&#160;The&#160;software&#160;on&#160;the&#160;CD&#160;includes:<br/>
+•&#160;USB&#160;drivers&#160;(Windows&#160;only).<br/>
+•&#160;Probe&#160;firmware&#160;for&#160;the&#160;release&#160;marked&#160;on&#160;the&#160;CD.&#160;This&#160;firmware&#160;is<br/>
+installed&#160;in&#160;<i><b>install_directory</b></i><b>/ghprobe</b>.<br/>
+•&#160;<b>Project&#160;Wizard&#160;</b>files&#160;that&#160;add&#160;support&#160;for&#160;new&#160;boards.<br/>
+•&#160;Documentation,&#160;as&#160;PDF&#160;files&#160;and&#160;in&#160;the&#160;MULTI&#160;help&#160;viewer.<br/>
+To&#160;install&#160;the&#160;software,&#160;follow&#160;the&#160;instructions&#160;provided&#160;for&#160;your&#160;operating<br/>system:<br/>
+<b>Windows</b><br/>
+1.&#160;Log&#160;in&#160;to&#160;Windows&#160;using&#160;an&#160;account&#160;with&#160;administrative&#160;privileges.<br/>
+Close&#160;MULTI&#160;and&#160;any&#160;other&#160;Green&#160;Hills&#160;Software&#160;applications.<br/>Make&#160;sure&#160;that&#160;the&#160;probe&#160;is&#160;not&#160;connected&#160;to&#160;your&#160;host&#160;machine.<br/>
+2.&#160;Insert&#160;the&#160;Green&#160;Hills&#160;Probe&#160;CD&#160;for&#160;your&#160;target&#160;into&#160;the&#160;CD-ROM<br/>
+drive&#160;of&#160;your&#160;host&#160;machine.&#160;If&#160;the&#160;installation&#160;program&#160;does&#160;not&#160;start<br/>automatically,&#160;run&#160;<b>ginstall_win32.exe</b>.<br/>
+3.&#160;The&#160;installer&#160;will&#160;suggest&#160;an&#160;installation&#160;directory.&#160;If&#160;this&#160;is&#160;the<br/>
+directory&#160;you&#160;would&#160;like&#160;to&#160;install&#160;to,&#160;click&#160;the&#160;<b>Easy&#160;Install&#160;</b>button;<br/>otherwise,&#160;click&#160;<b>Advanced&#160;Install&#160;</b>to&#160;specify&#160;an&#160;installation<br/>directory.&#160;The&#160;probe&#160;should&#160;be&#160;installed&#160;in&#160;the&#160;directory&#160;where&#160;the<br/>Green&#160;Hills&#160;Compiler&#160;is&#160;located&#160;(for&#160;example,<br/><b>C:\ghs\comp_201354</b>).&#160;If&#160;you&#160;are&#160;using&#160;MULTI&#160;5&#160;or&#160;older,&#160;specify<br/>the&#160;directory&#160;where&#160;MULTI&#160;is&#160;installed.<br/>
+<b>Linux&#160;or&#160;Solaris</b><br/>
+1.&#160;Close&#160;MULTI&#160;and&#160;any&#160;other&#160;Green&#160;Hills&#160;Software&#160;applications.<br/>
+2.&#160;Insert&#160;the&#160;Green&#160;Hills&#160;Probe&#160;CD&#160;for&#160;your&#160;target&#160;into&#160;the&#160;CD-ROM<br/>
+drive&#160;of&#160;your&#160;host&#160;machine.&#160;If&#160;the&#160;installation&#160;program&#160;does&#160;not&#160;start<br/>automatically,&#160;run&#160;one&#160;of&#160;the&#160;following&#160;programs,&#160;depending&#160;on<br/>your&#160;operating&#160;system:<br/>
+•&#160;<b>ginstall_solaris2</b><br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>5</i><br/>
+<hr/>
+<a name=10></a><i>Chapter&#160;1.&#160;Installing&#160;Your&#160;Probe</i><br/>
+•&#160;<b>ginstall_linux86</b><br/>
+3.&#160;The&#160;installer&#160;will&#160;suggest&#160;an&#160;installation&#160;directory.&#160;If&#160;this&#160;is&#160;the<br/>
+directory&#160;you&#160;would&#160;like&#160;to&#160;install&#160;to,&#160;click&#160;the&#160;<b>Easy&#160;Install&#160;</b>button;<br/>otherwise,&#160;click&#160;<b>Advanced&#160;Install&#160;</b>to&#160;specify&#160;an&#160;installation<br/>directory.&#160;The&#160;probe&#160;should&#160;be&#160;installed&#160;in&#160;the&#160;directory&#160;where&#160;the<br/>Green&#160;Hills&#160;Compiler&#160;is&#160;located&#160;(for&#160;example,<br/><b>/usr/ghs/comp_201354</b>).&#160;If&#160;you&#160;are&#160;using&#160;MULTI&#160;5&#160;or&#160;older,&#160;specify<br/>the&#160;directory&#160;where&#160;MULTI&#160;is&#160;installed.<br/>
+<i>6</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=11></a><i>Connecting&#160;Your&#160;Probe&#160;to&#160;Your&#160;Target</i><br/>
+<b>Connecting&#160;Your&#160;Probe&#160;to&#160;Your&#160;Target</b><br/>
+After&#160;checking&#160;the&#160;contents&#160;of&#160;the&#160;box&#160;and&#160;installing&#160;the&#160;necessary<br/>software,&#160;you&#160;are&#160;ready&#160;to&#160;set&#160;up&#160;your&#160;Green&#160;Hills&#160;Probe.&#160;This&#160;section<br/>explains&#160;how&#160;to&#160;connect&#160;the&#160;probe&#160;to&#160;your&#160;target&#160;using&#160;current&#160;cabling<br/>systems.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>7</i><br/>
+<hr/>
+<a name=12></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-12_1.png"/><br/>
+<i>Chapter&#160;1.&#160;Installing&#160;Your&#160;Probe</i><br/>
+<b>Determining&#160;Your&#160;Cabling&#160;System</b><br/>
+Your&#160;Green&#160;Hills&#160;Probe&#160;comes&#160;with&#160;one&#160;of&#160;two&#160;different&#160;cabling&#160;systems:<br/>
+•&#160;TraceEverywhere&#160;(TE)&#160;—&#160;supported&#160;on&#160;Green&#160;Hills&#160;Probe&#160;v3&#160;with<br/>
+firmware&#160;3.8.0&#160;and&#160;higher.<br/>
+•&#160;Legacy&#160;cabling&#160;—&#160;supported&#160;on&#160;all&#160;probes.<br/>
+To&#160;determine&#160;which&#160;cabling&#160;system&#160;you&#160;have,&#160;check&#160;your&#160;box&#160;for&#160;a&#160;TE<br/>cable:<br/>
+•&#160;If&#160;you&#160;have&#160;a&#160;TE&#160;cable,&#160;continue&#160;to<br/>
+<a href="probe_starts.html#13">“Connecting&#160;with&#160;TraceEverywhere”<br/>on&#160;page&#160;9.</a><br/>
+•&#160;If&#160;you&#160;do&#160;not,&#160;skip&#160;to&#160;<a href="probe_starts.html#14">“Connecting</a><br/>
+<a href="probe_starts.html#14">with&#160;Legacy&#160;Cables”&#160;on&#160;page&#160;10.</a><br/>
+<i>8</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=13></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-13_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-13_2.png"/><br/>
+<i>Connecting&#160;with&#160;TraceEverywhere</i><br/>
+<b>Connecting&#160;with&#160;TraceEverywhere</b><br/>
+1.&#160;Before&#160;continuing,&#160;make&#160;sure&#160;that&#160;the&#160;power&#160;switch&#160;on&#160;the&#160;back&#160;of<br/>
+the&#160;probe&#160;is&#160;in&#160;the&#160;off&#160;(O)&#160;position.<br/>
+2.&#160;If&#160;your&#160;probe&#160;already&#160;has&#160;the&#160;TraceEverywhere&#160;(TE)&#160;cable&#160;attached,<br/>
+skip&#160;to&#160;step&#160;3.&#160;Otherwise,&#160;if&#160;there&#160;are&#160;screws&#160;in&#160;the&#160;holes&#160;on&#160;either<br/>side&#160;of&#160;the&#160;<b>Target&#160;Interface&#160;</b>port,&#160;remove&#160;them.&#160;Attach&#160;the&#160;target<br/>transition&#160;module&#160;(TTM)&#160;to&#160;your&#160;probe,&#160;using&#160;the&#160;screws&#160;to&#160;fasten<br/>it&#160;in&#160;place:<br/>
+3.&#160;Attach&#160;the&#160;TE&#160;cable&#160;to&#160;the&#160;TTM:<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>9</i><br/>
+<hr/>
+<a name=14></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-14_1.png"/><br/>
+<i>Chapter&#160;1.&#160;Installing&#160;Your&#160;Probe</i><br/>
+4.&#160;Attach&#160;the&#160;cable&#160;to&#160;the&#160;target&#160;adapter&#160;(this&#160;adapter&#160;varies&#160;by&#160;target<br/>
+board).&#160;If&#160;the&#160;adapter&#160;consists&#160;of&#160;multiple&#160;parts,&#160;do&#160;not&#160;disconnect<br/>those&#160;parts&#160;from&#160;one&#160;another;&#160;they&#160;are&#160;not&#160;designed&#160;to&#160;be&#160;plugged<br/>and&#160;unplugged&#160;several&#160;times.<br/>
+5.&#160;Attach&#160;the&#160;target&#160;adapter&#160;to&#160;the&#160;debug&#160;header&#160;on&#160;your&#160;target&#160;board,<br/>
+being&#160;careful&#160;to&#160;orient&#160;the&#160;adapter&#160;correctly.&#160;If&#160;you&#160;are&#160;uncertain<br/>about&#160;the&#160;location&#160;of&#160;the&#160;debug&#160;header,&#160;refer&#160;to&#160;your&#160;target's<br/>reference&#160;manual.<br/>
+6.&#160;Connect&#160;the&#160;power&#160;supply&#160;to&#160;the&#160;power&#160;input&#160;connector&#160;on&#160;the&#160;back<br/>
+of&#160;the&#160;probe&#160;and&#160;to&#160;an&#160;AC&#160;power&#160;outlet.<br/>
+Your&#160;probe&#160;is&#160;now&#160;connected&#160;to&#160;your&#160;target&#160;and&#160;ready&#160;to&#160;connect&#160;to&#160;your<br/>host&#160;for&#160;configuration.&#160;Skip&#160;to&#160;<a href="probe_starts.html#18">“Connecting&#160;Your&#160;Host&#160;to&#160;Your&#160;Probe<br/>Over&#160;the&#160;Serial&#160;Port”&#160;on&#160;page&#160;14</a>.<br/>
+<b>Connecting&#160;with&#160;Legacy&#160;Cables</b><br/>
+1.&#160;Before&#160;continuing,&#160;make&#160;sure&#160;that&#160;the&#160;power&#160;switch&#160;on&#160;the&#160;back&#160;of<br/>
+the&#160;probe&#160;is&#160;in&#160;the&#160;off&#160;(O)&#160;position.<br/>
+<i>10</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=15></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-15_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-15_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-15_3.png"/><br/>
+<i>Connecting&#160;with&#160;Legacy&#160;Cables</i><br/>
+2.&#160;If&#160;your&#160;probe&#160;already&#160;has&#160;a&#160;target&#160;adapter&#160;attached,&#160;skip&#160;to&#160;step&#160;6.<br/>
+Otherwise,&#160;determine&#160;whether&#160;you&#160;will&#160;use&#160;a&#160;TTM&#160;and&#160;ribbon&#160;cable<br/>or&#160;an&#160;active&#160;pod&#160;to&#160;connect&#160;your&#160;probe&#160;to&#160;your&#160;target.&#160;If&#160;you&#160;could<br/>use&#160;either,&#160;the&#160;active&#160;pod&#160;has&#160;a&#160;longer&#160;cable,&#160;while&#160;the&#160;ribbon&#160;cable<br/>may&#160;be&#160;faster.<br/>
+Ribbon&#160;cable&#160;and&#160;TTM<br/>
+Active&#160;Pod<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>11</i><br/>
+<hr/>
+<a name=16></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-16_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-16_2.png"/><br/>
+<i>Chapter&#160;1.&#160;Installing&#160;Your&#160;Probe</i><br/>
+3.&#160;If&#160;you&#160;are&#160;using&#160;a&#160;ribbon&#160;cable&#160;and&#160;TTM,&#160;make&#160;sure&#160;that&#160;you&#160;are<br/>
+using&#160;the&#160;correct&#160;TTM&#160;for&#160;your&#160;target&#160;board.&#160;The&#160;type&#160;of&#160;adapter&#160;is<br/>printed&#160;on&#160;the&#160;upper-right&#160;corner&#160;of&#160;the&#160;target&#160;side&#160;of&#160;the&#160;module:<br/>
+4.&#160;If&#160;your&#160;probe&#160;already&#160;has&#160;a&#160;target&#160;adapter&#160;attached,&#160;continue&#160;to&#160;the<br/>
+next&#160;step.&#160;If&#160;there&#160;are&#160;screws&#160;in&#160;the&#160;holes&#160;on&#160;either&#160;side&#160;of&#160;the&#160;<b>Target<br/>Interface&#160;</b>port,&#160;remove&#160;them.&#160;Attach&#160;the&#160;target&#160;transition&#160;module<br/>(TTM)&#160;to&#160;your&#160;probe,&#160;using&#160;the&#160;screws&#160;to&#160;fasten&#160;it&#160;in&#160;place&#160;(a&#160;TTM<br/>connection&#160;is&#160;illustrated&#160;below):<br/>
+<i>12</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=17></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-17_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-17_2.png"/><br/>
+<i>Connecting&#160;with&#160;Legacy&#160;Cables</i><br/>
+5.&#160;If&#160;you&#160;are&#160;connecting&#160;your&#160;probe&#160;to&#160;your&#160;target&#160;with&#160;a&#160;TTM&#160;and<br/>
+ribbon&#160;cable,&#160;connect&#160;one&#160;end&#160;of&#160;the&#160;supplied&#160;ribbon&#160;cable&#160;to&#160;the<br/>TTM.<br/>
+6.&#160;Make&#160;sure&#160;that&#160;your&#160;target&#160;board&#160;is&#160;powered&#160;off,&#160;and&#160;connect&#160;the<br/>
+other&#160;end&#160;of&#160;the&#160;ribbon&#160;cable&#160;or&#160;active&#160;pod&#160;to&#160;the&#160;debug&#160;header&#160;on<br/>the&#160;target&#160;board,&#160;being&#160;careful&#160;to&#160;orient&#160;the&#160;cable&#160;correctly.&#160;If&#160;you<br/>are&#160;uncertain&#160;about&#160;the&#160;location&#160;of&#160;the&#160;debug&#160;header,&#160;refer&#160;to&#160;your<br/>target's&#160;reference&#160;manual.<br/>
+7.&#160;Connect&#160;the&#160;power&#160;supply&#160;to&#160;the&#160;power&#160;input&#160;connector&#160;on&#160;the&#160;back<br/>
+of&#160;the&#160;probe&#160;and&#160;to&#160;an&#160;AC&#160;power&#160;outlet.<br/>
+8.&#160;Make&#160;sure&#160;to&#160;put&#160;your&#160;probe&#160;in&#160;a&#160;location&#160;that&#160;provides&#160;good&#160;airflow,<br/>
+where&#160;none&#160;of&#160;the&#160;vents&#160;are&#160;blocked.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>13</i><br/>
+<hr/>
+<a name=18></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-18_1.png"/><br/>
+<i>Chapter&#160;1.&#160;Installing&#160;Your&#160;Probe</i><br/>
+<b>Connecting&#160;Your&#160;Host&#160;to&#160;Your&#160;Probe&#160;Over&#160;the&#160;Serial&#160;Port</b><br/>
+Now&#160;that&#160;you&#160;have&#160;connected&#160;your&#160;probe&#160;to&#160;your&#160;target,&#160;you&#160;can&#160;connect<br/>to&#160;the&#160;probe&#160;from&#160;your&#160;host&#160;machine&#160;over&#160;an&#160;RS-232&#160;serial&#160;connection<br/>to&#160;confirm&#160;that&#160;it&#160;is&#160;operational.&#160;To&#160;establish&#160;a&#160;serial&#160;connection:<br/>
+1.&#160;Connect&#160;a&#160;null&#160;modem&#160;cable&#160;to&#160;the&#160;serial&#160;port&#160;on&#160;the&#160;back&#160;of&#160;your<br/>
+probe&#160;and&#160;to&#160;a&#160;serial&#160;port&#160;on&#160;your&#160;host&#160;PC:<br/>
+2.&#160;On&#160;your&#160;host&#160;machine,&#160;open&#160;a&#160;connection&#160;to&#160;your&#160;serial&#160;port&#160;with<br/>
+a&#160;serial&#160;terminal&#160;emulator&#160;(such&#160;as&#160;TeraTerm)&#160;using&#160;the&#160;following<br/>settings:<br/>
+•&#160;<b>Baud&#160;Rate&#160;</b>—&#160;9600<br/>
+•&#160;<b>Data&#160;Bits&#160;</b>—&#160;8<br/>
+•&#160;<b>Parity&#160;</b>—&#160;none<br/>
+•&#160;<b>Stop&#160;Bits&#160;</b>—&#160;1<br/>
+•&#160;<b>Flow&#160;Control&#160;</b>—&#160;none<br/>
+3.&#160;Set&#160;the&#160;probe's&#160;power&#160;switch&#160;to&#160;the&#160;on&#160;position&#160;(|).<br/>
+4.&#160;If&#160;you&#160;see&#160;the&#160;following&#160;banner&#160;in&#160;the&#160;serial&#160;terminal,&#160;the&#160;serial<br/>
+connection&#160;was&#160;successful&#160;(the&#160;banner&#160;may&#160;vary&#160;depending&#160;on&#160;your<br/>firmware&#160;revision):<br/>
+[?]&#160;%&#160;ghBootloader<br/>Green&#160;Hills&#160;Probe,&#160;Version&#160;3<br/>Unit&#160;Serial&#160;Number&#160;1337<br/>Booting...<br/>
+Probe&#160;Firmware&#160;Release&#160;Version&#160;5.0.8<br/>
+<i>14</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=19></a><i>Connecting&#160;Your&#160;Host&#160;to&#160;Your&#160;Probe&#160;Over&#160;the&#160;Serial&#160;Port</i><br/>
+Module&#160;core&#160;built&#160;Tue&#160;Oct&#160;29&#160;18:40:23&#160;2013<br/>Serial&#160;No:&#160;13030<br/>Green&#160;Hills&#160;Probe&#160;v3<br/>Part&#160;number&#160;520-GP350-03x<br/>Green&#160;Hills&#160;Software,&#160;Inc<br/>http://www.ghs.com<br/>
+Serial:&#160;9600<br/>USB:&#160;Enabled<br/>Ethernet:&#160;Enabled<br/>IP:&#160;DHCP<br/>Gateway:&#160;DHCP<br/>Netmask:&#160;DHCP<br/>MAC&#160;Addr:&#160;00:12:5c:00:2d:e6<br/>
+Starting&#160;the&#160;initialization&#160;sequence.<br/>01234567&#160;done.<br/>
+Type&#160;'info'&#160;to&#160;list&#160;probe&#160;information.<br/>Type&#160;'setup'&#160;to&#160;set&#160;the&#160;current&#160;configuration.<br/>Type&#160;'help'&#160;to&#160;list&#160;the&#160;online&#160;help.<br/>
+[?]&#160;%<br/>
+The&#160;prompt&#160;after&#160;the&#160;banner&#160;indicates&#160;that&#160;booting&#160;has&#160;finished,&#160;and<br/>displays&#160;both&#160;the&#160;target&#160;setting&#160;and&#160;state&#160;(ppc5567&#160;is&#160;provided&#160;as<br/>an&#160;example).<br/>
+5.&#160;If&#160;you&#160;are&#160;using&#160;TraceEverywhere&#160;(TE)&#160;cabling,&#160;check&#160;for&#160;a&#160;green<br/>
+status&#160;light&#160;on&#160;the&#160;target&#160;adapter&#160;after&#160;the&#160;banner&#160;prints&#160;in&#160;the&#160;serial<br/>terminal.&#160;This&#160;light&#160;indicates&#160;that&#160;the&#160;adapter&#160;is&#160;plugged&#160;in&#160;and<br/>functioning&#160;correctly.&#160;If&#160;the&#160;light&#160;is&#160;red&#160;or&#160;off,&#160;see&#160;<a href="probe_starts.html#45">“TraceEverywhere<br/>Target&#160;Adapter&#160;Status&#160;Light&#160;Is&#160;Red&#160;or&#160;Off”&#160;on&#160;page&#160;41.</a><br/>
+<b>Note</b><br/>
+You&#160;may&#160;power&#160;on&#160;your&#160;target&#160;after&#160;it&#160;is&#160;plugged&#160;into&#160;to&#160;the<br/>probe&#160;and&#160;the&#160;probe&#160;is&#160;turned&#160;on,&#160;but&#160;you&#160;do&#160;not&#160;need&#160;to&#160;do&#160;so<br/>until&#160;you&#160;are&#160;ready&#160;to&#160;communicate&#160;with&#160;it.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>15</i><br/>
+<hr/>
+<a name=20></a><hr/>
+<a name=21></a><b>Chapter&#160;2</b><br/>
+<b>Configuring&#160;Your&#160;Probe</b><br/>
+<b>Contents</b><br/>
+<a href="probe_starts.html#22">Connecting&#160;to&#160;Your&#160;Probe&#160;Over&#160;Ethernet&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#22">18</a><br/>
+<a href="probe_starts.html#28">Connecting&#160;to&#160;Your&#160;Probe&#160;Over&#160;USB&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#28">24</a><br/>
+<a href="probe_starts.html#29">Connecting&#160;the&#160;Probe&#160;Administrator&#160;to&#160;Your&#160;Probe&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#29">25</a><br/>
+<a href="probe_starts.html#30">Detecting&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#30">26</a><br/>
+<a href="probe_starts.html#31">Configuring&#160;Probe&#160;Options&#160;with&#160;a&#160;Configuration&#160;File&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#31">27</a><br/>
+<a href="probe_starts.html#32">Running&#160;Diagnostics&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#32">28</a><br/>
+<hr/>
+<a name=22></a><i>Chapter&#160;2.&#160;Configuring&#160;Your&#160;Probe</i><br/>
+Your&#160;Green&#160;Hills&#160;probe&#160;is&#160;equipped&#160;with&#160;gigabit&#160;Ethernet&#160;and&#160;USB&#160;2.0<br/>ports&#160;for&#160;high-speed&#160;connections&#160;to&#160;your&#160;host&#160;computer.&#160;Although<br/>connecting&#160;to&#160;your&#160;probe&#160;through&#160;the&#160;serial&#160;port&#160;is&#160;a&#160;good&#160;way&#160;to&#160;confirm<br/>that&#160;it&#160;is&#160;operational,&#160;you&#160;must&#160;connect&#160;to&#160;your&#160;probe&#160;over&#160;Ethernet&#160;or<br/>USB&#160;to&#160;use&#160;it&#160;with&#160;MULTI.<br/>
+•&#160;If&#160;you&#160;want&#160;to&#160;connect&#160;to&#160;your&#160;probe&#160;over&#160;Ethernet,&#160;see&#160;<a href="probe_starts.html#22">“Connecting</a><br/>
+<a href="probe_starts.html#22">to&#160;Your&#160;Probe&#160;Over&#160;Ethernet”&#160;on&#160;page&#160;18</a><br/>
+•&#160;If&#160;you&#160;want&#160;to&#160;connect&#160;to&#160;your&#160;probe&#160;over&#160;USB,&#160;see&#160;<a href="probe_starts.html#28">“Connecting&#160;to</a><br/>
+<a href="probe_starts.html#28">Your&#160;Probe&#160;Over&#160;USB”&#160;on&#160;page&#160;24</a><br/>
+<b>Connecting&#160;to&#160;Your&#160;Probe&#160;Over&#160;Ethernet</b><br/>
+The&#160;probe&#160;can&#160;detect&#160;network&#160;settings&#160;automatically&#160;using&#160;DHCP.&#160;To<br/>connect&#160;your&#160;probe&#160;to&#160;a&#160;network&#160;using&#160;this&#160;feature,&#160;see&#160;<a href="probe_starts.html#23">“Configuring&#160;a<br/>Dynamic&#160;IP&#160;Address&#160;with&#160;DHCP”&#160;on&#160;page&#160;19.</a><br/>
+If&#160;your&#160;network&#160;does&#160;not&#160;support&#160;DHCP&#160;or&#160;you&#160;want&#160;your&#160;probe&#160;to&#160;use<br/>a&#160;static&#160;IP&#160;address,&#160;you&#160;can&#160;configure&#160;the&#160;settings&#160;manually&#160;using&#160;the<br/>instructions&#160;in&#160;<a href="probe_starts.html#24">“Configuring&#160;a&#160;Static&#160;IP&#160;Address”&#160;on&#160;page&#160;20.</a><br/>
+<i>18</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=23></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-23_1.png"/><br/>
+<i>Configuring&#160;a&#160;Dynamic&#160;IP&#160;Address&#160;with&#160;DHCP</i><br/>
+<b>Configuring&#160;a&#160;Dynamic&#160;IP&#160;Address&#160;with&#160;DHCP</b><br/>
+In&#160;the&#160;serial&#160;terminal&#160;window,&#160;type&#160;setup&#160;net.&#160;The&#160;probe&#160;presents&#160;the<br/>following&#160;settings&#160;with&#160;their&#160;default&#160;values.<br/>
+1.&#160;dhcp&#160;—&#160;Press&#160;Enter&#160;to&#160;accept&#160;the&#160;default&#160;setting&#160;(on).<br/>
+2.&#160;dhcp_lease&#160;—&#160;Press&#160;Enter&#160;to&#160;accept&#160;the&#160;default&#160;setting.&#160;This<br/>
+setting&#160;specifies&#160;number&#160;of&#160;days&#160;that&#160;the&#160;probe&#160;retains&#160;its&#160;DHCP<br/>settings.&#160;The&#160;default&#160;is&#160;0,&#160;meaning&#160;that&#160;the&#160;network&#160;settings&#160;never<br/>expire.<br/>
+3.&#160;hostname&#160;—&#160;Type&#160;the&#160;hostname&#160;for&#160;your&#160;probe&#160;and&#160;press&#160;Enter.<br/>
+The&#160;DHCP&#160;server&#160;associates&#160;this&#160;hostname&#160;with&#160;your&#160;probe&#160;so&#160;that<br/>you&#160;can&#160;connect&#160;to&#160;your&#160;probe&#160;by&#160;specifying&#160;its&#160;hostname&#160;instead<br/>of&#160;its&#160;IP&#160;address.&#160;By&#160;default,&#160;the&#160;probe's&#160;hostname&#160;is<br/>ghprobe<i>serial</i>,&#160;where&#160;<i>serial&#160;</i>is&#160;your&#160;probe's&#160;serial&#160;number&#160;(for<br/>example,&#160;ghprobe1234).&#160;The&#160;probe's&#160;serial&#160;number&#160;is&#160;located&#160;on<br/>a&#160;sticker&#160;affixed&#160;to&#160;the&#160;bottom&#160;of&#160;the&#160;probe.<br/>
+You&#160;have&#160;now&#160;configured&#160;your&#160;probe&#160;to&#160;obtain&#160;an&#160;IP&#160;address&#160;using<br/>DHCP.&#160;Skip&#160;to&#160;<a href="probe_starts.html#26">“Testing&#160;Your&#160;Probe's&#160;Ethernet&#160;Connection”&#160;on&#160;page&#160;22</a>.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>19</i><br/>
+<hr/>
+<a name=24></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-24_1.png"/><br/>
+<i>Chapter&#160;2.&#160;Configuring&#160;Your&#160;Probe</i><br/>
+<b>Configuring&#160;a&#160;Static&#160;IP&#160;Address</b><br/>
+If&#160;you&#160;want&#160;to&#160;configure&#160;your&#160;probe&#160;to&#160;have&#160;a&#160;static&#160;IP&#160;address,&#160;you&#160;might<br/>need&#160;to&#160;contact&#160;your&#160;network&#160;administrator&#160;to&#160;obtain&#160;the&#160;following<br/>settings:<br/>
+•&#160;IP&#160;address<br/>
+•&#160;Gateway<br/>
+•&#160;Netmask<br/>
+If&#160;you&#160;set&#160;the&#160;IP&#160;address&#160;incorrectly,&#160;you&#160;could&#160;disrupt&#160;other&#160;devices&#160;on<br/>your&#160;network.<br/>
+In&#160;the&#160;serial&#160;terminal&#160;window,&#160;type&#160;setup&#160;net.&#160;The&#160;probe&#160;presents&#160;the<br/>following&#160;settings&#160;with&#160;their&#160;default&#160;values.<br/>
+<i>20</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=25></a><i>Configuring&#160;a&#160;Static&#160;IP&#160;Address</i><br/>
+1.&#160;dhcp&#160;—&#160;Type&#160;off&#160;and&#160;press&#160;Enter.<br/>
+2.&#160;ip&#160;—&#160;Type&#160;an&#160;IP&#160;address&#160;in&#160;dotted&#160;quad&#160;form&#160;and&#160;press&#160;Enter&#160;(for<br/>
+example,&#160;192.168.1.150).<br/>
+3.&#160;netmask&#160;—&#160;Type&#160;the&#160;netmask&#160;in&#160;dotted&#160;quad&#160;form&#160;and&#160;press&#160;Enter.<br/>
+The&#160;default&#160;setting&#160;is&#160;appropriate&#160;for&#160;class&#160;C&#160;networks&#160;(most<br/>networks&#160;are&#160;class&#160;C).&#160;Use&#160;a&#160;different&#160;setting&#160;if&#160;you&#160;are&#160;not&#160;on&#160;a<br/>class&#160;C&#160;network.<br/>
+4.&#160;gateway&#160;—&#160;Type&#160;the&#160;gateway's&#160;IP&#160;address&#160;in&#160;dotted&#160;quad&#160;form&#160;and<br/>
+press&#160;Enter.<br/>
+5.&#160;hostname&#160;—&#160;Press&#160;enter&#160;to&#160;accept&#160;the&#160;default&#160;setting.&#160;This&#160;setting<br/>
+is&#160;not&#160;used&#160;when&#160;DHCP&#160;is&#160;off;&#160;it&#160;is&#160;provided&#160;for&#160;future&#160;protocol<br/>support.&#160;When&#160;transporting&#160;your&#160;probe&#160;between&#160;networks&#160;with&#160;and<br/>without&#160;DHCP,&#160;your&#160;probe&#160;retains&#160;its&#160;hostname.<br/>
+6.&#160;When&#160;the&#160;probe&#160;asks&#160;if&#160;you&#160;want&#160;to&#160;reboot,&#160;press&#160;Enter&#160;to&#160;reboot<br/>
+the&#160;probe.<br/>
+You&#160;have&#160;now&#160;configured&#160;your&#160;probe&#160;to&#160;use&#160;a&#160;static&#160;IP&#160;address.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>21</i><br/>
+<hr/>
+<a name=26></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-26_1.png"/><br/>
+<i>Chapter&#160;2.&#160;Configuring&#160;Your&#160;Probe</i><br/>
+<b>Testing&#160;Your&#160;Probe's&#160;Ethernet&#160;Connection</b><br/>
+After&#160;configuring&#160;your&#160;probe&#160;for&#160;your&#160;network,&#160;test&#160;the&#160;Ethernet<br/>connection&#160;with&#160;Telnet.&#160;To&#160;connect&#160;to&#160;the&#160;probe&#160;through&#160;Telnet:<br/>
+1.&#160;Plug&#160;one&#160;end&#160;of&#160;an&#160;Ethernet&#160;cable&#160;into&#160;your&#160;probe&#160;and&#160;the&#160;other&#160;end<br/>
+into&#160;a&#160;switch&#160;or&#160;hub&#160;that&#160;is&#160;attached&#160;to&#160;your&#160;network.&#160;If&#160;the&#160;probe<br/>detects&#160;that&#160;it&#160;is&#160;connected&#160;to&#160;a&#160;network,&#160;the&#160;Ethernet&#160;link&#160;status<br/>light&#160;turns&#160;on:<br/>
+2.&#160;In&#160;the&#160;serial&#160;terminal&#160;window,&#160;type&#160;reboot&#160;to&#160;reboot&#160;your&#160;probe.<br/>
+3.&#160;After&#160;your&#160;probe&#160;reboots,&#160;type&#160;set&#160;ip&#160;to&#160;confirm&#160;that&#160;your&#160;probe<br/>
+has&#160;an&#160;IP&#160;address.<br/>
+4.&#160;If&#160;you&#160;are&#160;using&#160;Windows,&#160;select&#160;<b>Run&#160;</b>from&#160;the&#160;<b>Start&#160;</b>menu,&#160;type<br/>
+telnet,&#160;and&#160;click&#160;<b>OK</b>.&#160;If&#160;you&#160;are&#160;using&#160;Linux,&#160;open&#160;a&#160;shell&#160;and<br/>type&#160;telnet.<br/>
+<i>22</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=27></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-27_1.png"/><br/>
+<i>Testing&#160;Your&#160;Probe's&#160;Ethernet&#160;Connection</i><br/>
+5.&#160;At&#160;the&#160;Telnet&#160;prompt,&#160;type&#160;open&#160;<i>ip_address</i>,&#160;where&#160;<i>ip_address</i><br/>
+is&#160;your&#160;probe's&#160;IP&#160;address.&#160;If&#160;Telnet&#160;can&#160;connect&#160;to&#160;the&#160;probe,&#160;you<br/>should&#160;see&#160;the&#160;following&#160;screen:<br/>
+<b>Note</b><br/>
+If&#160;you&#160;are&#160;using&#160;DHCP&#160;and&#160;your&#160;network&#160;supports&#160;dynamic<br/>hostnames,&#160;you&#160;can&#160;also&#160;open&#160;a&#160;connection&#160;with&#160;open<br/><i>hostname</i>,&#160;where&#160;<i>hostname&#160;</i>is&#160;your&#160;probe's&#160;hostname.<br/>
+You&#160;can&#160;now&#160;connect&#160;to&#160;your&#160;probe&#160;over&#160;Ethernet.&#160;Continue&#160;to<br/><a href="probe_starts.html#29">“Connecting&#160;the&#160;Probe&#160;Administrator&#160;to&#160;Your&#160;Probe”&#160;on&#160;page&#160;25.</a><br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>23</i><br/>
+<hr/>
+<a name=28></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-28_1.png"/><br/>
+<i>Chapter&#160;2.&#160;Configuring&#160;Your&#160;Probe</i><br/>
+<b>Connecting&#160;to&#160;Your&#160;Probe&#160;Over&#160;USB</b><br/>
+This&#160;section&#160;explains&#160;how&#160;to&#160;connect&#160;your&#160;probe&#160;to&#160;your&#160;host&#160;machine<br/>over&#160;USB.&#160;USB&#160;connections&#160;are&#160;supported&#160;on&#160;Windows&#160;only.<br/>
+1.&#160;Connect&#160;a&#160;USB&#160;cable&#160;to&#160;the&#160;USB&#160;connector&#160;on&#160;the&#160;back&#160;of&#160;your<br/>
+probe&#160;and&#160;to&#160;a&#160;USB&#160;port&#160;on&#160;your&#160;host&#160;machine&#160;(or&#160;a&#160;USB&#160;hub<br/>connected&#160;to&#160;your&#160;host&#160;machine).&#160;The&#160;USB&#160;link&#160;status&#160;light&#160;should<br/>turn&#160;on:<br/>
+2.&#160;If&#160;Windows&#160;reports&#160;that&#160;it&#160;has&#160;found&#160;a&#160;new&#160;USB&#160;device&#160;and&#160;asks&#160;to<br/>
+search&#160;for&#160;the&#160;appropriate&#160;drivers,&#160;click&#160;<b>Yes</b>.&#160;Windows&#160;will&#160;locate<br/>and&#160;use&#160;the&#160;driver&#160;you&#160;installed&#160;from&#160;the&#160;Green&#160;Hills&#160;Probe&#160;CD.<br/>
+<b>Note</b><br/>
+If&#160;Windows&#160;cannot&#160;find&#160;the&#160;driver&#160;and&#160;the&#160;<b>Install&#160;New<br/>Hardware&#160;Wizard&#160;</b>appears,&#160;run&#160;the&#160;installer&#160;on&#160;the&#160;Green&#160;Hills<br/>Probe&#160;CD.&#160;For&#160;more&#160;information,&#160;see&#160;<a href="probe_starts.html#9">“Installing&#160;Green&#160;Hills<br/>Probe&#160;Software”&#160;on&#160;page&#160;5</a>.<br/>
+<i>24</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=29></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-29_1.png"/><br/>
+<i>Connecting&#160;the&#160;Probe&#160;Administrator&#160;to&#160;Your&#160;Probe</i><br/>
+<b>Connecting&#160;the&#160;Probe&#160;Administrator&#160;to&#160;Your&#160;Probe</b><br/>
+Now&#160;that&#160;the&#160;probe&#160;can&#160;connect&#160;to&#160;MULTI,&#160;you&#160;can&#160;use&#160;MULTI's&#160;<b>Probe<br/>Administrator&#160;</b>to&#160;configure&#160;the&#160;probe&#160;for&#160;your&#160;target.&#160;The&#160;<b>Probe<br/>Administrator&#160;</b>is&#160;a&#160;program&#160;that&#160;lists&#160;all&#160;available&#160;probes&#160;and&#160;allows<br/>you&#160;to&#160;perform&#160;basic&#160;tasks&#160;such&#160;as&#160;setting&#160;options&#160;and&#160;updating&#160;firmware.<br/>
+To&#160;connect&#160;to&#160;the&#160;<b>Probe&#160;Administrator</b>:<br/>
+1.&#160;On&#160;your&#160;host&#160;machine,&#160;run&#160;MULTI.<br/>
+2.&#160;In&#160;the&#160;MULTI&#160;Launcher,&#160;select&#160;<b>Utilities&#160;</b>→&#160;<b>Probe&#160;Administrator</b>.<br/>
+3.&#160;In&#160;the&#160;<b>Probe&#160;Administrator</b>,&#160;select&#160;<b>File&#160;</b>→&#160;<b>New&#160;Probe&#160;</b>to&#160;open&#160;the<br/>
+<b>New&#160;Probe&#160;</b>dialog&#160;box.<br/>
+4.&#160;In&#160;the&#160;<b>Probe&#160;Name&#160;</b>box,&#160;type&#160;a&#160;name&#160;for&#160;your&#160;probe&#160;that&#160;is&#160;easy&#160;to<br/>
+remember.&#160;This&#160;name&#160;is&#160;for&#160;your&#160;convenience&#160;only&#160;and&#160;is&#160;unrelated<br/>to&#160;the&#160;probe's&#160;hostname.<br/>
+5.&#160;If&#160;you&#160;connected&#160;to&#160;your&#160;probe&#160;over&#160;USB,&#160;select&#160;the&#160;<b>USB&#160;</b>radio<br/>
+button.&#160;If&#160;you&#160;connected&#160;to&#160;your&#160;probe&#160;over&#160;Ethernet,&#160;select&#160;the<br/><b>Ethernet&#160;</b>radio&#160;button&#160;and&#160;type&#160;your&#160;probe's&#160;IP&#160;address&#160;in&#160;the&#160;<b>IP<br/>Address&#160;</b>box.<br/>
+6.&#160;Click&#160;<b>OK</b>.<br/>
+7.&#160;In&#160;the&#160;<b>Probe&#160;Administrator</b>,&#160;double-click&#160;your&#160;probe's&#160;name&#160;to<br/>
+open&#160;a&#160;<b>Probe&#160;Administration&#160;</b>window.&#160;You&#160;are&#160;now&#160;connected&#160;to<br/>your&#160;probe&#160;with&#160;the&#160;<b>Probe&#160;Administrator</b>.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>25</i><br/>
+<hr/>
+<a name=30></a><i>Chapter&#160;2.&#160;Configuring&#160;Your&#160;Probe</i><br/>
+<b>Detecting&#160;Your&#160;Target</b><br/>
+The&#160;<b>Probe&#160;Administrator&#160;</b>contains&#160;a&#160;prompt&#160;that&#160;you&#160;can&#160;use&#160;to&#160;send<br/>commands&#160;to&#160;your&#160;probe.&#160;To&#160;use&#160;this&#160;prompt&#160;to&#160;configure&#160;your&#160;probe<br/>for&#160;your&#160;target&#160;board:<br/>
+1.&#160;Power&#160;on&#160;your&#160;target.<br/>
+2.&#160;In&#160;the&#160;<b>Probe&#160;Administration&#160;</b>window,&#160;click&#160;the&#160;<b>Prompt&#160;</b>tab.<br/>
+3.&#160;At&#160;the&#160;prompt,&#160;type&#160;detect.&#160;This&#160;command&#160;configures&#160;the&#160;Green<br/>
+Hills&#160;Probe&#160;for&#160;the&#160;processors&#160;on&#160;your&#160;target&#160;board.&#160;It&#160;is&#160;useful&#160;even<br/>if&#160;the&#160;prompt&#160;indicates&#160;that&#160;the&#160;probe&#160;knows&#160;what&#160;target&#160;you&#160;are<br/>using,&#160;because&#160;it&#160;confirms&#160;that&#160;the&#160;probe&#160;is&#160;able&#160;to&#160;see&#160;your&#160;target<br/>and&#160;that&#160;the&#160;target&#160;is&#160;configured&#160;correctly.&#160;If&#160;the&#160;command&#160;prints<br/>the&#160;following&#160;message:<br/>
+Target&#160;has&#160;been&#160;detected&#160;and&#160;set&#160;to&#160;<i>target_string</i><br/>
+where&#160;<i>target_string&#160;</i>is&#160;the&#160;name&#160;of&#160;your&#160;target,&#160;the&#160;detection&#160;was<br/>successful.<br/>
+4.&#160;Type&#160;save&#160;to&#160;save&#160;the&#160;settings&#160;changed&#160;by&#160;<b>detect</b>.<br/>
+If&#160;you&#160;have&#160;problems&#160;detecting&#160;your&#160;processors,&#160;see&#160;<a href="probe_starts.html#43">Appendix&#160;A,<br/>“Troubleshooting”&#160;on&#160;page&#160;39</a>.<br/>
+<i>26</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=31></a><i>Configuring&#160;Probe&#160;Options&#160;with&#160;a&#160;Configuration&#160;File</i><br/>
+<b>Configuring&#160;Probe&#160;Options&#160;with&#160;a&#160;Configuration&#160;File</b><br/>
+Green&#160;Hills&#160;provides&#160;probe&#160;configuration&#160;files&#160;for&#160;many&#160;different&#160;target<br/>boards.&#160;These&#160;files&#160;contain&#160;tested&#160;settings&#160;for&#160;all&#160;target-related<br/>configuration&#160;options.&#160;When&#160;you&#160;create&#160;a&#160;new&#160;project&#160;using&#160;MULTI&#160;6.0<br/>or&#160;later&#160;and&#160;Green&#160;Hills&#160;Probe&#160;v5.2&#160;or&#160;later,&#160;a&#160;copy&#160;of&#160;this&#160;file&#160;will&#160;be<br/>added&#160;to&#160;your&#160;new&#160;project&#160;and&#160;will&#160;be&#160;automatically&#160;loaded&#160;when&#160;you<br/>connect&#160;MULTI&#160;to&#160;your&#160;target.&#160;If&#160;you&#160;have&#160;an&#160;earlier&#160;version&#160;of&#160;probe<br/>or&#160;MULTI&#160;software,&#160;you&#160;can&#160;find&#160;and&#160;load&#160;this&#160;configuration&#160;file<br/>manually.&#160;To&#160;determine&#160;if&#160;one&#160;of&#160;these&#160;files&#160;exists&#160;for&#160;your&#160;board,&#160;and<br/>to&#160;use&#160;that&#160;file&#160;to&#160;configure&#160;your&#160;probe:<br/>
+1.&#160;In&#160;a&#160;terminal&#160;window&#160;or&#160;command&#160;prompt,&#160;navigate&#160;to&#160;your&#160;MULTI<br/>
+install&#160;directory&#160;for&#160;MULTI&#160;5,&#160;or&#160;your&#160;tools&#160;install&#160;directory&#160;for<br/>MULTI&#160;6&#160;or&#160;newer.&#160;Inside&#160;that&#160;directory,&#160;navigate&#160;to<br/><b>target\<i>architecture</i></b>.<br/>
+2.&#160;If&#160;there&#160;is&#160;a&#160;directory&#160;that&#160;is&#160;named&#160;after&#160;your&#160;board,&#160;navigate&#160;to<br/>
+that&#160;directory&#160;and&#160;look&#160;for&#160;a&#160;file&#160;that&#160;ends&#160;in&#160;<b>.cfg&#160;</b>or&#160;<b>.ghpcfg</b>.&#160;When<br/>you&#160;find&#160;the&#160;file,&#160;run&#160;one&#160;of&#160;the&#160;following&#160;commands:<br/>
+&gt;&#160;<i>tools_install</i>\mpadmin&#160;-cfgload&#160;<i>hostname&#160;config_file</i><br/>
+&gt;&#160;<i>tools_install</i>\mpadmin&#160;-cfgload&#160;-usb&#160;<i>config_file</i><br/>
+If&#160;there&#160;is&#160;no&#160;directory&#160;named&#160;after&#160;your&#160;board,&#160;or&#160;if&#160;the&#160;directory<br/>exists&#160;but&#160;it&#160;does&#160;not&#160;contain&#160;a&#160;configuration&#160;file,&#160;continue&#160;to&#160;the<br/>next&#160;section.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>27</i><br/>
+<hr/>
+<a name=32></a><i>Chapter&#160;2.&#160;Configuring&#160;Your&#160;Probe</i><br/>
+<b>Running&#160;Diagnostics</b><br/>
+Now&#160;that&#160;you&#160;have&#160;detected&#160;your&#160;target,&#160;run&#160;the&#160;following&#160;diagnostics<br/>to&#160;make&#160;sure&#160;that&#160;you&#160;can&#160;communicate&#160;with&#160;it:<br/>
+1.&#160;Type&#160;vb&#160;to&#160;tests&#160;the&#160;bypass&#160;register&#160;of&#160;all&#160;devices&#160;on&#160;the&#160;JTAG&#160;scan<br/>
+chain.&#160;<b>vb&#160;</b>is&#160;not&#160;applicable&#160;for&#160;PowerPC&#160;5xx,&#160;PowerPC&#160;8xx&#160;and<br/>ColdFire&#160;targets.&#160;If&#160;you&#160;are&#160;using&#160;one&#160;of&#160;those&#160;targets,&#160;skip&#160;this&#160;step.<br/>
+2.&#160;If&#160;your&#160;target&#160;has&#160;multiple&#160;cores,&#160;type&#160;tl&#160;(as&#160;in&#160;“target&#160;list”)&#160;to<br/>
+obtain&#160;a&#160;list&#160;of&#160;cores&#160;and&#160;IDs.&#160;Then,&#160;type&#160;t&#160;<i>core_id&#160;</i>to&#160;select&#160;a<br/>core.&#160;Most&#160;subsequent&#160;commands,&#160;including&#160;the&#160;following<br/>diagnostics,&#160;control&#160;or&#160;configure&#160;just&#160;that&#160;core.<br/>
+3.&#160;Type&#160;tr&#160;to&#160;reset&#160;your&#160;target.&#160;This&#160;command&#160;verifies&#160;that&#160;you&#160;can<br/>
+reset&#160;your&#160;target,&#160;and&#160;is&#160;necessary&#160;for&#160;some&#160;targets&#160;after&#160;testing<br/>bypass&#160;mode.<br/>
+4.&#160;Type&#160;rr&#160;to&#160;confirm&#160;that&#160;the&#160;probe&#160;can&#160;read&#160;your&#160;target's&#160;registers.<br/>
+When&#160;successful,&#160;this&#160;command&#160;returns&#160;a&#160;list&#160;of&#160;registers,&#160;similar<br/>to&#160;the&#160;following&#160;output:<br/>
+ppc5200[H]&#160;%&#160;rr<br/>gpr0=0xac5658ad<br/>
+gpr9=0x805000a0&#160;gpr18=0x24444889&#160;gpr27=0x04100821<br/>
+gpr1=0x845008a1&#160;gpr10=0x04400880&#160;gpr19=0x8816102c&#160;gpr28=0x0446088c<br/>gpr2=0x08421084&#160;gpr11=0x04000801&#160;gpr20=0x2c5058a0&#160;gpr29=0x08101021<br/>gpr3=0x24004800&#160;gpr12=0x04020804&#160;gpr21=0xa0404080&#160;gpr30=0x2c425885<br/>gpr4=0x8c001800&#160;gpr13=0x08001001&#160;gpr22=0x8c041808&#160;gpr31=0xa0024005<br/>gpr5=0x28005000&#160;gpr14=0x2006400d&#160;gpr23=0x24144829<br/>
+lr=0x00000000<br/>
+gpr6=0xa0044008&#160;gpr15=0x80120024&#160;gpr24=0x885610ad<br/>
+iar=0x00003ffc<br/>
+gpr7=0x88141029&#160;gpr16=0x00440089&#160;gpr25=0x205240a4<br/>gpr8=0x205640ac&#160;gpr17=0x08121024&#160;gpr26=0x84440888<br/>ppc5200[H]&#160;%<br/>
+5.&#160;Type&#160;vr&#160;100&#160;to&#160;test&#160;the&#160;probe's&#160;ability&#160;to&#160;write&#160;to&#160;registers&#160;and&#160;read<br/>
+back&#160;the&#160;values.&#160;This&#160;command&#160;runs&#160;the&#160;test&#160;100&#160;times.<br/>
+6.&#160;Close&#160;the&#160;<b>Probe&#160;Administration&#160;</b>window.&#160;If&#160;you&#160;leave&#160;the&#160;window<br/>
+open,&#160;other&#160;applications&#160;may&#160;not&#160;be&#160;able&#160;to&#160;connect&#160;to&#160;your&#160;probe<br/>over&#160;USB.<br/>
+If&#160;you&#160;are&#160;able&#160;to&#160;run&#160;all&#160;of&#160;the&#160;above&#160;commands&#160;without&#160;errors,&#160;your<br/>probe&#160;is&#160;able&#160;to&#160;communicate&#160;with&#160;your&#160;target&#160;and&#160;is&#160;ready&#160;for&#160;use&#160;with<br/>the&#160;MULTI&#160;Debugger.&#160;If&#160;any&#160;of&#160;the&#160;diagnostics&#160;fail,&#160;see&#160;<a href="probe_starts.html#43">Appendix&#160;A,<br/>“Troubleshooting”&#160;on&#160;page&#160;39</a>.<br/>
+<i>28</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=33></a><b>Chapter&#160;3</b><br/>
+<b>Creating&#160;and&#160;Debugging&#160;a</b><br/>
+<b>Program</b><br/>
+<b>Contents</b><br/>
+<a href="probe_starts.html#34">Creating&#160;a&#160;Top&#160;Project&#160;for&#160;Your&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#34">30</a><br/>
+<a href="probe_starts.html#37">Top&#160;Project&#160;Structure&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#37">33</a><br/>
+<a href="probe_starts.html#38">Building&#160;a&#160;Program&#160;from&#160;the&#160;Top&#160;Project&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#38">34</a><br/>
+<a href="probe_starts.html#39">Connecting&#160;MULTI&#160;to&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#39">35</a><br/>
+<a href="probe_starts.html#41">Downloading&#160;and&#160;Debugging&#160;a&#160;Program&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#41">37</a><br/>
+<hr/>
+<a name=34></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-34_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-34_2.png"/><br/>
+<i>Chapter&#160;3.&#160;Creating&#160;and&#160;Debugging&#160;a&#160;Program</i><br/>
+Before&#160;beginning&#160;your&#160;first&#160;MULTI&#160;debugging&#160;session&#160;using&#160;your&#160;Green<br/>Hills&#160;Probe,&#160;you&#160;must&#160;ensure&#160;that&#160;your&#160;target&#160;board&#160;is&#160;configured<br/>properly.&#160;This&#160;section&#160;explains&#160;how&#160;to&#160;create&#160;a&#160;Top&#160;Project&#160;that&#160;you&#160;can<br/>use&#160;to&#160;configure&#160;your&#160;target,&#160;test&#160;your&#160;debugging&#160;environment,&#160;and<br/>download&#160;and&#160;debug&#160;a&#160;“Hello&#160;World”&#160;program.<br/>
+<b>Creating&#160;a&#160;Top&#160;Project&#160;for&#160;Your&#160;Program</b><br/>
+The&#160;<b>Project&#160;Wizard&#160;</b>is&#160;a&#160;tool&#160;that&#160;prompts&#160;you&#160;for&#160;information&#160;about<br/>your&#160;target&#160;board&#160;and&#160;creates&#160;a&#160;Top&#160;Project&#160;that&#160;contains:<br/>
+•&#160;Connection&#160;Methods&#160;that&#160;you&#160;use&#160;to&#160;connect&#160;to&#160;your&#160;target&#160;through<br/>
+your&#160;Green&#160;Hills&#160;Probe.<br/>
+•&#160;A&#160;MULTI&#160;board&#160;setup&#160;(<b>.mbs</b>)&#160;script&#160;that&#160;configures&#160;your&#160;target.<br/>
+•&#160;Linker&#160;directives&#160;files&#160;that&#160;define&#160;memory&#160;maps&#160;for&#160;your&#160;target.<br/>
+To&#160;use&#160;the&#160;<b>Project&#160;Wizard&#160;</b>to&#160;create&#160;a&#160;<b>Top&#160;Project</b>:<br/>
+1.&#160;On&#160;your&#160;host&#160;machine,&#160;open&#160;MULTI.<br/>
+2.&#160;From&#160;the&#160;MULTI&#160;Launcher,&#160;click<br/>
+and&#160;select&#160;<b>Create&#160;Project&#160;</b>to<br/>
+open&#160;the&#160;<b>Project&#160;Wizard</b>.<br/>
+3.&#160;Leave&#160;the&#160;default&#160;value&#160;in&#160;the&#160;<b>Name&#160;</b>box,&#160;and&#160;enter&#160;a&#160;directory&#160;for<br/>
+your&#160;Top&#160;Project&#160;in&#160;the&#160;<b>Directory&#160;</b>box.&#160;Click&#160;the&#160;<b>Next&#160;</b>button.<br/>
+4.&#160;In&#160;the&#160;<b>Operating&#160;System&#160;</b>list,&#160;select&#160;<b>Stand-Alone</b>.&#160;Click&#160;the&#160;<b>Next</b><br/>
+button.<br/>
+<i>30</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=35></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-35_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-35_2.png"/><br/>
+<i>Creating&#160;a&#160;Top&#160;Project&#160;for&#160;Your&#160;Program</i><br/>
+5.&#160;In&#160;the&#160;<b>Processor&#160;Family&#160;</b>list,&#160;select&#160;the&#160;processor&#160;family&#160;to&#160;which<br/>
+your&#160;target's&#160;processor&#160;belongs.&#160;If&#160;you&#160;have&#160;only&#160;installed&#160;one<br/>processor&#160;family&#160;for&#160;MULTI,&#160;the&#160;wizard&#160;does&#160;not&#160;display&#160;this&#160;screen.<br/>Click&#160;the&#160;<b>Next&#160;</b>button.<br/>
+6.&#160;In&#160;the&#160;<b>Target&#160;Board&#160;</b>list,&#160;select&#160;your&#160;target&#160;board.&#160;If&#160;your&#160;target<br/>
+board&#160;is&#160;not&#160;listed&#160;or&#160;you&#160;are&#160;using&#160;custom&#160;hardware,&#160;click&#160;the&#160;plus<br/>sign&#160;to&#160;the&#160;left&#160;of&#160;the&#160;<b>Generic&#160;</b>item&#160;at&#160;the&#160;top&#160;of&#160;the&#160;list&#160;and&#160;select<br/>your&#160;processor.&#160;In&#160;this&#160;case,&#160;you&#160;will&#160;probably&#160;need&#160;to&#160;customize<br/>the&#160;board&#160;setup&#160;script&#160;and&#160;linker&#160;directives&#160;files&#160;the&#160;wizard&#160;creates<br/>for&#160;your&#160;target.&#160;Click&#160;the&#160;<b>Finish&#160;</b>button&#160;to&#160;create&#160;your&#160;Top&#160;Project.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>31</i><br/>
+<hr/>
+<a name=36></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-36_1.png"/><br/>
+<i>Chapter&#160;3.&#160;Creating&#160;and&#160;Debugging&#160;a&#160;Program</i><br/>
+7.&#160;When&#160;the&#160;<b>Project&#160;Wizard&#160;</b>closes,&#160;a&#160;dialog&#160;box&#160;may&#160;open&#160;to&#160;inform<br/>
+you&#160;about&#160;the&#160;newly&#160;created&#160;Top&#160;Project.&#160;If&#160;so,&#160;click&#160;the&#160;<b>OK&#160;</b>button<br/>to&#160;continue.<br/>
+8.&#160;After&#160;you&#160;create&#160;a&#160;new&#160;Top&#160;Project,&#160;the&#160;<b>Add&#160;Item&#160;to&#160;Project&#160;</b>dialog<br/>
+box&#160;opens.&#160;If&#160;you&#160;are&#160;creating&#160;a&#160;Stand-Alone&#160;project,&#160;select&#160;<b>Hello<br/>World&#160;(C)&#160;</b>and&#160;click&#160;the&#160;<b>Finish&#160;</b>button.&#160;This&#160;adds&#160;an&#160;example&#160;“Hello<br/>World”&#160;project&#160;to&#160;your&#160;Top&#160;Project.<br/>
+You&#160;have&#160;now&#160;created&#160;a&#160;Top&#160;Project&#160;for&#160;your&#160;target.<br/>
+For&#160;more&#160;information&#160;about&#160;<b>Project&#160;Wizard&#160;</b>screens&#160;and&#160;options,&#160;see<br/>the&#160;documentation&#160;about&#160;creating&#160;a&#160;new&#160;project&#160;in&#160;the&#160;<i>MULTI:&#160;Building<br/>Applications&#160;</i>book&#160;for&#160;your&#160;processor&#160;family.<br/>
+<i>32</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=37></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-37_1.png"/><br/>
+<i>Top&#160;Project&#160;Structure</i><br/>
+<b>Top&#160;Project&#160;Structure</b><br/>
+After&#160;you&#160;create&#160;a&#160;Top&#160;Project,&#160;the&#160;MULTI&#160;Project&#160;Manager&#160;opens.&#160;It<br/>should&#160;look&#160;similar&#160;to&#160;the&#160;following&#160;window:<br/>
+There&#160;are&#160;three&#160;projects&#160;in&#160;the&#160;window:<br/>
+•&#160;<i><b>dir</b></i><b>\default.gpj&#160;</b>—&#160;The&#160;Top&#160;Project.<br/>
+•&#160;<b>src_hello\hello.gpj&#160;</b>—&#160;The&#160;example&#160;“Hello&#160;World”&#160;project&#160;you<br/>
+added&#160;with&#160;the&#160;<b>Add&#160;Item&#160;to&#160;Project&#160;</b>dialog&#160;box.<br/>
+•&#160;<b>tgt\resources.gpj&#160;</b>—&#160;The&#160;<i>Target&#160;Resources&#160;project</i>.&#160;This&#160;project<br/>
+contains&#160;files&#160;necessary&#160;to&#160;configure&#160;and&#160;connect&#160;to&#160;your&#160;target&#160;(such<br/>as&#160;setup&#160;scripts&#160;and&#160;linker&#160;directives&#160;files).<br/>
+○&#160;<b>mpserv_standard.mbs&#160;</b>—&#160;The&#160;board&#160;setup&#160;script&#160;for&#160;your&#160;target.<br/>
+This&#160;script&#160;prepares&#160;your&#160;target&#160;for&#160;downloading&#160;and&#160;running&#160;a<br/>program.&#160;You&#160;may&#160;need&#160;to&#160;customize&#160;this&#160;script&#160;if&#160;you&#160;are&#160;using<br/>custom&#160;hardware.<br/>
+○&#160;<i><b>name</b></i><b>.ld&#160;</b>—&#160;Linker&#160;directives&#160;files&#160;for&#160;your&#160;target.&#160;These&#160;files<br/>
+help&#160;determine&#160;how&#160;your&#160;program&#160;is&#160;laid&#160;out&#160;in&#160;memory.&#160;You<br/>may&#160;need&#160;to&#160;customize&#160;these&#160;files&#160;if&#160;you&#160;are&#160;using&#160;custom<br/>hardware.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>33</i><br/>
+<hr/>
+<a name=38></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-38_1.png"/><br/>
+<i>Chapter&#160;3.&#160;Creating&#160;and&#160;Debugging&#160;a&#160;Program</i><br/>
+In&#160;this&#160;example,&#160;the&#160;<b>src_hello\hello.gpj&#160;</b>project&#160;is&#160;linked&#160;using<br/><b>standalone_ram.ld</b>.&#160;The&#160;<b>tgt\standalone_ram.ld&#160;</b>item&#160;in&#160;the<br/><b>src_hello\hello.gpj&#160;</b>project&#160;represents&#160;the&#160;same&#160;file&#160;as&#160;the<br/><b>standalone_ram.ld&#160;</b>item&#160;in&#160;the&#160;Target&#160;Resources&#160;project.<br/>
+○&#160;<b>board_info.txt&#160;</b>(not&#160;available&#160;for&#160;all&#160;targets)&#160;—&#160;Additional&#160;notes<br/>
+about&#160;your&#160;target.&#160;If&#160;your&#160;project&#160;contains&#160;this&#160;file,&#160;read&#160;its<br/>contents&#160;before&#160;proceeding&#160;to&#160;the&#160;next&#160;section.<br/>
+<b>Building&#160;a&#160;Program&#160;from&#160;the&#160;Top&#160;Project</b><br/>
+After&#160;you&#160;create&#160;a&#160;Top&#160;Project&#160;with&#160;the&#160;<b>Project&#160;Wizard</b>,&#160;you&#160;should&#160;test<br/>your&#160;debugging&#160;environment&#160;by&#160;downloading&#160;and&#160;running&#160;the&#160;example<br/>“Hello&#160;World”&#160;program.&#160;Before&#160;downloading&#160;the&#160;program,&#160;you&#160;must<br/>build&#160;your&#160;project.<br/>
+To&#160;build&#160;the&#160;“Hello&#160;World”&#160;example&#160;project:<br/>
+1.&#160;Select&#160;<b>src_hello\hello.gpj&#160;</b>in&#160;the&#160;Project&#160;Manager.<br/>
+2.&#160;Click<br/>
+.<br/>
+If&#160;the&#160;build&#160;was&#160;successful,&#160;you&#160;should&#160;see&#160;text&#160;similar&#160;to&#160;the&#160;following<br/>in&#160;the&#160;<b>Status&#160;</b>pane:<br/>
+Building&#160;hello<br/>Compiling&#160;hello.c&#160;because&#160;hello.o&#160;does&#160;not&#160;exist<br/>Linking&#160;hello&#160;because&#160;it&#160;does&#160;not&#160;exist<br/>Done<br/>Build&#160;successful&#160;(Mon&#160;Jul&#160;25&#160;12:30:00&#160;2011)<br/>
+<i>34</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=39></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-39_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-39_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-39_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-39_4.png"/><br/>
+<i>Connecting&#160;MULTI&#160;to&#160;Your&#160;Target</i><br/>
+<b>Connecting&#160;MULTI&#160;to&#160;Your&#160;Target</b><br/>
+To&#160;connect&#160;MULTI&#160;to&#160;your&#160;target:<br/>
+1.&#160;Verify&#160;that&#160;all&#160;hardware&#160;connections&#160;are&#160;tight&#160;and&#160;secure,&#160;and&#160;that<br/>
+both&#160;the&#160;board&#160;and&#160;your&#160;probe&#160;are&#160;powered.<br/>
+2.&#160;In&#160;the&#160;Project&#160;Manager,&#160;select&#160;<b>src_hello\hello.gpj&#160;</b>and&#160;click<br/>
+to<br/>
+open&#160;the&#160;MULTI&#160;Debugger.<br/>
+3.&#160;In&#160;the&#160;Debugger&#160;window,&#160;click<br/>
+to&#160;open&#160;a&#160;<b>Connection&#160;Chooser</b><br/>
+window.<br/>
+4.&#160;In&#160;the&#160;<b>Connect&#160;to&#160;a&#160;Target&#160;</b>list,&#160;select&#160;the&#160;<b>Green&#160;Hills&#160;Debug</b><br/>
+<b>Probe&#160;(mpserv)&#160;</b>connection&#160;for&#160;your&#160;target.&#160;For&#160;example:<br/>
+5.&#160;Click&#160;the&#160;<b>Connect&#160;</b>button.&#160;When&#160;the&#160;<b>Connection&#160;Chooser&#160;</b>prompts<br/>
+you&#160;to&#160;enter&#160;a&#160;Probe&#160;Name&#160;for&#160;the&#160;new&#160;connection,&#160;click&#160;<b>OK</b>.&#160;The<br/><b>Connection&#160;Editor&#160;</b>window&#160;opens.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>35</i><br/>
+<hr/>
+<a name=40></a><i>Chapter&#160;3.&#160;Creating&#160;and&#160;Debugging&#160;a&#160;Program</i><br/>
+6.&#160;In&#160;the&#160;<b>Connection&#160;Editor&#160;</b>window:<br/>
+a.&#160;In&#160;the&#160;<b>Connection&#160;</b>tab,&#160;select&#160;the&#160;radio&#160;button&#160;that&#160;corresponds<br/>
+to&#160;your&#160;connection&#160;type&#160;(Ethernet&#160;or&#160;USB).&#160;If&#160;you&#160;connect&#160;to<br/>your&#160;probe&#160;over&#160;Ethernet,&#160;type&#160;the&#160;probe's&#160;hostname&#160;or&#160;IP<br/>address&#160;in&#160;the&#160;<b>Probe&#160;Name&#160;or&#160;IP&#160;Address&#160;</b>box.&#160;If&#160;you&#160;connect<br/>to&#160;multiple&#160;probes&#160;over&#160;USB,&#160;type&#160;the&#160;probe's&#160;serial&#160;number<br/>in&#160;the&#160;<b>Probe&#160;Serial&#160;Number&#160;or&#160;USB&#160;Index&#160;</b>box&#160;to&#160;specify<br/>which&#160;probe&#160;you&#160;want&#160;to&#160;connect&#160;to,&#160;and&#160;make&#160;sure&#160;that&#160;there<br/>are&#160;no&#160;active&#160;connections&#160;to&#160;that&#160;probe&#160;(such&#160;as&#160;the&#160;<b>Probe<br/>Administrator</b>).<br/>
+b.&#160;In&#160;the&#160;<b>Target&#160;Setup&#160;script&#160;</b>box,&#160;leave&#160;the&#160;default&#160;value<br/>
+(<b>mpserv_standard.mbs</b>).&#160;This&#160;file&#160;is&#160;the&#160;setup&#160;script&#160;that&#160;the<br/><b>Project&#160;Wizard&#160;</b>generated&#160;and&#160;placed&#160;in&#160;your&#160;Target&#160;Resources<br/>project.<br/>
+c.&#160;Click&#160;<b>OK</b>.<br/>
+The&#160;MULTI&#160;Debugger&#160;is&#160;now&#160;connected&#160;to&#160;your&#160;target.<br/>
+For&#160;more&#160;information&#160;about&#160;the&#160;<b>Connection&#160;Editor</b>,&#160;see&#160;the<br/>documentation&#160;about&#160;the&#160;Connection&#160;Editor&#160;in&#160;the&#160;<i>MULTI:&#160;Configuring<br/>Connections&#160;</i>book.<br/>
+<b>Warning</b><br/>
+Do&#160;not&#160;unplug&#160;the&#160;USB&#160;cable&#160;while&#160;MULTI&#160;is&#160;connected&#160;to<br/>your&#160;target&#160;over&#160;USB.<br/>
+<i>36</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=41></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-41_1.png"/><br/>
+<i>Downloading&#160;and&#160;Debugging&#160;a&#160;Program</i><br/>
+<b>Downloading&#160;and&#160;Debugging&#160;a&#160;Program</b><br/>
+To&#160;download&#160;and&#160;run&#160;the&#160;“Hello&#160;World”&#160;program:<br/>
+1.&#160;In&#160;the&#160;MULTI&#160;Debugger,&#160;click<br/>
+.&#160;The&#160;<b>Prepare&#160;Target&#160;</b>dialog&#160;box<br/>
+opens.<br/>
+2.&#160;In&#160;the&#160;<b>Prepare&#160;Target&#160;</b>dialog&#160;box,&#160;leave&#160;the&#160;settings&#160;at&#160;their&#160;default<br/>
+values.&#160;The&#160;project&#160;is&#160;configured&#160;to&#160;download&#160;the&#160;program&#160;to&#160;RAM.<br/>Click&#160;<b>OK</b>.<br/>
+3.&#160;The&#160;<b>Initializing&#160;Target&#160;</b>dialog&#160;box&#160;opens.&#160;This&#160;dialog&#160;box&#160;shows<br/>
+progress&#160;as&#160;MULTI&#160;runs&#160;your&#160;setup&#160;script&#160;and&#160;downloads&#160;the<br/>program.&#160;It&#160;closes&#160;when&#160;the&#160;progress&#160;is&#160;complete.<br/>
+If&#160;the&#160;download&#160;and&#160;execution&#160;of&#160;the&#160;program&#160;are&#160;successful,&#160;your<br/>debugger&#160;should&#160;show&#160;output&#160;similar&#160;to&#160;the&#160;following:<br/>
+I/O:&#160;Hello&#160;world.<br/>I/O:&#160;-----------------------------<br/>
+If&#160;the&#160;download&#160;was&#160;not&#160;successful,&#160;the&#160;<b>Prepare&#160;Target&#160;</b>dialog&#160;opens<br/>and&#160;displays&#160;any&#160;errors&#160;that&#160;occurred&#160;during&#160;the&#160;setup&#160;script&#160;or&#160;while<br/>downloading&#160;the&#160;program.&#160;If&#160;you&#160;are&#160;using&#160;custom&#160;hardware&#160;and&#160;have<br/>not&#160;modified&#160;the&#160;default&#160;setup&#160;script&#160;and/or&#160;linker&#160;directives&#160;files,&#160;you<br/>should&#160;expect&#160;some&#160;errors&#160;in&#160;red&#160;text&#160;in&#160;the&#160;<b>Prepare&#160;Target&#160;</b>dialog&#160;box.<br/>
+If&#160;this&#160;happens,&#160;you&#160;must&#160;modify&#160;the&#160;default&#160;setup&#160;script&#160;and&#160;linker<br/>directives&#160;files&#160;in&#160;your&#160;Target&#160;Resources&#160;project&#160;to&#160;configure&#160;your&#160;target<br/>properly.&#160;For&#160;more&#160;information,&#160;see&#160;Chapter&#160;2,&#160;“Configuring&#160;Target<br/>Resources”&#160;in&#160;the&#160;<i>Green&#160;Hills&#160;Debug&#160;Probes&#160;User's&#160;Guide</i>.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>37</i><br/>
+<hr/>
+<a name=42></a><hr/>
+<a name=43></a><b>Appendix&#160;A</b><br/>
+<b>Troubleshooting</b><br/>
+<b>Contents</b><br/>
+<a href="probe_starts.html#44">Setting&#160;Up&#160;Your&#160;Hardware&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#44">40</a><br/>
+<a href="probe_starts.html#48">Configuring&#160;Your&#160;Probe&#160;to&#160;Connect&#160;to&#160;MULTI&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#48">44</a><br/>
+<a href="probe_starts.html#52">Configuring&#160;Your&#160;Probe&#160;for&#160;Your&#160;Target&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#52">48</a><br/>
+<a href="probe_starts.html#58">General&#160;Configuration&#160;Instructions&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#58">54</a><br/>
+<a href="probe_starts.html#61">Uninstalling&#160;Probe&#160;Software&#160;</a>.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;<a href="probe_starts.html#61">57</a><br/>
+<hr/>
+<a name=44></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+This&#160;section&#160;explains&#160;how&#160;to&#160;troubleshoot&#160;problems&#160;you&#160;may&#160;encounter<br/>when&#160;configuring&#160;your&#160;probe&#160;to&#160;detect&#160;and&#160;communicate&#160;with&#160;your&#160;target.<br/>Before&#160;looking&#160;at&#160;a&#160;specific&#160;topic,&#160;make&#160;sure&#160;that:<br/>
+•&#160;Your&#160;target&#160;is&#160;powered&#160;on.<br/>
+•&#160;Your&#160;probe&#160;is&#160;powered&#160;on.<br/>
+•&#160;All&#160;connections&#160;are&#160;tight&#160;and&#160;secure.<br/>
+•&#160;The&#160;supplied&#160;ribbon&#160;cable&#160;is&#160;plugged&#160;into&#160;your&#160;target&#160;in&#160;the&#160;proper<br/>
+orientation,&#160;in&#160;the&#160;correct&#160;port.&#160;Also,&#160;check&#160;that&#160;it&#160;is&#160;properly&#160;aligned<br/>(not&#160;shifted&#160;over&#160;by&#160;one&#160;pin).<br/>
+<b>Note</b><br/>
+On&#160;shielded&#160;COP&#160;cables,&#160;the&#160;red&#160;stripe&#160;on&#160;the&#160;cable<br/>indicates&#160;pin&#160;16,&#160;not&#160;pin&#160;1.<br/>
+If&#160;you&#160;have&#160;checked&#160;all&#160;the&#160;items&#160;in&#160;the&#160;previous&#160;list&#160;and&#160;are&#160;still&#160;having<br/>trouble&#160;setting&#160;up&#160;your&#160;Green&#160;Hills&#160;Probe,&#160;consult&#160;one&#160;of&#160;the&#160;following<br/>sections.<br/>
+<b>Setting&#160;Up&#160;Your&#160;Hardware</b><br/>
+This&#160;section&#160;provides&#160;troubleshooting&#160;steps&#160;for&#160;initial&#160;probe&#160;setup.<br/>
+•&#160;<a href="probe_starts.html#45">“The&#160;Supplied&#160;Ribbon&#160;Cable&#160;or&#160;Pod&#160;Does&#160;Not&#160;Fit&#160;in&#160;the&#160;Target's</a><br/>
+<a href="probe_starts.html#45">JTAG&#160;Header”&#160;on&#160;page&#160;41</a><br/>
+•&#160;<a href="probe_starts.html#45">“TraceEverywhere&#160;Target&#160;Adapter&#160;Status&#160;Light&#160;Is&#160;Red&#160;or&#160;Off”</a><br/>
+<a href="probe_starts.html#45">on&#160;page&#160;41</a><br/>
+•&#160;<a href="probe_starts.html#45">“The&#160;Probe&#160;Banner&#160;in&#160;the&#160;Serial&#160;Terminal&#160;Does&#160;Not&#160;Appear&#160;or&#160;Is</a><br/>
+<a href="probe_starts.html#45">Incomplete”&#160;on&#160;page&#160;41</a><br/>
+•&#160;<a href="probe_starts.html#47">“Corrupted&#160;Data&#160;is&#160;Printed&#160;to&#160;the&#160;Serial&#160;Terminal”&#160;on&#160;page&#160;43</a><br/>
+•&#160;<a href="probe_starts.html#47">“Cannot&#160;Type&#160;Commands&#160;Into&#160;the&#160;Serial&#160;Terminal”&#160;on&#160;page&#160;43</a><br/>
+<i>40</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=45></a><i>The&#160;Supplied&#160;Ribbon&#160;Cable&#160;or&#160;Pod&#160;Does&#160;Not&#160;Fit&#160;in&#160;the&#160;Target's&#160;JTAG&#160;Header</i><br/>
+<b>The&#160;Supplied&#160;Ribbon&#160;Cable&#160;or&#160;Pod&#160;Does&#160;Not&#160;Fit&#160;in&#160;the&#160;Target's&#160;JTAG&#160;Header</b><br/>
+If&#160;the&#160;supplied&#160;ribbon&#160;cable&#160;or&#160;pod&#160;does&#160;not&#160;fit&#160;in&#160;one&#160;of&#160;your&#160;target's<br/>JTAG&#160;ports:<br/>
+•&#160;Do&#160;not&#160;attempt&#160;to&#160;physically&#160;modify&#160;the&#160;cable&#160;or&#160;pod.<br/>
+•&#160;Some&#160;targets&#160;have&#160;more&#160;than&#160;one&#160;JTAG&#160;header.&#160;Look&#160;for&#160;a&#160;different<br/>
+JTAG&#160;header&#160;that&#160;fits.<br/>
+•&#160;If&#160;your&#160;Green&#160;Hills&#160;Probe&#160;shipped&#160;with&#160;adapters&#160;for&#160;the&#160;ribbon&#160;cable<br/>
+or&#160;pod,&#160;try&#160;using&#160;one&#160;of&#160;them.<br/>
+<b>TraceEverywhere&#160;Target&#160;Adapter&#160;Status&#160;Light&#160;Is&#160;Red&#160;or&#160;Off</b><br/>
+If&#160;you&#160;are&#160;using&#160;TraceEverywhere&#160;(TE)&#160;cabling,&#160;you&#160;have&#160;powered&#160;on<br/>your&#160;probe,&#160;and&#160;the&#160;TE&#160;target&#160;adapter's&#160;status&#160;light&#160;is&#160;red&#160;or&#160;turned&#160;off,<br/>there&#160;may&#160;be&#160;a&#160;problem&#160;with&#160;your&#160;connection.&#160;If&#160;this&#160;happens:<br/>
+1.&#160;Turn&#160;your&#160;probe&#160;off.<br/>
+2.&#160;Check&#160;to&#160;make&#160;sure&#160;all&#160;connections&#160;are&#160;tight&#160;and&#160;secure.<br/>
+3.&#160;Turn&#160;your&#160;probe&#160;on,&#160;and&#160;enter&#160;the&#160;following&#160;command&#160;in&#160;a&#160;serial<br/>
+terminal:<br/>
+set&#160;adapter&#160;auto<br/>
+4.&#160;Check&#160;the&#160;adapter&#160;setting&#160;to&#160;make&#160;sure&#160;it&#160;has&#160;changed&#160;to&#160;auto:<br/>
+set&#160;adapter<br/>
+If&#160;the&#160;adapter&#160;setting&#160;is&#160;correct&#160;and&#160;the&#160;cables&#160;are&#160;secure,&#160;the&#160;status&#160;light<br/>should&#160;turn&#160;green.&#160;If&#160;the&#160;adapter&#160;type&#160;is&#160;error&#160;or&#160;the&#160;light&#160;does&#160;not&#160;turn<br/>green,&#160;there&#160;may&#160;be&#160;a&#160;problem&#160;with&#160;the&#160;TE&#160;target&#160;adapter.&#160;Contact&#160;Green<br/>Hills&#160;support.<br/>
+<b>The&#160;Probe&#160;Banner&#160;in&#160;the&#160;Serial&#160;Terminal&#160;Does&#160;Not&#160;Appear&#160;or&#160;Is&#160;Incomplete</b><br/>
+When&#160;you&#160;boot&#160;your&#160;probe&#160;while&#160;connected&#160;to&#160;a&#160;serial&#160;terminal,&#160;if&#160;the<br/>complete&#160;probe&#160;banner&#160;does&#160;not&#160;display,&#160;try&#160;loading&#160;a&#160;new&#160;firmware<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>41</i><br/>
+<hr/>
+<a name=46></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+image&#160;(see&#160;<a href="probe_starts.html#61">“Recovering&#160;a&#160;Probe&#160;That&#160;Does&#160;Not&#160;Boot&#160;Properly”<br/>on&#160;page&#160;57).</a><br/>
+If&#160;the&#160;probe&#160;banner&#160;does&#160;not&#160;display&#160;at&#160;all,&#160;check&#160;to&#160;see&#160;if&#160;the&#160;power&#160;LED<br/>on&#160;the&#160;front&#160;of&#160;the&#160;probe&#160;is&#160;illuminated.&#160;If&#160;it&#160;is&#160;not&#160;illuminated:<br/>
+•&#160;Verify&#160;that&#160;the&#160;power&#160;supply&#160;is&#160;connected&#160;to&#160;the&#160;probe,&#160;and&#160;that&#160;the<br/>
+power&#160;switch&#160;is&#160;in&#160;the&#160;on&#160;position.<br/>
+•&#160;Turn&#160;the&#160;power&#160;switch&#160;off&#160;and&#160;then&#160;back&#160;on&#160;again.<br/>
+•&#160;Try&#160;using&#160;a&#160;different&#160;power&#160;outlet&#160;and/or&#160;supply.<br/>
+If&#160;you&#160;have&#160;a&#160;beige&#160;probe,&#160;the&#160;power&#160;supply&#160;must&#160;have&#160;a&#160;voltage<br/>between&#160;7&#160;and&#160;15&#160;volts&#160;and&#160;provide&#160;at&#160;least&#160;500mA&#160;of&#160;current.&#160;The<br/>polarity&#160;of&#160;the&#160;power&#160;supply&#160;(center-positive&#160;or&#160;outside-positive)<br/>does&#160;not&#160;matter.<br/>
+If&#160;you&#160;have&#160;a&#160;black&#160;probe,&#160;the&#160;power&#160;supply&#160;must&#160;have&#160;a&#160;voltage&#160;of<br/>9&#160;volts&#160;and&#160;provide&#160;at&#160;least&#160;3A&#160;of&#160;current.&#160;The&#160;polarity&#160;must&#160;be<br/>center-positive.<br/>
+•&#160;If&#160;the&#160;power&#160;LED&#160;still&#160;does&#160;not&#160;illuminate,&#160;contact&#160;Green&#160;Hills<br/>
+support.<br/>
+If&#160;the&#160;power&#160;LED&#160;illuminates&#160;but&#160;no&#160;text&#160;appears&#160;in&#160;the&#160;serial&#160;terminal:<br/>
+1.&#160;Turn&#160;the&#160;probe&#160;off.<br/>
+2.&#160;Press&#160;and&#160;hold&#160;the&#160;<b>User&#160;</b>button&#160;on&#160;the&#160;front&#160;of&#160;the&#160;probe.<br/>
+3.&#160;While&#160;holding&#160;the&#160;<b>User&#160;</b>button,&#160;turn&#160;the&#160;probe&#160;on.<br/>
+•&#160;If&#160;the&#160;probe&#160;does&#160;not&#160;print&#160;any&#160;text&#160;to&#160;the&#160;serial&#160;terminal,&#160;this<br/>
+indicates&#160;a&#160;problem&#160;with&#160;your&#160;cable&#160;or&#160;COM&#160;port.&#160;Try&#160;using&#160;a<br/>different&#160;COM&#160;port&#160;on&#160;your&#160;host&#160;computer,&#160;or&#160;a&#160;different&#160;null<br/>modem&#160;serial&#160;cable.<br/>
+•&#160;If&#160;the&#160;probe&#160;does&#160;print&#160;text&#160;to&#160;the&#160;serial&#160;terminal,&#160;try&#160;loading&#160;a<br/>
+new&#160;firmware&#160;image&#160;(see&#160;<a href="probe_starts.html#61">“Recovering&#160;a&#160;Probe&#160;That&#160;Does&#160;Not<br/>Boot&#160;Properly”&#160;on&#160;page&#160;57).</a><br/>
+<i>42</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=47></a><i>Corrupted&#160;Data&#160;is&#160;Printed&#160;to&#160;the&#160;Serial&#160;Terminal</i><br/>
+<b>Corrupted&#160;Data&#160;is&#160;Printed&#160;to&#160;the&#160;Serial&#160;Terminal</b><br/>
+If&#160;your&#160;serial&#160;terminal&#160;emulator&#160;is&#160;displaying&#160;corrupted&#160;data&#160;when<br/>connected&#160;to&#160;the&#160;probe,&#160;your&#160;terminal's&#160;baud&#160;rate&#160;is&#160;probably&#160;incorrect.<br/>
+The&#160;probe's&#160;serial&#160;port&#160;is&#160;configured&#160;at&#160;9600&#160;baud&#160;for&#160;a&#160;few&#160;seconds&#160;after<br/>it&#160;is&#160;power&#160;cycled,&#160;after&#160;which&#160;it&#160;changes&#160;to&#160;its&#160;configured&#160;baud&#160;rate<br/>setting.&#160;If&#160;the&#160;configured&#160;setting&#160;is&#160;not&#160;9600&#160;baud,&#160;the&#160;probe&#160;prints&#160;the<br/>following&#160;message&#160;in&#160;the&#160;terminal&#160;before&#160;changing&#160;the&#160;baud&#160;rate.&#160;For<br/>example,&#160;if&#160;the&#160;probe's&#160;baud&#160;rate&#160;is&#160;set&#160;to&#160;38400,&#160;it&#160;would&#160;print&#160;the<br/>following&#160;message:<br/>
+Switching&#160;baud&#160;rate&#160;to&#160;38400,&#160;press&#160;the&#160;space&#160;bar&#160;to&#160;remain<br/>at&#160;9600.<br/>
+If&#160;you&#160;need&#160;to&#160;change&#160;the&#160;rate&#160;back&#160;to&#160;9600&#160;baud:<br/>
+1.&#160;Press&#160;the&#160;space&#160;bar&#160;when&#160;the&#160;probe&#160;prints&#160;this&#160;message.<br/>
+2.&#160;After&#160;you&#160;are&#160;connected&#160;to&#160;the&#160;probe,&#160;type:<br/>
+set&#160;baud&#160;9600<br/>
+If&#160;you&#160;want&#160;to&#160;continue&#160;using&#160;the&#160;new&#160;baud&#160;rate&#160;(for&#160;example,&#160;38400<br/>baud),&#160;change&#160;the&#160;baud&#160;rate&#160;setting&#160;in&#160;your&#160;terminal&#160;program&#160;to&#160;38400.<br/>
+<b>Cannot&#160;Type&#160;Commands&#160;Into&#160;the&#160;Serial&#160;Terminal</b><br/>
+If&#160;you&#160;cannot&#160;type&#160;commands&#160;into&#160;the&#160;serial&#160;terminal:<br/>
+•&#160;Make&#160;sure&#160;serial&#160;flow&#160;control&#160;is&#160;turned&#160;off&#160;in&#160;your&#160;serial&#160;terminal.<br/>
+•&#160;Use&#160;a&#160;different&#160;null&#160;modem&#160;serial&#160;cable.<br/>
+<b>Note</b><br/>
+Certain&#160;versions&#160;of&#160;the&#160;HyperTerminal&#160;application&#160;exhibit<br/>problems&#160;communicating&#160;with&#160;target&#160;systems&#160;in&#160;general.&#160;If&#160;you<br/>are&#160;experiencing&#160;problems,&#160;restart&#160;HyperTerminal.&#160;If&#160;this&#160;does<br/>not&#160;remedy&#160;the&#160;problem,&#160;try&#160;a&#160;different&#160;host&#160;machine,&#160;upgrade<br/>HyperTerminal,&#160;or&#160;switch&#160;to&#160;a&#160;different&#160;application.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>43</i><br/>
+<hr/>
+<a name=48></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+<b>Configuring&#160;Your&#160;Probe&#160;to&#160;Connect&#160;to&#160;MULTI</b><br/>
+This&#160;section&#160;provides&#160;troubleshooting&#160;steps&#160;for&#160;configuring&#160;your&#160;probe<br/>to&#160;connect&#160;to&#160;your&#160;host&#160;machine.<br/>
+•&#160;<a href="probe_starts.html#48">“Cannot&#160;Find&#160;Telnet&#160;On&#160;Windows&#160;Vista&#160;and&#160;Later”&#160;on&#160;page&#160;44</a><br/>
+•&#160;<a href="probe_starts.html#48">“Cannot&#160;Connect&#160;to&#160;Probe&#160;Over&#160;Telnet”&#160;on&#160;page&#160;44</a><br/>
+•&#160;<a href="probe_starts.html#50">“Cannot&#160;Connect&#160;to&#160;Probe&#160;Over&#160;USB”&#160;on&#160;page&#160;46</a><br/>
+•&#160;<a href="probe_starts.html#51">“Windows&#160;is&#160;Unable&#160;to&#160;Start&#160;Probe&#160;as&#160;a&#160;USB&#160;Device”&#160;on&#160;page&#160;47</a><br/>
+<b>Cannot&#160;Find&#160;Telnet&#160;On&#160;Windows&#160;Vista&#160;and&#160;Later</b><br/>
+The&#160;Telnet&#160;application&#160;is&#160;not&#160;installed&#160;by&#160;default&#160;on&#160;Windows&#160;Vista&#160;and<br/>later&#160;systems.&#160;To&#160;install&#160;the&#160;Telnet&#160;application:<br/>
+1.&#160;Click&#160;the&#160;<b>Start&#160;</b>button&#160;and&#160;click&#160;<b>Control&#160;Panel</b>.<br/>
+•&#160;If&#160;your&#160;control&#160;panel&#160;has&#160;the&#160;normal&#160;view:<br/>
+a.&#160;Click&#160;<b>Programs</b>.<br/>
+b.&#160;In&#160;the&#160;<b>Programs&#160;and&#160;Features&#160;</b>group,&#160;click&#160;Turn<br/>
+<b>Windows&#160;Features&#160;On&#160;or&#160;Off</b>.<br/>
+•&#160;If&#160;your&#160;control&#160;panel&#160;has&#160;the&#160;classic&#160;view:<br/>
+a.&#160;Click&#160;<b>Programs&#160;and&#160;Features</b>.<br/>
+b.&#160;Click&#160;<b>Turn&#160;Windows&#160;Features&#160;On&#160;or&#160;Off</b>.<br/>
+2.&#160;Select&#160;the&#160;<b>Telnet&#160;Client&#160;</b>check&#160;box&#160;and&#160;click&#160;<b>OK</b>.<br/>
+<b>Cannot&#160;Connect&#160;to&#160;Probe&#160;Over&#160;Telnet</b><br/>
+If&#160;you&#160;cannot&#160;connect&#160;to&#160;your&#160;Green&#160;Hills&#160;Probe&#160;over&#160;Telnet,&#160;your<br/>Ethernet&#160;settings&#160;are&#160;probably&#160;incorrect.&#160;The&#160;easiest&#160;way&#160;to&#160;determine<br/>if&#160;your&#160;probe&#160;Ethernet&#160;settings&#160;are&#160;correct&#160;is&#160;to&#160;ping&#160;it&#160;from&#160;your&#160;host<br/>machine.&#160;To&#160;ping&#160;your&#160;probe,&#160;from&#160;a&#160;command&#160;prompt,&#160;type:<br/>
+$&#160;ping&#160;<i>hostname</i><br/>
+where&#160;<i>hostname&#160;</i>is&#160;your&#160;probe's&#160;hostname,&#160;or<br/>
+<i>44</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=49></a><i>Cannot&#160;Connect&#160;to&#160;Probe&#160;Over&#160;Telnet</i><br/>
+$&#160;ping&#160;<i>ip_address</i><br/>
+where&#160;<i>ip_address&#160;</i>is&#160;your&#160;probe's&#160;IP&#160;address.<br/>
+If&#160;<b>ping&#160;</b>is&#160;successful,&#160;it&#160;prints&#160;a&#160;report&#160;similar&#160;to&#160;the&#160;following:<br/>
+$&#160;ping&#160;ghprobe11111<br/>
+Pinging&#160;ghprobe11111.ghs.com&#160;[192.168.100.111]&#160;with&#160;32&#160;bytes&#160;of&#160;data:<br/>
+Reply&#160;from&#160;192.168.100.111:&#160;bytes=32&#160;time&lt;10ms&#160;TTL=29<br/>Reply&#160;from&#160;192.168.100.111:&#160;bytes=32&#160;time=10ms&#160;TTL=29<br/>Reply&#160;from&#160;192.168.100.111:&#160;bytes=32&#160;time&lt;10ms&#160;TTL=29<br/>Reply&#160;from&#160;192.168.100.111:&#160;bytes=32&#160;time&lt;10ms&#160;TTL=29<br/>
+Ping&#160;statistics&#160;for&#160;192.168.100.111:<br/>
+Packets:&#160;Sent&#160;=&#160;4,&#160;Received&#160;=&#160;4,&#160;Lost&#160;=&#160;0&#160;(0%&#160;loss),<br/>
+Approximate&#160;round&#160;trip&#160;times&#160;in&#160;milli-seconds:<br/>
+Minimum&#160;=&#160;0ms,&#160;Maximum&#160;=<br/>
+10ms,&#160;Average&#160;=<br/>
+2ms<br/>
+If&#160;<b>ping&#160;</b>is&#160;unsuccessful,&#160;it&#160;prints&#160;a&#160;report&#160;similar&#160;to&#160;the&#160;following:<br/>
+$&#160;ping&#160;ghprobe11111<br/>
+Pinging&#160;ghprobe11111.ghs.com&#160;[192.168.100.111]&#160;with&#160;32&#160;bytes&#160;of&#160;data:<br/>
+Request&#160;timed&#160;out.<br/>Request&#160;timed&#160;out.<br/>Request&#160;timed&#160;out.<br/>Request&#160;timed&#160;out.<br/>
+Ping&#160;statistics&#160;for&#160;192.168.100.111:<br/>
+Packets:&#160;Sent&#160;=&#160;4,&#160;Received&#160;=&#160;0,&#160;Lost&#160;=&#160;4&#160;(100%&#160;loss),<br/>
+Approximate&#160;round&#160;trip&#160;times&#160;in&#160;milli-seconds:<br/>
+Minimum&#160;=&#160;0ms,&#160;Maximum&#160;=<br/>
+0ms,&#160;Average&#160;=<br/>
+0ms<br/>
+•&#160;If&#160;<b>ping&#160;</b>is&#160;unsuccessful,&#160;verify&#160;that&#160;an&#160;Ethernet&#160;cable&#160;is&#160;plugged&#160;in<br/>
+and&#160;that&#160;the&#160;green&#160;connection&#160;light&#160;in&#160;the&#160;upper-right&#160;corner&#160;of&#160;the<br/>probe's&#160;Ethernet&#160;port&#160;is&#160;illuminated.<br/>
+○&#160;If&#160;it&#160;is&#160;illuminated,&#160;watch&#160;the&#160;light&#160;in&#160;the&#160;upper-left&#160;corner&#160;of<br/>
+the&#160;Ethernet&#160;port.&#160;On&#160;beige&#160;probes&#160;this&#160;light&#160;is&#160;orange,&#160;and&#160;on<br/>black&#160;probes&#160;it&#160;is&#160;green.&#160;If&#160;the&#160;light&#160;on&#160;the&#160;left&#160;is&#160;not&#160;flashing<br/>periodically,&#160;you&#160;may&#160;need&#160;to&#160;reconfigure&#160;your&#160;IP&#160;address,<br/>netmask,&#160;and/or&#160;gateway&#160;(see&#160;<a href="probe_starts.html#22">“Connecting&#160;to&#160;Your&#160;Probe&#160;Over<br/>Ethernet”&#160;on&#160;page&#160;18&#160;</a>for&#160;instructions).<br/>
+○&#160;If&#160;it&#160;is&#160;not&#160;illuminated,&#160;try&#160;a&#160;different&#160;cable&#160;or&#160;connect&#160;to&#160;a<br/>
+different&#160;port&#160;on&#160;your&#160;hub&#160;or&#160;switch.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>45</i><br/>
+<hr/>
+<a name=50></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+•&#160;If&#160;<b>ping&#160;</b>is&#160;successful&#160;but&#160;you&#160;cannot&#160;connect&#160;to&#160;the&#160;probe&#160;over&#160;Telnet,<br/>
+unplug&#160;the&#160;Ethernet&#160;cable&#160;from&#160;the&#160;probe&#160;and&#160;ping&#160;it&#160;again,&#160;with&#160;the<br/>cable&#160;unattached.<br/>
+○&#160;If&#160;<b>ping&#160;</b>is&#160;still&#160;successful,&#160;another&#160;device&#160;on&#160;your&#160;network<br/>
+probably&#160;has&#160;the&#160;same&#160;hostname&#160;or&#160;IP&#160;address&#160;as&#160;your&#160;probe.<br/>Obtain&#160;a&#160;unique&#160;address&#160;and&#160;hostname&#160;from&#160;your&#160;network<br/>administrator&#160;and&#160;reconfigure&#160;the&#160;probe&#160;(see&#160;<a href="probe_starts.html#22">“Connecting&#160;to<br/>Your&#160;Probe&#160;Over&#160;Ethernet”&#160;on&#160;page&#160;18&#160;</a>for&#160;instructions).<br/>
+○&#160;If&#160;<b>ping&#160;</b>is&#160;no&#160;longer&#160;successful,&#160;or&#160;if&#160;you&#160;have&#160;a&#160;unique&#160;IP<br/>
+address&#160;and&#160;still&#160;have&#160;problems,&#160;open&#160;a&#160;Telnet&#160;connection&#160;from<br/>a&#160;different&#160;host&#160;machine.&#160;If&#160;the&#160;problem&#160;still&#160;persists,&#160;contact<br/>Green&#160;Hills&#160;technical&#160;support.<br/>
+<b>Cannot&#160;Connect&#160;to&#160;Probe&#160;Over&#160;USB</b><br/>
+USB&#160;is&#160;only&#160;supported&#160;on&#160;Windows.<br/>
+Only&#160;one&#160;software&#160;program&#160;can&#160;connect&#160;to&#160;a&#160;probe&#160;over&#160;USB&#160;at&#160;a&#160;time.<br/>If&#160;you&#160;have&#160;connected&#160;to&#160;the&#160;probe&#160;over&#160;USB&#160;before,&#160;but&#160;now&#160;are&#160;unable<br/>to,&#160;check&#160;that&#160;there&#160;are&#160;no&#160;other&#160;active&#160;USB&#160;connections&#160;to&#160;the&#160;probe,<br/>such&#160;as&#160;<b>mpadmin</b>,&#160;<b>gpadmin</b>,&#160;<b>mpserv</b>,&#160;or&#160;the&#160;<b>Probe&#160;Administrator</b>.&#160;If<br/>there&#160;are,&#160;close&#160;them.<br/>
+The&#160;USB&#160;link&#160;LED&#160;should&#160;illuminate&#160;when&#160;the&#160;host&#160;machine&#160;and&#160;the<br/>probe&#160;have&#160;both&#160;been&#160;booted.&#160;If&#160;this&#160;does&#160;not&#160;happen:<br/>
+1.&#160;Check&#160;that&#160;you&#160;have&#160;properly&#160;installed&#160;the&#160;USB&#160;cable&#160;between&#160;your<br/>
+host&#160;machine&#160;and&#160;the&#160;probe.<br/>
+2.&#160;If&#160;the&#160;previous&#160;steps&#160;do&#160;not&#160;solve&#160;the&#160;problem,&#160;unplug&#160;the&#160;USB<br/>
+cable&#160;from&#160;the&#160;probe&#160;and&#160;plug&#160;it&#160;back&#160;in&#160;again.<br/>
+3.&#160;If&#160;the&#160;LED&#160;still&#160;does&#160;not&#160;illuminate,&#160;unplug&#160;the&#160;USB&#160;cable&#160;from&#160;the<br/>
+probe,&#160;re-install&#160;the&#160;drivers&#160;by&#160;running&#160;the&#160;installation&#160;application<br/><b>setup.exe</b>,&#160;and&#160;then&#160;reattach&#160;the&#160;USB&#160;cable.<br/>
+4.&#160;If&#160;the&#160;problem&#160;persists,&#160;contact&#160;Green&#160;Hills&#160;technical&#160;support.<br/>
+<i>46</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=51></a><i>Windows&#160;is&#160;Unable&#160;to&#160;Start&#160;Probe&#160;as&#160;a&#160;USB&#160;Device</i><br/>
+<b>Windows&#160;is&#160;Unable&#160;to&#160;Start&#160;Probe&#160;as&#160;a&#160;USB&#160;Device</b><br/>
+On&#160;some&#160;hosts,&#160;Windows&#160;may&#160;report&#160;that&#160;it&#160;is&#160;unable&#160;to&#160;start&#160;your&#160;device<br/>(with&#160;error&#160;10)&#160;the&#160;first&#160;time&#160;you&#160;plug&#160;in&#160;a&#160;probe&#160;to&#160;the&#160;USB&#160;port.&#160;If&#160;this<br/>happens,&#160;unplug&#160;the&#160;USB&#160;cable&#160;and&#160;plug&#160;it&#160;back&#160;in.&#160;Windows&#160;should<br/>now&#160;be&#160;able&#160;to&#160;start&#160;it&#160;as&#160;a&#160;USB&#160;device.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>47</i><br/>
+<hr/>
+<a name=52></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+<b>Configuring&#160;Your&#160;Probe&#160;for&#160;Your&#160;Target</b><br/>
+This&#160;section&#160;provides&#160;troubleshooting&#160;steps&#160;for&#160;configuring&#160;your&#160;probe<br/>to&#160;connect&#160;to&#160;your&#160;target,&#160;detect&#160;its&#160;processors,&#160;and&#160;read&#160;registers.&#160;To<br/>follow&#160;the&#160;instructions&#160;in&#160;this&#160;section,&#160;your&#160;probe&#160;must&#160;be&#160;connected&#160;to<br/>your&#160;target,&#160;and&#160;your&#160;host&#160;must&#160;be&#160;connected&#160;to&#160;the&#160;probe&#160;over&#160;the&#160;serial<br/>port.&#160;For&#160;instructions&#160;that&#160;explain&#160;how&#160;to&#160;connect&#160;to&#160;your&#160;probe,&#160;see<br/><a href="probe_starts.html#18">“Connecting&#160;Your&#160;Host&#160;to&#160;Your&#160;Probe&#160;Over&#160;the&#160;Serial&#160;Port”&#160;on&#160;page&#160;14</a>.<br/>
+If&#160;the&#160;troubleshooting&#160;steps&#160;in&#160;this&#160;section&#160;do&#160;not&#160;address&#160;your&#160;problem,<br/>your&#160;target&#160;may&#160;require&#160;extra&#160;configuration.&#160;For&#160;more&#160;information,&#160;see<br/>“Usage&#160;Notes”&#160;in&#160;Appendix&#160;D,&#160;“Troubleshooting&#160;and&#160;Usage&#160;Notes”&#160;in<br/>the&#160;<i>Green&#160;Hills&#160;Debug&#160;Probes&#160;User's&#160;Guide</i>.<br/>
+•&#160;<a href="probe_starts.html#52">“detect&#160;Issues&#160;Error&#160;60”&#160;on&#160;page&#160;48</a><br/>
+•&#160;<a href="probe_starts.html#53">“detect&#160;Does&#160;Not&#160;Display&#160;a&#160;Processor&#160;Table”&#160;on&#160;page&#160;49</a><br/>
+•&#160;<a href="probe_starts.html#53">“detect&#160;Issues&#160;Error&#160;71”&#160;on&#160;page&#160;49</a><br/>
+•&#160;<a href="probe_starts.html#53">“detect&#160;Sets&#160;the&#160;Target&#160;Processors&#160;and&#160;then&#160;Issues&#160;an&#160;Error”</a><br/>
+<a href="probe_starts.html#53">on&#160;page&#160;49</a><br/>
+•&#160;<a href="probe_starts.html#54">“detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;to&#160;other”&#160;on&#160;page&#160;50</a><br/>
+•&#160;<a href="probe_starts.html#54">“detect&#160;Lists&#160;Devices&#160;Connected&#160;to&#160;the&#160;Probe,&#160;but&#160;Sets&#160;the&#160;Target</a><br/>
+<a href="probe_starts.html#54">Type&#160;to&#160;other”&#160;on&#160;page&#160;50</a><br/>
+•&#160;<a href="probe_starts.html#55">“detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;Incorrectly”&#160;on&#160;page&#160;51</a><br/>
+•&#160;<a href="probe_starts.html#55">“detect&#160;Passes&#160;but&#160;vb&#160;Fails”&#160;on&#160;page&#160;51</a><br/>
+•&#160;<a href="probe_starts.html#56">“tr&#160;Does&#160;Not&#160;Reset&#160;the&#160;Target”&#160;on&#160;page&#160;52</a><br/>
+•&#160;<a href="probe_starts.html#56">“vr&#160;Fails&#160;or&#160;Issues&#160;Error&#160;18”&#160;on&#160;page&#160;52</a><br/>
+<b>detect&#160;Issues&#160;Error&#160;60</b><br/>
+If&#160;the&#160;<b>detect&#160;</b>command&#160;returns&#160;the&#160;following:<br/>
+ERROR&#160;60:&#160;Target&#160;power&#160;off<br/>
+1.&#160;Check&#160;to&#160;make&#160;sure&#160;that&#160;your&#160;target's&#160;power&#160;is&#160;turned&#160;on&#160;and&#160;your<br/>
+connections&#160;are&#160;tightly&#160;seated.<br/>
+<i>48</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=53></a><i>detect&#160;Does&#160;Not&#160;Display&#160;a&#160;Processor&#160;Table</i><br/>
+2.&#160;If&#160;your&#160;target's&#160;power&#160;is&#160;on,&#160;the&#160;probe's&#160;logic&#160;high&#160;level&#160;may&#160;be<br/>
+configured&#160;too&#160;low&#160;or&#160;too&#160;high&#160;for&#160;your&#160;target.&#160;See&#160;<a href="probe_starts.html#60">“Configuring<br/>the&#160;Probe's&#160;Logic&#160;High&#160;Level”&#160;on&#160;page&#160;56</a>.<br/>
+3.&#160;After&#160;configuring&#160;the&#160;logic&#160;high&#160;level,&#160;run&#160;<b>detect&#160;</b>again.<br/>
+<b>detect&#160;Does&#160;Not&#160;Display&#160;a&#160;Processor&#160;Table</b><br/>
+If&#160;the&#160;<b>detect&#160;</b>command&#160;does&#160;not&#160;display&#160;a&#160;processor&#160;table,&#160;but&#160;returns<br/>output&#160;similar&#160;to&#160;the&#160;following:<br/>
+ERROR&#160;1&#160;(general&#160;error):&#160;Unable&#160;to&#160;detect&#160;target.&#160;(jtag_ir_length=0;&#160;TDO<br/>held&#160;low?)&#160;Please&#160;use&#160;the&#160;&#34;set&#160;target&#34;&#160;command&#160;to&#160;configure&#160;manually.<br/>ERROR&#160;1&#160;(general&#160;error):&#160;Timeout&#160;while&#160;trying&#160;to&#160;determine&#160;number<br/>of&#160;cores.<br/>
+The&#160;logic&#160;high&#160;level&#160;of&#160;the&#160;probe&#160;may&#160;be&#160;set&#160;incorrectly&#160;for&#160;your&#160;target.<br/>See&#160;<a href="probe_starts.html#60">“Configuring&#160;the&#160;Probe's&#160;Logic&#160;High&#160;Level”&#160;on&#160;page&#160;56</a>.<br/>
+If&#160;the&#160;<b>detect&#160;</b>command&#160;continues&#160;to&#160;fail,&#160;there&#160;may&#160;be&#160;a&#160;low-level&#160;JTAG<br/>connection&#160;problem.&#160;See&#160;<a href="probe_starts.html#58">“Diagnosing&#160;Low-Level&#160;JTAG&#160;Connection<br/>Problems”&#160;on&#160;page&#160;54</a>.<br/>
+<b>detect&#160;Issues&#160;Error&#160;71</b><br/>
+If&#160;the&#160;<b>detect&#160;</b>command&#160;returns&#160;the&#160;following:<br/>
+ERROR&#160;71:&#160;probe&#160;output&#160;pins&#160;are&#160;disabled<br/>
+look&#160;at&#160;the&#160;LEDs&#160;on&#160;the&#160;front&#160;of&#160;the&#160;probe&#160;on&#160;the&#160;right&#160;side.&#160;If&#160;they&#160;are<br/>blinking:<br/>
+1.&#160;In&#160;a&#160;serial&#160;terminal,&#160;type&#160;jp&#160;on&#160;or&#160;press&#160;the&#160;<b>User&#160;</b>button&#160;on&#160;the<br/>
+front&#160;of&#160;your&#160;probe.<br/>
+2.&#160;If&#160;the&#160;LEDs&#160;stop&#160;blinking,&#160;run&#160;<b>detect&#160;</b>again.<br/>
+<b>detect&#160;Sets&#160;the&#160;Target&#160;Processors&#160;and&#160;then&#160;Issues&#160;an&#160;Error</b><br/>
+If&#160;the&#160;<b>detect&#160;</b>command&#160;is&#160;able&#160;to&#160;set&#160;your&#160;target&#160;string&#160;but&#160;then&#160;returns<br/>an&#160;error,&#160;it&#160;is&#160;likely&#160;that&#160;the&#160;probe&#160;cannot&#160;reset&#160;the&#160;target.&#160;For&#160;more<br/>information,&#160;see&#160;<a href="probe_starts.html#56">“tr&#160;Does&#160;Not&#160;Reset&#160;the&#160;Target”&#160;on&#160;page&#160;52.</a><br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>49</i><br/>
+<hr/>
+<a name=54></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+<b>detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;to&#160;other</b><br/>
+If&#160;the&#160;<b>detect&#160;</b>command&#160;sets&#160;your&#160;target&#160;string&#160;to&#160;other,&#160;enter&#160;the<br/>following&#160;command&#160;in&#160;the&#160;serial&#160;terminal:<br/>
+set&#160;target&#160;?<br/>
+Look&#160;for&#160;your&#160;processor&#160;in&#160;the&#160;resulting&#160;list.&#160;If&#160;your&#160;processor&#160;is&#160;listed:<br/>
+1.&#160;Configure&#160;the&#160;probe's&#160;target&#160;setting&#160;manually&#160;with&#160;the&#160;following<br/>
+command:<br/>
+set&#160;target&#160;<i>target_string</i><br/>
+where&#160;<i>target_string&#160;</i>is&#160;the&#160;string&#160;listed&#160;for&#160;your&#160;processor.<br/>
+2.&#160;Configure&#160;the&#160;probe's&#160;endianness&#160;setting:<br/>
+set&#160;endianness&#160;<i>mode</i><br/>
+where&#160;<i>mode&#160;</i>is&#160;either&#160;big&#160;or&#160;little.<br/>
+If&#160;your&#160;processor&#160;is&#160;not&#160;listed,&#160;it&#160;may&#160;not&#160;be&#160;supported.&#160;Contact&#160;your<br/>Green&#160;Hills&#160;sales&#160;representative&#160;for&#160;more&#160;information.<br/>
+<b>detect&#160;Lists&#160;Devices&#160;Connected&#160;to&#160;the&#160;Probe,&#160;but&#160;Sets&#160;the&#160;Target&#160;Type&#160;to<br/>other</b><br/>
+If&#160;the&#160;<b>detect&#160;</b>command&#160;lists&#160;devices&#160;connected&#160;to&#160;the&#160;Probe,&#160;but&#160;sets&#160;the<br/>target&#160;type&#160;to&#160;other,&#160;it&#160;may&#160;be&#160;accompanied&#160;by&#160;one&#160;of&#160;the&#160;following<br/>messages:<br/>
+*&#160;-&#160;Indicates&#160;a&#160;core&#160;that&#160;requires&#160;a&#160;Probe&#160;feature&#160;key&#160;to&#160;debug.<br/>
+If&#160;you&#160;receive&#160;this&#160;message,&#160;it&#160;indicates&#160;that&#160;you&#160;are&#160;connected&#160;to&#160;a&#160;target<br/>that&#160;is&#160;not&#160;supported&#160;by&#160;the&#160;default&#160;Probe&#160;configuration.&#160;Access&#160;to&#160;the<br/>debug&#160;features&#160;of&#160;this&#160;core&#160;may&#160;be&#160;enabled&#160;with&#160;a&#160;feature&#160;key&#160;(generally<br/>available&#160;through&#160;an&#160;early&#160;access&#160;agreement&#160;or&#160;a&#160;specific&#160;license<br/>agreement).&#160;If&#160;you&#160;have&#160;received&#160;a&#160;feature&#160;key,&#160;install&#160;the&#160;key,&#160;reboot<br/>your&#160;Probe,&#160;and&#160;try&#160;again.&#160;If&#160;you&#160;are&#160;entitled&#160;to&#160;a&#160;key&#160;but&#160;do&#160;not&#160;have<br/>one,&#160;contact&#160;Green&#160;Hills&#160;support.<br/>
++&#160;-&#160;Indicates&#160;a&#160;core&#160;whose&#160;detected&#160;jtag&#160;idcode&#160;is&#160;known&#160;to&#160;be&#160;shared<br/>by&#160;many&#160;cores,&#160;and&#160;detect&#160;failed&#160;to&#160;distinguish&#160;among&#160;them.<br/>
+<i>50</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=55></a><i>detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;Incorrectly</i><br/>
+If&#160;you&#160;receive&#160;this&#160;message,&#160;it&#160;indicates&#160;that&#160;you&#160;are&#160;connected&#160;to&#160;a&#160;target<br/>that&#160;shares&#160;an&#160;idcode&#160;with&#160;several&#160;other&#160;devices,&#160;and&#160;the&#160;Probe&#160;could<br/>not&#160;determine&#160;which&#160;one&#160;you&#160;have.&#160;In&#160;this&#160;case,&#160;there&#160;are&#160;two&#160;possibilities:<br/>
+•&#160;Your&#160;target&#160;is&#160;supported,&#160;but&#160;you&#160;need&#160;to&#160;specify&#160;it&#160;manually&#160;using<br/>
+the&#160;<b>set&#160;target&#160;</b>command.<br/>
+•&#160;Your&#160;target&#160;is&#160;not&#160;supported,&#160;in&#160;which&#160;case&#160;you&#160;can&#160;contact&#160;your<br/>
+sales&#160;team&#160;to&#160;learn&#160;when&#160;the&#160;device&#160;will&#160;be&#160;supported.<br/>
+<b>detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;Incorrectly</b><br/>
+Because&#160;multiple&#160;processors&#160;within&#160;the&#160;same&#160;family&#160;sometimes&#160;have&#160;the<br/>same&#160;PVR&#160;or&#160;idcode,&#160;<b>detect&#160;</b>might&#160;not&#160;set&#160;the&#160;target&#160;to&#160;the&#160;correct<br/>processor.&#160;If&#160;this&#160;happens,&#160;set&#160;your&#160;target&#160;processor&#160;manually&#160;using&#160;the<br/>instructions&#160;in&#160;<a href="probe_starts.html#54">“detect&#160;Sets&#160;the&#160;Target&#160;Processor&#160;to&#160;other”&#160;on&#160;page&#160;50.</a><br/>
+<b>detect&#160;Passes&#160;but&#160;vb&#160;Fails</b><br/>
+PowerPC&#160;5xx,&#160;PowerPC&#160;8xx,&#160;and&#160;ColdFire&#160;targets&#160;do&#160;not&#160;support&#160;the<br/><b>vb&#160;</b>command.&#160;Do&#160;not&#160;use&#160;this&#160;command&#160;if&#160;you&#160;have&#160;one&#160;of&#160;these&#160;targets.<br/>If&#160;your&#160;target&#160;does&#160;support&#160;the&#160;<b>vb&#160;</b>command,&#160;but&#160;it&#160;fails,&#160;the&#160;error&#160;message<br/>should&#160;look&#160;similar&#160;to:<br/>
+ERROR&#160;13&#160;(test&#160;failed):&#160;Test&#160;failed:&#160;in=<i>input</i>,&#160;out=<i>output</i>,<br/>i=<i>iter</i><br/>
+If&#160;you&#160;receive&#160;this&#160;error:<br/>
+1.&#160;The&#160;JTAG&#160;clock&#160;may&#160;be&#160;set&#160;too&#160;fast.&#160;The&#160;probe&#160;<b>detect&#160;</b>command<br/>
+uses&#160;a&#160;clock&#160;setting&#160;of&#160;10kHz,&#160;while&#160;the&#160;default&#160;clock&#160;setting&#160;is<br/>10MHz.&#160;Set&#160;the&#160;clock&#160;to&#160;1MHz&#160;by&#160;typing&#160;the&#160;following&#160;command<br/>in&#160;the&#160;serial&#160;terminal:<br/>
+set&#160;clock&#160;1MHz<br/>
+If&#160;<b>vb&#160;</b>works&#160;after&#160;you&#160;decrease&#160;the&#160;clock&#160;speed,&#160;you&#160;can&#160;try<br/>increasing&#160;it&#160;slowly&#160;to&#160;find&#160;higher&#160;speeds&#160;that&#160;still&#160;work&#160;reliably.&#160;If<br/>1MHz&#160;does&#160;not&#160;work,&#160;try&#160;clock&#160;settings&#160;that&#160;are&#160;between&#160;10kHz&#160;and<br/>1MHz.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>51</i><br/>
+<hr/>
+<a name=56></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+2.&#160;You&#160;may&#160;need&#160;to&#160;set&#160;the&#160;probe's&#160;logic&#160;high&#160;level.&#160;See&#160;<a href="probe_starts.html#60">“Configuring</a><br/>
+<a href="probe_starts.html#60">the&#160;Probe's&#160;Logic&#160;High&#160;Level”&#160;on&#160;page&#160;56</a>.<br/>
+3.&#160;If&#160;<b>vb&#160;</b>continues&#160;to&#160;fail&#160;after&#160;you&#160;have&#160;configured&#160;the&#160;probe's&#160;clock<br/>
+speed&#160;and&#160;high&#160;logic&#160;level,&#160;your&#160;target&#160;processor&#160;may&#160;have&#160;been&#160;set<br/>incorrectly.&#160;For&#160;information&#160;about&#160;solving&#160;this&#160;problem,&#160;see&#160;<a href="probe_starts.html#55">“detect<br/>Sets&#160;the&#160;Target&#160;Processor&#160;Incorrectly”&#160;on&#160;page&#160;51.</a><br/>
+<b>tr&#160;Does&#160;Not&#160;Reset&#160;the&#160;Target</b><br/>
+If&#160;your&#160;target&#160;does&#160;not&#160;reset&#160;when&#160;you&#160;enter&#160;the&#160;<b>tr&#160;</b>command,&#160;the&#160;JTAG<br/>clock&#160;speed&#160;might&#160;not&#160;be&#160;set&#160;correctly.&#160;To&#160;adjust&#160;the&#160;clock&#160;speed:<br/>
+1.&#160;In&#160;a&#160;serial&#160;terminal,&#160;type&#160;set&#160;clock&#160;1MHz&#160;to&#160;set&#160;the&#160;clock&#160;speed<br/>
+to&#160;1MHz.<br/>
+2.&#160;Type&#160;tr&#160;to&#160;reset&#160;your&#160;target.<br/>
+If&#160;<b>tr&#160;</b>still&#160;does&#160;not&#160;reset&#160;your&#160;target:<br/>
+•&#160;The&#160;nHRESET&#160;and&#160;nTRST&#160;lines&#160;may&#160;be&#160;tied&#160;together.&#160;For&#160;more<br/>
+information,&#160;see&#160;“Diagnosing&#160;JTAG&#160;TAP&#160;and&#160;CPU&#160;Reset&#160;Line<br/>Problems”&#160;in&#160;Appendix&#160;D,&#160;“Troubleshooting&#160;and&#160;Usage&#160;Notes”&#160;in<br/>the&#160;<i>Green&#160;Hills&#160;Debug&#160;Probes&#160;User's&#160;Guide</i>.<br/>
+•&#160;The&#160;JTAG&#160;reset&#160;pin&#160;may&#160;be&#160;connected&#160;to&#160;an&#160;open-drain&#160;connection,<br/>
+meaning&#160;that&#160;your&#160;target&#160;must&#160;have&#160;a&#160;pull-up&#160;resistor&#160;in&#160;order&#160;to<br/>drive&#160;it&#160;HIGH.&#160;For&#160;more&#160;information,&#160;see&#160;<a href="probe_starts.html#58">“Diagnosing&#160;Low-Level<br/>JTAG&#160;Connection&#160;Problems”&#160;on&#160;page&#160;54.&#160;</a>If&#160;your&#160;target&#160;does&#160;have<br/>a&#160;pull-up&#160;resistor&#160;and&#160;your&#160;probe&#160;has&#160;a&#160;serial&#160;number&#160;less&#160;than&#160;2500,<br/>try&#160;increasing&#160;the&#160;strength&#160;of&#160;the&#160;pull-up&#160;on&#160;reset.<br/>
+<b>vr&#160;Fails&#160;or&#160;Issues&#160;Error&#160;18</b><br/>
+If&#160;<b>vb&#160;</b>passes,&#160;but&#160;<b>vr&#160;</b>fails&#160;or&#160;returns&#160;an&#160;error&#160;such&#160;as:<br/>
+ERROR&#160;18:&#160;the&#160;target&#160;is&#160;not&#160;stopped<br/>
+the&#160;JTAG&#160;clock&#160;speed&#160;may&#160;be&#160;set&#160;too&#160;high.&#160;To&#160;fix&#160;this&#160;problem:<br/>
+<i>52</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=57></a><i>vr&#160;Fails&#160;or&#160;Issues&#160;Error&#160;18</i><br/>
+1.&#160;In&#160;a&#160;serial&#160;terminal,&#160;type&#160;the&#160;following&#160;command&#160;to&#160;lower&#160;the&#160;clock<br/>
+speed:<br/>
+set&#160;clock&#160;1MHz<br/>
+2.&#160;Type&#160;vb&#160;to&#160;confirm&#160;that&#160;you&#160;can&#160;communicate&#160;with&#160;the&#160;target.&#160;If<br/>
+you&#160;are&#160;using&#160;a&#160;BDM&#160;target,&#160;type&#160;tr&#160;instead&#160;of&#160;vb.<br/>
+3.&#160;Type&#160;vr&#160;100&#160;to&#160;perform&#160;the&#160;register&#160;test&#160;again.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>53</i><br/>
+<hr/>
+<a name=58></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+<b>General&#160;Configuration&#160;Instructions</b><br/>
+While&#160;the&#160;previous&#160;sections&#160;explained&#160;how&#160;to&#160;fix&#160;specific&#160;problems&#160;that<br/>you&#160;may&#160;encounter&#160;while&#160;configuring&#160;your&#160;probe,&#160;this&#160;section&#160;explains<br/>how&#160;to&#160;troubleshoot&#160;probe&#160;problems&#160;that&#160;are&#160;more&#160;general&#160;in&#160;nature.<br/>
+•&#160;<a href="probe_starts.html#58">“Diagnosing&#160;Low-Level&#160;JTAG&#160;Connection&#160;Problems”&#160;on&#160;page&#160;54</a><br/>
+•&#160;<a href="probe_starts.html#60">“Configuring&#160;the&#160;Probe's&#160;Logic&#160;High&#160;Level”&#160;on&#160;page&#160;56</a><br/>
+•&#160;<a href="probe_starts.html#61">“Recovering&#160;a&#160;Probe&#160;That&#160;Does&#160;Not&#160;Boot&#160;Properly”&#160;on&#160;page&#160;57</a><br/>
+•&#160;<a href="probe_starts.html#61">“Uninstalling&#160;Probe&#160;Software”&#160;on&#160;page&#160;57</a><br/>
+<b>Diagnosing&#160;Low-Level&#160;JTAG&#160;Connection&#160;Problems</b><br/>
+Use&#160;the&#160;<b>vta&#160;</b>command&#160;to&#160;troubleshoot&#160;low-level&#160;JTAG&#160;connection<br/>problems.&#160;<b>vta&#160;</b>verifies&#160;that&#160;the&#160;probe&#160;can&#160;individually&#160;control&#160;each&#160;pin<br/>on&#160;the&#160;target&#160;by&#160;individually&#160;setting&#160;each&#160;pin&#160;HIGH&#160;and&#160;LOW,&#160;checking<br/>for&#160;shorts,&#160;opens,&#160;and&#160;stuck-at&#160;conditions.&#160;For&#160;example,&#160;<b>vta&#160;</b>can&#160;detect<br/>if&#160;the&#160;TCK&#160;pin&#160;is&#160;shorted&#160;to&#160;GND,&#160;or&#160;if&#160;the&#160;TMS&#160;pin&#160;is&#160;not&#160;making&#160;contact<br/>with&#160;the&#160;probe.<br/>
+To&#160;run&#160;this&#160;test:<br/>
+1.&#160;If&#160;you&#160;are&#160;using&#160;legacy&#160;cabling,&#160;unplug&#160;the&#160;ribbon&#160;cable&#160;or&#160;pod&#160;from<br/>
+your&#160;target&#160;in&#160;case&#160;there&#160;is&#160;a&#160;shorted&#160;pin&#160;or&#160;other&#160;problem&#160;that&#160;could<br/>cause&#160;damage.&#160;If&#160;you&#160;are&#160;using&#160;TraceEverywhere&#160;(TE),&#160;unplug&#160;the<br/>target&#160;adapter&#160;from&#160;your&#160;target.<br/>
+2.&#160;In&#160;the&#160;serial&#160;terminal,&#160;type&#160;vta.<br/>
+The&#160;results&#160;of&#160;a&#160;successful&#160;test&#160;look&#160;similar&#160;to&#160;the&#160;following&#160;output&#160;(only<br/>a&#160;few&#160;lines&#160;are&#160;shown&#160;here):<br/>
+&gt;vta<br/>Testing&#160;arm-20&#160;adapter&#160;pins:<br/>
+VTREF&#160;passed.&#160;[100%]<br/>
+VSUPPLY&#160;passed.&#160;[100%]<br/>
+NTRST&#160;passed.&#160;[100%]<br/>
+GND&#160;passed.&#160;[100%]<br/>TDI&#160;passed.&#160;[100%]<br/>GND&#160;passed.&#160;[100%]<br/>TMS&#160;passed.&#160;[100%]<br/>
+<i>54</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=59></a><i>Diagnosing&#160;Low-Level&#160;JTAG&#160;Connection&#160;Problems</i><br/>
+If&#160;a&#160;pin&#160;has&#160;a&#160;connection&#160;problem,&#160;the&#160;probe&#160;issues&#160;an&#160;error.&#160;For&#160;example,<br/>if&#160;the&#160;probe&#160;could&#160;not&#160;bring&#160;TDO&#160;low,&#160;it&#160;would&#160;print:<br/>
+TDO&#160;was&#160;not&#160;initially&#160;low.<br/>
+If&#160;you&#160;are&#160;using&#160;legacy&#160;cabling,&#160;check&#160;that&#160;target&#160;adapter&#160;type&#160;shown&#160;in<br/>the&#160;results&#160;correctly&#160;matches&#160;the&#160;adapter&#160;on&#160;the&#160;probe's&#160;front&#160;panel.&#160;If<br/>this&#160;test&#160;fails&#160;and&#160;the&#160;adapter&#160;type&#160;is&#160;correct,&#160;there&#160;may&#160;be&#160;a&#160;problem&#160;with<br/>the&#160;adapter&#160;on&#160;the&#160;probe.&#160;In&#160;this&#160;situation:<br/>
+•&#160;If&#160;you&#160;are&#160;using&#160;legacy&#160;cabling,&#160;repeat&#160;the&#160;test&#160;with&#160;the&#160;ribbon&#160;cable<br/>
+unplugged&#160;from&#160;the&#160;adapter.<br/>
+•&#160;Verify&#160;that&#160;the&#160;adapter&#160;is&#160;plugged&#160;in&#160;securely,&#160;and&#160;the&#160;screws&#160;are<br/>
+snug.<br/>
+•&#160;Remove&#160;the&#160;adapter,&#160;inspect&#160;it&#160;for&#160;damage&#160;or&#160;contaminants,&#160;re-install<br/>
+it,&#160;and&#160;repeat&#160;the&#160;test.<br/>
+If&#160;the&#160;test&#160;still&#160;fails,&#160;the&#160;probe&#160;or&#160;target&#160;adapter&#160;may&#160;be&#160;damaged.&#160;In&#160;this<br/>situation:<br/>
+•&#160;Try&#160;a&#160;different&#160;target&#160;adapter<br/>
+•&#160;If&#160;you&#160;are&#160;using&#160;legacy&#160;cabling,&#160;try&#160;a&#160;different&#160;cable.&#160;If&#160;using&#160;an<br/>
+active&#160;COP&#160;pod,&#160;try&#160;a&#160;passive&#160;COP&#160;cable&#160;or&#160;a&#160;shielded&#160;COP&#160;cable.<br/>
+•&#160;Contact&#160;Green&#160;Hills&#160;technical&#160;support.<br/>
+<b>Note</b><br/>
+Some&#160;JTAG&#160;pins&#160;controlled&#160;by&#160;the&#160;probe&#160;(for&#160;example,&#160;reset<br/>lines)&#160;are&#160;connected&#160;to&#160;open-drain&#160;connections&#160;with&#160;more&#160;than<br/>one&#160;driver,&#160;meaning&#160;that&#160;the&#160;probe&#160;cannot&#160;drive&#160;them&#160;HIGH.<br/>When&#160;you&#160;run&#160;<b>vta&#160;</b>with&#160;your&#160;target&#160;unplugged,&#160;it&#160;issues&#160;the<br/>following&#160;message&#160;for&#160;each&#160;of&#160;these&#160;pins,&#160;because&#160;there&#160;is&#160;no<br/>pull-up&#160;resistor&#160;on&#160;the&#160;target&#160;adapter&#160;to&#160;bring&#160;the&#160;signal&#160;HIGH:<br/>
+<i>PIN&#160;</i>could&#160;not&#160;be&#160;brought&#160;high.<br/>
+If&#160;<i>PIN&#160;</i>is&#160;connected&#160;to&#160;an&#160;open-drain&#160;connection,&#160;this&#160;does&#160;not<br/>necessarily&#160;mean&#160;that&#160;there&#160;is&#160;a&#160;problem&#160;with&#160;the&#160;adapter,&#160;but<br/>it&#160;indicates&#160;that&#160;there&#160;should&#160;be&#160;a&#160;pull-up&#160;resistor&#160;on&#160;the&#160;target<br/>board&#160;for&#160;this&#160;pin.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>55</i><br/>
+<hr/>
+<a name=60></a><i>Appendix&#160;A.&#160;Troubleshooting</i><br/>
+<b>Configuring&#160;the&#160;Probe's&#160;Logic&#160;High&#160;Level</b><br/>
+To&#160;configure&#160;the&#160;logic&#160;high&#160;level&#160;for&#160;your&#160;probe:<br/>
+•&#160;For&#160;TraceEverywhere&#160;and&#160;HSST&#160;connections,&#160;type&#160;dlh&#160;in&#160;a&#160;serial<br/>
+terminal&#160;to&#160;detect&#160;the&#160;correct&#160;logic&#160;high&#160;level&#160;for&#160;your&#160;target.<br/>
+To&#160;set&#160;the&#160;logic&#160;high&#160;level&#160;manually:<br/>
+1.&#160;Consult&#160;your&#160;target's&#160;reference&#160;manual&#160;to&#160;confirm&#160;its&#160;logic&#160;high<br/>
+level.<br/>
+2.&#160;Type&#160;the&#160;following&#160;command&#160;in&#160;the&#160;serial&#160;terminal:<br/>
+set&#160;logic_high&#160;<i>level</i><br/>
+where&#160;<i>level&#160;</i>is&#160;the&#160;logic&#160;high&#160;level&#160;for&#160;your&#160;target.&#160;To&#160;confirm&#160;that<br/>the&#160;probe&#160;has&#160;updated&#160;this&#160;setting,&#160;type:<br/>
+set&#160;logic_high<br/>
+If&#160;your&#160;adapter&#160;does&#160;not&#160;support&#160;logic&#160;high&#160;level&#160;detection,&#160;you&#160;may&#160;see<br/>the&#160;following&#160;error&#160;message:<br/>
+This&#160;adapter&#160;does&#160;not&#160;support&#160;logic_high&#160;detection.<br/>
+If&#160;this&#160;is&#160;the&#160;case:<br/>
+1.&#160;Set&#160;the&#160;logic&#160;high&#160;level&#160;manually.<br/>
+2.&#160;Type&#160;the&#160;following&#160;command&#160;to&#160;disable&#160;power&#160;detection:<br/>
+set&#160;power_detect&#160;off<br/>
+3.&#160;After&#160;disabling&#160;power&#160;detection,&#160;before&#160;turning&#160;your&#160;target's&#160;power<br/>
+on&#160;or&#160;off,&#160;type&#160;the&#160;following&#160;command&#160;to&#160;tri-state&#160;the&#160;probe:<br/>
+jp&#160;off<br/>
+After&#160;your&#160;target&#160;is&#160;on,&#160;type:<br/>
+jp&#160;on<br/>
+Perform&#160;this&#160;step&#160;each&#160;time&#160;you&#160;turn&#160;your&#160;target&#160;on.<br/>
+<i>56</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name=61></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/TL120A_Cplr/tools/manuals/probe_start-61_1.png"/><br/>
+<i>Recovering&#160;a&#160;Probe&#160;That&#160;Does&#160;Not&#160;Boot&#160;Properly</i><br/>
+<b>Recovering&#160;a&#160;Probe&#160;That&#160;Does&#160;Not&#160;Boot&#160;Properly</b><br/>
+If&#160;your&#160;probe&#160;is&#160;not&#160;booting&#160;properly,&#160;you&#160;can&#160;recover&#160;it&#160;using&#160;the&#160;serial<br/>port&#160;with&#160;the&#160;instructions&#160;below:<br/>
+1.&#160;Turn&#160;your&#160;probe&#160;off.<br/>
+2.&#160;On&#160;your&#160;host&#160;machine,&#160;run&#160;MULTI.&#160;In&#160;the&#160;MULTI&#160;Launcher,&#160;select<br/>
+<b>Utilities&#160;</b>→&#160;<b>Probe&#160;Administrator</b>.<br/>
+3.&#160;In&#160;the&#160;<b>Probe&#160;Administrator&#160;</b>window,&#160;select&#160;<b>Probe&#160;</b>→&#160;<b>Recover</b><br/>
+<b>Probe</b>.&#160;A&#160;dialog&#160;box&#160;opens&#160;to&#160;confirm&#160;that&#160;you&#160;want&#160;to&#160;update&#160;your<br/>firmware.&#160;Click&#160;<b>OK</b>.<br/>
+4.&#160;The&#160;<b>Update&#160;Probe&#160;Firmware&#160;</b>window&#160;opens.&#160;Enter&#160;the&#160;full&#160;path<br/>
+to&#160;a&#160;firmware&#160;file&#160;in&#160;the&#160;<b>Firmware&#160;File&#160;</b>box,&#160;or&#160;click&#160;the<br/>
+button<br/>
+and&#160;select&#160;it&#160;in&#160;the&#160;file&#160;chooser.&#160;Click&#160;the&#160;<b>Flash&#160;Probe&#160;</b>button.<br/>
+5.&#160;The&#160;<b>Serial&#160;Boot&#160;</b>dialog&#160;box&#160;opens.&#160;If&#160;the&#160;correct&#160;serial&#160;port&#160;is&#160;not<br/>
+already&#160;displayed,&#160;type&#160;the&#160;name&#160;of&#160;the&#160;serial&#160;port&#160;to&#160;which&#160;your<br/>probe&#160;is&#160;connected.&#160;Click&#160;<b>OK</b>.<br/>
+6.&#160;A&#160;dialog&#160;box&#160;opens.&#160;Turn&#160;your&#160;probe&#160;on&#160;while&#160;holding&#160;down&#160;the<br/>
+<b>User&#160;</b>button&#160;(as&#160;instructed&#160;by&#160;the&#160;dialog).&#160;After&#160;turning&#160;on&#160;your<br/>probe,&#160;click&#160;the&#160;<b>OK&#160;</b>button.<br/>
+7.&#160;The&#160;<b>Reloading&#160;Probe&#160;Firmware&#160;</b>dialog&#160;box&#160;opens&#160;and&#160;displays<br/>
+the&#160;status&#160;of&#160;the&#160;update.&#160;When&#160;it&#160;is&#160;finished,&#160;click&#160;<b>Done</b>.<br/>
+8.&#160;Power&#160;cycle&#160;your&#160;probe.&#160;The&#160;new&#160;firmware&#160;is&#160;now&#160;loaded&#160;and<br/>
+running.<br/>
+<b>Note</b><br/>
+For&#160;information&#160;about&#160;updating&#160;probe&#160;firmware,&#160;see&#160;“Updating<br/>Probe&#160;Firmware”&#160;in&#160;Chapter&#160;1,&#160;“Administering&#160;Your&#160;Probe”&#160;in<br/><i>Green&#160;Hills&#160;Debug&#160;Probes&#160;User's&#160;Guide</i>.<br/>
+<b>Uninstalling&#160;Probe&#160;Software</b><br/>
+To&#160;uninstall&#160;probe&#160;software&#160;on&#160;Linux/Solaris,&#160;follow&#160;the&#160;instructions&#160;for<br/>using&#160;<b>gpatch&#160;</b>located&#160;at&#160;<i><b>install_dir</b></i><b>/restore/readme.txt</b>.<br/>
+To&#160;uninstall&#160;probe&#160;software&#160;on&#160;Windows,&#160;use&#160;the&#160;<b>Add/Remove<br/>Programs&#160;</b>feature&#160;in&#160;your&#160;version&#160;of&#160;Windows.<br/>
+<i>Green&#160;Hills&#160;Software</i><br/>
+<i>57</i><br/>
+<hr/>
+<a name=62></a><hr/>
+<a name=63></a><b>Index</b><br/>
+serial&#160;terminal,&#160;<a href="probe_starts.html#18">14<br/></a>Telnet,&#160;<a href="probe_starts.html#26">22<br/></a>troubleshooting,&#160;<a href="probe_starts.html#48">44<br/></a>USB,&#160;<a href="probe_starts.html#28">24</a><br/>
+probe&#160;to&#160;MULTI,&#160;<a href="probe_starts.html#29">25<br/></a>testing<br/>
+Ethernet,&#160;<a href="probe_starts.html#26">22</a><br/>
+Connection&#160;Chooser,&#160;<a href="probe_starts.html#39">35<br/></a>Connection&#160;Editor,&#160;<a href="probe_starts.html#39">35</a><br/>
+<b>A</b><br/>
+core,&#160;selecting,&#160;<a href="probe_starts.html#32">28</a><br/>
+Add&#160;Item&#160;to&#160;Project&#160;dialog&#160;box,&#160;<a href="probe_starts.html#36">32</a><br/>
+<b>D</b><br/>
+<b>B</b><br/>
+debugging,&#160;<a href="probe_starts.html#41">37</a><br/>
+baud&#160;rate<br/>
+detect&#160;command,&#160;<a href="probe_starts.html#30">26,&#160;</a><a href="probe_starts.html#52">48,&#160;</a><a href="probe_starts.html#53">49,&#160;</a><a href="probe_starts.html#54">50,&#160;</a><a href="probe_starts.html#55">51</a><br/>
+configuring,&#160;<a href="probe_starts.html#47">43</a><br/>
+DHCP,&#160;configuring,&#160;<a href="probe_starts.html#23">19</a><br/>
+default,&#160;<a href="probe_starts.html#18">14</a><br/>
+diagnostics,&#160;running,&#160;<a href="probe_starts.html#32">28</a><br/>
+build,&#160;performing,&#160;<a href="probe_starts.html#38">34</a><br/>
+dlh&#160;command,&#160;<a href="probe_starts.html#60">56<br/></a>downloading&#160;programs,&#160;<a href="probe_starts.html#41">37</a><br/>
+<b>C</b><br/>
+drivers,&#160;installing&#160;USB,&#160;<a href="probe_starts.html#9">5,&#160;</a><a href="probe_starts.html#28">24</a><br/>
+commands<br/>
+<b>E</b><br/>
+detect,&#160;<a href="probe_starts.html#30">26,&#160;</a><a href="probe_starts.html#52">48,&#160;</a><a href="probe_starts.html#53">49,&#160;</a><a href="probe_starts.html#54">50,&#160;</a><a href="probe_starts.html#55">51<br/></a>dlh,&#160;<a href="probe_starts.html#60">56</a><br/>
+Ethernet&#160;connection<br/>
+rr,&#160;<a href="probe_starts.html#32">28</a><br/>
+setting&#160;up,&#160;<a href="probe_starts.html#22">18</a><br/>
+set&#160;baud,&#160;<a href="probe_starts.html#47">43</a><br/>
+testing,&#160;<a href="probe_starts.html#26">22</a><br/>
+set&#160;clock,&#160;<a href="probe_starts.html#56">52</a><br/>
+example&#160;project,&#160;adding,&#160;<a href="probe_starts.html#36">32</a><br/>
+set&#160;ip,&#160;<a href="probe_starts.html#26">22</a><br/>
+<b>F</b><br/>
+set&#160;logic_high,&#160;<a href="probe_starts.html#60">56<br/></a>setup&#160;net,&#160;<a href="probe_starts.html#23">19</a><a href="probe_starts.html#24">,&#160;20</a><br/>
+firmware,&#160;recovering,&#160;<a href="probe_starts.html#61">57</a><br/>
+tl,&#160;<a href="probe_starts.html#32">28</a><br/>
+<b>G</b><br/>
+tr,&#160;<a href="probe_starts.html#32">28</a><a href="probe_starts.html#56">,&#160;52</a><br/>
+gateway,&#160;configuring,&#160;<a href="probe_starts.html#25">21</a><br/>
+vb,&#160;<a href="probe_starts.html#32">28</a>,&#160;<a href="probe_starts.html#55">51<br/></a>vr,&#160;<a href="probe_starts.html#32">28</a><a href="probe_starts.html#56">,&#160;52</a><br/>
+<b>H</b><br/>
+vta,&#160;<a href="probe_starts.html#55">51,&#160;</a><a href="probe_starts.html#58">54</a><br/>
+hostname,&#160;configuring,&#160;<a href="probe_starts.html#23">19</a><br/>
+compile&#160;(see&#160;build,&#160;performing)<br/>
+HyperTerminal,&#160;<a href="probe_starts.html#47">43</a><br/>
+components,&#160;<a href="probe_starts.html#8">4<br/></a>configuration<br/>
+<b>I</b><br/>
+baud&#160;rate,&#160;<a href="probe_starts.html#47">43</a><br/>
+installation<br/>
+detecting&#160;your&#160;target,&#160;<a href="probe_starts.html#30">26</a><br/>
+hardware,&#160;<a href="probe_starts.html#11">7</a><br/>
+DHCP,&#160;<a href="probe_starts.html#23">19</a><br/>
+Linux,&#160;<a href="probe_starts.html#9">5</a><br/>
+gateway,&#160;<a href="probe_starts.html#25">21</a><br/>
+Solaris,&#160;<a href="probe_starts.html#9">5</a><br/>
+hostname,&#160;<a href="probe_starts.html#23">19</a><br/>
+Windows,&#160;<a href="probe_starts.html#9">5</a><br/>
+loading&#160;from&#160;a&#160;file,&#160;<a href="probe_starts.html#31">27</a><br/>
+IP&#160;address,&#160;checking,&#160;<a href="probe_starts.html#26">22</a><br/>
+logic&#160;high&#160;level,&#160;<a href="probe_starts.html#60">56<br/></a>netmask,&#160;<a href="probe_starts.html#25">21</a><br/>
+<b>J</b><br/>
+static&#160;IP&#160;address,&#160;<a href="probe_starts.html#24">20</a><br/>
+JTAG&#160;bypass&#160;mode,&#160;testing,&#160;<a href="probe_starts.html#32">28</a><br/>
+troubleshooting,&#160;<a href="probe_starts.html#52">48</a><br/>
+JTAG&#160;troubleshooting,&#160;<a href="probe_starts.html#58">54</a><br/>
+connection<br/>
+MULTI&#160;to&#160;target,&#160;<a href="probe_starts.html#39">35</a><br/>
+<b>L</b><br/>
+probe&#160;to&#160;host&#160;machine<br/>
+linker&#160;directives&#160;files<br/>
+Ethernet,&#160;<a href="probe_starts.html#22">18</a><br/>
+<hr/>
+<a name=64></a><i>linker&#160;directives&#160;files&#160;(continued)</i><br/>
+created&#160;by&#160;Project&#160;Wizard,&#160;<a href="probe_starts.html#34">30</a><br/>
+target&#160;board<br/>
+logic&#160;high&#160;level,&#160;<a href="probe_starts.html#60">56</a><br/>
+configuring,&#160;<a href="probe_starts.html#34">30<br/></a>connecting&#160;to,&#160;<a href="probe_starts.html#39">35</a><br/>
+<b>M</b><br/>
+resetting,&#160;<a href="probe_starts.html#32">28</a><br/>
+MULTI<br/>
+setup&#160;script&#160;for,&#160;<a href="probe_starts.html#40">36</a><br/>
+connecting&#160;to&#160;target,&#160;<a href="probe_starts.html#39">35</a><br/>
+Target&#160;Resources&#160;project,&#160;<a href="probe_starts.html#37">33</a><br/>
+Debugger,&#160;<a href="probe_starts.html#41">37</a><br/>
+Target&#160;Transition&#160;Module<br/>
+installing,&#160;<a href="probe_starts.html#6">2</a><br/>
+definition,&#160;<a href="probe_starts.html#6">2<br/></a>testing,&#160;<a href="probe_starts.html#58">54</a><br/>
+<b>N</b><br/>
+Telnet&#160;connection,&#160;<a href="probe_starts.html#26">22</a><br/>
+netmask,&#160;configuring,&#160;<a href="probe_starts.html#25">21</a><br/>
+tl&#160;command,&#160;<a href="probe_starts.html#32">28<br/></a>Top&#160;Project<br/>
+<b>P</b><br/>
+contents,&#160;<a href="probe_starts.html#34">30</a><br/>
+ping,&#160;<a href="probe_starts.html#48">44</a><br/>
+structure,&#160;<a href="probe_starts.html#37">33</a><br/>
+Prepare&#160;Target&#160;dialog&#160;box,&#160;<a href="probe_starts.html#41">37</a><br/>
+tr&#160;command,&#160;<a href="probe_starts.html#32">28,&#160;</a><a href="probe_starts.html#56">52</a><br/>
+Probe&#160;Administrator,&#160;<a href="probe_starts.html#29">25</a><br/>
+troubleshooting<br/>
+Project&#160;Manager<br/>
+configuration,&#160;probe,&#160;<a href="probe_starts.html#52">48</a><br/>
+configuring&#160;target&#160;hardware&#160;with,&#160;<a href="probe_starts.html#34">30</a><br/>
+detect&#160;command,&#160;<a href="probe_starts.html#52">48,&#160;</a><a href="probe_starts.html#53">49,&#160;</a><a href="probe_starts.html#54">50,&#160;</a><a href="probe_starts.html#55">51</a><br/>
+Project&#160;Wizard<br/>
+Ethernet&#160;connections,&#160;<a href="probe_starts.html#48">44</a><br/>
+testing&#160;target&#160;configuration&#160;with,&#160;<a href="probe_starts.html#34">30</a><br/>
+hardware&#160;connection,&#160;<a href="probe_starts.html#45">41<br/></a>hardware&#160;setup,&#160;<a href="probe_starts.html#44">40</a><br/>
+<b>R</b><br/>
+HyperTerminal,&#160;<a href="probe_starts.html#47">43</a><br/>
+registers<br/>
+JTAG,&#160;<a href="probe_starts.html#58">54</a><br/>
+obtaining&#160;names&#160;and&#160;values&#160;of,&#160;<a href="probe_starts.html#32">28</a><br/>
+overview,&#160;<a href="probe_starts.html#44">40</a><br/>
+testing&#160;reads&#160;and&#160;writes,&#160;<a href="probe_starts.html#32">28</a><br/>
+resetting&#160;target&#160;board,&#160;<a href="probe_starts.html#56">52</a><br/>
+requirements,&#160;system,&#160;<a href="probe_starts.html#6">2</a><br/>
+serial&#160;terminal&#160;connection,&#160;<a href="probe_starts.html#47">43</a><br/>
+resetting&#160;the&#160;target&#160;board,&#160;<a href="probe_starts.html#32">28</a><br/>
+serial&#160;terminal&#160;connections,&#160;<a href="probe_starts.html#45">41</a><br/>
+rr&#160;command,&#160;<a href="probe_starts.html#32">28</a><br/>
+Telnet&#160;connections,&#160;<a href="probe_starts.html#48">44<br/></a>USB&#160;connections,&#160;<a href="probe_starts.html#50">46</a><br/>
+<b>S<br/></b>serial&#160;terminal<br/>
+<b>U</b><br/>
+baud&#160;rate,&#160;<a href="probe_starts.html#47">43</a><br/>
+USB&#160;connections,&#160;<a href="probe_starts.html#28">24,&#160;</a><a href="probe_starts.html#50">46</a><br/>
+connecting&#160;to,&#160;<a href="probe_starts.html#18">14</a><br/>
+USB&#160;drivers,&#160;installing,&#160;<a href="probe_starts.html#9">5,&#160;</a><a href="probe_starts.html#28">24</a><br/>
+settings&#160;for,&#160;<a href="probe_starts.html#18">14<br/></a>troubleshooting,&#160;<a href="probe_starts.html#45">41,&#160;</a><a href="probe_starts.html#47">43</a><br/>
+<b>V</b><br/>
+set&#160;baud&#160;command,&#160;<a href="probe_starts.html#47">43</a><br/>
+vb&#160;command,&#160;<a href="probe_starts.html#32">28,&#160;</a><a href="probe_starts.html#55">51</a><br/>
+set&#160;clock&#160;command,&#160;<a href="probe_starts.html#56">52</a><br/>
+vr&#160;command,&#160;<a href="probe_starts.html#32">28,&#160;</a><a href="probe_starts.html#56">52</a><br/>
+set&#160;ip&#160;command,&#160;<a href="probe_starts.html#26">22</a><br/>
+vta&#160;command,&#160;<a href="probe_starts.html#55">51,&#160;</a><a href="probe_starts.html#58">54</a><br/>
+set&#160;logic_high&#160;command,&#160;<a href="probe_starts.html#60">56<br/></a>setup&#160;net&#160;command,&#160;<a href="probe_starts.html#23">19,&#160;</a><a href="probe_starts.html#24">20</a><br/>
+<b>W</b><br/>
+setup&#160;script,&#160;board<br/>
+Windows&#160;Install&#160;New&#160;Hardware&#160;Wizard,&#160;<a href="probe_starts.html#28">24</a><br/>
+specifying,&#160;<a href="probe_starts.html#40">36</a><br/>
+setup&#160;scripts,&#160;board<br/>
+created&#160;by&#160;Project&#160;Wizard,&#160;<a href="probe_starts.html#34">30</a><br/>
+static&#160;IP&#160;address,&#160;configuring,&#160;<a href="probe_starts.html#24">20<br/></a>system&#160;requirements,&#160;<a href="probe_starts.html#6">2</a><br/>
+<b>T<br/></b>target<br/>
+detecting,&#160;<a href="probe_starts.html#30">26</a><br/>
+<i>60</i><br/>
+<i>Getting&#160;Started&#160;with&#160;the&#160;Green&#160;Hills&#160;Probe</i><br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="probe_starts.html#1">Getting Started with the Green Hills Probe</a></li>
+<li><a href="probe_starts.html#3">Contents</a></li>
+<li><a href="probe_starts.html#5">Chapter 1. Installing Your Probe</a>
+<ul>
+<li><a href="probe_starts.html#6">About This Book</a></li>
+<li><a href="probe_starts.html#6">Requirements</a></li>
+<li><a href="probe_starts.html#6">Terms You Should Know</a></li>
+<li><a href="probe_starts.html#7">When You Encounter Problems</a></li>
+<li><a href="probe_starts.html#8">Verifying Components</a></li>
+<li><a href="probe_starts.html#9">Installing Green Hills Probe Software</a></li>
+<li><a href="probe_starts.html#11">Connecting Your Probe to Your Target</a>
+<ul>
+<li><a href="probe_starts.html#12">Determining Your Cabling System</a></li>
+<li><a href="probe_starts.html#13">Connecting with TraceEverywhere</a></li>
+<li><a href="probe_starts.html#14">Connecting with Legacy Cables</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#18">Connecting Your Host to Your Probe Over the Serial Port</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#21">Chapter 2. Configuring Your Probe</a>
+<ul>
+<li><a href="probe_starts.html#22">Connecting to Your Probe Over Ethernet</a>
+<ul>
+<li><a href="probe_starts.html#23">Configuring a Dynamic IP Address with DHCP</a></li>
+<li><a href="probe_starts.html#24">Configuring a Static IP Address</a></li>
+<li><a href="probe_starts.html#26">Testing Your Probe's Ethernet Connection</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#28">Connecting to Your Probe Over USB</a></li>
+<li><a href="probe_starts.html#29">Connecting the Probe Administrator to Your Probe</a></li>
+<li><a href="probe_starts.html#30">Detecting Your Target</a></li>
+<li><a href="probe_starts.html#31">Configuring Probe Options with a Configuration File</a></li>
+<li><a href="probe_starts.html#32">Running Diagnostics</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#33">Chapter 3. Creating and Debugging a Program</a>
+<ul>
+<li><a href="probe_starts.html#34">Creating a Top Project for Your Program</a></li>
+<li><a href="probe_starts.html#37">Top Project Structure</a></li>
+<li><a href="probe_starts.html#38">Building a Program from the Top Project</a></li>
+<li><a href="probe_starts.html#39">Connecting MULTI to Your Target</a></li>
+<li><a href="probe_starts.html#41">Downloading and Debugging a Program</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#43">Appendix A. Troubleshooting</a>
+<ul>
+<li><a href="probe_starts.html#44">Setting Up Your Hardware</a>
+<ul>
+<li><a href="probe_starts.html#45">The Supplied Ribbon Cable or Pod Does Not Fit in the Target's JTAG Header</a></li>
+<li><a href="probe_starts.html#45">TraceEverywhere Target Adapter Status Light Is Red or Off</a></li>
+<li><a href="probe_starts.html#45">The Probe Banner in the Serial Terminal Does Not Appear or Is Incomplete</a></li>
+<li><a href="probe_starts.html#47">Corrupted Data is Printed to the Serial Terminal</a></li>
+<li><a href="probe_starts.html#47">Cannot Type Commands Into the Serial Terminal</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#48">Configuring Your Probe to Connect to MULTI</a>
+<ul>
+<li><a href="probe_starts.html#48">Cannot Find Telnet On Windows Vista and Later</a></li>
+<li><a href="probe_starts.html#48">Cannot Connect to Probe Over Telnet</a></li>
+<li><a href="probe_starts.html#50">Cannot Connect to Probe Over USB</a></li>
+<li><a href="probe_starts.html#51">Windows is Unable to Start Probe as a USB Device</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#52">Configuring Your Probe for Your Target</a>
+<ul>
+<li><a href="probe_starts.html#52">detect Issues Error 60</a></li>
+<li><a href="probe_starts.html#53">detect Does Not Display a Processor Table</a></li>
+<li><a href="probe_starts.html#53">detect Issues Error 71</a></li>
+<li><a href="probe_starts.html#53">detect Sets the Target Processors and then Issues an Error</a></li>
+<li><a href="probe_starts.html#54">detect Sets the Target Processor to other</a></li>
+<li><a href="probe_starts.html#54">detect Lists Devices Connected to the Probe, but Sets the Target Type to other</a></li>
+<li><a href="probe_starts.html#55">detect Sets the Target Processor Incorrectly</a></li>
+<li><a href="probe_starts.html#55">detect Passes but vb Fails</a></li>
+<li><a href="probe_starts.html#56">tr Does Not Reset the Target</a></li>
+<li><a href="probe_starts.html#56">vr Fails or Issues Error 18</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#58">General Configuration Instructions</a>
+<ul>
+<li><a href="probe_starts.html#58">Diagnosing Low-Level JTAG Connection Problems</a></li>
+<li><a href="probe_starts.html#60">Configuring the Probe's Logic High Level</a></li>
+<li><a href="probe_starts.html#61">Recovering a Probe That Does Not Boot Properly</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#61">Uninstalling Probe Software</a></li>
+</ul>
+</li>
+<li><a href="probe_starts.html#63">Index</a></li>
+</ul>
+<hr/>
+</body>
+</html>

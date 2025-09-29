@@ -1,0 +1,583 @@
+---
+title: GuardCfgAndDiagc Module Design Document
+linkTitle: GuardCfgAndDiagc Module Design Document
+weight: 3
+---
+
+<p><strong>Module Design Document</strong></p>
+<p><strong>For</strong></p>
+<p><strong>GuardCfgAndDiagc</strong></p>
+<p><strong>Nov 12 , 2017</strong></p>
+<p><strong>Prepared For:</strong></p>
+<p><strong>Software Engineering</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA</strong></p>
+<p><strong>Prepared By:</strong></p>
+<p><strong>Software Group,</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA<br />
+<u>Change History</u></strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 28%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Description</strong></td>
+<td><strong>Author</strong></td>
+<td><strong>Version</strong></td>
+<td><strong>Date</strong></td>
+</tr>
+<tr class="even">
+<td>Initial Version</td>
+<td>Avinash James</td>
+<td>1.0</td>
+<td>11/12/17</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><br />
+</strong></p>
+<p><strong><u>Table of Contents</u></strong></p>
+<p><a href="#introduction">1 Introduction <span>5</span></a></p>
+<p><a href="#purpose">1.1 Purpose <span>5</span></a></p>
+<p><a href="#scope">1.2 Scope <span>5</span></a></p>
+<p><a href="#guardcfganddiagc-high-level-description">2 GuardCfgAndDiagc &amp; High-Level Description <span>6</span></a></p>
+<p><a href="#design-details-of-software-module">3 Design details of software module <span>7</span></a></p>
+<p><a href="#graphical-representation-of-guardcfganddiagc">3.1 Graphical representation of GuardCfgAndDiagc <span>7</span></a></p>
+<p><a href="#data-flow-diagram">3.2 Data Flow Diagram <span>7</span></a></p>
+<p><a href="#component-level-dfd">3.2.1 Component level DFD <span>7</span></a></p>
+<p><a href="#function-level-dfd">3.2.2 Function level DFD <span>7</span></a></p>
+<p><a href="#constant-data-dictionary">4 Constant Data Dictionary <span>8</span></a></p>
+<p><a href="#program-fixed-constants">4.1 Program (fixed) Constants <span>8</span></a></p>
+<p><a href="#embedded-constants">4.1.1 Embedded Constants <span>8</span></a></p>
+<p><a href="#software-component-implementation">5 Software Component Implementation <span>9</span></a></p>
+<p><a href="#sub-module-functions">5.1 Sub-Module Functions <span>9</span></a></p>
+<p><a href="#init-guardcfganddiagcinit1">5.1.1 Init: GuardCfgAndDiagcInit1 <span>9</span></a></p>
+<p><a href="#design-rationale">5.1.1.1 Design Rationale <span>9</span></a></p>
+<p><a href="#module-outputs">5.1.1.2 Module Outputs <span>9</span></a></p>
+<p><a href="#init-guardcfganddiagcinit2">5.1.2 Init: GuardCfgAndDiagcInit2 <span>9</span></a></p>
+<p><a href="#design-rationale-1">5.1.2.1 Design Rationale <span>9</span></a></p>
+<p><a href="#module-outputs-1">5.1.2.2 Module Outputs <span>9</span></a></p>
+<p><a href="#per-none">5.1.3 Per: None <span>9</span></a></p>
+<p><a href="#server-runables">5.2 Server Runables <span>9</span></a></p>
+<p><a href="#interrupt-functions">5.3 Interrupt Functions <span>9</span></a></p>
+<p><a href="#module-internal-local-functions">5.4 Module Internal (Local) Functions <span>9</span></a></p>
+<p><a href="#peginin">5.4.1 PegInin <span>9</span></a></p>
+<p><a href="#design-rationale-2">5.4.1.1 Design Rationale <span>9</span></a></p>
+<p><a href="#processing">5.4.1.2 Processing <span>9</span></a></p>
+<p><a href="#pbginin">5.4.2 PbgInin <span>10</span></a></p>
+<p><a href="#design-rationale-3">5.4.2.1 Design Rationale <span>10</span></a></p>
+<p><a href="#processing-1">5.4.2.2 Processing <span>10</span></a></p>
+<p><a href="#_Toc498278450">5.4.3 FrGuardInin <span>10</span></a></p>
+<p><a href="#design-rationale-4">5.4.3.1 Design Rationale <span>10</span></a></p>
+<p><a href="#processing-2">5.4.3.2 Processing <span>10</span></a></p>
+<p><a href="#glbramguardinin">5.4.4 GlbRamGuardInin <span>10</span></a></p>
+<p><a href="#design-rationale-5">5.4.4.1 Design Rationale <span>10</span></a></p>
+<p><a href="#processing-3">5.4.4.2 Processing <span>10</span></a></p>
+<p><a href="#global-functionmacro-definitions">5.5 GLOBAL Function/Macro Definitions <span>10</span></a></p>
+<p><a href="#global-function-1">5.5.1 GLOBAL Function #1 <span>10</span></a></p>
+<p><a href="#design-rationale-6">5.5.1.1 Design Rationale <span>11</span></a></p>
+<p><a href="#processing-4">5.5.1.2 Processing <span>11</span></a></p>
+<p><a href="#known-limitations-with-design">6 Known Limitations with Design <span>12</span></a></p>
+<p><a href="#unit-test-consideration">7 UNIT TEST CONSIDERATION <span>13</span></a></p>
+<p><a href="#abbreviations-and-acronyms">Appendix A Abbreviations and Acronyms <span>14</span></a></p>
+<p><a href="#glossary">Appendix B Glossary <span>15</span></a></p>
+<p><a href="#references">Appendix C References <span>16</span></a></p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="purpose">Purpose</h2>
+<h2 id="scope">Scope</h2>
+<p>The following definitions are used throughout this document:</p>
+<ul>
+<li><p><strong><u>Shall</u></strong>: indicates a mandatory requirement without exception in compliance.</p></li>
+<li><p><strong><u>Should</u></strong>: indicates a mandatory requirement; exceptions allowed only with documented justification.</p></li>
+<li><p><strong><u>May</u></strong>: indicates an optional action.</p></li>
+</ul>
+<h1 id="guardcfganddiagc-high-level-description">GuardCfgAndDiagc &amp; High-Level Description</h1>
+<p><em>See FDD</em></p>
+<h1 id="design-details-of-software-module">Design details of software module</h1>
+<h2 id="graphical-representation-of-guardcfganddiagc">Graphical representation of GuardCfgAndDiagc</h2>
+<p><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/static/media/image1.jpg" style="width:2.40833in;height:1.475in" /></p>
+<h2 id="data-flow-diagram">Data Flow Diagram</h2>
+<h3 id="component-level-dfd">Component level DFD</h3>
+<p><em>See FDD</em></p>
+<h3 id="function-level-dfd">Function level DFD</h3>
+<p><em>See FDD</em></p>
+<h1 id="constant-data-dictionary">Constant Data Dictionary</h1>
+<h2 id="program-fixed-constants">Program (fixed) Constants</h2>
+<h3 id="embedded-constants">Embedded Constants</h3>
+<h4 id="local-constants">Local Constants</h4>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant Name</th>
+<th>Resolution</th>
+<th>Units</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PROTNLOCKENA_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x80000000UL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>GLBRAMGUARDENA_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x40000000UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>GLBRAMGUARDRSTVAL_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x07FFFE10UL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>GLBRAMGUARD0BASADRREG_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00027E00UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>GLBRAMGUARD0VALADRREG_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000000UL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>SPID0_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000001UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>SPID1_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000002UL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>SPID2_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000004UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>SPID3_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000008UL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>SPID4_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000010UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>SPID5_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000020UL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>SPID6_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000040UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>SPID7_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000080UL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>ALLSPIDDI_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x00000000UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>HISPDBUSGUARDREADENAPE1_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0605FE1BUL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>HISPDBUSGUARDWRENAPE1_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0605FE17UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>PBGREADENAPE1_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0605FE1BUL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>PBGWRENAPE1_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0605FE17UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>PBGREADENAPE1ANDPE4_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0625FE1BUL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>PBGWRENAPE1ANDPE4_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0625FE17UL</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>PBGREADALLPEDI_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0601FE1BUL</strong></td>
+</tr>
+<tr class="even">
+<td><strong>PBGWRALLPEDI_CNT_U32</strong></td>
+<td><strong>1</strong></td>
+<td><strong>uint32</strong></td>
+<td><strong>0x0601FE17UL</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="software-component-implementation">Software Component Implementation</h1>
+<h2 id="sub-module-functions">Sub-Module Functions</h2>
+<h3 id="init-guardcfganddiagcinit1">Init: GuardCfgAndDiagcInit1</h3>
+<h2 id="design-rationale">Design Rationale</h2>
+<p><em>Non-RTE function for Guard configuration initialization of PEG, IPG, GRG,HBG and PBG so that guard protection can be initialized and enabled before the RTE is started</em></p>
+<h2 id="module-outputs">Module Outputs</h2>
+<p><em>Configuration registers for PEG, IPG,GRG,HRG and PBG</em></p>
+<h3 id="init-guardcfganddiagcinit2">Init: GuardCfgAndDiagcInit2</h3>
+<h2 id="design-rationale-1">Design Rationale</h2>
+<p><em>RTE Empty function for purposes of memory mapping</em></p>
+<p><em>See FDD for more.</em></p>
+<h2 id="module-outputs-1">Module Outputs</h2>
+<p><em>None</em></p>
+<h2 id="per-none">Per: None</h2>
+<h2 id="server-runables">Server Runables </h2>
+<p><em>None</em></p>
+<h2 id="interrupt-functions">Interrupt Functions</h2>
+<p><em>None</em></p>
+<h2 id="module-internal-local-functions">Module Internal (Local) Functions</h2>
+<h3 id="peginin">PegInin</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 46%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>PegInin</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-2">Design Rationale</h2>
+<p>Sub function to set Peg Register configuration.</p>
+<h2 id="processing">Processing</h2>
+<p>None</p>
+<h3 id="pbginin">PbgInin</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 46%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>PbgInin</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-3">Design Rationale</h2>
+<p>Sub function to set PBG Register configuration.</p>
+<h2 id="processing-1">Processing</h2>
+<p>None</p>
+<h3 id="hispdbusguardinin">HiSpdBusGuardInin</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 46%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>HiSpdBusGuardInin</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-4">Design Rationale</h2>
+<p>Sub function to set HBG Register configuration.</p>
+<h2 id="processing-2">Processing</h2>
+<p>None</p>
+<h3 id="glbramguardinin">GlbRamGuardInin</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 46%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>GlbRamGuardInin</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-5">Design Rationale</h2>
+<p>Sub function to set GRG Register configuration.</p>
+<h2 id="processing-3">Processing</h2>
+<p>None</p>
+<h2 id="global-functionmacro-definitions">GLOBAL Function/Macro Definitions</h2>
+<h2 id="global-function-1">GLOBAL Function #1</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 42%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td></td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Return Value</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-6">Design Rationale</h2>
+<h2 id="processing-4">Processing</h2>
+<h1 id="known-limitations-with-design">Known Limitations with Design</h1>
+<p>None</p>
+<h1 id="unit-test-consideration">UNIT TEST CONSIDERATION</h1>
+<p>None</p>
+<p class="heading" id="abbreviations-and-acronyms">Abbreviations and Acronyms</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Abbreviation or Acronym</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="glossary">Glossary</p>
+<p><strong>Note</strong>: Terms and definitions from the source “Nexteer Automotive” take precedence over all other definitions of the same term. Terms and definitions from the source “Nexteer Automotive” are formulated from multiple sources, including the following:</p>
+<ul>
+<li><p>ISO 9000</p></li>
+<li><p>ISO/IEC 12207</p></li>
+<li><p>ISO/IEC 15504</p></li>
+<li><p>Automotive SPICE® Process Reference Model (PRM)</p></li>
+<li><p>Automotive SPICE® Process Assessment Model (PAM)</p></li>
+<li><p>ISO/IEC 15288</p></li>
+<li><p>ISO 26262</p></li>
+<li><p>IEEE Standards</p></li>
+<li><p>SWEBOK</p></li>
+<li><p>PMBOK</p></li>
+<li><p>Existing Nexteer Automotive documentation</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 53%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Term</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Source</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MDD</td>
+<td>Module Design Document</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>DFD</td>
+<td>Data Flow Diagram</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="references">References</p>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 69%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Ref. #</strong></th>
+<th><strong>Title</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>AUTOSAR Specification of Memory Mapping (Link:<a href="http://www.autosar.org/download/R4.0/AUTOSAR_SWS_MemoryMapping.pdf">AUTOSAR_SWS_MemoryMapping.pdf</a>)</td>
+<td>v1.3.0 R4.0 Rev 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>MDD Guideline</td>
+<td>EA4 01.00.01</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="http://misagweb01.nexteer.com/eRoomReq/Files/erooms8/NextGeneration/0_fc55f/Software%20Naming%20Conventions%2003x(In%20Work).doc">Software Naming Conventions.doc</a></td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="http://eroom1.nexteer.com/eRoomReq/Files/erooms8/NextGeneration/0_1a67a9/Software%20Design%20and%20Coding%20Standards.doc">Software Design and Coding Standards.doc</a></td>
+<td>2.1</td>
+</tr>
+</tbody>
+</table>

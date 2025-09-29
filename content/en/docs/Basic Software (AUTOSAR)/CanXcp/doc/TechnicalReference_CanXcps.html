@@ -1,0 +1,845 @@
+---
+title: TechnicalReference_CanXcps
+linkTitle: TechnicalReference_CanXcps
+weight: 6
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-1_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>XCP&#160;on CAN&#160;<br/></b>Technical Reference&#160;<br/>&#160;<br/>XCP&#160;on CAN&#160;Transport Layer for&#160;MICROSAR CanIf&#160;<br/>Version&#160;1.10.00&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Status&#160;<br/>
+Released&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+1&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=2></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-2_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>Document&#160;Information&#160;</b><br/>
+<b>History&#160;</b><br/>
+<b>Date&#160;</b><br/>
+<b>Version&#160;</b><br/>
+<b>Remarks&#160;</b><br/>
+2007-01-26&#160;<br/>
+1.00.00&#160;&#160;ESCAN00017890:&#160;Creation&#160;of&#160;Cp_XcpOnCanAsr&#160;based&#160;on&#160;<br/>
+Cp_XcpOnCan&#160;<br/>
+2008-08-05&#160;<br/>
+1.01.00&#160;&#160;Adaptations&#160;to&#160;AUTOSAR&#160;R3&#160;<br/>
+2009-12-17&#160;<br/>
+1.02.00&#160;&#160;Support&#160;of&#160;a2l&#160;export.&#160;<br/>
+2010-01-14&#160;<br/>
+1.03.00&#160;&#160;ESCAN00040120:&#160;Support&#160;MultiChannel&#160;<br/>
+Removed&#160;Section 3.3&#160;<br/>
+2010-03-30&#160;<br/>
+1.04.00&#160;&#160;ESCAN00041935:&#160;Add&#160;feature&#160;to&#160;disable&#160;XcpOnCanAsr&#160;in serial&#160;<br/>
+production ECUs&#160;<br/>ESCAN00043225:&#160;Missing&#160;limitation&#160;for&#160;Multiple Identity&#160;with&#160;<br/>several&#160;CAN&#160;channels&#160;<br/>
+2011-01-04&#160;<br/>
+1.05.00&#160;&#160;ESCAN00046305:&#160;AR3-297&#160;AR3-894:&#160;Support&#160;PduInfoType&#160;instead&#160;<br/>
+of&#160;the&#160;DataPtr&#160;<br/>
+2011-03-22&#160;<br/>
+1.06.00&#160;&#160;ESCAN00049434:&#160;Support&#160;Monitoring&#160;Hooks&#160;for&#160;AUTOSAR&#160;4&#160;<br/>
+2012-04-10&#160;<br/>
+1.06.01&#160;&#160;ESCAN00052061:&#160;Added&#160;InitMemory&#160;function&#160;to&#160;chapter&#160;8.2&#160;<br/>
+Added&#160;Option&#160;for&#160;AMD&#160;Runtime Measurement&#160;<br/>
+2013-03-25&#160;<br/>
+1.06.02&#160;&#160;ESCAN00063622:&#160;Remove&#160;PduInfoType&#160;from&#160;TechRef&#160;<br/>
+2013-05-27&#160;<br/>
+1.07.00&#160;&#160;ESCAN00066189:&#160;Change&#160;API&#160;CanXcp_Transmit&#160;to&#160;CanXcp_Send&#160;<br/>
+ESCAN00070335:&#160;Remove&#160;Monitoring&#160;Hooks&#160;defined in&#160;ASR4&#160;<br/>ESCAN00069044:&#160;Critical&#160;Section Description is&#160;missing&#160;<br/>
+2014-08-15&#160;<br/>
+1.07.01&#160;&#160;ESCAN00077233:&#160;AR3-2679:&#160;Description BCD-coded&#160;return-value&#160;<br/>
+of&#160;CanXcp_GetVersionInfo()&#160;in&#160;TechRef&#160;<br/>
+2016-02-10&#160;<br/>
+1.08.00&#160;&#160;ESCAN00082594:&#160;CAN-FD:&#160;Document&#160;support&#160;of&#160;mode&#160;2&#160;<br/>
+2016-09-07&#160;<br/>
+1.09.00&#160;&#160;ESCAN00091770:&#160;FEAT-1980:&#160;Add&#160;Multi&#160;Client&#160;/&#160;Multi&#160;Connection&#160;<br/>
+support&#160;<br/>
+2016-10-28&#160;<br/>
+1.10.00&#160;&#160;Editorial&#160;changes&#160;<br/>
+<b>Reference&#160;Documents&#160;</b><br/>
+<b>No.&#160;</b><br/>
+<b>Title&#160;</b><br/>
+[1]&#160;<br/>
+ASAM_XCP_Part1-Overview_V1-1-0.pdf&#160;<br/>
+[2]&#160;<br/>
+ASAM_AE_MCD-1-XCP_AS_CAN-Transport-Layer_V1-2-0.pdf&#160;<br/>
+[3]&#160;<br/>
+Technical&#160;Reference&#160;XCP&#160;Protocol&#160;Layer,&#160;Version&#160;2.04.00&#160;<br/>
+[4]&#160;<br/>
+AUTOSAR_SWS_DevelopmentErrorTracer.pdf&#160;V3.0.0&#160;<br/>
+<b>Abbreviations&#160;</b><br/>
+<b>Abbreviations&#160;</b><br/>
+<b>Complete&#160;expression&#160;</b><br/>
+A2L&#160;<br/>
+File Extension&#160;for&#160;an&#160;ASAM&#160;2MC&#160;Language&#160;File&#160;<br/>
+AML&#160;<br/>
+ASAM&#160;2 Meta&#160;Language&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+2&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=3></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-3_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+API&#160;<br/>
+Application&#160;Programming Interface&#160;<br/>
+ASAM&#160;<br/>
+Association&#160;for&#160;Standardization of&#160;Automation&#160;and&#160;Measuring&#160;Systems&#160;<br/>
+CAN&#160;<br/>
+Controller&#160;Area&#160;Network&#160;<br/>
+CANape&#160;<br/>
+Calibration&#160;and Measurement&#160;Data&#160;Acquisition&#160;for&#160;Electronic&#160;Control&#160;<br/>Systems&#160;<br/>
+CMD&#160;<br/>
+Command&#160;<br/>
+CTO&#160;<br/>
+Command&#160;Transfer&#160;Object&#160;<br/>
+DAQ&#160;<br/>
+Synchronous&#160;Data&#160;Acquisition&#160;<br/>
+DLC&#160;<br/>
+Data&#160;Length&#160;Code&#160;(&#160;Number&#160;of&#160;data bytes&#160;of&#160;a CAN&#160;message&#160;)&#160;<br/>
+DLL&#160;<br/>
+Data&#160;link layer&#160;<br/>
+DTO&#160;<br/>
+Data&#160;Transfer&#160;Object&#160;<br/>
+ECU&#160;<br/>
+Electronic&#160;Control&#160;Unit&#160;<br/>
+ID&#160;<br/>
+Identifier&#160;(of&#160;a&#160;CAN&#160;message)&#160;<br/>
+Identifier&#160;<br/>
+Identifies&#160;a CAN&#160;message&#160;<br/>
+ISR&#160;<br/>
+Interrupt&#160;Service Routine&#160;<br/>
+MCS&#160;<br/>
+Master&#160;Calibration&#160;System&#160;<br/>
+Message&#160;<br/>
+One&#160;or&#160;more&#160;signals&#160;are&#160;assigned&#160;to&#160;each&#160;message.&#160;<br/>
+MRB&#160;<br/>
+Multi&#160;receive buffer&#160;<br/>
+MRC&#160;<br/>
+Multi&#160;receive channel&#160;<br/>
+OEM&#160;<br/>
+Original&#160;equipment&#160;manufacturer&#160;(vehicle manufacturer)&#160;<br/>
+RES&#160;<br/>
+Command&#160;Response Packet&#160;<br/>
+SRB&#160;<br/>
+Single receive buffer&#160;<br/>
+SERV&#160;<br/>
+Service Request&#160;Packet&#160;<br/>
+STIM&#160;<br/>
+Stimulation&#160;<br/>
+XCP&#160;<br/>
+Universal&#160;Measurement&#160;and Calibration&#160;Protocol&#160;<br/>
+VI&#160;<br/>
+Vector&#160;Informatik&#160;GmbH&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Naming Conventions&#160;</b><br/>
+The&#160;names&#160;of&#160;the&#160;access&#160;functions&#160;provided&#160;by&#160;the&#160;CanXcp&#160;always&#160;start&#160;with&#160;a&#160;prefix&#160;that&#160;<br/>includes&#160;&#160;the&#160;&#160;characters&#160;&#160;‘CanXcp’.&#160;&#160;The&#160;&#160;characters&#160;&#160;‘CanXcp’&#160;&#160;are&#160;&#160;surrounded&#160;&#160;by&#160;&#160;an&#160;<br/>abbreviation&#160;which&#160;refers&#160;to&#160;the&#160;service&#160;or&#160;to&#160;the&#160;layer&#160;which&#160;requests&#160;a&#160;XCP&#160;service.&#160;The&#160;<br/>designation&#160;of&#160;the&#160;main&#160;services&#160;is listed&#160;below:&#160;<br/>
+<b>Naming&#160;conventions&#160;<br/></b>CanXcp…&#160;<br/>
+It&#160;is&#160;mandatory&#160;to use all&#160;functions&#160;beginning&#160;with Xcp…&#160;<br/>These&#160;services are called by&#160;either&#160;the&#160;data&#160;link layer,&#160;XCP&#160;Protocol&#160;Layer&#160;or&#160;<br/>the&#160;application.&#160;<br/>They&#160;are&#160;e.g.&#160;used&#160;for&#160;the transmission&#160;of&#160;messages.&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+3&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=4></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-4_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-4_2.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;<br/>Caution&#160;<br/></b>We&#160;have&#160;configured&#160;the&#160;programs&#160;in&#160;accordance&#160;with your&#160;specifications&#160;in the&#160;<br/>
+<b>&#160;</b><br/>
+questionnaire.&#160;Whereas&#160;the&#160;programs&#160;do&#160;support&#160;other&#160;configurations&#160;than&#160;the&#160;one&#160;<br/>specified&#160;in your&#160;questionnaire,&#160;Vector´s&#160;release&#160;of&#160;the&#160;programs&#160;delivered to&#160;your&#160;<br/>company&#160;is&#160;expressly&#160;restricted&#160;to&#160;the&#160;configuration&#160;you&#160;have specified&#160;in&#160;the&#160;<br/>questionnaire.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+4&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=5></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-5_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>Contents&#160;</b><br/>
+<a href="TechnicalReference_CanXcps.html#8"><b>1</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#8"><b>Overview&#160;.......................................................................................................................&#160;8</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#9"><b>2</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#9"><b>Functional&#160;Description&#160;.................................................................................................&#160;9</b>&#160;<br/>2.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#9">Overview&#160;of&#160;the&#160;Functional&#160;Scope&#160;......................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#9">2.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#9">Reception and&#160;Transmission&#160;of&#160;XCP&#160;Packets&#160;....................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#10"><b>3</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#10"><b>Integration&#160;into&#160;the&#160;Application&#160;.................................................................................&#160;10</b>&#160;<br/>3.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#10">Files&#160;.................................................................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#10">3.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#10">Version Changes..............................................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#11">3.3&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#11">MainFunction&#160;...................................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#11">3.4&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#11">Critical&#160;Sections&#160;/&#160;Exclusive&#160;Areas&#160;...................................................................&#160;11&#160;<br/>3.4.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#11">CANXCP_EXCLUSIVE_AREA_0.....................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#11">3.5&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#11">Activation and Deactivation&#160;..............................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#12"><b>4</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#12"><b>Description&#160;of&#160;the&#160;API&#160;................................................................................................&#160;12</b>&#160;<br/>4.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#12">Version of&#160;the&#160;Source&#160;Code&#160;.............................................................................&#160;12&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#12">4.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#12">XCP&#160;on&#160;CAN&#160;Transport&#160;Layer&#160;services called&#160;by&#160;the&#160;Protocol&#160;Layer&#160;................&#160;12&#160;<br/>4.2.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#12">CanXcp_Send:&#160;Transmission&#160;of&#160;XCP&#160;Packets&#160;.................................&#160;12&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#13">4.2.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#13">CanXcp_MainFunction:&#160;Main Function of&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;<br/>Layer&#160;................................................................................................&#160;13&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#14">4.3&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#14">XCP&#160;Transport&#160;Layer&#160;for&#160;CAN&#160;services called&#160;by&#160;the&#160;CAN&#160;Interface&#160;................&#160;14&#160;<br/>4.3.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#14">Xcp_CanIfRxIndication:&#160;XCP&#160;Message&#160;Indication&#160;Function&#160;..............&#160;14&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#14">4.3.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#14">Xcp_CanIfTxConfirmation:&#160;XCP&#160;Message Confirmation&#160;...................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#15">4.4&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#15">XCP&#160;Protocol&#160;Layer&#160;services called&#160;by&#160;the&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;Layer&#160;........&#160;15&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#15">4.5&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#15">XCP&#160;on&#160;CAN&#160;Transport&#160;Layer&#160;services called&#160;by&#160;other&#160;layers&#160;..........................&#160;15&#160;<br/>4.5.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#15">CanXcp_Init:&#160;Initialization of&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;Layer&#160;..............&#160;15&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#15">4.5.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#15">CanXcp_GetVersionInfo:&#160;Request&#160;version information&#160;of&#160;XCP&#160;on&#160;<br/>CAN&#160;Transport&#160;Layer&#160;.......................................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#16">4.5.3&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#16">CanXcp_SetPduMode:&#160;set&#160;Transmission&#160;mode&#160;...............................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#16">4.6&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#16">Macros&#160;.............................................................................................................&#160;16&#160;<br/>4.6.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#16">XCP_ACTIVATE:&#160;Enable the&#160;Protocol&#160;and&#160;Transport&#160;Layer&#160;.............&#160;16&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#17">4.6.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#17">XCP_DEACTIVATE:&#160;Disable the&#160;Protocol&#160;and&#160;Transport&#160;Layer&#160;........&#160;17&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#18">4.6.3&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#18">A2L&#160;File&#160;............................................................................................&#160;18&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19"><b>5</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19"><b>Limitations&#160;..................................................................................................................&#160;19</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19">5.1.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19">Assignment&#160;of&#160;CAN&#160;identifiers&#160;to&#160;DAQ&#160;Lists&#160;is&#160;not&#160;supported&#160;...........&#160;19&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19">5.1.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19">Detection&#160;of&#160;all&#160;XCP&#160;Slaves&#160;within a&#160;Network&#160;...................................&#160;19&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19">5.1.3&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#19">Multiple Identity&#160;only&#160;supported&#160;for&#160;single channel&#160;configuration&#160;......&#160;19&#160;</a><br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+5&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=6></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-6_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<a href="TechnicalReference_CanXcps.html#20"><b>6</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#20"><b>FAQ&#160;..............................................................................................................................&#160;20</b>&#160;<br/>6.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#20">Transmit&#160;Queue&#160;of&#160;CAN&#160;Interface&#160;is&#160;Disabled&#160;..................................................&#160;20&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#20">6.2&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#20">Additions&#160;&amp;&#160;Extension&#160;......................................................................................&#160;20&#160;<br/>6.2.1&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#20">CanXcp_InitMemory&#160;.........................................................................&#160;20&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#21"><b>7</b>&#160;</a><br/>
+<a href="TechnicalReference_CanXcps.html#21"><b>Contact&#160;........................................................................................................................&#160;21</b>&#160;</a><br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+6&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=7></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-7_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+&#160;&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+7&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=8></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-8_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>1&#160;&#160;Overview&#160;</b><br/>
+This&#160;document&#160;&#160;describes&#160;&#160;the&#160;features,&#160;API,&#160;&#160;configuration&#160;&#160;and&#160;&#160;integration&#160;&#160;of&#160;the&#160;&#160;CanXcp.&#160;<br/>The&#160;XCP&#160;Protocol&#160;Layer,&#160;which&#160;is&#160;already&#160;described&#160;within&#160;a&#160;separate&#160;documen<a href="TechnicalReference_CanXcps.html#2">t&#160;[3],&#160;</a>is&#160;not&#160;<br/>covered&#160;by&#160;this document.&#160;<br/>Please&#160;&#160;also&#160;&#160;refer&#160;&#160;to&#160;&#160;“The&#160;&#160;Universal&#160;&#160;Measurement&#160;&#160;and&#160;&#160;Calibration&#160;&#160;Protocol&#160;&#160;Family”&#160;<br/>specification&#160;by&#160;ASAM&#160;e.V.&#160;<br/>XCP&#160;on&#160;CAN&#160;is&#160;a&#160;hardware&#160;independent&#160;protocol&#160;that&#160;can&#160;be&#160;ported&#160;to&#160;almost&#160;any&#160;CAN&#160;<br/>controller.&#160;&#160;Due&#160;&#160;to&#160;&#160;there&#160;&#160;are&#160;&#160;numerous&#160;&#160;combinations&#160;&#160;of&#160;&#160;micro&#160;&#160;controllers,&#160;&#160;compilers&#160;&#160;and&#160;<br/>memory&#160;&#160;models&#160;&#160;it&#160;&#160;cannot&#160;&#160;be&#160;&#160;guaranteed&#160;&#160;that&#160;&#160;it&#160;&#160;will&#160;&#160;run&#160;&#160;properly&#160;&#160;on&#160;&#160;any&#160;&#160;of&#160;&#160;the&#160;&#160;above&#160;<br/>mentioned&#160;combinations.&#160;<br/>Please&#160;&#160;note&#160;&#160;that&#160;&#160;in&#160;&#160;this&#160;&#160;document&#160;&#160;the&#160;&#160;term&#160;&#160;Application&#160;&#160;is&#160;&#160;not&#160;&#160;used&#160;&#160;strictly&#160;&#160;for&#160;&#160;the&#160;&#160;user&#160;<br/>software&#160;but&#160;also&#160;for&#160;any&#160;higher&#160;software&#160;layer.&#160;Therefore,&#160;Application&#160;refers&#160;to&#160;any&#160;of&#160;the&#160;<br/>software components&#160;using&#160;XCP&#160;on&#160;CAN.&#160;<br/>The&#160;API&#160;of&#160;the&#160;functions&#160;is&#160;described&#160;in&#160;a&#160;separate&#160;chapter&#160;at&#160;the&#160;end&#160;of&#160;this&#160;document.&#160;<br/>Referred&#160;functions are&#160;always shown&#160;in&#160;the&#160;single&#160;channel&#160;mode.&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+8&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=9></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-9_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>2&#160;&#160;Functional&#160;Description&#160;</b><br/>
+<b>2.1&#160;</b><br/>
+<b>Overview&#160;of the&#160;Functional&#160;Scope&#160;</b><br/>
+The&#160;transmission&#160;and&#160;reception&#160;of&#160;XCP&#160;Packets&#160;is managed&#160;by&#160;the&#160;XCP&#160;Transport&#160;Layers.&#160;<br/>These&#160;use&#160;the&#160;AUTOSAR CanIf&#160;for the&#160;transmission&#160;and&#160;reception&#160;of&#160;XCP&#160;Packets.&#160;&#160;<br/>&#160;<br/>
+The&#160;message&#160;length&#160;depends&#160;on&#160;the&#160;PDU&#160;size&#160;and&#160;can&#160;be&#160;8&#160;&#160;Bytes&#160;on&#160;CAN&#160;or&#160;up&#160;to&#160;64&#160;<br/>Bytes&#160;on&#160;CAN-FD&#160;(Mode&#160;2).&#160;<br/>
+<b>2.2&#160;</b><br/>
+<b>Reception and Transmission of XCP&#160;Packets&#160;</b><br/>
+Upon&#160;reception&#160;of&#160;any&#160;XCP&#160;message&#160;the&#160;function&#160;<br/>
+void&#160;<b>Xcp_CanIfRxIndication</b>&#160;( PduIdType&#160;CanCanXcpRxPduId,&#160;&#160;<br/>
+const&#160;PduInfoType&#160;*CanSduPtr )&#160;<br/>
+<a href="TechnicalReference_CanXcps.html#14">(4.3.1)</a>&#160;<br/>
+is called&#160;by&#160;the&#160;CAN&#160;Interface&#160;and&#160;the&#160;XCP&#160;Packet&#160;is&#160;passed&#160;to&#160;the&#160;XCP&#160;Protocol Layer.&#160;<br/>After&#160;the&#160;command&#160;has&#160;been&#160;processed&#160;by&#160;the&#160;Protocol&#160;Layer&#160;the&#160;XCP&#160;Response&#160;Packet&#160;<br/>is passed&#160;to&#160;the&#160;Transport Layer by&#160;the&#160;service&#160;<br/>
+void&#160;<b>CanXcp_Send</b>&#160;(uint8&#160;Xcp_Channel,&#160;uint8&#160;len, MEMORY_ROM&#160;<br/>
+BYTEPTR msg )&#160;<br/>
+<a href="TechnicalReference_CanXcps.html#12">(4.2.1)</a>&#160;<br/>
+The&#160;XCP&#160;message&#160;is transmitted&#160;via&#160;the&#160;CAN Interface’s service&#160;<br/>
+uint8&#160;<b>CanIf_Send</b>&#160;( PduIdType CanTxPduId,&#160;&#160;<br/>
+const PduInfoType *PduInfoPtr&#160;)&#160;<br/>
+The&#160;successful transmission&#160;is confirmed&#160;by&#160;the&#160;CAN&#160;Interface&#160;by&#160;a&#160;call&#160;of&#160;<br/>
+void&#160;<b>Xcp_CanIfTxConfirmation</b>&#160;( PduIdType CanTxPduId )&#160;<br/>
+<a href="TechnicalReference_CanXcps.html#14">(4.3.2)</a>&#160;<br/>
+The&#160;confirmation&#160;is&#160;passed&#160;from&#160;the&#160;XCP&#160;on&#160;Can&#160;Transport&#160;Layer&#160;to&#160;the&#160;Protocol&#160;Layer&#160;by&#160;<br/>the&#160;XcpSendCallback.&#160;<br/>Asynchronous&#160;XCP&#160;Packet&#160;transmission&#160;like&#160;e.g.&#160;SERV,&#160;EV&#160;and&#160;DAQ&#160;are&#160;also&#160;transmitted&#160;<br/>and&#160;confirmed&#160;by&#160;the&#160;above&#160;described&#160;sequence.&#160;<br/>
+Please&#160;&#160;note&#160;&#160;that&#160;&#160;after&#160;&#160;Initialization&#160;&#160;the&#160;&#160;XCP&#160;&#160;is&#160;&#160;in&#160;&#160;PDU&#160;&#160;Mode&#160;&#160;CANXCP_SET_OFFLINE.&#160;<br/>Normally&#160;it&#160;is&#160;enabled&#160;by&#160;the&#160;CAN&#160;State&#160;Manager.&#160;If&#160;the&#160;State&#160;Manager&#160;is&#160;not&#160;present&#160;or&#160;a&#160;<br/>State&#160;Manager&#160;from&#160;another&#160;vendor&#160;is&#160;used&#160;this&#160;has&#160;to&#160;be&#160;enabled&#160;manually&#160;by&#160;using&#160;the&#160;<br/>following&#160;API&#160;with&#160;CANXCP_SET_ONLINE:&#160;<br/>
+void&#160;<b>CanXcp_SetPduMode</b>&#160;(&#160;NetworkHandleType XcpNwH,&#160;<br/>
+CanXcp_PduSetModeType PduMode&#160;)&#160;<br/>
+<a href="TechnicalReference_CanXcps.html#16">(4.5.3)</a>&#160;<br/>
+If&#160;this is&#160;not&#160;done,&#160;the&#160;XCP&#160;will not&#160;send&#160;anything!&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+9&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=10></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-10_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-10_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-10_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-10_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-10_5.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-10_6.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-10_7.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>3&#160;&#160;Integration&#160;into&#160;the&#160;Application&#160;</b><br/>
+This&#160;chapter&#160;describes&#160;the&#160;steps&#160;for&#160;&#160;the&#160;integration&#160;of&#160;the&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;Layer&#160;<br/>into&#160;an&#160;application&#160;environment&#160;of&#160;an&#160;ECU.&#160;<br/>
+<b>3.1&#160;</b><br/>
+<b>Files&#160;</b><br/>
+The&#160;XCP&#160;on&#160;CAN&#160;Transport Layer consists of&#160;the&#160;following&#160;files:&#160;<br/>
+<b>Files&#160;of&#160;the&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;Layer&#160;<br/></b>CanXcp.c&#160;<br/>
+XCP&#160;on&#160;CAN&#160;Transport&#160;Layer.&#160;<br/>This&#160;file&#160;<b>must&#160;not&#160;</b>be&#160;changed&#160;by&#160;the&#160;user!&#160;<br/>
+&#160;<br/>
+CanXcp.h&#160;<br/>
+API&#160;of&#160;the&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;Layer.&#160;<br/>This&#160;file&#160;<b>must&#160;not&#160;</b>be&#160;changed&#160;by&#160;the&#160;application!&#160;<br/>
+&#160;<br/>
+This&#160;file has&#160;to be included&#160;prior&#160;to&#160;XcpProf.h.&#160;<br/>
+CanXcp_Types.h&#160;&#160;Type&#160;definitions&#160;of&#160;the&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;Layer.&#160;<br/>
+This&#160;file&#160;<b>must&#160;not&#160;</b>be&#160;changed&#160;by&#160;the&#160;application!&#160;<br/>
+&#160;<br/>
+This&#160;file is handled&#160;internally&#160;and must&#160;not&#160;be&#160;included&#160;<br/>separately.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Additionally&#160;the&#160;following&#160;files&#160;are generated&#160;by&#160;the&#160;generation&#160;tool&#160;GENy.&#160;<br/>
+<b>Files&#160;generated&#160;by&#160;GENy&#160;<br/></b>CanXcp_Cfg.h&#160;<br/>
+Configuration&#160;file&#160;for&#160;XCP&#160;on&#160;CAN.&#160;<br/>External&#160;declarations&#160;for&#160;the&#160;parameters.&#160;<br/>
+&#160;<br/>
+CanXcp_Lcfg.c&#160;<br/>
+Link&#160;time&#160;parameter&#160;definition&#160;for&#160;the&#160;XCP&#160;on&#160;CAN.&#160;<br/>
+&#160;<br/>
+CanXcp_PBcfg.c&#160;&#160;Post&#160;build parameter&#160;definition&#160;for&#160;the&#160;XCP&#160;on&#160;CAN.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Note&#160;&#160;that&#160;&#160;all&#160;files&#160;&#160;of&#160;&#160;XCP&#160;&#160;on&#160;&#160;CAN&#160;must&#160;&#160;not&#160;be&#160;&#160;changed&#160;manually&#160;&#160;except&#160;&#160;if&#160;&#160;not&#160;&#160;GENy&#160;&#160;is&#160;<br/>used&#160;for&#160;he&#160;configuration&#160;of&#160;the&#160;AUTOSAR&#160;CAN&#160;Interface.&#160;In&#160;this&#160;case&#160;only&#160;the&#160;generated&#160;<br/>files&#160;CanXcp_Cfg.h,&#160;CanXcp_Lcfg.c&#160;and&#160;CanXcp_PBcfg.c&#160;are relevant.&#160;<br/>
+&#160;<br/>
+<b>3.2&#160;</b><br/>
+<b>Version Changes&#160;</b><br/>
+Changes&#160;and&#160;the&#160;release&#160;versions&#160;of&#160;the&#160;XCP&#160;on&#160;CAN&#160;Transport&#160;Layer&#160;are&#160;&#160;listed&#160;at&#160;&#160;the&#160;<br/>beginning&#160;of&#160;the&#160;header and&#160;source&#160;code.&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+10&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=11></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-11_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>3.3&#160;</b><br/>
+<b>MainFunction&#160;</b><br/>
+Normally&#160;the&#160;CanXcp_MainFunction&#160;is&#160;called&#160;cyclically&#160;by&#160;the&#160;Schedule&#160;Manager&#160;(SchM).&#160;<br/>If&#160;&#160;no&#160;&#160;SchM&#160;&#160;is&#160;&#160;present&#160;&#160;or&#160;&#160;a&#160;&#160;3rd&#160;&#160;party&#160;&#160;SchM&#160;&#160;is&#160;&#160;used&#160;&#160;the&#160;&#160;CanXcp_MainFunction&#160;&#160;must&#160;&#160;be&#160;<br/>called&#160;&#160;cyclically&#160;&#160;by&#160;&#160;the&#160;&#160;application.&#160;&#160;The&#160;&#160;purpose&#160;&#160;of&#160;&#160;the&#160;&#160;MainFunction&#160;&#160;is&#160;&#160;to&#160;&#160;send&#160;&#160;queued&#160;<br/>messages&#160;that&#160;failed&#160;to&#160;be&#160;sent&#160;immediately.&#160;Therefore&#160;the&#160;call&#160;cycle&#160;is&#160;not&#160;very&#160;critical.&#160;A&#160;<br/>call&#160;cycle&#160;of&#160;5&#160;or&#160;10ms&#160;is sufficient&#160;in&#160;most&#160;cases.&#160;<br/>
+<b>3.4&#160;</b><br/>
+<b>Critical&#160;Sections&#160;/&#160;Exclusive&#160;Areas&#160;</b><br/>
+The&#160;XCP&#160;makes use&#160;of&#160;interrupt&#160;locking&#160;to&#160;guarantee&#160;atomic operation&#160;of&#160;critical sections.&#160;<br/>For this purpose&#160;one&#160;exclusive&#160;area&#160;is&#160;defined&#160;<br/>
+&#160;&#160;CANXCP_EXCLUSIVE_AREA_0&#160;<br/>
+The&#160;exclusive&#160;area&#160;must&#160;be&#160;mapped&#160;to&#160;interrupt&#160;lock&#160;and&#160;unlock&#160;functions which&#160;can&#160;be&#160;<br/>called&#160;nested.&#160;The&#160;exclusive&#160;areas are&#160;used&#160;in&#160;the&#160;following&#160;cases:&#160;<br/>&#160;<br/>
+<b>3.4.1&#160;</b><br/>
+<b>CANXCP_EXCLUSIVE_AREA_0&#160;</b><br/>
+This&#160;area&#160;is&#160;used&#160;whenever the&#160;services&#160;Xcp_Event,&#160;Xcp_SendCallBack,&#160;<br/>Xcp_MainFunction&#160;&#160;and&#160;&#160;Xcp_Command&#160;can&#160;interrupt&#160;each&#160;other.&#160;<br/>Please&#160;read&#160;the&#160;Technical Reference&#160;XCP&#160;Protocol&#160;Laye<a href="TechnicalReference_CanXcps.html#2">r&#160;[3]&#160;</a>for&#160;further information.&#160;<br/>
+<b>3.5&#160;</b><br/>
+<b>Activation and Deactivation&#160;</b><br/>
+The&#160;XCP&#160;provides&#160;functionality&#160;to&#160;disable&#160;the&#160;component&#160;during&#160;runtime.&#160;This&#160;is&#160;useful&#160;if&#160;<br/>the&#160;component&#160;shall&#160;remain&#160;in&#160;series&#160;production&#160;ECUs&#160;where&#160;XCP&#160;is&#160;disabled&#160;by&#160;default&#160;<br/>and&#160;can&#160;be&#160;enabled&#160;by,&#160;e.g.&#160;a&#160;Diagnosis service.&#160;<br/>By&#160;&#160;default&#160;&#160;XCP&#160;&#160;is&#160;&#160;enabled.&#160;&#160;The&#160;&#160;functionality&#160;&#160;of&#160;&#160;the&#160;&#160;XCP&#160;&#160;can&#160;&#160;be&#160;&#160;disabled&#160;&#160;by&#160;&#160;calling&#160;&#160;the&#160;<br/>Macro:&#160;<br/>
+<b>XCP_DEACTIVATE()</b>&#160;<br/>
+<a href="TechnicalReference_CanXcps.html#17">(4.6.2)</a>&#160;<br/>
+It&#160;can&#160;be&#160;enabled&#160;again&#160;by&#160;calling&#160;the&#160;respective&#160;Macro:&#160;<br/>
+&#160;&#160;<b>XCP_ACTIVATE()</b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<a href="TechnicalReference_CanXcps.html#16">(4.6.1)</a>&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+11&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=12></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-12_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-12_2.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>4&#160;&#160;Description&#160;of&#160;the&#160;API&#160;</b><br/>
+The&#160;API&#160;of&#160;XCP&#160;on&#160;CAN&#160;consists&#160;of&#160;services,&#160;which&#160;are&#160;realized&#160;by&#160;function&#160;calls.&#160;These&#160;<br/>services&#160;are&#160;called&#160;wherever&#160;they&#160;are&#160;required.&#160;They&#160;transfer&#160;information&#160;to-&#160;or&#160;take&#160;over&#160;<br/>information&#160;&#160;from&#160;&#160;XCP&#160;&#160;on&#160;&#160;CAN.&#160;&#160;This&#160;&#160;information&#160;&#160;is&#160;&#160;stored&#160;&#160;in&#160;&#160;XCP&#160;&#160;on&#160;&#160;CAN&#160;&#160;until&#160;&#160;it&#160;&#160;is&#160;&#160;not&#160;<br/>required&#160;anymore,&#160;respectively&#160;until it is changed&#160;by&#160;other&#160;operations.&#160;<br/>Examples&#160;for&#160;calling&#160;the&#160;services&#160;&#160;of&#160;XCP&#160;on&#160;CAN&#160;can&#160;be&#160;found&#160;in&#160;the&#160;description&#160;of&#160;the&#160;<br/>services.&#160;<br/>
+<b>4.1&#160;</b><br/>
+<b>Version of the&#160;Source&#160;Code&#160;</b><br/>
+The&#160;&#160;source&#160;&#160;code&#160;&#160;version&#160;&#160;of&#160;&#160;the&#160;&#160;XCP&#160;&#160;on&#160;&#160;CAN&#160;Transportation&#160;&#160;Layer&#160;&#160;is&#160;&#160;provided&#160;&#160;by&#160;&#160;three&#160;<br/>BCD&#160;coded&#160;constants:&#160;<br/>
+&#160;<br/>
+CONST(uint8, CANXCP_CONST) kXcpOnCanAsrMainVersion &#160; &#160;=&#160;<br/>
+(uint8)(CP_XCPONCANASR_VERSION &gt;&gt; 8);&#160;<br/>
+CONST(uint8, CANXCP_CONST) kXcpOnCanSubAsrVersion &#160; &#160; =&#160;<br/>
+(uint8)(CP_XCPONCANASR_VERSION &amp; 0x00ff);&#160;<br/>
+CONST(uint8, CANXCP_CONST) kXcpOnCanAsrReleaseVersion =&#160;<br/>
+(uint8)(CP_XCPONCANASR_RELEASE_VERSION);&#160;&#160;<br/>
+&#160;<br/>
+<b>Example</b>&#160;<br/>Version 1.00.00&#160;is&#160;registered&#160;as:&#160;<br/>
+&#160;<br/>
+kXcpOnCanAsrMainVersion = 0x01;&#160;<br/>kXcpOnCanAsrSubVersion = 0x00;&#160;<br/>kXcpOnCanAsrReleaseVersion = 0x00;&#160;<br/>
+&#160;<br/>
+These&#160;constants&#160;are&#160;declared&#160;as external&#160;and&#160;can&#160;be&#160;read&#160;by&#160;the&#160;application&#160;at&#160;any&#160;time.&#160;<br/>
+&#160;<br/>
+<b>4.2&#160;</b><br/>
+<b>XCP&#160;on CAN Transport Layer services&#160;called by&#160;the&#160;Protocol Layer&#160;</b><br/>
+The&#160;following&#160;XCP&#160;on&#160;CAN&#160;Transport Layer functions are called&#160;by&#160;the&#160;Protocol&#160;Layer.&#160;&#160;&#160;<br/>The&#160;API&#160;of&#160;these&#160;functions can&#160;be&#160;found&#160;in&#160;the&#160;header&#160;of&#160;the&#160;XCP&#160;on&#160;CAN&#160;component.&#160;<br/>
+&#160;<br/>
+<b>4.2.1&#160;</b><br/>
+<b>CanXcp_Send:&#160;Transmission of XCP&#160;Packets&#160;</b><br/>
+<b>CanXcp_Send&#160;</b><br/>
+<b>Prototype&#160;<br/></b>void&#160;<b>CanXcp_Send&#160;</b>(&#160;uint8&#160;Xcp_Channel,&#160;uint8 len, const uint8* msg )&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+12&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=13></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-13_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>Parameter&#160;<br/></b>Xcp_Channel&#160;<br/>
+Logical&#160;channel&#160;of&#160;the protocol&#160;layer.&#160;Depending&#160;whether&#160;Multi&#160;Client&#160;is&#160;<br/>enabled this&#160;parameter&#160;will&#160;always&#160;be 0&#160;(Multi&#160;Client&#160;disabled) or&#160;reflect the&#160;<br/>logical&#160;Xcp channel&#160;(Multi&#160;Client&#160;enabled).&#160;<br/>
+len&#160;<br/>
+Length&#160;of&#160;the XCP&#160;Packet&#160;that has&#160;to&#160;be&#160;transmitted.&#160;<br/>(with&#160;len&#160;=&#160;1&#160;...&#160;8&#160;on&#160;CAN&#160;and&#160;1..64&#160;on&#160;CAN-FD)&#160;<br/>
+msg&#160;<br/>
+Pointer&#160;to the XCP&#160;Packet&#160;data.&#160;<br/>
+<b>Return&#160;code&#160;<br/></b>-&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+Request for the&#160;transmission of&#160;a&#160;DTO&#160;or CTO&#160;message.&#160;<br/>&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;&#160;Not&#160;re-entrant&#160;<br/>
+&#160;&#160;Call&#160;context&#160;of:&#160;XcpEvent,&#160;XcpBackground&#160;and&#160;context&#160;of&#160;CAN&#160;Interface&#160;<br/>
+&#160;<br/>
+<b>4.2.2&#160;</b><br/>
+<b>CanXcp_MainFunction:&#160;Main Function of XCP&#160;on CAN Transport Layer&#160;</b><br/>
+<b>CanXcp_MainFunction&#160;</b><br/>
+<b>Prototype&#160;<br/></b>void&#160;<b>CanXcp_MainFunction</b>&#160;( void )&#160;<br/>
+<b>Parameter&#160;<br/></b>-&#160;<br/>
+-&#160;<br/>
+<b>Return&#160;code&#160;<br/></b>-&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+Main&#160;function of&#160;XCP&#160;on&#160;CAN&#160;Transport Layer.&#160;<br/>&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;&#160;Not&#160;re-entrant&#160;<br/>&#160;<br/>&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+13&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=14></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-14_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>4.3&#160;</b><br/>
+<b>XCP&#160;Transport Layer&#160;for CAN services&#160;called by&#160;the&#160;CAN Interface&#160;</b><br/>
+The&#160;following&#160;&#160;XCP&#160;&#160;on&#160;&#160;CAN&#160;Transport&#160;&#160;Layer&#160;&#160;functions&#160;&#160;are&#160;&#160;called&#160;by&#160;&#160;the&#160;AUTOSAR&#160;&#160;CAN&#160;<br/>Interface.&#160;The&#160;API&#160;&#160;of&#160;&#160;these&#160;functions&#160;&#160;can&#160;be&#160;&#160;found&#160;&#160;in&#160;&#160;the&#160;&#160;header&#160;&#160;of&#160;&#160;the&#160;&#160;CAN&#160;&#160;Interface’s&#160;<br/>parameter&#160;file.&#160;<br/>
+&#160;<br/>
+<b>4.3.1&#160;</b><br/>
+<b>Xcp_CanIfRxIndication:&#160;XCP&#160;Message&#160;Indication Function&#160;&#160;</b><br/>
+<b>Xcp_CanIfRxIndication&#160;</b><br/>
+<b>Prototype&#160;<br/></b>void&#160;<b>Xcp_CanIfRxIndication</b>&#160;( PduIdType CanCanXcpRxPduId, const&#160;<br/>PduInfoType&#160;*&#160;PduInfoPtr)&#160;<br/>
+<b>Parameter&#160;<br/></b>CanCanXcpRxPduId&#160;<br/>
+Target PDU ID&#160;of&#160;CAN&#160;L-PDU that has&#160;been received&#160;<br/>
+PduInfoPtr&#160;<br/>
+Contains&#160;pointer&#160;and&#160;length&#160;to&#160;received XCP&#160;L-SDU&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+-&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+Rx&#160;Indication for reception&#160;of&#160;CTO&#160;and DTO&#160;Packets.&#160;<br/>This&#160;function&#160;is&#160;configured&#160;in the&#160;generation&#160;tool.&#160;&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;&#160;Not&#160;re-entrant&#160;<br/>
+&#160;&#160;Call&#160;context&#160;of&#160;CAN&#160;Interface&#160;<br/>
+&#160;<br/>
+<b>4.3.2&#160;</b><br/>
+<b>Xcp_CanIfTxConfirmation:&#160;XCP&#160;Message&#160;Confirmation&#160;</b><br/>
+&#160;<br/>
+<b>Xcp_CanIfTxConfirmation&#160;</b><br/>
+<b>Prototype&#160;<br/></b>void&#160;<b>Xcp_CanIfTxConfirmation</b>&#160;( PduIdType&#160;CanTxPduId )&#160;<br/>
+<b>Parameter&#160;<br/></b>CanTxPduId&#160;<br/>
+PDU&#160;ID&#160;of&#160;CAN&#160;L-PDU&#160;transmitted&#160;successfully&#160;<br/>
+<b>Return&#160;code&#160;<br/></b>-&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;<br/></b>Tx&#160;Confirmation&#160;for successful&#160;transmission&#160;of&#160;CTO&#160;and&#160;DTO&#160;Packets.&#160;<br/>This&#160;function&#160;is&#160;configured&#160;in the&#160;generation&#160;tool.&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;&#160;Not&#160;re-entrant&#160;<br/>
+&#160;&#160;Call&#160;context&#160;of&#160;CAN&#160;Interface&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+14&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=15></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-15_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>4.4&#160;</b><br/>
+<b>XCP&#160;Protocol Layer services&#160;called by&#160;the&#160;XCP&#160;on CAN Transport Layer&#160;</b><br/>
+The&#160;following&#160;XCP&#160;Protocol Layer services&#160;are called&#160;by&#160;the&#160;XCP&#160;on&#160;CAN&#160;Transport Layer:&#160;<br/>
+-&#160;<br/>
+void Xcp_Command(&#160;uint8&#160;Xcp_Channel,&#160;const&#160;uint32* pCommand )&#160;<br/>
+-&#160;<br/>
+void Xcp_SendCallBack(&#160;uint8&#160;Xcp_Channel&#160;)&#160;<br/>
+-&#160;<br/>
+void Xcp_SetActiveTl(&#160;uint8&#160;Xcp_Channel,&#160;uint8&#160;Tl&#160;)&#160;<br/>
+-&#160;<br/>
+uint8 Xcp_GetActiveTl(&#160;uiont8&#160;Xcp_Channel&#160;)&#160;<br/>
+-&#160;<br/>
+uint8 Xcp_GetSessionStatus(&#160;uint8&#160;Xcp_Channel&#160;)&#160;<br/>
+&#160;<br/>
+For&#160;&#160;a&#160;&#160;description&#160;&#160;of&#160;&#160;the&#160;API&#160;&#160;and&#160;&#160;the&#160;&#160;functionality&#160;&#160;of&#160;&#160;these&#160;&#160;functions&#160;&#160;please&#160;&#160;refer&#160;&#160;to&#160;&#160;the&#160;<br/>Technical Reference&#160;XCP&#160;Protocol&#160;Laye<a href="TechnicalReference_CanXcps.html#2">r&#160;[3].</a>&#160;<br/>
+&#160;<br/>
+<b>4.5&#160;</b><br/>
+<b>XCP&#160;on CAN Transport Layer services&#160;called by&#160;other&#160;layers&#160;</b><br/>
+The&#160;following&#160;XCP&#160;on&#160;CAN&#160;Transport Layer functions have&#160;to&#160;be&#160;called&#160;from&#160;other layers.&#160;<br/>
+<b>4.5.1&#160;</b><br/>
+<b>CanXcp_Init:&#160;Initialization of&#160;XCP&#160;on CAN&#160;Transport Layer&#160;</b><br/>
+<b>CanXcp_Init&#160;</b><br/>
+<b>Prototype&#160;<br/></b>void&#160;<b>CanXcp_Init</b>&#160;(const CanXcp_ConfigType * ConfigPtr )&#160;<br/>
+<b>Parameter&#160;<br/></b>ConfigPtr&#160;<br/>
+Pointer&#160;to the post build configuration&#160;<br/>
+<b>Return&#160;code&#160;<br/></b>-&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+Initialization&#160;of&#160;the XCP&#160;on&#160;Transport Layer.&#160;&#160;<br/>&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;&#160;Must&#160;be&#160;called&#160;during&#160;system&#160;initialization&#160;<br/>
+&#160;&#160;Not&#160;re-entrant&#160;<br/>
+&#160;&#160;Parameter&#160;‘ConfigPtr’&#160;is&#160;only&#160;evaluated&#160;for&#160;post&#160;build configurations.&#160;<br/>
+&#160;<br/>
+<b>4.5.2&#160;</b><br/>
+<b>CanXcp_GetVersionInfo:&#160;Request version&#160;information of&#160;XCP&#160;on CAN&#160;<br/>Transport Layer&#160;</b><br/>
+<b>CanXcp_Init&#160;</b><br/>
+<b>Prototype&#160;<br/></b>void&#160;<b>CanXcp_GetVersionInfo</b>&#160;(Std_VersionInfoType * Versioninfo )&#160;<br/>
+<b>Parameter&#160;<br/></b>Versioninfo&#160;<br/>
+Pointer&#160;to store the&#160;version&#160;information&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+15&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=16></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-16_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>Return&#160;code&#160;<br/></b>-&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+CanXcp_GetVersionInfo()&#160;returns&#160;version&#160;information,&#160;vendor&#160;ID&#160;and&#160;AUTOSAR&#160;module ID of&#160;the&#160;<br/>component.&#160;The&#160;versions&#160;are BCD-coded.&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;&#160;none&#160;<br/>
+&#160;<br/>
+<b>4.5.3&#160;</b><br/>
+<b>CanXcp_SetPduMode:&#160;set Transmission&#160;mode&#160;</b><br/>
+<b>CanXcp_SetPduMode&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+void CanXcp_SetPduMode(&#160;NetworkHandleType XcpNwH, CanXcp_PduSetModeType PduMode&#160;<br/>);&#160;<br/>
+<b>Parameters&#160;[in/out/both]&#160;</b><br/>
+XcpNwH&#160;[in]&#160;<br/>
+The&#160;Network&#160;Handle&#160;which&#160;is&#160;usually&#160;0&#160;<br/>
+PduMode&#160;<br/>
+This&#160;is&#160;the new&#160;state.&#160;It can&#160;either&#160;be&#160;<br/>
+&#160;<br/>
+CANXCP_SET_ONLINE&#160;<br/>
+&#160;<br/>
+CANXCP_SET_OFFLINE&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+-&#160;<br/>
+-&#160;<br/>
+<b>Service&#160;ID&#160;</b><br/>
+Service ID&#160;<br/>
+7&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+With&#160;this&#160;service it&#160;is&#160;possible to prevent transmission&#160;of&#160;XCP&#160;frames, e.g.&#160;when the bus&#160;is&#160;offline.&#160;The&#160;<br/>frames&#160;are not lost&#160;but stored&#160;in the Send Queue&#160;until&#160;overrun occurs&#160;or transmission&#160;is&#160;enabled&#160;again.&#160;<br/>
+<b>Preconditions&#160;</b><br/>
+-&#160;<br/>
+<b>Postconditions&#160;</b><br/>
+-&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;<br/>
+Call&#160;context:&#160;task&#160;level&#160;<br/>
+&#160;<br/>
+Not&#160;re-entrant&#160;<br/>
+&#160;<br/>
+Synchronous&#160;<br/>
+&#160;<br/>
+<b>4.6&#160;</b><br/>
+<b>Macros&#160;</b><br/>
+<b>4.6.1&#160;</b><br/>
+<b>XCP_ACTIVATE:&#160;Enable&#160;the&#160;Protocol&#160;and&#160;Transport Layer&#160;</b><br/>
+<b>XCP_ACTIVATE&#160;</b><br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+16&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=17></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-17_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>Prototype&#160;</b><br/>
+XCP_ACTIVATE();&#160;<br/>
+<b>Parameters&#160;[in/out/both]&#160;</b><br/>
+Command&#160;[in]&#160;<br/>
+-&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+-&#160;<br/>
+-&#160;<br/>
+<b>Service&#160;ID&#160;</b><br/>
+Service ID&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+With&#160;this&#160;service it&#160;is&#160;possible to enable all&#160;functionality&#160;of&#160;the XCP&#160;Protocol&#160;and&#160;Transport Layer&#160;during&#160;<br/>runtime to prevent&#160;erroneous&#160;execution.&#160;&#160;<br/>
+<b>Preconditions&#160;</b><br/>
+-&#160;<br/>
+<b>Postconditions&#160;</b><br/>
+-&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;<br/>
+Call&#160;context:&#160;task&#160;level&#160;<br/>
+&#160;<br/>
+Not&#160;re-entrant&#160;<br/>
+&#160;<br/>
+Synchronous&#160;<br/>
+&#160;<br/>
+<b>4.6.2&#160;</b><br/>
+<b>XCP_DEACTIVATE:&#160;Disable&#160;the&#160;Protocol&#160;and Transport Layer&#160;</b><br/>
+<b>XCP_DEACTIVATE&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+XCP_DEACTIVATE();&#160;<br/>
+<b>Parameters&#160;[in/out/both]&#160;</b><br/>
+Command&#160;[in]&#160;<br/>
+-&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+-&#160;<br/>
+-&#160;<br/>
+<b>Service&#160;ID&#160;</b><br/>
+Service ID&#160;<br/>
+-&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+With&#160;this&#160;service it&#160;is&#160;possible to lock&#160;all&#160;functionality&#160;of&#160;the XCP&#160;Protocol&#160;and&#160;Transport Layer during runtime&#160;<br/>to&#160;prevent erroneous&#160;execution.&#160;&#160;<br/>
+<b>Preconditions&#160;</b><br/>
+-&#160;<br/>
+<b>Postconditions&#160;</b><br/>
+-&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+17&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=18></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-18_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-18_2.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+&#160;<br/>
+Call&#160;context:&#160;task&#160;level&#160;<br/>
+&#160;<br/>
+Not&#160;re-entrant&#160;<br/>
+&#160;<br/>
+Synchronous&#160;<br/>
+&#160;<br/>
+<b>4.6.3&#160;</b><br/>
+<b>A2L File&#160;</b><br/>
+GENy&#160;exports&#160;an&#160;a2l&#160;file&#160;for&#160;easier&#160;configuration&#160;of&#160;the&#160;XCP&#160;Master&#160;(e.g.&#160;&#160;CANape).&#160;This&#160;<br/>file&#160;is&#160;called&#160;CanXCPAsr.a2l&#160;and&#160;contains&#160;the&#160;XCP_ON_CAN&#160;IF_DATA&#160;section&#160;which&#160;can&#160;<br/>be&#160;included&#160;by&#160;a&#160;master template&#160;a2l&#160;file.&#160;<br/>
+<b>Hint!&#160;</b><br/>
+&#160;The&#160;following&#160;abstract&#160;can&#160;be&#160;used&#160;to&#160;include&#160;the&#160;generated&#160;a2l:&#160;<br/>
+&#160;<br/>
+&#160;&#160;/begin&#160;IF_DATA&#160;XCP&#160;<br/>&#160; &#160;&#160;……..&#160;<br/>&#160; &#160;&#160;/include&#160;&#34;CanXCPAsr.a2l&#34;&#160;<br/>&#160;&#160;/end&#160;IF_DATA&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=19></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-19_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>5&#160;&#160;Limitations&#160;</b><br/>
+<b>5.1.1&#160;</b><br/>
+<b>Assignment&#160;of CAN identifiers&#160;to DAQ&#160;Lists is&#160;not supported&#160;</b><br/>
+The&#160;assignment&#160;of&#160;CAN&#160;identifiers&#160;to&#160;DAQ&#160;lists&#160;is&#160;not&#160;supported.&#160;There&#160;is&#160;only&#160;one&#160;CAN&#160;<br/>identifier&#160;&#160;for&#160;&#160;CMD/STIM&#160;&#160;and&#160;&#160;one&#160;&#160;CAN&#160;&#160;identifier&#160;&#160;for&#160;&#160;RES/EV/DAQ.&#160;&#160;The&#160;&#160;command&#160;<br/>GET/SET_DAQ_ID is&#160;not&#160;supported.&#160;<br/>
+<b>5.1.2&#160;</b><br/>
+<b>Detection of&#160;all&#160;XCP&#160;Slaves&#160;within a&#160;Network&#160;</b><br/>
+The&#160;detection&#160;of&#160;all&#160;XCP&#160;slaves&#160;within&#160;a&#160;network&#160;with&#160;the&#160;command&#160;GET_SLAVE_ID&#160;is&#160;not&#160;<br/>supported.&#160;<br/>
+<b>5.1.3&#160;</b><br/>
+<b>Multiple&#160;Identity&#160;only&#160;supported&#160;for single&#160;channel&#160;configuration&#160;&#160;</b><br/>
+Multiple&#160;Identities&#160;for&#160;AUTOSAR&#160;XCP&#160;on&#160;CAN&#160;is&#160;only&#160;available&#160;for&#160;a&#160;single&#160;CAN&#160;channel&#160;<br/>configuration.&#160;<br/>
+&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=20></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-20_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-20_2.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>6&#160;&#160;FAQ&#160;</b><br/>
+<b>6.1&#160;</b><br/>
+<b>Transmit Queue&#160;of CAN&#160;Interface&#160;is&#160;Disabled&#160;</b><br/>
+&#160;<br/>
+<b>FAQ</b>&#160;<br/>How&#160;to&#160;operate&#160;XCP&#160;on&#160;CAN&#160;if&#160;the&#160;transmit&#160;queue&#160;of&#160;CanIf&#160;is disabled.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+If&#160;the&#160;transmit&#160;queue&#160;of&#160;CanIf&#160;is&#160;disabled,&#160;at&#160;any&#160;time&#160;it&#160;might&#160;not&#160;be&#160;possible&#160;to&#160;transmit&#160;<br/>the&#160;&#160;XCP&#160;&#160;Slave&#160;&#160;message&#160;&#160;due&#160;&#160;to&#160;&#160;an&#160;&#160;on-going&#160;&#160;message&#160;&#160;transmission.&#160;&#160;Therefore&#160;&#160;the&#160;<br/>message&#160;transmission&#160;might&#160;have&#160;to&#160;be&#160;requested&#160;several times.&#160;<br/>This&#160;&#160;is&#160;&#160;done&#160;&#160;with&#160;&#160;the&#160;&#160;service&#160;&#160;CanXcp_MainFunction().&#160;&#160;This&#160;&#160;service&#160;&#160;has&#160;&#160;to&#160;&#160;be&#160;&#160;called&#160;<br/>cyclically&#160;&#160;with&#160;&#160;a&#160;&#160;recommended&#160;&#160;call&#160;&#160;cycle&#160;&#160;of&#160;&#160;1ms.&#160;&#160;The&#160;&#160;faster&#160;&#160;it&#160;&#160;gets&#160;&#160;called&#160;&#160;the&#160;&#160;faster&#160;&#160;the&#160;<br/>XCP&#160;Slave&#160;message&#160;will participate&#160;in&#160;the&#160;arbitration&#160;on&#160;the&#160;bus.&#160;<br/>
+<b>6.2&#160;</b><br/>
+<b>Additions&#160;&amp; Extension&#160;</b><br/>
+<b>6.2.1&#160;</b><br/>
+<b>CanXcp_InitMemory&#160;</b><br/>
+The&#160;function&#160;CanXcp_InitMemory&#160;is&#160;an&#160;extension&#160;to&#160;AUTOSAR&#160;and&#160;must&#160;be&#160;used&#160;when&#160;<br/>the&#160;memory&#160;is not&#160;initialized&#160;by&#160;the&#160;startup&#160;code.&#160;<br/>
+<b>&#160;<br/></b>&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+20&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name=21></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/CanXcp/doc/TechnicalReference_CanXcp-21_1.png"/><br/>
+Technical&#160;Reference&#160;XCP&#160;on CAN&#160;<br/>
+<b>7&#160;&#160;Contact&#160;</b><br/>
+Visit&#160;our website&#160;for&#160;more information&#160;on&#160;<br/>
+&#160;<br/>
+<b>&gt;&#160;&#160;</b>News&#160;<br/>
+<b>&gt;&#160;&#160;</b>Products&#160;<br/>
+<b>&gt;&#160;&#160;</b>Demo&#160;software&#160;<br/>
+<b>&gt;&#160;&#160;</b>Support&#160;<br/>
+<b>&gt;&#160;&#160;</b>Training&#160;data&#160;<br/>
+<b>&gt;&#160;&#160;</b>Addresses&#160;<br/>
+&#160;<br/>
+<b>www.vector.com</b>&#160;<br/>
+©&#160;2016&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version&#160;1.10.00&#160;<br/>
+21&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.1.0&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#8">1 Overview</a></li>
+<li><a href="TechnicalReference_CanXcps.html#9">2 Functional Description</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#9">2.1 Overview of the Functional Scope</a></li>
+<li><a href="TechnicalReference_CanXcps.html#9">2.2 Reception and Transmission of XCP Packets</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#10">3 Integration into the Application</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#10">3.1 Files</a></li>
+<li><a href="TechnicalReference_CanXcps.html#10">3.2 Version Changes</a></li>
+<li><a href="TechnicalReference_CanXcps.html#11">3.3 MainFunction</a></li>
+<li><a href="TechnicalReference_CanXcps.html#11">3.4 Critical Sections / Exclusive Areas</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#11">3.4.1 CANXCP_EXCLUSIVE_AREA_0</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#11">3.5 Activation and Deactivation</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#12">4 Description of the API</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#12">4.1 Version of the Source Code</a></li>
+<li><a href="TechnicalReference_CanXcps.html#12">4.2 XCP on CAN Transport Layer services called by the Protocol Layer</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#12">4.2.1 CanXcp_Send: Transmission of XCP Packets</a></li>
+<li><a href="TechnicalReference_CanXcps.html#13">4.2.2 CanXcp_MainFunction: Main Function of XCP on CAN Transport Layer</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#14">4.3 &#160;XCP Transport Layer for CAN services called by the CAN Interface</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#14">4.3.1 Xcp_CanIfRxIndication: XCP Message Indication Function</a></li>
+<li><a href="TechnicalReference_CanXcps.html#14">4.3.2 Xcp_CanIfTxConfirmation: XCP Message Confirmation</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#15">4.4 XCP Protocol Layer services called by the XCP on CAN Transport Layer</a></li>
+<li><a href="TechnicalReference_CanXcps.html#15">4.5 XCP on CAN Transport Layer services called by other layers</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#15">4.5.1 CanXcp_Init: Initialization of XCP on CAN Transport Layer</a></li>
+<li><a href="TechnicalReference_CanXcps.html#15">4.5.2 CanXcp_GetVersionInfo: Request version information of XCP on CAN Transport Layer</a></li>
+<li><a href="TechnicalReference_CanXcps.html#16">4.5.3 CanXcp_SetPduMode: set Transmission mode</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#16">4.6 Macros</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#16">4.6.1 XCP_ACTIVATE: Enable the Protocol and Transport Layer</a></li>
+<li><a href="TechnicalReference_CanXcps.html#17">4.6.2 XCP_DEACTIVATE: Disable the Protocol and Transport Layer</a></li>
+<li><a href="TechnicalReference_CanXcps.html#18">4.6.3 A2L File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#19">5 Limitations</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#19">5.1.1 Assignment of CAN identifiers to DAQ Lists is not supported</a></li>
+<li><a href="TechnicalReference_CanXcps.html#19">5.1.2 Detection of all XCP Slaves within a Network</a></li>
+<li><a href="TechnicalReference_CanXcps.html#19">5.1.3 Multiple Identity only supported for single channel configuration</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#20">6 FAQ</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#20">6.1 Transmit Queue of CAN Interface is Disabled</a></li>
+<li><a href="TechnicalReference_CanXcps.html#20">6.2 Additions &amp; Extension</a>
+<ul>
+<li><a href="TechnicalReference_CanXcps.html#20">6.2.1 CanXcp_InitMemory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="TechnicalReference_CanXcps.html#21">7 Contact</a></li>
+</ul>
+<hr/>
+</body>
+</html>

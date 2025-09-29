@@ -1,0 +1,193 @@
+---
+title: AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros
+linkTitle: AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros
+weight: 5
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img class="yflip" src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-1_1.png"/><br/>
+<b>&#160;</b><br/>
+<b>How&#160;to&#160;add CAN XCP&#160;messages&#160;in&#160;DaVinciConfiguratorPro&#160;</b><br/>
+<b>Version&#160;1.0&#160;</b><br/>
+<b>2014-12-10&#160;</b><br/>
+<b>Application&#160;Note &#160;AN-ISC-8-1169&#160;</b><br/>
+&#160;<br/>&#160;<i>&#160;<br/></i>Author(s)&#160;<br/>
+Hannes&#160;Haas&#160;<br/>
+Restrictions&#160;<br/>
+Customer&#160;confidential&#160;-&#160;Vector&#160;decides&#160;<br/>
+Abstract&#160;<br/>
+XCP&#160;PDUs&#160;are&#160;not&#160;always&#160;part&#160;of&#160;the databases&#160;provided by&#160;the vehicle&#160;manufacturer.&#160;<br/>
+This&#160;document&#160;describes&#160;how&#160;XCP&#160;PDUs&#160;can&#160;be&#160;added directly&#160;in DaVinci&#160;Configurator&#160;<br/>
+Pro.&#160;<br/>
+<i><b>&#160;<br/>Table&#160;of Contents&#160;</b></i><br/>
+<i><b>&#160;<br/></b></i><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">1.0&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">Overview&#160;..........................................................................................................................................................&#160;2&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">1.1&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">BSW&#160;Module&#160;Configuration&#160;...........................................................................................................................&#160;2&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">1.2&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">ECUC&#160;Configuration&#160;......................................................................................................................................&#160;2&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#3">1.3&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#3">CANIF&#160;Configuration&#160;.....................................................................................................................................&#160;3&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">1.4&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">XCP&#160;Configuration&#160;.........................................................................................................................................&#160;4&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">2.0&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">Additional&#160;Resources&#160;.......................................................................................................................................&#160;4&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">3.0&#160;</a><br/>
+<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">Contacts&#160;...........................................................................................................................................................&#160;4&#160;</a><br/>
+<b>&#160;1&#160;&#160;</b><br/>
+<i>Copyright&#160;©&#160;2014&#160;-&#160;Vector&#160;Informatik&#160;GmbH&#160;</i><br/>
+<b>Contact&#160;Information:&#160; &#160;www.vector.com&#160; &#160;or&#160;+49-711-80&#160;670-0&#160;</b><br/>
+<hr/>
+<a name=2></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-2_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-2_2.png"/><br/>
+<i><b>&#160;<br/></b></i>&#160;<br/>&#160;<br/>
+&#160;<br/>
+<b>1.0&#160;&#160;Overview&#160;<br/></b>The DaVinci&#160;Configurator&#160;Pro workflow&#160;allows&#160;adding&#160;XCP&#160;PDUs&#160;in two&#160;ways:&#160;<br/>
+•&#160;&#160;XCP&#160;PDUs&#160;are defined&#160;in&#160;the SystemDescription&#160;or&#160;DBC/FIBEX&#160;file&#160;that&#160;has&#160;been provided&#160;by&#160;the&#160;vehicle&#160;<br/>
+manufacturer.&#160;Such files&#160;can be created&#160;or&#160;modified&#160;with Vector&#160;tools&#160;such as&#160;the&#160;AUTOSAR&#160;Network&#160;<br/>
+Explorer&#160;or&#160;CANdb++.&#160;The&#160;ECUC&#160;configuration (including&#160;the XCP&#160;PDUs)&#160;can be&#160;derived from&#160;such input&#160;<br/>
+formats.&#160;The XCP&#160;PDUs&#160;will&#160;have&#160;to&#160;be added each time a new&#160;version&#160;is&#160;received from&#160;the vehicle&#160;<br/>
+manufacturer.&#160;<br/>
+•&#160;&#160;XCP&#160;PDUs&#160;can be created&#160;within DaVinci&#160;Configurator&#160;Pro by&#160;configuring the affected modules&#160;directly.&#160;<br/>
+These&#160;messages&#160;are independent&#160;of&#160;PDUs&#160;defined by&#160;the&#160;input&#160;formats&#160;provided&#160;by&#160;the&#160;vehicle&#160;<br/>
+manufacturer.&#160;During a&#160;database&#160;update the&#160;added&#160;PDUs&#160;will&#160;not&#160;be removed.&#160;<br/>
+&#160;<br/>This&#160;document&#160;describes&#160;the second&#160;approach:&#160;Adding&#160;XCP&#160;PDUs&#160;directly&#160;to the&#160;ECUC&#160;configuration.&#160;<br/>&#160;<br/>
+<b>1.1&#160;&#160;BSW&#160;Module&#160;Configuration&#160;<br/></b>This&#160;document&#160;assumes&#160;that&#160;CAN&#160;based communication (except&#160;XCP)&#160;is&#160;configured and operational.&#160;&#160;<br/>The names&#160;and the&#160;detailed properties&#160;are meant&#160;to&#160;be examples&#160;and&#160;can be modified&#160;as&#160;required.&#160;A&#160;general&#160;<br/>
+description&#160;how&#160;XCP&#160;is&#160;configured can&#160;be found&#160;in the&#160;technical&#160;reference of&#160;that&#160;module.&#160;<br/>&#160;<br/>
+<b>1.2&#160;&#160;ECUC&#160;Configuration&#160;<br/></b>Navigate to&#160;<b>/MICROSAR/EcuC/EcucPduCollection</b>&#160;<br/>
+•&#160;&#160;Add&#160;a new&#160;(global)&#160;PDU&#160;for&#160;XCP&#160;message transmission&#160;(Tx)&#160;and&#160;message&#160;reception&#160;(Rx)&#160;<br/>
+•&#160;&#160;Configure&#160;the&#160;PDU&#160;length to 8 bytes&#160;for&#160;<b>both</b>&#160;PDUs&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Figure 1&#160;–&#160;Enter&#160;PDU&#160;Information&#160;for&#160;Rx.&#160;<br/>&#160;<br/>
+&#160;<br/>
+Figure 2&#160;–&#160;Enter&#160;PDU&#160;Information for&#160;Tx&#160;<br/>
+<b>&#160;2&#160;&#160;</b><br/>
+<i>Copyright&#160;©&#160;2014&#160;-&#160;Vector&#160;Informatik&#160;GmbH&#160;</i><br/>
+<b>Contact&#160;Information:&#160; &#160;www.vector.com&#160; &#160;or&#160;+49-711-80&#160;670-0&#160;</b><br/>
+<hr/>
+<a name=3></a><img class="yflip" src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-3_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-3_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-3_3.png"/><br/>
+&#160;<br/>
+&#160;<br/>
+How&#160;to add CAN&#160;XCP&#160;messages&#160;in DaVinciConfiguratorPro&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>1.3&#160;&#160;CANIF Configuration&#160;<br/></b>Navigate to&#160;<b>/MICROSAR/CanIf/CanIfInitCfg/CanIfRxPduCfg</b>&#160;<br/>
+•&#160;&#160;Add&#160;a new&#160;CANIF&#160;Rx&#160;PDU&#160;(CanIfRxPduCfg)&#160;<br/>
+•&#160;&#160;Configure&#160;the&#160;CAN&#160;message:&#160;<br/>
+&#160;<br/>
+<b>CanIfRxPduCanId&#160;</b><br/>
+The CAN&#160;ID&#160;that&#160;shall&#160;be&#160;use&#160;as&#160;Xcp Request&#160;ID&#160;<br/><b>CanIfRxPduCanIdType&#160;</b><br/>
+Type of&#160;CAN&#160;message&#160;(e.g.&#160;standard&#160;or&#160;extended&#160;addressing)&#160;<br/><b>CanIfRxPduHrhIdRef&#160;</b><br/>
+Hardware receive&#160;handle&#160;used&#160;to receive this&#160;message.&#160;This&#160;reference&#160;<br/>
+defines&#160;indirectly&#160;the&#160;channel&#160;the&#160;XCP&#160;message is&#160;received on.&#160;<br/><b>CanIfRxPduRef&#160;</b><br/>
+Reference to the&#160;global&#160;Rx&#160;PDU&#160;defined in the ECUC&#160;module (s.<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">&#160;1.2)</a>&#160;<br/><b>CanIfRxPduUserRxIndicationUL&#160;</b><br/>
+Set&#160;this&#160;parameter&#160;to XCP&#160;<br/><b>CanIfRxPduUserRxIndicationName&#160;</b><br/>
+<b>&#160;</b><br/>
+Will&#160;be&#160;set&#160;to Xcp_CanIfRxIndication by&#160;the configuration&#160;tool&#160;<br/>
+Figure&#160;3&#160;–&#160;Configure CAN&#160;Rx&#160;Message&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Navigate to&#160;<b>/MICROSAR/CanIf/CanIfInitCfg/CanIfTxPduCfg</b>&#160;<br/>
+•&#160;&#160;Add&#160;a new&#160;CANIF&#160;Tx&#160;PDU&#160;(CanIfTxPduCfg)&#160;<br/>
+•&#160;&#160;Configure&#160;the&#160;CAN&#160;message&#160;<br/>
+&#160;<br/>
+<b>CanIfTxPduBufferRef&#160;</b><br/>
+Buffering&#160;strategy.&#160;For&#160;XCP&#160;the&#160;existing&#160;default buffer&#160;(0 byte&#160;in size)&#160;<br/>can&#160;typically&#160;be&#160;reused.&#160;<br/><b>CanIfTxPduCanId&#160;</b><br/>
+The&#160;CAN&#160;ID&#160;that shall&#160;be&#160;use&#160;as&#160;Xcp&#160;Response&#160;ID&#160;<br/><b>CanIfTxPduCanIdType&#160;</b><br/>
+Type of&#160;CAN&#160;message&#160;(e.g.&#160;standard&#160;or&#160;extended&#160;addressing)&#160;<br/><b>CanIfTxPduDlc&#160;</b><br/>
+Set&#160;this&#160;parameter&#160;to&#160;8&#160;bytes&#160;(non&#160;CAN-FD)&#160;<br/><b>CanIfTxPduRef&#160;</b><br/>
+<b>&#160;</b><br/>
+Reference&#160;to&#160;the&#160;global&#160;Tx PDU&#160;defined&#160;in the&#160;ECUC module&#160;(s.<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">&#160;1.2)</a>&#160;<br/>
+Figure&#160;4&#160;–&#160;Configure CAN&#160;Tx&#160;Message&#160;<br/>
+<b>CanIfTxPduType&#160;</b><br/>
+Set&#160;this&#160;parameter&#160;to&#160;STATIC&#160;<br/><b>CanIfTxPduUserTxConfirmationUL&#160;<br/></b>Set&#160;this&#160;parameter&#160;to&#160;XCP&#160;<br/><b>CanIfTxPduUserTxConfirmationName&#160;</b><br/>
+This&#160;parameter&#160;will&#160;be&#160;set&#160;to&#160;Xcp_CanIfTxConfirmation by&#160;the&#160;<br/>
+configuration tool&#160;<br/>
+&#160;<br/>
+<i><b>&#160;</b></i><br/>
+<b>3<i>&#160;</i></b><br/>
+<i>Application Note &#160;AN-ISC-8-1169<b>&#160;</b></i><br/>
+&#160;<br/>
+<hr/>
+<a name=4></a><img class="yflip" src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-4_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-4_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-4_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Xcp/doc/AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPro-4_4.png"/><br/>
+&#160;<br/>
+&#160;<br/>
+How&#160;to add CAN&#160;XCP&#160;messages&#160;in DaVinciConfiguratorPro&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>1.4&#160;&#160;XCP&#160;Configuration&#160;<br/></b>Navigate to the XCP&#160;settings&#160;in the&#160;basic&#160;editor&#160;<br/>
+•&#160;&#160;Create&#160;one&#160;Rx&#160;and one Tx&#160;XCP&#160;PDU&#160;by&#160;adding choice&#160;containers&#160;(right&#160;click&#160;on the blue/yellow&#160;container,&#160;<br/>
+select&#160;<b>Choose</b>)&#160;below&#160;the XcpPdus&#160;node.&#160;<br/>
+&#160;<br/>
+Figure 5&#160;–&#160;XCP&#160;Module&#160;in&#160;Basic&#160;Editor&#160;<br/>&#160;<br/>
+•&#160;&#160;Configure&#160;the&#160;parameter&#160;<b>Rx&#160;Pdu&#160;Ref</b>&#160;and&#160;Tx&#160;Pdu&#160;Ref&#160;(screenshot&#160;looks&#160;the same&#160;for&#160;Tx)&#160;by&#160;selecting the&#160;<br/>
+global&#160;PDU&#160;that&#160;has&#160;been configured in the ECUC&#160;module&#160;(done i<a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">n&#160;1.2)</a>.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Figure 6&#160;–&#160;Configuration of&#160;Rx&#160;Pdu Ref&#160;<br/>
+&#160;<br/>
+Figure 7&#160;–&#160;Configuration of&#160;Tx&#160;Pdu&#160;Ref&#160;<br/>
+•&#160;&#160;Within the XcpGeneral&#160;container,&#160;enable the flag&#160;XcpOnCanEnabled&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>2.0&#160;&#160;Additional&#160;Resources&#160;<br/></b>MICROSAR&#160;Technical&#160;References&#160;<br/>
+-&#160;&#160;TechnicalReference_Asr_CanIf.pdf&#160;<br/>-&#160;&#160;TechnicalReference_Asr_CanXcp.pdf&#160;<br/>-&#160;&#160;TechnicalReference_Asr_Xcp.pdf&#160;<br/>-&#160;&#160;XCP_ReferenceBook_&lt;Version/Language&gt;.pdf&#160;<br/>
+<b>3.0&#160;&#160;Contacts&#160;<br/></b>For&#160;a&#160;full&#160;list&#160;with&#160;all&#160;Vector&#160;locations&#160;and addresses&#160;worldwide,&#160;please visit<a href="http://vector.com/contact/">&#160;http://vector.com/contact/.</a>&#160;<br/>
+&#160;<br/>
+<i><b>&#160;</b></i><br/>
+<b>4<i>&#160;</i></b><br/>
+<i>Application Note &#160;AN-ISC-8-1169<b>&#160;</b></i><br/>
+&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">1.0 Overview</a>
+<ul>
+<li><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">1.1 BSW Module Configuration</a></li>
+<li><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#2">1.2 ECUC Configuration</a></li>
+<li><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#3">1.3 CANIF Configuration</a></li>
+<li><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">1.4 XCP Configuration</a></li>
+</ul>
+</li>
+<li><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">2.0 Additional Resources</a></li>
+<li><a href="AN-ISC-8-1169_How_to_add_XCP_PDUs_in_DaVinciConfiguratorPros.html#4">3.0 Contacts</a></li>
+</ul>
+<hr/>
+</body>
+</html>

@@ -1,0 +1,2555 @@
+---
+title: R20UT3654EJ0102-AUTOSARs
+linkTitle: R20UT3654EJ0102-AUTOSARs
+weight: 11
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Port/doc/R20UT3654EJ0102-AUTOSAR-1_1.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Port/doc/R20UT3654EJ0102-AUTOSAR-1_2.jpg"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Port/doc/R20UT3654EJ0102-AUTOSAR-1_3.png"/><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+AUTOSAR&#160;MCAL&#160;R4.0.3&#160;<br/>
+User's Manual&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+PORT&#160;Driver Component Ver.1.0.4&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Generation Tool&#160;User's&#160;Manual&#160;<br/>
+&#160;<br/>&#160;<br/>Target&#160;Device:&#160;&#160;<br/>RH850/P1x-C&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+All&#160;information&#160;contained&#160;in&#160;these&#160;materials,&#160;including&#160;products&#160;and&#160;product&#160;specifications,&#160;<br/>represents&#160;information&#160;on&#160;the&#160;product&#160;at&#160;the&#160;time&#160;of&#160;publication&#160;and&#160;is&#160;subject&#160;to&#160;change&#160;by&#160;<br/>Renesas&#160;Electronics&#160;Corp.&#160;without&#160;notice.&#160;Please&#160;review&#160;the&#160;latest&#160;information&#160;published&#160;by&#160;<br/>Renesas&#160;Electronics&#160;Corp.&#160;through&#160;various&#160;means,&#160;including&#160;the&#160;Renesas&#160;Electronics&#160;Corp.&#160;<br/>website<a href="http://www.renesas.com/">&#160;(http://www.renesas.com).&#160;</a><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+<a href="http://www.renesas.com/">www.renesas.com&#160;</a><br/>
+<a href="http://www.renesas.com/">Rev</a>.1.02&#160;Jun&#160;2017&#160;<br/>
+<hr/>
+<a name=2></a>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=3></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Notice&#160;<br/>
+1.&#160;<br/>
+Descriptions of&#160;circuits,&#160;software&#160;and&#160;other&#160;related&#160;information&#160;in&#160;this&#160;document&#160;are&#160;provided&#160;only&#160;to&#160;illustrate&#160;the&#160;operation&#160;of&#160;semiconductor&#160;<br/>products&#160;and&#160;application&#160;examples.&#160;You&#160;are&#160;fully&#160;responsible&#160;for&#160;the&#160;incorporation&#160;or&#160;any&#160;other&#160;use&#160;of&#160;the&#160;circuits,&#160;software,&#160;and&#160;information&#160;in&#160;<br/>the&#160;design&#160;of&#160;your&#160;product&#160;or&#160;system.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;losses and&#160;damages incurred&#160;by&#160;you&#160;or&#160;third&#160;<br/>parties arising&#160;from&#160;the&#160;use&#160;of&#160;these&#160;circuits,&#160;software,&#160;or&#160;information.&#160;<br/>
+2.&#160;<br/>
+Renesas&#160;Electronics&#160;hereby&#160;expressly&#160;disclaims&#160;any&#160;warranties&#160;against&#160;and&#160;liability&#160;for&#160;infringement&#160;or&#160;any&#160;other&#160;disputes involving&#160;patents,&#160;<br/>copyrights,&#160;or&#160;other&#160;intellectual&#160;property&#160;rights of&#160;third&#160;parties,&#160;by&#160;or&#160;arising&#160;from the&#160;use&#160;of&#160;Renesas&#160;Electronics&#160;products&#160;or&#160;technical&#160;information&#160;<br/>described&#160;in&#160;this&#160;document,&#160;including&#160;but&#160;not&#160;limited&#160;to,&#160;the&#160;product&#160;data,&#160;drawing,&#160;chart,&#160;program,&#160;algorithm,&#160;application&#160;examples.&#160;<br/>
+3.&#160;<br/>
+No&#160;license,&#160;express,&#160;implied&#160;or&#160;otherwise,&#160;is granted&#160;hereby&#160;under&#160;any&#160;patents,&#160;copyrights or&#160;other&#160;intellectual&#160;property&#160;rights of&#160;Renesas&#160;<br/>Electronics or&#160;others.&#160;<br/>
+4.&#160;<br/>
+You&#160;shall&#160;not&#160;alter,&#160;modify,&#160;copy,&#160;or&#160;otherwise&#160;misappropriate&#160;any&#160;Renesas&#160;Electronics&#160;product,&#160;whether&#160;in&#160;whole&#160;or&#160;in&#160;part.&#160;Renesas&#160;Electronics&#160;<br/>disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;losses or&#160;damages incurred&#160;by&#160;you&#160;or&#160;third&#160;parties arising&#160;from such&#160;alteration,&#160;modification,&#160;copy&#160;or&#160;<br/>otherwise&#160;misappropriation&#160;of&#160;Renesas Electronics&#160;products.&#160;<br/>
+5.&#160;<br/>
+Renesas&#160;Electronics&#160;products are&#160;classified&#160;according&#160;to&#160;the&#160;following&#160;two&#160;quality&#160;grades:&#160;&#34;Standard&#34;&#160;and&#160;&#34;High&#160;Quality&#34;.&#160;The&#160;intended&#160;<br/>applications for&#160;each&#160;Renesas&#160;Electronics&#160;product&#160;depends on&#160;the&#160;product’s&#160;quality&#160;grade,&#160;as indicated&#160;below.&#160;&#160;<br/>
+&#34;Standard&#34;:&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Computers;&#160;office&#160;equipment;&#160;communications&#160;equipment;&#160;test&#160;and&#160;measurement&#160;equipment;&#160;audio&#160;and&#160;visual&#160;equipment;&#160;<br/>
+home&#160;electronic&#160;appliances;&#160;machine&#160;tools;&#160;personal&#160;electronic&#160;equipment;&#160;and&#160;industrial&#160;robots&#160;etc.&#160;<br/>
+&#34;High&#160;Quality&#34;:&#160;&#160;&#160;Transportation&#160;equipment&#160;(automobiles,&#160;trains,&#160;ships,&#160;etc.);&#160;traffic&#160;control&#160;(traffic&#160;lights);&#160;large-scale&#160;communication&#160;<br/>
+equipment;&#160;key&#160;financial&#160;terminal&#160;systems;&#160;safety&#160;control&#160;equipment;&#160;etc.&#160;<br/>
+Renesas&#160;Electronics&#160;products are&#160;neither&#160;intended&#160;nor&#160;authorized&#160;for&#160;use&#160;in&#160;products&#160;or&#160;systems that&#160;may&#160;pose&#160;a&#160;direct&#160;threat&#160;to&#160;human&#160;life&#160;or&#160;<br/>bodily&#160;injury&#160;(artificial&#160;life&#160;support&#160;devices or&#160;systems,&#160;surgical&#160;implantations etc.),&#160;or&#160;may&#160;cause&#160;serious&#160;property&#160;damages (space&#160;and&#160;undersea&#160;<br/>repeaters;&#160;nuclear&#160;power&#160;control&#160;systems;&#160;aircraft&#160;control&#160;systems;&#160;key&#160;plant&#160;systems;&#160;military&#160;equipment;&#160;etc.).&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;<br/>and&#160;all&#160;liability&#160;for&#160;any&#160;damages or&#160;losses incurred&#160;by&#160;you&#160;or&#160;third&#160;parties arising&#160;from&#160;the&#160;use&#160;of&#160;any&#160;Renesas&#160;Electronics&#160;product&#160;for&#160;which&#160;the&#160;<br/>product&#160;is&#160;not&#160;intended&#160;by&#160;Renesas&#160;Electronics.&#160;<br/>
+6.&#160;<br/>
+When&#160;using&#160;the&#160;Renesas&#160;Electronics&#160;products,&#160;refer&#160;to&#160;the&#160;latest&#160;product&#160;information&#160;(data&#160;sheets,&#160;user’s manuals,&#160;application&#160;notes,&#160;&#34;General&#160;<br/>Notes for&#160;Handling&#160;and&#160;Using&#160;Semiconductor&#160;Devices&#34;&#160;in&#160;the&#160;reliability&#160;handbook,&#160;etc.),&#160;and&#160;ensure&#160;that&#160;usage&#160;conditions&#160;are&#160;within&#160;the&#160;ranges&#160;<br/>specified&#160;by&#160;Renesas&#160;Electronics&#160;with&#160;respect&#160;to&#160;maximum ratings,&#160;operating&#160;power&#160;supply&#160;voltage&#160;range,&#160;heat&#160;radiation&#160;characteristics,&#160;<br/>installation,&#160;etc.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;any&#160;malfunctions or&#160;failure&#160;or&#160;accident&#160;arising&#160;out&#160;of&#160;the&#160;use&#160;of&#160;Renesas&#160;<br/>Electronics&#160;products&#160;beyond&#160;such&#160;specified&#160;ranges.&#160;<br/>
+7.&#160;<br/>
+Although&#160;Renesas&#160;Electronics&#160;endeavors to&#160;improve&#160;the&#160;quality&#160;and&#160;reliability&#160;of&#160;Renesas&#160;Electronics&#160;products,&#160;semiconductor&#160;products&#160;have&#160;<br/>specific&#160;characteristics such&#160;as the&#160;occurrence&#160;of&#160;failure&#160;at&#160;a&#160;certain&#160;rate&#160;and&#160;malfunctions&#160;under&#160;certain&#160;use&#160;conditions.&#160;Further,&#160;Renesas&#160;<br/>Electronics&#160;products&#160;are&#160;not&#160;subject&#160;to&#160;radiation&#160;resistance&#160;design.&#160;Please&#160;ensure&#160;to&#160;implement&#160;safety&#160;measures to&#160;guard&#160;them&#160;against&#160;the&#160;<br/>possibility&#160;of&#160;bodily&#160;injury,&#160;injury&#160;or&#160;damage&#160;caused&#160;by&#160;fire,&#160;and&#160;social&#160;damage&#160;in&#160;the&#160;event&#160;of&#160;failure&#160;or&#160;malfunction&#160;of&#160;Renesas&#160;Electronics&#160;<br/>products,&#160;such&#160;as safety&#160;design&#160;for&#160;hardware&#160;and&#160;software&#160;including&#160;but&#160;not&#160;limited&#160;to&#160;redundancy,&#160;fire&#160;control&#160;and&#160;malfunction&#160;prevention,&#160;<br/>appropriate&#160;treatment&#160;for&#160;aging&#160;degradation&#160;or&#160;any&#160;other&#160;appropriate&#160;measures by&#160;your&#160;own&#160;responsibility&#160;as warranty&#160;for&#160;your&#160;products/system.&#160;<br/>Because&#160;the&#160;evaluation&#160;of&#160;microcomputer&#160;software&#160;alone&#160;is very&#160;difficult&#160;and&#160;not&#160;practical,&#160;please&#160;evaluate&#160;the&#160;safety&#160;of&#160;the&#160;final&#160;products or&#160;<br/>systems manufactured&#160;by&#160;you.&#160;<br/>
+8.&#160;<br/>
+Please&#160;contact&#160;a&#160;Renesas&#160;Electronics sales office&#160;for&#160;details as&#160;to&#160;environmental&#160;matters such&#160;as&#160;the&#160;environmental&#160;compatibility&#160;of&#160;each&#160;Renesas&#160;<br/>Electronics&#160;product.&#160;Please&#160;investigate&#160;applicable&#160;laws and&#160;regulations&#160;that&#160;regulate&#160;the&#160;inclusion&#160;or&#160;use&#160;of&#160;controlled&#160;substances,&#160;including&#160;<br/>without&#160;limitation,&#160;the&#160;EU&#160;RoHS&#160;Directive&#160;carefully&#160;and&#160;sufficiently&#160;and&#160;use&#160;Renesas&#160;Electronics&#160;products&#160;in&#160;compliance&#160;with&#160;all&#160;these&#160;applicable&#160;<br/>laws and&#160;regulations.&#160;Renesas&#160;Electronics&#160;disclaims&#160;any&#160;and&#160;all&#160;liability&#160;for&#160;damages or&#160;losses occurring&#160;as&#160;a&#160;result&#160;of&#160;your&#160;noncompliance&#160;with&#160;<br/>applicable&#160;laws and&#160;regulations.&#160;<br/>
+9.&#160;<br/>
+Renesas&#160;Electronics&#160;products and&#160;technologies shall&#160;not&#160;be&#160;used&#160;for&#160;or&#160;incorporated&#160;into&#160;any&#160;products&#160;or&#160;systems whose&#160;manufacture,&#160;use,&#160;or&#160;sale&#160;<br/>is&#160;prohibited&#160;under&#160;any&#160;applicable&#160;domestic&#160;or&#160;foreign&#160;laws or&#160;regulations.&#160;You&#160;shall&#160;not&#160;use&#160;Renesas&#160;Electronics&#160;products or&#160;technologies for&#160;(1)&#160;<br/>any&#160;purpose&#160;relating&#160;to&#160;the&#160;development,&#160;design,&#160;manufacture,&#160;use,&#160;stockpiling,&#160;etc.,&#160;of&#160;weapons of&#160;mass&#160;destruction,&#160;such&#160;as&#160;nuclear&#160;weapons,&#160;<br/>chemical&#160;weapons,&#160;or&#160;biological&#160;weapons,&#160;or&#160;missiles (including&#160;unmanned&#160;aerial&#160;vehicles (UAVs))&#160;for&#160;delivering&#160;such&#160;weapons,&#160;(2)&#160;any&#160;purpose&#160;<br/>relating&#160;to&#160;the&#160;development,&#160;design,&#160;manufacture,&#160;or&#160;use&#160;of&#160;conventional&#160;weapons,&#160;or&#160;(3)&#160;any&#160;other&#160;purpose&#160;of&#160;disturbing&#160;international&#160;peace&#160;and&#160;<br/>security,&#160;and&#160;you&#160;shall&#160;not&#160;sell,&#160;export,&#160;lease,&#160;transfer,&#160;or&#160;release&#160;Renesas&#160;Electronics&#160;products or&#160;technologies to&#160;any&#160;third&#160;party&#160;whether&#160;directly&#160;<br/>or&#160;indirectly&#160;with&#160;knowledge&#160;or&#160;reason&#160;to&#160;know&#160;that&#160;the&#160;third&#160;party&#160;or&#160;any&#160;other&#160;party&#160;will&#160;engage&#160;in&#160;the&#160;activities&#160;described&#160;above.&#160;When&#160;<br/>exporting,&#160;selling,&#160;transferring,&#160;etc.,&#160;Renesas&#160;Electronics&#160;products or&#160;technologies,&#160;you&#160;shall&#160;comply&#160;with&#160;any&#160;applicable&#160;export&#160;control&#160;laws and&#160;<br/>regulations&#160;promulgated&#160;and&#160;administered&#160;by&#160;the&#160;governments of&#160;the&#160;countries asserting&#160;jurisdiction&#160;over&#160;the&#160;parties or&#160;transactions.&#160;<br/>
+10.&#160;&#160;Please&#160;acknowledge&#160;and&#160;agree&#160;that&#160;you&#160;shall&#160;bear&#160;all&#160;the&#160;losses and&#160;damages which&#160;are&#160;incurred&#160;from the&#160;misuse&#160;or&#160;violation&#160;of&#160;the&#160;terms and&#160;<br/>
+conditions&#160;described&#160;in&#160;this&#160;document,&#160;including&#160;this&#160;notice,&#160;and&#160;hold&#160;Renesas Electronics&#160;harmless,&#160;if&#160;such&#160;misuse&#160;or&#160;violation&#160;results from your&#160;<br/>resale&#160;or&#160;making&#160;Renesas&#160;Electronics&#160;products&#160;available&#160;any&#160;third&#160;party.&#160;<br/>
+11.&#160;&#160;This document&#160;shall&#160;not&#160;be&#160;reprinted,&#160;reproduced&#160;or&#160;duplicated&#160;in&#160;any&#160;form,&#160;in&#160;whole&#160;or&#160;in&#160;part,&#160;without&#160;prior&#160;written&#160;consent&#160;of&#160;Renesas&#160;<br/>
+Electronics.&#160;<br/>
+12.&#160;&#160;Please&#160;contact&#160;a&#160;Renesas&#160;Electronics sales office&#160;if&#160;you&#160;have&#160;any&#160;questions regarding&#160;the&#160;information&#160;contained&#160;in&#160;this&#160;document&#160;or&#160;Renesas&#160;<br/>
+Electronics&#160;products.&#160;<br/>
+&#160;<br/>
+(Note&#160;1)&#160;&#160;&#160;&#34;Renesas&#160;Electronics&#34;&#160;as&#160;used&#160;in&#160;this&#160;document&#160;means&#160;Renesas&#160;Electronics&#160;Corporation&#160;and&#160;also&#160;includes its majority-owned&#160;<br/>
+subsidiaries.&#160;<br/>
+(Note&#160;2)&#160;&#160;&#160;&#34;Renesas&#160;Electronics&#160;product(s)&#34;&#160;means&#160;any&#160;product&#160;developed&#160;or&#160;manufactured&#160;by&#160;or&#160;for&#160;Renesas&#160;Electronics.&#160;<br/>
+&#160;<br/>
+<b>3&#160;</b><br/>
+<hr/>
+<a name=4></a>&#160;<br/>
+&#160;<br/>
+<b>4&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=5></a>&#160;<br/>
+<b>Abbreviations&#160;and&#160;Acronyms</b>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Abbreviation&#160;/&#160;Acronym</b>&#160;<br/>
+<b>Description</b>&#160;<br/>
+AUTOSAR&#160;<br/>
+AUTomotive&#160;Open&#160;System&#160;ARchitecture&#160;<br/>
+BSWMDT&#160;<br/>
+Basic&#160;Software&#160;Module&#160;Description&#160;Template&#160;<br/>
+ECU&#160;<br/>
+Electronic&#160;Control&#160;Unit&#160;<br/>
+ICU&#160;<br/>
+Input&#160;Capture&#160;Unit&#160;<br/>
+Id/ID&#160;<br/>
+Identifier&#160;<br/>
+INTP&#160;<br/>
+Interrupt&#160;<br/>
+MCAL&#160;<br/>
+Micro&#160;Controller Abstraction&#160;Layer&#160;<br/>
+NMI&#160;<br/>
+Non&#160;Maskable&#160;Interrupt&#160;<br/>
+XML&#160;<br/>
+eXtensible&#160;Mark-up&#160;Language&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Definitions</b>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Terminology</b>&#160;<br/>
+<b>Description</b>&#160;<br/>
+BSWMDT&#160;File&#160;<br/>
+This&#160;file&#160;is&#160;the&#160;template&#160;for&#160;the&#160;Basic&#160;Software&#160;Module&#160;Description.&#160;<br/>
+Configuration&#160;XML&#160;File&#160;<br/>
+This&#160;file&#160;contains&#160;the&#160;setting&#160;of&#160;command&#160;line&#160;options.&#160;<br/>
+ECU&#160;Configuration&#160;Description&#160;<br/>
+Input&#160;file&#160;to&#160;MCAL&#160;Code&#160;Generator Tool.&#160;It&#160;is&#160;generated&#160;by&#160;ECU&#160;<br/>
+File&#160;<br/>
+Configuration&#160;Editor.&#160;<br/>
+Sl.No&#160;<br/>
+Serial&#160;Number.&#160;<br/>
+<b>5&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=6></a>&#160;<br/>
+&#160;<br/>
+<b>6&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=7></a>&#160;<br/>
+<b>Table&#160;of&#160;Contents&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/><a href="R20UT3654EJ0102-AUTOSARs.html#9"><b>Chapter 1</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#9"><b>Introduction&#160;........................................................................................&#160;9</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#9"><b>1.1</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#9"><b>Document&#160;Overview&#160;.............................................................................................................&#160;9</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#11"><b>Chapter 2</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#11"><b>Reference&#160;.........................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#11"><b>2.1</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#11"><b>Reference&#160;Documents&#160;........................................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#11"><b>2.2</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#11"><b>Trademark&#160;Notice................................................................................................................&#160;11</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#13"><b>Chapter 3</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#13"><b>Code&#160;Generation Overview&#160;.............................................................&#160;13</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#17"><b>Chapter 4</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#17"><b>Input&#160;Files&#160;.........................................................................................&#160;17</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#19"><b>Chapter 5</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#19"><b>Output&#160;Files&#160;......................................................................................&#160;17</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#21"><b>Chapter&#160;6</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#21"><b>Precautions&#160;......................................................................................&#160;19</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#23"><b>Chapter 7</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#23"><b>User Configuration&#160;Validation&#160;........................................................&#160;21</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#25"><b>Chapter 8</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#25"><b>Configuration Overview&#160;..................................................................&#160;23</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#25"><b>8.1</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#25"><b>Container&#160;Overview&#160;............................................................................................................&#160;23</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#26">8.1.1&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#26">Pre-Compile Configurable&#160;Parameters&#160;...................................................................&#160;24&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#28">8.1.2&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#28">Post&#160;Build Time Configurable&#160;Parameters&#160;..............................................................&#160;26&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#41"><b>Chapter 9</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#41"><b>Messages..........................................................................................&#160;39</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#41"><b>9.1&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;Error&#160;Messages&#160;..................................................................................................................&#160;39</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#44"><b>9.2&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160;Warning&#160;Messages&#160;............................................................................................................&#160;42</b>&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#45"><b>9.3&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;Information&#160;Messages&#160;.......................................................................................................&#160;43</b>&#160;</a><br/>
+&#160;<br/>
+<b>7&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=8></a>&#160;<br/>
+<b>&#160;</b><br/>
+<b>List&#160;of&#160;Figures&#160;</b><br/>
+<b>&#160;</b><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#13">Figure&#160;3-1&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#13">Overview&#160;of&#160;Code&#160;Generation&#160;.......................................................................................&#160;13&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#14">Figure&#160;3-2&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#14">Flow-Diagram&#160;of&#160;Code Generation&#160;...............................................................................&#160;14&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#25">Figure&#160;8-1&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#25">Configuration Overview.................................................................................................&#160;23&#160;</a><br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;&#160;&#160;&#160;&#160;List&#160;of&#160;Tables&#160;</b><br/>
+<b>&#160;<br/></b><a href="R20UT3654EJ0102-AUTOSARs.html#11">Table 2-1&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#11">Reference Documents&#160;......................................................................................................&#160;11&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#19">Table 5-1&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#19">Output&#160;Files&#160;Description....................................................................................................&#160;17&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#26">Table 8-1&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#26">Pre-Compile Configurable&#160;Parameters&#160;.............................................................................&#160;24&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#28">Table 8-2&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#28">Post&#160;Build Time Configurable&#160;Parameters........................................................................&#160;26&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#32">Table 8-3&#160;</a><br/>
+<a href="R20UT3654EJ0102-AUTOSARs.html#32">Port Modes&#160;Description.....................................................................................................&#160;31&#160;</a><br/>
+<b>&#160;<br/>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>8&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=9></a><b>Introduction&#160;</b><br/>
+<b>Chapter&#160;1&#160;</b><br/>
+&#160;<br/>
+<b>Chapter&#160;1&#160;&#160;Introduction&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+The&#160;PORT&#160;Driver component&#160;provides&#160;the service for initializing the&#160;whole&#160;<br/>PORT&#160;structure of&#160;the&#160;microcontroller.&#160;<br/>&#160;<br/>&#160;<br/>The&#160;PORT&#160;Driver Component comprises&#160;of&#160;two sections&#160;as&#160;Embedded&#160;<br/>Software and&#160;the&#160;MCAL Code&#160;Generator Tool&#160;to&#160;achieve scalability&#160;and&#160;<br/>configurability.&#160;<br/>&#160;<br/>&#160;<br/>The&#160;document describes&#160;the&#160;PORT&#160;module specific&#160;inputs&#160;and outputs&#160;of&#160;the&#160;<br/>MCAL Code&#160;Generator Tool&#160;that&#160;is&#160;the&#160;common&#160;code generator engine used&#160;<br/>for the&#160;generation&#160;of&#160;the configuration&#160;code&#160;for all&#160;MCAL modules.&#160;MCAL&#160;<br/>Code&#160;Generator Tool&#160;is&#160;a&#160;command line&#160;tool&#160;that&#160;extracts&#160;information&#160;from&#160;<br/>ECU Configuration Description&#160;File,&#160;BSWMDT&#160;File&#160;and generates&#160;PORT&#160;<br/>Driver&#160;C Source and&#160;C&#160;Header&#160;files&#160;(Port_PBcfg.c&#160;and&#160;Port_Cfg.h,&#160;<br/>Port_Cbk.h,&#160;Port_Hardware.c&#160;and&#160;Port_Hardware.h).&#160;<br/>&#160;<br/>&#160;<br/>This&#160;document contains&#160;information&#160;on&#160;the&#160;options,&#160;input and&#160;output&#160;files&#160;of&#160;the&#160;<br/>MCAL Code&#160;Generator Tool. In&#160;addition, this&#160;manual&#160;covers&#160;a&#160;step-by-step&#160;<br/>procedure for the usage&#160;of&#160;MCAL Code&#160;Generator Tool.&#160;<br/>&#160;<br/>&#160;<br/>ECU Configuration Description&#160;File contains&#160;information&#160;about&#160;PORT&#160;General&#160;<br/>Configuration,&#160;Port&#160;Pin&#160;Configurations.&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>1.1&#160;</b><br/>
+<b>Document&#160;Overview&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+This&#160;user&#160;manual&#160;is&#160;organized&#160;as&#160;given&#160;in&#160;the&#160;table&#160;below:&#160;<br/>
+&#160;<br/>
+<b>Table&#160;1-1&#160;&#160;Document&#160;Overview&#160;</b><br/>
+<b>Section</b>&#160;<br/>
+<b>Contents</b>&#160;<br/>
+Section&#160;1&#160;(Introduction)&#160;<br/>
+Provides&#160;an&#160;introduction&#160;to&#160;the&#160;document&#160;and&#160;explains&#160;how&#160;information&#160;<br/>is&#160;organized&#160;in&#160;this&#160;manual.&#160;<br/>
+Section&#160;2&#160;(Reference)&#160;<br/>
+Provides&#160;a&#160;list&#160;of&#160;documents&#160;referred&#160;while&#160;developing&#160;this&#160;document.&#160;<br/>
+Section&#160;3&#160;(Code&#160;Generation&#160;<br/>
+Provides&#160;the&#160;Code&#160;Generation&#160;Overview.&#160;<br/>
+Overview)&#160;<br/>
+Section&#160;4&#160;(Input&#160;Files)&#160;<br/>
+Provides&#160;information&#160;about&#160;ECU&#160;Configuration&#160;Description&#160;File.&#160;<br/>
+Section&#160;5&#160;(Output Files)&#160;<br/>
+Explains&#160;the&#160;output&#160;files&#160;that&#160;are&#160;generated&#160;by&#160;MCAL&#160;Code&#160;Generator&#160;<br/>Tool.&#160;<br/>
+Section&#160;6&#160;(Precautions)&#160;<br/>
+Contains&#160;precautions&#160;to&#160;be&#160;taken&#160;during&#160;configuration&#160;of&#160;ECU&#160;<br/>Configuration&#160;Description&#160;File.&#160;<br/>
+Section&#160;7&#160;(User&#160;Configuration&#160;<br/>
+Describes&#160;about&#160;user&#160;configuration&#160;validation&#160;done&#160;by&#160;the&#160;MCAL&#160;Code&#160;<br/>
+Validation)&#160;<br/>
+Generator Tool.&#160;<br/>
+Section&#160;8&#160;(Configuration&#160;<br/>
+Provides&#160;Container Overview.&#160;<br/>
+Overview)&#160;<br/>
+Section&#160;9&#160;(Messages)&#160;<br/>
+Describes&#160;all&#160;the&#160;Error/Warning/Information&#160;messages&#160;of&#160;R4.0.3&#160;which&#160;<br/>helps&#160;the&#160;user to&#160;understand&#160;the&#160;probable&#160;reason&#160;for&#160;the&#160;same.&#160;<br/>
+<b>9&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=10></a><b>Chapter&#160;1&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;Introduction&#160;</b><br/>
+&#160;<br/>
+<b>10&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=11></a><b>Reference&#160;</b><br/>
+<b>Chapter&#160;2</b>&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;2&#160;</b><br/>
+<b>Reference&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2.1&#160;</b><br/>
+<b>Reference&#160;Documents&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+The&#160;following&#160;table&#160;lists&#160;the&#160;documents&#160;referred&#160;to&#160;develop this&#160;document:&#160;<br/>&#160;<br/>
+<b>Table&#160;2-1&#160;&#160;Reference&#160;Documents&#160;</b><br/>
+&#160;<br/>
+<b>Sl.No.</b>&#160;&#160;<b>Title</b>&#160;<br/>
+<b>Version</b>&#160;<br/>
+1.&#160;<br/>
+AUTOSAR_SWS_PortDriver.pdf&#160;<br/>
+3.2.0&#160;<br/>
+2.&#160;<br/>
+MCAL_CodeGenerator_Tool_UserManual.pdf<b>&#160;</b><br/>
+1.7&#160;<br/>
+3.&#160;<br/>
+R20UT3828EJ0101-AUTOSAR.pdf&#160;<br/>
+1.0.3&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2.2&#160;</b><br/>
+<b>Trademark&#160;Notice&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+Microsoft and&#160;Windows&#160;are&#160;trademarks/registered trademarks&#160;of&#160;Microsoft&#160;<br/>Corporation.&#160;<br/>
+<b>11&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=12></a><b>Chapter&#160;2&#160;</b><br/>
+<b>Reference&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>12&#160;</b><br/>
+<hr/>
+<a name=13></a><b>Code&#160;Generation&#160;Overview&#160;&#160;</b><br/>
+<b>Chapter&#160;3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;3&#160;</b><br/>
+<b>Code Generation Overview&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+Code&#160;Generation&#160;overview&#160;is&#160;shown&#160;below.&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<br/>
+&#160;<br/>
+<b>ECU Configuration&#160;</b><br/>
+&#160;<br/>
+<b>Description&#160;File&#160;and&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>BSWMDT File&#160;</b><br/>
+<b>Port_Cfg.h,&#160;</b><br/>
+&#160;<br/>
+<b>MCAL&#160;&#160; &#160;</b><br/>
+<b>Port_Cbk.h,&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>Port_Hardware.h,&#160;</b><br/>
+<b>Generator&#160;</b><br/>
+&#160;<br/>
+<b>Velocity template&#160;files&#160;</b><br/>
+<b>Port_PBcfg.c,&#160;</b><br/>
+&#160;<br/>
+<b>for&#160;PORT&#160;</b><br/>
+&#160;<br/>
+<b>Port_Hardware.c&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Configuration&#160;XML File&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/><b>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160;Figure&#160;3-1&#160;</b><br/>
+<b>Overview&#160;of&#160;Code&#160;Generation&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+&#160;&#160;ECU Configuration Description&#160;File (.arxml):&#160;<br/>
+This&#160;file will&#160;contain&#160;PORT&#160;Driver specific&#160;configuration information.&#160;<br/>This&#160;file should be generated&#160;by&#160;AUTOSAR specified&#160;Configuration&#160;<br/>Editor.&#160;<br/>&#160;<br/>
+&#160;&#160;BSWMDT&#160;File&#160;(.arxml):&#160;<br/>
+MCAL Code&#160;Generator Tool&#160;uses&#160;“Common&#160;Published&#160;Information”&#160;<br/>from&#160;PORT&#160;module specific&#160;BSWMDT&#160;File.&#160;PORT&#160;module specific&#160;<br/>BSWMDT&#160;File should not be updated manually&#160;since&#160;it&#160;is&#160;“Static&#160;<br/>Configuration” file.&#160;<br/>&#160;<br/>
+&#160;&#160;Velocity&#160;template files:&#160;<br/>
+Port_PBcfg_c.vm,&#160;Port_Cbk_h.vm,&#160;Port_Cfg_h.vm,&#160;<br/>Port_Hardware_h.vm,&#160;Port_Hardware_c.vm,&#160;Port_Validate.vm&#160;<br/>They&#160;are&#160;interpreted&#160;by&#160;the&#160;MCAL Code&#160;Generator Tool&#160;in order to&#160;<br/>provide&#160;user&#160;input&#160;validation&#160;and&#160;generate the final&#160;output file&#160;<br/>needed&#160;by&#160;the&#160;AUTOSAR&#160;configuration&#160;chain .They&#160;are the&#160;&#34;logic&#34;&#160;<br/>of&#160;the Code&#160;Generator.&#160;<br/>&#160;<br/>
+&#160;&#160;Configuration XML&#160;File (.xml):&#160;<br/>
+This&#160;file&#160;is&#160;used&#160;to&#160;specify&#160;which&#160;velocity&#160;template&#160;to use and&#160;their&#160;<br/>location&#160;and&#160;the&#160;name of&#160;the output file generated&#160;<br/>
+&#160;<br/>
+For the&#160;error free&#160;input&#160;file,&#160;the&#160;MCAL Code&#160;Generator Tool&#160;generates&#160;the&#160;<br/>following&#160;output files:&#160;Port_Cfg.h,&#160;Port_Cbk.h,&#160;Port_Hardware.h,&#160;Port_PBcfg.c&#160;<br/>and&#160;Port_Hardware.c&#160;and displays&#160;appropriate context&#160;sensitive&#160;error&#160;<br/>messages&#160;for wrong&#160;input&#160;and&#160;exits.&#160;<br/>&#160;<br/>
+<b>13&#160;</b><br/>
+<hr/>
+<a name=14></a><b>&#160;Chapter&#160;3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Code&#160;Generation&#160;Overview&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+ECU Configuration Description&#160;File can&#160;be&#160;created&#160;or&#160;edited&#160;using&#160;ECU&#160;<br/>Configuration Editor.&#160;<br/>&#160;<br/>Concept&#160;of&#160;execution&#160;MCAL Code Generator&#160;Tool&#160;is&#160;<br/>as&#160;follows:&#160;<br/>
+&#160;<br/>&#160;<br/>
+Generation&#160;start&#160;<br/>
+&#160;<br/>
+Common&#160;<br/>
+Validate.vm&#160;<br/>
+Helper.vm&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+config.xml&#160;<br/>
+&#160;<br/>&#160;ECU&#160;Configuration&#160;<br/>
+&#160;<br/>
+Description&#160;Files&#160;<br/>
+MCAL Code&#160;<br/>
+Template&#160;files(.vm)&#160;<br/>
+&#160;<br/>
+And&#160;BSWMDT&#160;file&#160;<br/>
+Generator Tool&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+(.arxml)&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+No&#160;<br/>
+Yes&#160;<br/>
+Validation&#160;<br/>
+&#160;<br/>
+successful&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+Display&#160;Error&#160;<br/>
+Generate&#160;Output&#160;Files&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160; &#160;&#160;Generation&#160;stop&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/><b>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;&#160;Figure 3-2&#160;</b><br/>
+<b>Flow-Diagram&#160;of&#160;Code Generation&#160;</b><br/>
+<b>&#160;</b><br/>
+The&#160;module “Validate”&#160;will&#160;validate&#160;the&#160;configuration (contents&#160;of&#160;ECU&#160;<br/>Configuration Description File(s)&#160;as&#160;input). If&#160;there&#160;are incorrect values&#160;or&#160;<br/>incorrect dependencies, the&#160;MCAL Code&#160;Generator&#160;Tool&#160;l&#160;will&#160;display&#160;error,&#160;<br/>warning&#160;and&#160;information&#160;messages. In&#160;case&#160;of&#160;errors, the&#160;MCAL Code&#160;<br/>Generator Tool&#160;will&#160;abort the&#160;execution.&#160;&#160;<br/>
+Port_Cfg_h.vm&#160;/ Port_PBcfg_c.vm&#160;will&#160;generate compiler switch&#160;/ structures&#160;<br/>necessary&#160;to&#160;the&#160;AUTOSAR&#160;Configuration&#160;chain&#160;and&#160;vendor&#160;specific&#160;<br/>parameters.&#160;<br/>
+Port_Cbk_h.vm&#160;will&#160;generate&#160;Prototype&#160;Declarations&#160;for Port&#160;Callback&#160;<br/>Notification&#160;Functions.&#160;<br/>
+Port_Hardware_h.vm&#160;/ Port_Hardware_c.vm&#160;will&#160;generate&#160;hardware&#160;related&#160;<br/>info (defines&#160;number&#160;of&#160;actual&#160;instances&#160;/ channels&#160;used&#160;/ structure&#160;to&#160;access&#160;<br/>to&#160;the I/O&#160;mapped&#160;peripheral).<br/>
+&#160;<br/>
+<b>&#160; &#160; &#160; &#160; &#160;Remark&#160;&#160;&#160;</b>Please refer&#160;the&#160;general&#160;MCAL Code Generator Tool&#160;User Manual&#160;&#160; &#160;&#160;<br/><b>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;</b>(MCAL_CodeGenerator_Tool_UserManual.pdf)&#160;and &#160;&#160;&#160;<br/>
+<b>14&#160;</b><br/>
+<hr/>
+<a name=15></a><b>Code&#160;Generation&#160;Overview&#160;&#160;</b><br/>
+<b>Chapter&#160;3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;</b>&#160; &#160; &#160;GettingStarted_MCAL_Drivers_X1x.pdf&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160;&#160;&#160;(R20UT3828EJ0101-AUTOSAR.pdf)&#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160;for details&#160;about the tool&#160;command line options.&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>15&#160;</b><br/>
+<hr/>
+<a name=16></a><b>&#160;Chapter&#160;3&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Code Generation&#160;Overview&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>16&#160;</b><br/>
+<hr/>
+<a name=17></a><b>Input&#160;Files&#160;</b><br/>
+<b>Chapter&#160;4&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;4&#160;</b><br/>
+<b>Input Files&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+MCAL Code&#160;Generator Tool&#160;will&#160;accept the&#160;config.xml&#160;file&#160;which has&#160;paths&#160;to&#160;<br/>the&#160;code generator template files&#160;for generating&#160;PORT&#160;Driver files.&#160;MCAL&#160;<br/>Code&#160;Generator Tool&#160;accepts&#160;ECU&#160;Configuration&#160;Description File(s),&#160;PORT&#160;<br/>Configuration XML&#160;file&#160;and&#160;BSWMDT&#160;File as&#160;input.&#160;MCAL Code Generator&#160;<br/>Tool&#160;needs&#160;information&#160;about&#160;PORT&#160;Driver component. Hence&#160;ECU&#160;<br/>Configuration Description File&#160;should contain configuration&#160;of&#160;PORT&#160;Driver&#160;<br/>component.&#160;MCAL&#160;Code Generator Tool&#160;ignores&#160;any&#160;other&#160;AUTOSAR&#160;<br/>component&#160;configured in the ECU&#160;Configuration&#160;Description&#160;File.&#160;ECU&#160;<br/>Configuration Description File&#160;can&#160;be generated&#160;using&#160;configuration&#160;editor.&#160;<br/>
+&#160;<br/>
+ECU Configuration Description&#160;File must comply&#160;with&#160;AUTOSAR standard&#160;<br/>ECU Configuration Description&#160;File format.&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+<b>Remark&#160;&#160;</b>The&#160;detailed explanation&#160;about&#160;the&#160;parameters&#160;and containers&#160;are found in&#160;<br/>
+Parameter&#160;Definition File.&#160;<br/>
+<b>17&#160;</b><br/>
+<hr/>
+<a name=18></a>&#160;&#160;<b>Chapter&#160;4&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160; &#160;Input&#160;Files</b>&#160;&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>18&#160;</b><br/>
+<b>&#160;</b><br/>
+<hr/>
+<a name=19></a><b>&#160;Output&#160;Files&#160;</b><br/>
+<b>Chapter&#160;5</b>&#160;<br/>
+&#160;<br/>&#160;<br/><b>Chapter&#160;5&#160;</b><br/>
+<b>Output Files&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+MCAL&#160;Code&#160;Generator&#160;Tool&#160;generates&#160;configuration details&#160;in C Header and&#160;<br/>C Source files&#160;(Port_Cfg.h,&#160;Port_Cbk.h,&#160;Port_PBcfg.c,&#160;Port_Hardware.c&#160;and&#160;<br/>Port_Hardware.h).&#160;<br/>
+&#160;<br/>&#160;<br/>
+The&#160;content&#160;of&#160;each output&#160;file is&#160;given&#160;in&#160;the&#160;table&#160;below:&#160;<br/>
+&#160;<br/>
+<b>&#160;<br/>Table 5-1&#160;&#160;Output&#160;Files&#160;Description&#160;</b><br/>
+&#160;<br/>
+<b>Output&#160;File</b>&#160;<br/>
+<b>Details</b>&#160;<br/>
+Port_Cfg.h&#160;<br/>
+This&#160;file&#160;contains&#160;the&#160;macro&#160;definitions&#160;for&#160;general&#160;configuration,&#160;total&#160;number&#160;of&#160;Port&#160;<br/>Pins&#160;configured&#160;and&#160;configuration&#160;set&#160;handles.&#160;This&#160;file&#160;also&#160;includes&#160;the&#160;Port&#160;Pin&#160;<br/>handles&#160;for each&#160;configuration&#160;set.&#160;<br/>
+Port_Cbk.h&#160;<br/>
+This&#160;file&#160;contains&#160;Prototype&#160;Declarations&#160;for Port&#160;callback&#160;Notification&#160;Functions.&#160;<br/>
+Port_PBcfg.c&#160;<br/>
+This&#160;file&#160;contains&#160;structure&#160;for&#160;Port&#160;Pin&#160;Initialization,&#160;Port&#160;Pin&#160;Direction&#160;Switch&#160;and&#160;Port&#160;<br/>Pin&#160;Direction&#160;Refresh&#160;during&#160;runtime.&#160;<br/>
+Port_Hardware.c&#160;&#160;This&#160;file contains&#160;the&#160;definitions&#160;for&#160;addresses&#160;of&#160;the hardware registers&#160;used&#160;<br/>
+in the&#160;PORT&#160;Driver&#160;Module.&#160;<br/>
+Port_Hardware.h&#160;&#160;This&#160;file contains&#160;the&#160;declarations&#160;for&#160;addresses&#160;of&#160;the&#160;hardware registers&#160;<br/>
+used&#160;in the&#160;PORT&#160;Driver&#160;Module.&#160;<br/>
+&#160;<br/>
+<b>Remark&#160;&#160;</b>Output&#160;files&#160;generated&#160;by&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;shall&#160;not&#160;be&#160;modified&#160;or&#160;<br/>
+edited&#160;manually.&#160;<br/>
+<b>19&#160;</b><br/>
+<hr/>
+<a name=20></a><b>Chapter&#160;5&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Output&#160;Files</b>&#160;<br/>&#160;<br/>
+&#160;<br/>
+<b>20&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=21></a><b>Precautions&#160;</b><br/>
+<b>Chapter&#160;6&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;6&#160;</b><br/>
+<b>Precautions&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+•&#160;&#160;ECU Configuration Description&#160;File and&#160;BSWMDT&#160;File must comply&#160;with&#160;<br/>
+AUTOSAR standard for&#160;R4.0.3&#160;ECU Configuration&#160;Description&#160;File and&#160;<br/>BSWMDT&#160;File respectively.&#160;<br/>
+&#160;<br/>•&#160;&#160;ECU Configuration Description&#160;File must contain&#160;PORT&#160;module description&#160;<br/>
+files.&#160;<br/>
+&#160;<br/>
+•&#160;&#160;Configuration XML&#160;File should&#160;contain the&#160;file extension ‘.xml’.&#160;<br/>
+&#160;<br/>
+•&#160;&#160;Configuration XML&#160;File&#160;(config.xml&#160;file)&#160;should convey&#160;the&#160;Velocity&#160;template&#160;<br/>
+files&#160;location and output&#160;file&#160;location.&#160;<br/>
+&#160;<br/>&#160;<br/>•&#160;&#160;All&#160;the function names&#160;and the&#160;string&#160;values&#160;configured&#160;should follow&#160;C&#160;<br/>
+syntax&#160;for variables. It can&#160;only&#160;contain alphanumeric&#160;characters&#160;and “_”. It&#160;<br/>should start&#160;with&#160;an&#160;alphabet.&#160;<br/>
+&#160;<br/>•&#160;&#160;If&#160;the output files&#160;generated&#160;by&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;are&#160;modified&#160;<br/>
+externally, then&#160;they&#160;may&#160;not&#160;produce the expected&#160;results&#160;or may&#160;lead&#160;to&#160;<br/>error/warning/Information&#160;messages.&#160;<br/>
+&#160;<br/>•&#160;&#160;Short&#160;Name for a container&#160;should be unique&#160;within&#160;a&#160;name space.&#160;<br/>&#160;<br/>•&#160;&#160;An error free&#160;ECU Configuration Description File&#160;generated&#160;from&#160;<br/>
+configuration&#160;editor has&#160;to&#160;be&#160;provided as&#160;input to&#160;the&#160;MCAL&#160;Code&#160;Generator&#160;<br/>Tool. Otherwise&#160;MCAL&#160;Code&#160;Generator&#160;Tool&#160;may&#160;not&#160;produce the&#160;expected&#160;<br/>results&#160;or may&#160;lead&#160;to “errors/warnings/information&#160;messages”.&#160;<br/>
+&#160;<br/>•&#160;&#160;If&#160;no&#160;configuration of&#160;certain port filter is&#160;done&#160;within this&#160;Port&#160;Module,&#160;the&#160;<br/>
+device specific&#160;default settings&#160;will&#160;take effect on this&#160;filter.&#160;<br/>
+&#160;<br/>•&#160;&#160;If&#160;user selects&#160;the&#160;alternate&#160;signal&#160;in the&#160;port group&#160;container, then&#160;the&#160;<br/>
+respective port filter container should be configured. For&#160;example:&#160;If&#160;signal&#160;<br/>NMI is&#160;selected in the port&#160;group&#160;container&#160;respective&#160;filter group container&#160;<br/>has&#160;to&#160;be&#160;configured.&#160;<br/>
+&#160;<br/>&#160;<br/>•&#160;&#160;In&#160;case of&#160;multiple configuration sets,&#160;if&#160;any&#160;filter is&#160;configured&#160;in&#160;one&#160;<br/>
+configuration&#160;set, then&#160;the&#160;same filter should&#160;be&#160;configured across&#160;all&#160;<br/>configured&#160;multiple configuration sets.&#160;<br/>
+&#160;<br/>•&#160;&#160;In&#160;post-build time,&#160;sub&#160;containers&#160;of&#160;PortFilterGroupConfig containers&#160;<br/>
+should not be&#160;added&#160;or deleted.&#160;<br/>
+&#160;<br/>•&#160;&#160;Edge/Level&#160;settings&#160;for External&#160;Interrupt&#160;(INTP)&#160;signals&#160;can&#160;be overwritten&#160;<br/>
+by&#160;ICU component&#160;to&#160;change&#160;the default&#160;activation&#160;type and the type&#160;of&#160;<br/>activation&#160;at&#160;run-time.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>Remark&#160;</b>&#160; &#160; &#160;&#160;&#160;Please&#160;refer the&#160;PORT&#160;Component&#160;User&#160;Manual&#160;(R20UT3653EJ0102-&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160;<br/>
+<b>&#160; &#160; &#160; &#160;&#160;</b>AUTOSAR.pdf)&#160;for deviations&#160;from&#160;AUTOSAR.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>21&#160;</b><br/>
+<hr/>
+<a name=22></a>&#160;&#160;<b>Chapter&#160;6&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160;Precautions&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>22&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=23></a><b>User&#160;Configuration&#160;Validation&#160;</b><br/>
+<b>Chapter&#160;7</b>&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;&#160;</b>&#160;<br/>
+<b>Chapter&#160;7&#160;</b><br/>
+<b>User Configuration&#160;Validation&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+This&#160;section&#160;provides&#160;help to analyze&#160;the error,&#160;warning and information&#160;<br/>messages&#160;displayed&#160;during&#160;the&#160;execution&#160;of&#160;MCAL&#160;Code&#160;Generator Tool. It&#160;<br/>ensures&#160;conformance of&#160;input&#160;file&#160;with&#160;syntax&#160;and&#160;semantics. It&#160;also performs&#160;<br/>validation&#160;on&#160;the&#160;input&#160;file for correctness&#160;of&#160;the data.&#160;<br/>
+&#160;<br/>&#160;<br/>
+For more details&#160;on&#160;list of&#160;Error/Warning/Information&#160;messages&#160;that are&#160;<br/>displayed&#160;as&#160;a&#160;result of&#160;input&#160;file(s)&#160;validation,&#160;refer Chapter&#160;9&#160;“<i>Messages</i>”.&#160;<br/>
+&#160;<br/>&#160;<br/>
+MCAL Code&#160;Generator Tool&#160;displays&#160;error or&#160;warning&#160;or information&#160;<br/>messages&#160;when&#160;the&#160;user has&#160;configured&#160;incorrect&#160;inputs. The&#160;format&#160;of&#160;<br/>Error/Warning/ Information&#160;message is&#160;as&#160;shown below.&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&lt;message_type&gt;_&lt;vendor_id&gt;_&lt;module_id&gt;_&lt;message_id&gt;:&lt;message_cont<br/>
+ent&gt;.&#160;&#160;<br/>
+where,&#160;<br/>
+&#160;&#160;&lt;message_type&gt;&#160; &#160; &#160;:&#160;ERR/WARNING/INFO&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;&#160;vendor_id&#160;&gt;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;: vendor Id&#160;=&#160;59&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;&#160;module_id&#160;&gt;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;: 124&#160;-&#160;PORT&#160;Driver Module&#160;id&#160;(124)&#160;for user&#160;&#160;&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;configuration&#160;checks.&#160;<br/>&#160; &#160;&#160;<br/>
+&#160;&#160;&lt;&#160;Message_id.&gt;&#160; &#160;&#160; &#160;&#160;:&#160;&#160;001-999&#160;&#160;<br/>
+&#160;<br/>
+&#160;&#160;&lt;message_content&gt;:&#160; &#160;Message content&#160;provides&#160;information&#160;&#160;&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;about error or&#160;warning or&#160;information displayed&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160;when the&#160;user has&#160;configured incorrect inputs.&#160;<br/>&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;File Name’&#160;and&#160;‘Path’&#160;need not&#160;be&#160;present for all&#160;&#160; &#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;&#160;&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160;&#160;Error/Warning/Information&#160;messages&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160;&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;File&#160;Name:&#160;Name of&#160;the&#160;file in&#160;which the&#160;error has&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;occurred&#160;<br/>
+&#160;<br/>
+&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;Path: Absolute path&#160;of&#160;the container&#160;in&#160;which&#160;the&#160;&#160;<br/>&#160; &#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160;&#160;&#160;parameter&#160;is&#160;present&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>23&#160;</b><br/>
+<hr/>
+<a name=24></a><b>Chapter7&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160; &#160; &#160; &#160; &#160;User&#160;Configuration&#160;Validation&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>24&#160;</b><br/>
+&#160;<br/>
+<hr/>
+<a name=25></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Chapter&#160;8&#160;&#160;Configuration&#160;Overview&#160;</b><br/>
+&#160;<br/>
+<b>8.1&#160;</b><br/>
+<b>Container&#160;Overview&#160;</b><br/>
+The&#160;following&#160;figure&#160;represents&#160;container overview.&#160;<br/>
+<b>&#160;</b><br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<b>Port&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortGeneral&#160;</b><br/>
+<b>PortDemEventParameterRef</b><br/>
+<b>&#160;</b><br/>
+<b>s&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortConfigSet&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>&#160;<br/>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>PortGroup0&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortFilterGroupConfig&#160;</b><br/>
+<b>PortContainer&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;14&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>PortGroup1&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>PortPin&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;7&#160;</b><br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortGroup2&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;15&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortAnalogFilterGroupx&#160;</b><br/>
+<b>PortDigitalFilterGroupx&#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>x=&#160;0&#160;to&#160;12&#160;&#160;&#160;</b><br/>
+<b>x=0&#160;to&#160;5&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>PortGroup3&#160;</b><br/>
+<b>X=&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>x=&#160;0&#160;to&#160;14&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>PortGroup4&#160;</b><br/>
+&#160;<br/>
+<b>x=&#160;0&#160;to&#160;14&#160;</b><br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>PortGroup5&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;14&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortGroup6&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;15&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortGroup7&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;9&#160;</b><br/>
+<b>Figure 8-1&#160;&#160;Configuration&#160;Overview&#160;<br/>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>PortGroup8&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;15&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>PortPinx&#160;</b><br/>
+<b>PortGroup9&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;8&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>PortGroupJtag0&#160;</b><br/>
+<b>PortPinx&#160;</b><br/>
+<b>x=&#160;0&#160;to&#160;5&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+<b>25&#160;</b><br/>
+<hr/>
+<a name=26></a><b>Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview</b>&#160;<br/>
+<b>8.1.1&#160;</b><br/>
+<b>Pre-Compile&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>Table&#160;8-1&#160;</b><br/>
+<b>Pre-Compile&#160;Configurable&#160;Parameters&#160;</b><br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+PortGeneral&#160;<br/>
+PortDevErrorDetect&#160;<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+Switches&#160;the&#160;Development&#160;<br/>
+Error Detection&#160;and&#160;<br/>
+&#160;<br/>
+Notification&#160;on&#160;or&#160;off.&#160;<br/>
+True:&#160;Development&#160;Error&#160;<br/>
+Detection&#160;and&#160;Notification&#160;is&#160;<br/>enabled.&#160;<br/>
+False:&#160;Development&#160;Error&#160;<br/>
+Detection&#160;and&#160;Notification&#160;is&#160;<br/>disabled.&#160;<br/>
+&#160;<br/>
+PortSetPinDirectionApi&#160;<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+Pre-processor&#160;switch&#160;to&#160;enable&#160;<br/>
+/&#160;disable&#160;the&#160;use&#160;of&#160;the&#160;<br/>function&#160;<br/>Port_SetPinDirection().&#160;<br/>
+True:&#160;Enabled&#160;-&#160;Function&#160;<br/>
+Port_SetPinDirection&#160;()&#160;is&#160;<br/>available.&#160;<br/>
+False:&#160;Disabled&#160;-&#160;Function&#160;<br/>
+Port_SetPinDirection&#160;()&#160;is&#160;not&#160;<br/>available.&#160;<br/>
+&#160;<br/>
+PortSetPinDefaultDire<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+Pre-processor&#160;switch&#160;to&#160;enable&#160;<br/>
+ctionApi&#160;<br/>
+/&#160;disable&#160;the&#160;use&#160;of&#160;the&#160;<br/>function&#160;<br/>Port_SetPinDefaultDirection&#160;<br/>().&#160;<br/>
+True:&#160;Enabled&#160;-&#160;Function&#160;<br/>
+Port_SetPinDefaultDirection&#160;()&#160;<br/>is&#160;available.&#160;<br/>
+False:&#160;Disabled&#160;-&#160;Function&#160;<br/>
+Port_SetPinDefaultDirection&#160;()&#160;<br/>is&#160;not&#160;available.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Pre-processor&#160;switch&#160;to&#160;enable&#160;<br/>
+PortSetPinModeApi&#160;<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+/&#160;disable&#160;the&#160;use&#160;of&#160;the&#160;<br/>function&#160;Port_SetPinMode&#160;().&#160;<br/>
+True:&#160;Enabled&#160;-&#160;Function&#160;<br/>
+Port_SetPinMode&#160;()&#160;is&#160;<br/>available.&#160;<br/>
+False:&#160;Disabled&#160;-&#160;Function&#160;<br/>
+Port_SetPinMode() is&#160;not&#160;<br/>available.<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Pre-processor&#160;switch&#160;to&#160;&#160;&#160;<br/>
+PortSetPinDefaultMod<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+enable&#160;/&#160;disable&#160;the&#160;use&#160;of&#160;the&#160;<br/>
+eApi&#160;<br/>
+function&#160;<br/>PortSetPinDefaultModeApi&#160;().&#160;<br/>
+True:&#160;Enabled–Function&#160;<br/>
+PortSetPinDefaultModeApi&#160;() &#160;&#160;<br/>is&#160;available.&#160;<br/>
+False:&#160;Disabled&#160;-&#160;Function&#160;<br/>
+PortSetPinDefaultModeApi&#160;()&#160;<br/>is&#160;not&#160;available.<b>&#160;</b><br/>
+<b>26&#160;</b><br/>
+<hr/>
+<a name=27></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Pre-processor&#160;switch&#160;to&#160;enable&#160;<br/>
+PortVersionInfoApi&#160;<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+/&#160;disable&#160;the&#160;API&#160;to&#160;read&#160;out&#160;<br/>the&#160;modules&#160;version&#160;<br/>information.&#160;<br/>
+PortVersionInfoApTrue:&#160;<br/>
+Version&#160;info&#160;API&#160;enabled&#160;<br/>False:&#160;Version&#160;info&#160;API&#160;<br/>disabled.&#160;<br/>
+&#160;<br/>
+PortDevErrorDetect&#160;<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+Switches&#160;the&#160;Development&#160;<br/>
+Error Detection&#160;and&#160;<br/>Notification&#160;on&#160;or&#160;off.&#160;<br/>
+True:&#160;Development&#160;Error&#160;<br/>
+Detection&#160;and&#160;Notification&#160;is&#160;<br/>enabled.&#160;<br/>
+False:&#160;Development&#160;Error&#160;<br/>
+Detection&#160;and&#160;Notification&#160;is&#160;<br/>disabled.&#160;<br/>
+&#160;<br/>
+PortCriticalSectionProt<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+This&#160;parameter specifies&#160;if&#160;the&#160;<br/>
+ection&#160;<br/>
+PORT&#160;driver CPU load&#160;can&#160;be&#160;<br/>reduced&#160;by&#160;disabling&#160;the&#160;<br/>enter/exit&#160;critical&#160;section&#160;<br/>functionality&#160;by&#160;adding&#160;a&#160;<br/>precompiled&#160;configuration&#160;<br/>parameter to&#160;the&#160;PORT&#160;driver&#160;<br/>configuration.&#160;<br/>
+True:&#160;Enables&#160;the&#160;critical&#160;<br/>
+section&#160;functionality&#160;for the&#160;<br/>restricted&#160;area.&#160;<br/>
+False:&#160;Disables&#160;the&#160;critical&#160;<br/>
+section&#160;functionality&#160;for the&#160;<br/>restricted&#160;area.&#160;<br/>
+&#160;<br/>
+PortMaxMode&#160;<br/>
+Integer&#160;<br/>
+6&#160;<br/>
+This&#160;parameter indicates&#160;<br/>
+maximum&#160;Alternative&#160;modes&#160;<br/>present&#160;in&#160;a&#160;Port&#160;Module.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Pre-processor&#160;switch&#160;to&#160;enable&#160;<br/>
+PortSetToDioAltMode<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+/&#160;disable&#160;the&#160;use&#160;of&#160;the&#160;<br/>
+Api&#160;<br/>
+function&#160;Port_SetToDioMode&#160;<br/>() and&#160;<br/>Port_SetToAlternateMode&#160;().&#160;<br/>
+True:&#160;Enabled&#160;-&#160;Function&#160;<br/>
+Port_SetToDioMode&#160;()&#160;and&#160;<br/>Port_SetToAlternateMode&#160;()&#160;is&#160;<br/>available.&#160;<br/>
+False:&#160;Disabled&#160;-&#160;Function&#160;<br/>
+Port_SetToDioMode&#160;()&#160;and&#160;<br/>Port_SetToAlternateMode&#160;()&#160;is&#160;<br/>not&#160;available.<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Enable&#160;/&#160;disable&#160;AUTOSAR&#160;<br/>
+PortVersionCheckExte<br/>
+Boolean&#160;<br/>
+TRUE /&#160;FALSE&#160;<br/>
+Version&#160;check&#160;for inter-module&#160;<br/>
+rnalModules&#160;<br/>
+dependencies.&#160;<br/>
+True:&#160;AUTOSAR Version&#160;<br/>
+check&#160;for&#160;inter-module&#160;<br/>dependencies&#160;is&#160;enabled.&#160;<br/>
+false:&#160;AUTOSAR Version&#160;<br/>
+check&#160;for inter-module&#160;<br/>dependencies&#160;is&#160;disabled&#160;<br/>
+<b>27&#160;</b><br/>
+<hr/>
+<a name=28></a><b>Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview</b>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>This&#160;parameter contains&#160;the&#160;<br/>
+PortDeviceName&#160;<br/>
+Integer&#160;<br/>
+RF701370A,&#160;<br/>
+supported&#160;device&#160;name&#160;to&#160;<br/>
+RF701371,&#160;<br/>
+identify&#160;the&#160;device&#160;specific&#160;C&#160;<br/>
+RF701372,&#160;<br/>
+header&#160;file&#160;through&#160;ARXML&#160;<br/>
+RF701373,&#160;<br/>
+File.&#160;<br/>
+RF701374.&#160;<br/>
+<b>8.1.2&#160;</b><br/>
+<b>Post Build&#160;Time&#160;Configurable&#160;Parameters&#160;</b><br/>
+<b>Table&#160;8-2&#160;&#160;Post</b>&#160;<b>Build</b>&#160;<b>Time</b>&#160;<b>Configurable</b>&#160;<b>Parameters&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Parameter to&#160;indicate&#160;if&#160;the&#160;<br/>
+PortPinDirectionChang<br/>
+Boolean&#160;<br/>
+TRUE /&#160;<br/>
+&#160;<br/>
+direction&#160;is&#160;changeable&#160;on&#160;a&#160;port&#160;<br/>
+eable&#160;<br/>
+FALSE&#160;<br/>
+&#160;<br/>
+pin&#160;during&#160;runtime.&#160;<br/>
+&#160;<br/>
+True:&#160;Port&#160;Pin&#160;direction&#160;<br/>
+&#160;<br/>
+changeable&#160;enabled.&#160;<br/>
+&#160;<br/>
+False:&#160;Port&#160;Pin&#160;direction&#160;<br/>
+&#160;<br/>
+changeable&#160;disabled.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortConfigS<br/>
+Parameter to&#160;indicate&#160;if&#160;the&#160;mode&#160;<br/>
+et/PortGrou<br/>
+PortPinDioAltModeCha<br/>
+Boolean&#160;<br/>
+TRUE /&#160;<br/>
+of&#160;a&#160;port&#160;pin&#160;is&#160;changeable&#160;<br/>
+p&#160;<br/>
+ngeable&#160;<br/>
+FALSE&#160;<br/>
+between&#160;DIO and&#160;Alternate&#160;during&#160;<br/>runtime&#160;by&#160;API&#160;functions&#160;<br/>Port_SetToDioMode&#160;and&#160;<br/>Port_SetToAlternateMode.&#160;<br/>Including&#160;these&#160;APIs&#160;is&#160;controlled&#160;<br/>by&#160;PortSetToDioAltModeApi.&#160;<br/>True:&#160;Dio&#160;Alternate&#160;mode&#160;is&#160;<br/>changeable.&#160;<br/>False:&#160;Dio&#160;Alternate&#160;mode&#160;is&#160;not&#160;<br/>changeable.&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortPinModeChangeab<br/>
+Boolean&#160;<br/>
+TRUE /&#160;<br/>
+Parameter to&#160;indicate&#160;if&#160;the&#160;mode&#160;<br/>
+le&#160;<br/>
+FALSE&#160;<br/>
+of&#160;a&#160;port&#160;pin&#160;is&#160;changeable&#160;during&#160;<br/>runtime&#160;by&#160;API&#160;function&#160;<br/>Port_SetPinMode.&#160;Including&#160;this&#160;<br/>API&#160;is&#160;controlled&#160;by&#160;<br/>PortSetPinModeApi.&#160;<br/>True:&#160;Port&#160;Pin&#160;mode&#160;is&#160;<br/>changeable.&#160;<br/>False:&#160;Port&#160;Pin&#160;mode&#160;is&#160;not&#160;<br/>changeable.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Parameter to&#160;indicate&#160;port&#160;pin&#160;<br/>
+PortPinLevelValue&#160;<br/>
+Enumeration&#160;<br/>
+PORT_PIN_L<br/>
+level&#160;value&#160;for&#160;a&#160;port&#160;pin.&#160;<br/>
+EVEL_LOW&#160;/&#160;<br/>
+PORT_PIN_LEVEL_LOW:&#160;Port&#160;<br/>
+PORT_PIN_L<br/>
+pin&#160;Level&#160;is&#160;low.&#160;<br/>
+EVEL_HIGH&#160;<br/>
+PORT_PIN_LEVEL_HIGH: Port&#160;<br/>pin&#160;Level&#160;is&#160;high.&#160;<br/>
+<b>28&#160;</b><br/>
+<hr/>
+<a name=29></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>Mode&#160;of&#160;the&#160;port&#160;pin&#160;for&#160;use&#160;with&#160;<br/>
+PortPinInitialMode&#160;<br/>
+Enumeration&#160;<br/>
+DIO&#160;<br/>
+Port_Init()&#160;function.&#160;<br/>
+ALT1_IN&#160;<br/>
+&lt;Input&#160;name&gt;_ALT&lt;Alternative&#160;<br/>instance&gt;_IN:&#160;Provides&#160;alternative&#160;<br/>
+ALT1_OUT&#160;<br/>
+instance&#160;for&#160;selected&#160;input.&#160;<br/>
+ALT2_IN&#160;<br/>
+&lt;Output&#160;name&gt;_ALT&lt;Alternative&#160;<br/>instance&gt;_OUT:&#160;Provides&#160;<br/>
+ALT2_OUT&#160;<br/>
+alternative&#160;instance&#160;for&#160;selected&#160;<br/>output.&#160;<br/>
+ALT3_IN&#160;<br/>
+ALT3_OUT&#160;<br/>
+ALT4_IN&#160;<br/>
+ALT4_OUT&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortPinDirection&#160;<br/>
+Enumeration&#160;<br/>
+PORT_PIN_O<br/>
+The&#160;initial&#160;direction&#160;of&#160;the&#160;pin&#160;(IN&#160;<br/>
+UT&#160;/&#160;<br/>
+or OUT).&#160;If&#160;the&#160;direction&#160;is&#160;not&#160;<br/>
+PORT_PIN_I<br/>
+changeable,&#160;the&#160;value&#160;configured&#160;<br/>
+N&#160;<br/>
+here&#160;is&#160;fixed.&#160;The&#160;direction&#160;must&#160;<br/>match&#160;the&#160;pin&#160;mode.&#160;<br/>PORT_PIN_IN:&#160;Port&#160;pin&#160;direction&#160;<br/>set&#160;as&#160;input.&#160;<br/>PORT_PIN_OUT:&#160;Port&#160;pin&#160;<br/>direction&#160;set&#160;as&#160;output.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortInputBufferControl&#160;<br/>
+Boolean&#160;<br/>
+This&#160;parameter is&#160;used&#160;as&#160;one&#160;of&#160;<br/>
+TRUE /&#160;<br/>
+&#160;<br/>
+the&#160;factors&#160;to&#160;enable/disable&#160;port&#160;<br/>
+FALSE&#160;<br/>
+&#160;<br/>
+pins&#160;input&#160;buffer&#160;in&#160;DIO Mode&#160;<br/>
+&#160;<br/>
+(PMC=0).&#160;<br/>
+&#160;<br/>
+True:&#160;Port&#160;pin's&#160;input&#160;buffer is&#160;<br/>
+&#160;<br/>
+ready&#160;to&#160;be&#160;enabled&#160;in&#160;DIO Mode.&#160;<br/>
+&#160;<br/>
+False:&#160;Port&#160;pin's&#160;input&#160;buffer&#160;is&#160;<br/>
+&#160;<br/>
+disabled&#160;in&#160;DIO Mode.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortBiDirectionControl&#160;<br/>
+Boolean&#160;<br/>
+This&#160;parameter forces&#160;port&#160;pins&#160;<br/>
+&#160;<br/>
+TRUE /&#160;<br/>
+input&#160;buffer and&#160;output&#160;buffer&#160;at&#160;<br/>
+&#160;<br/>
+FALSE&#160;<br/>
+the&#160;same&#160;time.&#160;If&#160;activated,&#160;the&#160;<br/>
+&#160;<br/>
+effect&#160;is&#160;valid&#160;independently&#160;from&#160;<br/>
+&#160;<br/>
+any&#160;other&#160;port&#160;settings.&#160;<br/>
+&#160;<br/>
+True:&#160;Activate&#160;forced&#160;Bi-<br/>
+&#160;<br/>
+directional&#160;IO&#160;buffer&#160;of&#160;the&#160;port&#160;<br/>
+&#160;<br/>
+pin.&#160;<br/>
+&#160;<br/>
+False:&#160;Deactivate&#160;forced&#160;Bi-<br/>
+&#160;<br/>
+directional&#160;IO&#160;buffer&#160;of&#160;the&#160;port&#160;<br/>
+&#160;<br/>
+pin.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortIpControl&#160;<br/>
+Boolean&#160;<br/>
+This&#160;parameter is&#160;used&#160;to&#160;<br/>
+&#160;<br/>
+TRUE /&#160;<br/>
+enable/disable&#160;the&#160;direct&#160;IO&#160;<br/>
+&#160;<br/>
+FALSE&#160;<br/>
+control&#160;of&#160;port&#160;pins&#160;input&#160;buffer&#160;<br/>
+&#160;<br/>
+and&#160;output&#160;buffer.&#160;<br/>
+&#160;<br/>
+true:&#160;Enables&#160;the&#160;direct&#160;IO control&#160;<br/>
+&#160;<br/>
+of&#160;port&#160;pins&#160;input&#160;buffer and&#160;output&#160;<br/>
+&#160;<br/>
+buffer&#160;by&#160;the&#160;corresponding&#160;<br/>
+&#160;<br/>
+control&#160;signals&#160;of&#160;IP_ENI3(0)&#160;and&#160;<br/>
+&#160;<br/>
+IP_ENO3(0) from&#160;internal&#160;<br/>
+&#160;<br/>
+peripheral&#160;IPs.&#160;This&#160;register is&#160;<br/>
+&#160;<br/>
+valid&#160;only&#160;in&#160;Control&#160;Mode&#160;<br/>
+PortConfigS<br/>
+(PMC=1).&#160;<br/>
+et/PortGrou<br/>
+False:&#160;Disables&#160;the&#160;direct&#160;IO&#160;<br/>
+p&#160;<br/>
+control&#160;of&#160;port&#160;pins&#160;input&#160;buffer&#160;<br/>and&#160;output&#160;buffer.&#160;<br/>
+<b>29&#160;</b><br/>
+<hr/>
+<a name=30></a><b>Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview</b>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortPullUpOption&#160;<br/>
+Boolean&#160;<br/>
+This&#160;register&#160;switches&#160;on&#160;or&#160;off&#160;the&#160;<br/>
+TRUE /&#160;<br/>
+port&#160;pins&#160;pull-up&#160;resistor.&#160;<br/>
+FALSE&#160;<br/>
+True:&#160;Port&#160;pin's&#160;pull-up&#160;resistor&#160;is&#160;<br/>enabled.&#160;<br/>False:&#160;Port&#160;pin's&#160;pull-up&#160;resistor is&#160;<br/>disabled.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortPullDownOption&#160;<br/>
+Boolean&#160;<br/>
+This&#160;parameter switches&#160;on&#160;or&#160;off&#160;<br/>
+TRUE /&#160;<br/>
+the&#160;port&#160;pins&#160;pull-down&#160;resistor.&#160;<br/>
+FALSE&#160;<br/>
+True:&#160;Port&#160;pin's&#160;pull-down&#160;resistor&#160;<br/>is&#160;enabled.&#160;<br/>False:&#160;Port&#160;pin's&#160;pull-down&#160;<br/>resistor&#160;is&#160;disabled.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortOpenDrainControl&#160;<br/>
+Boolean&#160;<br/>
+This&#160;parameter selects&#160;port&#160;pins&#160;<br/>
+TRUE /&#160;<br/>
+output&#160;buffer function&#160;as&#160;push-pull&#160;<br/>
+FALSE&#160;<br/>
+type&#160;or open&#160;drain&#160;type.&#160;<br/>True:&#160;Port&#160;pin's&#160;output&#160;buffer&#160;<br/>operates&#160;as&#160;open&#160;drain&#160;driver.&#160;<br/>false:&#160;Port&#160;pin's&#160;output&#160;buffer&#160;<br/>operates&#160;as&#160;push-pull&#160;driver&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>This&#160;parameter&#160;selects&#160;port&#160;pins&#160;<br/>
+PortOpenDrainControlE<br/>
+Boolean&#160;<br/>
+TRUE /&#160;<br/>
+output&#160;buffer function&#160;as&#160;emulated&#160;<br/>
+xpansion&#160;<br/>
+FALSE&#160;<br/>
+P-ch&#160;open&#160;drain&#160;type&#160;or&#160;emulated&#160;<br/>N-ch&#160;open&#160;drain&#160;type.&#160;<br/>True:&#160;Port&#160;pin's&#160;output&#160;buffer&#160;<br/>operates&#160;as&#160;emulated&#160;P-Channel&#160;<br/>open&#160;drain&#160;driver.&#160;<br/>false:&#160;Port&#160;pin's&#160;output&#160;buffer&#160;<br/>operates&#160;as&#160;emulated&#160;N-Channel&#160;<br/>open&#160;drain&#160;drive&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+TRUE /&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+FALSE&#160;<br/>
+Parameter to&#160;indicate&#160;if&#160;the&#160;mode&#160;<br/>
+PortOutputLevelInversi<br/>
+Boolean&#160;<br/>
+&#160;<br/>
+of&#160;a&#160;port&#160;pin&#160;is&#160;changeable&#160;<br/>
+on&#160;<br/>
+&#160;<br/>
+between&#160;DIO and&#160;Alternate&#160;during&#160;<br/>
+&#160;<br/>
+runtime&#160;by&#160;API&#160;functions&#160;<br/>
+&#160;<br/>
+Port_SetToDioMode&#160;and&#160;<br/>
+&#160;<br/>
+Port_SetToAlternateMode.&#160;<br/>
+&#160;<br/>
+Including&#160;these&#160;APIs&#160;is&#160;controlled&#160;<br/>
+&#160;<br/>
+by&#160;PortSetToDioAltModeApi.&#160;<br/>
+&#160;<br/>
+True:&#160;Dio&#160;Alternate&#160;mode&#160;is&#160;<br/>
+&#160;<br/>
+changeable.&#160;<br/>
+&#160;<br/>
+False:&#160;Dio&#160;Alternate&#160;mode&#160;is&#160;not&#160;<br/>
+&#160;<br/>
+changeable.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortDriveStrengthContr<br/>
+Enumeration&#160;<br/>
+SLOW&#160;/&#160;FAST&#160;<br/>
+Parameter to&#160;indicate&#160;if&#160;the&#160;mode&#160;<br/>
+&#160;<br/>
+ol&#160;<br/>
+of&#160;a&#160;port&#160;pin&#160;is&#160;changeable&#160;during&#160;<br/>
+&#160;<br/>
+runtime&#160;by&#160;API&#160;function&#160;<br/>
+&#160;<br/>
+Port_SetPinMode.&#160;Including&#160;this&#160;<br/>
+&#160;<br/>
+API&#160;is&#160;controlled&#160;by&#160;<br/>
+&#160;<br/>
+PortSetPinModeApi.&#160;<br/>
+&#160;<br/>
+True:&#160;Port&#160;Pin&#160;mode&#160;is&#160;<br/>
+&#160;<br/>
+changeable.&#160;<br/>
+&#160;<br/>
+False:&#160;Port&#160;Pin&#160;mode&#160;is&#160;not&#160;<br/>
+PortConfigS<br/>
+changeable.&#160;<br/>
+et/PortGrou<br/>p&#160;<br/>
+<b>30&#160;</b><br/>
+<hr/>
+<a name=31></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortUniversalCharacter<br/>
+Boolean&#160;<br/>
+This&#160;parameter selects&#160;the&#160;port&#160;<br/>
+TRUE /&#160;<br/>
+isticCntrl&#160;<br/>
+pins&#160;output&#160;drive&#160;strength&#160;as&#160;high&#160;<br/>
+FALSE&#160;<br/>
+or low&#160;type.&#160;<br/>The&#160;PortDriveStrengthControl&#160;<br/>must&#160;be&#160;enabled&#160;for this&#160;feature.&#160;<br/>False:&#160;PortDriveStrengthControl&#160;<br/>parameter&#160;specifies&#160;the&#160;output&#160;<br/>driver strength&#160;of&#160;the&#160;port&#160;pin.&#160;<br/>true&#160;:&#160;Number&#160;of&#160;output&#160;buffer&#160;<br/>characteristics&#160;selection&#160;capability&#160;<br/>is&#160;expanded,&#160;<br/>the&#160;maximum&#160;of&#160;4&#160;characteristics&#160;<br/>selection&#160;is&#160;possible&#160;<br/>PUCCn&#160;&#160;&#160;&#160;&#160;PDSCn&#160;<br/>0&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0&#160;&#160;&#160;&#160;&#160;&#160;&#160;Output&#160;characteristic&#160;<br/>selection&#160;1&#160;(400&#160;Ohm&#160;buffer)&#160;<br/>0&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;&#160;&#160;&#160;&#160;&#160;&#160;Output&#160;characteristic&#160;<br/>selection&#160;2&#160;(200&#160;Ohm&#160;buffer)&#160;<br/>1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0&#160;&#160;&#160;&#160;&#160;&#160;&#160;Output&#160;characteristic&#160;<br/>selection&#160;3&#160;(100&#160;Ohm&#160;buffer)&#160;<br/>1&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;&#160;&#160;&#160;&#160;&#160;&#160;Output&#160;characteristic&#160;<br/>selection&#160;4&#160;(50&#160;Ohm&#160;buffer)&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortInputBufferSelectio<br/>
+Enumeration&#160;<br/>
+TYPE1_SHM<br/>
+This&#160;setting&#160;specifies&#160;the&#160;input&#160;<br/>
+n&#160;<br/>
+T1&#160;<br/>
+buffer&#160;characteristics.&#160;<br/>
+TYPE2_SHM<br/>
+TYPE1_SHMT1:&#160;TYPE 1&#160;buffer is&#160;<br/>
+T4&#160;<br/>
+selected.&#160;<br/>
+TYPE3_TTL&#160;<br/>
+TYPE2_SHMT4:&#160;TYPE 2&#160;buffer is&#160;<br/>selected.&#160;<br/>TYPE3_TTL:&#160;TYPE 3&#160;buffer is&#160;<br/>selected.&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+PortFilterGr<br/>
+This&#160;parameter enables/disables&#160;<br/>
+PortAnalogFilterBypass&#160;<br/>
+Boolean&#160;<br/>
+TRUE /&#160;<br/>
+oupConfig/<br/>
+bypass&#160;control.&#160;<br/>
+FALSE&#160;<br/>
+PortAnalog<br/>FilterGroup&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+FALLING_ED<br/>
+This&#160;parameter specifies&#160;the&#160;<br/>
+PortEdgeOrLevelContr<br/>
+Enumeration&#160;<br/>
+GE_FCLA&lt;In<br/>
+mode&#160;selection.&#160;<br/>
+ol&#160;<br/>
+stance&gt;_CTL<br/>&lt;Instance&gt;&#160;<br/>RISING_EDG<br/>E_FCLA&lt;Inst<br/>ance&gt;_CTL&lt;I<br/>nstance&gt;&#160;<br/>HIGH_LEVEL<br/>_FCLA&lt;Instan<br/>ce&gt;_CTL&lt;Inst<br/>ance&gt;&#160;<br/>LOW_LEVEL<br/>_FCLA&lt;Instan<br/>ce&gt;_CTL&lt;Inst<br/>ance&gt;&#160;<br/>BOTH_EDGE<br/>S_FCLA&lt;Inst<br/>ance&gt;_CTL&lt;I<br/>nstance&gt;&#160;<br/>BOTH_EDGE<br/>S_DISABLED&#160;<br/>
+<b>31&#160;</b><br/>
+<hr/>
+<a name=32></a><b>Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview</b>&#160;<br/>
+<b>Container&#160;</b><br/>
+<b>Parameter&#160;Name&#160;</b><br/>
+<b>Parameter&#160;</b><br/>
+<b>Parameter&#160;&#160;</b><br/>
+<b>Parameter&#160;Description&#160;&#160;</b><br/>
+<b>Name&#160;</b><br/>
+<b>Type&#160;</b><br/>
+<b>Range&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+This&#160;parameter specifies&#160;the&#160;<br/>
+PortSameLevelSample<br/>
+Boolean&#160;<br/>
+TRUE /&#160;<br/>
+&#160;<br/>
+number of&#160;same&#160;level&#160;samples,&#160;<br/>
+s&#160;<br/>
+FALSE&#160;<br/>
+&#160;<br/>
+i.e.&#160;the&#160;number of&#160;samples&#160;with&#160;<br/>
+&#160;<br/>
+the&#160;same&#160;level&#160;to&#160;judge&#160;an&#160;<br/>
+&#160;<br/>
+external&#160;signal&#160;pulse&#160;as&#160;valid.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+This&#160;parameter specifies&#160;the&#160;<br/>
+&#160;<br/>
+PortSamplingClockFreq<br/>
+Enumeration&#160;<br/>
+TRUE /&#160;<br/>
+Digital&#160;filter&#160;sampling&#160;clock&#160;<br/>
+&#160;<br/>
+uency&#160;<br/>
+FALSE&#160;<br/>
+frequency.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+FIXED_LOW_<br/>
+This&#160;parameter enables/disables&#160;<br/>
+&#160;<br/>
+PortDigitalFilterEnableI<br/>
+Enumeration&#160;<br/>
+LEVEL&#160;<br/>
+PortDigitalFilterEnableInput&#160;for&#160;<br/>
+&#160;<br/>
+nput0&#160;to&#160;n&#160;<br/>
+BYPASSED_<br/>
+the&#160;signal.&#160;<br/>
+&#160;<br/>
+CTL&lt;Instance<br/>
+&#160;<br/>
+&gt;&#160;<br/>
+&#160;<br/>
+Instance&#160;<br/>
+&#160;<br/>
+varies&#160;as&#160;<br/>
+&#160;<br/>
+FCLAmCTLn&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+DISABLED&#160;<br/>
+This&#160;parameter enables/disables&#160;<br/>
+PortFilterGr<br/>
+PortDigitalFilterEdgeCo<br/>
+Enumeration&#160;<br/>
+RISING_FCL<br/>
+PortDigitalFilterEdgeControl&#160;for&#160;<br/>
+oupConfig/<br/>
+ntrol0&#160;to&#160;n&#160;<br/>
+A&lt;Instance&gt;_<br/>
+the&#160;signal.&#160;<br/>
+PortDigitalFi<br/>
+CTL&lt;Instance<br/>
+lterGroup&#160;<br/>
+&gt;&#160;<br/>FALLING_FC<br/>LA&lt;Instance&gt;<br/>_CTL&lt;Instanc<br/>e&gt;&#160;<br/>BOTH_EDGE<br/>S_FCLA&lt;Inst<br/>ance&gt;_CTL&lt;I<br/>nstance&gt;&#160;<br/>&#160;<br/>Instance&#160;<br/>varies&#160;as&#160;<br/>FCLAmCTLn&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+BYPASS_EN<br/>
+This&#160;parameter enables/disables&#160;<br/>
+PortDigitalFilterBypass<br/>
+Enumeration&#160;<br/>
+ABLED:&#160;<br/>
+bypass&#160;control.&#160;<br/>
+0&#160;to&#160;n&#160;<br/>
+Bypass&#160;<br/>functionality&#160;<br/>enabled.&#160;<br/>DISABLED:&#160;<br/>Bypass&#160;<br/>functionality&#160;<br/>disabled&#160;<br/>
+<b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;</b><br/>
+<b>32&#160;</b><br/>
+<hr/>
+<a name=33></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Table&#160;8-3&#160;&#160;Port&#160;Modes&#160;Description&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+GTM0I6_ALT1_IN&#160;<br/>
+GTMAT1O0_ALT1_OUT&#160;<br/>
+1&#160;<br/>
+201&#160;<br/>
+2&#160;<br/>
+GTMAT0O2_ALT1_OUT&#160;<br/>
+202&#160;<br/>
+CSIH1RYI_ALT2_IN&#160;<br/>
+3&#160;<br/>
+SENT0RX_ALT3_IN&#160;<br/>
+203&#160;<br/>
+CSIH1RYO_ALT2_OUT&#160;<br/>
+4&#160;<br/>
+CSIH0CSS1_ALT3_OUT&#160;<br/>
+204&#160;<br/>
+SENT4RX_ALT3_IN&#160;<br/>
+5&#160;<br/>
+CSIH0CSS5_ALT4_OUT&#160;<br/>
+205&#160;<br/>
+MCAN0RX_ALT4_IN&#160;<br/>
+6&#160;<br/>
+GTM0I3_ALT1_IN&#160;<br/>
+206&#160;<br/>
+GTMAT0O4_ALT1_OUT&#160;<br/>
+7&#160;<br/>
+GTMAT0O3N_ALT1_OUT&#160;<br/>
+207&#160;<br/>
+MCAN0TX_ALT4_OUT&#160;<br/>
+8&#160;<br/>
+SENT1RX_ALT3_IN&#160;<br/>
+208&#160;<br/>
+GTMAT0O5_ALT1_OUT&#160;<br/>
+9&#160;<br/>
+CSIH1CSS6_ALT3_OUT&#160;<br/>
+209&#160;<br/>
+INTP4_ALT2_IN&#160;<br/>
+10&#160;<br/>
+CSIH0CSS6_ALT4_OUT&#160;<br/>
+210&#160;<br/>
+CSIH3CSS0_ALT2_OUT&#160;<br/>
+11&#160;<br/>
+GTM0I2_ALT1_IN&#160;<br/>
+211&#160;<br/>
+CSIH1SI_ALT3_IN&#160;<br/>
+12&#160;<br/>
+GTMAT1O1_ALT1_OUT&#160;<br/>
+212&#160;<br/>
+HSURT0SDIO0I_ALT4_IN&#160;<br/>
+13&#160;<br/>
+CSIH0CSS4_ALT3_OUT&#160;<br/>
+213&#160;<br/>
+HSURT0SDIO0O_ALT4_OUT&#160;<br/>
+14&#160;<br/>
+CSIH2CSS2_ALT2_OUT&#160;<br/>
+214&#160;<br/>
+GTM0I5_ALT1_IN&#160;<br/>
+15&#160;<br/>
+GTMAT0O0_ALT1_OUT&#160;<br/>
+215&#160;<br/>
+CSIH3SCI_ALT2_IN&#160;<br/>
+16&#160;<br/>
+CSIH0CSS3_ALT3_OUT&#160;<br/>
+216&#160;<br/>
+CSIH3SCO_ALT2_OUT&#160;<br/>
+17&#160;<br/>
+CSIH2CSS4_ALT2_OUT&#160;<br/>
+217&#160;<br/>
+CSIH1DCS_ALT3_IN&#160;<br/>
+18&#160;<br/>
+GTM1I0_ALT1_IN&#160;<br/>
+218&#160;<br/>
+CSIH1SO_ALT3_OUT&#160;<br/>
+19&#160;<br/>
+GTM1I0_ALT1_IN&#160;<br/>
+219&#160;<br/>
+HSURT0SDIO1I_ALT4_IN&#160;<br/>
+20&#160;<br/>
+GTM1I0_ALT1_IN&#160;<br/>
+220&#160;<br/>
+HSURT0SDIO1O_ALT4_OUT&#160;<br/>
+21&#160;<br/>
+CSIH1CSS2_ALT3_OUT&#160;<br/>
+221&#160;<br/>
+GTM0I4_ALT1_IN&#160;<br/>
+22&#160;<br/>
+CSIH2CSS5_ALT2_OUT&#160;<br/>
+222&#160;<br/>
+GTMAT0O3_ALT1_OUT&#160;<br/>
+23&#160;<br/>
+GTM1I0_ALT1_IN&#160;<br/>
+223&#160;<br/>
+CSIH3SI_ALT2_IN&#160;<br/>
+24&#160;<br/>
+GTMAT1O0_ALT1_OUT&#160;<br/>
+224&#160;<br/>
+HSURT0SDIO2I_ALT4_IN&#160;<br/>
+25&#160;<br/>
+INTP3_ALT2_IN&#160;<br/>
+225&#160;<br/>
+HSURT0SDIO2O_ALT4_OUT&#160;<br/>
+26&#160;<br/>
+CSIH1CSS1_ALT4_OUT&#160;<br/>
+226&#160;<br/>
+GTM0I0_ALT1_IN&#160;<br/>
+27&#160;<br/>
+CSIH2CSS6_ALT2_OUT&#160;<br/>
+227&#160;<br/>
+GTMAT1O3_ALT1_OUT&#160;<br/>
+28&#160;<br/>
+CSIH2CSS7_ALT2_OUT&#160;<br/>
+228&#160;<br/>
+CSIH3DCS_ALT2_IN&#160;<br/>
+29&#160;<br/>
+CSIH1CSS0_ALT4_OUT&#160;<br/>
+229&#160;<br/>
+CSIH3SO_ALT2_OUT&#160;<br/>
+30&#160;<br/>
+MCAN1RX_ALT2_IN&#160;<br/>
+230&#160;<br/>
+HSURT0SDIO3I_ALT4_IN&#160;<br/>
+<b>33&#160;</b><br/>
+<hr/>
+<a name=34></a><b>Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview</b>&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+31&#160;<br/>
+CSIH0SI_ALT3_IN&#160;<br/>
+&#160;<br/>
+231&#160;<br/>
+HSURT0SDIO3O_ALT4_OUT&#160;<br/>
+32&#160;<br/>
+CSIH1DCS_ALT4_IN&#160;<br/>
+232&#160;<br/>
+GTM1I6_ALT1_IN&#160;<br/>
+33&#160;<br/>
+CSIH1SCO_ALT4_OUT&#160;<br/>
+233&#160;<br/>
+GTMAT2O4_ALT1_OUT&#160;<br/>
+MCAN1TX_ALT2_OUT&#160;<br/>
+234&#160;<br/>
+CSIH3CSS1_ALT2_OUT&#160;<br/>
+34&#160;<br/>35&#160;<br/>
+CSIH0SCI_ALT3_IN&#160;<br/>
+235&#160;<br/>
+GTMAT1O4_ALT1_OUT&#160;<br/>
+36&#160;<br/>
+CSIH1SC1_ALT4_IN&#160;<br/>
+236&#160;<br/>
+CSIH3CSS2_ALT2_OUT&#160;<br/>
+37&#160;<br/>
+CSIH0DCS_ALT3_IN&#160;<br/>
+237&#160;<br/>
+ESO2_BAR_ALT3_IN&#160;<br/>
+38&#160;<br/>
+CSIH0SO_ALT3_OUT&#160;<br/>
+238&#160;<br/>
+CSIH1CSS7_ALT3_OUT&#160;<br/>
+39&#160;<br/>
+EXTCLK1O_ALT2_OUT&#160;<br/>
+239&#160;<br/>
+GTM1I4_ALT1_IN&#160;<br/>
+40&#160;<br/>
+CSIH1SI_ALT4_IN&#160;<br/>
+240&#160;<br/>
+GTMAT1O5_ALT1_OUT&#160;<br/>
+41&#160;<br/>
+241&#160;<br/>
+CSIH3CSS3_ALT2_OUT&#160;<br/>
+RLIN30TX_ALT1_OUT&#160;<br/>
+42&#160;<br/>
+242&#160;<br/>
+GTMAT0O1N_ALT1_OUT&#160;<br/>
+INTP5_ALT2_IN&#160;<br/>
+43&#160;<br/>
+243&#160;<br/>
+CSIH1CSS0_ALT2_OUT&#160;<br/>
+CSIH0CSS2_ALT2_OUT&#160;<br/>
+44&#160;<br/>
+244&#160;<br/>
+CSIH2SCI_ALT3_OUT&#160;<br/>
+MTTCAN0TX_ALT3_OUT&#160;<br/>
+45&#160;<br/>
+245&#160;<br/>
+CSIH2SCO_ALT3_IN&#160;<br/>
+HSURT1SCKI_ALT4_IN&#160;<br/>
+46&#160;<br/>
+246&#160;<br/>
+HSURT0SCKI_ALT4_IN&#160;<br/>
+HSURT1SCKO_ALT4_OUT&#160;<br/>
+47&#160;<br/>
+247&#160;<br/>
+HSURT0SCKO_ALT4_OUT&#160;<br/>
+CSIH0CSS3_ALT2_OUT&#160;<br/>
+48&#160;<br/>
+248&#160;<br/>
+CSIH1CSS2_ALT2_OUT&#160;<br/>
+EXTCLK0O_ALT3_OUT&#160;<br/>
+49&#160;<br/>
+249&#160;<br/>
+CSIH2DCS_ALT3_IN&#160;<br/>
+HSURT1CSO_ALT4_OUT&#160;<br/>
+50&#160;<br/>
+250&#160;<br/>
+CSIH2SO_ALT3_OUT&#160;<br/>
+CSIH0CSS4_ALT2_OUT&#160;<br/>
+51&#160;<br/>
+251&#160;<br/>
+HSURT0CSI_ALT4_IN&#160;<br/>
+RLIN30RX_ALT3_IN&#160;<br/>
+52&#160;<br/>
+252&#160;<br/>
+HSURT0CSO_ALT4_OUT&#160;<br/>
+HSURT1SDIR_ALT4_OUT&#160;<br/>
+53&#160;<br/>
+253&#160;<br/>
+GTMAT0O2N_ALT1_OUT&#160;<br/>
+GTM1I7_ALT1_IN&#160;<br/>
+54&#160;<br/>
+254&#160;<br/>
+GTM0I4_ALT2_IN&#160;<br/>
+CSIH2RYI_ALT2_IN&#160;<br/>
+55&#160;<br/>
+255&#160;<br/>
+CSIH2CSS1_ALT2_OUT&#160;<br/>
+CSIH2RYO_ALT2_OUT&#160;<br/>
+56&#160;<br/>
+256&#160;<br/>
+CSIH1SCI_ALT3_IN&#160;<br/>
+RLIN30TX_ALT3_OUT&#160;<br/>
+57&#160;<br/>
+257&#160;<br/>
+CSIH1SCO_ALT3_OUT&#160;<br/>
+CSIH3CSS3_ALT4_OUT&#160;<br/>
+58&#160;<br/>
+258&#160;<br/>
+CSIH2SCO_ALT3_OUT&#160;<br/>
+GTMAT1O3N_ALT1_OUT&#160;<br/>
+59&#160;<br/>
+259&#160;<br/>
+HSURT0SDIR_ALT4_OUT&#160;<br/>
+CSIH0CSS0_ALT3_OUT&#160;<br/>
+60&#160;<br/>
+260&#160;<br/>
+GTM0I5_ALT2_IN&#160;<br/>
+CSIH0CSS7_ALT4_OUT&#160;<br/>
+61&#160;<br/>
+261&#160;<br/>
+GTMAT0O5_ALT2_OUT&#160;<br/>
+EXTCLK0O_ALT2_OUT&#160;<br/>
+<b>34&#160;</b><br/>
+<hr/>
+<a name=35></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+62&#160;<br/>
+&#160;<br/>
+262&#160;<br/>
+CSIH2SI_ALT3_IN&#160;<br/>
+GTMAT0O6_ALT1_OUT&#160;<br/>
+63&#160;<br/>
+263&#160;<br/>
+CSIH0SS0_ALT3_OUT&#160;<br/>
+SENT3SPCO_ALT3_OUT&#160;<br/>
+64&#160;<br/>
+264&#160;<br/>
+HSURT1SDIO0I_ALT4_IN&#160;<br/>
+GTM0I7_ALT1_IN&#160;<br/>
+65&#160;<br/>
+265&#160;<br/>
+HSURT1SDIO0O_ALT4_OUT&#160;<br/>
+GTMAT0O7_ALT1_OUT&#160;<br/>
+66&#160;<br/>
+266&#160;<br/>
+ESO0Z_ALT2_IN&#160;<br/>
+ETH0LINKSTA_ALT2_IN&#160;<br/>
+67&#160;<br/>
+267&#160;<br/>
+RLIN31RX_ALT3_IN&#160;<br/>
+SENT4SPCO_ALT3_OUT&#160;<br/>
+68&#160;<br/>
+268&#160;<br/>
+SENT0SPCO_ALT3_OUT&#160;<br/>
+CSIH3CSS1_ALT3_OUT&#160;<br/>
+69&#160;<br/>
+269&#160;<br/>
+HSURT1SDIO1I_ALT4_IN&#160;<br/>
+FLX0RXDA_ALT4_IN&#160;<br/>
+70&#160;<br/>
+270&#160;<br/>
+HSURT1SDIO1O_ALT4_OUT&#160;<br/>
+ETH0MDI_ALT2_IN&#160;<br/>
+71&#160;<br/>
+271&#160;<br/>
+RLIN31TX_ALT3_OUT&#160;<br/>
+ETH0MDO_ALT2_OUT&#160;<br/>
+72&#160;<br/>
+272&#160;<br/>
+HSURT1SDIO2I_ALT4_IN&#160;<br/>
+CSIH3CSS2_ALT3_OUT&#160;<br/>
+73&#160;<br/>
+273&#160;<br/>
+HSURT1SDIO2O_ALT4_OUT&#160;<br/>
+FLX0RXDB_ALT4_IN&#160;<br/>
+74&#160;<br/>
+274&#160;<br/>
+RLIN30RX_ALT2_IN&#160;<br/>
+GTM1I5_ALT1_IN&#160;<br/>
+75&#160;<br/>
+275&#160;<br/>
+CSIH2CSS3_ALT2_OUT&#160;<br/>
+FLX0STPWT_ALT4_IN&#160;<br/>
+76&#160;<br/>
+276&#160;<br/>
+MTTCAN0RX_ALT3_IN&#160;<br/>
+CSIH1CSS3_ALT3_OUT&#160;<br/>
+77&#160;<br/>
+277&#160;<br/>
+CSIH1SS1_ALT3_OUT&#160;<br/>
+SENT2SPCO_ALT4_OUT&#160;<br/>
+78&#160;<br/>
+278&#160;<br/>
+HSURT1SDIO3I_ALT4_IN&#160;<br/>
+ETH0COL_ALT2_IN&#160;<br/>
+79&#160;<br/>
+279&#160;<br/>
+HSURT1SDIO3O_ALT4_OUT&#160;<br/>
+INTP6_ALT3_IN&#160;<br/>
+80&#160;<br/>
+280&#160;<br/>
+GTM1I2_ALT1_IN&#160;<br/>
+FLX0TXENA_ALT4_OUT&#160;<br/>
+81&#160;<br/>
+ETH0MDC_ALT2_OUT&#160;<br/>
+281&#160;<br/>
+GTM01I0_ALT1_IN&#160;<br/>
+82&#160;<br/>
+282&#160;<br/>
+FLX0TXDB_ALT4_OUT&#160;<br/>
+ETH0WOL_ALT2_OUT&#160;<br/>
+83&#160;<br/>
+283&#160;<br/>
+ETH0CRS_ALT2_IN&#160;<br/>
+SENT1RX_ALT4_IN&#160;<br/>
+84&#160;<br/>
+284&#160;<br/>
+RLIN30TX_ALT2_OUT&#160;<br/>
+BHPDGRCLK1_ALT4_OUT&#160;<br/>
+85&#160;<br/>
+285&#160;<br/>
+CSIH0CSS2_ALT3_OUT&#160;<br/>
+ETH0CLK1O_ALT2_OUT&#160;<br/>
+86&#160;<br/>
+286&#160;<br/>
+FLX0TXDA_ALT4_OUT&#160;<br/>
+CSIH2SSI_BAR_ALT3_IN&#160;<br/>
+87&#160;<br/>
+287&#160;<br/>
+ETH0TXER_ALT2_OUT&#160;<br/>
+CSIH2CSS0_ALT3_OUT&#160;<br/>
+88&#160;<br/>
+288&#160;<br/>
+INTP7_ALT3_IN&#160;<br/>
+CSIH0CSS3_ALT4_OUT&#160;<br/>
+54&#160;<br/>
+254&#160;<br/>
+GTM0I4_ALT2_IN&#160;<br/>
+CSIH2RYI_ALT2_IN&#160;<br/>
+55&#160;<br/>
+255&#160;<br/>
+CSIH2CSS1_ALT2_OUT&#160;<br/>
+CSIH2RYO_ALT2_OUT&#160;<br/>
+56&#160;<br/>
+256&#160;<br/>
+CSIH1SCI_ALT3_IN&#160;<br/>
+RLIN30TX_ALT3_OUT&#160;<br/>
+92&#160;<br/>
+292&#160;<br/>
+CSIH1CSS4_ALT3_OUT&#160;<br/>
+INTP1_ALT2_IN&#160;<br/>
+<b>35&#160;</b><br/>
+<hr/>
+<a name=36></a><b>Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview</b>&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+93&#160;<br/>
+&#160;<br/>
+293&#160;<br/>
+SENT1SPCO_ALT4_OUT&#160;<br/>
+ADTRG1_ALT4_IN&#160;<br/>
+94&#160;<br/>
+294&#160;<br/>
+GTMAT0O1_ALT1_OUT&#160;<br/>
+CSIH1CSS5_ALT4_OUT&#160;<br/>
+95&#160;<br/>
+295&#160;<br/>
+ETH0TXD1_ALT2_OUT&#160;<br/>
+CSIH0CSS5_ALT2_OUT&#160;<br/>
+96&#160;<br/>
+296&#160;<br/>
+CSIH1CSS5_ALT3_OUT&#160;<br/>
+SENT2RX_ALT3_IN&#160;<br/>
+97&#160;<br/>
+297&#160;<br/>
+ETH0TXD2_ALT2_OUT&#160;<br/>
+ESO1Z_ALT4_IN&#160;<br/>
+98&#160;<br/>
+298&#160;<br/>
+SENT2RX_ALT4_IN&#160;<br/>
+CSIH2CSS7_ALT4_OUT&#160;<br/>
+99&#160;<br/>
+299&#160;<br/>
+ETH0TXD3_ALT2_OUT&#160;<br/>
+GTMAT1O0N_ALT1_OUT&#160;<br/>
+100&#160;<br/>
+300&#160;<br/>
+ETH0REF50CK_ALT2_IN&#160;<br/>
+CSIH0CSS6_ALT2_OUT&#160;<br/>
+101&#160;<br/>
+301&#160;<br/>
+SENT3RX_ALT4_IN&#160;<br/>
+SENT3RX_ALT3_IN&#160;<br/>
+102&#160;<br/>
+302&#160;<br/>
+ETH0TXEN_ALT1_OUT&#160;<br/>
+EXTCLK1O_ALT4_OUT&#160;<br/>
+103&#160;<br/>
+303&#160;<br/>
+MCAN0RX_ALT3_IN&#160;<br/>
+CSIH2CSS2_ALT4_OUT&#160;<br/>
+104&#160;<br/>
+304&#160;<br/>
+FLX0RXDA_INTP10_ALT4_IN&#160;<br/>
+CSIH0CSS1_ALT2_IN&#160;<br/>
+105&#160;<br/>
+305&#160;<br/>
+ETH0RXER_ALT2_IN&#160;<br/>
+CSIH2CSS3_ALT4_OUT&#160;<br/>
+106&#160;<br/>
+306&#160;<br/>
+MCAN0TX_ALT3_OUT&#160;<br/>
+CSIH0SSI_BAR_ALT2_IN&#160;<br/>
+107&#160;<br/>
+307&#160;<br/>
+RLIN30TX_ALT4_OUT&#160;<br/>
+CSIH0CSSO0_ALT2_OUT&#160;<br/>
+108&#160;<br/>
+308&#160;<br/>
+ETH0TXCLK_ALT2_IN&#160;<br/>
+ADTRG0_ALT3_IN&#160;<br/>
+109&#160;<br/>
+309&#160;<br/>
+CSIH1SSI_BAR_ALT3_IN&#160;<br/>
+ADCA1CNV_ALT3_OUT&#160;<br/>
+110&#160;<br/>
+310&#160;<br/>
+CSIH1SS0_ALT3_OUT&#160;<br/>
+RLIN31RX_ALT4_IN&#160;<br/>
+111&#160;<br/>
+311&#160;<br/>
+ETH0RXCLK_ALT2_IN&#160;<br/>
+CSIH0DCS_ALT2_IN&#160;<br/>
+112&#160;<br/>
+312&#160;<br/>
+GTMAT0O0N_ALT1_OUT&#160;<br/>
+CSIH0SO_ALT2_OUT&#160;<br/>
+113&#160;<br/>
+313&#160;<br/>
+ETH0RXD0_ALT2_IN&#160;<br/>
+ADCA0CNV_ALT3_OUT&#160;<br/>
+114&#160;<br/>
+314&#160;<br/>
+ETH0RXD1_ALT2_IN&#160;<br/>
+RLIN31TX_ALT4_OUT&#160;<br/>
+115&#160;<br/>
+&#160;<br/>
+315&#160;<br/>
+ETH0RXD2_ALT2_IN&#160;<br/>
+CSIH0SCI_ALT2_IN&#160;<br/>
+116&#160;<br/>
+316&#160;<br/>
+RLIN30RX_ALT4_IN&#160;<br/>
+CSIH0CSO_ALT2_OUT&#160;<br/>
+117&#160;<br/>
+317&#160;<br/>
+ETH0RXD3_ALT2_IN&#160;<br/>
+CSIH2DCS_ALT4_IN&#160;<br/>
+118&#160;<br/>
+ETH0RXDV_ALT2_IN&#160;<br/>
+&#160;<br/>
+318&#160;<br/>
+CSIH2SO_ALT4_OUT&#160;<br/>
+119&#160;<br/>
+INTP0_ALT3_IN&#160;<br/>
+&#160;<br/>
+319&#160;<br/>
+CSIH0SI_ALT2_IN&#160;<br/>
+120&#160;<br/>
+BHPDGRCLK0_ALT4_OUT&#160;<br/>
+&#160;<br/>
+320&#160;<br/>
+NMI_ALT3_IN&#160;<br/>
+121&#160;<br/>
+SENT5SPCO_ALT3_OUT&#160;<br/>
+&#160;<br/>
+321&#160;<br/>
+GTMAT2O0N_ALT1_OUT&#160;<br/>
+122&#160;<br/>
+322&#160;<br/>
+CSIH2SCI_ALT4_IN&#160;<br/>
+CSIH3SCO_ALT3_OUT&#160;<br/>
+123&#160;<br/>
+323&#160;<br/>
+CSIH2SCO_ALT4_OUT&#160;<br/>
+HSURT3CSI_ALT4_IN&#160;<br/>
+124&#160;<br/>
+324&#160;<br/>
+EXTCLK1O_ALT3_OUT&#160;<br/>
+HSURT3CSO_ALT4_OUT&#160;<br/>
+<b>36&#160;</b><br/>
+<hr/>
+<a name=37></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+125&#160;<br/>
+&#160;<br/>
+325&#160;<br/>
+CSIH0RYI_ALT4_IN&#160;<br/>
+GTMAT2O0_ALT1_OUT&#160;<br/>
+126&#160;<br/>
+326&#160;<br/>
+CSIH0RYO_ALT4_OUT&#160;<br/>
+CSIH3CSS0_ALT3_OUT&#160;<br/>
+127&#160;<br/>
+327&#160;<br/>
+MCAN1TX_ALT3_OUT&#160;<br/>
+HSURT3SCKI_ALT4_IN&#160;<br/>
+128&#160;<br/>
+328&#160;<br/>
+CSIH1CSS3_ALT4_OUT&#160;<br/>
+HSURT3SCKO_ALT4_OUT&#160;<br/>
+129&#160;<br/>
+329&#160;<br/>
+MCAN1RX_ALT3_IN&#160;<br/>
+GTMAT1O7_ALT1_OUT&#160;<br/>
+130&#160;<br/>
+330&#160;<br/>
+CSIH2SI_ALT4_IN&#160;<br/>
+HSURT3SDIO3I_ALT4_IN&#160;<br/>
+131&#160;<br/>
+331&#160;<br/>
+CSIH2CSS3_ALT3_OUT&#160;<br/>
+HSURT3SDIO3O_ALT4_OUT&#160;<br/>
+132&#160;<br/>
+332&#160;<br/>
+SENT2RX_ALT2_IN&#160;<br/>
+GTMAT1O6_ALT1_OUT&#160;<br/>
+133&#160;<br/>
+333&#160;<br/>
+INTP2_ALT3_IN&#160;<br/>
+HSURT3SDIO2I_ALT4_IN&#160;<br/>
+134&#160;<br/>
+334&#160;<br/>
+MTTCAN0TX_ALT2_OUT&#160;<br/>
+HSURT3SDIO2O_ALT4_OUT&#160;<br/>
+135&#160;<br/>
+335&#160;<br/>
+CSIH2CSS0_ALT4_OUT&#160;<br/>
+HSURT3SDIO1I_ALT4_IN&#160;<br/>
+136&#160;<br/>
+336&#160;<br/>
+MTTCAN0RX_ALT2_IN&#160;<br/>
+HSURT3SDIO1O_ALT4_OUT&#160;<br/>
+137&#160;<br/>
+337&#160;<br/>
+CSIH0CSS4_ALT4_OUT&#160;<br/>
+HSURT3SDIO0I_ALT4_IN&#160;<br/>
+138&#160;<br/>
+338&#160;<br/>
+CSIH1CSS6_ALT4_OUT&#160;<br/>
+HSURT3SDIO0O_ALT4_OUT&#160;<br/>
+139&#160;<br/>
+339&#160;<br/>
+HSURT2DIR_ALT2_OUT&#160;<br/>
+SENT7RX_ALT3_IN&#160;<br/>
+140&#160;<br/>
+340&#160;<br/>
+CSIH1CSS7_ALT4_OUT&#160;<br/>
+MEMC0A0_ALT3_OUT&#160;<br/>
+141&#160;<br/>
+341&#160;<br/>
+HSURT2CSI_ALT2_IN&#160;<br/>
+CSIH3RYI_ALT4_IN&#160;<br/>
+142&#160;<br/>
+342&#160;<br/>
+HSURT2CSO_ALT2_OUT&#160;<br/>
+CSIH3RYO_ALT4_OUT&#160;<br/>
+143&#160;<br/>
+343&#160;<br/>
+SENT5RX_ALT3_IN&#160;<br/>
+FLX1TXENB_ALT2_OUT&#160;<br/>
+144&#160;<br/>
+344&#160;<br/>
+HSURT2SCKI_ALT2_IN&#160;<br/>
+SENT6RX_ALT3_IN&#160;<br/>
+145&#160;<br/>
+345&#160;<br/>
+HSURT2SCKO_ALT2_OUT&#160;<br/>
+ETH1MDC_ALT3_OUT&#160;<br/>
+146&#160;<br/>
+346&#160;<br/>
+INTP9_ALT3_IN&#160;<br/>
+FLX1RXDB_ALT2_IN&#160;<br/>
+147&#160;<br/>
+347&#160;<br/>
+GTMAT2O3_ALT1_OUT&#160;<br/>
+ETHCOL_ALT3_IN&#160;<br/>
+148&#160;<br/>
+348&#160;<br/>
+HSURT2SDIO3I_ALT2_IN&#160;<br/>
+MEMC0RD_BAR_ALT4_OUT&#160;<br/>
+149&#160;<br/>
+349&#160;<br/>
+HSURT2SDIO3O_ALT2_OUT&#160;<br/>
+FLX1TXDB_ALT3_OUT&#160;<br/>
+150&#160;<br/>
+350&#160;<br/>
+HSURT2SDIO2I_ALT2_IN&#160;<br/>
+ETHLINKSTA_ALT3_IN&#160;<br/>
+151&#160;<br/>
+351&#160;<br/>
+HSURT2SDIO2O_ALT2_OUT&#160;<br/>
+MEMC0WR_BAR_ALT4_OUT&#160;<br/>
+152&#160;<br/>
+352&#160;<br/>
+SENT6SPCO_ALT3_OUT&#160;<br/>
+ETH1RXDV_ALT3_IN&#160;<br/>
+153&#160;<br/>
+353&#160;<br/>
+HSURT2SDIO1I_ALT2_IN&#160;<br/>
+CSIH3CSS7_ALT3_OUT&#160;<br/>
+154&#160;<br/>
+354&#160;<br/>
+HSURT2SDIO1O_ALT2_OUT&#160;<br/>
+RLIN32RX_ALT4_IN&#160;<br/>
+155&#160;<br/>
+355&#160;<br/>
+SENT7SPCO_ALT3_OUT&#160;<br/>
+FLX1TXDA_ALT2_OUT&#160;<br/>
+<b>37&#160;</b><br/>
+<hr/>
+<a name=38></a><b>Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview</b>&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+156&#160;<br/>
+&#160;<br/>
+356&#160;<br/>
+GTMAT2O1N_ALT1_OUT&#160;<br/>
+CSIH3CSS6_ALT3_OUT&#160;<br/>
+157&#160;<br/>
+&#160;<br/>
+357&#160;<br/>
+HSURT2SDIO0I_ALT2_IN&#160;<br/>
+RLIN32TX_ALT4_OUT&#160;<br/>
+158&#160;<br/>
+358&#160;<br/>
+HSURT2SDIO0O_ALT2_OUT&#160;<br/>
+FLX1TXENA_ALT2_OUT&#160;<br/>
+159&#160;<br/>
+359&#160;<br/>
+GTMAT2O1_ALT1_OUT&#160;<br/>
+CSIH3CSS5_ALT3_OUT&#160;<br/>
+160&#160;<br/>
+360&#160;<br/>
+HSURT3SDIR_ALT4_OUT&#160;<br/>
+MEMC0CS0_BAR_ALT4_OUT&#160;<br/>
+161&#160;<br/>
+FLX1RXDA_ALT2_IN&#160;<br/>
+&#160;<br/>
+361&#160;<br/>
+SENT0RX_ALT4_IN&#160;<br/>
+162&#160;<br/>
+INTP11_ALT3_IN&#160;<br/>
+&#160;<br/>
+362&#160;<br/>
+MEMC0D1I_ALT3_IN&#160;<br/>
+163&#160;<br/>
+&#160;<br/>
+363&#160;<br/>
+CSIH3CSS4_ALT3_OUT&#160;<br/>
+MEMC0D1O_ALT3_OUT&#160;<br/>
+164&#160;<br/>
+&#160;<br/>
+364&#160;<br/>
+MEMC0CS1_BAR_ALT4_OUT&#160;<br/>
+MTTCAN0EVT_ALT4_IN&#160;<br/>
+165&#160;<br/>
+&#160;<br/>
+365&#160;<br/>
+ETH1WOL_ALT3_OUT&#160;<br/>
+ETH1TXEN_ALT2_OUT&#160;<br/>
+166&#160;<br/>
+&#160;<br/>
+366&#160;<br/>
+MEMC0CS2_BAR_ALT4_OUT&#160;<br/>
+MEMC0D2I_ALT3_IN&#160;<br/>
+167&#160;<br/>
+&#160;<br/>
+367&#160;<br/>
+FLX1STPWT_ALT3_IN&#160;<br/>
+MEMC0D2O_ALT3_OUT&#160;<br/>
+168&#160;<br/>
+&#160;<br/>
+368&#160;<br/>
+MEMC0CS3_BAR_ALT4_OUT&#160;<br/>
+MTTCAN0SOC_ALT4_OUT&#160;<br/>
+169&#160;<br/>
+&#160;<br/>
+369&#160;<br/>
+ETH1RXD3_ALT2_IN&#160;<br/>
+ETH1TXD1_ALT2_OUT&#160;<br/>
+170&#160;<br/>
+&#160;<br/>
+370&#160;<br/>
+MEMC0A1_ALT3_OUT&#160;<br/>
+MEMC0D3I_ALT3_IN&#160;<br/>
+171&#160;<br/>
+&#160;<br/>
+371&#160;<br/>
+CSIH3DCS_ALT4_IN&#160;<br/>
+MEMC0D3O_ALT3_OUT&#160;<br/>
+172&#160;<br/>
+&#160;<br/>
+372&#160;<br/>
+CSIH3SO_ALT4_OUT&#160;<br/>
+MTTCAN0TMP_ALT4_OUT&#160;<br/>
+173&#160;<br/>
+&#160;<br/>
+373&#160;<br/>
+ETH1RXD2_ALT2_IN&#160;<br/>
+ETH1TXD2_ALT2_OUT&#160;<br/>
+174&#160;<br/>
+&#160;<br/>
+374&#160;<br/>
+MEMC0A2_ALT3_OUT&#160;<br/>
+MEMC0D4I_ALT3_IN&#160;<br/>
+175&#160;<br/>
+&#160;<br/>
+375&#160;<br/>
+CSIH3SI_ALT4_IN&#160;<br/>
+MEMC0D4O_ALT3_OUT&#160;<br/>
+176&#160;<br/>
+&#160;<br/>
+376&#160;<br/>
+ETH1CRS_ALT2_IN&#160;<br/>
+MTTCAN0RTP_ALT4_OUT&#160;<br/>
+177&#160;<br/>
+&#160;<br/>
+377&#160;<br/>
+MEMC0A3_ALT3_OUT&#160;<br/>
+GTMAT2O2_ALT1_OUT&#160;<br/>
+178&#160;<br/>
+&#160;<br/>
+378&#160;<br/>
+CSIH3SSI_BAR_ALT4_IN&#160;<br/>
+ETH1TXD3_ALT2_OUT&#160;<br/>
+179&#160;<br/>
+&#160;<br/>
+379&#160;<br/>
+CSIH3CSS0_ALT4_OUT&#160;<br/>
+MEMC0D5I_ALT3_IN&#160;<br/>
+180&#160;<br/>
+&#160;<br/>
+380&#160;<br/>
+GTMAT2O3N_ALT1_OUT&#160;<br/>
+MEMC0D5O_ALT3_OUT&#160;<br/>
+181&#160;<br/>
+&#160;<br/>
+381&#160;<br/>
+ETH1RXER_ALT2_IN&#160;<br/>
+GTMAT2O2N_ALT1_OUT&#160;<br/>
+182&#160;<br/>
+&#160;<br/>
+382&#160;<br/>
+MEMC0A4_ALT3_OUT&#160;<br/>
+ETH1TXER_ALT2_OUT&#160;<br/>
+183&#160;<br/>
+&#160;<br/>
+383&#160;<br/>
+CSIH3SCI_ALT4_IN&#160;<br/>
+MEMC0D6I_ALT3_IN&#160;<br/>
+184&#160;<br/>
+&#160;<br/>
+384&#160;<br/>
+CSIH3SCO_ALT4_OUT&#160;<br/>
+MEMC0D6O_ALT3_OUT&#160;<br/>
+185&#160;<br/>
+&#160;<br/>
+385&#160;<br/>
+ETH1RXD1_ALT2_IN&#160;<br/>
+ETH1MD1_ALT2_IN&#160;<br/>
+186&#160;<br/>
+&#160;<br/>
+386&#160;<br/>
+MEMC0A5_ALT3_OUT&#160;<br/>
+ETH1MDO_ALT2_OUT&#160;<br/>
+<b>38&#160;</b><br/>
+<hr/>
+<a name=39></a><b>&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;Overview&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Ch&#160;apter&#160;8</b>&#160;<br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+&#160;<br/>
+<b>Sl.No&#160;</b><br/>
+<b>Modes&#160;</b><br/>
+187&#160;<br/>
+&#160;<br/>
+387&#160;<br/>
+GTMT1I4_ALT1_IN&#160;<br/>
+MEMC0D7I_ALT3_IN&#160;<br/>
+188&#160;<br/>
+&#160;<br/>
+388&#160;<br/>
+ETH1RXD0_ALT2_IN&#160;<br/>
+MEMC0D7O_ALT3_OUT&#160;<br/>
+189&#160;<br/>
+&#160;<br/>
+389&#160;<br/>
+MEMC0A6_ALT3_OUT&#160;<br/>
+SENT8SPCO_ALT4_OUT&#160;<br/>
+190&#160;<br/>
+&#160;<br/>
+390&#160;<br/>
+ETH1RXCLK_ALT2_IN&#160;<br/>
+SENT8RX_ALT4_IN&#160;<br/>
+191&#160;<br/>
+&#160;<br/>
+391&#160;<br/>
+MEMC0A7_ALT3_OUT&#160;<br/>
+RLIN33TX_ALT4_OUT&#160;<br/>
+192&#160;<br/>
+&#160;<br/>
+392&#160;<br/>
+MCAN0TXFD_ALT4_OUT&#160;<br/>
+RLIN33RX_ALT4_IN&#160;<br/>
+193&#160;<br/>
+&#160;<br/>
+393&#160;<br/>
+ETH1TXCLK_ALT2_IN&#160;<br/>
+SENT9SPCO_ALT4_OUT&#160;<br/>
+194&#160;<br/>
+&#160;<br/>
+394&#160;<br/>
+MEMC0A8_ALT3_OUT&#160;<br/>
+SENT9RX_ALT4_IN&#160;<br/>
+195&#160;<br/>
+&#160;<br/>
+395&#160;<br/>
+MCAN0RXFD_ALT4_OUT&#160;<br/>
+MCAN2TX_ALT2_OUT&#160;<br/>
+196&#160;<br/>
+&#160;<br/>
+396&#160;<br/>
+ETH1REF50CK_ALT2_IN&#160;<br/>
+MCAN2RX_ALT3_IN&#160;<br/>
+197&#160;<br/>
+&#160;<br/>
+397&#160;<br/>
+FLSCI3RXD_ALT3_IN_SUPP_PFC_P<br/>
+MEMC0D0I_ALT3_IN&#160;<br/>
+MCSR&#160;<br/>
+198&#160;<br/>
+&#160;<br/>
+398&#160;<br/>
+FLSCI3TXD_ALT3_OUT_SUPP_PFC_<br/>
+MEMC0D0O_ALT3_OUT&#160;<br/>
+PMCSR&#160;<br/>
+199&#160;<br/>
+&#160;<br/>
+399&#160;<br/>
+MTTCAN0SWT_ALT4_IN&#160;<br/>
+DIO_SUPP_PFC_PMCSR&#160;<br/>
+200&#160;<br/>
+ETH1TXD0_ALT2_OUT&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>39&#160;</b><br/>
+<hr/>
+<a name=40></a><b>&#160;&#160;Chapter&#160;8&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Configuration&#160;&#160;Overview&#160;</b><br/>
+<b>&#160;<br/></b>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>40&#160;</b><br/>
+<hr/>
+<a name=41></a><b>&#160; &#160;Messages&#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;Chapter&#160;9&#160;<br/></b>&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>Chapter&#160;9&#160;</b><br/>
+<b>Messages&#160;</b><br/>
+<b>&#160;</b><br/>
+The&#160;messages&#160;help&#160;to&#160;identify&#160;the syntax&#160;or semantic&#160;errors&#160;in the ECU&#160;<br/>Configuration Description File. Hence it&#160;ensures&#160;validity&#160;and&#160;correctness&#160;of&#160;the&#160;<br/>information&#160;available&#160;in&#160;the&#160;ECU Configuration Description&#160;File.&#160;<br/>
+&#160;<br/>
+The&#160;following&#160;section&#160;gives&#160;the&#160;list of&#160;error,&#160;warning and information&#160;messages&#160;<br/>displayed&#160;by&#160;the&#160;mcal&#160;code&#160;generator tool.&#160;<br/>&#160;<br/>
+<b>9.1&#160;Error&#160;Messages&#160;&#160;&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>ERR_59_124_001:&#160;Parameter&#160;PortPinModeChangeable should not&#160;be&#160;<br/>configured as&#160;true&#160;in the&#160;path&#160;/Renesas/EcucDefs_Port/Port0/&#160;<br/>PortConfigSet0/PortGroup10/PortPin10&#160;as&#160;the parameter&#160;<br/>PortSetPinModeApi is set&#160;false.&#160;</b><br/>
+This&#160;error occurs&#160;when ‘PortPinModeChangeable’&#160;is&#160;set as&#160;true&#160;and&#160;<br/>’PortSetPinModeApi’&#160;is&#160;set&#160;as&#160;false&#160;<br/>
+<b>ERR_59_124_002:&#160;Number&#160;of&#160;fields is not&#160;same for&#160;the entity Structure&#160;<br/>Port_GstConfiguration.&#160;At&#160;least one&#160;DNFA&#160;instance shall&#160;be configured in&#160;<br/>in PortConfigSet0&#160;across&#160;MultiConfigSet.&#160;<br/></b>This&#160;error occurs&#160;when Number&#160;of&#160;fields&#160;is&#160;not same for the&#160;entity&#160;Structure&#160;<br/>Port_GstConfiguration&#160;<br/>
+<b>ERR_59_124_003:&#160;PortGroup${GrpInst}0&#160;is&#160;not&#160;configured in&#160;<br/>PortConfigSet${ConfigSet}, PortGroups configured&#160;shall&#160;not&#160;be different&#160;<br/>across MultiConfigSet.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;any&#160;of&#160;the PortGroup&#160;is&#160;not configured&#160;and&#160;if&#160;<br/>PortGroups&#160;configured&#160;different&#160;across&#160;MultiConfigSet<b>&#160;</b><br/>
+<b>ERR_59_124_004:&#160;Configured PortPins&#160;of&#160;the PortGroup00&#160;does&#160;not&#160;<br/>match, PortPins&#160;of&#160;a&#160;PortGroup&#160;shall&#160;remain alike&#160;across MultiConfigSet.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;PortPin not&#160;Present&#160;in&#160;a PortGroup,&#160;and&#160;if&#160;the&#160;PortPins&#160;<br/>of&#160;a&#160;PortGroup&#160;different across&#160;MultiConfigSet&#160;<br/>
+<b>ERR_59_124_005:&#160;Number&#160;of&#160;fields is not&#160;same for&#160;the entity Structure&#160;<br/>Port_GstConfiguration.&#160;At&#160;least one FCLA&#160;instance&#160;shall&#160;be&#160;configured&#160;in&#160;<br/>PortConfigSet0&#160;across&#160;MultiConfigSet.&#160;</b><br/>
+This&#160;error occurs&#160;when Number&#160;of&#160;fields&#160;is&#160;not same for the&#160;entity&#160;Structure&#160;<br/>‘’Port_GstConfiguration&#160;<br/>
+<b>ERR_59_124_006:&#160;Parameter&#160;PortPinDirectionChangeable&#160;should not&#160;be&#160;<br/>configured as&#160;true in&#160;the&#160;Path&#160;Renesas/EcucDefs_Port/Port0/&#160;<br/>PortConfigSet/PortGroup/PortPin,&#160;as&#160;parameter&#160;PortSetPinDirectionApi is&#160;<br/>set&#160;false.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;‘PortPinDirectionChangeable’&#160;is&#160;set&#160;as&#160;true&#160;and&#160;<br/>’PortSetPinDirectionApi’&#160;is&#160;set&#160;as&#160;false&#160;<br/>
+<b>ERR_59_124_007:&#160;Parameter&#160;PortPinDioAltModeChangeable&#160;should not&#160;<br/>be configured as true&#160;in&#160;the path&#160;/Renesas/EcucDefs_Port/Port/&#160;</b><br/>
+<b>41&#160;</b><br/>
+<hr/>
+<a name=42></a><b>&#160;&#160;Chapter&#160;9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>PortConfigSet/PortGroup/PortPin,&#160;as&#160;parameter&#160;PortSetToDioAltModeApi&#160;<br/>is&#160;set&#160;false.&#160;</b><br/>
+This&#160;error occurs&#160;when ‘PortPinDioAltModeChangeable’&#160;is&#160;set&#160;as&#160;true&#160;and’&#160;<br/>PortSetToDioAltModeApi’&#160;is&#160;set&#160;as&#160;false&#160;<br/>
+<b>ERR_59_124_009 :&#160;The value for&#160;parameter&#160;PortInputBufferControl of&#160;the&#160;<br/>Port&#160;Group&#160;Container&#160;&#160;should not&#160;be configured as&#160;&lt;true&gt;&#160;in&#160;the path&#160;<br/>/Renesas/EcucDefs_Port/Port/PortConfigSet/PortGroup/PortPin&#160;as&#160;the&#160;<br/>value configured for&#160;parameter&#160;PortPinInitialMode of&#160;the same&#160;container&#160;<br/>is&#160;configured&#160;as&#160;&lt;PORT_PIN_OUT&gt;.&#160;</b><br/>
+This&#160;error occurs&#160;when ‘PortInputBufferControl’&#160;is&#160;set&#160;as&#160;false&#160;and&#160;<br/>’PortPinInitialMode’&#160;is&#160;set&#160;as&#160;output mode.&#160;<br/>
+<b>ERR_59_124_010&#160;:&#160;Value&#160;of&#160;the&#160;parameter&#160;PortPinInitialMode of&#160;Port&#160;<br/>Group&#160;container&#160;Port&#160;Pin&#160;container&#160;support&#160;only&#160;<br/>DIO_SUPP_PFCE_PMCSR mode in&#160;$PortPinPath,&#160;Hence the parameter&#160;<br/>PortPinDioAltModeChangeable&#160;of&#160;same&#160;container&#160;shall&#160;not&#160;be configured&#160;<br/>as&#160;&lt;true&gt;.&#160;</b><br/>
+This&#160;error occurs&#160;when ‘PortPinInitialMode’&#160;is&#160;set&#160;as&#160;<br/>DIO_SUPP_PFCE_PMCSR and&#160;’PortPinDioAltModeChangeable’&#160;is&#160;set&#160;as&#160;true&#160;<br/>
+<b>ERR_59_124_011:&#160;$PortGrpShortNameCmp&#160;is repeated&#160;in&#160;<br/>PortGroup${GrpInst}&#160;and&#160;PortGroup$ContInst.&#160;</b><br/>
+This&#160;error occurs&#160;when ‘$PortGrpShortNameCmp is&#160;repeated&#160;in&#160;<br/>PortGroup${GrpInst} and&#160;PortGroup$ContInst.&#160;<br/>
+<b>ERR_59_124_012:&#160;$PortShortNameCmp&#160;is repeated&#160;in&#160;<br/>PortGroup${GrpInst}&#160;PortPin$PinInst and&#160;PortGroup$ContInst&#160;<br/>PortPin$PinInstance.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;$PortShortNameCmp is&#160;repeated&#160;in&#160;<br/>PortGroup${GrpInst} PortPin$PinInst and PortGroup$ContInst&#160;<br/>PortPin$PinInstance<b>.&#160;</b><br/>
+<b>ERR_59_124_013:&#160;Parameter&#160;PortPinInitialMode of&#160;the container&#160;<br/>PortGroup9&#160;PortPin7 should not&#160;be configured as 'MCAN2TX_ALT2_OUT'&#160;<br/>since&#160;the device&#160;$DeviceVariant&#160;does&#160;not&#160;support&#160;'MCAN2TX_ALT2_OUT'&#160;<br/>alternative mode.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;PortDeviceName is&#160;R7F701372,&#160;and&#160;<br/>PortPinInitialMode&#160;of&#160;the container&#160;PortGroup9&#160;PortPin7 configured as&#160;<br/>'MCAN2TX_ALT2_OUT'&#160;<br/>
+<b>ERR_59_124_014:&#160;The configured value of&#160;the parameter&#160;<br/>'PortPinInitialMode' of&#160;the&#160;container&#160;<br/>'PortGroup${GrpInst}0_PortPin${PinInst}' is&#160;incorrect, since&#160;the&#160;<br/>parameter&#160;'PortIpControl'&#160;is&#160;configured&#160;as&#160;&lt;true&gt;&#160;and&#160;'PortPinInitialMode'&#160;<br/>is&#160;configured&#160;as&#160;&lt;$FullPortPinInitialMode&gt;&#160;</b><br/>
+This&#160;error occurs&#160;when parameter&#160;'PortIpControl'&#160;is&#160;true and PortPinInitialMode&#160;<br/>is&#160;not&#160;an&#160;alternative function of&#160;the&#160;Port IP&#160;Control&#160;Register&#160;<br/>
+&#160;<br/>
+<b>42&#160;</b><br/>
+<hr/>
+<a name=43></a><b>&#160; &#160;Messages&#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;Chapter&#160;9&#160;<br/></b>&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>ERR_59_124_016:&#160;The value configured for&#160;the parameter&#160;<br/>'PortWriteVerifyErrorInterface' should follow&#160;C Syntax&#160;&lt;[a-zA-Z][a-zA-Z0-<br/>9_]&gt;.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;the&#160;Port callback&#160;Notification function&#160;name for the&#160;<br/>parameter 'PortWriteVerifyErrorInterface' is&#160;not&#160;followed&#160;the C&#160;Syntax&#160;&lt;[a-zA-<br/>Z][a-zA-Z0-9_]&gt;.&#160;<br/>
+<b>ERR_59_124_017:&#160;The parameter&#160;'$paramlist'&#160;in the container&#160;<br/>'PortConfigSet$ConfigSetCnt&#160;PortGroup${GrpInst}0 PortPin${PinInst}'&#160;<br/>should be configured.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;a&#160;particular&#160;parameter&#160;is&#160;not&#160;configured.&#160;<br/>
+<b>ERR_59_124_019:&#160;As write-verify check&#160;is enabled&#160;through&#160;the parameter&#160;<br/>PortWriteVerify&#160;in&#160;PortGeneral&#160;container, PORT_E_REG_WRITE_VERIFY&#160;<br/>in PortDemEventParameterRefs&#160;container&#160;should&#160;be configured.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;the&#160;parameter&#160;PortWriteVerify&#160;is&#160;enabled&#160;in&#160;<br/>PortGeneral&#160;and&#160;PORT_E_REG_WRITE_VERIFY&#160;in&#160;<br/>PortDemEventParameterRefs&#160;container&#160;is&#160;not configured.&#160;<br/>
+<b>ERR_59_124_020:&#160;As write-verify check&#160;is enabled&#160;through&#160;the parameter&#160;<br/>PortWriteVerify&#160;in&#160;PortGeneral&#160;container&#160;and&#160;<br/>PortUseWriteVerifyErrorInterface&#160;is&#160;configured as&#160;true,&#160;<br/>PortWriteVerifyErrorInterface&#160;should&#160;have valid&#160;error&#160;notification.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;the&#160;parameter&#160;PortWriteVerify&#160;in PortGeneral&#160;container&#160;<br/>and&#160;PortUseWriteVerifyErrorInterface is&#160;configured&#160;as&#160;true, but&#160;<br/>PortWriteVerifyErrorInterface not&#160;have&#160;any&#160;valid&#160;error notification.&#160;<br/>
+<b>ERR_59_124_021</b>&#160;<b>References path&#160;of&#160;Parameter&#160;<br/>PORT_E_REG_WRITE_VERIFY&#160; $CbkPort_E_Reg_Verify&#160;is&#160;not&#160;correct&#160;in&#160;<br/>PortDemEventParameterRefs container.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;the&#160;incorrect&#160;Dem&#160;reference path&#160;is&#160;configured for&#160;<br/>PORT_E_REG_WRITE_VERIFY&#160;parameter.&#160;<br/>
+<b>ERR_59_124_022:&#160;As write-verify check&#160;is disabled&#160;via&#160;the parameter&#160;<br/>PortWriteVerify,&#160;PortUseWriteVerifyErrorInterface&#160;parameter&#160;should not&#160;<br/>be configured as true&#160;in PortGeneral&#160;Container.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;the&#160;write-verify&#160;check&#160;is&#160;disabled via the&#160;parameter&#160;<br/>PortWriteVerify,&#160;and PortUseWriteVerifyErrorInterface parameter&#160;is&#160;not&#160;<br/>configured&#160;as&#160;true&#160;in&#160;PortGeneral&#160;Container.&#160;<br/>
+<b>ERR_59_124_024:&#160;The Short&#160;name of&#160;'PortGroup${GrpInst}0' container&#160;<br/>should be same across all configuration&#160;sets.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;the&#160;short name of&#160;the Port Group&#160;container&#160;is&#160;different&#160;<br/>across&#160;the all&#160;configuration&#160;sets.&#160;<br/>
+<b>ERR_59_124_025:&#160;The Short&#160;name of&#160;'PortGroup${GrpInst}0&#160;-&gt;&#160;<br/>PortPin${PinInst}0'&#160;container&#160;should be&#160;same across&#160;all configuration&#160;<br/>sets.&#160;</b><br/>
+<b>43&#160;</b><br/>
+<hr/>
+<a name=44></a><b>&#160;&#160;Chapter&#160;9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Messages&#160;</b><br/>
+<b>&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;the&#160;short name of&#160;the Port Pin&#160;is&#160;different across&#160;the all&#160;<br/>configuration&#160;sets.&#160;<br/>
+<b>ERR_59_124_026:&#160;None of&#160;the Port&#160;Group&#160;is configured.&#160;At&#160;least any one&#160;<br/>of&#160;the PORT&#160;GROUP&#160;should be&#160;configured.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;none of&#160;the&#160;Port&#160;group&#160;is&#160;configured.&#160;<br/>
+<b>ERR_59_124_027:&#160;The parameters 'PortPullUpOption' and&#160;<br/>'PortPullDownOption' from $PortPinPath&#160;container&#160;should not&#160;be&#160;<br/>configured as&#160;&lt;true&gt;&#160;at the same time&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;both the&#160;parameters&#160;‘PortPullUpOption’&#160;and&#160;<br/>'PortPullDownOption' configured&#160;as&#160;true.&#160;<br/>
+<b>ERR_59_124_028:&#160;The configured Device&#160;Name&#160;for&#160;parameter&#160;<br/>PortDeviceName:&#160;'$DeviceVariant' in&#160;the&#160;container&#160;<br/>$PortInstName/PortGeneral0&#160;is invalid.&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;configured&#160;device&#160;variant&#160;name is&#160;incorrect.&#160;<br/>
+<b>ERR_59_124_029:&#160;The value for&#160;parameter&#160;<br/>'PortSetPinDefaultDirectionApi' from&#160;PortGeneral0&#160;container&#160;should not&#160;<br/>be configured as&#160;&lt;true&gt;&#160;as the value for&#160;parameter&#160;<br/>'PortSetPinDirectionApi' in&#160;the container&#160;PortGeneral0&#160;is&#160;configured as&#160;<br/>&lt;false&gt;.</b>&#160;&#160;<br/>
+<b>Path:/Renesas/EcucDefs_Port/Port/PortGeneral0&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;configured&#160;'PortSetPinDefaultDirectionApi'&#160;parameter&#160;is&#160;<br/>true&#160;but ‘PortSetPinDirectionApi’&#160;parameter&#160;is&#160;false&#160;in&#160;general&#160;container.&#160;<br/>
+<b>ERR_59_124_030:&#160;The&#160;value for&#160;parameter&#160;'PortSetPinDefaultModeApi'&#160;<br/>from PortGeneral0 container&#160;should not&#160;be&#160;configured as &lt;true&gt;&#160;as&#160;the&#160;<br/>value for&#160;parameter&#160;'PortSetPinModeApi' in&#160;the&#160;container&#160;PortGeneral0&#160;is&#160;<br/>configured as&#160;&lt;false&gt;.&#160;</b><br/>
+<b>Path:/Renesas/EcucDefs_Port/Port/PortGeneral0&#160;</b><br/>
+This&#160;error occurs&#160;when&#160;configured&#160;'PortSetPinDefaultModeApi' parameter&#160;is&#160;<br/>configured&#160;as&#160;true&#160;but&#160;‘'PortSetPinModeApi'&#160;parameter&#160;is&#160;false&#160;in&#160;general&#160;<br/>container.&#160;<br/>
+<b>&#160;</b><br/>
+<b>9.2&#160;Warning Messages&#160;</b><br/>
+&#160;<br/>
+<b>WARNING_59_124_001:&#160;&#160;The parameter&#160;PortPinDirection&#160;of&#160;container&#160;<br/>Port&#160;Group&#160;container&#160;should not&#160;be configured as&#160;&lt;PORT_PIN_OUT&gt;&#160;in&#160;<br/>the path&#160;/Renesas/EcucDefs_Port/Port0/PortConfigSet/PortGroup/PortPin&#160;<br/>, since&#160;the parameter&#160;PortPinInitialMode of&#160;the same Port&#160;Group&#160;<br/>container&#160;is configured as an&#160;Input&#160;type mode. The value for&#160;parameter&#160;<br/>PortPinDirection&#160;is&#160;considered as&#160;&lt;PORT_PIN_IN&gt;.&#160;</b><br/>
+This&#160;warning&#160;occurs&#160;when&#160;PortPinDirection&#160;parameter&#160;is&#160;set&#160;as&#160;output&#160;and&#160;<br/>PortPinInitialMode&#160;parameter&#160;is&#160;an&#160;input.&#160;<br/>
+&#160;<br/>
+<b>44&#160;</b><br/>
+<hr/>
+<a name=45></a><b>&#160; &#160;Messages&#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160;&#160; &#160;&#160;&#160;&#160;&#160; &#160;&#160; &#160;&#160;&#160;&#160;Chapter&#160;9&#160;<br/></b>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;WARNING_59_124_002:&#160;&#160;The parameter&#160;PortPinDirection&#160;of&#160;container&#160;<br/>Port&#160;Group&#160;container&#160;should not&#160;be configured as&#160;&lt;PORT_PIN_IN&gt;&#160;in the&#160;<br/>path&#160;&#160;/Renesas/EcucDefs_Port/Port0/PortConfigSet/PortGroup/PortPin,&#160;<br/>since&#160;the parameter&#160;PortPinInitialMode of&#160;the same Port&#160;Group&#160;container&#160;<br/>is&#160;configured&#160;as&#160;an Output&#160;type mode.&#160;The value for&#160;parameter&#160;<br/>PortPinDirection&#160;is&#160;considered as&#160;&lt;PORT_PIN_OUT&gt;.&#160;</b><br/>
+This&#160;warning&#160;occurs&#160;when&#160;PortPinDirection&#160;parameter&#160;is&#160;set&#160;as&#160;an&#160;input&#160;and&#160;<br/>PortPinInitialMode&#160;parameter&#160;is&#160;set&#160;as&#160;an&#160;output.&#160;<br/>
+<b>WARNING&#160;-&#160;Checksum incorrect&#160;message&#160;should&#160;be generated.&#160;</b><br/>
+This&#160;Warning&#160;occurs&#160;when&#160;any&#160;vm&#160;file is&#160;corrupted.&#160;<br/>
+&#160;<br/>
+<b>9.3&#160;Information Messages&#160;</b><br/>
+&#160;<br/>None.<br/>
+<b>45&#160;</b><br/>
+<hr/>
+<a name=46></a>&#160;<br/>
+<b>&#160;&#160;Chapter&#160;9&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; Me&#160;ssages&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>46&#160;</b><br/>
+<hr/>
+<a name=47></a>&#160;<br/>
+&#160;<br/><b>&#160;</b><br/>
+<b>Revision&#160;History&#160;</b><br/>
+<b>&#160;<br/></b>&#160;<br/>&#160;<br/>
+<b>Sl.No.</b>&#160;&#160;<b>Description</b>&#160;<br/>
+<b>Version</b>&#160;<br/>
+<b>Date</b>&#160;<br/>
+1.&#160;<br/>
+Draft&#160;Version&#160;<br/>
+1.0.0&#160;<br/>
+17-Aug-2015&#160;<br/>
+2&#160;<br/>
+The&#160;following&#160;changes&#160;are&#160;made:&#160;<br/>
+1.0.1&#160;<br/>
+05-Apr-2016&#160;<br/>
+1.&#160;&#160;Compiler path&#160;modified&#160;in&#160;Section&#160;9.3&#160;<br/>2.&#160;&#160;R number is&#160;added&#160;in&#160;the&#160;last&#160;page.&#160;<br/>3.&#160;&#160;Error&#160;and&#160;warning&#160;descriptions&#160;are&#160;added&#160;in&#160;section&#160;10.1.1&#160;<br/>
+3&#160;<br/>
+The&#160;following&#160;changes&#160;are&#160;made:&#160;<br/>
+1.0.2&#160;<br/>
+09-Feb-2017&#160;<br/>
+1.&#160;&#160;10.1&#160;Error Messages&#160;updated.&#160;<br/>2.&#160;&#160;Chapter&#160;3&#160;Code&#160;Generation&#160;Overview&#160;updated&#160;for&#160;Port_Cbk.h&#160;file&#160;<br/>3.&#160;&#160;Chapter&#160;5&#160;Output&#160;Files&#160;updated&#160;for Port_Cbk.h&#160;file&#160;<br/>4.&#160;&#160;R number is&#160;updated&#160;in&#160;the&#160;last&#160;page&#160;<br/>5.&#160;&#160;Updated&#160;Chapters&#160;1,3,4,5,6,7&#160;by&#160;rephrasing&#160;Tool&#160;and&#160;PORT&#160;<br/>
+Driver Generation&#160;Tool&#160;with&#160;MCAL&#160;Code&#160;Generation&#160;Tool.&#160;<br/>
+6.&#160;&#160;Updated&#160;description&#160;of&#160;Chapter1&#160;introduction&#160;and&#160;table&#160;1-1.&#160;<br/>7.&#160;&#160;Updated&#160;table&#160;2-1&#160;Reference&#160;Documents.&#160;<br/>8.&#160;&#160;Renamed&#160;the&#160;Chapter 3&#160;heading&#160;as&#160;Code&#160;Generation&#160;Overview.&#160;<br/>9.&#160;&#160;Updated&#160;the&#160;chapter&#160;3&#160;by&#160;adding&#160;a&#160;remark&#160;on&#160;MCAL&#160;Code&#160;<br/>
+Generator Tool&#160;User&#160;manual&#160;and&#160;updated&#160;figure&#160;3-2.&#160;<br/>
+10.&#160;&#160;Added&#160;Remark&#160;in&#160;Chapter4.&#160;<br/>11.&#160;&#160;Updated&#160;the&#160;Figure&#160;8-1,&#160;Table&#160;8-1&#160;and&#160;8-2.&#160;<br/>12.&#160;&#160;Updated&#160;the&#160;format&#160;of&#160;Error/Warning/Information&#160;message&#160;in&#160;the&#160;<br/>
+chapter Messages.&#160;<br/>
+13.&#160;&#160;Removed&#160;Chapter&#160;9&#160;Generator Tool&#160;and&#160;chapter&#160;11&#160;Notes.&#160;<br/>14.&#160;&#160;In&#160;Chapter 8,&#160;table&#160;8-1&#160;TRXML&#160;changed&#160;to&#160;ARXML&#160;abbreviation.&#160;<br/>
+4&#160;<br/>
+The&#160;following&#160;changes&#160;are&#160;made:&#160;<br/>
+1.0.3&#160;<br/>
+27-Apr-2017&#160;<br/>
+1.&#160;&#160;ERR_59_124_029&#160;and&#160;ERR_59_124_030&#160;are&#160;updated&#160;in&#160;section&#160;<br/>
+9.1&#160;<br/>
+2.&#160;&#160;Notice&#160;and&#160;Copyright&#160;are&#160;updated.&#160;<br/>3.&#160;&#160;R-&#160;Number&#160;is&#160;updated.&#160;<br/>
+5.&#160;<br/>
+Following&#160;change&#160;&#160;made:&#160;<br/>
+1.0.4&#160;<br/>
+16-Jun-2017&#160;<br/>
+1.&#160;&#160;R-Number&#160;updated.&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>
+<b>47&#160;</b><br/>
+<hr/>
+<a name=48></a>&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>AUTOSAR&#160;MCAL&#160;R4.0.3&#160;User's&#160;Manual</b>&#160;<br/><b>PORT&#160;Driver&#160;Component&#160;Ver.1.0.4</b>&#160;<br/><b>Generation Tool&#160;User's&#160;Manual</b>&#160;<br/>
+&#160;<br/>
+Publication Date:&#160;Rev.1.02,&#160;16&#160;June, 2017&#160;<br/>&#160;<br/>Published&#160;by:&#160;Renesas&#160;Electronics&#160;Corporation&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<hr/>
+<a name=49></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Port/doc/R20UT3654EJ0102-AUTOSAR-49_1.png"/><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<b>SALES&#160;&#160;OFFICES</b>&#160;<br/>
+&#160;<br/>
+<a href="http://www.renesas.com/">http://www.renesas.com&#160;</a><br/>
+Refer&#160;&#160;<a href="http://www.renesas.com/">to&#160;&#34;http://www.renesas.com/&#34;&#160;f</a>or&#160;the&#160;latest&#160;&#160;and&#160;&#160;de&#160;&#160;tailed&#160;&#160;information.&#160;<br/>
+<b>Renesas&#160;Electronics&#160;America&#160;Inc.&#160;<br/></b>2801&#160;Scott&#160;Boulevard&#160;Santa&#160;Clara,&#160;CA&#160;95050-2549,&#160;U.S.A.&#160;<br/>Tel:&#160;+1-408-588-6000,&#160;Fax:&#160;+1-408-588-6130&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Canada&#160;Limited&#160;<br/></b>9251&#160;Yonge&#160;Street,&#160;Suite&#160;8309&#160;Richmond&#160;Hill,&#160;Ontario&#160;Canada&#160;L4C&#160;9T3&#160;<br/>Tel:&#160;+1-905-237-2004&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Europe&#160;Limited&#160;<br/></b>Dukes&#160;Meadow,&#160;Millboard&#160;Road,&#160;Bourne&#160;End,&#160;Buckinghamshire,&#160;SL8&#160;5FH,&#160;U.K&#160;<br/>Tel:&#160;+44-1628-585-100,&#160;Fax:&#160;+44-1628-585-900&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Europe&#160;GmbH&#160;<br/></b>Arcadiastrasse&#160;10,&#160;40472&#160;Düsseldorf,&#160;Germany&#160;<br/>Tel:&#160;+49-211-6503-0,&#160;Fax:&#160;+49-211-6503-1327&#160;<br/>
+<b>Renesas&#160;Electronics&#160;(China)&#160;Co.,&#160;Ltd.&#160;<br/></b>Room&#160;1709,&#160;Quantum&#160;Plaza,&#160;No.27&#160;ZhiChunLu&#160;Haidian&#160;District,&#160;Beijing&#160;100191,&#160;P.R.China&#160;<br/>Tel:&#160;+86-10-8235-1155,&#160;Fax:&#160;+86-10-8235-7679&#160;<br/>
+<b>Renesas&#160;Electronics&#160;(Shanghai)&#160;Co.,&#160;Ltd.&#160;<br/></b>Unit&#160;301,&#160;Tower&#160;A,&#160;Central&#160;Towers,&#160;555&#160;Langao&#160;Road,&#160;Putuo&#160;District,&#160;Shanghai,&#160;P.&#160;R.&#160;China&#160;200333&#160;<br/>Tel:&#160;+86-21-2226-0888,&#160;Fax:&#160;+86-21-2226-0999&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Hong&#160;Kong&#160;Limited&#160;<br/></b>Unit&#160;1601-1611,&#160;16/F.,&#160;Tower&#160;2,&#160;Grand&#160;Century&#160;Place,&#160;193&#160;Prince&#160;Edward&#160;Road&#160;West,&#160;Mongkok,&#160;Kowloon,&#160;Hong&#160;Kong&#160;<br/>Tel:&#160;+852-2265-6688,&#160;Fax:&#160;+852&#160;2886-9022&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Taiwan&#160;Co.,&#160;Ltd.&#160;<br/></b>13F,&#160;No.&#160;363,&#160;Fu&#160;Shing&#160;North&#160;Road,&#160;Taipei&#160;10543,&#160;Taiwan&#160;<br/>Tel:&#160;+886-2-8175-9600,&#160;Fax:&#160;+886&#160;2-8175-9670&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Singapore&#160;Pte.&#160;Ltd.&#160;<br/></b>80&#160;Bendemeer&#160;Road,&#160;Unit&#160;#06-02&#160;Hyflux&#160;Innovation&#160;Centre,&#160;Singapore&#160;339949&#160;<br/>Tel:&#160;+65-6213-0200,&#160;Fax:&#160;+65-6213-0300&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Malaysia&#160;Sdn.Bhd.&#160;<br/></b>Unit&#160;1207,&#160;Block&#160;B,&#160;Menara&#160;Amcorp,&#160;Amcorp&#160;Trade&#160;Centre,&#160;No.&#160;18,&#160;Jln&#160;Persiaran&#160;Barat,&#160;46050&#160;Petaling&#160;Jaya,&#160;Selangor&#160;Darul&#160;Ehsan,&#160;Malaysia&#160;<br/>Tel:&#160;+60-3-7955-9390,&#160;Fax:&#160;+60-3-7955-9510&#160;<br/>
+<b>Renesas&#160;Electronics&#160;India&#160;Pvt.&#160;Ltd.&#160;<br/></b>No.777C,&#160;100&#160;Feet&#160;Road,&#160;HAL&#160;II&#160;Stage,&#160;Indiranagar,&#160;Bangalore,&#160;India&#160;<br/>Tel:&#160;+91-80-67208700,&#160;Fax:&#160;+91-80-67208777&#160;<br/>
+<b>Renesas&#160;Electronics&#160;Korea&#160;Co.,&#160;Ltd.&#160;<br/></b>12F.,&#160;234&#160;Teheran-ro,&#160;Gangnam-Gu,&#160;Seoul,&#160;135-080,&#160;Korea&#160;<br/>Tel:&#160;+82-2-558-3737,&#160;Fax:&#160;+82-2-558-5141&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+©&#160;2006-2017&#160;Renesas&#160;&#160;Electronics&#160;&#160;Corporation.&#160;&#160;All&#160;rights&#160;reserved.&#160;<br/>
+Colophon&#160;&#160;4.1&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=50></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Port/doc/R20UT3654EJ0102-AUTOSAR-50_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/Port/doc/R20UT3654EJ0102-AUTOSAR-50_2.jpg"/><br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+AUTOSAR MCAL&#160;R4.0.3&#160;<br/>
+&#160;<br/>
+User’s&#160;Manual&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;R20UT3654EJ0102&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#9">Chapter 1 Introduction</a>
+<ul>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#9">1.1 Document Overview</a></li>
+</ul>
+</li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#11">Chapter 2 Reference</a>
+<ul>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#11">2.1 Reference Documents</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#11">2.2 Trademark Notice</a></li>
+</ul>
+</li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#13">Chapter 3 Code Generation Overview</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#17">Chapter 4 Input Files</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#19">Chapter 5 Output Files</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#21">Chapter 6 Precautions</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#23">Chapter 7 User Configuration Validation</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#25">Chapter 8 Configuration Overview</a>
+<ul>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#25">8.1 Container Overview</a>
+<ul>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#26">8.1.1 Pre-Compile Configurable Parameters</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#28">8.1.2 Post Build Time Configurable Parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#41">Chapter 9 Messages</a>
+<ul>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#41">9.1 Error Messages</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#44">9.2 Warning Messages</a></li>
+<li><a href="R20UT3654EJ0102-AUTOSARs.html#45">9.3 Information Messages</a></li>
+</ul>
+</li>
+</ul>
+<hr/>
+</body>
+</html>

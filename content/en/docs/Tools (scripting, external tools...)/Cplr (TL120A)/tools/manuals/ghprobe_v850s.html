@@ -1,0 +1,71 @@
+---
+title: ghprobe_v850s
+linkTitle: ghprobe_v850s
+weight: 124
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><b>Using the SuperTrace Probe to Collect Real-time Trace Data&#160;<br/>from a V850 Target&#160;<br/></b>&#160;<br/>The following addendum describes connecting the SuperTrace Probe to a Midas RTE Cube,&#160;<br/>connecting to the NEC IECUBE, configuring the&#160;SuperTrace Probe, and collecting trace data. &#160;<br/>For more information about the SuperTrace Probe, see the&#160;<i>Green Hills Debug Probes User’s&#160;<br/>Guide. &#160;</i>For more information about connecting your debug server see&#160;<i>Configuring Connections&#160;<br/>for …&#160;</i>your target architecture.&#160;<br/>&#160;<br/>Before connecting a SuperTrace Probe, you must&#160;first be able to debug a program&#160;from MULTI&#160;<br/>by using either a Midas RTE Cube (for example, RTE-2000-TP) or an NEC IECUBE ICE.&#160;<br/>&#160;<br/>
+<i><b>Connecting the SuperTrace Probe&#160;to a Midas RTE Cube&#160;<br/></b></i>&#160;<br/>The target board must have a trace breakout board&#160;on it, or you must acquire a board separately.&#160;<br/>This trace breakout board passes through the debug&#160;signals the ICE needs while providing an&#160;<br/>additional Mictor&#160;connector to plug&#160;the SuperTrace Probe in. The trace collection pod can be&#160;<br/>plugged directly into this breakout board, except&#160;for the very earliest version of the breakout&#160;<br/>board, which is labeled ADP-NECM-STP without&#160;any numbers following. When using this&#160;<br/>version of the breakout board, Green Hills adapter PATV8-01A must be&#160;used. Plug the trace pod&#160;<br/>into the adapter, and the&#160;adapter into&#160;the breakout board.&#160;<br/>&#160;<br/>
+<i><b>Connecting the SuperTrace Probe to a NEC IECUBE&#160;<br/></b></i>&#160;<br/>The version of the NEC IECUBE that can talk to&#160;the SuperTrace Probe is&#160;easily identified by the&#160;<br/>Mictor connector located on the front of the device. To connect to the NEC IECUBE:&#160;<br/>&#160;<br/>
+1.&#160;&#160;Plug the tracepod into the trace adapter (PATV8-01A).&#160;<br/>2.&#160;&#160;Plug the trace adapter into the IECUBE. &#160;<br/>
+&#160;<br/>If this puts too much strain on the Mictor&#160;connector on the IECUBE, a Mictor extension&#160;<br/>cable is available from&#160;Green Hills Software (part number GH-ME-V85-mic), which can&#160;<br/>be inserted in between the trace adapter and the IECUBE ICE.&#160;<br/>
+&#160;<br/>
+<i><b>Configuring the SuperTrace Probe&#160;<br/></b></i>&#160;<br/>Use telnet console, serial console, or&#160;<b>gpadmin</b>&#160;to&#160;set the following settings: &#160;<br/>&#160;<br/>
+•&#160;&#160;Adapter must be set to&#160;<b>v850e-trace</b>. &#160;<br/>
+•&#160;&#160;Target must be set to&#160;<b>v850e_trace</b>. &#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=2></a><b>Note:</b>&#160; There is a hyphen in the adapter name, and&#160;there is an underscore in the target name.&#160;<br/>&#160;<br/>For more information about the configuring the&#160;SuperTrace Probe, see Chapter 2, “Installing and&#160;<br/>Configuring Your SuperTrace Probe” in the&#160;<i>Green Hills Debug Probes User’s Manual.</i>&#160;<br/>&#160;<br/>
+<i><b>Collecting trace data&#160;<br/></b></i>&#160;<br/>To collect trace data from the target,&#160;you must add&#160;<b>-stp probe_ip</b>&#160;or&#160;<b>-stp -usb</b>&#160;to the debug&#160;<br/>server command line depending on whether the probe&#160;is hooked up using Ethernet or USB. Once&#160;<br/>the connection is made, you must check that the target-specific trace options&#160;dialog is configured&#160;<br/>correctly for your target. All the standard trace controls are available now.&#160; &#160;<br/>&#160;<br/>The following examples are command lines that&#160;you can enter as a custom connection method&#160;<br/>which. &#160;For more information about these connection methods, see Chapter 4, “Using Custom&#160;<br/>Connection Methods” in the&#160;<i>Green Hills Probes&#160;User’s Manual.</i>&#160;<br/>&#160;<br/>
+<b>Example:&#160;NEC IECUBE:&#160;<br/></b>On the server command line, enter the following to collect trace data from&#160;the target:&#160;<br/>&#160;<br/>850eserv2 -df=df3419.800 -iecube -stp probe_ip&#160;<br/>&#160;<br/>
+<b>Example:&#160;Midas RTE Cube&#160;<br/></b>On the server command line, enter the following to collect trace data from&#160;the target:&#160;<br/>&#160;<br/>rteserv2 -stp probe_ip&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="ghprobe_v850s.html#1">Using the SuperTrace Probe to Collect Real-time Trace Data from a V850 Target</a>
+<ul>
+<li><a href="ghprobe_v850s.html#1">Connecting the SuperTrace Probe to a Midas RTE Cube</a></li>
+<li><a href="ghprobe_v850s.html#1">Connecting the SuperTrace Probe to a NEC IECUBE</a></li>
+<li><a href="ghprobe_v850s.html#1">Configuring the SuperTrace Probe</a></li>
+<li><a href="ghprobe_v850s.html#2">Collecting trace data</a>
+<ul>
+<li><a href="ghprobe_v850s.html#2">Example: NEC IECUBE:</a></li>
+<li><a href="ghprobe_v850s.html#2">Example: Midas RTE Cube</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+</body>
+</html>

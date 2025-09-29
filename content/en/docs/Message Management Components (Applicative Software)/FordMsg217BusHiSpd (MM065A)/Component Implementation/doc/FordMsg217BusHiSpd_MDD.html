@@ -1,0 +1,1012 @@
+---
+title: FordMsg217BusHiSpd_MDD
+linkTitle: FordMsg217BusHiSpd_MDD
+weight: 3
+---
+
+<p><strong>Module Design Document</strong></p>
+<p><strong>For</strong></p>
+<p><strong>FordMsg217BusHiSpd</strong></p>
+<p><strong>June 19, 20157</strong></p>
+<p><strong>Prepared For:</strong></p>
+<p><strong>Software Engineering</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA</strong></p>
+<p><strong>Prepared By:</strong></p>
+<p><strong>Tata Elxsi,</strong></p>
+<p><strong>Trivandrum, INDIA</strong></p>
+<p><strong><u>Change History</u></strong></p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 27%" />
+<col style="width: 31%" />
+<col style="width: 12%" />
+<col style="width: 17%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Sl. No.</strong></td>
+<td><strong>Description</strong></td>
+<td><strong>Author</strong></td>
+<td><strong>Version</strong></td>
+<td><strong>Date</strong></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Initial Version</td>
+<td>TATA</td>
+<td>1.0</td>
+<td>29-Nov-2017</td>
+</tr>
+</tbody>
+</table>
+<p><strong><u>Table of Contents</u></strong></p>
+<p><a href="#introduction">1 Introduction <span>5</span></a></p>
+<p><a href="#purpose">1.1 Purpose <span>5</span></a></p>
+<p><a href="#fordmsg217bushispd-high-level-description">2 FordMsg217BusHiSpd &amp; High-Level Description <span>6</span></a></p>
+<p><a href="#design-details-of-software-module">3 Design details of software module <span>7</span></a></p>
+<p><a href="#graphical-representation-of-fordmsg217bushispd">3.1 Graphical representation of FordMsg217BusHiSpd <span>7</span></a></p>
+<p><a href="#data-flow-diagram">3.2 Data Flow Diagram <span>7</span></a></p>
+<p><a href="#component-level-dfd">Component level DFD <span>7</span></a></p>
+<p><a href="#function-level-dfd">Function level DFD <span>7</span></a></p>
+<p><a href="#constant-data-dictionary">4 Constant Data Dictionary <span>8</span></a></p>
+<p><a href="#program-fixed-constants">4.1 Program (fixed) Constants <span>8</span></a></p>
+<p><a href="#embedded-constants">Embedded Constants <span>8</span></a></p>
+<p><a href="#software-component-implementation">5 Software Component Implementation <span>9</span></a></p>
+<p><a href="#sub-module-functions">5.1 Sub-Module Functions <span>9</span></a></p>
+<p><a href="#init-fordmsg217bushispdinit1">5.1.1 Init: FordMsg217BusHiSpdInit1 <span>9</span></a></p>
+<p><a href="#design-rationale">5.1.1.1 Design Rationale <span>9</span></a></p>
+<p><a href="#module-outputs">5.1.1.2 Module Outputs <span>9</span></a></p>
+<p><a href="#per-fordmsg217bushispdper1">5.1.2 Per: FordMsg217BusHiSpdPer1 <span>9</span></a></p>
+<p><a href="#design-rationale-1">5.1.2.1 Design Rationale <span>9</span></a></p>
+<p><a href="#store-module-inputs-to-local-copies">5.1.2.2 Store Module Inputs to Local copies <span>9</span></a></p>
+<p><a href="#processing-of-function">5.1.2.3 Processing of function <span>9</span></a></p>
+<p><a href="#store-local-copy-of-outputs-into-module-outputs">5.1.2.4 Store Local copy of outputs into Module Outputs <span>9</span></a></p>
+<p><a href="#server-runnables">5.2 Server Runnables <span>9</span></a></p>
+<p><a href="#comipducallout_brakesysfeatures_3_hs2_oper">5.2.1 ComIPduCallout_BrakeSysFeatures_3_HS2_Oper <span>9</span></a></p>
+<p><a href="#design-rationale-2">5.2.1.1 Design Rationale <span>9</span></a></p>
+<p><a href="#processing-of-function-1">5.2.1.2 Processing of function <span>9</span></a></p>
+<p><a href="#comtimeoutnotification_seldrvmdechassis2_d_rq_oper">5.2.2 ComTimeoutNotification_SelDrvMdeChassis2_D_Rq_Oper <span>9</span></a></p>
+<p><a href="#design-rationale-3">5.2.2.1 Design Rationale <span>9</span></a></p>
+<p><a href="#processing-of-function-2">5.2.2.2 Processing of function <span>9</span></a></p>
+<p><a href="#interrupt-functions">5.3 Interrupt Functions <span>10</span></a></p>
+<p><a href="#module-internal-local-functions">5.4 Module Internal (Local) Functions <span>10</span></a></p>
+<p><a href="#local-function-1">5.4.1 Local Function #1 <span>10</span></a></p>
+<p><a href="#design-rationale-4">5.4.1.1 Design Rationale <span>10</span></a></p>
+<p><a href="#processing">5.4.1.2 Processing <span>10</span></a></p>
+<p><a href="#local-function-2">5.4.2 Local Function #2 <span>10</span></a></p>
+<p><a href="#design-rationale-5">5.4.2.1 Design Rationale <span>11</span></a></p>
+<p><a href="#processing-1">5.4.2.2 Processing <span>11</span></a></p>
+<p><a href="#local-function-3">5.4.3 Local Function #3 <span>11</span></a></p>
+<p><a href="#design-rationale-6">5.4.3.1 Design Rationale <span>11</span></a></p>
+<p><a href="#processing-2">5.4.3.2 Processing <span>11</span></a></p>
+<p><a href="#local-function-4">5.4.4 Local Function #4 <span>11</span></a></p>
+<p><a href="#design-rationale-7">5.4.4.1 Design Rationale <span>12</span></a></p>
+<p><a href="#processing-3">5.4.4.2 Processing <span>12</span></a></p>
+<p><a href="#local-function-5">5.4.5 Local Function #5 <span>12</span></a></p>
+<p><a href="#design-rationale-8">5.4.5.1 Design Rationale <span>13</span></a></p>
+<p><a href="#processing-4">5.4.5.2 Processing <span>13</span></a></p>
+<p><a href="#local-function-6">5.4.6 Local Function #6 <span>13</span></a></p>
+<p><a href="#design-rationale-9">5.4.6.1 Design Rationale <span>13</span></a></p>
+<p><a href="#processing-5">5.4.6.2 Processing <span>13</span></a></p>
+<p><a href="#local-function-7">5.4.7 Local Function #7 <span>14</span></a></p>
+<p><a href="#design-rationale-10">5.4.7.1 Design Rationale <span>14</span></a></p>
+<p><a href="#processing-6">5.4.7.2 Processing <span>14</span></a></p>
+<p><a href="#local-function-8">5.4.8 Local Function #8 <span>14</span></a></p>
+<p><a href="#design-rationale-11">5.4.8.1 Design Rationale <span>14</span></a></p>
+<p><a href="#processing-7">5.4.8.2 Processing <span>14</span></a></p>
+<p><a href="#global-functionmacro-definitions">5.5 GLOBAL Function/Macro Definitions <span>15</span></a></p>
+<p><a href="#known-limitations-with-design">6 Known Limitations with Design <span>16</span></a></p>
+<p><a href="#unit-test-consideration">7 UNIT TEST CONSIDERATION <span>17</span></a></p>
+<p><a href="#abbreviations-and-acronyms">Appendix A Abbreviations and Acronyms <span>18</span></a></p>
+<p><a href="#glossary">Appendix B Glossary <span>19</span></a></p>
+<p><a href="#references">Appendix C References <span>20</span></a></p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="purpose">Purpose</h2>
+<p>MDD for FordMsg217BusHiSpd</p>
+<h1 id="fordmsg217bushispd-high-level-description">FordMsg217BusHiSpd &amp; High-Level Description</h1>
+<p>Please refer FDD.</p>
+<h1 id="design-details-of-software-module">Design details of software module</h1>
+<h2 id="graphical-representation-of-fordmsg217bushispd">Graphical representation of FordMsg217BusHiSpd</h2>
+<p><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/static/media/image1.png" style="width:4in;height:5.95833in" /></p>
+<h2 id="data-flow-diagram">Data Flow Diagram</h2>
+<h3 id="component-level-dfd">Component level DFD</h3>
+<blockquote>
+<p>Please refer FDD.</p>
+</blockquote>
+<h3 id="function-level-dfd">Function level DFD</h3>
+<blockquote>
+<p>Please refer FDD.</p>
+</blockquote>
+<h1 id="constant-data-dictionary">Constant Data Dictionary</h1>
+<h2 id="program-fixed-constants">Program (fixed) Constants</h2>
+<h3 id="embedded-constants">Embedded Constants</h3>
+<h4 id="local-constants">Local Constants</h4>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant Name</th>
+<th>Resolution</th>
+<th>Units</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Please refer Data Dictionary .m file</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h1 id="software-component-implementation">Software Component Implementation</h1>
+<h2 id="sub-module-functions">Sub-Module Functions</h2>
+<h3 id="init-fordmsg217bushispdinit1">5.1.1 Init: FordMsg217BusHiSpdInit1</h3>
+<h3 id="design-rationale">5.1.1.1 Design Rationale</h3>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h3 id="module-outputs">5.1.1.2 Module Outputs</h3>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h3 id="per-fordmsg217bushispdper1">5.1.2 Per: FordMsg217BusHiSpdPer1</h3>
+<h2 class="unnumbered" id="design-rationale-1">5.1.2.1 Design Rationale</h2>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h2 class="unnumbered" id="store-module-inputs-to-local-copies">5.1.2.2 Store Module Inputs to Local copies</h2>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h2 class="unnumbered" id="processing-of-function">5.1.2.3 Processing of function</h2>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h2 class="unnumbered" id="store-local-copy-of-outputs-into-module-outputs">5.1.2.4 Store Local copy of outputs into Module Outputs</h2>
+<blockquote>
+<p>None</p>
+</blockquote>
+<h2 id="server-runnables">Server Runnables </h2>
+<h3 id="comipducallout_brakesysfeatures_3_hs2_oper">5.2.1 ComIPduCallout_BrakeSysFeatures_3_HS2_Oper</h3>
+<h2 class="unnumbered" id="design-rationale-2">5.2.1.1 Design Rationale</h2>
+<p>None</p>
+<h2 class="unnumbered" id="processing-of-function-1">5.2.1.2 Processing of function</h2>
+<p>None</p>
+<h3 id="comtimeoutnotification_seldrvmdechassis2_d_rq_oper">5.2.2 ComTimeoutNotification_SelDrvMdeChassis2_D_Rq_Oper</h3>
+<h2 class="unnumbered" id="design-rationale-3">5.2.2.1 Design Rationale</h2>
+<p>None</p>
+<h2 class="unnumbered" id="processing-of-function-2">5.2.2.2 Processing of function</h2>
+<p>None</p>
+<h2 id="interrupt-functions">Interrupt Functions</h2>
+<p>None</p>
+<h2 id="module-internal-local-functions">Module Internal (Local) Functions</h2>
+<h2 id="local-function-1"> Local Function #1</h2>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 43%" />
+<col style="width: 11%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>DiagEna</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>FordMissMsgDiagcInhb_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordInvldMsgDiagcInhb_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>ClrDiagcFlgProxy_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordMfgDiagcInhb_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>FordCanDtcInhb_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordAbsPrsnt_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>FordActvNiblCtrlEnad_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordBrkOscnRednEnad_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>FordTqSteerCmpEnad_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordTrlrBackupAssiEnad_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*MissMsgDiagEna_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FrntWhlSpdDiagEna_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*ReWhlSpdDiagEna_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-4">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/DiagEna</p>
+<h2 id="local-function-2"> Local Function #2</h2>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 51%" />
+<col style="width: 10%" />
+<col style="width: 12%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>CalSeln</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>FordEpsLifeCycMod_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0U</td>
+<td>1U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>BusHiSpdMissMsgFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FrntLeWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FrntRiWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*ReLeWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*ReRiWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="even">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-5">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing-1">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/CalSeln</p>
+<h2 id="local-function-3"> Local Function #3</h2>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 53%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>VldFalse</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>*FordVehFrntLeWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehFrntRiWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehReLeWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehReRiWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-6">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing-2">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgMiss/VldFalse</p>
+<h3 id="local-function-4"> Local Function #4</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 53%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>SigProc</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>Ford_WhlFl_W_Meas_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Ford_WhlFr_W_Meas_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Ford_WhlRl_W_Meas_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Ford_WhlRr_W_Meas_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehFrntLeWhlSpdRaw_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehFrntLeWhlSpd_RadPerSec_T_f32</td>
+<td>float32</td>
+<td>0.0F</td>
+<td>327.67F</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehFrntRiWhlSpdRaw_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehFrntRiWhlSpd_RadPerSec_T_f32</td>
+<td>float32</td>
+<td>0.0F</td>
+<td>327.67F</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehReLeWhlSpdRaw_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehReLeWhlSpd_RadPerSec_T_f32</td>
+<td>float32</td>
+<td>0.0F</td>
+<td>327.67F</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehReRiWhlSpdRaw_Cnt_T_u16</td>
+<td>uint16</td>
+<td>0U</td>
+<td>32767U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehReRiWhlSpd_RadPerSec_T_f32</td>
+<td>float32</td>
+<td>0.0F</td>
+<td>327.67F</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehFrntLeWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehFrntRiWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehReLeWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehReRiWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehFrntRiWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehFrntLeWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehReRiWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehReLeWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-7">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing-3">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/SignalProcessing</p>
+<h3 id="local-function-5"> Local Function #5</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 53%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>VldChk</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>FordVehFrntLeWhlSpd_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordVehFrntRiWhlSpd_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>FordVehReLeWhlSpd_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordVehReRiWhlSpd_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehFrntLeWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehFrntRiWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>*FordVehReLeWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>*FordVehReRiWhlSpdVld_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-8">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing-4">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/SignalProcessing/VldChk</p>
+<h3 id="local-function-6"> Local Function #6</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 53%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>FrntWhlSpdDiagEnaChk</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>FrntWhlSpdDiagEna_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FrntLeWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>FrntRiWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordVehFrntLeWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>FordVehFrntRiWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-9">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing-5">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/FordVehFrntWhlSpdInvldSts</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/FordVehFrntWhlSpdInvldNtcReset</p>
+<h3 id="local-function-7"> Local Function #7</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 53%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>ReWhlSpdDiagEnaChk</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>ReWhlSpdDiagEna_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>ReLeWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>ReRiWhlBusHiSpdInvldFaildThd_MilliSec_T_u16p0</td>
+<td>uint16</td>
+<td>0U</td>
+<td>6000U</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>FordVehReLeWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>FordVehReRiWhlSpdVldInp_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-10">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing-6">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/FordVehReWhlSpdInvldSts</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/FordVehReWhlSpdInvldNtcReset</p>
+<h3 id="local-function-8"> Local Function #8</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 53%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+<col style="width: 10%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>MissMsgDiagEnaChk</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>MissMsgDiagEna_Cnt_T_logl</td>
+<td>boolean</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+</tbody>
+</table>
+<h2 id="design-rationale-11">Design Rationale</h2>
+<p>None</p>
+<h2 id="processing-7">Processing</h2>
+<p>Please refer to the below path in the FDD model.</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/FordMsg217MissMsgPass</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/Reset</p>
+<h2 id="global-functionmacro-definitions">GLOBAL Function/Macro Definitions</h2>
+<p>None</p>
+<h1 id="known-limitations-with-design">Known Limitations with Design</h1>
+<ol type="1">
+<li><p>In the following path,</p></li>
+</ol>
+<blockquote>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt</p>
+<p>Ford Vehicle Front Left Wheel Speed Valid (FordVehFrntLeWhlSpdVld) and Ford Vehicle Front Right Wheel Speed (FordVehFrntRiWhlSpdVld) signals are cross coupled.</p>
+</blockquote>
+<ol start="2" type="1">
+<li><p>In the path,</p></li>
+</ol>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgPrsnt/FordVehReWhlSpdInvldSts/ReRiWhlSpdInvldFail</p>
+<p>There is a mismatch between the logic inside ReRiWhlSpdInvldFail subsystem and its input port name.</p>
+<ol start="3" type="1">
+<li><p>In the following path,</p></li>
+</ol>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgMiss/VldFalse/ReLeWhlSpdVld Previous</p>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/FordMsg217MsgMiss/VldFalse/ReRiWhlSpdVld Previous</p>
+<p>The port name used within the ReLeWhlSpdVld Previous and ReRiWhlSpdVld Previous subsystems do not match with the merge block output names.</p>
+<ol start="4" type="1">
+<li><p>In the following path,</p></li>
+</ol>
+<p>MM065A_FordMsg217BusHiSpd/FordMsg217BusHiSpd/FordMsg217BusHiSpdPer1/CalSeln/FixdTi</p>
+<p>uint32 constant value(BUSHISPDFIXDTITHD_MILLISEC_U32) is assigned to uint16 signals.</p>
+<h1 id="unit-test-consideration">UNIT TEST CONSIDERATION</h1>
+<blockquote>
+<p>None.</p>
+</blockquote>
+<p class="heading" id="abbreviations-and-acronyms">Abbreviations and Acronyms</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Abbreviation or Acronym</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="glossary">Glossary</p>
+<p><strong>Note</strong>: Terms and definitions from the source “Nexteer Automotive” take precedence over all other definitions of the same term. Terms and definitions from the source “Nexteer Automotive” are formulated from multiple sources, including the following:</p>
+<ul>
+<li><p>ISO 9000</p></li>
+<li><p>ISO/IEC 12207</p></li>
+<li><p>ISO/IEC 15504</p></li>
+<li><p>Automotive SPICE® Process Reference Model (PRM)</p></li>
+<li><p>Automotive SPICE® Process Assessment Model (PAM)</p></li>
+<li><p>ISO/IEC 15288</p></li>
+<li><p>ISO 26262</p></li>
+<li><p>IEEE Standards</p></li>
+<li><p>SWEBOK</p></li>
+<li><p>PMBOK</p></li>
+<li><p>Existing Nexteer Automotive documentation</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 53%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Term</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Source</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MDD</td>
+<td>Module Design Document</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>DFD</td>
+<td>Data Flow Diagram</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p class="heading" id="references">References</p>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 69%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Ref. #</strong></th>
+<th><strong>Title</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>AUTOSAR Specification of Memory Mapping (Link:<a href="http://www.autosar.org/download/R4.0/AUTOSAR_SWS_MemoryMapping.pdf">AUTOSAR_SWS_MemoryMapping.pdf</a>)</td>
+<td>v1.3.0 R4.0 Rev 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>MDD Guideline</td>
+<td>EA4 01.00.00</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><a href="http://misagweb01.nexteer.com/eRoomReq/Files/erooms8/NextGeneration/0_fc55f/Software%20Naming%20Conventions%2003x(In%20Work).doc">Software Naming Conventions.doc</a></td>
+<td>1.0</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><a href="http://eroom1.nexteer.com/eRoomReq/Files/erooms8/NextGeneration/0_1a67a9/Software%20Design%20and%20Coding%20Standards.doc">Software Design and Coding Standards.doc</a></td>
+<td>2.1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>FDD: MM065A_FordMsg217BusHiSpd_Design</td>
+<td>See Synergy sub project version</td>
+</tr>
+</tbody>
+</table>

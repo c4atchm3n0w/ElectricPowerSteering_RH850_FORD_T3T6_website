@@ -1,0 +1,537 @@
+---
+title: Uart0CfgAndUse_MDD
+linkTitle: Uart0CfgAndUse_MDD
+weight: 3
+---
+
+<p><strong>Module Design Document</strong></p>
+<p><strong>For</strong></p>
+<p><strong>Uart0CfgAndUse</strong></p>
+<p><strong>Jan 11, 2018</strong></p>
+<p><strong>Prepared For:</strong></p>
+<p><strong>Software Engineering</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA</strong></p>
+<p><strong>Prepared By:</strong></p>
+<p><strong>Software Group,</strong></p>
+<p><strong>Nexteer Automotive,</strong></p>
+<p><strong>Saginaw, MI, USA<br />
+<u>Change History</u></strong></p>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 23%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Description</strong></td>
+<td><strong>Author</strong></td>
+<td><strong>Version</strong></td>
+<td><strong>Date</strong></td>
+</tr>
+<tr class="even">
+<td>Initial Version</td>
+<td>Krzysztof Byrski</td>
+<td>1</td>
+<td>08-June-2017</td>
+</tr>
+<tr class="odd">
+<td>Updated the local functions and constants</td>
+<td>Avinash James</td>
+<td>2</td>
+<td>11-Jan-2018</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br />
+</strong></p>
+<p><u>Table of Contents</u>1 Introduction 4</p>
+<p>1.1 Purpose 4</p>
+<p>1.2 Scope 4</p>
+<p>2 Uart0CfgAndUse &amp; High-Level Description 5</p>
+<p>3 Design details of software module 6</p>
+<p>3.1 Graphical representation of Uart0CfgAndUse 6</p>
+<p>3.2 Data Flow Diagram 6</p>
+<p>3.2.1 Component level DFD 6</p>
+<p>3.2.2 Function level DFD 6</p>
+<p>4 Constant Data Dictionary 7</p>
+<p>4.1 Program (fixed) Constants 7</p>
+<p>4.1.1 Embedded Constants 7</p>
+<p>5 Software Component Implementation 8</p>
+<p>5.1 Sub-Module Functions 8</p>
+<p>5.1.1 Init: Uart0CfgAndUseInit1 8</p>
+<p>5.1.2 Per: Uart0CfgAndUsePer1 8</p>
+<p>5.1.3 Per: Uart0CfgAndUsePer2 8</p>
+<p>5.1.4 Per: Uart0CfgAndUsePer3 8</p>
+<p>5.1.5 Per: Uart0CfgAndUsePer4 9</p>
+<p>5.2 Server Runables 9</p>
+<p>5.3 Interrupt Functions 9</p>
+<p>5.4 Module Internal (Local) Functions 9</p>
+<p>5.4.1 RollOverAdd 9</p>
+<p>5.4.2 UpdDtsTxReg 10</p>
+<p>5.4.3 UpdDtsRxReg 10</p>
+<p>5.5 GLOBAL Function/Macro Definitions 10</p>
+<p>6 Known Limitations with Design 11</p>
+<p>7 UNIT TEST CONSIDERATION 12</p>
+<p>Appendix A Abbreviations and Acronyms 13</p>
+<p>Appendix B Glossary 14</p>
+<p>Appendix C References 15</p>
+<h1 id="introduction">Introduction</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Module Design Document for CM760A_Uart0CfgAndUse.</p>
+<h2 id="scope">Scope</h2>
+<p>The following definitions are used throughout this document:</p>
+<ul>
+<li><p><strong><u>Shall</u></strong>: indicates a mandatory requirement without exception in compliance.</p></li>
+<li><p><strong><u>Should</u></strong>: indicates a mandatory requirement; exceptions allowed only with documented justification.</p></li>
+<li><p><strong><u>May</u></strong>: indicates an optional action.</p></li>
+</ul>
+<h1 id="uart0cfganduse-high-level-description">Uart0CfgAndUse &amp; High-Level Description</h1>
+<p>Refer FDD.</p>
+<h1 id="design-details-of-software-module">Design details of software module</h1>
+<h2 id="graphical-representation-of-uart0cfganduse">Graphical representation of Uart0CfgAndUse</h2>
+<p><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/static/media/image1.png" style="width:2.05208in;height:1.40625in" /></p>
+<h2 id="data-flow-diagram">Data Flow Diagram</h2>
+<p>Refer FDD</p>
+<h3 id="component-level-dfd">Component level DFD</h3>
+<p>None</p>
+<h3 id="function-level-dfd">Function level DFD</h3>
+<p>None</p>
+<h1 id="constant-data-dictionary">Constant Data Dictionary</h1>
+<h2 id="program-fixed-constants">Program (fixed) Constants</h2>
+<h3 id="embedded-constants">Embedded Constants</h3>
+<h4 id="local-constants">Local Constants</h4>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant Name</th>
+<th>Resolution</th>
+<th>Units</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ROLLGCNTCHK_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>255</td>
+</tr>
+<tr class="even">
+<td>DATABYTE0_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>DATABYTE1_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>DATABYTE2_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>DATABYTE3_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>DATABYTE4_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>DATABYTE5_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>DATABYTE6_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>DATABYTE7_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>DATABYTE8_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>MASKLOWR16BITOFUINT32_CNT_U16</td>
+<td>1</td>
+<td>Cnt</td>
+<td>65535</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>MAXSIGGROUPFORTX_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>TWO_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>UART0RXMAXBUFSIZE_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>144</td>
+</tr>
+<tr class="even">
+<td>UART0TXBUFSIZE_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td>RLN30LBRP01BRP_CNT_U08</td>
+<td>1</td>
+<td>Cnt</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>DTS101CM_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0x20120000</td>
+</tr>
+<tr class="odd">
+<td>DTS100CM_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>0x200E0000</td>
+</tr>
+<tr class="even">
+<td>DTTCT101_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>256</td>
+</tr>
+<tr class="odd">
+<td>DTTC100_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>9438624</td>
+</tr>
+<tr class="even">
+<td>DTTCT100_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>6720</td>
+</tr>
+<tr class="odd">
+<td>DTRTC100_CNT_U32</td>
+<td>1</td>
+<td>Cnt</td>
+<td>9438624</td>
+</tr>
+</tbody>
+</table>
+<h1 id="software-component-implementation">Software Component Implementation</h1>
+<h2 id="sub-module-functions">Sub-Module Functions</h2>
+<p>The sub-module functions are grouped based on similar functionality that needs to be executed in a given “State” of the system (refer States and Modes). For a given module, the MDD will identify the type and number of sub-modules required. The sub-module types are described below.</p>
+<h3 id="init-init1">Init: Init1</h3>
+<h4 id="design-rationale">Design Rationale</h4>
+<p>Refer FDD</p>
+<h4 id="module-outputs">Module Outputs</h4>
+<p>Refer FDD</p>
+<h3 id="per-per1">Per: Per1</h3>
+<h4 id="design-rationale-1">Design Rationale</h4>
+<p>Refer FDD</p>
+<h4 id="store-module-inputs-to-local-copies">Store Module Inputs to Local copies</h4>
+<p>Refer FDD</p>
+<h4 id="processing-of-function">(Processing of function)………</h4>
+<p>Refer FDD</p>
+<h4 id="store-local-copy-of-outputs-into-module-outputs">Store Local copy of outputs into Module Outputs</h4>
+<p>Refer FDD</p>
+<h3 id="per-per2">Per: Per2</h3>
+<h4 id="design-rationale-2">Design Rationale</h4>
+<p>Refer FDD</p>
+<h4 id="store-module-inputs-to-local-copies-1">Store Module Inputs to Local copies</h4>
+<p>Refer FDD</p>
+<h4 id="processing-of-function-1">(Processing of function)………</h4>
+<p>Refer FDD</p>
+<h4 id="store-local-copy-of-outputs-into-module-outputs-1">Store Local copy of outputs into Module Outputs</h4>
+<p>Refer FDD</p>
+<h3 id="per-per3">Per: Per3</h3>
+<h4 id="design-rationale-3">Design Rationale</h4>
+<p>Refer FDD</p>
+<h4 id="store-module-inputs-to-local-copies-2">Store Module Inputs to Local copies</h4>
+<p>Refer FDD</p>
+<h4 id="processing-of-function-2">(Processing of function)………</h4>
+<p>Refer FDD</p>
+<h4 id="store-local-copy-of-outputs-into-module-outputs-2">Store Local copy of outputs into Module Outputs</h4>
+<p>Refer FDD</p>
+<h3 id="per-per4">Per: Per4</h3>
+<h4 id="design-rationale-4">Design Rationale</h4>
+<p>Refer FDD</p>
+<h4 id="store-module-inputs-to-local-copies-3">Store Module Inputs to Local copies</h4>
+<p>Refer FDD</p>
+<h4 id="processing-of-function-3">(Processing of function)………</h4>
+<p>Refer FDD</p>
+<h4 id="store-local-copy-of-outputs-into-module-outputs-3">Store Local copy of outputs into Module Outputs</h4>
+<p>Refer FDD</p>
+<h2 id="server-runables">Server Runables </h2>
+<p>None</p>
+<h2 id="interrupt-functions">Interrupt Functions</h2>
+<p>None</p>
+<h2 id="module-internal-local-functions">Module Internal (Local) Functions</h2>
+<h3 id="rolloveradd">RollOverAdd</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 46%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>RollOverAdd</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>Input1_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Input2_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr class="even">
+<td><strong>Return Value</strong></td>
+<td>Output_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0</td>
+<td>143</td>
+</tr>
+</tbody>
+</table>
+<h4 id="design-rationale-5">Design Rationale</h4>
+<p>Refer FDD</p>
+<h4 id="processing">Processing</h4>
+<p>Refer FDD</p>
+<h3 id="upddtstxreg">UpdDtsTxReg</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 46%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>UpdDtsTxReg</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>Uart0GlbTx_Cnt_T_u08</td>
+<td>uint8</td>
+<td>0</td>
+<td>72</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="design-rationale-6">Design Rationale</h4>
+<p>Refer FDD</p>
+<h4 id="processing-1">Processing</h4>
+<p>Refer FDD</p>
+<h3 id="uart1diagc">Uart1Diagc</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 46%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Function Name</strong></td>
+<td>Uart1Diagc</td>
+<td>Type</td>
+<td>Min</td>
+<td>Max</td>
+</tr>
+<tr class="even">
+<td><strong>Arguments Passed</strong></td>
+<td>Uart1RxDataCntr</td>
+<td>uint8</td>
+<td>0</td>
+<td>255</td>
+</tr>
+<tr class="odd">
+<td><strong>Return Value</strong></td>
+<td>None</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h4 id="design-rationale-7">Design Rationale</h4>
+<p>Refer Uart1RxDataCntr block in FDD</p>
+<h4 id="processing-2">Processing</h4>
+<p>Refer FDD</p>
+<h2 id="global-functionmacro-definitions">GLOBAL Function/Macro Definitions</h2>
+<p>None</p>
+<h1 id="known-limitations-with-design">Known Limitations with Design</h1>
+<p>The client call SetRxSigGroup has one argument Buf which is listed as Output in the design but implemented correctly as Input. This is an update to AR350A and is not done as of today.</p>
+<p>The component makes use of static component level variables which are needed for the special DMA mapping .</p>
+<h1 id="unit-test-consideration">UNIT TEST CONSIDERATION</h1>
+<p>Code prover flags out of bound array access as it considers range of the index variable outside the array bounds. But this has been functionally checked to be within the limits.</p>
+<h1 id="abbreviations-and-acronyms">Abbreviations and Acronyms</h1>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Abbreviation or Acronym</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h1 id="glossary">Glossary</h1>
+<p><strong>Note</strong>: Terms and definitions from the source “Nexteer Automotive” take precedence over all other definitions of the same term. Terms and definitions from the source “Nexteer Automotive” are formulated from multiple sources, including the following:</p>
+<ul>
+<li><p>ISO 9000</p></li>
+<li><p>ISO/IEC 12207</p></li>
+<li><p>ISO/IEC 15504</p></li>
+<li><p>Automotive SPICE® Process Reference Model (PRM)</p></li>
+<li><p>Automotive SPICE® Process Assessment Model (PAM)</p></li>
+<li><p>ISO/IEC 15288</p></li>
+<li><p>ISO 26262</p></li>
+<li><p>IEEE Standards</p></li>
+<li><p>SWEBOK</p></li>
+<li><p>PMBOK</p></li>
+<li><p>Existing Nexteer Automotive documentation</p></li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 53%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Term</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Source</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MDD</td>
+<td>Module Design Document</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>DFD</td>
+<td>Data Flow Diagram</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="references">References</h1>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 69%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Ref. #</strong></th>
+<th><strong>Title</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>AUTOSAR Specification of Memory Mapping (Link:<a href="http://www.autosar.org/download/R4.0/AUTOSAR_SWS_MemoryMapping.pdf">AUTOSAR_SWS_MemoryMapping.pdf</a>)</td>
+<td>v1.3.0 R4.0 Rev 2</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>MDD Guideline</td>
+<td>EA4 01.00.01</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Software Naming Conventions</td>
+<td>01.01.00</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Software Design and Coding Standards</td>
+<td>2.1</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>CM760A_Uart0CfgAndUse_Design</td>
+<td>See Synergy Sub Project Version</td>
+</tr>
+</tbody>
+</table>

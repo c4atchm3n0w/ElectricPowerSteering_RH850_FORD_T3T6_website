@@ -1,0 +1,768 @@
+---
+title: TechnicalReference_Cdd_Asr4DiagVsgs
+linkTitle: TechnicalReference_Cdd_Asr4DiagVsgs
+weight: 110
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>MICROSAR Vsg&#160;<br/></b>Technical Reference&#160;<br/>&#160;<br/>&#160;<br/>Version&#160;2.00.00&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+Authors&#160;<br/>
+Savas&#160;Ates&#160;<br/>
+Status&#160;<br/>
+Released&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<hr/>
+<a name=2></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Cdd_Asr4DiagVsg-2_1.png"/><br/>
+Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>Document&#160;Information&#160;</b><br/>
+<b>History&#160;</b><br/>
+<b>Author&#160;</b><br/>
+<b>Date&#160;</b><br/>
+<b>Version&#160;</b><br/>
+<b>Remarks&#160;</b><br/>
+S.&#160;Ates&#160;<br/>
+2014-05-08&#160;<br/>
+1.0.0&#160;<br/>
+Document&#160;creation&#160;<br/>
+S.&#160;Ates&#160;<br/>
+2015-09-22&#160;<br/>
+2.0.0&#160;<br/>
+Rework&#160;of&#160;initialization concept&#160;<br/>
+<b>Reference&#160;Documents&#160;</b><br/>
+<b>No.&#160;</b><br/>
+<b>Source&#160;</b><br/>
+<b>Title&#160;</b><br/>
+<b>Version&#160;</b><br/>
+[1]&#160;&#160;&#160;AUTOSAR&#160;<br/>
+AUTOSAR_SWS_DET.pdf&#160;<br/>
+V4.2.0&#160;<br/>
+[2]&#160;&#160;&#160;AUTOSAR&#160;<br/>
+AUTOSAR_SWS_DEM.pdf&#160;<br/>
+V4.2.0&#160;<br/>
+[3]&#160;&#160;&#160;AUTOSAR&#160;<br/>
+AUTOSAR_BasicSoftwareModules.pdf&#160;<br/>
+V1.0.0&#160;<br/>
+[4]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_Diag_Asr4Dem_Generic.pdf&#160;<br/>
+V3.2.0&#160;<br/>
+[5]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_CANdesc&#160;<br/>
+V3.7.0&#160;<br/>
+Scope&#160;of&#160;the&#160;Document<b>:&#160;&#160;</b><br/>
+This technical reference&#160;describes the&#160;general use&#160;of&#160;the&#160;Cdd_Vsg&#160;software.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Caution&#160;<br/></b>We&#160;have configured&#160;the&#160;programs&#160;in&#160;accordance&#160;with your&#160;specifications&#160;in the&#160;<br/>
+<b>&#160;&#160;</b>questionnaire.&#160;Whereas&#160;the&#160;programs&#160;do&#160;support&#160;other&#160;configurations&#160;than&#160;the&#160;one&#160;<br/>
+specified&#160;in your&#160;questionnaire,&#160;Vector´s&#160;release&#160;of&#160;the&#160;programs&#160;delivered to&#160;your&#160;<br/>company&#160;is&#160;expressly&#160;restricted&#160;to&#160;the&#160;configuration&#160;you&#160;have specified&#160;in&#160;the&#160;<br/>questionnaire.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+2&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=3></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>Contents&#160;</b><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#6"><b>1</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#6"><b>Component&#160;History&#160;......................................................................................................&#160;6</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7"><b>2</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7"><b>Introduction...................................................................................................................&#160;7</b>&#160;<br/>2.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7">How&#160;to read&#160;this&#160;document&#160;................................................................................&#160;7&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7">2.2&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7">Architecture&#160;Overview&#160;........................................................................................&#160;7&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9"><b>3</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9"><b>Functional&#160;Description&#160;.................................................................................................&#160;9</b>&#160;<br/>3.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">VSG&#160;...................................................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">3.2&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">Features&#160;............................................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">3.3&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">Initialization&#160;........................................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">3.4&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">Error&#160;Handling&#160;..................................................................................................&#160;10&#160;<br/>3.4.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">Development&#160;Error&#160;Reporting&#160;...........................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11"><b>4</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11"><b>Integration&#160;...................................................................................................................&#160;11</b>&#160;<br/>4.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">Shutdown&#160;.........................................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">4.2&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">Scope of&#160;Delivery&#160;.............................................................................................&#160;11&#160;<br/>4.2.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">Static Files&#160;.......................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">4.2.2&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">Dynamic&#160;Files&#160;..................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">4.3&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">Include Structure&#160;..............................................................................................&#160;12&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">4.4&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">Compiler&#160;Abstraction&#160;and Memory&#160;Mapping&#160;.....................................................&#160;12&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#13">4.5&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#13">Critical&#160;Sections&#160;...............................................................................................&#160;13&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14"><b>5</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14"><b>API&#160;Description&#160;...........................................................................................................&#160;14</b>&#160;<br/>5.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Type&#160;Definitions&#160;...............................................................................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5.2&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Services provided by&#160;Cdd_Vsg&#160;........................................................................&#160;14&#160;<br/>5.2.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Vsg_EnableVsg()&#160;.............................................................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5.2.2&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Vsg_DisableVsg()&#160;............................................................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">5.2.3&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">Vsg_Finalize()&#160;..................................................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">5.2.4&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">Vsg_Init()&#160;.........................................................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">5.2.5&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">Vsg_Shutdown()&#160;..............................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">5.3&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">Services used by&#160;Cdd_Vsg&#160;..............................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">5.4&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">Callback&#160;Functions&#160;...........................................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17"><b>6</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17"><b>Configuration&#160;..............................................................................................................&#160;17</b>&#160;<br/>6.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17">Configuration Variants&#160;......................................................................................&#160;17&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17">6.2&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17">Configuration&#160;Attributes&#160;....................................................................................&#160;17&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#18"><b>7</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#18"><b>Glossary&#160;and&#160;Abbreviations&#160;......................................................................................&#160;18</b>&#160;<br/>7.1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#18">Abbreviations&#160;...................................................................................................&#160;18&#160;</a><br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+3&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=4></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#19"><b>8</b>&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#19"><b>Contact&#160;........................................................................................................................&#160;19</b>&#160;</a><br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+4&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=5></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>Illustrations&#160;</b><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#8">Figure&#160;2-1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#8">Interfaces&#160;to adjacent&#160;modules of&#160;the&#160;Cdd_Vsg&#160;..........................................&#160;8&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">Figure&#160;4-1&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">Include structure&#160;.......................................................................................&#160;12&#160;</a><br/>
+<b>&#160;</b><br/>
+<b>Tables&#160;<br/></b><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#6">Table&#160;1-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#6">Component&#160;history......................................................................................&#160;6&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">Table&#160;3-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">Supported&#160;feature&#160;.......................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">Table&#160;3-2&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">Service IDs&#160;...............................................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">Table&#160;3-3&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">Errors&#160;reported&#160;to DET&#160;.............................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">Table&#160;4-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">Generated&#160;files&#160;.........................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#13">Table&#160;4-2&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#13">Compiler&#160;abstraction&#160;and&#160;memory&#160;mapping&#160;..............................................&#160;13&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Table&#160;5-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Type&#160;definitions&#160;.........................................................................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Table&#160;5-2&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">Vsg_EnableVsg()&#160;......................................................................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">Table&#160;5-3&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">Vsg_DisableVsg()&#160;.....................................................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">Table&#160;5-4&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">Vsg_Finalize()&#160;...........................................................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">Table&#160;5-5&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">Vsg_Init()&#160;..................................................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">Table&#160;5-6&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">Services used by&#160;the&#160;Cdd_Vsg&#160;.................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#18">Table&#160;7-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#18">Abbreviations&#160;............................................................................................&#160;18&#160;</a><br/>
+&#160;<br/>&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+5&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=6></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>1&#160;&#160;Component&#160;History&#160;</b><br/>
+The&#160;&#160;component&#160;&#160;history&#160;&#160;gives&#160;&#160;an&#160;&#160;overview&#160;&#160;over&#160;&#160;the&#160;&#160;important&#160;&#160;milestones&#160;&#160;that&#160;&#160;are&#160;<br/>supported&#160;in&#160;the&#160;different&#160;versions of&#160;the&#160;component.&#160;&#160;<br/>
+<b>Component&#160;Version&#160;&#160;New&#160;Features&#160;<br/></b>1.00.00&#160;<br/>
+Initial&#160;Version&#160;<br/>
+2.00.00&#160;<br/>
+Rework&#160;Initialization Concept&#160;<br/>
+Table&#160;1-1&#160;&#160;&#160;Component&#160;history&#160;<br/>&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+6&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=7></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Cdd_Asr4DiagVsg-7_1.png"/><br/>
+Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>2&#160;&#160;Introduction&#160;</b><br/>
+This&#160;document&#160;describes&#160;the&#160;functionality,&#160;API&#160;and&#160;configuration&#160;of&#160;the&#160;&#160;MICROSAR&#160;BSW&#160;<br/>module&#160;Cdd_Vsg.&#160;&#160;<br/>
+&#160;<br/>
+<b>Supported&#160;AUTOSAR&#160;R<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7">elease*:</a></b><b>&#160;</b><br/>
+4&#160;<br/>
+<b>Supported&#160;Configuration&#160;Variants:&#160;</b><br/>
+pre-compile&#160;<br/>
+<b>Vendor&#160;ID:&#160;</b><br/>
+VSG_VENDOR_ID&#160;<br/>
+30&#160;decimal&#160;<br/>(=&#160;Vector-Informatik,&#160;<br/>according&#160;to&#160;HIS)&#160;<br/>
+<b>Module&#160;ID:&#160;</b><br/>
+VSG_MODULE_ID &#160;&#160;<br/>
+255&#160;decimal&#160;<br/>(according&#160;to ref.&#160;[3])&#160;<br/>
+*&#160;For the&#160;precise&#160;AUTOSAR Release&#160;4.x&#160;please see the&#160;release specific&#160;documentation.&#160;&#160;<br/>&#160;<br/>&#160;<br/>The&#160;Vsg&#160;is&#160;a&#160;module&#160;to&#160;support&#160;different&#160;diagnostic&#160;configurations&#160;in&#160;a&#160;car.&#160;VSGs&#160;are&#160;also&#160;<br/>called&#160;“dependencies”.&#160;<br/>
+<b>2.1&#160;</b><br/>
+<b>How&#160;to read this&#160;document&#160;</b><br/>
+In&#160;&#160;this&#160;documentation&#160;the&#160;&#160;MICROSAR&#160;&#160;Vsg&#160;&#160;module&#160;&#160;will&#160;&#160;be&#160;&#160;called&#160;Cdd_Vsg.&#160;Thus&#160;&#160;should&#160;<br/>make&#160;it&#160;easy&#160;to&#160;distinguish&#160;linguistically&#160;between&#160;the&#160;MICROSAR&#160;Vsg&#160;module&#160;and&#160;VSG&#160;as&#160;<br/>Vehicle&#160;System&#160;Group.&#160;<br/>
+<b>2.2&#160;</b><br/>
+<b>Architecture&#160;Overview&#160;</b><br/>
+The&#160;following&#160;figure shows&#160;where the&#160;Cdd_Vsg&#160;is located&#160;in&#160;the&#160;AUTOSAR architecture.&#160;<br/>
+&#160;<br/>
+&#160;&#160;<br/>
+&#160;&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+7&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=8></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+&#160;<br/>
+The&#160;&#160;next&#160;&#160;figure&#160;&#160;shows&#160;&#160;the&#160;&#160;interfaces&#160;&#160;to&#160;&#160;adjacent&#160;&#160;modules&#160;&#160;of&#160;&#160;the&#160;&#160;Cdd_Vsg.&#160;&#160;These&#160;<br/>interfaces&#160;are&#160;described&#160;in&#160;chapte<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">r&#160;5.&#160;</a>&#160;<br/>
+&#160;<br/>
+<b>&#160;cmp&#160;Architecture&#160;ov&#160;erv&#160;iew</b><br/>
+<b>Det</b><br/>
+<b>Cdd_Vsg</b><br/>
+<b>Dem</b><br/>
+&#160;<br/>
+Figure&#160;2-1&#160;&#160;Interfaces&#160;to&#160;adjacent&#160;modules&#160;of&#160;the&#160;Cdd_Vsg&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+8&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=9></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>3&#160;&#160;Functional&#160;Description&#160;</b><br/>
+<b>3.1&#160;</b><br/>
+<b>VSG&#160;</b><br/>
+A&#160;VSG&#160;provides&#160;the&#160;possibility&#160;to&#160;group&#160;a&#160;set&#160;of&#160;diagnostic&#160;events.&#160;The&#160;availability&#160;of&#160;these&#160;<br/>diagnostic events&#160;can&#160;be&#160;changed&#160;by&#160;enabling&#160;or disabling&#160;the&#160;associated&#160;VSG.&#160;<br/>
+&#160;<br/>
+The&#160;APIs&#160;&#160;Vsg_EnableVsg()and&#160;&#160;Vsg_DisableVsg()allow&#160;&#160;to&#160;&#160;enable/disable&#160;&#160;individual&#160;<br/>required&#160;VSGs&#160;and&#160;the&#160;associated&#160;diagnostic&#160;events&#160;during&#160;runtime&#160;after&#160;the&#160;initialization&#160;<br/>of&#160;the&#160;Cdd_Vsg.&#160;&#160;<br/>Enabling&#160;&#160;a&#160;&#160;VSG&#160;&#160;additionally&#160;&#160;sets&#160;&#160;the&#160;&#160;internal&#160;&#160;status&#160;&#160;of&#160;&#160;a&#160;&#160;VSG&#160;&#160;to&#160;&#160;<i>active&#160;&#160;</i>if&#160;&#160;all&#160;&#160;associated&#160;<br/>diagnostic events&#160;can&#160;be&#160;enabled&#160;successfully.&#160;&#160;<br/>Disabling&#160;a&#160;VSG&#160;sets&#160;the&#160;internal&#160;status&#160;of&#160;a&#160;VSG&#160;always&#160;to&#160;<i>inactive</i>&#160;even&#160;if&#160;one&#160;or&#160;more&#160;<br/>associated&#160;diagnostic&#160;events&#160;cannot&#160;be&#160;disabled.&#160;<br/>
+&#160;<br/>
+The&#160;API&#160;Vsg_Finalize()&#160;allows&#160;to&#160;disable&#160;all&#160;<i>inactive</i>&#160;VSGs.&#160;&#160;<br/>
+During&#160;&#160;initialization&#160;&#160;only&#160;&#160;the&#160;&#160;internal&#160;&#160;status&#160;&#160;of&#160;&#160;each&#160;&#160;VSG&#160;&#160;is&#160;&#160;marked&#160;&#160;as&#160;&#160;<i>inactive</i>&#160;&#160;without&#160;<br/>disabling&#160;the&#160;VSGs&#160;and&#160;the&#160;associated&#160;diagnostic events.&#160;&#160;<br/>During&#160;Shutdown&#160;all&#160;<i>inactive</i>&#160;VSGs&#160;will be&#160;disabled.&#160;<br/>
+<b>3.2&#160;</b><br/>
+<b>Features&#160;</b><br/>
+The&#160;features&#160;listed&#160;in&#160;the&#160;following&#160;tables&#160;cover&#160;the&#160;complete&#160;functionality&#160;specified&#160;for&#160;the&#160;<br/>Cdd_Vsg.&#160;<br/>
+&#160;<br/>
+The&#160;following&#160;feature&#160;is&#160;supported:&#160;<br/>
+<b>Supported&#160;Features&#160;<br/></b>Enable VSG&#160;<br/>Enabling&#160;a single VSG&#160;using&#160;the&#160;service&#160;Vsg_EnableVsg().&#160;<br/>Disable VSG&#160;<br/>Disable a&#160;single VSG&#160;using&#160;the&#160;service&#160;Vsg_DisableVsg().&#160;<br/>Finalize VSGs&#160;<br/>Disables all&#160;inactive VSGs&#160;using&#160;the&#160;service&#160;Vsg_Finalize().&#160;<br/>
+Table&#160;3-1&#160;&#160;&#160;Supported&#160;feature&#160;<br/>
+<b>3.3&#160;</b><br/>
+<b>Initialization&#160;</b><br/>
+The&#160;interface&#160;Vsg_Init()sets&#160;the&#160;internal&#160;Status&#160;of&#160;each&#160;VSG&#160;to&#160;inactive.&#160;&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+9&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=10></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>3.4&#160;</b><br/>
+<b>Error&#160;Handling&#160;</b><br/>
+<b>3.4.1&#160;</b><br/>
+<b>Development&#160;Error&#160;Reporting&#160;</b><br/>
+By&#160;&#160;default,&#160;&#160;development&#160;&#160;errors&#160;&#160;are&#160;&#160;reported&#160;&#160;to&#160;&#160;the&#160;&#160;DET&#160;&#160;using&#160;&#160;the&#160;&#160;service&#160;<br/>Det_ReportError()&#160;&#160;as&#160;&#160;specified&#160;&#160;in&#160;&#160;[1],&#160;&#160;if&#160;&#160;development&#160;&#160;error&#160;&#160;reporting&#160;&#160;is&#160;&#160;enabled&#160;&#160;(i.e.&#160;<br/>pre-compile&#160;parameter&#160;VSG_DEV_ERROR_DETECT==STD_ON).&#160;<br/>
+The&#160;reported&#160;module&#160;ID for the&#160;module&#160;Cdd_Vsg&#160;is&#160;255&#160;(Complex&#160;Device&#160;Driver).&#160;<br/>The&#160;&#160;reported&#160;&#160;service&#160;&#160;IDs&#160;&#160;identify&#160;&#160;the&#160;&#160;services&#160;&#160;which&#160;&#160;are&#160;&#160;described&#160;&#160;in&#160;&#160;<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5.2.&#160;&#160;</a>The&#160;&#160;following&#160;<br/>table&#160;presents&#160;the&#160;service&#160;IDs and&#160;the&#160;related&#160;services:&#160;<br/>
+<b>Service&#160;ID&#160;</b><br/>
+<b>Service&#160;</b><br/>
+0x00&#160;<br/>
+Vsg_GetVersionInfo&#160;<br/>
+0x02&#160;<br/>
+Vsg_EnableVsg&#160;<br/>
+0x03&#160;<br/>
+Vsg_DisableVsg&#160;<br/>
+0x04&#160;<br/>
+Vsg_Finalize&#160;<br/>
+0x20&#160;<br/>
+Vsg_Shutdown&#160;<br/>
+Table&#160;3-2&#160;&#160;&#160;Service&#160;IDs&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+The&#160;errors reported&#160;to&#160;DET&#160;are&#160;described&#160;in&#160;the&#160;following&#160;table:&#160;<br/>
+<b>Error&#160;Code&#160;</b><br/>
+<b>Description&#160;</b><br/>
+VSG_E_PARAM_POINTER&#160;&#160;Service called&#160;with an&#160;invalid NULL&#160;pointer&#160;argument.&#160;<br/>VSG_E_PARAM_DATA&#160;<br/>
+Service was called&#160;with invalid parameter&#160;value.&#160;<br/>
+VSG_E_UNINIT&#160;<br/>
+Service called&#160;in uninitialized&#160;state.&#160;<br/>
+Table&#160;3-3&#160;&#160;&#160;Errors&#160;reported&#160;to&#160;DET&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+10&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=11></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>4&#160;&#160;Integration&#160;</b><br/>
+This&#160;chapter&#160;gives&#160;necessary&#160;information&#160;for&#160;the&#160;integration&#160;of&#160;the&#160;MICROSAR&#160;&#160;Cdd_Vsg&#160;<br/>into&#160;an&#160;application&#160;environment&#160;of&#160;an&#160;ECU.&#160;<br/>VSGs&#160;in&#160;the&#160;diagnostic&#160;kernel have&#160;to&#160;be&#160;handled&#160;separately.&#160;For reference&#160;see<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#2">&#160;[5]&#160;</a>.&#160;<br/>
+<b>4.1&#160;</b><br/>
+<b>Shutdown&#160;</b><br/>
+The&#160;interface&#160;Vsg_Shutdown()has&#160;to&#160;be&#160;called&#160;before&#160;the&#160;shutdown&#160;of&#160;the&#160;Dem&#160;module&#160;<br/>(see<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#2">&#160;[4])</a>&#160;.&#160;Otherwise&#160;configured&#160;diagnostic&#160;events&#160;that&#160;are&#160;associated&#160;to&#160;a&#160;VSG&#160;will&#160;not&#160;be&#160;<br/>disabled&#160;at&#160;shutdown.&#160;<br/>
+<b>4.2&#160;</b><br/>
+<b>Scope&#160;of&#160;Delivery&#160;</b><br/>
+The&#160;delivery&#160;of&#160;the&#160;Cdd_Vsg&#160;contains&#160;the&#160;files&#160;which&#160;are&#160;described&#160;in&#160;the&#160;chapte<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">rs&#160;&#160;4.2.1&#160;<br/>and&#160;4.2.2:</a>&#160;<br/>
+&#160;<br/>
+<b>4.2.1&#160;</b><br/>
+<b>Static&#160;Files&#160;</b><br/>
+The&#160;delivery&#160;of&#160;the&#160;Cdd_Vsg&#160;does not&#160;contain&#160;static&#160;files.&#160;<br/>
+&#160;<br/>
+<b>4.2.2&#160;</b><br/>
+<b>Dynamic&#160;Files&#160;</b><br/>
+The&#160;dynamic&#160;files are&#160;generated&#160;by&#160;the&#160;configuration&#160;tool&#160;DaVinci Configurator&#160;Pro.&#160;<br/>
+<b>File&#160;Name&#160;</b><br/>
+<b>Description&#160;</b><br/>
+Vsg.h&#160;<br/>
+This&#160;header&#160;files provides&#160;the&#160;Cdd_Vsg&#160;API&#160;functions.&#160;For&#160;BSW&#160;modules and&#160;the&#160;<br/>application.&#160;This&#160;file is&#160;supposed to&#160;be&#160;included&#160;by&#160;client&#160;modules.&#160;<br/>
+Vsg.c&#160;<br/>
+This&#160;is&#160;the&#160;source&#160;file of&#160;the&#160;Cdd_Vsg.&#160;It&#160;contains&#160;all&#160;functionality&#160;of&#160;the&#160;Cdd_Vsg&#160;<br/>
+Table&#160;4-1&#160;&#160;&#160;Generated&#160;files&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+11&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=12></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>4.3&#160;</b><br/>
+<b>Include&#160;Structure&#160;</b><br/>
+<b>&#160;class&#160;IncludeStructure</b><br/>
+VSG<br/>
+Std_Types.h<br/>
+MemMap.h<br/>
+«include»<br/>
+Vsg.h<br/>
+«include»<br/>
+Dem.h<br/>
+«include»<br/>
+Vsg.c<br/>
+Det.h<br/>
+«include»<br/>
+&#160;<br/>
+Figure&#160;4-1&#160;&#160;Include&#160;structure&#160;<br/>
+<b>4.4&#160;</b><br/>
+<b>Compiler&#160;Abstraction and Memory&#160;Mapping&#160;</b><br/>
+The&#160;&#160;objects&#160;&#160;(e.g.&#160;&#160;variables,&#160;&#160;functions,&#160;&#160;constants)&#160;&#160;are&#160;&#160;declared&#160;&#160;by&#160;&#160;compiler&#160;&#160;independent&#160;<br/>definitions&#160;&#160;–&#160;&#160;the&#160;&#160;compiler&#160;&#160;abstraction&#160;&#160;definitions.&#160;&#160;Each&#160;&#160;compiler&#160;&#160;abstraction&#160;&#160;definition&#160;&#160;is&#160;<br/>assigned&#160;to&#160;a&#160;memory&#160;section.&#160;<br/>The&#160;&#160;following&#160;&#160;table&#160;&#160;contains&#160;&#160;the&#160;&#160;memory&#160;&#160;section&#160;&#160;names&#160;&#160;and&#160;&#160;the&#160;&#160;compiler&#160;&#160;abstraction&#160;<br/>definitions of&#160;the&#160;Cdd_Vsg&#160;and&#160;illustrates their assignment&#160;among&#160;each&#160;other.&#160;<br/>
+&#160;<br/>
+<b>Compiler&#160;Abstraction&#160;</b><br/>
+&#160;<br/>
+<b>Definitions</b><br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+A<br/>
+&#160;<br/>
+INIT<br/>
+T<br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+T&#160;<br/>
+_DA<br/>
+&#160;<br/>
+DE<br/>
+NS<br/>
+L<br/>
+R_INIT<br/>
+R_NO<br/>
+P<br/>
+<b>Memory&#160;Mapping&#160;</b><br/>
+A<br/>
+A<br/>
+P<br/>
+CO<br/>
+CO<br/>
+V<br/>
+V<br/>
+A<br/>
+_<br/>
+_<br/>
+_<br/>
+_<br/>
+_<br/>
+<b>Sections&#160;</b><br/>
+G<br/>
+G<br/>
+G<br/>
+S<br/>
+S<br/>
+S<br/>
+VSG<br/>
+&#160;<br/>
+VSG<br/>
+&#160;<br/>
+V<br/>
+&#160;<br/>
+V&#160;&#160;<br/>
+V<br/>
+VSG_START_SEC_CODE&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+VSG_STOP_SEC_CODE&#160;<br/>
+VSG_START_SEC_CONST_&lt;size&gt;&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+VSG_STOP_SEC_CONST_&lt;size&gt;&#160;<br/>
+VSG_START_SEC_VAR_INIT_&lt;size&gt;&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+VSG_STOP_SEC_VAR_INIT_&lt;size&gt;&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+12&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=13></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+VSG_START_SEC_VAR_NOINIT_UNSPECIFIED<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+VSG_STOP_SEC_VAR_NOINIT_UNSPECIFIED&#160;<br/>
+Application buffer used&#160;in&#160;API&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Table&#160;4-2&#160;&#160;&#160;Compiler&#160;abstraction&#160;and&#160;memory&#160;mapping&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+<b>4.5&#160;</b><br/>
+<b>Critical&#160;Sections&#160;&#160;&#160;</b><br/>
+There&#160;are&#160;no&#160;critical sections&#160;defined&#160;for the&#160;Cdd_Vsg.&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+13&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=14></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>5&#160;&#160;API&#160;Description&#160;</b><br/>
+For an&#160;interface&#160;overview&#160;please&#160;see<a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#8">&#160;Figure&#160;2-1.</a>&#160;<br/>
+<b>5.1&#160;</b><br/>
+<b>Type&#160;Definitions&#160;</b><br/>
+The&#160;types defined&#160;by&#160;the&#160;Cdd_Vsg&#160;are&#160;described&#160;in&#160;this chapter.&#160;<br/>
+<b>Type&#160;Name&#160;</b><br/>
+<b>C-Type&#160;&#160;Description&#160;</b><br/>
+<b>Value&#160;Range&#160;</b><br/>
+Vsg_VsgItemIdType&#160;<br/>
+uint8&#160;<br/>
+Unique&#160;identification&#160;of&#160;a&#160;VSG&#160;&#160;&#160;0..31&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+Table&#160;5-1&#160;&#160;&#160;Type&#160;definitions&#160;&#160;<br/>
+<b>5.2&#160;</b><br/>
+<b>Services&#160;provided by&#160;Cdd_Vsg&#160;</b><br/>
+<b>5.2.1&#160;</b><br/>
+<b>Vsg_EnableVsg()&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType&#160;&#160;<b>Vsg_EnableVsg</b>(Vsg_VsgItemIdType VsgItemId)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+VsgItemId&#160;<br/>
+Unique&#160;identification of&#160;a&#160;VSG&#160;(Vehicle&#160;System&#160;Group).&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+E_OK: operation&#160;was&#160;successful&#160;<br/>E_NOT_OK: availability&#160;of&#160;one&#160;or more events&#160;could&#160;not&#160;be&#160;enabled&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+API&#160;to&#160;enable&#160;a&#160;single&#160;Vehicle System&#160;Group.&#160;<br/>
+&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;can&#160;be&#160;called&#160;from&#160;any&#160;context.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;reentrant&#160;(for&#160;different&#160;VsgItemId&#160;with disjoint&#160;set&#160;of&#160;diagnostic events).&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;not&#160;reentrant&#160;with other&#160;Services&#160;provided by&#160;Cdd_Vsg.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;synchronous.&#160;<br/>
+Table&#160;5-2&#160;&#160;&#160;Vsg_EnableVsg()&#160;&#160;<br/>
+<b>5.2.2&#160;</b><br/>
+<b>Vsg_DisableVsg()&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType&#160;&#160;<b>Vsg_DisableVsg</b>(Vsg_VsgItemIdType VsgItemId)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+VsgItemId&#160;<br/>
+Unique&#160;identification of&#160;a&#160;VSG&#160;(Vehicle&#160;System&#160;Group).&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+14&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=15></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+E_OK:&#160;operation&#160;was&#160;successful&#160;<br/>E_NOT_OK: availability&#160;of&#160;one&#160;or more events&#160;could&#160;not&#160;be&#160;disabled&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+API&#160;to&#160;disable&#160;a&#160;single&#160;Vehicle System&#160;Group.&#160;<br/>
+&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;can&#160;be&#160;called&#160;from&#160;any&#160;context.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;reentrant&#160;(for&#160;different&#160;VsgItemId&#160;with disjoint&#160;set&#160;of&#160;diagnostic events).&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;not&#160;reentrant&#160;with other&#160;Services&#160;provided by&#160;Cdd_Vsg.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;synchronous.&#160;<br/>
+Table&#160;5-3&#160;&#160;&#160;Vsg_DisableVsg()&#160;<br/>
+<b>5.2.3&#160;</b><br/>
+<b>Vsg_Finalize()&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType<b>&#160;Vsg_Finalize</b>(void)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+N/A&#160;<br/>
+N/A&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+E_OK: operation&#160;was&#160;successful&#160;<br/>E_NOT_OK:&#160;one&#160;or more VSGs&#160;could&#160;not&#160;be&#160;disabled&#160;successful&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+All&#160;VSGs&#160;with&#160;internal&#160;status&#160;inactive&#160;are&#160;disabled.&#160;<br/>
+&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;can&#160;be&#160;called&#160;from&#160;any&#160;context.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;not&#160;reentrant.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;synchronous.&#160;<br/>
+Table&#160;5-4&#160;&#160;&#160;Vsg_Finalize()&#160;<br/>
+<b>5.2.4&#160;</b><br/>
+<b>Vsg_Init()&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+void&#160;&#160;<b>Vsg_Init</b>(void)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+N/A&#160;<br/>
+N/A&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+void&#160;<br/>
+N/A&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+15&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=16></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+Internal&#160;status&#160;of&#160;all&#160;VSGs&#160;is&#160;set&#160;to&#160;inactive.&#160;<br/>
+&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;can&#160;be&#160;called&#160;from&#160;any&#160;context.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;not&#160;reentrant.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;synchronous.&#160;<br/>
+Table&#160;5-5&#160;&#160;&#160;Vsg_Init()&#160;<br/>
+<b>5.2.5&#160;</b><br/>
+<b>Vsg_Shutdown()&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+void&#160;&#160;<b>Vsg_Shutdown</b>(void)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+N/A&#160;<br/>
+N/A&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+void&#160;<br/>
+N/A&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+Shutdown Cdd_Vsg&#160;functionality.&#160;<br/>All&#160;VSGs&#160;with internal&#160;status&#160;inactive&#160;are&#160;disabled.&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;can&#160;be&#160;called&#160;from&#160;any&#160;context.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;not&#160;reentrant.&#160;<br/>
+<b>&gt;&#160;&#160;</b>This&#160;function&#160;is&#160;synchronous.&#160;<br/>
+&#160;<br/>
+<b>5.3&#160;</b><br/>
+<b>Services&#160;used&#160;by&#160;Cdd_Vsg&#160;</b><br/>
+In&#160;&#160;the&#160;&#160;following&#160;&#160;table&#160;&#160;services&#160;&#160;provided&#160;&#160;by&#160;&#160;other&#160;&#160;components,&#160;&#160;which&#160;&#160;are&#160;&#160;used&#160;&#160;by&#160;&#160;the&#160;<br/>Cdd_Vsg&#160;&#160;are&#160;&#160;listed.&#160;&#160;For&#160;&#160;details&#160;&#160;about&#160;&#160;prototype&#160;&#160;and&#160;&#160;functionality&#160;&#160;refer&#160;&#160;to&#160;&#160;the&#160;<br/>documentation&#160;of&#160;the&#160;providing&#160;component.&#160;<br/>
+<b>Component&#160;</b><br/>
+<b>API&#160;</b><br/>
+Dem&#160;<br/>
+Dem_SetEventAvailable&#160;<br/>
+Table&#160;5-6&#160;&#160;&#160;Services&#160;used&#160;by&#160;the&#160;Cdd_Vsg&#160;<br/>
+<b>5.4&#160;</b><br/>
+<b>Callback&#160;Functions&#160;</b><br/>
+There&#160;are&#160;no&#160;callback&#160;functions implemented&#160;by&#160;the&#160;Cdd_Vsg.&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+16&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=17></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>6&#160;&#160;Configuration&#160;&#160;</b><br/>
+The&#160;&#160;Cdd_Vsg&#160;&#160;module&#160;&#160;is&#160;&#160;configured&#160;&#160;with&#160;&#160;the&#160;&#160;help&#160;&#160;of&#160;&#160;the&#160;&#160;configuration&#160;&#160;tool&#160;&#160;DaVinci&#160;<br/>Configurator&#160;Pro.&#160;<br/>
+<b>6.1&#160;</b><br/>
+<b>Configuration&#160;Variants&#160;</b><br/>
+The&#160;Cdd_Vsg&#160;supports&#160;the&#160;configuration&#160;variants&#160;<br/>
+<b>&gt;&#160;&#160;</b>VARIANT-PRE-COMPILE&#160;<br/>
+The&#160;&#160;configuration&#160;&#160;classes&#160;&#160;of&#160;&#160;the&#160;&#160;Cdd_Vsg&#160;&#160;parameters&#160;&#160;depend&#160;&#160;on&#160;&#160;the&#160;&#160;supported&#160;<br/>configuration&#160;variants.&#160;For their&#160;definitions please&#160;see&#160;the&#160;Vsg_bswmd.arxml file.&#160;<br/>
+<b>6.2&#160;</b><br/>
+<b>Configuration&#160;Attributes&#160;</b><br/>
+The&#160;description&#160;of&#160;each&#160;configurable&#160;option&#160;is&#160;described&#160;within&#160;the&#160;Vsg_bswmd.arxml&#160;file.&#160;<br/>You&#160;&#160;can&#160;&#160;use&#160;&#160;the&#160;&#160;online&#160;&#160;help&#160;&#160;of&#160;&#160;DaVinci&#160;&#160;Configurator&#160;&#160;Pro&#160;&#160;to&#160;&#160;access&#160;&#160;these&#160;&#160;parameter&#160;<br/>descriptions&#160;comfortably.&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+17&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=18></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>7&#160;&#160;Glossary&#160;and&#160;Abbreviations&#160;</b><br/>
+<b>7.1&#160;</b><br/>
+<b>Abbreviations&#160;</b><br/>
+<b>Abbreviation&#160;</b><br/>
+<b>Description&#160;</b><br/>
+API&#160;<br/>
+Application Programming Interface&#160;&#160;&#160;<br/>
+AUTOSAR&#160;<br/>
+Automotive Open System&#160;Architecture&#160;<br/>
+BSW&#160;<br/>
+Basis&#160;Software&#160;<br/>
+DEM&#160;<br/>
+Diagnostic&#160;Event&#160;Manager&#160;<br/>
+DET&#160;<br/>
+Development&#160;Error&#160;Tracer&#160;<br/>
+ECU&#160;<br/>
+Electronic&#160;Control&#160;Unit&#160;<br/>
+MICROSAR&#160;<br/>
+Microcontroller&#160;Open&#160;System&#160;Architecture&#160;(the&#160;Vector&#160;AUTOSAR&#160;<br/>solution)&#160;<br/>
+SWC&#160;<br/>
+Software&#160;Component&#160;<br/>
+VSG&#160;<br/>
+Vehicle System&#160;Group&#160;<br/>
+Table&#160;7-1&#160;&#160;&#160;Abbreviations&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+18&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name=19></a>Technical Reference&#160;MICROSAR Vsg&#160;<br/>
+<b>8&#160;&#160;Contact&#160;</b><br/>
+Visit&#160;our website&#160;for&#160;more information&#160;on&#160;<br/>&#160;<br/><b>&gt;&#160;&#160;</b>News&#160;<br/>
+<b>&gt;&#160;&#160;</b>Products&#160;<br/>
+<b>&gt;&#160;&#160;</b>Demo&#160;software&#160;<br/>
+<b>&gt;&#160;&#160;</b>Support&#160;<br/>
+<b>&gt;&#160;&#160;</b>Training&#160;data&#160;<br/>
+<b>&gt;&#160;&#160;</b>Addresses&#160;<br/>
+&#160;<br/>www.vector.com&#160;<br/>
+&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;2.00.00&#160;<br/>
+19&#160;/&#160;19&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.7.1&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#6">1 Component History</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7">2 Introduction</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7">2.1 How to read this document</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#7">2.2 Architecture Overview</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">3 Functional Description</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">3.1 VSG</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">3.2 Features</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#9">3.3 Initialization</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">3.4 Error Handling</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#10">3.4.1 Development Error Reporting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">4 Integration</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">4.1 Shutdown</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">4.2 Scope of Delivery</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">4.2.1 Static Files</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#11">4.2.2 Dynamic Files</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">4.3 Include Structure</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#12">4.4 Compiler Abstraction and Memory Mapping</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#13">4.5 Critical Sections</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5 API Description</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5.1 Type Definitions</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5.2 Services provided by Cdd_Vsg</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5.2.1 Vsg_EnableVsg()</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#14">5.2.2 Vsg_DisableVsg()</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">5.2.3 Vsg_Finalize()</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#15">5.2.4 Vsg_Init()</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">5.2.5 Vsg_Shutdown()</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">5.3 Services used by Cdd_Vsg</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#16">5.4 Callback Functions</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17">6 Configuration</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17">6.1 Configuration Variants</a></li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#17">6.2 Configuration Attributes</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#18">7 Glossary and Abbreviations</a>
+<ul>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#18">7.1 Abbreviations</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Cdd_Asr4DiagVsgs.html#19">8 Contact</a></li>
+</ul>
+<hr/>
+</body>
+</html>

@@ -1,0 +1,726 @@
+---
+title: TechnicalReference_Diag_AsrSwcSecAccess_Fords
+linkTitle: TechnicalReference_Diag_AsrSwcSecAccess_Fords
+weight: 124
+---
+
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/><b>MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/></b>Technical Reference&#160;<br/>&#160;<br/>FORD&#160;-&#160;Software&#160;Component Vector Security&#160;Access&#160;<br/>Version&#160;1.0.0&#160;<br/>&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+Authors&#160;<br/>
+Markus Schneider&#160;<br/>
+Status&#160;<br/>
+Released&#160;<br/>
+&#160;<br/>&#160;<br/>&#160;<br/>&#160;<br/>
+<hr/>
+<a name=2></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+&#160;<br/>
+<b>Document&#160;Information&#160;</b><br/>
+<b>History&#160;</b><br/>
+<b>Author&#160;</b><br/>
+<b>Date&#160;</b><br/>
+<b>Version&#160;</b><br/>
+<b>Remarks&#160;</b><br/>
+Markus Schneider&#160;<br/>
+2015-04-13&#160;<br/>
+1.0.0&#160;<br/>
+Creation&#160;<br/>
+<b>Reference&#160;Documents&#160;</b><br/>
+<b>No.&#160;</b><br/>
+<b>Source&#160;</b><br/>
+<b>Title&#160;</b><br/>
+<b>Version&#160;</b><br/>
+[1]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_Asr_Dcm_Vector.pdf&#160;<br/>
+3.33.00&#160;<br/>
+[2]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_Asr_Csm.pdf&#160;<br/>
+1.02.00&#160;<br/>
+[3]&#160;&#160;&#160;Vector&#160;<br/>
+TechnicalReference_Asr_Cry.pdf&#160;<br/>
+1.01.00&#160;<br/>
+[4]&#160;&#160;&#160;FORD&#160;<br/>
+EESE&#160;DIAGNOSTIC&#160;APPLICATION&#160;SECURITY&#160;ALGORITHM&#160;&#160;001&#160;<br/>
+&#160;<br/>
+Scope&#160;of&#160;the&#160;Document<b>&#160;&#160;</b><br/>
+This&#160;&#160;technical&#160;&#160;reference&#160;&#160;describes&#160;&#160;the&#160;&#160;general&#160;&#160;use&#160;&#160;of&#160;&#160;the&#160;&#160;Security&#160;&#160;Access&#160;&#160;software&#160;<br/>component.&#160;&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+2&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=3></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>Contents&#160;</b><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#6"><b>1</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#6"><b>Component&#160;History&#160;......................................................................................................&#160;6</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7"><b>2</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7"><b>Introduction...................................................................................................................&#160;7</b>&#160;<br/>2.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7">Architecture&#160;Overview&#160;........................................................................................&#160;7&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9"><b>3</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9"><b>Functional&#160;Description&#160;.................................................................................................&#160;9</b>&#160;<br/>3.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">Initialization&#160;........................................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">3.2&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">Provide&#160;Entropy&#160;.................................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">3.3&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">States&#160;................................................................................................................&#160;9&#160;<br/>3.3.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">Sec_EntropyOp&#160;..................................................................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.3.2&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">Sec_VerifyOp&#160;...................................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.3.3&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">Sec_SeedState&#160;................................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.3.4&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">Sec_VerifyState&#160;...............................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.4&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">Main Functions&#160;................................................................................................&#160;10&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11"><b>4</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11"><b>Integration&#160;...................................................................................................................&#160;11</b>&#160;<br/>4.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Scope of&#160;Delivery&#160;.............................................................................................&#160;11&#160;<br/>4.1.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Static Files&#160;.......................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.2&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Dynamic&#160;Files&#160;..................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.3&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">CSM&#160;Configuration&#160;in DaVinci&#160;Configurator&#160;5&#160;...................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.4&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Integration&#160;in DaVinci&#160;Developer&#160;......................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#12">4.1.5&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#12">Connecting&#160;ports&#160;and&#160;task&#160;mapping&#160;.................................................&#160;12&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13"><b>5</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13"><b>API&#160;Description&#160;...........................................................................................................&#160;13</b>&#160;<br/>5.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">Service Ports&#160;...................................................................................................&#160;13&#160;<br/>5.1.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">SwcSecAccessFord_CallbackNotificationRandomGenerate&#160;............&#160;13&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">5.1.2&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">SwcSecAccessFord_CallbackNotificationRandomSeed&#160;...................&#160;13&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">5.1.3&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt;&#160;................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">5.1.4&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt;&#160;......................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">5.1.5&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">SwcSecAccessFord_Init&#160;..................................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">5.1.6&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">SwcSecAccessFord_MainFunction&#160;..................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">5.1.7&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">SwcSecAccessFord_ProvideEntropy&#160;...............................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">5.1.8&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Client&#160;Server&#160;Interface&#160;.....................................................................&#160;16&#160;<br/>5.1.8.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Provide&#160;Ports&#160;on&#160;SwcSecAccessFord&#160;Side&#160;....................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">5.1.8.2&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Require Ports&#160;on&#160;SwcSecAccessFord&#160;Side&#160;...................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#17"><b>6</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#17"><b>Glossary&#160;and&#160;Abbreviations&#160;......................................................................................&#160;17</b>&#160;<br/>6.1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#17">Abbreviations&#160;...................................................................................................&#160;17&#160;</a><br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+3&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=4></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#18"><b>7</b>&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#18"><b>Contact&#160;........................................................................................................................&#160;18</b>&#160;</a><br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+4&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=5></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>Illustrations&#160;</b><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7">Figure&#160;2-1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7">Architecture&#160;Overview&#160;.................................................................................&#160;7&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#8">Figure&#160;2-2&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#8">Interfaces&#160;to adjacent&#160;modules of&#160;the&#160;SwcSecAccessFord&#160;.........................&#160;8&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">Figure&#160;3-1&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">State&#160;machine&#160;Sec_EntropyOp and Sec_VerifyOp&#160;.....................................&#160;9&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">Figure&#160;3-2&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">State&#160;machine&#160;Sec_SeedState&#160;.................................................................&#160;10&#160;</a><br/>
+<b>&#160;</b><br/>
+<b>Tables&#160;<br/></b><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#6">Table&#160;1-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#6">Component&#160;history......................................................................................&#160;6&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Table&#160;4-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Static&#160;files&#160;.................................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Table&#160;4-2&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">Generated&#160;files&#160;.........................................................................................&#160;11&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">Table&#160;5-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">SwcSecAccessFord_CallbackNotificationRandomGenerate&#160;.....................&#160;13&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">Table&#160;5-2&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">SwcSecAccessFord_CallbackNotificationRandomSeed&#160;...........................&#160;13&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">Table&#160;5-3&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt;&#160;........................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">Table&#160;5-4&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt;&#160;...............................................&#160;14&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">Table&#160;5-5&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">SwcSecAccessFord_Init&#160;...........................................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">Table&#160;5-6&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">SwcSecAccessFord_MainFunction&#160;...........................................................&#160;15&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Table&#160;5-7&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">SwcSecAccessFord_ProvideEntropy&#160;........................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Table&#160;5-8&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Provided ports&#160;by&#160;the&#160;SWC&#160;.......................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Table&#160;5-9&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">Required&#160;ports&#160;by&#160;the SWC&#160;......................................................................&#160;16&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#17">Table&#160;6-1&#160;&#160;</a><br/>
+<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#17">Abbreviations&#160;............................................................................................&#160;17&#160;</a><br/>
+&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+5&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=6></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>1&#160;&#160;Component&#160;History&#160;</b><br/>
+The&#160;&#160;component&#160;&#160;history&#160;&#160;gives&#160;&#160;an&#160;&#160;overview&#160;&#160;over&#160;&#160;the&#160;&#160;important&#160;&#160;milestones&#160;&#160;that&#160;&#160;are&#160;<br/>supported&#160;in&#160;the&#160;different&#160;versions of&#160;the&#160;component.&#160;&#160;<br/>
+<b>Component&#160;Version&#160;&#160;New&#160;Features&#160;<br/></b>1.00.00&#160;<br/>
+Initial&#160;creation&#160;<br/>
+Table&#160;1-1&#160;&#160;&#160;Component&#160;history&#160;<br/>&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+6&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=7></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-7_1.png"/><br/>
+Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>2&#160;&#160;Introduction&#160;</b><br/>
+This&#160;&#160;document&#160;&#160;describes&#160;&#160;the&#160;&#160;functionality,&#160;API&#160;&#160;and&#160;&#160;configuration&#160;&#160;of&#160;&#160;the&#160;AUTOSAR&#160;&#160;SWC&#160;<br/>SwcSecAccessFord,&#160;which&#160;implements&#160;a&#160;security&#160;access&#160;as specified&#160;in<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#2">&#160;[4].&#160;</a>&#160;<br/>
+&#160;<br/>
+<b>Supported&#160;AUTOSAR&#160;R<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7">elease*:</a></b><b>&#160;</b><br/>
+4&#160;<br/>
+*&#160;For the detailed functional&#160;specification&#160;please also refer to the corresponding&#160;AUTOSAR&#160;SWS.&#160;<br/>&#160;<br/>&#160;<br/>
+<b>2.1&#160;</b><br/>
+<b>Architecture&#160;Overview&#160;</b><br/>
+The&#160;&#160;following&#160;&#160;figure&#160;&#160;shows&#160;&#160;where&#160;&#160;the&#160;&#160;SwcSecAccessFord&#160;&#160;is&#160;&#160;located&#160;&#160;in&#160;&#160;the&#160;&#160;AUTOSAR&#160;<br/>architecture.&#160;<br/>
+&#160;<br/>
+Figure&#160;2-1&#160;&#160;Architecture&#160;Overview&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+7&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=8></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+&#160;<br/>
+The&#160;next&#160;figure&#160;shows&#160;the&#160;port&#160;interfaces&#160;to&#160;adjacent&#160;modules&#160;of&#160;the&#160;SwcSecAccessFord.&#160;<br/>These&#160;interfaces are&#160;described&#160;in&#160;chapte<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">r&#160;5.&#160;</a>&#160;<br/>
+<b>&#160;cmp&#160;Architecture</b><br/>
+<b>Security&#160;Access</b><br/>
+<b>Source&#160;of&#160;Entropy</b><br/>
+ProvideEntropy()<br/>
+Csm_&lt;Service&gt;Start<br/>
+Csm_&lt;Service&gt;Finish<br/>
+&lt;Service&gt;Callback<br/>
+Csm_&lt;Service&gt;Update<br/>
+Csm_&lt;Service&gt;<br/>
+GetSeed()<br/>
+CompareKey()<br/>
+«optional»<br/>
+<b>CSM</b><br/>
+<b>DCM</b><br/>
+Cry_&lt;Primitive&gt;Start<br/>
+Cry_&lt;Primitive&gt;Finish<br/>
+Csm_&lt;Service&gt;CallbackNotification<br/>
+Cry_&lt;Primitive&gt;Update<br/>
+Cry_&lt;Primitive&gt;<br/>
+Csm_&lt;Service&gt;FinishNotification<br/>
+«async»<br/>
+«async»<br/>
+<b>Cry</b><br/>
+&#160;<br/>
+Figure&#160;2-2&#160;&#160;Interfaces&#160;to&#160;adjacent&#160;modules&#160;of&#160;the&#160;SwcSecAccessFord&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+8&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=9></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-9_1.png"/><br/>
+Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>3&#160;&#160;Functional&#160;Description&#160;</b><br/>
+<b>3.1&#160;</b><br/>
+<b>Initialization&#160;</b><br/>
+The&#160;&#160;initialization&#160;&#160;of&#160;&#160;the&#160;&#160;component&#160;&#160;SwcSecAccessFord&#160;&#160;takes&#160;&#160;place&#160;&#160;within&#160;&#160;the&#160;&#160;RTE&#160;&#160;by&#160;<br/>calling&#160;SwcSecAccessFord_Init.&#160;<br/>
+<b>3.2&#160;</b><br/>
+<b>Provide&#160;Entropy&#160;</b><br/>
+After&#160;the&#160;initialization&#160;and&#160;before&#160;the&#160;usage&#160;of&#160;the&#160;security&#160;access&#160;a&#160;source&#160;of&#160;entropy&#160;has&#160;<br/>to&#160;be&#160;provided&#160;at&#160;least&#160;once&#160;by&#160;calling&#160;SwcSecAccessFord_ProvideEntropy.&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Note&#160;<br/></b>Depending&#160;on&#160;the&#160;used&#160;(pseudo)&#160;random&#160;number&#160;generator,&#160;it&#160;may&#160;be&#160;necessary&#160;for&#160;<br/>
+&#160;&#160;the&#160;entropy&#160;to&#160;have a&#160;certain minimum&#160;length.&#160;<br/>
+E.g.&#160;in&#160;case&#160;FIPS186-2 is used,&#160;the&#160;length&#160;of&#160;the&#160;entropy&#160;has&#160;to&#160;be&#160;at&#160;least&#160;20&#160;bytes of&#160;<br/>random&#160;data.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+The&#160;entropy&#160;will be&#160;triggered&#160;in&#160;the&#160;main&#160;function&#160;task.&#160;<br/>While&#160;the&#160;entropy&#160;is&#160;passed&#160;to&#160;the&#160;random&#160;number&#160;generator&#160;a&#160;seed&#160;request&#160;will&#160;report&#160;a&#160;<br/>pending&#160;operation&#160;result.&#160;<br/>
+<b>3.3&#160;</b><br/>
+<b>States&#160;</b><br/>
+<b>3.3.1&#160;</b><br/>
+<b>Sec_EntropyOp&#160;</b><br/>
+The&#160;&#160;state&#160;&#160;machine&#160;&#160;is&#160;&#160;used&#160;&#160;to&#160;&#160;feed&#160;&#160;the&#160;&#160;entropy&#160;&#160;into&#160;&#160;the&#160;&#160;Csm_RandomSeed&#160;&#160;service.&#160;<br/>Internal&#160;&#160;processing&#160;&#160;in&#160;&#160;the&#160;&#160;main&#160;&#160;function&#160;&#160;task&#160;&#160;will&#160;&#160;be&#160;&#160;started&#160;&#160;by&#160;&#160;invoking&#160;&#160;the&#160;<br/>SwcSecAccessFord_ProvideEntropy&#160;while&#160;the&#160;component&#160;is in&#160;the&#160;‘Initial’&#160;state.&#160;<br/>
+<b>&#160;act&#160;State&#160;Machine</b><br/>
+<b>INITIAL</b><br/>
+ActivityInitial<br/>
+<b>&lt;SERVICE&gt;FINISH</b><br/>
+<b>&lt;SERVICE&gt;START</b><br/>
+<b>&lt;SERVICE&gt;UPDATE</b><br/>
+&#160;&#160;<br/>
+Figure&#160;3-1&#160;&#160;State&#160;machine&#160;Sec_EntropyOp&#160;and&#160;Sec_VerifyOp&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+9&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=10></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>3.3.2&#160;</b><br/>
+<b>Sec_VerifyOp&#160;</b><br/>
+The&#160;&#160;state&#160;&#160;machine&#160;&#160;is&#160;&#160;used&#160;&#160;to&#160;&#160;verify&#160;&#160;the&#160;&#160;received&#160;&#160;key&#160;&#160;from&#160;&#160;the&#160;&#160;tester&#160;&#160;using&#160;&#160;the&#160;<br/>Csm_MacVerify&#160;service.&#160;<br/>
+<b>3.3.3&#160;</b><br/>
+<b>Sec_SeedState&#160;</b><br/>
+The&#160;state&#160;machine&#160;is&#160;used&#160;to&#160;determine&#160;the&#160;progression&#160;of&#160;seed&#160;generation.&#160;<br/>
+<b>&#160;act&#160;State&#160;Machine</b><br/>
+ActivityInitial<br/>
+<b>INITIAL</b><br/>
+<b>GENERATION_PENDING</b><br/>
+<b>VALID</b><br/>
+<b>INVALID</b><br/>
+&#160;<br/>
+Figure&#160;3-2&#160;&#160;State&#160;machine&#160;Sec_SeedState&#160;<br/>
+<b>3.3.4&#160;</b><br/>
+<b>Sec_VerifyState&#160;</b><br/>
+The&#160;state&#160;machine&#160;is&#160;used&#160;to&#160;determine&#160;the&#160;progression&#160;of&#160;the&#160;MAC&#160;verification.&#160;<br/>
+<b>3.4&#160;</b><br/>
+<b>Main Functions&#160;</b><br/>
+The&#160;&#160;SwcSecAccessFord_MainFunction&#160;&#160;triggers&#160;&#160;the&#160;&#160;processing&#160;&#160;of&#160;&#160;the&#160;&#160;provided&#160;&#160;entropy&#160;<br/>and&#160;the&#160;MAC verification.&#160;The&#160;function&#160;has to&#160;be&#160;called&#160;cyclically&#160;from&#160;RTE&#160;level.&#160;&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+10&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=11></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-11_1.png"/><br/>
+Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>4&#160;&#160;Integration&#160;</b><br/>
+This&#160;&#160;chapter&#160;&#160;gives&#160;&#160;necessary&#160;&#160;information&#160;&#160;for&#160;&#160;the&#160;&#160;integration&#160;&#160;of&#160;&#160;the&#160;&#160;MICROSAR&#160;<br/>SwcSecAccessFord&#160;into&#160;an&#160;application&#160;environment&#160;of&#160;an&#160;ECU.&#160;<br/>
+<b>4.1&#160;</b><br/>
+<b>Scope&#160;of&#160;Delivery&#160;</b><br/>
+The&#160;&#160;delivery&#160;&#160;of&#160;&#160;the&#160;&#160;SwcSecAccessFord&#160;&#160;contains&#160;&#160;the&#160;&#160;files&#160;&#160;which&#160;&#160;are&#160;&#160;described&#160;&#160;in&#160;&#160;the&#160;<br/>chapte<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">rs&#160;4.1.1&#160;</a>and<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">&#160;4.1.2:</a>&#160;<br/>
+<b>4.1.1&#160;</b><br/>
+<b>Static&#160;Files&#160;</b><br/>
+<b>File&#160;Name&#160;</b><br/>
+<b>Description&#160;</b><br/>
+SwcSecAccessFord.c&#160;<br/>
+Implementation&#160;of&#160;the&#160;SwcSecAccessFord&#160;<br/>
+SwcSecAccessFord.h&#160;<br/>
+Header&#160;file of&#160;the&#160;SWC&#160;<br/>
+SwcSecAccessFord_Cfg.c&#160;&#160;In&#160;this&#160;file&#160;the&#160;secret&#160;keys&#160;can&#160;be&#160;stored&#160;<br/>SwcSecAccessFord_Cfg.h&#160;&#160;Configuration header&#160;file&#160;of&#160;the&#160;SWC&#160;<br/>
+Table&#160;4-1&#160;&#160;&#160;Static&#160;files&#160;<br/>
+&#160;<br/>
+<b>4.1.2&#160;</b><br/>
+<b>Dynamic&#160;Files&#160;</b><br/>
+The&#160;dynamic&#160;files are&#160;generated&#160;by&#160;the&#160;configuration&#160;tool&#160;DaVinci&#160;Configurator5.&#160;<br/>
+<b>File&#160;Name&#160;</b><br/>
+<b>Description&#160;</b><br/>
+Rte_SwcSecAccessFord.h&#160;&#160;Generated&#160;data&#160;types&#160;and&#160;function&#160;calls&#160;<br/>
+Table&#160;4-2&#160;&#160;&#160;Generated&#160;files&#160;<br/>
+<b>4.1.3&#160;</b><br/>
+<b>CSM Configuration in DaVinci&#160;Configurator 5&#160;</b><br/>
+Before&#160;&#160;the&#160;&#160;integration&#160;it&#160;&#160;is&#160;&#160;necessary&#160;&#160;to&#160;&#160;create&#160;&#160;the&#160;&#160;configurations&#160;of&#160;&#160;the&#160;&#160;random&#160;number&#160;<br/>generator primitives.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Step&#160;1&#160;<br/></b>Create&#160;the&#160;configurations&#160;for&#160;the&#160;CsmRandomSeed,&#160;CsmRandomGenerate&#160;and&#160;<br/>
+&#160;&#160;CsmMacVerify&#160;Services&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+On&#160;&#160;further&#160;&#160;Information&#160;&#160;about&#160;&#160;the&#160;&#160;configuration&#160;&#160;of&#160;&#160;the&#160;&#160;CSM&#160;&#160;please&#160;&#160;refer&#160;&#160;to&#160;&#160;the&#160;Technical&#160;<br/>Reference&#160;of&#160;the&#160;CSM<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#2">&#160;[2]&#160;</a>and&#160;CRY<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#2">&#160;[3].</a>&#160;<br/>
+&#160;<br/>
+<b>4.1.4&#160;</b><br/>
+<b>Integration in DaVinci&#160;Developer&#160;</b><br/>
+The&#160;SwcSecAccessFord&#160;consists&#160;of&#160;one&#160;AUTOSAR SWC&#160;component.&#160;&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+11&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=12></a><img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-12_1.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-12_2.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-12_3.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-12_4.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-12_5.png"/><br/>
+<img src="ElectricPowerSteering_RH850_FORD_T3T6_website/content/en/docs/_Ford_T3T6_Eps_Impl_A/tools/SIP/Doc/TechnicalReferences/TechnicalReference_Diag_AsrSwcSecAccess_Ford-12_6.png"/><br/>
+Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>&#160;</b><br/>
+<b>Step&#160;2&#160;<br/></b>Import&#160;software&#160;components&#160;/&#160;compositions&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+To&#160;use&#160;the&#160;software component&#160;the&#160;software component&#160;description&#160;must&#160;be&#160;imported&#160;in&#160;<br/>an&#160;existing&#160;DaVinci Developer workspace&#160;“<b>File&#160;|&#160;Import&#160;XML&#160;file…</b>”&#160;<br/>&#160;<br/>
+<b>Step&#160;3&#160;<br/></b>Instantiate&#160;software&#160;components&#160;&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Step&#160;4&#160;<br/></b>Create a&#160;SWC&#160;to&#160;provide&#160;a source of&#160;entropy&#160;to&#160;the open&#160;SWC&#160;port.&#160;<br/>
+&#160;&#160;When FIPS186-2 is used&#160;as&#160;random&#160;number&#160;generator&#160;this&#160;SWC&#160;has&#160;to provide&#160;at&#160;<br/>
+least&#160;20&#160;byte&#160;of&#160;random&#160;data.&#160;<br/>The&#160;quality&#160;of&#160;randomness&#160;highly&#160;depends&#160;on&#160;the&#160;quality&#160;of&#160;the&#160;entropy&#160;input.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>4.1.5&#160;</b><br/>
+<b>Connecting ports&#160;and task&#160;mapping&#160;</b><br/>
+To&#160;connect&#160;the&#160;ports&#160;and&#160;map&#160;the&#160;task&#160;you&#160;have&#160;to&#160;use&#160;the&#160;DaVinci&#160;Configurator 5&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Step&#160;5&#160;<br/></b>Connect&#160;the&#160;port&#160;prototypes&#160;from&#160;the&#160;SWC&#160;with&#160;the&#160;specific&#160;component&#160;prototypes&#160;<br/>
+&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Step&#160;6&#160;<br/></b>Mapping&#160;of&#160;the SwcSecAccessFord_MainFunction&#160;to&#160;a cyclically&#160;task&#160;and the&#160;<br/>
+&#160;&#160;SwcSecAccessFord_Init&#160;to&#160;the&#160;initialization&#160;&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+<b>Step&#160;7&#160;<br/></b>Use DaVinci&#160;Configurator&#160;5&#160;to&#160;generate and&#160;add&#160;the&#160;provided&#160;files,&#160;as&#160;described in&#160;<br/>
+&#160;&#160;<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.1&#160;and&#160;4.1.2,</a>&#160;to your&#160;project.&#160;<br/>
+<b>&#160;</b><br/>
+<b>&#160;</b><br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+&#160;&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+12&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=13></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>5&#160;&#160;API&#160;Description&#160;</b><br/>
+For an&#160;interfaces overview&#160;please&#160;see<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#8">&#160;Figure&#160;2-2.</a>&#160;<br/>
+&#160;<br/>
+<b>5.1&#160;</b><br/>
+<b>Service&#160;Ports&#160;</b><br/>
+<b>5.1.1&#160;</b><br/>
+<b>SwcSecAccessFord_CallbackNotificationRandomGenerate&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType&#160;<b>SwcSecAccessFord_CallbackNotificationRandomGenerate&#160;<br/></b>(Csm_ReturnType retVal)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+retVal&#160;<br/>
+Result&#160;of&#160;CSM&#160;operation&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+RTE_E_OK&#160;–&#160;allways&#160;succeed&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+This&#160;function&#160;is&#160;being&#160;called by&#160;the CSM after completion&#160;of&#160;the random&#160;number&#160;generation.&#160;The&#160;seed state&#160;<br/>will&#160;be set&#160;to SEEDSTATE_VALID if&#160;successful&#160;<br/>Call&#160;context&#160;<br/>
+Called&#160;by&#160;CSM&#160;<br/>
+Table&#160;5-1&#160;&#160;&#160;SwcSecAccessFord_CallbackNotificationRandomGenerate&#160;<br/>
+&#160;<br/>
+<b>5.1.2&#160;</b><br/>
+<b>SwcSecAccessFord_CallbackNotificationRandomSeed&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType&#160;<b>SwcSecAccessFord_CallbackNotificationRandomSeed&#160;</b>(Csm_ReturnType&#160;<br/>retVal)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+retVal&#160;<br/>
+Result&#160;of&#160;CSM&#160;operation&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+RTE_E_OK&#160;–&#160;allways&#160;succeed&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+This&#160;function&#160;is&#160;being&#160;called by&#160;the CSM after completion&#160;of&#160;a&#160;random&#160;seed operation.&#160;The&#160;state of&#160;<br/>Sec_EntropyOp&#160;will&#160;be&#160;set&#160;to&#160;next&#160;processing&#160;step&#160;if&#160;successful.&#160;<br/>Call&#160;context&#160;<br/>
+Called&#160;by&#160;CSM&#160;<br/>
+Table&#160;5-2&#160;&#160;&#160;SwcSecAccessFord_CallbackNotificationRandomSeed&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+13&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=14></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>5.1.3&#160;</b><br/>
+<b>SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt;&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType&#160;<b>SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt;&#160;</b>(const UInt8 *Key,&#160;<br/>Dcm_OpStatusType OpStatus)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+Key&#160;<br/>
+Points&#160;to&#160;the&#160;requested&#160;key.&#160;<br/>
+OpStatus&#160;<br/>
+Status&#160;of&#160;the current&#160;operation.&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+RTE_E_OK&#160;<br/>RTE_E_&#160;SecurityAccess_E_COMPARE_KEY_FAILED&#160;<br/>RTE_E_&#160;SecurityAccess_E_NOT_OK&#160;<br/>RTE_E_&#160;SecurityAccess_E_PENDING&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+The&#160;routine calculates&#160;a&#160;key&#160;based&#160;on a&#160;previously&#160;calculated seed and compares&#160;the given&#160;key&#160;(from&#160;the&#160;<br/>parameter)&#160;against the&#160;calculated&#160;key.&#160;<br/>Call&#160;context&#160;<br/>
+Called&#160;by&#160;DCM&#160;<br/>
+Table&#160;5-3&#160;&#160;&#160;SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt;&#160;<br/>
+&#160;<br/>
+<b>5.1.4&#160;</b><br/>
+<b>SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt;&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType&#160;<b>SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt;&#160;</b>(Dcm_OpStatusType OpStatus,&#160;<br/>UInt8 *Seed, Dcm_NegativeResponseCodeType *ErrorCode)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+Seed&#160;<br/>
+Points&#160;to&#160;the&#160;response seed data&#160;<br/>
+OpStatus&#160;<br/>
+Status&#160;of&#160;the current&#160;operation.&#160;<br/>
+ErrorCode&#160;<br/>
+NRC to&#160;be&#160;sent&#160;in the negative response in case of&#160;failure (E_NOT_OK)&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+RTE_E_OK&#160;<br/>RTE_E_&#160;SecurityAccess_E_NOT_OK&#160;<br/>RTE_E_&#160;SecurityAccess_E_PENDING&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+This&#160;function&#160;is&#160;connected to the&#160;GetSeed&#160;port&#160;of&#160;the DCM to&#160;provide a&#160;seed&#160;for the tester.&#160;<br/>Call&#160;context&#160;<br/>
+Called&#160;by&#160;DCM&#160;<br/>
+Table&#160;5-4&#160;&#160;&#160;SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt;&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+14&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=15></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>5.1.5&#160;</b><br/>
+<b>SwcSecAccessFord_Init&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+void&#160;<b>SwcSecAccessFord_Init&#160;</b>(void)&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+This&#160;function&#160;initializes&#160;the&#160;state machines&#160;of&#160;the&#160;SwcSecAccessFord&#160;<br/>Call&#160;context&#160;<br/>
+Called&#160;by&#160;RTE&#160;on initialization&#160;<br/>
+Table&#160;5-5&#160;&#160;&#160;SwcSecAccessFord_Init&#160;<br/>
+&#160;<br/>
+<b>5.1.6&#160;</b><br/>
+<b>SwcSecAccessFord_MainFunction&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+void&#160;<b>SwcSecAccessFord_MainFunction&#160;</b>(void)&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+The&#160;main function&#160;triggers&#160;the&#160;internal&#160;processing&#160;in&#160;the background.&#160;<br/>Call&#160;context&#160;<br/>
+Called&#160;by&#160;RTE&#160;cyclically&#160;<br/>
+Table&#160;5-6&#160;&#160;&#160;SwcSecAccessFord_MainFunction&#160;<br/>
+&#160;<br/>
+<b>5.1.7&#160;</b><br/>
+<b>SwcSecAccessFord_ProvideEntropy&#160;</b><br/>
+<b>Prototype&#160;</b><br/>
+Std_ReturnType&#160;<b>SwcSecAccessFord_ProvideEntropy&#160;</b>(const UInt8 *entropyBuffer,&#160;<br/>UInt32 entropyLength)&#160;<br/>
+<b>Parameter&#160;</b><br/>
+entropyBuffer&#160;<br/>
+Points&#160;to&#160;the&#160;source of&#160;entropy&#160;<br/>
+entropyLength&#160;<br/>
+Length&#160;of&#160;the entropy&#160;buffer&#160;<br/>
+<b>Return&#160;code&#160;</b><br/>
+Std_ReturnType&#160;<br/>
+RTE_E_OK&#160;<br/>RTE_E_SwcSecAccessFord_ProvideEntropy_E_BUSY&#160;<br/>RTE_E_SwcSecAccessFord_ProvideEntropy_E_NOT_OK&#160;<br/>
+<b>Functional&#160;Description&#160;</b><br/>
+A&#160;provided source&#160;of&#160;entropy&#160;will&#160;be&#160;used&#160;to&#160;instantiate&#160;the&#160;random&#160;number&#160;generator&#160;for&#160;the&#160;GetSeed()&#160;<br/>function.&#160;<br/>
+<b>Particularities&#160;and&#160;Limitations&#160;</b><br/>
+In&#160;case of&#160;FIPS186-2 the&#160;provided source of&#160;entropy&#160;has&#160;to&#160;be at&#160;least 20&#160;bytes.&#160;<br/>Call&#160;context&#160;<br/>
+Called&#160;by&#160;a&#160;SWC&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+15&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=16></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+Table&#160;5-7&#160;&#160;&#160;SwcSecAccessFord_ProvideEntropy&#160;<br/>
+&#160;<br/>
+<b>5.1.8&#160;</b><br/>
+<b>Client&#160;Server Interface&#160;</b><br/>
+A&#160;client&#160;server&#160;interface&#160;is&#160;related&#160;to&#160;a&#160;Provide&#160;Port&#160;at&#160;the&#160;server&#160;side&#160;and&#160;a&#160;Require&#160;Port&#160;<br/>at&#160;client&#160;side.&#160;&#160;<br/>
+<b>5.1.8.1&#160;</b><br/>
+<b>Provide&#160;Ports&#160;on&#160;SwcSecAccessFord&#160;Side&#160;</b><br/>
+At&#160;&#160;the&#160;&#160;Provide&#160;&#160;Ports&#160;&#160;of&#160;&#160;the&#160;&#160;SwcSecAccessFord&#160;&#160;the&#160;&#160;API&#160;&#160;functions&#160;&#160;described&#160;&#160;in&#160;&#160;<a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">5.1&#160;&#160;</a>are&#160;<br/>available&#160;&#160;as&#160;&#160;Runnable&#160;&#160;Entities.&#160;&#160;The&#160;&#160;Runnable&#160;&#160;Entities&#160;&#160;are&#160;&#160;invoked&#160;&#160;via&#160;&#160;Operations.&#160;&#160;The&#160;<br/>mapping&#160;from&#160;a&#160;SWC&#160;client&#160;call&#160;to&#160;an&#160;Operation&#160;is performed&#160;by&#160;the&#160;RTE.&#160;&#160;<br/>
+<b>Operation&#160;</b><br/>
+<b>Mapping&#160;</b><br/>
+CsmCallbackMacVerify&#160;<br/>
+Mapped&#160;to&#160;&lt;Instance&gt;_Callback&#160;of&#160;MacVerify&#160;primitive&#160;(CSM)&#160;<br/>
+CsmCallbackRandomGenerate&#160;<br/>
+Mapped&#160;to&#160;&lt;Instance&gt;_Callback&#160;of&#160;RandomGenerate primitive (CSM)&#160;<br/>
+CsmCallbackRandomSeed&#160;<br/>
+Mapped&#160;to&#160;&lt;Instance&gt;_Callback&#160;of&#160;RandomSeed primitive (CSM)&#160;<br/>
+SecurityAccessL&lt;LEVEL&gt;&#160;<br/>
+Mapped&#160;to&#160;SecurityAccess_&lt;SecurityLevelName&gt;&#160;of&#160;DCM&#160;<br/>
+ProvideEntropy&#160;<br/>
+SWC which provides&#160;a&#160;source of&#160;entropy&#160;at&#160;least once&#160;<br/>
+Table&#160;5-8&#160;&#160;&#160;Provided&#160;ports&#160;by&#160;the&#160;SWC&#160;<br/>
+<b>5.1.8.2&#160;</b><br/>
+<b>Require&#160;Ports&#160;on&#160;SwcSecAccessFord&#160;Side&#160;</b><br/>
+At&#160;&#160;its&#160;Require&#160;Ports&#160;the&#160;&#160;SwcSecAccessFord&#160;calls&#160;Operations.&#160;These&#160;Operations&#160;have&#160;to&#160;<br/>be&#160;&#160;provided&#160;&#160;by&#160;&#160;the&#160;&#160;SWCs&#160;&#160;by&#160;&#160;means&#160;&#160;of&#160;&#160;Runnable&#160;&#160;Entities.&#160;&#160;These&#160;&#160;Runnable&#160;&#160;Entities&#160;<br/>implement&#160;the&#160;callback&#160;functions&#160;expected&#160;by&#160;the&#160;SwcSecAccessFord.&#160;<br/>
+<b>Operation&#160;</b><br/>
+<b>Mapping&#160;</b><br/>
+CsmRandomSeed&#160;<br/>
+Mapped&#160;to&#160;&lt;Instance&gt;&#160;of&#160;RandomSeed&#160;primitive (CSM)&#160;<br/>
+CsmRandomGenerate&#160;<br/>
+Mapped&#160;to&#160;&lt;Instance&gt;&#160;of&#160;RandomGenerate&#160;primitive (CSM)&#160;<br/>
+CsmMacVerify&#160;<br/>
+Mapped&#160;to&#160;&lt;Instance&gt;&#160;of&#160;MacVerify&#160;primitive (CSM)&#160;<br/>
+Table&#160;5-9&#160;&#160;&#160;Required&#160;ports&#160;by&#160;the&#160;SWC&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+16&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=17></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>6&#160;&#160;Glossary&#160;and&#160;Abbreviations&#160;</b><br/>
+<b>6.1&#160;</b><br/>
+<b>Abbreviations&#160;</b><br/>
+<b>Abbreviation&#160;</b><br/>
+<b>Description&#160;</b><br/>
+API&#160;<br/>
+Application Programming Interface&#160;&#160;&#160;<br/>
+AUTOSAR&#160;<br/>
+Automotive Open&#160;System&#160;Architecture&#160;<br/>
+BSW&#160;<br/>
+Basis&#160;Software&#160;<br/>
+CRY&#160;<br/>
+Cryptographic&#160;library&#160;module&#160;<br/>
+CSM&#160;<br/>
+Crypto&#160;Service Manager&#160;<br/>
+DCM&#160;<br/>
+Diagnostic&#160;Communication&#160;Manager&#160;<br/>
+MICROSAR&#160;<br/>
+Microcontroller&#160;Open&#160;System&#160;Architecture&#160;(the&#160;Vector&#160;AUTOSAR&#160;<br/>solution)&#160;<br/>
+PPORT&#160;<br/>
+Provide&#160;Port&#160;<br/>
+RPORT&#160;<br/>
+Require&#160;Port&#160;<br/>
+RTE&#160;<br/>
+Runtime Environment&#160;<br/>
+SWC&#160;<br/>
+Software&#160;Component&#160;<br/>
+SWS&#160;<br/>
+Software&#160;Specification&#160;<br/>
+Table&#160;6-1&#160;&#160;&#160;Abbreviations&#160;<br/>
+&#160;<br/>
+&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+17&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name=18></a>Technical Reference&#160;MICROSAR&#160;-&#160;SwcSecAccessFord&#160;<br/>
+<b>7&#160;&#160;Contact&#160;</b><br/>
+Visit&#160;our website&#160;for&#160;more information&#160;on&#160;<br/>&#160;<br/><b>&gt;&#160;&#160;</b>News&#160;<br/>
+<b>&gt;&#160;&#160;</b>Products&#160;<br/>
+<b>&gt;&#160;&#160;</b>Demo&#160;software&#160;<br/>
+<b>&gt;&#160;&#160;</b>Support&#160;<br/>
+<b>&gt;&#160;&#160;</b>Training&#160;data&#160;<br/>
+<b>&gt;&#160;&#160;</b>Addresses&#160;<br/>
+&#160;<br/>www.vector.com&#160;<br/>
+&#160;<br/>&#160;<br/>
+2015,&#160;Vector&#160;Informatik&#160;GmbH&#160;<br/>
+Version:&#160;1.0.0&#160;<br/>
+18&#160;/&#160;18&#160;<br/>
+based&#160;on&#160;template&#160;version&#160;5.11.0&#160;<br/>
+<hr/>
+<a name="outline"></a><h1>Document Outline</h1>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#6">1 Component History</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7">2 Introduction</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#7">2.1 Architecture Overview</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">3 Functional Description</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">3.1 Initialization</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">3.2 Provide Entropy</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">3.3 States</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#9">3.3.1 Sec_EntropyOp</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.3.2 Sec_VerifyOp</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.3.3 Sec_SeedState</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.3.4 Sec_VerifyState</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#10">3.4 Main Functions</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4 Integration</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1 Scope of Delivery</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.1 Static Files</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.2 Dynamic Files</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.3 CSM Configuration in DaVinci Configurator 5</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#11">4.1.4 Integration in DaVinci Developer</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#12">4.1.5 Connecting ports and task mapping</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">5 API Description</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">5.1 Service Ports</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">5.1.1 SwcSecAccessFord_CallbackNotificationRandomGenerate</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#13">5.1.2 SwcSecAccessFord_CallbackNotificationRandomSeed</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">5.1.3 SwcSecAccessFord_CompareKey_L&lt;LEVEL&gt;</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#14">5.1.4 SwcSecAccessFord_GetSeed_L&lt;LEVEL&gt;</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">5.1.5 SwcSecAccessFord_Init</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">5.1.6 SwcSecAccessFord_MainFunction</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#15">5.1.7 SwcSecAccessFord_ProvideEntropy</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">5.1.8 Client Server Interface</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">5.1.8.1 Provide Ports on SwcSecAccessFord Side</a></li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#16">5.1.8.2 Require Ports on SwcSecAccessFord Side</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#17">6 Glossary and Abbreviations</a>
+<ul>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#17">6.1 Abbreviations</a></li>
+</ul>
+</li>
+<li><a href="TechnicalReference_Diag_AsrSwcSecAccess_Fords.html#18">7 Contact</a></li>
+</ul>
+<hr/>
+</body>
+</html>
